@@ -1,0 +1,173 @@
+let MD = new showdown.Converter({
+	extensions: [ext],
+	tables: true,
+	strikethrough: true,
+	simpleLineBreaks: true
+});
+
+
+function initRemoveHash() { //removes #page=
+	let a = window.location.hash;
+	let b = a.replace("#page=","");
+	let c = b + ".md";
+	return c;
+}
+
+function loadMarkdown(path) { //loads page
+	window.location.href = window.location.origin + '/#page=' + path.replace(".md",""); //changes url
+	var xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
+	xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("mdcontent").innerHTML = this.responseText;
+    }
+  };
+
+  if (path) { //if path exists, then load .md
+	  xhttp.open("GET", path, true);
+	  xhttp.send();
+
+	}
+
+	for (let i = 1; i < 69 ; i++) {
+		setTimeout(() => {  initMarkdown()}, i); // applies markdown after i-ms - will add some css fadein later for smoother transition
+	}
+	
+}
+
+function initMarkdown() { //puts html in id 'test'
+	let input = document.getElementById("mdcontent").innerHTML; //is md text
+	let $nav = document.querySelector("#mdcontent");
+	let html = "";
+	//console.log(input);
+	html += MD.makeHtml(input);
+	$nav.innerHTML = html;
+	//console.log(html);
+}
+
+function initScrollBar() {
+    // Create the <style>
+    var style = document.createElement("style");
+    var css = "::-webkit-scrollbar {width: 8px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 3px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
+	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB();+ "";
+	css += "; }";
+
+    // WebKit hack :(
+    style.appendChild(document.createTextNode(css));
+
+    // Add the <style> element to the page
+    document.body.appendChild(style);
+    return style.sheet;
+}
+
+function colorHex() {
+	let gameName = getGameFromURL();
+	const gameColors = {
+		th06: '#FF0000',
+		th07: '#FF8ED2',
+		th08: '#333399',
+		th09: '#058060',
+		th95: '#009973',
+		th10: '#96B300',
+		th11: '#591400',
+		th12: '#4169E1',
+		th125: '#7D3884',
+		th128: '#00C8C8',
+		th13: '#4A808C',
+		th14: '#AA7777',
+		th143: '#B6423C',
+		th15: '#6A47BE',
+		th16: '#176E0E',
+		th165: '#AE11D5',
+		th17: '#190E0E',
+		th18: '#1DD294'
+	}
+	return gameColors[gameName] || "#888888"
+}
+
+
+function colorRGB() {
+	const add = 16;
+	let colourHex = colorHex();
+	let rHex = "0x" + colourHex.substring(1, 3); // 0xAB
+	let gHex = "0x" + colourHex.substring(3, 5); // 0xCD
+	let bHex = "0x" + colourHex.substring(5, 7); // 0xEF
+
+	let rDec = parseInt(rHex) + add;
+	let gDec = parseInt(gHex) + add;
+	let bDec = parseInt(bHex) + add;
+
+	if (rDec > 255) {rDec = 255;}
+	if (gDec > 255) {gDec = 255;}
+	if (bDec > 255) {bDec = 255;}
+
+	let output = "rgba("+rDec+", "+gDec+ ", "+bDec+", 1.0)"
+	//console.log(output);
+	return output;
+}
+
+function getGameFromURL() {
+	let url = window.location.hash; // is #page=bugs/th18/0
+	let gameName;
+	if (url.slice(0, 11) == "#page=bugs/") { // prevents page from not loading stuff if it is not true
+		gameName = /\#page\=bugs\/(.*?)\//i.exec(url)[1]; // ddc
+	}
+	return gameName;
+}
+
+
+
+
+function parseMarkdown(markdownText) { //parses markdown - unused atm
+	const htmlText = markdownText
+		.replace(/\[no\]([^]*?)\[\/no\]/g, '<span style="color:#ff0000">~~$1~~</span>') //red color
+		.replace(/\[yes\]([^]*?)\[\/yes\]/g, '<span style="color:#00ff00">$1</span>') //green color
+		.replace(/\~\~([^]*?)\~\~/g, '<span style="text-decoration: line-through">$1</span>') //strikethrough
+		.replace(/\[specs\]/g, 'Specifications')
+		.replace(/\[what\]/g, 'What happens')
+		.replace(/\[how\]/g, 'How it happens')
+		.replace(/\[why\]/g, 'Why it happens')
+		.replace(/\[br\]/g, '<br>')
+		.replace(/\[hr\]/g, '<hr>')
+		.replace(/\[links\]/g, 'Links')
+		.replace(/\[rpy\]/g, 'Replays')
+		.replace(/\[vid\]/g, 'Videos')
+		.replace(/^## (.*$)/gim, '<h2>$1</h2>')
+		.replace(/^# (.*$)/gim, '<h1>$1</h1>')
+		.replace(/\[title=(.*?)\]/gim, function(match, content) {setWindowTitleDirect(content);return "";}) //no idea why it works but ty priw
+		//.replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
+		//.replace(/\*(.*)\*/gim, '<i>$1</i>')
+		//.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
+		//.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
+		//.replace(/\n$/gim, '<br />')
+	return htmlText.trim()
+}
+
+function setWindowTitleDirect(str) {
+	document.title = str;
+}
+
+function debug() {
+    text      = '## hello, **markdown**!',
+    html      = MD.makeHtml(text);
+	console.log(html);
+}
+
+
+function init() {
+	loadMarkdown(initRemoveHash()); //loads in md 
+	initScrollBar();
+	debug();
+
+
+}
+
+window.addEventListener('hashchange', initScrollBar, false); // if page is reloaded then execute initScrollBar
+
+
+init();
+
+
+
+
+
+

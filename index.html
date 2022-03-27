@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nylilsa's Github page</title>
+<script src="showdown-ext.js"></script>
+<!-- Showdown library js -->
+<script src="lib/showdown.min.js"></script>
+<!-- Bootstrap CSS CDN -->
+<link rel="stylesheet" href="lib/bootstrap.min.css">
+<!-- Font Awesome JS -->
+<script defer src="lib/solid.js"></script>
+<script defer src="lib/fontawesome.js"></script>
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="lib/jquery-3.3.1.slim.min.js" ></script>
+<!-- Popper.JS -->
+<script src="lib/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="lib/bootstrap.min.js"></script>
+<!-- My CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="wrapper">
+<div id="sidebar">
+	<div class="sidebar-header">
+		<h3>Nylilsa's Github Page</h3>
+	</div>
+
+	<ul class="list-unstyled components">
+		
+		<li>
+			<a href="#"">Home</a>
+		</li>
+		<li>
+			<a href="#aboutMe" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">About Me</a>
+			<ul class="collapse list-unstyled" id="aboutMe">
+				<li>
+					<a href="#page=about_me/about_me" target="_blank">About Me</a>
+				</li>
+				<li>
+					<a href="#page=about_me/accomplishments" target="_blank">Accomplishments</a>
+				</li>
+				<li>
+					<a href="#page=about_me/patches" target="_blank">Patches</a>
+				</li>
+				<li>
+					<a href="#page=about_me/guides" target="_blank">Guides</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bugs</a>
+			<ul class="collapse list-unstyled" id="pageSubmenu">
+				<li>
+					<a href="#">LoLK</a>
+				</li>
+				<li>
+					<a href="#bugs-th16" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">HSiFS</a>
+					<ul class="collapse list-unstyled" id="bugs-th16">
+						<li>
+							<a href="https://maribelhearn.com/" target="_blank">Maribel Hearn's website</a>
+						</li>
+						<li>
+							<a href="https://priw8.github.io/" target="_blank">Priw8's website</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">WBaWC</a>
+				</li>
+				<li>
+					<a href="#bugs-th17" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">HSiFS</a>
+					<ul class="collapse list-unstyled" id="bugs-th17">
+						<li>
+							<a href="#page=bugs/th18/0" onclick="loadMarkdown('bugs/th18/0.md')">Load 1</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/1" onclick="loadMarkdown('bugs/th18/1.md')">Load 2</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#bugs-th18" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bugs">UM</a>
+					<ul class="collapse list-unstyled" id="bugs-th18">
+						<li>
+							<a href="#page=bugs/th18/0" onclick="loadMarkdown('bugs/th18/0.md')">Load 1</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/1" onclick="loadMarkdown('bugs/th18/1.md')">Load 2</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/2" onclick="loadMarkdown('bugs/th18/0.md')">Load 3</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/3" onclick="loadMarkdown('bugs/th18/1.md')">Load 4</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/4" onclick="loadMarkdown('bugs/th18/0.md')">Load 5</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/5" onclick="loadMarkdown('bugs/th18/1.md')">Load 6</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/6" onclick="loadMarkdown('bugs/th18/0.md')">Load 7</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/7" onclick="loadMarkdown('bugs/th18/1.md')">Load 8</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/8" onclick="loadMarkdown('bugs/th18/0.md')">Load 9</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/9" onclick="loadMarkdown('bugs/th18/1.md')">Load 10</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/10" onclick="loadMarkdown('bugs/th18/0.md')">Load 11</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/11" onclick="loadMarkdown('bugs/th18/1.md')">Load 12</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/12" onclick="loadMarkdown('bugs/th18/0.md')">Load 13</a>
+						</li>
+						<li>
+							<a href="#page=bugs/th18/13" onclick="loadMarkdown('bugs/th18/1.md')">Load 14</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#externallinksSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">External Links</a>
+			<ul class="collapse list-unstyled" id="externallinksSubmenu">
+				<li>
+					<a href="https://maribelhearn.com/" target="_blank">Maribel Hearn's website</a>
+				</li>
+				<li>
+					<a href="https://priw8.github.io/" target="_blank">Priw8's website</a>
+				</li>
+				<li>
+					<a href="https://exphp.github.io/thpages/" target="_blank">ExpHP's website</a>
+				</li>
+				<li>
+					<a href="https://en.touhouwiki.net/" target="_blank">Touhou wiki</a>
+				</li>
+				<li>
+					<a href="https://wikiwiki.jp/thk/" target="_blank">東方Project攻略wiki</a>
+				</li>
+			</ul>
+		</li>
+
+
+		<li>
+			<a href="#">Contact</a>
+		</li>
+	</ul>
+
+	<ul class="list-unstyled CTAs">
+		<li>
+			<a href="#" class="download">I'm a button</a>
+		</li>
+		<li>
+			<a href="#" class="article">I'm a button too</a>
+		</li>
+	</ul>
+</div>
+<div id="sidebar2"> <!---  purpose is to act as a width. lol --->
+</div>
+
+<div id="content">
+	<div id="mdcontent" type="text/markdown"></div>
+</div>
+
+
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
