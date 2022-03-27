@@ -216,6 +216,11 @@ a.article:hover {
 
 }
 
+#mdcontent p, #mdcontent li {
+    font-size: 0.9em;
+
+}
+
 hr {
     border-color:#BBBBCC;
 }

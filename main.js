@@ -28,8 +28,8 @@ function loadMarkdown(path) { //loads page
 
 	}
 
-	for (let i = 1; i < 69 ; i++) {
-		setTimeout(() => {  initMarkdown()}, i); // applies markdown after i-ms - will add some css fadein later for smoother transition
+	for (let i = 1; i < 25 ; i++) {
+		setTimeout(() => {  initMarkdown()}, 2.5 * i); // applies markdown after i-ms - will add some css fadein later for smoother transition
 	}
 	
 }
@@ -42,19 +42,28 @@ function initMarkdown() { //puts html in id 'test'
 	html += MD.makeHtml(input);
 	$nav.innerHTML = html;
 	//console.log(html);
+	initCustomColor(); // changes color of divs based on page
 }
 
 function initScrollBar() {
     // Create the <style>
     var style = document.createElement("style");
-    var css = "::-webkit-scrollbar {width: 8px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 3px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
+
+	style.className = "scrollbars";
+    var css = "::-webkit-scrollbar {width: 8px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
 	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB();+ "";
 	css += "; }";
 
-    // WebKit hack :(
+    // WebKit hack :
     style.appendChild(document.createTextNode(css));
 
+	// if class exists, do not append but instead change color
+	if (document.getElementsByClassName('scrollbars').length >= 1) {
+		document.getElementsByClassName('scrollbars')[0].innerHTML = css;
+		return;
+	}
     // Add the <style> element to the page
+
     document.body.appendChild(style);
     return style.sheet;
 }
@@ -86,7 +95,7 @@ function colorHex() {
 
 
 function colorRGB() {
-	const add = 16;
+	const add = 32;
 	let colourHex = colorHex();
 	let rHex = "0x" + colourHex.substring(1, 3); // 0xAB
 	let gHex = "0x" + colourHex.substring(3, 5); // 0xCD
@@ -147,21 +156,31 @@ function setWindowTitleDirect(str) {
 }
 
 function debug() {
-    text      = '## hello, **markdown**!',
-    html      = MD.makeHtml(text);
+    text = '## hello, **markdown**!',
+    html = MD.makeHtml(text);
 	console.log(html);
 }
 
 
-function init() {
-	loadMarkdown(initRemoveHash()); //loads in md 
+function initCustomColor() {
 	initScrollBar();
-	debug();
-
-
+	initNavColor();
 }
 
-window.addEventListener('hashchange', initScrollBar, false); // if page is reloaded then execute initScrollBar
+function initNavColor() {
+	var elements = document.getElementsByClassName('hr_major'); // get all elements
+	for(var i = 0; i < elements.length; i++) {
+		elements[i].style.borderColor = colorRGB();
+	}
+}
+
+function init() {
+	loadMarkdown(initRemoveHash()); //loads in md 
+	initCustomColor();
+	debug();
+}
+
+window.addEventListener('hashchange', initCustomColor(), false); // if page is reloaded then execute function
 
 
 init();

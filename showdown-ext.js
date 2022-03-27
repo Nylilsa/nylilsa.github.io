@@ -4,10 +4,10 @@ let ext = function() {
 		regex: /\[yt\](.*?)\[\/yt\]/g,
 		replace: '<div class="fit-wrapper" data-yt="$1"><div class="fit-wrapper2 yt"><div class="video-load"><div>Automatic video loading is <b>disabled</b>, in order to reduce network usage and loading times.<br>Click this to load the video.</div></div></div></div>'
 };
-	let hr = {
+	let hr_major = {
 		type: "lang",
-		regex: /\[hr\]/g,
-		replace: "<hr>"
+		regex: /\[hr_major\]/g,
+		replace: "<hr class='hr_major'>"
 	}
 	let hr_minor = {
 		type: "lang",
@@ -508,5 +508,5 @@ let ext = function() {
 	}	
 	
 
-	return [anmSelect, eclmap, yt, hr, hr_minor, br, ts, img, img_small, ins, ins_notip,  variable, variable_notip, code, title, c, include, game, rawGame, html, script, tip, /*video,*/ flex, flex2, et, anm, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, repeatDuplicate, bugUnderflow, bugTypo, bugDesync, bugDoubleMenu, bugSpritesheet, bugYoumuCharge, bugSlowdown, bugUninitialisedVariable];
+	return [anmSelect, eclmap, yt, hr_major, hr_minor, br, ts, img, img_small, ins, ins_notip,  variable, variable_notip, code, title, c, include, game, rawGame, html, script, tip, /*video,*/ flex, flex2, et, anm, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, repeatDuplicate, bugUnderflow, bugTypo, bugDesync, bugDoubleMenu, bugSpritesheet, bugYoumuCharge, bugSlowdown, bugUninitialisedVariable];
 }
