@@ -4,10 +4,15 @@ let ext = function() {
 		regex: /\[yt\](.*?)\[\/yt\]/g,
 		replace: '<div class="fit-wrapper" data-yt="$1"><div class="fit-wrapper2 yt"><div class="video-load"><div>Automatic video loading is <b>disabled</b>, in order to reduce network usage and loading times.<br>Click this to load the video.</div></div></div></div>'
 };
-	let hr = {
+	let hr_major = {
 		type: "lang",
-		regex: /\[hr\]/g,
-		replace: "<hr>"
+		regex: /\[hr_major\]/g,
+		replace: "<hr class='hr_major'>"
+	}
+	let hr_minor = {
+		type: "lang",
+		regex: /\[hr_minor\]/g,
+		replace: "<hr class='hr_minor'>"
 	}
 	let br = {
 		type: "lang",
@@ -237,89 +242,6 @@ let ext = function() {
 		replace: '<div class="flexbox" style="align-items: $1">$2</div>'
 	}
 
-	let et = {
-		type: "lang",
-		regex: /\[et=(.*?),(.*?),(.*?)\]/g,
-		replace: (match, id, color, game) => {
-			const xBegin32 = 112;
-			const yBegin32 = 32;
-			const rows32 = {
-				0: 0,
-				1: 0,
-				2: 1,
-				3: 2,
-				4: 3,
-				5: 3,
-				6: 4,
-				7: 4,
-				8: 5,
-				35: 5,
-				9: 6,
-				10: 7,
-				36: 7,
-				11: 8,
-				12: 9,
-				13: 10,
-				14: 11,
-				15: 12,
-				16: 13,
-				37: 13,
-				34: 14,
-				38: 15,
-				// row 16 has numbers
-				17: 17
-			}
-			const xBegin64 = 112;
-			const yBegin64 = 636;
-			const rows64 = {
-				18: 0,
-				19: 0,
-				30: 0,
-				20: 1,
-				21: 2,
-				22: 3,
-				23: 4,
-				24: 4,
-				29: 5,
-				31: 6,
-				43: 7,
-				25: 8,
-				26: 9,
-				27: 10,
-				28: 11,
-				39: 12,
-				40: 13,
-				41: 14,
-				42: 15
-			}
-			const animes = {
-				16: "animation-name: spin; animation-duration: 1.5s; animation-iteration-count: infinite; animation-timing-function: linear;",
-				37: "animation-name: spin; animation-direction: reverse; animation-duration: 1.5s; animation-iteration-count: infinite; animation-timing-function: linear;",
-				23: "animation-name: spin; animation-duration: 1.5s; animation-iteration-count: infinite; animation-timing-function: linear;",
-				24: "animation-name: spin; animation-direction: reverse; animation-duration: 1.5s; animation-iteration-count: infinite; animation-timing-function: linear;",
-				35: "animation-name: spin; animation-duration: 1.5s; animation-iteration-count: infinite; animation-timing-function: linear;",
-				36: "animation-name: spin; animation-duration: 1.5s; animation-iteration-count: infinite; animation-timing-function: linear;",
-				32: "animation-name: spin; animation-duration: 0.15s; animation-iteration-count: infinite; animation-timing-function: linear;",
-
-				30: "animation-name: pulse; animation-direction: alternate; animation-duration: 0.1s; animation-iteration-count: infinite; animation-timing-function: linear;"
-			}
-			const anime = animes[id] ? animes[id] : "";
-			const tip = `<instr>etSprite(${id}, ${color})</instr>, version ${game}`;
-			if (typeof rows32[id] != "undefined") {
-				return `<div data-tip="${tip}" style="${anime} display: inline-block; width:32px; height:32px; background-image: url(img/et15.png); background-position: -${xBegin32 + color*32}px -${yBegin32 + rows32[id]*32}px;"></div>`
-			} else if (typeof rows64[id] != "undefined") {
-				return `<div data-tip="${tip}" style="${anime} display: inline-block; width:64px; height:64px; background-image: url(img/et15.png); background-position: -${xBegin64 + color*64}px -${yBegin64 + rows64[id]*64}px;"></div>`
-			} else {
-				if (id == 33) {
-					return `<div data-tip="${tip}" style="${anime} display: inline-block; width:128px; height:100px; background-image: url(img/et15.png); background-position: -${xBegin64 + (color % 4)*128}px -${1861 + Math.floor(color / 4)*128}px;"></div>`
-				} else if (id == 32) {
-					return `<div data-tip="${tip}" style="${anime} display: inline-block; width:128px; height:128px; background-image: url(img/et15.png); background-position: -${xBegin64 + color*128}px -1692px;"></div>`
-				} else {
-					return "et-error";
-				}
-			}
-		}
-	}
 
 	async function requireAnm(name, content, id) {
 		// this must always wait at least some time, to make sure that the function this was called from finished running...
@@ -503,5 +425,5 @@ let ext = function() {
 	}	
 	
 
-	return [anmSelect, eclmap, yt, hr, br, ts, img, img_small, ins, ins_notip,  variable, variable_notip, code, title, c, include, game, rawGame, html, script, tip, /*video,*/ flex, flex2, et, anm, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, repeatDuplicate, bugUnderflow, bugTypo, bugDesync, bugDoubleMenu, bugSpritesheet, bugYoumuCharge, bugSlowdown, bugUninitialisedVariable];
+	return [anmSelect, eclmap, yt, hr_major, hr_minor, br, ts, img, img_small, ins, ins_notip,  variable, variable_notip, code, title, c, include, game, rawGame, html, script, tip, /*video,*/ flex, flex2, anm, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, repeatDuplicate, bugUnderflow, bugTypo, bugDesync, bugDoubleMenu, bugSpritesheet, bugYoumuCharge, bugSlowdown, bugUninitialisedVariable];
 }
