@@ -29,7 +29,7 @@ function loadMarkdown(path) { //loads page
 	}
 
 	for (let i = 1; i < 25 ; i++) {
-		setTimeout(() => {  initMarkdown()}, 2.5 * i); // applies markdown after i-ms - will add some css fadein later for smoother transition
+		setTimeout(() => {  initMarkdown()}, 25 * i^1.1); // applies markdown after i-ms - will add some css fadein later for smoother transition
 	}
 	
 }
@@ -167,7 +167,7 @@ function initCustomColor() {
 	initNavColor();
 }
 
-function initNavColor() {
+function initNavColor() { // changes color to match the game's color
 	var elements = document.getElementsByClassName('hr_major'); // get all elements
 	for(var i = 0; i < elements.length; i++) {
 		elements[i].style.borderColor = colorRGB();

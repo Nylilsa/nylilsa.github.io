@@ -5,9 +5,9 @@
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
-/*html {
-	overflow-y: hidden;
-}*/
+html {
+	background: #000000;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
