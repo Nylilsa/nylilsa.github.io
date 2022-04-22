@@ -15,7 +15,7 @@ function initRemoveHash() { //removes #page=
 
 function loadMarkdown(path) { //loads page
 	window.location.href = window.location.origin + '/#page=' + path.replace(".md",""); //changes url
-	var xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
+	let xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
 	xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("mdcontent").innerHTML = this.responseText;
@@ -47,10 +47,10 @@ function initMarkdown() { //puts html in id 'test'
 
 function initScrollBar() {
     // Create the <style>
-    var style = document.createElement("style");
+    let style = document.createElement("style");
 
 	style.className = "scrollbars";
-    var css = "::-webkit-scrollbar {width: 8px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
+    let css = "::-webkit-scrollbar {width: 8px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
 	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB();+ "";
 	css += "; }";
 
@@ -161,6 +161,40 @@ function debug() {
 	console.log(html);
 }
 
+function initSidebarContent() {
+	const names = {
+		th06: ['Boss Attack Skip', 
+		'Bug 2', 'Bug 3'],
+		th07: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th08: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th09: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th95: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th10: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th11: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th12: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th125:['Bug 1', 'Bug 2', 'Bug 3'],
+		th128:['Bug 1', 'Bug 2', 'Bug 3'],
+		th13: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th14: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th143:['Bug 1', 'Bug 2', 'Bug 3'],
+		th15: ['Sagume Skip', 'Bug 2', 'Bug 3'],
+		th16: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th165:['Bug 1', 'Bug 2', 'Bug 3'],
+		th17: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync']
+	}
+
+	let identifiers = document.querySelectorAll("#pageBugs li ul");
+
+	for (let i = 0; i < identifiers.length; i++) { // does it games.length tim
+		thnr = identifiers[i].id.slice(5) // bugs-th10 ---> th10
+		let content = document.getElementById('bugs-'+thnr+'');
+		for (let j = 0; j < names[thnr].length; j++) {
+			content.innerHTML += '<li><a href="#page=bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')">'+names[thnr][j]+'</a></li>'; // appends html to variable 'content' 
+		}
+	}
+}
+
 
 function initCustomColor() {
 	initScrollBar();
@@ -168,8 +202,8 @@ function initCustomColor() {
 }
 
 function initNavColor() { // changes color to match the game's color
-	var elements = document.getElementsByClassName('hr_major'); // get all elements
-	for(var i = 0; i < elements.length; i++) {
+	let elements = document.getElementsByClassName('hr_major'); // get all elements
+	for(let i = 0; i < elements.length; i++) {
 		elements[i].style.borderColor = colorRGB();
 	}
 }
@@ -177,7 +211,8 @@ function initNavColor() { // changes color to match the game's color
 function init() {
 	loadMarkdown(initRemoveHash()); //loads in md 
 	initCustomColor();
-	debug();
+	initSidebarContent();
+	//debug();
 }
 
 window.addEventListener('hashchange', initCustomColor(), false); // if page is reloaded then execute function
