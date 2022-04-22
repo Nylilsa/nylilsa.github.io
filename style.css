@@ -209,7 +209,7 @@ a.article:hover {
     opacity: 1;
 }
 
-#mdcontent h1, #mdcontent h2, #mdcontent h3, #mdcontent p, #mdcontent li {
+#mdcontent h1, #mdcontent h2, #mdcontent h3, #mdcontent h4, #mdcontent p, #mdcontent li, th, tr {
     color:#FFFFFF;
     opacity: 0.9;
     font-family: sans-serif;

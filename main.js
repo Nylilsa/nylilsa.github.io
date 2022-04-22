@@ -123,9 +123,6 @@ function getGameFromURL() {
 	return gameName;
 }
 
-
-
-
 function parseMarkdown(markdownText) { //parses markdown - unused atm
 	const htmlText = markdownText
 		.replace(/\[no\]([^]*?)\[\/no\]/g, '<span style="color:#ff0000">~~$1~~</span>') //red color
@@ -163,24 +160,23 @@ function debug() {
 
 function initSidebarContent() {
 	const names = {
-		th06: ['Boss Attack Skip', 
-		'Bug 2', 'Bug 3'],
-		th07: ['Bug 1', 'Bug 2', 'Bug 3'],
-		th08: ['Bug 1', 'Bug 2', 'Bug 3'],
-		th09: ['Bug 1', 'Bug 2', 'Bug 3'],
-		th95: ['Bug 1', 'Bug 2', 'Bug 3'],
-		th10: ['Bug 1', 'Bug 2', 'Bug 3'],
-		th11: ['Bug 1', 'Bug 2', 'Bug 3'],
-		th12: ['Bug 1', 'Bug 2', 'Bug 3'],
-		th125:['Bug 1', 'Bug 2', 'Bug 3'],
-		th128:['Bug 1', 'Bug 2', 'Bug 3'],
-		th13: ['Bug 1', 'Bug 2', 'Bug 3'],
-		th14: ['Bug 1', 'Bug 2', 'Bug 3'],
-		th143:['Bug 1', 'Bug 2', 'Bug 3'],
-		th15: ['Sagume Skip', 'Bug 2', 'Bug 3'],
-		th16: ['Bug 1', 'Bug 2', 'Bug 3'],
-		th165:['Bug 1', 'Bug 2', 'Bug 3'],
-		th17: ['Bug 1', 'Bug 2', 'Bug 3'],
+		th06: ['Boss Attack Skip'],
+		th07: ['Merlin Glitch'],
+		th08: ['Pausing During Dialogue Desync'],
+		th09: ['nothing so far'],
+		th95: ['nothing so far'],
+		th10: ['MarisaB 3 Power Damage'],
+		th11: ['Negative Spell Bonus'],
+		th12: ['ReimuA Bomb Desync'],
+		th125:['nothing so far'],
+		th128:['nothing so far'],
+		th13: ['Incorrect boss position during spell practice', 'Misalignment of timer', 'Bug 3'],
+		th14: ['Underflow', 'Bulletless Kagerou', "Marisa's Lasers", 'Barrier Bug', 'Gohei Duplication', 'Benben Spell 2 Crash', 'Screen-flipping Effect Undo', "Item Duplication through Game's Speed"],
+		th143:['nothing so far'],
+		th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'No items after a Survival spell-card'],
+		th16: ['nothing so far'],
+		th165:['nothing so far'],
+		th17: ["YoumuEagle's Damage Cap"],
 		th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync']
 	}
 
