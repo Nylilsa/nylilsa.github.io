@@ -113,14 +113,10 @@ a:focus {
     background: #fff;
 }
 
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
+#sidebar ul li.active>a{
     color: #fff;
     background: #6d7fcc;
 }
-
-
-
 
 
 #sidebar ul li ul li a {
@@ -134,8 +130,7 @@ a[aria-expanded="true"] {
     background: #fff;
 }
 
-#sidebar ul li ul li.active>a,
-a[aria-expanded="true"] {
+#sidebar ul li ul li.active>a{
     color: #fff;
     background: #08101C;
 }
@@ -214,6 +209,23 @@ a.article:hover {
     opacity: 0.9;
     font-family: sans-serif;
 
+}
+
+th, tr {
+    text-align: center;
+    padding: 8px;
+    border: 0px;
+    font-weight: normal;
+}
+
+th {
+    border-bottom: 0.2px solid #233343;
+    padding-bottom: 2px !important;
+}
+
+.left {
+    text-align: left !important;
+    padding-left: 0px;
 }
 
 #mdcontent p, #mdcontent li {

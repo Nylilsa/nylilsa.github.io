@@ -158,12 +158,12 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 	// tableShottype is ID of div in showdown-ext.js
 	let content = document.getElementById('tableShottype');
 	if (input.length == 20) { //hsifs
-		str = '<table><thead><tr><th></th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td>Spring</td>';
+		str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left">Spring</td>';
 		for (let i = 0; i < input.length; i++) {
-			if (i == 4) {str += '</tr><tr><td>Summer</td>';}
-			if (i == 8) {str += '</tr><tr><td>Autumn</td>';}
-			if (i == 12) {str += '</tr><tr><td>Winter</td>';}
-			if (i == 16) {str += '</tr><tr><td>Extra</td>';}
+			if (i == 4) {str += '</tr><tr><td class="left">Summer</td>';}
+			if (i == 8) {str += '</tr><tr><td class="left">Autumn</td>';}
+			if (i == 12) {str += '</tr><tr><td class="left">Winter</td>';}
+			if (i == 16) {str += '</tr><tr><td class="left">Extra</td>';}
 			if (input[i] == 1) {
 				str += '<td>'+yes+'</td>';
 			} else {
@@ -174,10 +174,10 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 		content.innerHTML += str;
 	} 
 	if (input.length == 9) { //wbawc
-		str = '<table><thead><tr><th></th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td>Wolf</td>';
+		str = '<table><thead><tr><th class="left">Spirit</th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td class="left">Wolf</td>';
 		for (let i = 0; i < input.length; i++) {
-			if (i == 3) {str += '</tr><tr><td>Otter</td>';}
-			if (i == 6) {str += '</tr><tr><td>Eagle</td>';}
+			if (i == 3) {str += '</tr><tr><td class="left">Otter</td>';}
+			if (i == 6) {str += '</tr><tr><td class="left">Eagle</td>';}
 			if (input[i] == 1) {
 				str += '<td>'+yes+'</td>';
 			} else {
@@ -211,7 +211,7 @@ function initSidebarContent() {
 		th14: ['Underflow', 'Bulletless Kagerou', "Marisa's Lasers", 'Barrier Bug', 'Gohei Duplication', 'Benben Spell 2 Crash', 'Screen-flipping Effect Undo', "Item Duplication through Game's Speed"],
 		th143:['nothing so far'],
 		th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'No items after a Survival spell-card'],
-		th16: ['nothing so far'],
+		th16: ['(Sub-)shottypes Not Functioning'],
 		th165:['nothing so far'],
 		th17: ["YoumuEagle's Damage Cap"],
 		th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync']
