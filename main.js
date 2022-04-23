@@ -152,6 +152,43 @@ function setWindowTitleDirect(str) {
 	document.title = str;
 }
 
+function generateTable(input) { // generates tables of shottypes of HSifS and WBaWC
+	const yes = '✔️';
+	const no = '❌';
+	// tableShottype is ID of div in showdown-ext.js
+	let content = document.getElementById('tableShottype');
+	if (input.length == 20) { //hsifs
+		str = '<table><thead><tr><th></th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td>Spring</td>';
+		for (let i = 0; i < input.length; i++) {
+			if (i == 4) {str += '</tr><tr><td>Summer</td>';}
+			if (i == 8) {str += '</tr><tr><td>Autumn</td>';}
+			if (i == 12) {str += '</tr><tr><td>Winter</td>';}
+			if (i == 16) {str += '</tr><tr><td>Extra</td>';}
+			if (input[i] == 1) {
+				str += '<td>'+yes+'</td>';
+			} else {
+				str += '<td>'+no+'</td>';
+			}
+		}
+		str += '</tr></tbody></table>';
+		content.innerHTML += str;
+	} 
+	if (input.length == 9) { //wbawc
+		str = '<table><thead><tr><th></th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td>Wolf</td>';
+		for (let i = 0; i < input.length; i++) {
+			if (i == 3) {str += '</tr><tr><td>Otter</td>';}
+			if (i == 6) {str += '</tr><tr><td>Eagle</td>';}
+			if (input[i] == 1) {
+				str += '<td>'+yes+'</td>';
+			} else {
+				str += '<td>'+no+'</td>';
+			}
+		}
+		str += '</tr></tbody></table>';
+		content.innerHTML += str;
+	} 
+}
+
 function debug() {
     text = '## hello, **markdown**!',
     html = MD.makeHtml(text);
@@ -182,7 +219,7 @@ function initSidebarContent() {
 
 	let identifiers = document.querySelectorAll("#pageBugs li ul");
 
-	for (let i = 0; i < identifiers.length; i++) { // does it games.length tim
+	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
 		thnr = identifiers[i].id.slice(5) // bugs-th10 ---> th10
 		let content = document.getElementById('bugs-'+thnr+'');
 		for (let j = 0; j < names[thnr].length; j++) {
@@ -191,6 +228,13 @@ function initSidebarContent() {
 	}
 }
 
+function initSidebarColors() { // UNUSED - i want to make it so that there is a little bit of color next to the game name text
+	let identifiers = document.querySelectorAll("#pageBugs li ul");
+	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
+		height = document.querySelectorAll("a[href='#"+identifiers[i].id+"']")[0].clientHeight
+		console.log(height)
+	}
+}
 
 function initCustomColor() {
 	initScrollBar();

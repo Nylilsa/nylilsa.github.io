@@ -424,6 +424,15 @@ let ext = function() {
 		replace: "<span style='color: "+colors[125]+"'>DS</span>, <a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>UM</span>"
 	}	
 	
+	let table = {
+		type: "lang",
+		regex: /\[table=(.*?)\]/gim,
+		replace: function(match, content) {
+			setTimeout(() => {  generateTable(content)}, 50);
+			return "<div id='tableShottype'></div>";
+		}
+	}
 
-	return [anmSelect, eclmap, yt, hr_major, hr_minor, br, ts, img, img_small, ins, ins_notip,  variable, variable_notip, code, title, c, include, game, rawGame, html, script, tip, /*video,*/ flex, flex2, anm, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, repeatDuplicate, bugUnderflow, bugTypo, bugDesync, bugDoubleMenu, bugSpritesheet, bugYoumuCharge, bugSlowdown, bugUninitialisedVariable];
+
+	return [anmSelect, eclmap, yt, hr_major, hr_minor, br, ts, img, img_small, ins, ins_notip,  variable, variable_notip, code, title, c, include, game, rawGame, html, script, tip, /*video,*/ flex, flex2, anm, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, repeatDuplicate, bugUnderflow, bugTypo, bugDesync, bugDoubleMenu, bugSpritesheet, bugYoumuCharge, bugSlowdown, bugUninitialisedVariable, table];
 }
