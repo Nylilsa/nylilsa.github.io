@@ -37,7 +37,6 @@ let ext = function() {
 
 	let jank = document.createElement("textarea");
 	jank.classList.add("clipboard-jank");
-	let cnt = 0;
 	let code = {
 		type: "lang",
 		regex: /\[code\]([^]+?)\[\/code\]/g,
@@ -68,17 +67,6 @@ let ext = function() {
 		type: "lang",
 		regex: /\[c=(.*?)\]([^]*?)\[\/c\]/g,
 		replace: "<span style='color: $1'>$2</span>"
-	}
-
-	let replaceId = 0;
-	let include = {
-		type: "lang",
-		regex: /\[include=(.*?)\]/g,
-		replace: function(match, include) {
-			let id = replaceId++;
-			getInclude(include, id);
-			return "<div id='included-content-"+id+"'>Loading...</div>";
-		}
 	}
 
 	let colors = {
@@ -138,56 +126,6 @@ let ext = function() {
 		}
 	}
 
-	let ins = {
-		type: "lang",
-		regex: /\[ins=(.*?),(.*?)\]/g,
-		replace: function(match, num, game) {
-			let timeline = false;
-			if (game[0] == "t") {
-				timeline = true;
-				game = game.substring(1);
-			}
-			const ins = getOpcode(parseFloat(game), parseInt(num), timeline);
-			if (ins == null) return "`opcode\\_error\\_"+num+"`";
-			let tip = getOpcodeTip(ins, timeline);
-			return "<instr data-tip=\""+tip+"\">"+getOpcodeName(ins.number, ins.documented, timeline)+"</instr>";
-		}
-	}
-	let ins_notip = {
-		type: "lang",
-		regex: /\[ins_notip=(.*?),(.*?)\]/g,
-		replace: function(match, num, game) {
-			let timeline = false;
-			if (game[0] == "t") {
-				timeline = true;
-				game = game.substring(1);
-			}
-			const ins = getOpcode(parseFloat(game), parseInt(num), timeline);
-			if (ins == null) return "`opcode\\_error\\_"+num+"`";
-			return "<instr>"+getOpcodeName(ins.number, ins.documented, timeline)+"</instr>";
-		}
-	}
-
-	let variable = {
-		type: "lang",
-		regex: /\[var=(-?.*?),(.*?)\]/g,
-		replace: function(match, num, game) {
-			const variable = getVar(normalizeGameVersion(game), parseInt(num));
-			if (variable == null) return "<instr>variable\\_error\\_"+num+"</instr>";
-			let tip = getVarTip(variable);
-			return "<instr data-tip=\""+tip+"\">"+getVarName(num, variable.documented) +"</instr>";
-		}
-	}
-
-	let variable_notip = {
-		type: "lang",
-		regex: /\[var=(-?.*?),(.*?)\]/g,
-		replace: function(match, num, game) {
-			const variable = getVar(normalizeGameVersion(game), parseInt(num));
-			if (variable == null) return "<instr>variable\\_error\\_"+num+"</instr>";
-			return "<instr>"+getVarName(num, variable.documented)+"</instr>";
-		}
-	}
 
 	let tip = {
 		type: "lang",
@@ -195,40 +133,11 @@ let ext = function() {
 		replace: `<span data-tip='$1'>$2</span>`
 	}
 
-	async function requireEclmap(game, content, id) {
-		// this must always wait at least some time, to make sure that the function this was called from finished running...
-		await new Promise(resolve => setTimeout(resolve, 1));
-		game = parseFloat(game);
-		await loadEclmap(null, "?"+game, game);
-		const $replace = document.querySelector(`#require-eclmap-${id}`);
-		if ($replace != null) {
-			$replace.innerHTML = MD.makeHtml(content);
-		}
-	}
-
-	let eclmapId = 0;
-	let eclmap = {
-		type: "lang",
-		regex: /\[requireEclmap=([0-9]+?)\]([^]*?)\[\/requireEclmap\]/g,
-		replace: function(match, num, content) {
-			let id = eclmapId++;
-			requireEclmap(num, content, id);
-			return "<div id='require-eclmap-"+id+"'>Loading eclmap...</div>";
-		}
-	}
-
-	/*let eclTooltips = {
-		type: "lang",
-		filter: function(text) {
-			return addTooltips(text);
-		}
-	}*/
-
-	/*let video = {
+	let video = {
 		type: "lang",
 		regex: /\[video=(.*?), hratio=(.*?)\]/g,
 		replace: '<div class="fit-wrapper" data-video="$1"><div class="fit-wrapper2" style="padding-top: $2%"><div class="video-load"><div>Automatic video loading is <b>disabled</b>, in order to reduce network usage and loading times.<br>Click this to load the video.</div></div></div></div>'
-	}*/
+	}
 
 	let flex = {
 		type: "lang",
@@ -241,42 +150,6 @@ let ext = function() {
 		regex: /\[flex=(.*?)\]([^]*?)\[\/flex\]/g,
 		replace: '<div class="flexbox" style="align-items: $1">$2</div>'
 	}
-
-
-	async function requireAnm(name, content, id) {
-		// this must always wait at least some time, to make sure that the function this was called from finished running...
-		await new Promise(resolve => setTimeout(resolve, 1));
-		await getAnm(name);
-		const $replace = document.querySelector(`#require-anm-${id}`);
-		if ($replace != null) {
-			$replace.innerHTML = MD.makeHtml(content);
-		}
-	}
-
-	let anmId = 0;
-	let currentAnm = "";
-	let anmSelect = {
-		type: "lang",
-		regex: /\[requireAnm=(.*?)\]([^]*?)\[\/requireAnm\]/g,
-		replace: function(match, name, content) {
-			let id = anmId++;
-			currentAnm = name;
-			requireAnm(name, content, id);
-			return "<div id='require-anm-"+id+"'>Loading ANM...</div>";
-		}
-	}
-
-	let anm = {
-		type: "lang",
-		regex: /\[anm=(.*?),(.*?),(.*?)\]/g,
-		replace: function(match, anm, game, id) {
-			if (!anmCache[currentAnm])
-				return "anm-error";
-			
-			return `<div data-tip="<instr>${anm}</instr> - <instr>${id}</instr>, version ${game}" style="${getAnmImg(anmCache[currentAnm][anm][game], id)}"></div>`;
-		}
-	}
-
 
 	let yes = {
 		type: "lang",
@@ -367,62 +240,6 @@ let ext = function() {
 		regex: /\[sub\]([^]*?)\[\/sub\]/g,
 		replace: "<sub>$1</sub>"
 	}
-
-
-	
-	let repeatDuplicate = {
-		type: "lang",
-		regex: /\[repeatDuplicate\]/g,
-		replace: "This bug and/or similarities of which also appear in the following games: "
-	}
-
-	let bugUnderflow = {
-		type: "lang",
-		regex: /\[bugUnderflow\]/g,
-		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
-	}
-	
-	let bugTypo = {
-		type: "lang",
-		regex: /\[bugTypo\]/g,
-		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
-	}
-
-	let bugDesync = {
-		type: "lang",
-		regex: /\[bugDesync\]/g,
-		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
-	}
-
-	let bugDoubleMenu = {
-		type: "lang",
-		regex: /\[bugDoubleMenu\]/g,
-		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
-	}
-
-	let bugSpritesheet = {
-		type: "lang",
-		regex: /\[bugSpritesheet\]/g,
-		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
-	}
-
-	let bugYoumuCharge = {
-		type: "lang",
-		regex: /\[bugYoumuCharge\]/g,
-		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
-	}
-
-	let bugSlowdown = {
-		type: "lang",
-		regex: /\[bugSlowdown\]/g,
-		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
-	}	
-
-	let bugUninitialisedVariable = {
-		type: "lang",
-		regex: /\[bugUninitialisedVariable\]/g,
-		replace: "<span style='color: "+colors[125]+"'>DS</span>, <a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>UM</span>"
-	}	
 	
 	let table = {
 		type: "lang",
@@ -434,5 +251,5 @@ let ext = function() {
 	}
 
 
-	return [anmSelect, eclmap, yt, hr_major, hr_minor, br, ts, img, img_small, ins, ins_notip,  variable, variable_notip, code, title, c, include, game, rawGame, html, script, tip, /*video,*/ flex, flex2, anm, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, repeatDuplicate, bugUnderflow, bugTypo, bugDesync, bugDoubleMenu, bugSpritesheet, bugYoumuCharge, bugSlowdown, bugUninitialisedVariable, table];
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table];
 }

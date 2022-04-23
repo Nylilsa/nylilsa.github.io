@@ -173,6 +173,7 @@ ul.CTAs a {
     display: block;
     border-radius: 5px;
     margin-bottom: 5px;
+    padding-left: 10px;
 }
 
 a.download {
@@ -250,6 +251,55 @@ code {
 
 }
 
+
+.icon{
+    
+    /* Place the icon on the text baseline. */
+    position: center;
+    top: .125em;
+
+    /* Prevent the icon from shrinking inside a flex container. */
+    flex-shrink: 0;
+
+    /* Scale the icon to match the font-size of the parent element. */
+    height: 32px;
+    width: 32px;
+
+    /*
+     * If the icon is used on a link, which has a color transition,
+     * we can also use a transition on the fill value.
+    */
+   transition: fill .3s;
+   vertical-align: middle;
+
+}
+
+.youtube {
+    background-color: #CC1111;
+    color: #FFFFFF;
+}
+
+.github {
+    background-color: #222222;
+    color: #FFFFFF;
+}
+
+.icon-youtube {
+    background-image: url(brand-yt.svg);
+}
+
+.icon-github {
+    background-image: url(brand-github.svg);
+    transform: scale(1.5, 1.5);
+    height: 24px;
+    width: 24px;
+}
+
+.button-text {
+    padding-left: 13px;
+    text-align: right;
+
+}
 
 ::-webkit-scrollbar-track {
     background: #111111; 
