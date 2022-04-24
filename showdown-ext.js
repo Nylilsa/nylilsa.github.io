@@ -250,6 +250,12 @@ let ext = function() {
 		}
 	}
 
+	let box = {
+		type: "lang",
+		regex: /\[box=(.*?)\]([^]*?)\[\/box\]/g,
+		replace: "<div class='box' style='max-width:$1px'>$2</div>"
+	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table];
+
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box];
 }
