@@ -126,7 +126,6 @@ let ext = function() {
 		}
 	}
 
-
 	let tip = {
 		type: "lang",
 		regex: /\[tip=(.*?)\]([^]*?)\[\/tip\]/g,
