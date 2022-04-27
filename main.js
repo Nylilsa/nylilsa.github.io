@@ -209,7 +209,7 @@ function initSidebarContent() {
 		th95: ['nothing so far'],
 		th10: ['MarisaB 3 Power Damage'],
 		th11: ['Negative Spell Bonus'],
-		th12: ['ReimuA Bomb Desync'],
+		th12: ['ReimuA Bomb Desync', 'Score Display Overflow'],
 		th125:['nothing so far'],
 		th128:['nothing so far'],
 		th13: ['Incorrect boss position during spell practice', 'Misalignment of timer', 'Bug 3'],
