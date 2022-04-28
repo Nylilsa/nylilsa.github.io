@@ -218,7 +218,7 @@ function initSidebarContent() {
 		th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'No items after a Survival spell-card'],
 		th16: ['(Sub-)shottypes Not Functioning'],
 		th165:['nothing so far'],
-		th17: ["YoumuEagle's Damage Cap"],
+		th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation'],
 		th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync']
 	}
 
