@@ -223,14 +223,16 @@ function initSidebarContent() {
 	}
 
 	let identifiers = document.querySelectorAll("#pageBugs li ul");
-
+	let k = 0
 	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
 		thnr = identifiers[i].id.slice(5) // bugs-th10 ---> th10
 		let content = document.getElementById('bugs-'+thnr+'');
 		for (let j = 0; j < names[thnr].length; j++) {
 			content.innerHTML += '<li><a href="#page=bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')">'+names[thnr][j]+'</a></li>'; // appends html to variable 'content' 
+			k += 1
 		}
 	}
+	//console.log(k) // shows number of pages ive written so far
 }
 
 function initSidebarColors() { // UNUSED - i want to make it so that there is a little bit of color next to the game name text
