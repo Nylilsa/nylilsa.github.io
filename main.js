@@ -195,7 +195,7 @@ function invertHex(hex) {
 
 
 function debug() {
-    text = '## hello, **markdown**!',
+    const text = '## hello, **markdown**!',
     html = MD.makeHtml(text);
 	console.log(html);
 }
@@ -207,7 +207,7 @@ function initSidebarContent() {
 		th08: ['Pausing During Dialogue Desync'],
 		th09: ['nothing so far'],
 		th95: ['nothing so far'],
-		th10: ['MarisaB 3 Power Damage'],
+		th10: ['MarisaB 3 Power Damage', 'Bugged replays'],
 		th11: ['Negative Spell Bonus'],
 		th12: ['ReimuA Bomb Desync', 'Score Display Overflow'],
 		th125:['nothing so far'],
@@ -218,7 +218,7 @@ function initSidebarContent() {
 		th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'No items after a Survival spell-card'],
 		th16: ['(Sub-)shottypes Not Functioning'],
 		th165:['nothing so far'],
-		th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation'],
+		th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break'],
 		th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination']
 	}
 

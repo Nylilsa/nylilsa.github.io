@@ -233,6 +233,12 @@ th {
     padding-left: 0px;
 }
 
+.url {
+    color:#3366BB;
+    text-decoration: underline;
+}
+
+
 #mdcontent p, #mdcontent li {
     font-size: 0.9em;
 

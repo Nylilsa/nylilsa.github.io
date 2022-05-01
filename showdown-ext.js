@@ -231,7 +231,7 @@ let ext = function() {
 	let a = {
 		type: "lang",
 		regex: /\[a=(.*?)\]([^]*?)\[\/a\]/g,
-		replace: "<a href='$1' target='_blank'>$2</a>"
+		replace: "<a class='url' href='$1' target='_blank'>$2</a>"
 	}
 
 	let sub = {
