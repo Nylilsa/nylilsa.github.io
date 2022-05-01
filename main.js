@@ -212,14 +212,14 @@ function initSidebarContent() {
 		th12: ['ReimuA Bomb Desync', 'Score Display Overflow'],
 		th125:['nothing so far'],
 		th128:['nothing so far'],
-		th13: ['Incorrect boss position during spell practice', 'Misalignment of timer', 'Bug 3'],
+		th13: ['Incorrect boss position during spell practice'],//, 'Misalignment of timer'],
 		th14: ['Underflow', 'Bulletless Kagerou', "Marisa's Lasers", 'Barrier Bug', 'Gohei Duplication', 'Benben Spell 2 Crash', 'Screen-flipping Effect Undo', "Item Duplication through Game's Speed"],
 		th143:['nothing so far'],
 		th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'No items after a Survival spell-card'],
 		th16: ['(Sub-)shottypes Not Functioning'],
 		th165:['nothing so far'],
 		th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation'],
-		th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync']
+		th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination']
 	}
 
 	let identifiers = document.querySelectorAll("#pageBugs li ul");

@@ -217,6 +217,10 @@ th, tr {
     padding: 8px;
     border: 0px;
     font-weight: normal;
+    font-size: 14px;
+    color:#FFFFFF;
+    opacity: 0.9;
+    font-family: sans-serif;
 }
 
 th {
