@@ -179,6 +179,12 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 	} 
 }
 
+
+function highlightCode(content) {
+	return content.replace(/_/g, "\\_").replace(/\*/g, "\\*");
+}
+
+
 function invertHex(hex) {
 	return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
 }
@@ -190,6 +196,14 @@ function debug() {
 	console.log(html);
 }
 
+function show() { //debug - shows all elements in navbar if clicked on
+	let elements = document.getElementsByClassName('list-unstyled');
+	for(let i = 0; i < elements.length; i++) {
+		elements[i].classList.add("show");
+	}
+
+}
+
 function initSidebarContent() {
 	const names = {
 		th06: ['Boss Attack Skip'],
@@ -197,7 +211,7 @@ function initSidebarContent() {
 		th08: ['Pausing During Dialogue Desync'],
 		th09: ['nothing so far'],
 		th95: ['nothing so far'],
-		th10: ['MarisaB 3 Power Damage', 'Bugged replays'],
+		th10: ['MarisaB 3 Power Damage', 'Corrupt replays'],
 		th11: ['Negative Spell Bonus'],
 		th12: ['ReimuA Bomb Desync', 'Score Display Overflow'],
 		th125:['nothing so far'],
@@ -206,7 +220,7 @@ function initSidebarContent() {
 		th14: ['Underflow', 'Bulletless Kagerou', "Marisa's Lasers", 'Barrier Bug', 'Gohei Duplication', 'Benben Spell 2 Crash', 'Screen-flipping Effect Undo', "Item Duplication through Game's Speed"],
 		th143:['nothing so far'],
 		th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'No items after a Survival spell-card'],
-		th16: ['(Sub-)shottypes Not Functioning'],
+		th16: ['(Sub-)shottypes Not Functioning','Stage 5 Incorrect Spellcard name'],
 		th165:['nothing so far'],
 		th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break'],
 		th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination']

@@ -239,6 +239,7 @@ th {
 }
 
 
+
 #mdcontent p, #mdcontent li {
     font-size: 0.9em;
 
@@ -252,13 +253,15 @@ hr.hr_minor {
     border-color: #233343;
 }
 
-code {
-    font-size: 87.5%;
+.code, code {
+    font-size: 82.5%;
     background-color: #191919;
-    color: #7dadf5;
+    color: #85b6ff;
     word-break: break-word;
     font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-
+    display: inline-block;
+    white-space: pre-wrap;
+    padding: 4px 0px 0px 4px;
 }
 
 

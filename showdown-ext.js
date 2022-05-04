@@ -35,23 +35,10 @@ let ext = function() {
 		replace: '<img title="$1" style="cursor:pointer; margin: 5px;" onclick="window.open(\'$1\')" src="$1">'		
 	}
 
-	let jank = document.createElement("textarea");
-	jank.classList.add("clipboard-jank");
 	let code = {
 		type: "lang",
 		regex: /\[code\]([^]+?)\[\/code\]/g,
-		replace: function(match, content) {
-			let ret = "<hljs>"+highlightCode(content)+"</hljs>";
-			// This is some quality jank right here, caused by the fact that I could not find a way to make hljs not escape this html
-			ret = ret.replace(/&lt;instr data-tip=<span class="hljs-string">(.*?)<\/span>&gt;(.*?)&lt;\/instr&gt;/g, (match, tip, content) => {
-				return `<span data-tip=${tip.replace(/&amp;/g, "&")}>${content}</span>`
-			});
-			ret = ret.replace(/&lt;instr&gt;(.*?)&lt;\/instr&gt;/g, (match, content) => {
-				return `<span>${content}</span>`
-			});
-			ret = ret.replace(/\\\\/g, "\\");
-			return ret;
-		}
+		replace: "<pre><code class='code'>$1</code></pre>"
 	}
 
 	let title = {
