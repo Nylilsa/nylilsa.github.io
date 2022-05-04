@@ -7,41 +7,31 @@ let MD = new showdown.Converter({
 
 
 function initRemoveHash() { //removes #page=
-	let a = window.location.hash;
-	let b = a.replace("#page=","");
-	let c = b + ".md";
-	return c;
+	return window.location.hash.replace("#page=","")+ ".md";
 }
 
 function loadMarkdown(path) { //loads page
 	window.location.href = window.location.origin + '/#page=' + path.replace(".md",""); //changes url
 	let xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
 	xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("mdcontent").innerHTML = this.responseText;
-    }
-  };
-
-  if (path) { //if path exists, then load .md
-	  xhttp.open("GET", path, true);
-	  xhttp.send();
-
+    	if (this.readyState == 4 && this.status == 200) {
+    	document.getElementById("mdcontent").innerHTML = this.responseText;
+		initMarkdown(); //this works somehow
+		}
 	}
 
-	for (let i = 1; i < 25 ; i++) {
-		setTimeout(() => {  initMarkdown()}, 25 * i^1.1); // applies markdown after i-ms - will add some css fadein later for smoother transition
+	if (path) { //if path exists, then load .md
+		xhttp.open("GET", path, true);
+		xhttp.send();
 	}
-	
 }
 
 function initMarkdown() { //puts html in id 'test'
 	let input = document.getElementById("mdcontent").innerHTML; //is md text
 	let $nav = document.querySelector("#mdcontent");
 	let html = "";
-	//console.log(input);
 	html += MD.makeHtml(input);
 	$nav.innerHTML = html;
-	//console.log(html);
 	initCustomColor(); // changes color of divs based on page
 }
 
