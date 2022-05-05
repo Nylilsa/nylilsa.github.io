@@ -5,7 +5,6 @@ let MD = new showdown.Converter({
 	simpleLineBreaks: true
 });
 
-
 function initRemoveHash() { //removes #page=
 	return window.location.hash.replace("#page=","")+ ".md";
 }
@@ -41,7 +40,7 @@ function initScrollBar() {
 
 	style.className = "scrollbars";
     let css = "::-webkit-scrollbar {width: 8px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
-	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB();+ "";
+	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB(32);+ "";
 	css += "; }";
 
     // WebKit hack :
@@ -58,8 +57,11 @@ function initScrollBar() {
     return style.sheet;
 }
 
-function colorHex() {
-	let gameName = getGameFromURL();
+function colorHex(input) { // argument is optional
+	if (typeof input === 'undefined') { // checks if argument does not exist
+		input = getGameFromURL();
+	}
+
 	const gameColors = {
 		th06: '#FF0000',
 		th07: '#FF8ED2',
@@ -80,13 +82,16 @@ function colorHex() {
 		th17: '#190E0E',
 		th18: '#1DD294'
 	}
-	return gameColors[gameName] || "#888888"
+	return gameColors[input] || "#888888"
 }
 
+function colorRGB(add, game) {
+	let colourHex = colorHex(game);
 
-function colorRGB() {
-	const add = 32;
-	let colourHex = colorHex();
+	if (typeof game === 'undefined') { 
+		colourHex = colorHex();
+	}
+ 
 	let rHex = "0x" + colourHex.substring(1, 3); // 0xAB
 	let gHex = "0x" + colourHex.substring(3, 5); // 0xCD
 	let bHex = "0x" + colourHex.substring(5, 7); // 0xEF
@@ -98,6 +103,10 @@ function colorRGB() {
 	if (rDec > 255) {rDec = 255;}
 	if (gDec > 255) {gDec = 255;}
 	if (bDec > 255) {bDec = 255;}
+
+	if (rDec < 0) {rDec = 0;}
+	if (gDec < 0) {gDec = 0;}
+	if (bDec < 0) {bDec = 0;}
 
 	let output = "rgba("+rDec+", "+gDec+ ", "+bDec+", 1.0)"
 	//console.log(output);
@@ -180,35 +189,11 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 }
 
 
-function highlightCode(content) {
-	return content.replace(/_/g, "\\_").replace(/\*/g, "\\*");
-}
-
-
-function invertHex(hex) {
-	return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
-}
-
-
-function debug() {
-    const text = '## hello, **markdown**!',
-    html = MD.makeHtml(text);
-	console.log(html);
-}
-
-function show() { //debug - shows all elements in navbar if clicked on
-	let elements = document.getElementsByClassName('list-unstyled');
-	for(let i = 0; i < elements.length; i++) {
-		elements[i].classList.add("show");
-	}
-
-}
-
 function initSidebarContent() {
 	const names = {
 		th06: ['Boss Attack Skip'],
-		th07: ['Merlin Glitch'],
-		th08: ['Pausing During Dialogue Desync'],
+		th07: ['Merlin Glitch', 'Dialogue Pause Desync'],
+		th08: ['Dialogue Pause Desync'],
 		th09: ['nothing so far'],
 		th95: ['nothing so far'],
 		th10: ['MarisaB 3 Power Damage', 'Corrupt replays'],
@@ -231,12 +216,38 @@ function initSidebarContent() {
 	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
 		thnr = identifiers[i].id.slice(5) // bugs-th10 ---> th10
 		let content = document.getElementById('bugs-'+thnr+'');
-		for (let j = 0; j < names[thnr].length; j++) {
-			content.innerHTML += '<li><a href="#page=bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')">'+names[thnr][j]+'</a></li>'; // appends html to variable 'content' 
+
+		content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+0+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+0+'.md\')" style="border-color: '+colorRGB(-32, thnr)+'; border-top-width: 1px;">'+names[thnr][0]+'</a></div></li>'; // appends html to variable 'content' 
+		k += 1
+
+		for (let j = 1; j < names[thnr].length; j++) {
+			content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')" style="border-color: '+colorRGB(-32, thnr)+';">'+names[thnr][j]+'</a></div></li>'; // appends html to variable 'content' 
 			k += 1
 		}
 	}
 	//console.log(k) // shows number of pages ive written so far
+}
+
+function highlightCode(content) {
+	return content.replace(/_/g, "\\_").replace(/\*/g, "\\*");
+}
+
+function invertHex(hex) {
+	return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
+}
+
+function debug() {
+    const text = '## hello, **markdown**!',
+    html = MD.makeHtml(text);
+	console.log(html);
+}
+
+function show() { //debug - shows all elements in navbar if clicked on
+	let elements = document.getElementsByClassName('list-unstyled');
+	for(let i = 0; i < elements.length; i++) {
+		elements[i].classList.add("show");
+	}
+
 }
 
 function initSidebarColors() { // UNUSED - i want to make it so that there is a little bit of color next to the game name text
@@ -255,7 +266,7 @@ function initCustomColor() {
 function initNavColor() { // changes color to match the game's color
 	let elements = document.getElementsByClassName('hr_major'); // get all elements
 	for(let i = 0; i < elements.length; i++) {
-		elements[i].style.borderColor = colorRGB();
+		elements[i].style.borderColor = colorRGB(32);
 	}
 }
 
@@ -267,7 +278,6 @@ function init() {
 }
 
 window.addEventListener('hashchange', initCustomColor(), false); // if page is reloaded then execute function
-
 
 init();
 

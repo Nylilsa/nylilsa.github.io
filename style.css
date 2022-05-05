@@ -264,6 +264,17 @@ hr.hr_minor {
     padding: 4px 0px 0px 4px;
 }
 
+.left-border-color a {
+    border: solid 4px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.left-border-color a:hover {
+    border-left-width: 12px;
+}
+
 
 .icon{
     
