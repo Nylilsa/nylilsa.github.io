@@ -95,6 +95,7 @@ a:focus {
 #sidebar ul.components {
     padding: 20px 0;
     border-bottom: 1px solid #47748b;
+    border-top: 1px solid #47748b;
 }
 
 #sidebar ul p {
@@ -110,11 +111,11 @@ a:focus {
 
 #sidebar ul li a:hover {
     color: #7386D5;
-    background: #fff;
+    background: #000;
 }
 
 #sidebar ul li.active>a{
-    color: #fff;
+    color: #000;
     background: #6d7fcc;
 }
 
@@ -126,18 +127,14 @@ a:focus {
 }
 
 #sidebar ul li ul li a:hover {
-    color: #FF0000;
-    background: #fff;
+    color: #7386D5;
+    background: #000;
 }
 
 #sidebar ul li ul li.active>a{
     color: #fff;
     background: #08101C;
 }
-
-
-
-
 
 a[data-toggle="collapse"] {
     position: relative;
@@ -253,7 +250,7 @@ hr.hr_minor {
     border-color: #233343;
 }
 
-.code, code {
+.code {
     font-size: 82.5%;
     background-color: #191919;
     color: #85b6ff;
@@ -309,11 +306,11 @@ hr.hr_minor {
 }
 
 .icon-youtube {
-    background-image: url(brand-yt.svg);
+    background-image: url(assets/brand-yt.svg);
 }
 
 .icon-github { /*so jank*/
-    background-image: url(brand-github.svg);
+    background-image: url(assets/brand-github.svg);
     transform: scale(1.5, 1.5);
     height: 24px;
     width: 24px;

@@ -79,10 +79,11 @@ function colorHex(input) { // argument is optional
 		th15: '#6A47BE',
 		th16: '#176E0E',
 		th165: '#AE11D5',
-		th17: '#190E0E',
+		th17: '#190E0E', //original color, but way too dark
+		//th17: '#361C1C', //replacement color
 		th18: '#1DD294'
 	}
-	return gameColors[input] || "#888888"
+	return gameColors[input] || "#47748B"
 }
 
 function colorRGB(add, game) {
@@ -217,7 +218,7 @@ function initSidebarContent() {
 		thnr = identifiers[i].id.slice(5) // bugs-th10 ---> th10
 		let content = document.getElementById('bugs-'+thnr+'');
 
-		content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+0+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+0+'.md\')" style="border-color: '+colorRGB(-32, thnr)+'; border-top-width: 1px;">'+names[thnr][0]+'</a></div></li>'; // appends html to variable 'content' 
+		content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+0+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+0+'.md\')" style="border-color: '+colorRGB(-32, thnr)+'; border-top-width: 1px;">'+names[thnr][0]+'</a></div></li>';
 		k += 1
 
 		for (let j = 1; j < names[thnr].length; j++) {
