@@ -83,7 +83,7 @@ function colorHex(input) { // argument is optional
 		//th17: '#361C1C', //replacement color
 		th18: '#1DD294'
 	}
-	return gameColors[input] || "#47748B"
+	return gameColors[input] || "#47748B";
 }
 
 function colorRGB(add, game) {
@@ -109,7 +109,7 @@ function colorRGB(add, game) {
 	if (gDec < 0) {gDec = 0;}
 	if (bDec < 0) {bDec = 0;}
 
-	let output = "rgba("+rDec+", "+gDec+ ", "+bDec+", 1.0)"
+	let output = "rgba("+rDec+", "+gDec+ ", "+bDec+", 1.0)";
 	//console.log(output);
 	return output;
 }
@@ -145,7 +145,7 @@ function parseMarkdown(markdownText) { //parses markdown - unused atm
 		//.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
 		//.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
 		//.replace(/\n$/gim, '<br />')
-	return htmlText.trim()
+	return htmlText.trim();
 }
 
 function setWindowTitleDirect(str) {
@@ -213,17 +213,17 @@ function initSidebarContent() {
 	}
 
 	let identifiers = document.querySelectorAll("#pageBugs li ul");
-	let k = 0
+	let k = 0;
 	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
 		thnr = identifiers[i].id.slice(5) // bugs-th10 ---> th10
 		let content = document.getElementById('bugs-'+thnr+'');
 
 		content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+0+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+0+'.md\')" style="border-color: '+colorRGB(-32, thnr)+'; border-top-width: 1px;">'+names[thnr][0]+'</a></div></li>';
-		k += 1
+		k += 1;
 
 		for (let j = 1; j < names[thnr].length; j++) {
 			content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')" style="border-color: '+colorRGB(-32, thnr)+';">'+names[thnr][j]+'</a></div></li>'; // appends html to variable 'content' 
-			k += 1
+			k += 1;
 		}
 	}
 	//console.log(k) // shows number of pages ive written so far
@@ -254,8 +254,8 @@ function show() { //debug - shows all elements in navbar if clicked on
 function initSidebarColors() { // UNUSED - i want to make it so that there is a little bit of color next to the game name text
 	let identifiers = document.querySelectorAll("#pageBugs li ul");
 	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
-		height = document.querySelectorAll("a[href='#"+identifiers[i].id+"']")[0].clientHeight
-		console.log(height)
+		height = document.querySelectorAll("a[href='#"+identifiers[i].id+"']")[0].clientHeight;
+		console.log(height);
 	}
 }
 
