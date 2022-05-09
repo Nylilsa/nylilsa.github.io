@@ -192,10 +192,10 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 
 function initSidebarContent() {
 	const names = {
-		th06: ['Boss Attack Skip'],
+		th06: ['Boss Attack Skip', 'Dialogue Pause Desync', 'Bomb Desync'],
 		th07: ['Merlin Glitch', 'Dialogue Pause Desync'],
-		th08: ['Dialogue Pause Desync'],
-		th09: ['nothing so far'],
+		th08: ['Dialogue Pause Desync', 'Unintended Last Spell Trigger'],
+		th09: ['Stage Skip'],
 		th95: ['nothing so far'],
 		th10: ['MarisaB 3 Power Damage', 'Corrupt replays'],
 		th11: ['Negative Spell Bonus'],
