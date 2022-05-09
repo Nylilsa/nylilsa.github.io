@@ -39,7 +39,7 @@ function initScrollBar() {
     let style = document.createElement("style");
 
 	style.className = "scrollbars";
-    let css = "::-webkit-scrollbar {width: 8px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
+    let css = "::-webkit-scrollbar {width: 4px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
 	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB(32);+ "";
 	css += "; }";
 
@@ -211,6 +211,7 @@ function initSidebarContent() {
 		th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break'],
 		th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination']
 	}
+	const colDecrease = -16;
 
 	let identifiers = document.querySelectorAll("#pageBugs li ul");
 	let k = 0;
@@ -218,11 +219,11 @@ function initSidebarContent() {
 		thnr = identifiers[i].id.slice(5) // bugs-th10 ---> th10
 		let content = document.getElementById('bugs-'+thnr+'');
 
-		content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+0+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+0+'.md\')" style="border-color: '+colorRGB(-32, thnr)+'; border-top-width: 1px;">'+names[thnr][0]+'</a></div></li>';
+		content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+0+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+0+'.md\')" style="border-color: '+colorRGB(colDecrease, thnr)+'; border-top-width: 1px;">'+names[thnr][0]+'</a></div></li>';
 		k += 1;
 
 		for (let j = 1; j < names[thnr].length; j++) {
-			content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')" style="border-color: '+colorRGB(-32, thnr)+';">'+names[thnr][j]+'</a></div></li>'; // appends html to variable 'content' 
+			content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j]+'</a></div></li>'; // appends html to variable 'content' 
 			k += 1;
 		}
 	}
