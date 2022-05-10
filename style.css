@@ -75,6 +75,7 @@ a:focus {
     overflow-y: scroll;
     top: 0;
     bottom: 0;
+    z-index: 2;
 }
 
 #sidebar2 {
@@ -309,15 +310,23 @@ hr.hr_minor {
     color: #FFFFFF;
 }
 
+.icon {
+    height: 24px;
+    width: 24px;
+    transform: scale(1.5);
+}
+
 .icon-youtube {
     background-image: url(assets/brand-yt.svg);
 }
 
-.icon-github { /*so jank*/
+.icon-github {
     background-image: url(assets/brand-github.svg);
-    transform: scale(1.5, 1.5);
-    height: 24px;
-    width: 24px;
+}
+
+.icon-chevron {
+    background-image: url(assets/chevron-down.svg);
+    transform: scale(1.5) rotate(180deg);
 }
 
 .button-text {
@@ -347,7 +356,27 @@ hr.hr_minor {
     background-color: #123840;
 }
 
+#bookmark {
+    position: fixed;
+    color: black;
+    opacity: 0.5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 1;
+}
 
+#button {
+    background-color: #8386E5;
+    border-top-right-radius: 4em;
+    border-top-left-radius: 4em;
+    height: 6em;
+    margin-left: -4em;
+    width: 7em;
+    transform: rotate(90deg);
+}
 
 
 ::-webkit-scrollbar-track {
@@ -379,7 +408,7 @@ hr.hr_minor {
         border-width: 2px;
     }
     p, #mdcontent p, #mdcontent li, tr, th, td {
-        line-height: 2.0em;
+        line-height: 2.1em;
         font-size: 2vw;
     }
     #mdcontent h1 {

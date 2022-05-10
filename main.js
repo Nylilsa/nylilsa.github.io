@@ -192,7 +192,7 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 
 function initSidebarContent() {
 	const names = {
-		th06: ['Boss Attack Skip', 'Dialogue Pause Desync', 'Bomb Desync'],
+		th06: ['Boss Attack Skip', 'Dialogue Pause Desync', 'Bomb Pause Desync'],
 		th07: ['Merlin Glitch', 'Dialogue Pause Desync'],
 		th08: ['Dialogue Pause Desync', 'Unintended Last Spell Trigger'],
 		th09: ['Stage Skip'],
