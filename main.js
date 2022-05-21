@@ -5,10 +5,6 @@ let MD = new showdown.Converter({
 	simpleLineBreaks: true
 });
 
-function initRemoveHash() { //removes #page=
-	return window.location.hash.replace("#page=","")+ ".md";
-}
-
 function loadMarkdown(path) { //loads page
 	window.location.href = window.location.origin + '/#page=' + path.replace(".md",""); //changes url
 	let xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
@@ -27,38 +23,6 @@ function loadMarkdown(path) { //loads page
 	//if button is clicked, then sidebar (on mobile!) is closed automatically.
 	document.getElementById('sidebar').className = 'sidebar-class-desktop';
 
-}
-
-function initMarkdown() { //puts html in id 'test'
-	let input = document.getElementById("mdcontent").innerHTML; //is md text
-	let $nav = document.querySelector("#mdcontent");
-	let html = "";
-	html += MD.makeHtml(input);
-	$nav.innerHTML = html;
-	initCustomColor(); // changes color of divs based on page
-}
-
-function initScrollBar() {
-    // Create the <style>
-    let style = document.createElement("style");
-
-	style.className = "scrollbars";
-    let css = "::-webkit-scrollbar {width: 4px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
-	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB(32);+ "";
-	css += "; }";
-
-    // WebKit hack :
-    style.appendChild(document.createTextNode(css));
-
-	// if class exists, do not append but instead change color
-	if (document.getElementsByClassName('scrollbars').length >= 1) {
-		document.getElementsByClassName('scrollbars')[0].innerHTML = css;
-		return;
-	}
-    // Add the <style> element to the page
-
-    document.body.appendChild(style);
-    return style.sheet;
 }
 
 function colorHex(input) { // argument is optional
@@ -127,31 +91,6 @@ function getGameFromURL() {
 	return gameName;
 }
 
-function parseMarkdown(markdownText) { //parses markdown - unused atm
-	const htmlText = markdownText
-		.replace(/\[no\]([^]*?)\[\/no\]/g, '<span style="color:#ff0000">~~$1~~</span>') //red color
-		.replace(/\[yes\]([^]*?)\[\/yes\]/g, '<span style="color:#00ff00">$1</span>') //green color
-		.replace(/\~\~([^]*?)\~\~/g, '<span style="text-decoration: line-through">$1</span>') //strikethrough
-		.replace(/\[specs\]/g, 'Specifications')
-		.replace(/\[what\]/g, 'What happens')
-		.replace(/\[how\]/g, 'How it happens')
-		.replace(/\[why\]/g, 'Why it happens')
-		.replace(/\[br\]/g, '<br>')
-		.replace(/\[hr\]/g, '<hr>')
-		.replace(/\[links\]/g, 'Links')
-		.replace(/\[rpy\]/g, 'Replays')
-		.replace(/\[vid\]/g, 'Videos')
-		.replace(/^## (.*$)/gim, '<h2>$1</h2>')
-		.replace(/^# (.*$)/gim, '<h1>$1</h1>')
-		.replace(/\[title=(.*?)\]/gim, function(match, content) {setWindowTitleDirect(content);return "";}) //no idea why it works but ty priw
-		//.replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
-		//.replace(/\*(.*)\*/gim, '<i>$1</i>')
-		//.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
-		//.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
-		//.replace(/\n$/gim, '<br />')
-	return htmlText.trim();
-}
-
 function setWindowTitleDirect(str) {
 	document.title = str;
 }
@@ -193,6 +132,91 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 	} 
 }
 
+function toggleSidebar() { //changes class of sidebar upon button press
+	const sidebar = document.getElementById('sidebar'); 
+	if (sidebar.className == "sidebar-class-mobile") {
+		sidebar.className = 'sidebar-class-desktop';
+		return;
+	}
+	if (sidebar.className == "sidebar-class-desktop") {
+		sidebar.className = 'sidebar-class-mobile';
+	}
+	
+}
+
+function resize() { //changes property of sidebar button and sidebar class
+	const ratio = window.innerWidth / window.innerHeight;
+	const sidebar = document.getElementById('sidebar'); 
+	const hidden = document.getElementsByClassName('hidden'); //for toggling visibility of button (should only appear on mobile)
+	const maxAspectRatio =  13 / 16;
+
+	if (ratio <= maxAspectRatio) {
+		for(let i = 0; i < hidden.length; i++) {
+			hidden[i].style.visibility = 'visible';
+		}
+	} else {
+		sidebar.className = "sidebar-class-desktop";
+	
+		for(let i = 0; i < hidden.length; i++) {
+			hidden[i].style.visibility = 'hidden';
+		}
+	};
+};
+
+///////////////////// UNUSED /////////////////////
+
+function parseMarkdown(markdownText) { //parses markdown - unused atm
+	const htmlText = markdownText
+		.replace(/\[no\]([^]*?)\[\/no\]/g, '<span style="color:#ff0000">~~$1~~</span>') //red color
+		.replace(/\[yes\]([^]*?)\[\/yes\]/g, '<span style="color:#00ff00">$1</span>') //green color
+		.replace(/\~\~([^]*?)\~\~/g, '<span style="text-decoration: line-through">$1</span>') //strikethrough
+		.replace(/\[specs\]/g, 'Specifications')
+		.replace(/\[what\]/g, 'What happens')
+		.replace(/\[how\]/g, 'How it happens')
+		.replace(/\[why\]/g, 'Why it happens')
+		.replace(/\[br\]/g, '<br>')
+		.replace(/\[hr\]/g, '<hr>')
+		.replace(/\[links\]/g, 'Links')
+		.replace(/\[rpy\]/g, 'Replays')
+		.replace(/\[vid\]/g, 'Videos')
+		.replace(/^## (.*$)/gim, '<h2>$1</h2>')
+		.replace(/^# (.*$)/gim, '<h1>$1</h1>')
+		.replace(/\[title=(.*?)\]/gim, function(match, content) {setWindowTitleDirect(content);return "";}) //no idea why it works but ty priw
+		//.replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
+		//.replace(/\*(.*)\*/gim, '<i>$1</i>')
+		//.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
+		//.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
+		//.replace(/\n$/gim, '<br />')
+	return htmlText.trim();
+}
+
+function highlightCode(content) {
+	return content.replace(/_/g, "\\_").replace(/\*/g, "\\*");
+}
+
+function invertHex(hex) {
+	if (hex[0] == '#') {
+		hex = hex.substring(1);
+	}
+	return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
+}
+
+///////////////////// DEBUG /////////////////////
+
+function debug() {
+    const text = '## hello, **markdown**!',
+    html = MD.makeHtml(text);
+	console.log(html);
+}
+
+function show() { //debug - shows all elements in navbar if clicked on
+	let elements = document.getElementsByClassName('list-unstyled');
+	for(let i = 0; i < elements.length; i++) {
+		elements[i].classList.add("show");
+	}
+}
+
+///////////////////// INIT /////////////////////
 
 function initSidebarContent() {
 	const names = {
@@ -234,76 +258,48 @@ function initSidebarContent() {
 	//console.log(k) // shows number of pages ive written so far
 }
 
-function toggleSidebar() { //changes class of sidebar upon button press
-	const sidebar = document.getElementById('sidebar'); 
-	if (sidebar.className == "sidebar-class-mobile") {
-		sidebar.className = 'sidebar-class-desktop';
-		return;
-	}
-	if (sidebar.className == "sidebar-class-desktop") {
-		sidebar.className = 'sidebar-class-mobile';
-	}
-	
+
+function initMarkdown() { //puts html in id 'test'
+	let input = document.getElementById("mdcontent").innerHTML; //is md text
+	let $nav = document.querySelector("#mdcontent");
+	let html = "";
+	html += MD.makeHtml(input);
+	$nav.innerHTML = html;
+	initCustomColor(); // changes color of divs based on page
 }
 
-function resize() { //changes property of sidebar button and sidebar class
-	const ratio = window.innerWidth / window.innerHeight;
-	const sidebar = document.getElementById('sidebar'); 
-	const hidden = document.getElementsByClassName('hidden'); //for toggling visibility of button (should only appear on mobile)
-	const maxAspectRatio =  13 / 16;
+function initScrollBar() {
+    // Create the <style>
+    let style = document.createElement("style");
 
-	if (ratio <= maxAspectRatio) {
-		for(let i = 0; i < hidden.length; i++) {
-			hidden[i].style.visibility = 'visible';
-		}
-	} else {
-		sidebar.className = "sidebar-class-desktop";
-	
-		for(let i = 0; i < hidden.length; i++) {
-			hidden[i].style.visibility = 'hidden';
-		}
-	};
-};
+	style.className = "scrollbars";
+    let css = "::-webkit-scrollbar {width: 4px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
+	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB(32);+ "";
+	css += "; }";
+
+    // WebKit hack :
+    style.appendChild(document.createTextNode(css));
+
+	// if class exists, do not append but instead change color
+	if (document.getElementsByClassName('scrollbars').length >= 1) {
+		document.getElementsByClassName('scrollbars')[0].innerHTML = css;
+		return;
+	}
+    // Add the <style> element to the page
+
+    document.body.appendChild(style);
+    return style.sheet;
+}
+
+
+function initRemoveHash() { //removes #page=
+	return window.location.hash.replace("#page=","")+ ".md";
+}
 
 function initResize() { // calls every time window changes
 	window.onresize = resize;
 	resize();
 };
-
-
-
-function highlightCode(content) {
-	return content.replace(/_/g, "\\_").replace(/\*/g, "\\*");
-}
-
-function invertHex(hex) {
-	if (hex[0] == '#') {
-		hex = hex.substring(1);
-	}
-	return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
-}
-
-function debug() {
-    const text = '## hello, **markdown**!',
-    html = MD.makeHtml(text);
-	console.log(html);
-}
-
-function show() { //debug - shows all elements in navbar if clicked on
-	let elements = document.getElementsByClassName('list-unstyled');
-	for(let i = 0; i < elements.length; i++) {
-		elements[i].classList.add("show");
-	}
-
-}
-
-function initSidebarColors() { // UNUSED - i want to make it so that there is a little bit of color next to the game name text
-	let identifiers = document.querySelectorAll("#pageBugs li ul");
-	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
-		height = document.querySelectorAll("a[href='#"+identifiers[i].id+"']")[0].clientHeight;
-		console.log(height);
-	}
-}
 
 function initCustomColor() {
 	initScrollBar();
