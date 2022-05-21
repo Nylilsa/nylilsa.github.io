@@ -356,17 +356,8 @@ hr.hr_minor {
     background-color: #123840;
 }
 
-#bookmark {
-    position: fixed;
-    color: black;
-    opacity: 0.5;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    z-index: 1;
-}
+
+
 
 #button {
     background-color: #8386E5;
@@ -383,12 +374,35 @@ hr.hr_minor {
     background: #111111; 
 }
 
+#header {
+    margin-top: -5vmax;
+    height: 5vmax;
+    position: fixed;
+    width: 100%;
+    background-color: #121c28;
+    z-index: 1;
+    transition: all 0.3s;
+    margin-left: 250px;
+    border-bottom: 1px solid #7376D5;
+}
+
+#header h3 {
+    text-align: center;
+    padding-top: 8px;
+    color: #fafafa;
+}
+
+#header button {
+    position: absolute;
+    height: inherit;
+    aspect-ratio: 1 / 1;
+}
 
 /* ---------------------------------------------------
-    MEDIAQUERIES
+MEDIAQUERIES
 ----------------------------------------------------- */
 
-@media (max-aspect-ratio: 7 / 8), (max-width: 500px) { /*(max-width: 750px) and */
+@media (max-aspect-ratio: 13 / 16), (max-width: 500px) { /*(max-width: 750px) and */
     #sidebar, #sidebar2  {
         margin-left: -250px;
     }
@@ -399,10 +413,15 @@ hr.hr_minor {
         display: none;
     }
     #header {
-        opacity: 0.5;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    #header button {
+        position: fixed;
     }
     #content {
         padding: 3vmax;
+        margin-top: 5vw;
     }
     hr {
         border-width: 2px;

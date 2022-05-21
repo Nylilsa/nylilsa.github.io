@@ -230,11 +230,21 @@ function initSidebarContent() {
 	//console.log(k) // shows number of pages ive written so far
 }
 
+function toggleSidebar() {
+	let sidebar = document.getElementById('sidebar'); 
+	console.log("you pressed the button");
+}
+
+
+
 function highlightCode(content) {
 	return content.replace(/_/g, "\\_").replace(/\*/g, "\\*");
 }
 
 function invertHex(hex) {
+	if (hex[0] == '#') {
+		hex = hex.substring(1);
+	}
 	return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
 }
 
@@ -270,6 +280,8 @@ function initNavColor() { // changes color to match the game's color
 	for(let i = 0; i < elements.length; i++) {
 		elements[i].style.borderColor = colorRGB(32);
 	}
+	let mobile = document.getElementById('header');
+	mobile.style.borderColor = colorRGB(-16);
 }
 
 function init() {
