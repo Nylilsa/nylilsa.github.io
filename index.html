@@ -25,16 +25,17 @@
 <body>
 
 <div id="header">
-	<button onclick="toggleSidebar()">e</button>
+	<button onclick="toggleSidebar()">temp button</button>
 	<h3>Nylilsa's Github Page</h3>
 </div>
 
 <div class="wrapper">
 
 
-<div id="sidebar" class='sidebar-class' aria-expanded="false">
+<div id="sidebar" class='sidebar-class-desktop' aria-expanded="false">
 	<div class="sidebar-header">
 		<h3>Nylilsa's Github Page</h3>
+		<button class="hidden" onclick="toggleSidebar()">exit</button>
 	</div>
 
 	<ul class="list-unstyled components">
@@ -172,7 +173,7 @@
 		</li>
 	</ul>
 </div>
-<div id="sidebar2" class="sidebar-class"> <!--  purpose is to act as a width. lol -->
+<div id="sidebar2" class="sidebar-class-desktop"> <!--  purpose is to act as a width. lol -->
 </div>
 
 <div id="content">

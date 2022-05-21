@@ -398,12 +398,17 @@ hr.hr_minor {
     aspect-ratio: 1 / 1;
 }
 
+.sidebar-class-mobile {
+    max-width: 100%  !important;
+    width: 100%;
+}
+
 /* ---------------------------------------------------
 MEDIAQUERIES
 ----------------------------------------------------- */
 
 @media (max-aspect-ratio: 13 / 16), (max-width: 500px) { /*(max-width: 750px) and */
-    #sidebar, #sidebar2  {
+    .sidebar-class-desktop  {
         margin-left: -250px;
     }
     #sidebar.active {

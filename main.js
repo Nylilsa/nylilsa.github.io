@@ -23,6 +23,10 @@ function loadMarkdown(path) { //loads page
 		xhttp.open("GET", path, true);
 		xhttp.send();
 	}
+
+	//if button is clicked, then sidebar (on mobile!) is closed automatically.
+	document.getElementById('sidebar').className = 'sidebar-class-desktop';
+
 }
 
 function initMarkdown() { //puts html in id 'test'
@@ -230,10 +234,41 @@ function initSidebarContent() {
 	//console.log(k) // shows number of pages ive written so far
 }
 
-function toggleSidebar() {
-	let sidebar = document.getElementById('sidebar'); 
-	console.log("you pressed the button");
+function toggleSidebar() { //changes class of sidebar upon button press
+	const sidebar = document.getElementById('sidebar'); 
+	if (sidebar.className == "sidebar-class-mobile") {
+		sidebar.className = 'sidebar-class-desktop';
+		return;
+	}
+	if (sidebar.className == "sidebar-class-desktop") {
+		sidebar.className = 'sidebar-class-mobile';
+	}
+	
 }
+
+function resize() { //changes property of sidebar button and sidebar class
+	const ratio = window.innerWidth / window.innerHeight;
+	const sidebar = document.getElementById('sidebar'); 
+	const hidden = document.getElementsByClassName('hidden'); //for toggling visibility of button (should only appear on mobile)
+	const maxAspectRatio =  13 / 16;
+
+	if (ratio <= maxAspectRatio) {
+		for(let i = 0; i < hidden.length; i++) {
+			hidden[i].style.visibility = 'visible';
+		}
+	} else {
+		sidebar.className = "sidebar-class-desktop";
+	
+		for(let i = 0; i < hidden.length; i++) {
+			hidden[i].style.visibility = 'hidden';
+		}
+	};
+};
+
+function initResize() { // calls every time window changes
+	window.onresize = resize;
+	resize();
+};
 
 
 
@@ -288,6 +323,7 @@ function init() {
 	loadMarkdown(initRemoveHash()); //loads in md 
 	initCustomColor();
 	initSidebarContent();
+	initResize();
 	//debug();
 }
 
