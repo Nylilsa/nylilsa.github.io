@@ -148,7 +148,7 @@ function resize() { //changes property of sidebar button and sidebar class
 	const ratio = window.innerWidth / window.innerHeight;
 	const sidebar = document.getElementById('sidebar'); 
 	const hidden = document.getElementsByClassName('hidden'); //for toggling visibility of button (should only appear on mobile)
-	const maxAspectRatio =  13 / 16;
+	const maxAspectRatio =  14 / 16; // must be same as aspect ration in style.css
 
 	if (ratio <= maxAspectRatio) {
 		for(let i = 0; i < hidden.length; i++) {
@@ -241,7 +241,7 @@ function initSidebarContent() {
 	}
 	const colDecrease = -16;
 
-	let identifiers = document.querySelectorAll("#pageBugs li ul");
+	const identifiers = document.querySelectorAll("#pageBugs li ul");
 	let k = 0;
 	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
 		thnr = identifiers[i].id.slice(5) // bugs-th10 ---> th10
@@ -251,13 +251,12 @@ function initSidebarContent() {
 		k += 1;
 
 		for (let j = 1; j < names[thnr].length; j++) {
-			content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j]+'</a></div></li>'; // appends html to variable 'content' 
+			content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j]+'</a></div></li>'; 
 			k += 1;
 		}
 	}
 	//console.log(k) // shows number of pages ive written so far
 }
-
 
 function initMarkdown() { //puts html in id 'test'
 	let input = document.getElementById("mdcontent").innerHTML; //is md text
@@ -270,7 +269,7 @@ function initMarkdown() { //puts html in id 'test'
 
 function initScrollBar() {
     // Create the <style>
-    let style = document.createElement("style");
+    const style = document.createElement("style");
 
 	style.className = "scrollbars";
     let css = "::-webkit-scrollbar {width: 4px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";

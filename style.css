@@ -324,9 +324,18 @@ hr.hr_minor {
     background-image: url(assets/brand-github.svg);
 }
 
-.icon-chevron {
-    background-image: url(assets/chevron-down.svg);
-    transform: scale(1.5) rotate(180deg);
+.icon-hamburger {
+    background-image: url(assets/hamburger.svg);
+    transform: scale(1);
+    /*makes it white*/
+    filter: invert(100%) sepia(0%) saturate(7496%) hue-rotate(160deg) brightness(101%) contrast(102%); 
+}
+
+.icon-cross {
+    background-image: url(assets/cross.svg);
+    transform: scale(1);
+    /*makes it white*/
+    filter: invert(100%) sepia(0%) saturate(7496%) hue-rotate(160deg) brightness(101%) contrast(102%); 
 }
 
 .button-text {
@@ -388,7 +397,7 @@ hr.hr_minor {
 
 #header h3 {
     text-align: center;
-    padding-top: 8px;
+    padding-top: 0px;
     color: #fafafa;
 }
 
@@ -403,11 +412,18 @@ hr.hr_minor {
     width: 100%;
 }
 
+button {
+    background-color: inherit;
+    border-width: 0;
+    padding: 0;
+    top: -1px;
+}
+
 /* ---------------------------------------------------
 MEDIAQUERIES
 ----------------------------------------------------- */
 
-@media (max-aspect-ratio: 13 / 16), (max-width: 500px) { /*(max-width: 750px) and */
+@media (max-aspect-ratio: 14 / 16), (max-width: 500px) { /*(max-width: 750px) and */
     .sidebar-class-desktop  {
         margin-left: -250px;
     }
