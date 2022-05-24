@@ -6,7 +6,7 @@ let MD = new showdown.Converter({
 });
 
 function loadMarkdown(path) { //loads page
-	window.location.href = window.location.origin + '/#page=' + path.replace(".md",""); //changes url
+	window.location.href = window.location.origin + '/#/' + path.replace(".md",""); //changes url
 	let xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
 	xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
@@ -83,10 +83,10 @@ function colorRGB(add, game) {
 }
 
 function getGameFromURL() {
-	let url = window.location.hash; // is #page=bugs/th18/0
+	let url = window.location.hash; // is #/bugs/th18/0
 	let gameName;
-	if (url.slice(0, 11) == "#page=bugs/") { // prevents page from not loading stuff if it is not true
-		gameName = /\#page\=bugs\/(.*?)\//i.exec(url)[1]; // ddc
+	if (url.slice(0, 6) == "#/bugs") { // prevents page from not loading stuff if it is not true
+		gameName = /\#\/bugs\/(.*?)\//i.exec(url)[1]; // ddc
 	}
 	return gameName;
 }
@@ -251,11 +251,11 @@ function initSidebarContent() {
 		thnr = identifiers[i].id.slice(5) // bugs-th10 ---> th10
 		let content = document.getElementById('bugs-'+thnr+'');
 
-		content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+0+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+0+'.md\')" style="border-color: '+colorRGB(colDecrease, thnr)+'; border-top-width: 1px;">'+names[thnr][0]+'</a></div></li>';
+		content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+0+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+0+'.md\')" style="border-color: '+colorRGB(colDecrease, thnr)+'; border-top-width: 1px;">'+names[thnr][0]+'</a></div></li>';
 		k += 1;
 
 		for (let j = 1; j < names[thnr].length; j++) {
-			content.innerHTML += '<li><div class="left-border-color"><a href="#page=bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j]+'</a></div></li>'; 
+			content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j]+'</a></div></li>'; 
 			k += 1;
 		}
 	}
@@ -312,8 +312,8 @@ function initAutoHideMenu() { // hides menu when scrolling
 }
 
 
-function initRemoveHash() { //removes #page=
-	return window.location.hash.replace("#page=","")+ ".md";
+function initRemoveHash() { //removes #/
+	return window.location.hash.replace("#/","")+ ".md";
 }
 
 function initResize() { // calls every time window changes
