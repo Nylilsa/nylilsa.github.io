@@ -393,9 +393,10 @@ hr.hr_minor {
     transition: all 0.3s;
     margin-left: 250px;
     border-bottom: 1px solid #7376D5;
+    display: table;
 }
 
-#header h4 {
+#header h5 {
     text-align: center;
     padding-top: 0px;
     color: #fafafa;
