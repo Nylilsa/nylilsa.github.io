@@ -160,8 +160,12 @@ function resize() { //changes property of sidebar button and sidebar class
 		for(let i = 0; i < hidden.length; i++) {
 			hidden[i].style.visibility = 'hidden';
 		}
-	};
-};
+	}
+}
+
+
+
+
 
 ///////////////////// UNUSED /////////////////////
 
@@ -291,6 +295,23 @@ function initScrollBar() {
 }
 
 
+function initAutoHideMenu() { // hides menu when scrolling
+    const menu = document.getElementById('header');
+
+    let previousScrollTop = document.scrollingElement.scrollTop;
+
+    document.addEventListener('scroll', function () {
+        if (document.scrollingElement.scrollTop < previousScrollTop) { // if scroll upwards
+            menu.style.transform = 'translateY(0px)';
+        } else {
+            menu.style.transform = 'translateY(-60px)';
+        }
+
+        previousScrollTop = document.scrollingElement.scrollTop;
+    }, { passive: true });
+}
+
+
 function initRemoveHash() { //removes #page=
 	return window.location.hash.replace("#page=","")+ ".md";
 }
@@ -319,6 +340,7 @@ function init() {
 	initCustomColor();
 	initSidebarContent();
 	initResize();
+	initAutoHideMenu()
 	//debug();
 }
 

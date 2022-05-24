@@ -326,7 +326,7 @@ hr.hr_minor {
 
 .icon-hamburger {
     background-image: url(assets/hamburger.svg);
-    transform: scale(1);
+    transform: scale(0.8);
     /*makes it white*/
     filter: invert(100%) sepia(0%) saturate(7496%) hue-rotate(160deg) brightness(101%) contrast(102%); 
 }
