@@ -444,7 +444,7 @@ MEDIAQUERIES
         padding: 3vmax;
         margin-top: 5vw;
     }
-    hr {
+    /*hr {
         border-width: 2px;
     }
     p, #mdcontent p, #mdcontent li, tr, th, td {
@@ -463,5 +463,5 @@ MEDIAQUERIES
     table {
         width: 100%;
         height: 2.0em;
-    }
+    }*/
 }
