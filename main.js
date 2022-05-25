@@ -313,7 +313,11 @@ function initAutoHideMenu() { // hides menu when scrolling
 
 
 function initRemoveHash() { //removes #/
-	return window.location.hash.replace("#/","")+ ".md";
+	let c = window.location.hash.replace("#/","")+ ".md";
+	if (c == '.md') {
+		return 'home.md';
+	} 
+	return c;
 }
 
 function initResize() { // calls every time window changes
