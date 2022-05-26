@@ -1,9 +1,9 @@
-[title=Glitch-hunting]
+[title=MoF: Extra RTA guide]
 # Glitch-hunting
 
 [hr_major]  
 
-This guide focuses on glitch-hunting in the Touhou Project games.
+This guide focuses on speedrunning the Extra stage of Mountain of Faith.
 
 
 ### idk where to put this
