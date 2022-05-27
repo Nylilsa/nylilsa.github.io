@@ -357,6 +357,10 @@ hr.hr_minor {
     margin: 10px 20px 10px 20px;
 }
 
+td {
+    padding-left: 4px;
+    padding-right: 4px;
+}
 
 .invisible {
     opacity: 0.0;
