@@ -26,8 +26,8 @@ let ext = function() {
 	}
 	let img = {
 		type: "lang",
-		regex: /\[img=(.*?), hratio=(.*?)\]/g,
-		replace: '<div class="fit-wrapper"><div class="fit-wrapper2" style="padding-bottom: $2%"><img title="$1"" src="$1"></div></div>'
+		regex: /\[img=(.*?), hratio=(.*?), other=(.*?)\]/g,
+		replace: '<div class="fit-wrapper"><img style="padding-bottom: $2%; $3" class="fit-image" title="$1" src="$1"></div>'
 	}
 	let img_small = {
 		type: "lang",

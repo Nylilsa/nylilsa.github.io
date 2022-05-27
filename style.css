@@ -366,7 +366,9 @@ hr.hr_minor {
     background-color: #123840;
 }
 
-
+.fit-image {
+    max-width: 100%;
+}
 
 
 #button {

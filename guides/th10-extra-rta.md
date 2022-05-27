@@ -109,13 +109,17 @@ In summary,
 
 **If you are more advanced**, then you have to enter with 4.95 power. The route is similar to the intermediate route, but it varies in some aspects.
 
-Firstly, right before the boss there are three yellow fairies. Those fairies drop 1.00 power when killed. It is possible to bomb right before the boss appears. With a well-timed bomb you are able to enter with 4.95 power and also deal some damage to Suwako during the dialogue ! But the timing is tight. Personally, I use the background music to determine when I have to bomb. However, this may vary depending on the consistency of your mid-boss section. Also, practising with a music cue in Practice Mode may not be very nice to work with because the music doesn't align. Below is an image that compares the HP if a pre-bomb is done vs if a pre-bomb is not done.
-[img=guides/th10-extra-rta-prebomb.png, hratio=2]
+Firstly, right before the boss there are three yellow fairies. Those fairies drop 1.00 power when killed. It is possible to bomb right before the boss appears. With a well-timed bomb you are able to enter with 4.95 power and also deal some damage to Suwako during the dialogue ! But the timing is tight. Personally, I use the background music to determine when I have to bomb. However, this may vary depending on the consistency of your mid-boss section. Also, practising with a music cue in Practice Mode may not be very nice to work with because the music doesn't align.
 
+[img=guides/th10-extra-rta-prebomb.png, hratio=2, other= ]
 
-On spell 3, you have to misdirect at least two of the "rings" Suwako shoots. Those rings are aimed at the player. The best way to juke them is to sit slightly on top of Suwako's head until she has shot 2 of those rings. See the image below for a demonstration.
+The image above compares the HP if a pre-bomb is done vs if a pre-bomb is not done.
 
-[img=guides/th10-extra-rta-s3.png, hratio=2]
+On spell 3, you have to misdirect at least two of the "rings" Suwako shoots. Those rings are aimed at the player. The best way to juke them is to sit slightly on top of Suwako's head until she has shot 2 of those rings. 
+
+[img=guides/th10-extra-rta-s3.png, hratio=2, other= ]
+
+In the image, you can see that Marisa is slightly above the bullets Suwako spawns. Doing this for two waves is enough to misdirect enough bullets to the top.
 
 Everything else is from the intermediate route.
 
@@ -149,15 +153,23 @@ Everything else is from the intermediate route.
 **This section is meant for if you are an advanced player.** These tricks described below may help you save about 2-3 seconds off of your current run if you haven't done them yet.
 
 #### Doppler-effect
+[hr_minor]
 
-The doppler-effect strategy is very simply. You need to be at the bottom of the screen when the attack starts, then move upward when the boss is able to take damage.
+The doppler-effect strategy is very simple. You need to be at the bottom of the screen when the attack starts, then move upward when the boss is able to take damage.
 When shooting, the bullets are fired at a constant rate. Also, the bullets do not instantly hit the boss - they need some time to travel from the player to the enemy. You can manipulate how much damage per second your player character deals. If you move upward while shooting, there are more missiles hitting the boss per second so the Damage Per Second output is greater. If you move downward while shooting, the Damage Per Second output is lesser. This is greatly applied in MoF RTA.
 When the boss is able to take damage, you can move upward as that will finish the attack slightly faster by a couple of frames per attack. During the transition (so the time between the non-spell and spell, or spell and non-spell) the boss is usually invincible for about a second or sometimes more. In the period the boss isn't taking any damage, you have to move down as that will allow you to do the doppler strategy again for the subsequent attack.
  
 
 #### Normal-alignment
+[hr_minor]
 
-The normal-alignment strategy is a lot harder to do more. It involves being exactly in the middle of the screen, at the coordinate ``x = 0``. When you are hitting a boss, some of your lasers may be orange-coloured. If they are coloured, it means that the lasers are dealing damage to the boss. Most of the time only 2 out of 3 lasers hit the boss. But with the normal-alignment strategy it is possible for 3 out of 3 lasers to deal damage. This can be done in various ways:
+The normal-alignment strategy is a lot harder to do more. It involves being exactly in the middle of the screen, at the coordinate ``x = 0``. When you are hitting a boss, some of your lasers may be orange-coloured. If they are coloured, it means that the lasers are dealing damage to the boss. Most of the time only 2 out of 3 lasers hit the boss. But with the normal-alignment strategy it is possible for 3 out of 3 lasers to deal damage. 
+
+[img=guides/th10-extra-rta-normal-alignment.png, hratio=2, other=max-height: 400px;]
+
+On the left of the image, only 2 out of 3 lasers hit the boss, and on the right side 3 out of 3 lasers hit the boss.
+
+This can be done in various ways:
 
 1. By dying
 
@@ -165,32 +177,37 @@ The normal-alignment strategy is a lot harder to do more. It involves being exac
 
 3. By going all the way to the right of the screen. Then, while focussed, move for two frames to the left. Then while unfocussed, move to the left until you are exactly in the centre.
 
-(Note: you move at 5 units/frame when unfocused, and 2 units/frame when focused when moving vertically or horizontally. The left/right side are at x = -184 and x = 184 respectively hence moving 2 frames while focussed)
+(Note: you move at ``5`` units/frame when unfocused, and ``2`` units/frame when focused when moving vertically or horizontally. The left/right side are at ``x = -184`` and ``x = 184`` respectively hence moving ``2`` frames while focussed)
 
 MoF extra gives the player enough lives, so there is no need to do 2 and 3. You can always suicide right before a certain boss section in order to be normally aligned.
 
 Now here comes the hard part: moving around.
 
-Since you want to be at ``x = 0`` as much as possible, you have to make sure to **NEVER move diagonally**. It may sound easy to never move diagonally, but if you ever want to travel in a square very quickly you may find yourself accidentally moving diagonally for a frame or two when switcing from vertical to horizontal movement (or vice versa). By moving diagonally, you are moving at a non-integer x-velocity. meaning that you will have to move diagonally again in order to be normally-aligned again. 
+Since you want to be at ``x = 0`` as much as possible, you have to make sure to **NEVER move diagonally**. It may sound easy to never move diagonally, but if you ever want to travel in a square very quickly you may find yourself accidentally moving diagonally for a frame or two when switching from vertical to horizontal movement (or vice versa). By moving diagonally, you are moving at a non-integer x-velocity. meaning that you will have to move diagonally again in order to be normally-aligned again. 
+
+On top of this, the boss likes to move around as well, but once an attack ends the boss *usually* goes back to ``x = 0``. This is important, because it means you can do the normal-alignment strategy again on the attack where the boss is exactly at ``x = 0``.
 
 Plus, you also have to be good at frame-perfect taps. Sometimes, you are only 5 units away from ``x = 0``, meaning you have to move horizontally for 1 frame. 
 
-#### Shot timing manipulation
-
-**THIS TRICK IS TAS-ONLY**, but I will still describe this because I found out about this tech when I watched a TAS. Furthermore, maybe someone in the future is able to implement this for RTA usage.
-
-If you press Z for a frame, then Marisa shoots a row of missiles for exactly ``20`` frames. She shoots a row of missiles every ``3`` frames, meaning every ``20`` frames she shoots ``6`` rows of missiles
-
-[]
-[]
-[]
-[tools/links]
-[]
+It's quite hard to do this strategy, especially when combined with the doppler-effect strategy, but it is worth it if you are going to optimise MoF Extra RTA.
 
 
+## Tools / Links
+[hr_major]
+
+[a=https://livesplit.org/downloads/]livesplit[/a] - Used for keeping track of your time.
+[a=https://maribelhearn.com/tools#vpatch]vpatch[/a] - Used for setting your own custom screen resolution when playing on non-full-screen mode.
+[a=hhttps://github.com/ack7139/thprac/releases]thprac[/a] - Great Practice tool that allows you to warp to certain stage sections and to set your power. 
 
 
+## Special thanks
+[hr_major]
 
+mantatail for having written [a=https://www.speedrun.com/touhou_fuujinroku_mountain_of_faith/guide/vuqkq]a guide about MoF RTA[/a] that made me speedrun the game.
 
+ZUN for having made this game with such a fun and broken shottype.
 
+...and [a=guides/you.jpg]you[/a] for having read through the entire guide !
 
+Good luck with your future runs !
+\- Nylilsa
