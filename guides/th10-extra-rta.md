@@ -1,5 +1,5 @@
 [title=MoF: Extra RTA guide]
-# Glitch-hunting
+# Mountain of Faith - Extra RTA guide
 
 [hr_major]  
 
@@ -209,5 +209,5 @@ ZUN for having made this game with such a fun and broken shottype.
 
 ...and [a=guides/you.jpg]you[/a] for having read through the entire guide !
 
-Good luck with your future runs !
+Happy speedrunning !
 \- Nylilsa
