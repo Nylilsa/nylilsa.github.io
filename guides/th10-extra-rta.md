@@ -171,11 +171,11 @@ On the left of the image, only 2 out of 3 lasers hit the boss, and on the right 
 
 This can be done in various ways:
 
-1. By dying
++  By dying
 
-2. By going all the way to the left of the screen. Then, while focussed, move for two frames to the right. Then while unfocussed, move to the right until you are exactly in the centre.
++  By going all the way to the left of the screen. Then, while focussed, move for two frames to the right. Then while unfocussed, move to the right until you are exactly in the centre.
 
-3. By going all the way to the right of the screen. Then, while focussed, move for two frames to the left. Then while unfocussed, move to the left until you are exactly in the centre.
++  By going all the way to the right of the screen. Then, while focussed, move for two frames to the left. Then while unfocussed, move to the left until you are exactly in the centre.
 
 (Note: you move at ``5`` units/frame when unfocused, and ``2`` units/frame when focused when moving vertically or horizontally. The left/right side are at ``x = -184`` and ``x = 184`` respectively hence moving ``2`` frames while focussed)
 
