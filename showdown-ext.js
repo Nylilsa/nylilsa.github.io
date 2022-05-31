@@ -231,7 +231,7 @@ let ext = function() {
 		type: "lang",
 		regex: /\[table=(.*?)\]/gim,
 		replace: function(match, content) {
-			setTimeout(() => {  generateTable(content)}, 50);
+			setTimeout(() => {  generateTable(content)}, 1);
 			return "<div id='tableShottype'></div>";
 		}
 	}
@@ -245,14 +245,22 @@ let ext = function() {
 	let test1 = {
 		type: "lang",
 		regex: /\[test1\]([^]*?)\[\/test1\]/g,
-		replace: "<div class='testtest' style='background-color: pink;'>$1</div>"
+		replace: "<div class='testtest' style='background-color: green;'>$1</div>"
 	}
 
-	let test2 = {
+	let execute = {
 		type: "output",
-		regex: /\[test2\]([^]*?)\[\/test2\]/g,
-		replace: "<div style='background-color: lime;'>$1</div>"
+		regex: /\[execute\]/g,
+		replace: function() {
+			setTimeout(() => {
+				const elements = document.getElementsByClassName('testtest');
+				for (let i = 0; i < elements.length; i++) {
+					elements[i].closest('td').style.backgroundColor = 'lime';
+				}
+			}, 1);
+			return "";
+		}
 	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, test1, test2];
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, test1, execute];
 }

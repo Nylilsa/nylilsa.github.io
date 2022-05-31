@@ -99,9 +99,11 @@ Below, I summarise the best results per shottype of the video
 |:---------:|:-------:|:-------:|:-------:|:-------:|
 | 0.00-0.95 |         |         |         |         |
 | 1.00-1.95 |    10   |         |         |         |
-| 2.00-2.95 |    10   |    10   |         |         |
-| 3.00-3.95 |    9    |    10   |    9    |         |
-| 4.00-5.00 |    9    |   [test1]10[/test1]   |    [test2]10[/test2]   |    9    |
+| 2.00-2.95 |    10   |    [test1]10[/test1]   |         |         |
+| 3.00-3.95 |    9    |    [test1]10[/test1]   |    9    |         |
+| 4.00-5.00 |    9    |   [test1]10[/test1]   |    [test1]10[/test1]   |    9    |
+
+[execute]
 
 [youmuw vs youmuo] 
 
