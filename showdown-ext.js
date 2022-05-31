@@ -230,9 +230,10 @@ let ext = function() {
 	let table = {
 		type: "lang",
 		regex: /\[table=(.*?)\]/gim,
+		// delay must exist for at least 1ms
 		replace: function(match, content) {
 			setTimeout(() => {  generateTable(content)}, 1);
-			return "<div id='tableShottype'></div>";
+			return "<div id='table-shottype'></div>";
 		}
 	}
 
@@ -242,25 +243,26 @@ let ext = function() {
 		replace: "<div class='box' style='max-width:$1px'>$2</div>"
 	}
 
-	let test1 = {
+	let hl = {
 		type: "lang",
-		regex: /\[test1\]([^]*?)\[\/test1\]/g,
-		replace: "<div class='testtest' style='background-color: green;'>$1</div>"
+		regex: /\[hl\]([^]*?)\[\/hl\]/g,
+		replace: "<div class='highlight-child'>$1</div>"
 	}
 
 	let execute = {
 		type: "output",
 		regex: /\[execute\]/g,
+		// delay must exist for at least 1ms
 		replace: function() {
 			setTimeout(() => {
-				const elements = document.getElementsByClassName('testtest');
+				const elements = document.getElementsByClassName('highlight-child');
 				for (let i = 0; i < elements.length; i++) {
-					elements[i].closest('td').style.backgroundColor = 'lime';
+					elements[i].closest('td').classList.add('highlight');
 				}
 			}, 1);
 			return "";
 		}
 	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, test1, execute];
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl, execute];
 }

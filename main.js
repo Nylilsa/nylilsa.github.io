@@ -100,15 +100,17 @@ function setWindowTitleDirect(str) {
 function generateTable(input) { // generates tables of shottypes of HSifS and WBaWC
 	const yes = '✔️';
 	const no = '❌';
-	// tableShottype is ID of div in showdown-ext.js
-	let content = document.getElementById('tableShottype');
+	// table-shottype is ID of div in showdown-ext.js
+	let content = document.getElementById('table-shottype');
 	if (input.length == 20) { //hsifs
 		str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left">Spring</td>';
 		for (let i = 0; i < input.length; i++) {
-			if (i == 4) {str += '</tr><tr><td class="left">Summer</td>';}
-			if (i == 8) {str += '</tr><tr><td class="left">Autumn</td>';}
-			if (i == 12) {str += '</tr><tr><td class="left">Winter</td>';}
-			if (i == 16) {str += '</tr><tr><td class="left">Extra</td>';}
+			switch (i) {
+				case 4: {str += '</tr><tr><td class="left">Summer</td>'; break;}
+				case 8: {str += '</tr><tr><td class="left">Autumn</td>'; break;}
+				case 12: {str += '</tr><tr><td class="left">Winter</td>'; break;}
+				case 16: {str += '</tr><tr><td class="left">Extra</td>'; break;}
+			}
 			if (input[i] == 1) {
 				str += '<td>'+yes+'</td>';
 			} else {
@@ -121,8 +123,10 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 	if (input.length == 9) { //wbawc
 		str = '<table><thead><tr><th class="left">Spirit</th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td class="left">Wolf</td>';
 		for (let i = 0; i < input.length; i++) {
-			if (i == 3) {str += '</tr><tr><td class="left">Otter</td>';}
-			if (i == 6) {str += '</tr><tr><td class="left">Eagle</td>';}
+			switch (i) {
+				case 3: {str += '</tr><tr><td class="left">Otter</td>'; break;}
+				case 6: {str += '</tr><tr><td class="left">Eagle</td>'; break;}
+			}
 			if (input[i] == 1) {
 				str += '<td>'+yes+'</td>';
 			} else {
