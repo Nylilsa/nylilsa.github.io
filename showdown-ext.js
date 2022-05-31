@@ -242,7 +242,17 @@ let ext = function() {
 		replace: "<div class='box' style='max-width:$1px'>$2</div>"
 	}
 
+	let test1 = {
+		type: "lang",
+		regex: /\[test1\]([^]*?)\[\/test1\]/g,
+		replace: "<div class='testtest' style='background-color: pink;'>$1</div>"
+	}
 
+	let test2 = {
+		type: "output",
+		regex: /\[test2\]([^]*?)\[\/test2\]/g,
+		replace: "<div style='background-color: lime;'>$1</div>"
+	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box];
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, test1, test2];
 }

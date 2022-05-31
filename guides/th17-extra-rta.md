@@ -46,7 +46,7 @@ If you have a special tokens during a hyper, then the hyper gives you 5 tokens i
 
 ### Hypers
 
-When collecting 5 tokens, the player activates a hyper. A little bar appears beneath the player. If the bar runs out, then you get 2 or 5 tokens in return. If you get hit or if you try to bomb during a hyper, then the hyper is manually broken, which clears some bullets around the player and gives you some invincibility.
+When collecting 5 tokens, the player activates a hyper. A little bar appears beneath the player. If the bar runs out, then you get 2 or 5 tokens in return. If you get hit or if you try to bomb during a hyper, then the hyper is manually broken, which clears some bullets around the player and gives you some invincibility. Also, if you shoot during the hyper, then you will get PIV or Point Item Value. This is related to score, and since score is not relevant when speedrunning I won't go into much detail about it.
 
 If you pick up 3 animal tokens of the same type, then **your hyper has a special ability**. This differs per shottype and per animal token.
 Also, the **special hyper's duration is affected by your shottype**. For example, if YoumuOtter has 3 wolf tokens in its hyper, then the hyper's duration is very short. But if YoumuWolf has 3 wolf tokens in its hyper, then the hyper's duration is longer than YoumuOtter's.
@@ -75,13 +75,35 @@ Youmu: Youmu's Eagle Hyper shoots out small waves from where Youmu is at that de
 
 [hr_minor]
 
+(also, the beast should reflect on the shottype's spirit animal, so MarisaWolf's performance is better on a single target due to strong missiles, whereas MarisaEagle is better on stage sections due to its better lasers.)
+
 That should cover the main mechanics of tokens and hypers !
 
 ### Strongest shottype evaluation
 
+I will first distinguish between the best player character, then I will tell about the best spirit animal.
 
+There are three character you could choose from: Reimu, Marisa and Youmu.
 
-[youmuw vs youmuo]
+There are a number of factors I take into account when determining the best shottype in WBaWC. The factors go as follows:
+
+1. The shottype's average Damage per Second of the shottype (abbreviated to DPS);
+2. The shottype's Bomb;
+3. The shottype's Wolf and Eagle hypers.
+
+When comparing the DPS on a boss, it's found out that [a=https://youtu.be/Q7CN9ZGAiHY?t=575]Youmu is the best shot for DPS[/a]. 
+
+Below, I summarise the best results per shottype of the video
+
+|   No-Focus   | Laser 1 | Laser 2 | Laser 3 | Laser 4 |
+|:---------:|:-------:|:-------:|:-------:|:-------:|
+| 0.00-0.95 |         |         |         |         |
+| 1.00-1.95 |    10   |         |         |         |
+| 2.00-2.95 |    10   |    10   |         |         |
+| 3.00-3.95 |    9    |    10   |    9    |         |
+| 4.00-5.00 |    9    |   [test1]10[/test1]   |    [test2]10[/test2]   |    9    |
+
+[youmuw vs youmuo] 
 
 
 [advanced tech:]
@@ -105,3 +127,4 @@ That should cover the main mechanics of tokens and hypers !
 
 [Tools]
 [Special thanks]
+https://youtu.be/Q7CN9ZGAiHY?t=575

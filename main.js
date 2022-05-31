@@ -1,8 +1,10 @@
 let MD = new showdown.Converter({
 	extensions: [ext],
-	tables: true,
+	noHeaderId: true,
+	openLinksInNewWindow: true,
+	simpleLineBreaks: true,
 	strikethrough: true,
-	simpleLineBreaks: true
+	tables: true
 });
 
 function loadMarkdown(path) { //loads page
