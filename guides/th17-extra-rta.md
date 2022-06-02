@@ -96,15 +96,19 @@ When comparing the DPS on a boss, it's found out that [a=https://youtu.be/Q7CN9Z
 Below, I summarise the best results per shottype of the video
 
 
+| Spirit | Reimu | Marisa | Youmu |
+|:---:|:---:|:---:|:---:|
+| Wolf | 17.13s | 16.00s | 11.56s |
+| Otter | 20.56s | 18.78s | 10.10s |
+| Eagle | 19.05s | 17.75s | 12.25s |
 
-|   No-Focus   | Laser 1 | Laser 2 | Laser 3 | Laser 4 |
-|:---------:|:-------:|:-------:|:-------:|:-------:|
-| 0.00-0.95  |         |         |   [execute]      |         |
-| 1.00-1.95 |    10   |         |         |         |
-| 2.00-2.95 |    10   |    [hl]10[/hl]   |         |         |
-| 3.00-3.95 |    9    |    [hl]10[/hl]   |    9    |         |
-| 4.00-5.00 |    9    |   [hl]10[/hl]   |    [hl]10[/hl]   |    9    |
 
+
+| Spirit | Reimu | Marisa | Youmu |
+|:---:|:---:|:---:|:---:|
+| Wolf | 60 | 160 | 160 |
+| Otter | 60 | 160 | 160 |
+| Eagle | 60 | 160 | 60 |
 
 
 [youmuw vs youmuo] 

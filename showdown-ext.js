@@ -264,5 +264,11 @@ let ext = function() {
 		}
 	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl, execute];
+	let check = {
+		type: "lang",
+		regex: /\:CHECK\:/g,
+		replace: "ASDALDJDLSKJDALSLSJD"
+	}
+
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl, execute, check];
 }
