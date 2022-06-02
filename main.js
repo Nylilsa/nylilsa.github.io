@@ -98,8 +98,8 @@ function setWindowTitleDirect(str) {
 }
 
 function generateTable(input) { // generates tables of shottypes of HSifS and WBaWC
-	const yes = '✔️';
-	const no = '❌';
+	const yes = '<img src="/assets/green-check-mark.svg" class="icon-text">';
+	const no = '<img src="/assets/red-cross.svg" class="icon-text">';
 	// table-shottype is ID of div in showdown-ext.js
 	let content = document.getElementById('table-shottype');
 	if (input.length == 20) { //hsifs

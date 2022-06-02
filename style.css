@@ -311,6 +311,11 @@ hr.hr_minor {
     color: #FFFFFF;
 }
 
+.icon-text {
+    aspect-ratio: 1 / 1;
+    width: 24px;
+}
+
 .icon {
     height: 24px;
     width: 24px;
@@ -362,7 +367,7 @@ td {
     padding-right: 4px;
 }
 
-.invisible {
+.invis {
     opacity: 0.0;
 }
 

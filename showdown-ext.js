@@ -53,7 +53,7 @@ let ext = function() {
 	let c = {
 		type: "lang",
 		regex: /\[c=(.*?)\]([^]*?)\[\/c\]/g,
-		replace: "<span style='color: $1'>$2</span>"
+		replace: "<div class='$1'>$2</div>"
 	}
 
 	let colors = {
@@ -257,7 +257,7 @@ let ext = function() {
 			setTimeout(() => {
 				const elements = document.getElementsByClassName('highlight-child');
 				for (let i = 0; i < elements.length; i++) {
-					elements[i].closest('td').classList.add('highlight');
+					elements[i].parentElement.classList.add('highlight');
 				}
 			}, 1);
 			return "";
@@ -266,9 +266,15 @@ let ext = function() {
 
 	let check = {
 		type: "lang",
-		regex: /\:CHECK\:/g,
-		replace: "ASDALDJDLSKJDALSLSJD"
+		regex: /\:YES\:/g,
+		replace: "<img src='/assets/green-check-mark.svg' class='icon-text'>"
 	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl, execute, check];
+	let cross = {
+		type: "lang",
+		regex: /\:NO\:/g,
+		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
+	}
+
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl, execute, check, cross];
 }
