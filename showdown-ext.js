@@ -46,6 +46,12 @@ let ext = function() {
 		regex: /\[title=(.*?)\]/gim,
 		replace: function(match, content) {
 			setWindowTitleDirect(content);
+			setTimeout(() => {
+				const elements = document.getElementsByClassName('highlight-child');
+				for (let i = 0; i < elements.length; i++) {
+					elements[i].parentElement.classList.add('highlight-bg');
+				}
+			}, 1);
 			return "";
 		}
 	}
@@ -243,25 +249,16 @@ let ext = function() {
 		replace: "<div class='box' style='max-width:$1px'>$2</div>"
 	}
 
-	let hl = {
+	let hl1 = {
 		type: "lang",
-		regex: /\[hl\]([^]*?)\[\/hl\]/g,
+		regex: /\[hl1\]([^]*?)\[\/hl1\]/g,
 		replace: "<div class='highlight-child'>$1</div>"
 	}
 
-	let execute = {
-		type: "output",
-		regex: /\[execute\]/g,
-		// delay must exist for at least 1ms
-		replace: function() {
-			setTimeout(() => {
-				const elements = document.getElementsByClassName('highlight-child');
-				for (let i = 0; i < elements.length; i++) {
-					elements[i].parentElement.classList.add('highlight');
-				}
-			}, 1);
-			return "";
-		}
+	let hl2 = {
+		type: "lang",
+		regex: /\[hl2\]([^]*?)\[\/hl2\]/g,
+		replace: "<span class='highlight-txt'>$1</span>"
 	}
 
 	let check = {
@@ -276,5 +273,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl, execute, check, cross];
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl1, hl2, check, cross];
 }

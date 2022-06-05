@@ -371,12 +371,20 @@ td {
     opacity: 0.0;
 }
 
-.highlight {
+.highlight-bg {
     background-color: #123840;
+}
+
+.highlight-txt {
+    color: rgb(255, 178, 106);
 }
 
 .fit-image {
     max-width: 100%;
+    /*centers it*/
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 

@@ -1,5 +1,4 @@
 [title=WBaWC: Extra RTA guide]
-[execute]
 # Wily Beast and Weakest Creature - Extra RTA guide
 
 [hr_major]  
@@ -102,7 +101,7 @@ with no-hyper:
 | Spirit | Reimu | Marisa | Youmu |
 |:---:|:---:|:---:|:---:|
 | Wolf | 17.13s | 16.00s | 11.56s |
-| Otter | 20.56s | 18.78s | [hl]10.10s[/hl] |
+| Otter | 20.56s | 18.78s | [hl1]10.10s[/hl1] |
 | Eagle | 19.05s | 17.75s | 12.25s |
 
 YoumuOtter is the strongest shottype assuming no hyper is used.
@@ -111,8 +110,8 @@ with wolf hyper:
 
 | Spirit | Reimu | Marisa | Youmu |
 |:---:|:---:|:---:|:---:|
-| Wolf | 11.78s | 12.65s | [hl]10.01s[/hl] |
-| Otter | 11.78s | 12.65s | [hl]10.01s[/hl] |
+| Wolf | 11.78s | 12.65s | [hl1]10.01s[/hl1] |
+| Otter | 11.78s | 12.65s | [hl1]10.01s[/hl1] |
 | Eagle | 11.78s | 12.65s | 12.70s |
 
 YoumuWolf and YoumuOtter are the strongest shottypes with their Wolf hyper. The reason why YoumuEagle doesn't do as well is because [a=/#/bugs/th17/0]of a bug[/a]
@@ -121,9 +120,9 @@ with eagle hyper:
 
 | Spirit | Reimu | Marisa | Youmu |
 |:---:|:---:|:---:|:---:|
-| Wolf | 14.80s | 12.15s | [hl]9.88s[/hl] |
-| Otter | 14.80s | 12.15s | [hl]9.88s[/hl] |
-| Eagle | 14.80s | 12.15s | [hl]9.88s[/hl] |
+| Wolf | 14.80s | 12.15s | [hl1]9.88s[/hl1] |
+| Otter | 14.80s | 12.15s | [hl1]9.88s[/hl1] |
+| Eagle | 14.80s | 12.15s | [hl1]9.88s[/hl1] |
 
 YoumuWolf, YoumuOtter, and YoumuEagle are the strongest shottypes with their Eagle hyper.
 
