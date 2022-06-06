@@ -194,7 +194,10 @@ a.article:hover {
 #content {
 	flex: 1;
     width: 100%;
-    padding: 20px;
+    padding-top: 30px;
+    padding-right: 5vw;
+    padding-bottom: 20px;
+    padding-left: 5vw;
     min-height: 100vh;
     transition: all 0.3s;
     background-color: #020c18;
@@ -376,7 +379,7 @@ td {
 }
 
 .highlight-txt {
-    color: rgb(255, 178, 106);
+    color: rgb(255, 133, 20);
 }
 
 .fit-image {
