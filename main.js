@@ -1,6 +1,6 @@
 let MD = new showdown.Converter({
 	extensions: [ext],
-	noHeaderId: true,
+	noHeaderId: false,
 	openLinksInNewWindow: true,
 	simpleLineBreaks: true,
 	strikethrough: true,
