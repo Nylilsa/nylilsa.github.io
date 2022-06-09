@@ -178,13 +178,7 @@ function jumpTo(id) {
 	if (id === '') { 
 		return;
 	}
-	const url = location.href; // Saving URL without hash.
-	//location.href = id; //Navigate to the target element.
-	//history.replaceState(null,null,url); //method modifies the current history entry.
 	const top = document.getElementById(id.replace("#","")).offsetTop;
-	console.log(document.body.scrollHeight);
-	console.log(top);
-	document.documentElement.scrollTop = 1386;
 	window.scrollTo(0, top);
 }
 
@@ -359,6 +353,14 @@ function initResize() { // calls every time window changes
 	resize();
 };
 
+function initRememberScroll() {
+	if (initRemoveHash(1).length > 0) {
+		history.scrollRestoration = 'manual';
+	} else {
+		history.scrollRestoration = 'auto';
+	}
+}
+
 function initCustomColor() {
 	initScrollBar();
 	initNavColor();
@@ -375,6 +377,7 @@ function initNavColor() { // changes color to match the game's color
 
 function init() {
 	loadMarkdown(initRemoveHash(0)); //loads in md 
+	initRememberScroll();
 	initCustomColor();
 	initSidebarContent();
 	initResize();
@@ -383,6 +386,7 @@ function init() {
 }
 
 window.addEventListener('hashchange', initCustomColor(), false); // if page is reloaded then execute function
+
 
 init();
 
