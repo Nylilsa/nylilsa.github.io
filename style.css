@@ -215,6 +215,10 @@ a.article:hover {
 
 }
 
+.key {
+    color:rgb(95, 255, 255);
+}
+
 th, tr {
     text-align: center;
     padding: 8px;
@@ -237,7 +241,7 @@ th {
 }
 
 .url {
-    color:#7381ff;
+    color:#6873d8;
     text-decoration: underline;
 }
 
@@ -257,6 +261,12 @@ hr {
 
 hr.hr_minor {
     border-color: #233343;
+}
+
+code {
+    font-size: 90.0%;
+    color: #ff92fa;
+    word-break: break-word;
 }
 
 .code {
@@ -379,7 +389,7 @@ td {
 }
 
 .highlight-txt {
-    color: rgb(253, 255, 129);
+    color: rgb(176, 178, 255);
 }
 
 .fit-image {

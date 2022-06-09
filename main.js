@@ -9,15 +9,12 @@ let MD = new showdown.Converter({
 
 function loadMarkdown(path) { //loads page
 	window.location.href = window.location.origin + '/#/' + path.replace(".md","") + initRemoveHash(1); //changes url
-	console.log(window.location.href);
 	let xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
 	xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
     	document.getElementById("mdcontent").innerHTML = this.responseText;
 		initMarkdown(); //this works somehow
-		//setTimeout(() => {  jumpTo(initRemoveHash(1))}, 1);
 		jumpTo(initRemoveHash(1));
-		console.log(1);
 		}
 	}
 
