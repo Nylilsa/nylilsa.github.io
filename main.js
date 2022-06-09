@@ -8,18 +8,23 @@ let MD = new showdown.Converter({
 });
 
 function loadMarkdown(path) { //loads page
-	window.location.href = window.location.origin + '/#/' + path.replace(".md",""); //changes url
+	window.location.href = window.location.origin + '/#/' + path.replace(".md","") + initRemoveHash(1); //changes url
+	console.log(window.location.href);
 	let xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
 	xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
     	document.getElementById("mdcontent").innerHTML = this.responseText;
 		initMarkdown(); //this works somehow
+		//setTimeout(() => {  jumpTo(initRemoveHash(1))}, 1);
+		jumpTo(initRemoveHash(1));
+		console.log(1);
 		}
 	}
 
 	if (path) { //if path exists, then load .md
 		xhttp.open("GET", path, true);
 		xhttp.send();
+		
 	}
 
 	//if button is clicked, then sidebar (on mobile!) is closed automatically.
@@ -169,7 +174,19 @@ function resize() { //changes property of sidebar button and sidebar class
 	}
 }
 
-
+function jumpTo(id) {
+	if (id === '') { 
+		return;
+	}
+	const url = location.href; // Saving URL without hash.
+	//location.href = id; //Navigate to the target element.
+	//history.replaceState(null,null,url); //method modifies the current history entry.
+	const top = document.getElementById(id.replace("#","")).offsetTop;
+	console.log(document.body.scrollHeight);
+	console.log(top);
+	document.documentElement.scrollTop = 1386;
+	window.scrollTo(0, top);
+}
 
 
 
@@ -318,12 +335,23 @@ function initAutoHideMenu() { // hides menu when scrolling
 }
 
 
-function initRemoveHash() { //removes #/
-	let c = window.location.hash.replace("#/","")+ ".md";
+function initRemoveHash(input) { //removes #/
+	let c = window.location.hash.replace("#/","") + ".md";
+	let hash = '';
 	if (c == '.md') {
-		return 'home.md';
+		c = 'home.md';
 	} 
-	return c;
+	if (c.includes("#")) {
+		hash = c.substring(c.indexOf("#") + 1).replace(".md",""); // gets whatever is after hash
+		hash = "#" + hash;
+		c = c.split('#')[0] + ".md";
+	}
+	if (input % 2 == 0) {
+		return c;
+	} else {
+		return hash;
+	}
+	
 }
 
 function initResize() { // calls every time window changes
@@ -346,11 +374,11 @@ function initNavColor() { // changes color to match the game's color
 }
 
 function init() {
-	loadMarkdown(initRemoveHash()); //loads in md 
+	loadMarkdown(initRemoveHash(0)); //loads in md 
 	initCustomColor();
 	initSidebarContent();
 	initResize();
-	initAutoHideMenu()
+	initAutoHideMenu();
 	//debug();
 }
 
