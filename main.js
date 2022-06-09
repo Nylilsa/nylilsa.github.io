@@ -325,6 +325,7 @@ function initAutoHideMenu() { // hides menu when scrolling
         }
 
         previousScrollTop = document.scrollingElement.scrollTop;
+		window.addEventListener('hashchange', initCustomColor(), false); // if page is reloaded then execute function
     }, { passive: true });
 }
 
@@ -385,7 +386,7 @@ function init() {
 	//debug();
 }
 
-window.addEventListener('hashchange', initCustomColor(), false); // if page is reloaded then execute function
+
 
 
 init();
