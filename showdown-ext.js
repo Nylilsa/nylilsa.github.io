@@ -38,7 +38,7 @@ let ext = function() {
 	let code = {
 		type: "lang",
 		regex: /\[code\]([^]+?)\[\/code\]/g,
-		replace: "<pre><code class='code'>$1</code></pre>"
+		replace: "<pre><code class='code language-c'>$1</code></pre>"
 	}
 
 	let title = {
@@ -47,6 +47,7 @@ let ext = function() {
 		replace: function(match, content) {
 			setWindowTitleDirect(content);
 			setTimeout(() => {
+				hljs.highlightAll();
 				const elements = document.getElementsByClassName('highlight-child');
 				for (let i = 0; i < elements.length; i++) {
 					elements[i].parentElement.classList.add('highlight-bg');

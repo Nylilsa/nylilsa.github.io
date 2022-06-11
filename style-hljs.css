@@ -1,0 +1,31 @@
+.hljs {
+    background-color: #191919;
+}
+
+.hljs-number {
+    color: #a9b881;
+}
+
+.hljs-params {
+    color: #9cd482
+}
+
+.hljs-title {
+    color: #d3d79d;
+}
+
+.hljs-comment {
+    color: #697070;
+}
+
+.hljs-string {
+    color: #a16952
+}
+
+.hljs-type {
+    color: #4d8fc7;
+}
+
+.hljs-built_in {
+    color: #b7b264;
+}
