@@ -26,6 +26,10 @@
     color: #4d8fc7;
 }
 
+.hljs-keyword {
+    color: #d3dda8;
+}
+
 .hljs-built_in {
     color: #b7b264;
 }
