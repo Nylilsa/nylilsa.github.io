@@ -195,9 +195,9 @@ a.article:hover {
 	flex: 1;
     width: 100%;
     padding-top: 30px;
-    padding-right: 5vw;
+    padding-right: 6vw;
     padding-bottom: 20px;
-    padding-left: 5vw;
+    padding-left: 6vw;
     min-height: 100vh;
     transition: all 0.3s;
     background-color: #020c18;

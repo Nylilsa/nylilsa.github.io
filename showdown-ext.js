@@ -268,6 +268,15 @@ let ext = function() {
 		replace: "<code class='key'>$1</code>"
 	}
 
+	let cite = {
+		type: "lang",
+		regex: /\[cite=([^]*?)\]/g,
+		replace: function(match, content) {
+			citeFunction(content);
+			return;
+		}
+	}
+
 	let check = {
 		type: "lang",
 		regex: /\:YES\:/g,
@@ -280,5 +289,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl1, hl2, key, check, cross];
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl1, hl2, key, cite, check, cross];
 }

@@ -179,6 +179,13 @@ function jumpTo(id) {
 	window.scrollTo(0, top);
 }
 
+function loadCitation(a) { //called for in showdown js
+	console.log(1);
+	console.log(a.aya);
+	console.log(a.aya.speed);
+	return a;
+}
+
 
 
 ///////////////////// UNUSED /////////////////////
@@ -234,6 +241,8 @@ function show() { //debug - shows all elements in navbar if clicked on
 	}
 }
 
+
+
 ///////////////////// INIT /////////////////////
 
 function initSidebarContent() {
@@ -274,6 +283,18 @@ function initSidebarContent() {
 		}
 	}
 	//console.log(k) // shows number of pages ive written so far
+}
+
+function initJson() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("GET", "test.json", true); // has to be TRUE
+	xhttp.send(null);
+	xhttp.onreadystatechange = function() {
+	  if (xhttp.readyState === 4 && xhttp.status === 200) {
+		citations = JSON.parse(xhttp.responseText); // globally defined
+		//loadCitation(citations);
+	  }
+	}
 }
 
 function initMarkdown() { //puts html in id 'test'
@@ -375,6 +396,7 @@ function initNavColor() { // changes color to match the game's color
 
 function init() {
 	loadMarkdown(initRemoveHash(0)); //loads in md 
+	initJson();
 	initRememberScroll();
 	initCustomColor();
 	initSidebarContent();
@@ -385,7 +407,7 @@ function init() {
 
 
 
-
+var citations;
 init();
 
 
