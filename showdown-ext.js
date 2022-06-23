@@ -272,8 +272,7 @@ let ext = function() {
 		type: "lang",
 		regex: /\[cite=([^]*?)\]/g,
 		replace: function(match, content) {
-			citeFunction(content);
-			return;
+			return citeFunction(content);
 		}
 	}
 

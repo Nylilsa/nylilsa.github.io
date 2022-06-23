@@ -175,8 +175,10 @@ function jumpTo(id) {
 	if (id === '') { 
 		return;
 	}
-	const top = document.getElementById(id.replace("#","")).offsetTop;
-	window.scrollTo(0, top);
+	setTimeout(() => { 
+		const top = document.getElementById(id.replace("#","")).offsetTop;
+		window.scrollTo(0, top);
+	}, 100);
 }
 
 function loadCitation(a) { //called for in showdown js
@@ -184,6 +186,26 @@ function loadCitation(a) { //called for in showdown js
 	console.log(a.aya);
 	console.log(a.aya.speed);
 	return a;
+}
+
+function citeFunction(key) {
+	const content = citations[key];
+	// DATE
+	const intl = "en-US";
+	const options = {calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric'};
+	const rawDatum = new Date(content.date);
+
+	const datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
+	const author = content.author;
+	const title = content.title;
+	const url = content.url;
+
+	const output = citeAPA(datum, author, title, url);
+	return output;
+}
+
+function citeAPA(date, author, title, url) {
+	return author+'. ('+date+'). "'+title+'" <a class="url" href="'+url+'" target="_blank">'+url+'</a>';
 }
 
 
@@ -287,7 +309,7 @@ function initSidebarContent() {
 
 function initJson() {
 	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "test.json", true); // has to be TRUE
+	xhttp.open("GET", "citations.json", true); // has to be TRUE
 	xhttp.send(null);
 	xhttp.onreadystatechange = function() {
 	  if (xhttp.readyState === 4 && xhttp.status === 200) {
@@ -395,8 +417,8 @@ function initNavColor() { // changes color to match the game's color
 }
 
 function init() {
-	loadMarkdown(initRemoveHash(0)); //loads in md 
 	initJson();
+	loadMarkdown(initRemoveHash(0)); //loads in md 
 	initRememberScroll();
 	initCustomColor();
 	initSidebarContent();
@@ -407,7 +429,6 @@ function init() {
 
 
 
-var citations;
 init();
 
 
