@@ -191,11 +191,16 @@ function loadCitation(a) { //called for in showdown js
 function citeFunction(key) {
 	const content = citations[key];
 	// DATE
+	let datum
 	const intl = "en-US";
 	const options = {calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric'};
 	const rawDatum = new Date(content.date);
+	if (typeof rawDatum == "object" && rawDatum == "Invalid Date") {
+		datum = content.date;
+	} else {
+		datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
+	}
 
-	const datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
 	const author = content.author;
 	const title = content.title;
 	const url = content.url;
