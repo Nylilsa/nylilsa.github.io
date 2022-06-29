@@ -279,7 +279,7 @@ function initSidebarContent() {
 		th08: ['Dialogue Pause Desync', 'Unintended Last Spell Trigger'],
 		th09: ['Stage Skip'],
 		th95: ['nothing so far'],
-		th10: ['MarisaB 3 Power Damage', 'Corrupt replays'],
+		th10: ['MarisaB 3 Power Damage', 'Corrupt replays', 'Stage 4 Desync'],
 		th11: ['Negative Spell Bonus'],
 		th12: ['ReimuA Bomb Desync', 'Score Display Overflow'],
 		th125:['nothing so far'],
