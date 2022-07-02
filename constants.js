@@ -21,6 +21,7 @@ const names = {
 
 const citations = {
     "V1NCHhfu8B": {"game": "th10", "date": "2022-06-28", "author": "Nylilsa", "title": "small th10 stage 4 comparison", "url": "https://www.youtube.com/watch?v=0avljm0XfpA"},
+	//"YqNJNn17o7": {"game": "th10", "date": "n.d.", "author": "ExpHP", "title": "STD instructions", "url": "https://exphp.github.io/thpages/#/std/ins?g=10"},
 
     "Els7ZwnHuu": {"game": "th12", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
 
