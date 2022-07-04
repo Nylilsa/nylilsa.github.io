@@ -10,7 +10,7 @@ const names = {
 	th125:['nothing so far'],
 	th128:['nothing so far'],
 	th13: ['Incorrect boss position during spell practice', 'Misalignment of timer'],
-	th14: ['Underflow', 'Bulletless Kagerou', "Marisa's Lasers", 'Barrier Bug', 'Gohei Duplication', 'Benben Spell 2 Crash', 'Screen-flipping Effect Undo', "Item Duplication through Game's Speed"],
+	th14: ['Underflow', 'Bulletless Kagerou', "Marisa's Lasers", 'Barrier Bug', 'Gohei Duplication', 'Benben Spell 2 Crash', 'Screen-flipping Effect Undo', "Item Duplication through Game's Speed", 'Timeouts on Tsukumo Sisters on Extra'],
 	th143:['nothing so far'],
 	th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'No items after a Survival spell-card'],
 	th16: ['(Sub-)shottypes Not Functioning','Stage 5 Incorrect Spellcard name'],
