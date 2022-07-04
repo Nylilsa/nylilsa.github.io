@@ -184,7 +184,7 @@ function jumpTo(id) {
 function citeFunction(key) {
 	const content = citations[key];
 	// DATE
-	let datum
+	let datum;
 	const intl = "en-US";
 	const options = {calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric'};
 	const rawDatum = new Date(content.date);
