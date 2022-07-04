@@ -181,13 +181,6 @@ function jumpTo(id) {
 	}, 100);
 }
 
-function loadCitation(a) { //called for in showdown js
-	console.log(1);
-	console.log(a.aya);
-	console.log(a.aya.speed);
-	return a;
-}
-
 function citeFunction(key) {
 	const content = citations[key];
 	// DATE
