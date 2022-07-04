@@ -270,17 +270,18 @@ function show() { //debug - shows all elements in navbar if clicked on
 
 function initSidebarContent() {
 	const colDecrease = -16;
-
 	const identifiers = document.querySelectorAll("#pageBugs li ul");
+	const header = document.querySelectorAll("#pageBugs li a");
 	let k = 0;
 	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
-		thnr = identifiers[i].id.slice(5) // bugs-th10 ---> th10
-		let content = document.getElementById('bugs-'+thnr+'');
-
-		content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+0+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+0+'.md\')" style="border-color: '+colorRGB(colDecrease, thnr)+'; border-top-width: 1px;">'+names[thnr][0]+'</a></div></li>';
+		const thnr = identifiers[i].id.slice(5); // bugs-th10 ---> th10
+		const child = header[i];
+		child.style.borderTopWidth = '1px';
+		child.style.borderColor = colorHex(thnr);
+		const content = document.getElementById('bugs-'+thnr+'');
 		k += 1;
 
-		for (let j = 1; j < names[thnr].length; j++) {
+		for (let j = 0; j < names[thnr].length; j++) {
 			content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j]+'</a></div></li>'; 
 			k += 1;
 		}
