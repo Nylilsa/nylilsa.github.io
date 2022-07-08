@@ -43,6 +43,7 @@ const citations = {
 
 	"Kjp0jGf0ml": {"game": "th16", "date": "2021-07-08", "author": "ExpHP", "title": "AnmManager and TH17 1.00b", "url": "https://gist.github.com/ExpHP/f275e0edc02603580f24a5ba3da952cc"},
 	"MZa9LzonQR": {"game": "th16", "date": "2022-07-05", "author": "Nylilsa", "title": "天 クラッシュ", "url": "https://www.youtube.com/watch?v=Qxh3NDtbo8c"},
+	"daGKrYh47s": {"game": "th16", "date": "2022-07-08", "author": "Helio Knight", "title": "Weird HSiFS Timer Bug", "url": "https://www.youtube.com/watch?v=2mBu4rWpP84"},
 
     "ZS7nE2L10d": {"game": "th17", "date": "2019-09-26", "author": "NNN_shooter", "title": "【紲星あかり解説】 東方鬼形獣 オオワシ妖夢＆妖夢全般解説+おまけ（ショット比較）", "url": "https://www.youtube.com/watch?v=Q7CN9ZGAiHY"}
 }
