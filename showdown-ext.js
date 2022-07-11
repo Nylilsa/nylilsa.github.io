@@ -276,6 +276,14 @@ let ext = function() {
 		}
 	}
 
+	let replay = {
+		type: "lang",
+		regex: /\[replay=([^]*?)\]/g,
+		replace: function(match, content) {
+			return replayFunction(content);
+		}
+	}
+
 	let check = {
 		type: "lang",
 		regex: /\:YES\:/g,
@@ -288,5 +296,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl1, hl2, key, cite, check, cross];
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl1, hl2, key, cite, replay, check, cross];
 }

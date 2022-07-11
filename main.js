@@ -183,7 +183,6 @@ function jumpTo(id) {
 
 function citeFunction(key) {
 	const content = citations[key];
-	// DATE
 	let datum;
 	const intl = "en-US";
 	const options = {calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric'};
@@ -193,17 +192,29 @@ function citeFunction(key) {
 	} else {
 		datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
 	}
+	return citeAPA(datum, content.author, content.title, content.url);
+}
 
-	const author = content.author;
-	const title = content.title;
-	const url = content.url;
-
-	const output = citeAPA(datum, author, title, url);
-	return output;
+function replayFunction(key) {
+	const content = replays[key];
+	let datum;
+	const intl = "en-US";
+	const options = {calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric'};
+	const rawDatum = new Date(content.date);
+	if (typeof rawDatum == "object" && rawDatum == "Invalid Date") {
+		datum = content.date;
+	} else {
+		datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
+	}
+	return citeReplay(content.date, content.author, content.name, content.difficulty, content.shot, content.version, content.url);
 }
 
 function citeAPA(date, author, title, url) {
 	return author+'. ('+date+'). "'+title+'" <a class="url" href="'+url+'" target="_blank">'+url+'</a>';
+}
+
+function citeReplay(date, author, name, difficulty, shot, version, url) {
+	return 'Replay \`'+name+'\` by "'+author+'". ('+difficulty+', '+shot+', '+version+'). <a class="url" href="'+url+'" target="_blank">Download link</a>';
 }
 
 ///////////////////// UNUSED /////////////////////
