@@ -20,6 +20,11 @@ const names = {
 }
 
 const citations = {
+
+	"5JhFz2rmrG": {"game": "th07", "date": "2007-04-12", "author": "simugung", "title": "Perfect Cherry Blossom, Overheat of Merlin", "url": "https://www.youtube.com/watch?v=CU2Z6VobIvc"},
+    "HRlIq8klSl": {"game": "th07", "date": "2007-05-21", "author": "Leviathean", "title": "Perfect Cherry Blossom - Berserk Merlin", "url": "https://www.youtube.com/watch?v=zKfcE_dJh8Y"},
+	
+
     "V1NCHhfu8B": {"game": "th10", "date": "2022-06-28", "author": "Nylilsa", "title": "small th10 stage 4 comparison", "url": "https://www.youtube.com/watch?v=0avljm0XfpA"},
 	//"YqNJNn17o7": {"game": "th10", "date": "n.d.", "author": "ExpHP", "title": "STD instructions", "url": "https://exphp.github.io/thpages/#/std/ins?g=10"},
 
