@@ -23,7 +23,7 @@ const citations = {
 
 	"5JhFz2rmrG": {"game": "th07", "date": "2007-04-12", "author": "simugung", "title": "Perfect Cherry Blossom, Overheat of Merlin", "url": "https://www.youtube.com/watch?v=CU2Z6VobIvc"},
     "HRlIq8klSl": {"game": "th07", "date": "2007-05-21", "author": "Leviathean", "title": "Perfect Cherry Blossom - Berserk Merlin", "url": "https://www.youtube.com/watch?v=zKfcE_dJh8Y"},
-	"i1O1kChzeC": {"game": "th07", "date": "2022-12-29", "author": "ゆっきー", "title": "メルラン暴走バグ", "url": "https://www.youtube.com/watch?v=5CCtaC7BnOw"},
+	"i1O1kChzeC": {"game": "th07", "date": "2020-12-29", "author": "ゆっきー", "title": "メルラン暴走バグ", "url": "https://www.youtube.com/watch?v=5CCtaC7BnOw"},
 	"EWQEGVhayi": {"game": "th07", "date": "2022-07-10", "author": "Nylilsa", "title": "東方妖々夢～メルラン・プリズムリバー暴走バグ", "url": "https://www.youtube.com/watch?v=F4b9lnb9218"},
 
 
