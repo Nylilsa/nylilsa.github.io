@@ -13,5 +13,7 @@ Additionally, there are a few guides written on various topics that may not nece
 
 [hr_minor] 
 
-None so far. 
+[contributors]
+
+
 If you would like to contribute (whether it is anything about a glitch or about a guide you would like to post here), you may do so by contacting me on my Discord: Nylilsa#9310.

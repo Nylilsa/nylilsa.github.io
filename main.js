@@ -217,6 +217,20 @@ function citeReplay(date, author, name, difficulty, shot, version, url) {
 	return 'Replay \`'+name+'\` by "'+author+'". '+difficulty+', '+shot+', '+version+'. 「'+date+'」. <a class="url" href="'+url+'" target="_blank">Download link</a>';
 }
 
+function contributorsFunction() {
+	let i = 0;
+	let html = '';
+	for (let lambda in contributors) {
+		let value = Object.values(contributors)[i]
+		console.log(value);
+		html += '+ <a class="url" href="'+value.url+'" target="_blank">'+value.name+'</a> - '+value.help;
+
+		html += '\n';
+		i++;
+	}
+	return html;
+}
+
 ///////////////////// UNUSED /////////////////////
 
 function parseMarkdown(markdownText) { //parses markdown - unused atm
