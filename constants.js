@@ -66,3 +66,26 @@ const contributors = {
 	"VSlamYrAwJ": {"name": "zero318", "help": "Massively helped with the Merlin glitch", "url": "https://github.com/zero318"},
 	"1AThrt4mzz": {"name": "Helio Knight", "help": "HSiFS page 3 research", "url": "https://www.youtube.com/channel/UCNbaT2iVuYKN5q94b9UlTEA"}
 }
+
+const latestVersion = {
+	"th06": "1.02h",
+	"th07": "1.00b",
+	"th08": "1.00d",
+	"th09": "1.50a",
+	"th10": "1.00a",
+	"th11": "1.00a",
+	"th12": "1.00b",
+	"th13": "1.00c",
+	"th14": "1.00b",
+	"th15": "1.00b",
+	"th16": "1.00a",
+	"th17": "1.00b",
+	"th18": "1.00a",
+
+	"th95": "1.50a",
+	"th125": "1.00a",
+	"th128": "1.00a",
+	"th143": "1.00a",
+	"th165": "1.00a",
+
+}

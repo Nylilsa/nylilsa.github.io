@@ -221,10 +221,8 @@ function contributorsFunction() {
 	let i = 0;
 	let html = '';
 	for (let lambda in contributors) {
-		let value = Object.values(contributors)[i]
-		console.log(value);
+		let value = Object.values(contributors)[i];
 		html += '+ <a class="url" href="'+value.url+'" target="_blank">'+value.name+'</a> - '+value.help;
-
 		html += '\n';
 		i++;
 	}
