@@ -56,10 +56,10 @@ const citations = {
 }
 
 const replays = {
-	"6QslRdYpws": {"game": "th07", "date": "2020-09-13", "author": "ゆっきー", "name": "AAAAAAAA", "difficulty": "Easy", "shot": "SakuyaA", "version": "1.00b",  "url": "https://mega.nz/file/m24HgZrL#TDgI4560scbF6s7elPRN-BydT14z4N34OrbyVGydEWg"},
-	"PLv0zArCHT": {"game": "th07", "date": "2020-07-20", "author": "Plus", "name": "+", "difficulty": "Normal", "shot": "SakuyaB", "version": "1.00b",  "url": "https://mega.nz/file/e7gEDCSY#YWulV1JjBLZg9ro00y-8lwfR_n2fzyYGdmADIADhumY"},
-	"26nmhATHmN": {"game": "th07", "date": "2020-09-12", "author": "Ｋ・Ｇ", "name": "KiS HaSB", "difficulty": "Hard", "shot": "SakuyaB", "version": "1.00b",  "url": "https://mega.nz/file/WvA0CIxY#XLe86njASnNSKuDDzBvXI_9snIrt9x5AifcNnrCGP1M"},
-	"vSEJqDuDmA": {"game": "th07", "date": "2021-04-29", "author": "67811MKKA7", "name": "UOKIN", "difficulty": "Lunatic", "shot": "SakuyaB", "version": "1.00b",  "url": "https://mega.nz/file/HrgVlQLR#flPxml-FJlY5h7J_Kwyr60uj3u2sqGfhBQrRT4u-x44"}
+	"6QslRdYpws": {"game": "th07", "date": "2020-09-13", "author": "ゆっきー", "name": "AAAAAAAA", "difficulty": "Easy", "shot": "SakuyaA", "version": "1.00b", "note": "wowie u r such a gamer",  "url": "https://mega.nz/file/m24HgZrL#TDgI4560scbF6s7elPRN-BydT14z4N34OrbyVGydEWg"},
+	"PLv0zArCHT": {"game": "th07", "date": "2020-07-20", "author": "Plus", "name": "+", "difficulty": "Normal", "shot": "SakuyaB", "version": "1.00b", "note": "", "url": "https://mega.nz/file/e7gEDCSY#YWulV1JjBLZg9ro00y-8lwfR_n2fzyYGdmADIADhumY"},
+	"26nmhATHmN": {"game": "th07", "date": "2020-09-12", "author": "Ｋ・Ｇ", "name": "KiS HaSB", "difficulty": "Hard", "shot": "SakuyaB", "version": "1.00b", "note": "", "url": "https://mega.nz/file/WvA0CIxY#XLe86njASnNSKuDDzBvXI_9snIrt9x5AifcNnrCGP1M"},
+	"vSEJqDuDmA": {"game": "th07", "date": "2021-04-29", "author": "67811MKKA7", "name": "UOKIN", "difficulty": "Lunatic", "shot": "SakuyaB", "version": "1.00b", "note": "", "url": "https://mega.nz/file/HrgVlQLR#flPxml-FJlY5h7J_Kwyr60uj3u2sqGfhBQrRT4u-x44"}
 }
 
 const contributors = {
@@ -68,24 +68,45 @@ const contributors = {
 }
 
 const latestVersion = {
-	"th06": "1.02h",
-	"th07": "1.00b",
-	"th08": "1.00d",
-	"th09": "1.50a",
-	"th10": "1.00a",
-	"th11": "1.00a",
-	"th12": "1.00b",
-	"th13": "1.00c",
-	"th14": "1.00b",
-	"th15": "1.00b",
-	"th16": "1.00a",
-	"th17": "1.00b",
-	"th18": "1.00a",
+	th06: "1.02h",
+	th07: "1.00b",
+	th08: "1.00d",
+	th09: "1.50a",
+	th10: "1.00a",
+	th11: "1.00a",
+	th12: "1.00b",
+	th13: "1.00c",
+	th14: "1.00b",
+	th15: "1.00b",
+	th16: "1.00a",
+	th17: "1.00b",
+	th18: "1.00a",
 
-	"th95": "1.50a",
-	"th125": "1.00a",
-	"th128": "1.00a",
-	"th143": "1.00a",
-	"th165": "1.00a",
+	th95: "1.50a",
+	th125: "1.00a",
+	th128: "1.00a",
+	th143: "1.00a",
+	th165: "1.00a",
 
+}
+
+const gameColors = {
+	th06: '#FF0000',
+	th07: '#FF8ED2',
+	th08: '#333399',
+	th09: '#058060',
+	th95: '#009973',
+	th10: '#96B300',
+	th11: '#591400',
+	th12: '#4169E1',
+	th125: '#7D3884',
+	th128: '#00C8C8',
+	th13: '#4A808C',
+	th14: '#AA7777',
+	th143: '#B6423C',
+	th15: '#6A47BE',
+	th16: '#176E0E',
+	th165: '#AE11D5',
+	th17: '#190E0E',
+	th18: '#1DD294'
 }

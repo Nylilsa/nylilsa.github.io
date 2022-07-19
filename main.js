@@ -33,28 +33,6 @@ function colorHex(input) { // argument is optional
 	if (typeof input === 'undefined') { // checks if argument does not exist
 		input = getGameFromURL();
 	}
-
-	const gameColors = {
-		th06: '#FF0000',
-		th07: '#FF8ED2',
-		th08: '#333399',
-		th09: '#058060',
-		th95: '#009973',
-		th10: '#96B300',
-		th11: '#591400',
-		th12: '#4169E1',
-		th125: '#7D3884',
-		th128: '#00C8C8',
-		th13: '#4A808C',
-		th14: '#AA7777',
-		th143: '#B6423C',
-		th15: '#6A47BE',
-		th16: '#176E0E',
-		th165: '#AE11D5',
-		th17: '#190E0E', //original color, but way too dark
-		//th17: '#361C1C', //replacement color
-		th18: '#1DD294'
-	}
 	return gameColors[input] || "#47748B";
 }
 
