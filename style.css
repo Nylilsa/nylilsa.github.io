@@ -192,7 +192,7 @@ a.article:hover {
 ----------------------------------------------------- */
 
 #content {
-	flex: 1;
+    flex: 1;
     width: 100%;
     padding-top: 30px;
     padding-right: 6vw;
@@ -201,6 +201,9 @@ a.article:hover {
     min-height: 100vh;
     transition: all 0.3s;
     background-color: #020c18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -289,6 +292,12 @@ code {
 
 .left-border-color a:hover , .left-border-color.dropdown-toggle:hover {
     border-left-width: 12px;
+}
+
+#maximum {
+    max-width: 1280px;
+    align-self: center;
+    justify-content: center;
 }
 
 
