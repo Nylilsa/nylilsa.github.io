@@ -202,7 +202,6 @@ a.article:hover {
     transition: all 0.3s;
     background-color: #020c18;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
