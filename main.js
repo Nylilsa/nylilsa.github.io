@@ -184,16 +184,17 @@ function replayFunction(key) {
 	} else {
 		datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
 	}
-	return citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, content.url);
+	return citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, content.url, content.note);
 }
 
 function citeAPA(date, author, title, url) {
 	return author+'. 「'+date+'」. "'+title+'" <a class="url" href="'+url+'" target="_blank">'+url+'</a>';
 }
 
-function citeReplay(game, date, author, name, difficulty, shot, version, url) {
-	if(latestVersion[game] != version) {version = '<span class="highlight-txt">'+version+'</span>'}
-	return 'Replay \`'+name+'\` by "'+author+'". '+difficulty+', '+shot+', '+version+'. 「'+date+'」. <a class="url" href="'+url+'" target="_blank">Download link</a>';
+function citeReplay(game, date, author, name, difficulty, shot, version, url, note) {
+	if (latestVersion[game] != version) {version = '<span class="highlight-txt">'+version+'</span>'}
+	if (note) {note = "(Note: "+note+")"}
+	return 'Replay \`'+name+'\` by "'+author+'". '+difficulty+', '+shot+', '+version+'. 「'+date+'」. <a class="url" href="'+url+'" target="_blank">Download link</a> '+note;
 }
 
 function contributorsFunction() {
