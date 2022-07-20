@@ -5,7 +5,7 @@ const names = {
 	th09: ['Stage Skip'],
 	th95: ['nothing so far'],
 	th10: ['MarisaB 3 Power Damage', 'Corrupt replays', 'Stage 4 Desync'],
-	th11: ['Negative Spell Bonus'],
+	th11: ['Negative Spell Bonus', 'ReimuA 2 Power Damage'],
 	th12: ['ReimuA Bomb Desync', 'Score Display Overflow'],
 	th125:['nothing so far'],
 	th128:['nothing so far'],
