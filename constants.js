@@ -73,7 +73,7 @@ const contributors = {
 const bugTracker = {
 	th06: {"completed-pages": 2, "total-glitches": 15, "comment": "not likely to change unless we look at glitches in older versions", "date": "2022-07-22"},
 	th07: {"completed-pages": 2, "total-glitches": 12, "comment": "unlikely to change much unless we look at glitches in older versions", "date": "2022-07-22"},
-	th08: {"completed-pages": 1, "total-glitches": 9, "comment": "very unlikely to change much unless we look at glitches in older versions", "date": "2022-07-22"},
+	th08: {"completed-pages": 1, "total-glitches": 15, "comment": "not likely to change much unless we look at glitches in older versions", "date": "2022-07-22"},
 	th09: {"completed-pages": 0, "total-glitches": 9, "comment": "likely to change much", "date": "2022-07-22"},
 	th95: {"completed-pages": 0, "total-glitches": 2, "comment": "number is going to increase in the future", "date": "2022-07-22"},
 	th10: {"completed-pages": 2, "total-glitches": 13, "comment": "very unlikely to change much", "date": "2022-07-22"},

@@ -211,7 +211,7 @@ function contributorsFunction() {
 
 function progressTable() {
 	const id = document.getElementById('progress-table');
-	let html = '<table><thead><tr><th class="left">Game</th><th>Completed pages</th><th>Existing pages</th><th>Glitches count</th><th>Progress</th><th>Comment</th></tr></thead><tbody>';
+	let html = '<table><thead><tr><th class="left">Game</th><th>Finished pages</th><th>Total pages</th><th>Glitches count</th><th>Progress</th><th>Comment</th></tr></thead><tbody>';
 	let [i, countCompleted, countPages, countGlitches] = [0, 0, 0, 0];
 	for (let lambda in bugTracker) {
 		let th = Object.keys(bugTracker)[i];

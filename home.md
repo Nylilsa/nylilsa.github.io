@@ -15,12 +15,12 @@ Below I note down how many pages have been written on this website compared to t
 <div id='progress-table'></div>
 [br]
 
-The ``Completed pages`` denotes how many completed pages I have written. A page is considered [hl2]completed[/hl2] if its [hl2]cause[/hl2] is 100% understood. 
-The ``Existing pages`` counts how many pages you have access to through the sidebar.
-The ``Existing glitches`` is a number that tells me [hl2]how many glitches[/hl2] there are [hl2]per game[/hl2]. You can tell which games I have spent more time on than others :D.  This number comes from a [hl2]personal spreadsheet[/hl2] of mine that I am continuously updating.
+The ``Finished pages`` denotes how many completed pages I have written. A page is considered [hl2]completed[/hl2] if its [hl2]cause[/hl2] is 100% understood. 
+The ``Total Pages`` counts how many pages you have access to through the sidebar.
+The ``Glitches count`` is a number that tells me [hl2]how many glitches[/hl2] there are [hl2]per game[/hl2]. You can tell which games I have spent more time on than others :D.  This number comes from a [hl2]personal spreadsheet[/hl2] of mine that I am continuously updating.
 The ``Comment`` tells how likely that number is to change in the future, and if so, what to expect.
 
-...yeah, the number of glitches is quite large, but that mainly happens because a lot of glitches are in several games. lol
+...yeah, the number of glitches is quite large, but that mainly happens because a lot of the glitches are in multiple games. lol
 
 ## Contributors
 [hr_minor] 
