@@ -211,16 +211,22 @@ function contributorsFunction() {
 
 function progressTable() {
 	const id = document.getElementById('progress-table');
-	let i = 0;
-	let html = '<table><thead><tr><th class="left">Game</th><th>Completed pages</th><th>Existing pages</th><th>Existing glitches</th><th>Comment</th></tr></thead><tbody>';
+	let html = '<table><thead><tr><th class="left">Game</th><th>Completed pages</th><th>Existing pages</th><th>Bugs/Glitches count</th><th>Progress</th><th>Comment</th></tr></thead><tbody>';
+	let [i, countCompleted, countPages, countGlitches] = [0, 0, 0, 0];
 	for (let lambda in bugTracker) {
 		let th = Object.keys(bugTracker)[i];
 		let value = Object.values(bugTracker)[i];
-		console.log(th, value);
-		html += '<tr><td class="left">'+th+'</td><td>'+value["completed-pages"]+'</td><td>'+names[th].length+'</td><td>'+value["total-glitches"]+'</td><td class="left">'+value.comment+'</td>'
+		let percentage = (value["completed-pages"]/value["total-glitches"]*100);
+		percentage = +percentage.toFixed(2)+'%';
+
+		countCompleted += value["completed-pages"];
+		countPages += names[th].length;
+		countGlitches += value["total-glitches"];
+
+		html += '<tr><td style="border-left: 2px solid '+gameColors[th]+';">'+th+'</td><td>'+value["completed-pages"]+'</td><td>'+names[th].length+'</td><td>'+value["total-glitches"]+'</td><td class="left">'+percentage+'</td><td class="left">'+value.comment+'</td>'
 		i++;
 	}
-	console.log(1)
+	html += '<tr><td>Total</td><td>'+countCompleted+'</td><td>'+countPages+'</td><td>'+countGlitches+'</td><td class="left">'+(countCompleted/countGlitches*100).toFixed(2)+'%</td><td class="left">so many pages left to go through ;__;</td>'
 	id.innerHTML += html;
 }
 
