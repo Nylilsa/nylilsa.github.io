@@ -17,6 +17,7 @@ const names = {
 	th165:['nothing so far'],
 	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break'],
 	th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination']
+	//th185: ['nothing so far']
 }
 
 const citations = {
@@ -88,6 +89,7 @@ const latestVersion = {
 	th128: "1.00a",
 	th143: "1.00a",
 	th165: "1.00a",
+	th185: null
 
 }
 
@@ -109,5 +111,6 @@ const gameColors = {
 	th16: '#176E0E',
 	th165: '#AE11D5',
 	th17: '#190E0E',
-	th18: '#1DD294'
+	th18: '#1DD294',
+	th185: null
 }
