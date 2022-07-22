@@ -209,6 +209,21 @@ function contributorsFunction() {
 	return html;
 }
 
+function progressTable() {
+	const id = document.getElementById('progress-table');
+	let i = 0;
+	let html = '<table><thead><tr><th class="left">Game</th><th>Completed pages</th><th>Existing pages</th><th>Existing glitches</th><th>Comment</th></tr></thead><tbody>';
+	for (let lambda in bugTracker) {
+		let th = Object.keys(bugTracker)[i];
+		let value = Object.values(bugTracker)[i];
+		console.log(th, value);
+		html += '<tr><td class="left">'+th+'</td><td>'+value["completed-pages"]+'</td><td>'+names[th].length+'</td><td>'+value["total-glitches"]+'</td><td class="left">'+value.comment+'</td>'
+		i++;
+	}
+	console.log(1)
+	id.innerHTML += html;
+}
+
 ///////////////////// UNUSED /////////////////////
 
 function parseMarkdown(markdownText) { //parses markdown - unused atm

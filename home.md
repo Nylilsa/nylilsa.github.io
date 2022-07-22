@@ -7,10 +7,15 @@ On this website, you will find all documented bugs and glitches of Touhou Projec
 
 Additionally, there are a few guides written on various topics that may not necessarily be related to one another which can be found over on the Guides section in the sidebar.
 
+## Progress
+[hr_minor]
+
+Below I note down how many full pages have been written on this website compared to the number of Touhou glitches per game:
+
+<div id='progress-table'></div>
 
 
 ## Contributors
-
 [hr_minor] 
 
 [contributors]

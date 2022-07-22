@@ -71,24 +71,24 @@ const contributors = {
 
 
 const bugTracker = {
-	th06: {"completed-pages": 2, "total-glitches": 12},
-	th07: {"completed-pages": 2, "total-glitches": 12},
-	th08: {"completed-pages": 1, "total-glitches": 12},
-	th09: {"completed-pages": 0, "total-glitches": 12},
-	th95: {"completed-pages": 0, "total-glitches": 12},
-	th10: {"completed-pages": 2, "total-glitches": 12},
-	th11: {"completed-pages": 1, "total-glitches": 12},
-	th12: {"completed-pages": 1, "total-glitches": 12},
-	th125: {"completed-pages": 0, "total-glitches": 12},
-	th128: {"completed-pages": 0, "total-glitches": 12},
-	th13: {"completed-pages": 0, "total-glitches": 12},
-	th14: {"completed-pages": 3, "total-glitches": 12},
-	th143: {"completed-pages": 0, "total-glitches": 12},
-	th15: {"completed-pages": 2, "total-glitches": 12},
-	th16: {"completed-pages": 1, "total-glitches": 12},
-	th165: {"completed-pages": 0, "total-glitches": 12},
-	th17: {"completed-pages": 2, "total-glitches": 12},
-	th18: {"completed-pages": 4, "total-glitches": 12}
+	th06: {"completed-pages": 2, "total-glitches": 15, "comment": "not likely to change unless we look at glitches in older versions", "date": "2022-07-22"},
+	th07: {"completed-pages": 2, "total-glitches": 12, "comment": "unlikely to change much unless we look at glitches in older versions", "date": "2022-07-22"},
+	th08: {"completed-pages": 1, "total-glitches": 9, "comment": "very unlikely to change much unless we look at glitches in older versions", "date": "2022-07-22"},
+	th09: {"completed-pages": 0, "total-glitches": 9, "comment": "likely to change much", "date": "2022-07-22"},
+	th95: {"completed-pages": 0, "total-glitches": 0, "comment": "number is going to increase in the future", "date": "2022-07-22"},
+	th10: {"completed-pages": 2, "total-glitches": 13, "comment": "very unlikely to change much", "date": "2022-07-22"},
+	th11: {"completed-pages": 1, "total-glitches": 20, "comment": "unlikely to change much", "date": "2022-07-22"},
+	th12: {"completed-pages": 1, "total-glitches": 17, "comment": "very unlikely to change much", "date": "2022-07-22"},
+	th125: {"completed-pages": 0, "total-glitches": 3, "comment": "number is going to increase in the future", "date": "2022-07-22"},
+	th128: {"completed-pages": 0, "total-glitches": 2, "comment": "number is going to increase", "date": "2022-07-22"},
+	th13: {"completed-pages": 0, "total-glitches": 12, "comment": "unlikely to change much unless we look at glitches in older versions", "date": "2022-07-22"},
+	th14: {"completed-pages": 3, "total-glitches": 18, "comment": "unlikely to change much", "date": "2022-07-22"},
+	th143: {"completed-pages": 0, "total-glitches": 6, "comment": "number is going to increase in the future", "date": "2022-07-22"},
+	th15: {"completed-pages": 2, "total-glitches": 42, "comment": "probable for number to decrease slightly", "date": "2022-07-22"},
+	th16: {"completed-pages": 1, "total-glitches": 23, "comment": "unlikely to change much", "date": "2022-07-22"},
+	th165: {"completed-pages": 0, "total-glitches": 9, "comment": "number is very likely to increase", "date": "2022-07-22"},
+	th17: {"completed-pages": 2, "total-glitches": 33, "comment": "number is likely to decrease", "date": "2022-07-22"},
+	th18: {"completed-pages": 4, "total-glitches": 34, "comment": "number is very likely to increase in the future", "date": "2022-07-22"},
 }
 
 
