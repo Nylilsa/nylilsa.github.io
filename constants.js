@@ -69,6 +69,29 @@ const contributors = {
 	"VSlamYrAwJ": {"name": "zero318", "help": "Massively helped with the Merlin glitch", "url": "https://github.com/zero318"}
 }
 
+
+const bugTracker = {
+	th06: {"completed-pages": 2, "total-glitches": 12},
+	th07: {"completed-pages": 2, "total-glitches": 12},
+	th08: {"completed-pages": 1, "total-glitches": 12},
+	th09: {"completed-pages": 0, "total-glitches": 12},
+	th95: {"completed-pages": 0, "total-glitches": 12},
+	th10: {"completed-pages": 2, "total-glitches": 12},
+	th11: {"completed-pages": 1, "total-glitches": 12},
+	th12: {"completed-pages": 1, "total-glitches": 12},
+	th125: {"completed-pages": 0, "total-glitches": 12},
+	th128: {"completed-pages": 0, "total-glitches": 12},
+	th13: {"completed-pages": 0, "total-glitches": 12},
+	th14: {"completed-pages": 3, "total-glitches": 12},
+	th143: {"completed-pages": 0, "total-glitches": 12},
+	th15: {"completed-pages": 2, "total-glitches": 12},
+	th16: {"completed-pages": 1, "total-glitches": 12},
+	th165: {"completed-pages": 0, "total-glitches": 12},
+	th17: {"completed-pages": 2, "total-glitches": 12},
+	th18: {"completed-pages": 4, "total-glitches": 12}
+}
+
+
 const latestVersion = {
 	th06: "1.02h",
 	th07: "1.00b",
