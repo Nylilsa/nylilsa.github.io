@@ -343,6 +343,12 @@ code {
     transform: scale(1.5);
 }
 
+.icon-small {
+    height: 20px;
+    width: 20px;
+    margin-right: 8px;
+}
+
 .icon-youtube {
     background-image: url(assets/brand-yt.svg);
 }
