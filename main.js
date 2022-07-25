@@ -230,6 +230,13 @@ function progressTable() {
 	id.innerHTML += html;
 }
 
+function show() { //toggles all elements in navbar of Bugs if clicked on
+	let elements = document.querySelectorAll("#pageBugs li ul");
+	for(let i = 0; i < elements.length; i++) {
+		elements[i].classList.toggle("show");
+	}
+}
+
 ///////////////////// UNUSED /////////////////////
 
 function parseMarkdown(markdownText) { //parses markdown - unused atm
@@ -276,12 +283,6 @@ function debug() {
 	console.log(html);
 }
 
-function show() { //debug - shows all elements in navbar if clicked on
-	let elements = document.getElementsByClassName('list-unstyled');
-	for(let i = 0; i < elements.length; i++) {
-		elements[i].classList.add("show");
-	}
-}
 
 ///////////////////// INIT /////////////////////
 
@@ -292,7 +293,7 @@ function initSidebarContent() {
 	let k = 0;
 	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
 		const thnr = identifiers[i].id.slice(5); // bugs-th10 ---> th10
-		const child = header[i];
+		const child = header[i+1];
 		child.style.borderTopWidth = '1px';
 		child.style.borderColor = colorHex(thnr);
 		const content = document.getElementById('bugs-'+thnr+'');
