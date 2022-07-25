@@ -233,7 +233,7 @@ function progressTable() {
 function show() { //toggles all elements in navbar of Bugs if clicked on
 	let elements = document.querySelectorAll("#pageBugs li ul");
 	for(let i = 0; i < elements.length; i++) {
-		elements[i].classList.toggle("show");
+		elements[i].classList.add("show");
 	}
 }
 
