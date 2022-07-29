@@ -76,7 +76,7 @@ const bugTracker = {
 	th08: {"completed-pages": 1, "total-glitches": 15, "comment": "not likely to change unless we look at glitches in older versions"},
 	th09: {"completed-pages": 0, "total-glitches": 9, "comment": "likely to change much"},
 	th95: {"completed-pages": 0, "total-glitches": 2, "comment": "number is going to increase in the future"},
-	th10: {"completed-pages": 2, "total-glitches": 17, "comment": "not likely to change"},
+	th10: {"completed-pages": 2, "total-glitches": 17, "comment": "might increase by 1"},
 	th11: {"completed-pages": 1, "total-glitches": 22, "comment": "very unlikely to change much"},
 	th12: {"completed-pages": 1, "total-glitches": 18, "comment": "not likely to change"},
 	th125: {"completed-pages": 0, "total-glitches": 3, "comment": "number is going to increase in the future"},
@@ -87,8 +87,8 @@ const bugTracker = {
 	th15: {"completed-pages": 2, "total-glitches": 43, "comment": "not likely to change"},
 	th16: {"completed-pages": 1, "total-glitches": 23, "comment": "unlikely to change much"},
 	th165: {"completed-pages": 0, "total-glitches": 9, "comment": "number is very likely to increase"},
-	th17: {"completed-pages": 2, "total-glitches": 33, "comment": "number is likely to decrease"},
-	th18: {"completed-pages": 4, "total-glitches": 34, "comment": "number is very likely to increase in the future"},
+	th17: {"completed-pages": 2, "total-glitches": 36, "comment": "not likely to change"},
+	th18: {"completed-pages": 4, "total-glitches": 34, "comment": "number is likely to beat LoLK's counter"},
 }
 
 
