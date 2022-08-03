@@ -293,6 +293,15 @@ let ext = function() {
 		}
 	}
 
+	let eclmap = {
+		type: "lang",
+		regex: /\[eclmap=(.*?)\]([^]*?)\[\/eclmap\]/g,
+		replace: function() {
+			setTimeout(() => {  replaceEclIns()}, 1);
+			return "potato";
+		}
+	}
+
 	let check = {
 		type: "lang",
 		regex: /\:YES\:/g,

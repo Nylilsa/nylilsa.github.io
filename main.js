@@ -237,6 +237,10 @@ function show() { //toggles all elements in navbar of Bugs if clicked on
 	}
 }
 
+function replaceEclIns() {
+	console.log(1);
+}
+
 ///////////////////// UNUSED /////////////////////
 
 function parseMarkdown(markdownText) { //parses markdown - unused atm
