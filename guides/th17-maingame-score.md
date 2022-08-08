@@ -339,3 +339,5 @@ Have a cute otter video to cheer up if you are having a bad day.
 Video made by [a=https://www.youtube.com/c/Aty0730]Aty[/a]: youtube channel for the cutest otter in existence, you might wanna subscribe.....
 
 Thank you for checking out the guide written by [a=https://twitter.com/RebotOvaFritte]RebotOva[/a] !
+
+Here is the link to the original guide: [a=https://rebotova.blogspot.com/2022/02/comprehensive-wbawc-scoring-guide-wip.html]https://rebotova.blogspot.com/2022/02/comprehensive-wbawc-scoring-guide-wip.html[/a]
