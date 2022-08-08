@@ -14,7 +14,7 @@ function loadMarkdown(path) { //loads page
     	if (this.readyState == 4 && this.status == 200) {
     	document.getElementById("mdcontent").innerHTML = this.responseText;
 		initMarkdown(); //this works somehow
-		jumpTo(initRemoveHash(1));
+		jumpTo(initRemoveHash(1), 100);
 		}
 	}
 
@@ -149,14 +149,15 @@ function resize() { //changes property of sidebar button and sidebar class
 	}
 }
 
-function jumpTo(id) {
+function jumpTo(id, duration) {
+	console.log(id);
 	if (id === '') { 
 		return;
 	}
 	setTimeout(() => { 
 		const top = document.getElementById(id.replace("#","")).offsetTop;
 		window.scrollTo(0, top);
-	}, 100);
+	}, duration);
 }
 
 function citeFunction(key) {

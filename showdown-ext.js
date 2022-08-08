@@ -2,7 +2,7 @@ let ext = function() {
 	let yt = {
 		type: "lang",
 		regex: /\[yt\](.*?)\[\/yt\]/g,
-		replace: '<div class="fit-wrapper" data-yt="$1"><div class="fit-wrapper2 yt"><div class="video-load"><div>Automatic video loading is <b>disabled</b>, in order to reduce network usage and loading times.<br>Click this to load the video.</div></div></div></div>'
+		replace: '<div class="fit-wrapper" data-yt="$1"><div class="fit-wrapper2 yt"><div class="video-load"><div></div></div></div></div>'
 };
 	let hr_major = {
 		type: "lang",
@@ -128,8 +128,8 @@ let ext = function() {
 
 	let video = {
 		type: "lang",
-		regex: /\[video=(.*?), hratio=(.*?)\]/g,
-		replace: '<div class="fit-wrapper" data-video="$1"><div class="fit-wrapper2" style="padding-top: $2%"><div class="video-load"><div>Automatic video loading is <b>disabled</b>, in order to reduce network usage and loading times.<br>Click this to load the video.</div></div></div></div>'
+		regex: /\[video=(.*?), hratio=(.*?), other=(.*?)\]/g,
+		replace: '<div class="fit-wrapper"><iframe class="fit-image" style="padding-bottom: $2%; $3" src="$1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media" allowfullscreen></iframe></div>'
 	}
 
 	let flex = {
@@ -228,6 +228,16 @@ let ext = function() {
 		replace: "<a class='url' href='$1' target='_blank'>$2</a>"
 	}
 
+	let jumpto = {
+		type: "lang",
+		regex: /\[jumpto=(.*?)\]([^]*?)\[\/jumpto\]/g,
+		replace: function(full, anchor, text) {
+			let key = anchor.substring(1);
+			key = key.match(/[^#]*$/)[0]; // no idea how I managed to make this work
+			return "<a class='url' href="+anchor+" onclick='jumpTo(\""+key+"\", 1)'>"+text+"</a>";
+		}
+	}
+
 	let sub = {
 		type: "lang",
 		regex: /\[sub\]([^]*?)\[\/sub\]/g,
@@ -302,6 +312,8 @@ let ext = function() {
 		}
 	}
 
+
+
 	let check = {
 		type: "lang",
 		regex: /\:YES\:/g,
@@ -314,5 +326,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, table, box, hl1, hl2, key, cite, replay, contributors, check, cross];
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, check, cross];
 }
