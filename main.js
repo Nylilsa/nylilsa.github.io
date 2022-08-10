@@ -150,7 +150,6 @@ function resize() { //changes property of sidebar button and sidebar class
 }
 
 function jumpTo(id, duration) {
-	console.log(id);
 	if (id === '') { 
 		return;
 	}
