@@ -16,8 +16,8 @@ const names = {
 	th16: ['(Sub-)shottypes Not Functioning','Stage 5 Incorrect Spellcard name', 'Stage 3 & Stage 5 crashes', 'Mai & Satono Solo Spells Issues'],
 	th165:['nothing so far'],
 	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break'],
-	th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination']
-	//th185: ['nothing so far']
+	th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination'],
+	th185: ['nothing so far']
 }
 
 const citations = {
@@ -89,6 +89,7 @@ const bugTracker = {
 	th165: {"completed-pages": 0, "total-glitches": 12, "comment": "number is very likely to increase"},
 	th17: {"completed-pages": 2, "total-glitches": 36, "comment": "not likely to change"},
 	th18: {"completed-pages": 4, "total-glitches": 40, "comment": "number is going to increase"},
+	th185: {"completed-pages": 0, "total-glitches": 10, "comment": "despite not being released yet as of writing (August 12th), knowing ZUN, number is at least 10 w"},
 }
 
 
@@ -112,7 +113,7 @@ const latestVersion = {
 	th128: "1.00a",
 	th143: "1.00a",
 	th165: "1.00a",
-	th185: null
+	th185: "1.00a"
 
 }
 
@@ -135,5 +136,5 @@ const gameColors = {
 	th165: '#AE11D5',
 	th17: '#190E0E',
 	th18: '#1DD294',
-	th185: null
+	th185: '#F58225', //i chose a random color. lol
 }
