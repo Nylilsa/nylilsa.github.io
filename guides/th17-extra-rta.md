@@ -23,8 +23,8 @@ If you pick up a token during a hyper, then the duration of the hyper is extende
 
 Above is an image that has all tokens in them:
 
-There are the **animal tokens** , which are the **Wolf**, **Otter** and **Eagle** tokens. Those animal tokens change state after some time, which is made visible by their blinking outline They start blinking 45 frames before they are about to transition.
-Otter to Eagle to Wolf to Otter.
+There are the **animal tokens** , which are the **[match=Wolf]**, **[match=Otter]** and **[match=Eagle]** tokens. Those animal tokens change state after some time, which is made visible by their blinking outline They start blinking 45 frames before they are about to transition.
+[match=Otter] to [match=Eagle] to [match=Wolf] to [match=Otter].
 Some of them have a red/blue outline. This means that **they are not mutable**. Those tokens only appear if you die or if you are on Stage 6 of the game, but it's not too relevant because we are doing Extra !
 If you are close enough to the tokens, you'll notice that the tokens become a lot slower. Not only do they become slower if you are nearby, they'll also stop changing states ! But this is slightly different from how UFO handles its tokens.
 You see, in UFO, a mutable UFO token has a hidden timer that counts to 0. If the counter hits 0, then the UFO changes colour. If the player is close to a mutable UFO token, then that counter *pauses*. The counter resumes the moment the player is far enough from the token, so **it's possible for the token to change colour the frame the player leaves its radius**.
@@ -47,33 +47,33 @@ If you have a special tokens during a hyper, then the hyper gives you 5 tokens i
 When collecting 5 tokens, the player activates a hyper. A little bar appears beneath the player. If the bar runs out, then you get 2 or 5 tokens in return. If you get hit or if you try to bomb during a hyper, then the hyper is manually broken, which clears some bullets around the player and gives you some invincibility. Also, if you shoot during the hyper, then you will get PIV or Point Item Value. This is related to score, and since score is not relevant when speedrunning I won't go into much detail about it.
 
 If you pick up 3 animal tokens of the same type, then **your hyper has a special ability**. This differs per shottype and per animal token.
-Also, the **special hyper's duration is affected by your shottype**. For example, if YoumuOtter has 3 wolf tokens in its hyper, then the hyper's duration is very short. But if YoumuWolf has 3 wolf tokens in its hyper, then the hyper's duration is longer than YoumuOtter's.
+Also, the **special hyper's duration is affected by your shottype**. For example, if Youmu[match=Otter] has 3 [match=Wolf] tokens in its hyper, then the hyper's duration is very short. But if Youmu[match=Wolf] has 3 [match=Wolf] tokens in its hyper, then the hyper's duration is longer than Youmu[match=Otter]'s.
 
 Below I describe the different special hypers.
 
 [hr_minor]
 
-The Wolf hyper focuses on single-target damage.
+The [match=Wolf] hyper focuses on single-target damage.
 
 Reimu: Reimu shoots powerful needles that is good for single-target damage.
 Marisa: Marisa shoots very large missiles that have a lot of Area of Effect damage upon explosion
-Youmu: Youmu's Wolf hyper is like 4-power YoumuWolf's charge shot is: she shoots 8 slashes that have a long reach and the slashes are instant, but the slashes deal less damage than the regular shot.
+Youmu: Youmu's [match=Wolf] hyper is like 4-power Youmu[match=Wolf]'s charge shot is: she shoots 8 slashes that have a long reach and the slashes are instant, but the slashes deal less damage than the regular shot.
 
 [hr_minor]
 
-The otter hyper is very simple. When you have an otter hyper, there are three otters that spawn around you and that rotate counter-clockwise. When bullets touch the otters, the bullets are cancelled and turned into score. The otters deal very little damage to an enemy. This hyper is the same for every player character. 
+The [match=Otter] hyper is very simple. When you have an [match=Otter] hyper, there are three [match=Otter]s that spawn around you and that rotate counter-clockwise. When bullets touch the [match=Otter]s, the bullets are cancelled and turned into score. The [match=Otter]s deal very little damage to an enemy. This hyper is the same for every player character. 
 
 [hr_minor]
 
-The Eagle hyper focuses more on Area of Effect damage.
+The [match=Eagle] hyper focuses more on Area of Effect damage.
 
 Reimu: Reimu shoots very large homing amulet bullets that deal a decent amount of damage.
 Marisa: Marisa shoots 5 large powerful piercing laser beams that also deals a decent amount of damage.
-Youmu: Youmu's Eagle Hyper shoots out small waves from where Youmu is at that deals a lot of damage when up-close.
+Youmu: Youmu's [match=Eagle] Hyper shoots out small waves from where Youmu is at that deals a lot of damage when up-close.
 
 [hr_minor]
 
-(also, the beast should reflect on the shottype's spirit animal, so MarisaWolf's performance is better on a single target due to strong missiles, whereas MarisaEagle is better on stage sections due to its better lasers.)
+(also, the beast should reflect on the shottype's spirit animal, so Marisa[match=Wolf]'s performance is better on a single target due to strong missiles, whereas Marisa[match=Eagle] is better on stage sections due to its better lasers.)
 
 That should cover the main mechanics of tokens and hypers !
 
@@ -87,7 +87,7 @@ There are a number of factors I take into account when determining the best shot
 
 1. The shottype's average Damage per Second of the shottype (abbreviated to DPS);
 2. The shottype's Bomb;
-3. The shottype's Wolf and Eagle hypers.
+3. The shottype's [match=Wolf] and [match=Eagle] hypers.
 
 When comparing the DPS on a boss, it's found out that [a=https://youtu.be/Q7CN9ZGAiHY?t=575]Youmu is the best shot for DPS[/a]. 
 
@@ -97,33 +97,33 @@ with no-hyper:
 
 | Spirit | Reimu | Marisa | Youmu |
 |:---:|:---:|:---:|:---:|
-| Wolf | 17.13s | 16.00s | 11.56s |
-| Otter | 20.56s | 18.78s | [hl1]10.10s[/hl1] |
-| Eagle | 19.05s | 17.75s | 12.25s |
+| [match=Wolf] | 17.13s | 16.00s | 11.56s |
+| [match=Otter] | 20.56s | 18.78s | [hl1]10.10s[/hl1] |
+| [match=Eagle] | 19.05s | 17.75s | 12.25s |
 
-YoumuOtter is the strongest shottype assuming no hyper is used.
+Youmu[match=Otter] is the strongest shottype assuming no hyper is used.
 
-with wolf hyper: 
-
-| Spirit | Reimu | Marisa | Youmu |
-|:---:|:---:|:---:|:---:|
-| Wolf | 11.78s | 12.65s | [hl1]10.01s[/hl1] |
-| Otter | 11.78s | 12.65s | [hl1]10.01s[/hl1] |
-| Eagle | 11.78s | 12.65s | 12.70s |
-
-YoumuWolf and YoumuOtter are the strongest shottypes with their Wolf hyper. The reason why YoumuEagle doesn't do as well is because [a=/#/bugs/th17/0]of a bug[/a]
-
-with eagle hyper: 
+with [match=Wolf] hyper: 
 
 | Spirit | Reimu | Marisa | Youmu |
 |:---:|:---:|:---:|:---:|
-| Wolf | 14.80s | 12.15s | [hl1]9.88s[/hl1] |
-| Otter | 14.80s | 12.15s | [hl1]9.88s[/hl1] |
-| Eagle | 14.80s | 12.15s | [hl1]9.88s[/hl1] |
+| [match=Wolf] | 11.78s | 12.65s | [hl1]10.01s[/hl1] |
+| [match=Otter] | 11.78s | 12.65s | [hl1]10.01s[/hl1] |
+| [match=Eagle] | 11.78s | 12.65s | 12.70s |
 
-YoumuWolf, YoumuOtter, and YoumuEagle are the strongest shottypes with their Eagle hyper.
+Youmu[match=Wolf] and Youmu[match=Otter] are the strongest shottypes with their [match=Wolf] hyper. The reason why Youmu[match=Eagle] doesn't do as well is because [a=/#/bugs/th17/0]of a bug[/a]
 
-Conveniently, YoumuOtter has a much stronger bomb, and she spawns with 4 bombs in stock instead of 3 bombs. Since YoumuOtter deals the most damage with an active hyper and without an active hyper, she is the best damage shottype.
+with [match=Eagle] hyper: 
+
+| Spirit | Reimu | Marisa | Youmu |
+|:---:|:---:|:---:|:---:|
+| [match=Wolf] | 14.80s | 12.15s | [hl1]9.88s[/hl1] |
+| [match=Otter] | 14.80s | 12.15s | [hl1]9.88s[/hl1] |
+| [match=Eagle] | 14.80s | 12.15s | [hl1]9.88s[/hl1] |
+
+Youmu[match=Wolf], Youmu[match=Otter], and Youmu[match=Eagle] are the strongest shottypes with their [match=Eagle] hyper.
+
+Conveniently, Youmu[match=Otter] has a much stronger bomb, and she spawns with 4 bombs in stock instead of 3 bombs. Since Youmu[match=Otter] deals the most damage with an active hyper and without an active hyper, she is the best damage shottype.
 
 ## Rankings
 
@@ -181,11 +181,11 @@ Go around the tokens and try to dodge them like bullets. There are often times w
 
 2. Know the cycles of the animal tokens.
 
-Otter -> Eagle -> Wolf -> Otter -> Eagle -> Wolf
+[match=Otter] -> [match=Eagle] -> [match=Wolf] -> [match=Otter] -> [match=Eagle] -> [match=Wolf]
 
 3. Manipulate the animal tokens.
 
-Sometimes, there is a dominant animal token on-screen (i.e. there are only Eagle tokens on-screen). This can be very annoying since you would have to wait for a few second before picking up your preferred token in case you are unlucky. In this case, you want to stay close to some tokens and make sure there is a healthy mix of animal tokens on-screen.
+Sometimes, there is a dominant animal token on-screen (i.e. there are only [match=Eagle] tokens on-screen). This can be very annoying since you would have to wait for a few second before picking up your preferred token in case you are unlucky. In this case, you want to stay close to some tokens and make sure there is a healthy mix of animal tokens on-screen.
 
 ### Bomb damage during final spell-card
 
@@ -214,52 +214,52 @@ Firstly, you must activate a hyper that would normally reward you with 2 tokens.
 
 Though, this trick is not necessary in Extra whatsoever, as you are given enough bombs. Also, you don't want to capture Kutaka's third spell.
 
-### Double Eagle Hyper
+### Double [match=Eagle] Hyper
 
 Advanced
 
-This trick involves duplicating Youmu's Eagle hyper for 39 frames. The setup is as follows:
-1. Be one token away from activating your Eagle hyper.
+This trick involves duplicating Youmu's [match=Eagle] hyper for 39 frames. The setup is as follows:
+1. Be one token away from activating your [match=Eagle] hyper.
 2. Charge your slash.
 3. (optional) Release your slash by releasing the Z key.
-4. (Quickly) get the final token to activate your Eagle hyper.
+4. (Quickly) get the final token to activate your [match=Eagle] hyper.
 
-Now, there are two Eagle hypers on-screen: one where the slash was released/where the token was picked up, and one where Youmu is at. Essentially, the game treats your slash as a place where it can spawn the Eagle hyper.
+Now, there are two [match=Eagle] hypers on-screen: one where the slash was released/where the token was picked up, and one where Youmu is at. Essentially, the game treats your slash as a place where it can spawn the [match=Eagle] hyper.
 
-This trick is hard to set up when speedrunning, as you pretty much need to activate the Eagle hyper on top of the boss. This trick can save about one second per attack if done well.
+This trick is hard to set up when speedrunning, as you pretty much need to activate the [match=Eagle] hyper on top of the boss. This trick can save about one second per attack if done well.
 
-[Eagle hyper break]
+[[match=Eagle] hyper break]
 
 Advanced
 
-When breaking an Eagle hyper intentionally, you can see a few slashes spawning in front of you. Those slashes aren't purely visual, but they also deal a lot of damage !
+When breaking an [match=Eagle] hyper intentionally, you can see a few slashes spawning in front of you. Those slashes aren't purely visual, but they also deal a lot of damage !
 An intentional hyper break maybe quite difficult to do at first because you may be very used to timing them down and getting tokens from them. If you struggle with having enough tokens on-screen, then please timeout the hyper to guarantee 2 tokens during the run. If you are more comfortable, then the hyper break is great to shave off 1s per attack.
 However, it is not as simple as breaking the hyper.
 1. The hyperbreak has to be timed.
 You want to make sure that the hyper break ends the spell-card you are currently facing. Often times you may end uo breaking it too late (not saving time) or breaking it too early forcing you to finish an attack without a hyper active, which is slower.
 2. You may be at risk of an annoying glitch that instantly kills you, losing up to 2 entire seconds (this can be avoided by not manually breaking the hyper, but instead by getting hit).
 
-[Wolf hyper break]
+[[match=Wolf] hyper break]
 
 Advanced
 
-Breaking a wolf hyper is similar to breaking an Eagle hyper, but breaking a wolf hyper well is slightly more difficult to do.
+Breaking a [match=Wolf] hyper is similar to breaking an [match=Eagle] hyper, but breaking a [match=Wolf] hyper well is slightly more difficult to do.
 
-When breaking a Wolf hyper, Youmu *may* spawn a number of slashes, similar to how YoumuOtter's focussed slashes are. How the slashes spawn depends on when you break the hyper.
+When breaking a [match=Wolf] hyper, Youmu *may* spawn a number of slashes, similar to how Youmu[match=Otter]'s focussed slashes are. How the slashes spawn depends on when you break the hyper.
 Take the following image:
 
-(youmus with wolf hyper at different times with numbers next to slashes)
+(youmus with [match=Wolf] hyper at different times with numbers next to slashes)
 
 Basically, you want to break the hyper if the number is green. This ensures she slashes another wave.
 
-Keep in mind, the white slashes of YoumuOtter deal more damage than the red slashes of the Wolf hyper.
+Keep in mind, the white slashes of Youmu[match=Otter] deal more damage than the red slashes of the [match=Wolf] hyper.
 
 Again, there are some things to look out for
 1. The hyperbreak has to be timed.
  such that it kills the attack. You want to make sure that the hyper break ends the spell-card you are currently facing. Often times you may end uo breaking it too late (not saving time) or breaking it too early forcing you to finish an attack without a hyper active, which is slower.
 2. The hyper break has to be timed such that it deals the most damage as possible.
 3. You may be at risk of an annoying glitch that instantly kills you, losing up to 2 entire seconds (this can be avoided by not manually breaking the hyper, but instead by getting hit).
-4. You need to hyper break in time. Sometimes, you only have 3 wolf tokens in the hyper. This results in a wolf hyper that lasts for a very short duration. If you manually hyper break too late, you will use a bomb and you will have to wait out 5 seconds before being able to attack again.
+4. You need to hyper break in time. Sometimes, you only have 3 [match=Wolf] tokens in the hyper. This results in a [match=Wolf] hyper that lasts for a very short duration. If you manually hyper break too late, you will use a bomb and you will have to wait out 5 seconds before being able to attack again.
 
 Excellent Youmu positioning
 
@@ -275,7 +275,7 @@ Her vertical position is more complicated.
 After a bunch of experimenting, I found the sweet spot that allows for speedkills. Here it is:
 A visual indicator is that the top of Youmu's options touchthe bottom of the HP ring. 
 
-This not only works with Youmu's main shot, but it works if Youmu hss her wolf hyper active too !
+This not only works with Youmu's main shot, but it works if Youmu hss her [match=Wolf] hyper active too !
 
 ### Death during a hyper break
 
@@ -305,7 +305,7 @@ Before entering the mid-boss, pick up a bomb token. When you exit the mid-boss, 
 ### Pre-midboss
 
 Beginner/Intermediate/advanced:
-Collect 3 Eagle tokens and 1 bomb token. Preferably don't die so that you have 4 power entering the boss. 
+Collect 3 [match=Eagle] tokens and 1 bomb token. Preferably don't die so that you have 4 power entering the boss. 
 
 [Midboss kutaka (long)]
 
@@ -316,19 +316,19 @@ Advanced:
 
 Bomb her first spell-card. The time it takes should be between 4.10s-5.00s
 
-Bomb before her second spell-card starts. Then, right after the bomb pick up a token to activate an Eagle hyper. Time should be around 2.80s-3.50s.
+Bomb before her second spell-card starts. Then, right after the bomb pick up a token to activate an [match=Eagle] hyper. Time should be around 2.80s-3.50s.
 
-When the second spell-card ends, break your hyper if you haven't already. If possible, prepare for an Eagle hyper while also spamming X to bomb her third spell-card. If possible, right after the bomb pick up a token to activate an Eagle hyper. Time should be around 2.80s-4.50s. Note that this hyper is the hardest one to get in the entire stage considering you have less than 3 seconds to activate it starting from 0 tokens while also having to consider bombing and potentially using a double eagle hyper on the attack.
+When the second spell-card ends, break your hyper if you haven't already. If possible, prepare for an [match=Eagle] hyper while also spamming X to bomb her third spell-card. If possible, right after the bomb pick up a token to activate an [match=Eagle] hyper. Time should be around 2.80s-4.50s. Note that this hyper is the hardest one to get in the entire stage considering you have less than 3 seconds to activate it starting from 0 tokens while also having to consider bombing and potentially using a double [match=Eagle] hyper on the attack.
 
 ### post-midboss
 
 Beginner/Intermediate:
 Suicide once to refill your bombs. If you collected strictly more than 2 bomb pieces durung Kutaka after the suicide then it is not a big deal.
-During the stage make sure to kill enough enemies for enough tokens on-screeen. Also, I recommend to activate a neutral hyper consisting of mostly bomb tokens. This ensures no bomb tokens despawn during the Saki fight. Also, before the boss prepare for a wolf hyper. I recommend getting 4 wolf tokens, but 3 is also fine.
+During the stage make sure to kill enough enemies for enough tokens on-screeen. Also, I recommend to activate a neutral hyper consisting of mostly bomb tokens. This ensures no bomb tokens despawn during the Saki fight. Also, before the boss prepare for a [match=Wolf] hyper. I recommend getting 4 [match=Wolf] tokens, but 3 is also fine.
 
 Advanced:
 Suicide once to refill your bombs. If you collected strictly more than 2 bomb pieces durung Kutaka after the suicide then you should reset, because then during the Saki fight you will have to suicide, costing time.
-During the stage make sure to kill enough enemies for enough tokens on-screeen. Also, I recommend to activate a neutral hyper consisting of mostly bomb tokens. This ensures no bomb tokens despawn during the Saki fight. Also, before the boss spawms prepare for a wolf hyper. I recommend only getting 3 wolf tokens.
+During the stage make sure to kill enough enemies for enough tokens on-screeen. Also, I recommend to activate a neutral hyper consisting of mostly bomb tokens. This ensures no bomb tokens despawn during the Saki fight. Also, before the boss spawms prepare for a [match=Wolf] hyper. I recommend only getting 3 [match=Wolf] tokens.
 
 ## The Saki fight
 
@@ -340,60 +340,60 @@ Be at the bottom of the screen. Shoot her unfocussed only: there is no need to s
 ### Spell 1
 
 Beginner/Intermediate:
-Activate the wolf hyper. Dodge the bullets that are approaching you by being low. Please do not focus on dodging any tokens: just collect them, even if that means collecting 10 tokens during the spell. [8.00s-12.00s]
+Activate the [match=Wolf] hyper. Dodge the bullets that are approaching you by being low. Please do not focus on dodging any tokens: just collect them, even if that means collecting 10 tokens during the spell. [8.00s-12.00s]
 
 Advanced: 
-Activate the wolf hyper. You want to be aggressive on the spell and move up as much as possible. Please do not focus on dodging any tokens: just collect them if they are in your way. [6.50s-8.00s]
+Activate the [match=Wolf] hyper. You want to be aggressive on the spell and move up as much as possible. Please do not focus on dodging any tokens: just collect them if they are in your way. [6.50s-8.00s]
 
 ### Non 2
 
 Beginner/Intermediate:
-Bomb. Go around the screen collecting 4 wolf tokens in preparation for Spell 2. While you are collecting the tokens, also damage Saki. [6.00s-7.00s]
+Bomb. Go around the screen collecting 4 [match=Wolf] tokens in preparation for Spell 2. While you are collecting the tokens, also damage Saki. [6.00s-7.00s]
 
 Advanced:
-Bomb. Collect 3 wolf tokens in preparation for Spell 2. Also deal damage to Saki [5.20s-6.00s]
+Bomb. Collect 3 [match=Wolf] tokens in preparation for Spell 2. Also deal damage to Saki [5.20s-6.00s]
 
 ### Spell 2
 
 In my opinion, this is the most annoying section of the entire stage.
 
 Beginner/Intermediate:
-Activate the wolf hyper. Dodge at the bottom. If you get hit, don't panic and just finish it off by slashing. [9.00s-14.00s]
+Activate the [match=Wolf] hyper. Dodge at the bottom. If you get hit, don't panic and just finish it off by slashing. [9.00s-14.00s]
 
 Advanced:
-Activate the wolf hyper. Dodge th attack up-close. If you get hit, don't panic and finish it off normally. [7.00s-9.00s]
+Activate the [match=Wolf] hyper. Dodge th attack up-close. If you get hit, don't panic and finish it off normally. [7.00s-9.00s]
 
 ### Non-spell 3
 
 Beginner:
-Bomb. Prepare a wolf hyper. Damage the non in the meantime as well [6.00s-7.00s]
+Bomb. Prepare a [match=Wolf] hyper. Damage the non in the meantime as well [6.00s-7.00s]
 
 Intermediate/Advanced: 
-Bomb. Prepare an Eagle hyper. Damage the non in the meantime as well. [5.30s-7.00s]
+Bomb. Prepare an [match=Eagle] hyper. Damage the non in the meantime as well. [5.30s-7.00s]
 
 ### Spell 3
 
 Beginner:
-Activate the Wolf hyper. If your hyper runs out, then slash it until it dies [8.00s-10.00s]
+Activate the [match=Wolf] hyper. If your hyper runs out, then slash it until it dies [8.00s-10.00s]
 
 Intermediate: 
-Acrivate the Eagle hyper. If your hyper runs out, then slash it until it dies. [7.50s-9.00s]
+Acrivate the [match=Eagle] hyper. If your hyper runs out, then slash it until it dies. [7.50s-9.00s]
 
 Advanced:
-Activate the Eagle hyper. Before the hyper runs out, intentionally break it. [6.30s-7.00s]
+Activate the [match=Eagle] hyper. Before the hyper runs out, intentionally break it. [6.30s-7.00s]
 
 ### Non-spell 4
 
 Beginner/Intermediate:
-Bomb. Prepare a Wolf hyper. Deal damage to the non-spell. [6.00s-7.00s]
+Bomb. Prepare a [match=Wolf] hyper. Deal damage to the non-spell. [6.00s-7.00s]
 
 Advanced:
-Bomb. Prepare an Eagle hyper. Deal damage to non-spell. [5.30s-6.00s]
+Bomb. Prepare an [match=Eagle] hyper. Deal damage to non-spell. [5.30s-6.00s]
 
 ### Spell 4
 
 Beginner/Intermediate:
-Activate the Wolf hyper. Dodge it at the bottom. [8.00s-11.00s]
+Activate the [match=Wolf] hyper. Dodge it at the bottom. [8.00s-11.00s]
 
 Advanced:
 This is a little more tricky. Essentially, you want to shotgun Saki at all costs. Luckily, the first two rings are static: the first ring aimst straight down, and the second ring is rotated in a way such that there is a gap below Saki. You only have to dodge the first wave and then you can comfortably sit below Saki on the 2nd wave. Right before Saki shoots her 3rd wave, try dodging the 1st ring that's coming back to you. If you get hit, finish it off with a slash. If you don't get hit, do a hyper break and finish it off. [6.30s-7.00s]
@@ -401,17 +401,17 @@ This is a little more tricky. Essentially, you want to shotgun Saki at all costs
 ### Non-spell 5
 
 Beginner:
-Bomb. Prepare a wolf hyper. Deal damage to non. [6.00s-7.00s] 
+Bomb. Prepare a [match=Wolf] hyper. Deal damage to non. [6.00s-7.00s] 
 
 Intermediate/Advanced:
-Bomb. If it seems like there are a lot of tokens on-screen (like 8 or more), then prepare for a neutral hyper. If not, then you can choose to either dodge the tokens or prepare for a wolf hyper for Spell 6. In the meantime, deal damage to non. [5.30s-6.50s]
+Bomb. If it seems like there are a lot of tokens on-screen (like 8 or more), then prepare for a neutral hyper. If not, then you can choose to either dodge the tokens or prepare for a [match=Wolf] hyper for Spell 6. In the meantime, deal damage to non. [5.30s-6.50s]
 
 ### Spell 5
 
 Saki moves depending on the player's position and angle, and her own  position. This means you can manipulate her movement.
 
 Beginner:
-Activate the Wolf hyper. After she first moves and eventually stops, hug the side she is on. Then, don't move with her, but keep hugging the side she is on.
+Activate the [match=Wolf] hyper. After she first moves and eventually stops, hug the side she is on. Then, don't move with her, but keep hugging the side she is on.
 For example, if Saki moves to the left after the first wave, then keep hugging the left side of the screen. If Saki then does her 2nd wave, keep hugging the left side of the wall: she will bounce toward you. Make sure to dodge Saki too or she will kill you. lol [9.00s-14.00s]
 
 Intermediate/Advanced:
@@ -422,40 +422,40 @@ Secondly, on the 2nd wave you want to manipulate her movement such that she boun
 ### Non-spell 6
 
 Beginner/Intermediate:
-Bomb. Go around the screen collecting 4 wolf tokens in preparation for Spell 6. While you are collecting the tokens, also damage Saki. [6.00s-7.00s]
+Bomb. Go around the screen collecting 4 [match=Wolf] tokens in preparation for Spell 6. While you are collecting the tokens, also damage Saki. [6.00s-7.00s]
 
 Advanced:
-Bomb. Collect 3 wolf tokens in preparation for Spell 6. Also deal damage to Saki [5.20s-6.00s]
+Bomb. Collect 3 [match=Wolf] tokens in preparation for Spell 6. Also deal damage to Saki [5.20s-6.00s]
 
 ### Spell 6
 
 Beginner/Intermediate:
-Activate the wolf hyper. Stay low on-screen so that you won't get hit. If the hyper runs out, just finish it off by slashing her. [8.50s-11.00s]
+Activate the [match=Wolf] hyper. Stay low on-screen so that you won't get hit. If the hyper runs out, just finish it off by slashing her. [8.50s-11.00s]
 
 Advanced:
-Activate the wolf hyper. Try to go as high as possible while also dodging the bullets. [6.50s-8.50s]
+Activate the [match=Wolf] hyper. Try to go as high as possible while also dodging the bullets. [6.50s-8.50s]
 
 ### Non-Spell 7
 
 Beginner/Intermediate/Advanced:
-Bomb. Collect 3 wolf tokens to prepare for Spell 7. Deal damage to the non-spell. [5.30s-7.00s]
+Bomb. Collect 3 [match=Wolf] tokens to prepare for Spell 7. Deal damage to the non-spell. [5.30s-7.00s]
 
 ### Spell 7
 
 Beginner/Intermediate:
-Activate the Wolf hyper. Dodge it at the bottom to ensure survivability. Dodge if you can - I can't blame you if you get hit on this spell. xP
+Activate the [match=Wolf] hyper. Dodge it at the bottom to ensure survivability. Dodge if you can - I can't blame you if you get hit on this spell. xP
 Deal damage until your hyper is broken/runs out [9.00s-12.00s]
 
 Advanced:
-Activate the Wolf hyper. Try to dodge it as high as possible. If possible, survive the jelly bean wave and then break your hyper. [6.50s-9.00s]
+Activate the [match=Wolf] hyper. Try to dodge it as high as possible. If possible, survive the jelly bean wave and then break your hyper. [6.50s-9.00s]
 
 ### Non-spell 8
 
 Beginner/Intermediate:
-Bomb. Go around the screen collecting 5 wolf tokens in preparation for Spell 8. While you are collecting the tokens, also damage Saki. [6.50s-7.50s]
+Bomb. Go around the screen collecting 5 [match=Wolf] tokens in preparation for Spell 8. While you are collecting the tokens, also damage Saki. [6.50s-7.50s]
 
 Advanced:
-Bomb. Collect 4 wolf tokens in preparation for Spell 8. Also deal damage to Saki [5.20s-6.50s]
+Bomb. Collect 4 [match=Wolf] tokens in preparation for Spell 8. Also deal damage to Saki [5.20s-6.50s]
 
 ### Spell 8
 
@@ -470,47 +470,47 @@ Stay right below Saki. If there are any lingering bomb tokens, collect them duri
 ### Pre-Spell 9
 
 Beginner: 
-Bomb. Activate either a Wolf or an Eagle hyper in preparation for spell 9.
+Bomb. Activate either a [match=Wolf] or an [match=Eagle] hyper in preparation for spell 9.
 
 Intermediate:
-Bomb. Activate an Eagle hyper in preparation for spell 9.
+Bomb. Activate an [match=Eagle] hyper in preparation for spell 9.
 
 Advanced:
-Bomb. Prepare an Eagle hyper in preparation for spell 9. Also, if possible manipulate a token such that the token is close to Saki right before Spell 9 starts.
+Bomb. Prepare an [match=Eagle] hyper in preparation for spell 9. Also, if possible manipulate a token such that the token is close to Saki right before Spell 9 starts.
 
 ### Spell 9
 
 Beginner:
-Wait for the bomb to have worn off, then slash until your wolf hyper runs out. [11.00s]
+Wait for the bomb to have worn off, then slash until your [match=Wolf] hyper runs out. [11.00s]
 
 Intermediate:
 Wait for the bomb to have worn off, then shotgun her until your hyper runs out. [10.00s]
 
 Advanced:
-Wait for the bomb to have worn off. In the meantime, charge your shot while being on top of Saki. Once the bomb wears off, release your shot and collect a token as soon as possible to trigger a double Eagle hyper. Shotgun her. When Saki's HP bar is 1/4, wait exactly one second then break your hyper for the extra slashes [8.50s-9.00s] 
+Wait for the bomb to have worn off. In the meantime, charge your shot while being on top of Saki. Once the bomb wears off, release your shot and collect a token as soon as possible to trigger a double [match=Eagle] hyper. Shotgun her. When Saki's HP bar is 1/4, wait exactly one second then break your hyper for the extra slashes [8.50s-9.00s] 
 
 
 ### Pre-spell 10
 
 Beginner:
-Prepare a wolf hyper, preferably one that lasts the longest.
+Prepare a [match=Wolf] hyper, preferably one that lasts the longest.
 
 Intermediate:
-Prepare an Eagle hyper. A few seconds after Spell 9 has ended, use a bomb.
+Prepare an [match=Eagle] hyper. A few seconds after Spell 9 has ended, use a bomb.
 
 Advanced:
-Prepare an Eagle hyper. Charge your shot.
+Prepare an [match=Eagle] hyper. Charge your shot.
 
 ### Spell 10
 
 Beginner:
-Use the wolf hyper on her until it runs out. Then, slash the spell for the rest of the duration. [40.00s-48.00s] 
+Use the [match=Wolf] hyper on her until it runs out. Then, slash the spell for the rest of the duration. [40.00s-48.00s] 
 
 Intermediate:
-Saki gains a hitbox during the spell 90 frames after the spell starts despite Extra bosses usually being immune to bombs. During the first two seconds, activate your Eagle hyper. Shotgun Saki until your hyper gets broken by getting hit. Then, slash the spell for the rest of the duration. [30.00s-36.00s]
+Saki gains a hitbox during the spell 90 frames after the spell starts despite Extra bosses usually being immune to bombs. During the first two seconds, activate your [match=Eagle] hyper. Shotgun Saki until your hyper gets broken by getting hit. Then, slash the spell for the rest of the duration. [30.00s-36.00s]
 
 Advanced:
-Firstly, slash Saki sith your normal shot. Then wait for a tiny bit. Essentially, the first slash plus the waiting time should equal to about 60f-89f. Then, you want to use a bomb during that time frame. Saki gains a hitbox during the spell 90 frames after the spell starts despite Extra bosses usually being immune to bombs. This trick is harder to do due to the timing, but it allows Saki to take more damage. Activate your Eagle hyper after the bomb, and shotgun her until your hyper gets broken. Her HP bar should be around 1/2 the way down. Then, slash the rest of the spell until she is dead. [23.00s-28.00s]
+Firstly, slash Saki sith your normal shot. Then wait for a tiny bit. Essentially, the first slash plus the waiting time should equal to about 60f-89f. Then, you want to use a bomb during that time frame. Saki gains a hitbox during the spell 90 frames after the spell starts despite Extra bosses usually being immune to bombs. This trick is harder to do due to the timing, but it allows Saki to take more damage. Activate your [match=Eagle] hyper after the bomb, and shotgun her until your hyper gets broken. Her HP bar should be around 1/2 the way down. Then, slash the rest of the spell until she is dead. [23.00s-28.00s]
 
 
 
