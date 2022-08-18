@@ -136,5 +136,16 @@ const gameColors = {
 	th165: '#AE11D5',
 	th17: '#190E0E',
 	th18: '#1DD294',
-	th185: '#F58225', //i chose a random color. lol
+	th185: '#F58225' //color chosen randomly by me
+}
+
+const matchColors = {
+	"Spring": '#FF9FC9',
+	"Summer":'#50D030',
+	"Autumn": '#FF8800',
+	"Winter": '#465CF0',
+
+	"Wolf": '#FF4F51',
+	"Otter":'#8DFB78',
+	"Eagle": '#7E59D9',
 }

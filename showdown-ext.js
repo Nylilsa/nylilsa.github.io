@@ -312,7 +312,13 @@ let ext = function() {
 		}
 	}
 
-
+	let match = {
+		type: "lang",
+		regex: /\[match=([^]*?)\]/g,
+		replace: function(match, content) {
+			return matchText(content);
+		}
+	}
 
 	let check = {
 		type: "lang",
@@ -326,5 +332,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, check, cross];
+	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, match, check, cross];
 }

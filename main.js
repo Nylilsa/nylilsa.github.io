@@ -241,6 +241,11 @@ function replaceEclIns() {
 	console.log(1);
 }
 
+function matchText(text) {
+
+	return "<span style='color:"+matchColors[text]+"'>"+text+"</span>";
+}
+
 ///////////////////// UNUSED /////////////////////
 
 function parseMarkdown(markdownText) { //parses markdown - unused atm
