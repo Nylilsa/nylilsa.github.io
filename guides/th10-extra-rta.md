@@ -111,13 +111,13 @@ In summary,
 
 Firstly, right before the boss there are three yellow fairies. Those fairies drop 1.00 power when killed. It is possible to bomb right before the boss appears. With a well-timed bomb you are able to enter with 4.95 power and also deal some damage to Suwako during the dialogue ! But the timing is tight. Personally, I use the background music to determine when I have to bomb. However, this may vary depending on the consistency of your mid-boss section. Also, practising with a music cue in Practice Mode may not be very nice to work with because the music doesn't align.
 
-[img=guides/th10-extra-rta-prebomb.png, hratio=2, other= ]
+[img=guides/th10-extra-rta/prebomb.png, hratio=2, other= ]
 
 The image above compares the HP if a pre-bomb is done vs if a pre-bomb is not done.
 
 On spell 3, you have to misdirect at least two of the "rings" Suwako shoots. Those rings are aimed at the player. The best way to juke them is to sit slightly on top of Suwako's head until she has shot 2 of those rings. 
 
-[img=guides/th10-extra-rta-s3.png, hratio=2, other= ]
+[img=guides/th10-extra-rta/s3.png, hratio=2, other= ]
 
 In the image, you can see that Marisa is slightly above the bullets Suwako spawns. Doing this for two waves is enough to misdirect enough bullets to the top.
 
@@ -165,7 +165,7 @@ When the boss is able to take damage, you can move upward as that will finish th
 
 The normal-alignment strategy is a lot harder to do more. It involves being exactly in the middle of the screen, at the coordinate ``x = 0``. When you are hitting a boss, some of your lasers may be orange-coloured. If they are coloured, it means that the lasers are dealing damage to the boss. Most of the time only 2 out of 3 lasers hit the boss. But with the normal-alignment strategy it is possible for 3 out of 3 lasers to deal damage. 
 
-[img=guides/th10-extra-rta-normal-alignment.png, hratio=2, other=max-height: 400px;]
+[img=guides/th10-extra-rta/normal-alignment.png, hratio=2, other=max-height: 400px;]
 
 On the left of the image, only 2 out of 3 lasers hit the boss, and on the right side 3 out of 3 lasers hit the boss.
 
@@ -207,7 +207,7 @@ mantatail for having written [a=https://www.speedrun.com/touhou_fuujinroku_mount
 
 ZUN for having made this game with such a fun and broken shottype.
 
-...and [a=guides/you.jpg]you[/a] for having read through the entire guide !
+...and [a=guides/th10-extra-rta/you.jpg]you[/a] for having read through the entire guide !
 
 Happy speedrunning !
 \- Nylilsa
