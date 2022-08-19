@@ -8,13 +8,13 @@ let MD = new showdown.Converter({
 });
 
 function loadMarkdown(path) { //loads page
-	window.location.href = window.location.origin + '/#/' + path.replace(".md","") + initRemoveHash(1); //changes url
-	let xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
+	window.location.href = window.location.origin + '/#/' + path.replace(".md","") + initRemoveHash(true); //changes url
+	const xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
 	xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
     	document.getElementById("mdcontent").innerHTML = this.responseText;
 		initMarkdown(); //this works somehow
-		jumpTo(initRemoveHash(1), 100);
+		jumpTo(initRemoveHash(true), 100);
 		}
 	}
 
@@ -201,7 +201,7 @@ function contributorsFunction() {
 	let i = 0;
 	let html = '';
 	for (let lambda in contributors) {
-		let value = Object.values(contributors)[i];
+		const value = Object.values(contributors)[i];
 		html += '+ <a class="url" href="'+value.url+'" target="_blank">'+value.name+'</a> - '+value.help;
 		html += '\n';
 		i++;
@@ -214,9 +214,9 @@ function progressTable() {
 	let html = '<table><thead><tr><th class="left">Game</th><th>Finished pages</th><th>Total pages</th><th>Glitches count</th><th>Progress</th><th>Comment</th></tr></thead><tbody>';
 	let [i, countCompleted, countPages, countGlitches] = [0, 0, 0, 0];
 	for (let lambda in bugTracker) {
-		let th = Object.keys(bugTracker)[i];
-		let value = Object.values(bugTracker)[i];
-		let percentage = (value["completed-pages"]/value["total-glitches"]*100);
+		const th = Object.keys(bugTracker)[i];
+		const value = Object.values(bugTracker)[i];
+		const percentage = (value["completed-pages"]/value["total-glitches"]*100);
 		percentage = +percentage.toFixed(2)+'%';
 
 		countCompleted += value["completed-pages"];
@@ -231,7 +231,7 @@ function progressTable() {
 }
 
 function show() { //toggles all elements in navbar of Bugs if clicked on
-	let elements = document.querySelectorAll("#pageBugs li ul");
+	const elements = document.querySelectorAll("#pageBugs li ul");
 	for(let i = 0; i < elements.length; i++) {
 		elements[i].classList.add("show");
 	}
@@ -284,6 +284,18 @@ function invertHex(hex) {
 	return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
 }
 
+function initJson() {
+	const xhttp = new XMLHttpRequest();
+	xhttp.open("GET", "citations.json", true); // has to be TRUE
+	xhttp.send(null);
+	xhttp.onreadystatechange = function() {
+	  if (xhttp.readyState === 4 && xhttp.status === 200) {
+		citations = JSON.parse(xhttp.responseText); // globally defined
+		//loadCitation(citations);
+	  }
+	}
+}
+
 ///////////////////// DEBUG /////////////////////
 
 function debug() {
@@ -316,20 +328,10 @@ function initSidebarContent() {
 	//console.log(k) // shows number of pages ive written so far
 }
 
-function initJson() {
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "citations.json", true); // has to be TRUE
-	xhttp.send(null);
-	xhttp.onreadystatechange = function() {
-	  if (xhttp.readyState === 4 && xhttp.status === 200) {
-		citations = JSON.parse(xhttp.responseText); // globally defined
-		//loadCitation(citations);
-	  }
-	}
-}
+
 
 function initMarkdown() { //puts html in id 'test'
-	let input = document.getElementById("mdcontent").innerHTML; //is md text
+	const input = document.getElementById("mdcontent").innerHTML; //is md text
 	let $nav = document.querySelector("#mdcontent");
 	let html = "";
 	html += MD.makeHtml(input);
@@ -382,7 +384,7 @@ function initAutoHideMenu() { // hides menu when scrolling
 function initRemoveHash(input) { //removes #/
 	let c = window.location.hash.replace("#/","") + ".md";
 	let hash = '';
-	if (c == '.md') {
+	if (c === '.md') {
 		c = 'home.md';
 	} 
 	if (c.includes("#")) {
@@ -390,11 +392,10 @@ function initRemoveHash(input) { //removes #/
 		hash = "#" + hash;
 		c = c.split('#')[0] + ".md";
 	}
-	if (input % 2 == 0) {
-		return c;
-	} else {
+	if (input) {
 		return hash;
 	}
+	return c;
 	
 }
 
@@ -404,7 +405,7 @@ function initResize() { // calls every time window changes
 };
 
 function initRememberScroll() {
-	if (initRemoveHash(1).length > 0) {
+	if (initRemoveHash(true).length > 0) {
 		history.scrollRestoration = 'manual';
 	} else {
 		history.scrollRestoration = 'auto';
@@ -417,17 +418,16 @@ function initCustomColor() {
 }
 
 function initNavColor() { // changes color to match the game's color
-	let elements = document.getElementsByClassName('hr_major'); // get all elements
+	const elements = document.getElementsByClassName('hr_major'); // get all elements
 	for(let i = 0; i < elements.length; i++) {
 		elements[i].style.borderColor = colorRGB(32);
 	}
-	let mobile = document.getElementById('header');
+	const mobile = document.getElementById('header');
 	mobile.style.borderColor = colorRGB(-16);
 }
 
 function init() {
-	//initJson();
-	loadMarkdown(initRemoveHash(0)); //loads in md 
+	loadMarkdown(initRemoveHash(false)); //loads in md 
 	initRememberScroll();
 	initCustomColor();
 	initSidebarContent();
