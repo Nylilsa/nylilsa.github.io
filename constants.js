@@ -28,15 +28,25 @@ const citations = {
 	"EWQEGVhayi": {"game": "th07", "date": "2022-07-10", "author": "Nylilsa", "title": "東方妖々夢～メルラン・プリズムリバー暴走バグ", "url": "https://www.youtube.com/watch?v=F4b9lnb9218"},
 
 
+	"lED2ol41Co": {"game": "th10", "date": "2013-09-14", "author": "a26866152", "title": "【TAS】東方風神録Lunatic バグマリ in 13:39.25", "url": "https://www.youtube.com/watch?v=efqy8GBUNL0"},
+	"vR1jF7QiOO": {"game": "th10", "date": "2022-08-15", "author": "Nylilsa", "title": "東方風神録 〜 Lunatic 13分54秒 魔理沙/B", "url": "https://www.youtube.com/watch?v=0ETirf_ywHY"},
+	"2KQJ4ddgTf": {"game": "th10", "date": "2022-05-28", "author": "Nylilsa", "title": "東方風神録 〜 Extra 6分25秒 魔理沙/B", "url": "https://www.youtube.com/watch?v=RxkHkDJvwXg"},
     "V1NCHhfu8B": {"game": "th10", "date": "2022-06-28", "author": "Nylilsa", "title": "small th10 stage 4 comparison", "url": "https://www.youtube.com/watch?v=0avljm0XfpA"},
 	//"YqNJNn17o7": {"game": "th10", "date": "n.d.", "author": "ExpHP", "title": "STD instructions", "url": "https://exphp.github.io/thpages/#/std/ins?g=10"},
 
-    "Els7ZwnHuu": {"game": "th12", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
-
+	"obKhAnjBF9": {"game": "th12", "date": "2014-08-27", "author": "thplayer635", "title": "UFO Bomb Glitch ~ [Secret Scoring Knowledge]", "url": "https://www.youtube.com/watch?v=S7fX9z4rH0o"},
+	"ZAaA2rM7qL": {"game": "th12", "date": "2021-03-07", "author": "ZPS", "title": "Touhou 12: Undefined Fantastic Object - Lunatic 2,195,168,090 (Scorebug) - Sanae B", "url": "https://www.youtube.com/watch?v=foWVBHsoZQU"},
+	"m8F7Rxv1Ps": {"game": "th12", "date": "2022-02-21", "author": "ZPS", "title": "Touhou 12: Undefined Fantastic Object - Lunatic - 2,610,822,850 points - Sanae B - Clear", "url": "https://www.youtube.com/watch?v=LvwZCva0cOA"},
+	"mhmz8e7Gue": {"game": "th12", "date": "2021-12-29", "author": "LorenzOwO", "title": "Touhou 星蓮船～UFO Lunatic SanaeB 2,676,870,230 (C)", "url": "https://www.youtube.com/watch?v=4gl4J2BoSa4"},
+    "NeiE0ZVjXe": {"game": "th12", "date": "2014-09-07", "author": "kopiapoa", "title": "[TAS] TH12 - Undefined Fantastic Object \"Lunatic\" MarisaA 6,624,561,400", "url": "https://www.youtube.com/watch?v=uok1X0LjqjU"},
+	"Els7ZwnHuu": {"game": "th12", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
+	
     "1TwZQlGqEN": {"game": "th14", "date": "n.d.", "author": "Wikipedia", "title": "Arithmetic Underflow", "url": "https://en.wikipedia.org/wiki/Arithmetic_underflow"},
     "tyqdbrOWJQ": {"game": "th14", "date": "2017-04-06", "author": "NNN_shooter", "title": "【TAS】TH14 DDC \"Lunatic\" SakuyaA 9,999,999,990", "url": "https://www.youtube.com/watch?v=gZgKglbe-7M"},
     "2OdweRcuyk": {"game": "th14", "date": "2017-07-28", "author": "NNN_shooter", "title": "【TAS】TH14 DDC \"Extra\" SakuyaA 9,999,999,990 No Lateral Move No Miss", "url": "https://www.youtube.com/watch?v=Oydp7bzTJrs"},
     "JGF7WX9Rou": {"game": "th14", "date": "2016-04-01", "author": "SomeGuy712x", "title": "Touhou 14 - Sakuya A, 9,999,999,990!", "url": "https://www.youtube.com/watch?v=z4meYZZLSvc"},
+	"0Fc7nbbZRr": {"game": "th14", "date": "2021-05-19", "author": "Crispy", "title": "Touhou 14: Double Dealing Character - Underflow Bug 9,999,999,990", "url": "https://www.youtube.com/watch?v=Ji5P6nQ0zpA"},
+	"7YCGPMtmPO": {"game": "th14", "date": "2016-03-15", "author": "thplayer635", "title": "scoring with sekibanki! [rollover counterstop]", "url": "https://www.youtube.com/watch?v=Pp7h7qPK-t0"},
     "CsfBtzUZC6": {"game": "th14", "date": "2020-05-04", "author": "ack7139", "title": "[教程向] 激光折了怎么办？辉针城魔理沙rep爆炸修复与预防", "url": "https://www.bilibili.com/video/BV1vf4y1m7Ue"},
     "zh0UyZj9Z6": {"game": "th14", "date": "2020-05-04", "author": "ack7139", "title": "最简单的bug，最迷惑的效果——辉针城魔理沙激光bug初步解析", "url": "https://www.bilibili.com/read/cv5915344"},
     "8QLC9GB17N": {"game": "th14", "date": "n.d.", "author": "ack7139", "title": "thprac", "url": "https://github.com/ack7139/thprac/releases"},
@@ -48,10 +58,16 @@ const citations = {
     "swrajocPpX": {"game": "th14", "date": "2017-07-01", "author": "NNN_shooter", "title": "東方輝針城speedrunで重要なお祓い棒分裂の詳細（現状判明分 + 推測）", "url": "https://nnn-shooter.hatenablog.com/entry/ar1291350"},
 
     "XewIFrqJCj": {"game": "th15", "date": "2022-06-25", "author": "Nylilsa", "title": "【東方紺珠伝】サグメスキップ〜霊夢と早苗", "url": "https://www.youtube.com/watch?v=u5brd2bYor4"},
+    "9MaLyBEpwP": {"game": "th15", "date": "2017-06-27", "author": "fon", "title": "Touhou 15 - Legacy Mode (Lunatic) Speedrun in 23:48", "url": "https://www.youtube.com/watch?v=cCxeK1-i_nU&t=772s"},
+	"SmbgA43aBj": {"game": "th15", "date": "2018-08-14", "author": "NNN_shooter", "title": "【TAS】TH15 LoLK \"Lunatic\" Sanae in 22:33.41【New Record】", "url": "https://www.youtube.com/watch?v=uf3Bj5Hrucg&t=742s"},
 
 	"Kjp0jGf0ml": {"game": "th16", "date": "2021-07-08", "author": "ExpHP", "title": "AnmManager and TH17 1.00b", "url": "https://gist.github.com/ExpHP/f275e0edc02603580f24a5ba3da952cc"},
 	"MZa9LzonQR": {"game": "th16", "date": "2022-07-05", "author": "Nylilsa", "title": "天 クラッシュ", "url": "https://www.youtube.com/watch?v=Qxh3NDtbo8c"},
 	"daGKrYh47s": {"game": "th16", "date": "2022-07-08", "author": "Helio Knight", "title": "Weird HSiFS Timer Bug", "url": "https://www.youtube.com/watch?v=2mBu4rWpP84"},
+	"HMaFJDVRYi": {"game": "th16", "date": "2017-09-06", "author": "3rareProject", "title": "東方天空璋　５面　スペルカード集　normal 　※バグシーン（敵消失）あり", "url": "https://www.youtube.com/watch?v=oHuGs4Um_ZE"},
+	"lNMCKb4ARr": {"game": "th16", "date": "2019-05-25", "author": "F", "title": "【東方天空璋】爾子田里乃消失バグ！？", "url": "https://www.youtube.com/watch?v=Oj4_zPNCQ2c"},
+	"yyf9Q3J4MF": {"game": "th16", "date": "2017-08-14", "author": "AlternateDimensions", "title": "Touhou 16 : Hidden Star in Four Seasons (HSiFS) - Mai and Satono Spell Practice Glitch", "url": "https://www.youtube.com/watch?v=8Dzxwj2nd8Y"},
+
 
     "ZS7nE2L10d": {"game": "th17", "date": "2019-09-26", "author": "NNN_shooter", "title": "【紲星あかり解説】 東方鬼形獣 オオワシ妖夢＆妖夢全般解説+おまけ（ショット比較）", "url": "https://www.youtube.com/watch?v=Q7CN9ZGAiHY"}
 }
