@@ -216,7 +216,7 @@ function progressTable() {
 	for (let lambda in bugTracker) {
 		const th = Object.keys(bugTracker)[i];
 		const value = Object.values(bugTracker)[i];
-		const percentage = (value["completed-pages"]/value["total-glitches"]*100);
+		let percentage = (value["completed-pages"]/value["total-glitches"]*100);
 		percentage = +percentage.toFixed(2)+'%';
 
 		countCompleted += value["completed-pages"];
