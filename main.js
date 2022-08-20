@@ -246,6 +246,14 @@ function matchText(text) {
 	return "<span style='color:"+matchColors[text]+"'>"+text+"</span>";
 }
 
+function hrCustom(input) {
+	if (gameColors[input]) { // if input is game
+		const color = colorRGB(16, input);
+		return "<hr style='border-color:"+color+"'>"
+	}
+	return "<hr style='border-color:"+input+"'>" // if input is color
+}
+
 ///////////////////// UNUSED /////////////////////
 
 function parseMarkdown(markdownText) { //parses markdown - unused atm

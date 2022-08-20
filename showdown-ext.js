@@ -14,6 +14,13 @@ let ext = function() {
 		regex: /\[hr_minor\]/g,
 		replace: "<hr class='hr_minor'>"
 	}
+	let hr_custom = {
+		type: "lang",
+		regex: /\[hr_custom=(.*?)\]/g,
+		replace: function(match, content) {
+			return hrCustom(content);
+		}
+	}
 	let br = {
 		type: "lang",
 		regex: /\[br\]/g,
@@ -332,5 +339,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [yt, hr_major, hr_minor, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, match, check, cross];
+	return [yt, hr_major, hr_minor, hr_custom, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, match, check, cross];
 }
