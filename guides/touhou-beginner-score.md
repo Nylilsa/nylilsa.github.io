@@ -9,6 +9,7 @@ In this guide I will explain everything that you need to know, to get started on
 English is not my first language so please excuse any weird mistakes that you may read here. Also if you have suggestions about something I should add or change please contact me, criticism is welcome.
 
 ## Table of Contents
+[hr_minor]
 
 + [jumpto=#/guides/touhou-beginner-score#introduction]Introduction[/jumpto]
 + [jumpto=#/guides/touhou-beginner-score#goalsettingandreplaygathering]Goal Setting and Replay Gathering[/jumpto]
