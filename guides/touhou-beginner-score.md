@@ -104,7 +104,7 @@ The core gameplay in IN revolves around the collection of Point items, time orbs
 ### Mountain of Faith
 [hr_custom=th10]
 
-MoF: the core gameplay in MoF revolves around the collection of Point items and Spell card bonuses (SCB). The value of the point items written in the bottom left corner can reach up to 999990 value. The value can be increased by collecting Faith items, doing bullet cancels by ending a spell/non, and doing bomb cancels on non-spells. A bar under the PiV is constantly decreasing, when it reaches 0 your PiV will start dropping rapidly. Stages are routed to avoid dropping the PiV value as much as possible. The bar can be charged by collecting items, and killing enemies. You chain items and enemy kills to maintain the bar high. The SCBs increase the higher your PiV, capping as many spell cards as possible is ideal. Clearing with as many lives as possible is also ideal because not only does dying lose a huge amount of PiV, each life gives a strong boost of score in the end clear bonus. bombing also decreases PiV, but death bombing does not. Keep in mind that this game has a lot of survival moments where you just dodge, you need good survival skills overall.
+The core gameplay in MoF revolves around the collection of Point items and Spell card bonuses (SCB). The value of the point items written in the bottom left corner can reach up to 999990 value. The value can be increased by collecting Faith items, doing bullet cancels by ending a spell/non, and doing bomb cancels on non-spells. A bar under the PiV is constantly decreasing, when it reaches 0 your PiV will start dropping rapidly. Stages are routed to avoid dropping the PiV value as much as possible. The bar can be charged by collecting items, and killing enemies. You chain items and enemy kills to maintain the bar high. The SCBs increase the higher your PiV, capping as many spell cards as possible is ideal. Clearing with as many lives as possible is also ideal because not only does dying lose a huge amount of PiV, each life gives a strong boost of score in the end clear bonus. bombing also decreases PiV, but death bombing does not. Keep in mind that this game has a lot of survival moments where you just dodge, you need good survival skills overall.
 
 ### Subterranean Animism
 [hr_custom=th11]
@@ -168,6 +168,8 @@ Thanks for reading!
 [hr_minor]
 
 Thank you for checking out the guide written by [a=https://twitter.com/RebotOvaFritte]RebotOva[/a] !
+
+[hl2]There are a few elements that are different in this version of the guide[/hl2], but the main parts of it are all in here. 
 
 Here is a mirror to the guide: [a=https://maribelhearn.com/faq/scoring]https://maribelhearn.com/faq/scoring[/a]
 Here is the link to the original guide: [a=https://rebotova.blogspot.com/2022/07/touhou-beginner-scoring-guide.html]https://rebotova.blogspot.com/2022/07/touhou-beginner-scoring-guide.html[/a]
