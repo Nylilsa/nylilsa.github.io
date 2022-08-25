@@ -73,7 +73,8 @@ const citations = {
     "ZS7nE2L10d": {"game": "th17", "date": "2019-09-26", "author": "NNN_shooter", "title": "【紲星あかり解説】 東方鬼形獣 オオワシ妖夢＆妖夢全般解説+おまけ（ショット比較）", "url": "https://www.youtube.com/watch?v=Q7CN9ZGAiHY"},
 	"7tWc2Qfu90": {"game": "th17", "date": "2020-10-17", "author": "32th System", "title": "What is the dupe that the th17 scorerunners talk about?", "url": "https://www.youtube.com/watch?v=RsucrXjPD_8"},
 	"Jwhtg37pHy": {"game": "th17", "date": "2021-03-21", "author": "Borealis", "title": "Touhou 17: Wily Beast and Weakest Creature - 11,982,030,340 (WR) Lunatic MarisaOtter Scorerun", "url": "https://www.youtube.com/watch?v=ydYqFBM_k7g&t=102s"},
-	"qFHCsyy1AU": {"game": "th17", "date": "2021-11-25", "author": "RebotOva", "title": "Touhou 17 Wily Beast and Weakest Creature Scoring MarisaO 10.406.267.290 (Counterstop)",  "url": "https://www.youtube.com/watch?v=fG75_mNE5Nk&t=589s"}
+	"qFHCsyy1AU": {"game": "th17", "date": "2021-11-25", "author": "RebotOva", "title": "Touhou 17 Wily Beast and Weakest Creature Scoring MarisaO 10.406.267.290 (Counterstop)",  "url": "https://www.youtube.com/watch?v=fG75_mNE5Nk&t=589s"},
+	"KLamMCsoO9": {"game": "th17", "date": "2020-10-10", "author": "32th System", "title": "Why do Touhou 17 replay desync?",  "url": "https://www.youtube.com/watch?v=-FZY6jpmAsE"}
 }
 
 const replays = {
