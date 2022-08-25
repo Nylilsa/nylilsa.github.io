@@ -83,12 +83,12 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 	// table-shottype is ID of div in showdown-ext.js
 	let content = document.getElementById('table-shottype');
 	if (input.length == 20) { //hsifs
-		str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left">Spring</td>';
+		str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchColors['Spring']+'">Spring</span></td>';
 		for (let i = 0; i < input.length; i++) {
 			switch (i) {
-				case 4: {str += '</tr><tr><td class="left">Summer</td>'; break;}
-				case 8: {str += '</tr><tr><td class="left">Autumn</td>'; break;}
-				case 12: {str += '</tr><tr><td class="left">Winter</td>'; break;}
+				case 4: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Summer']+'">Summer</span></td>'; break;}
+				case 8: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Autumn']+'">Autumn</span></td>'; break;}
+				case 12: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Winter']+'">Winter</span></td>'; break;}
 				case 16: {str += '</tr><tr><td class="left">Extra</td>'; break;}
 			}
 			if (input[i] == 1) {
@@ -101,11 +101,11 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 		content.innerHTML += str;
 	} 
 	if (input.length == 9) { //wbawc
-		str = '<table><thead><tr><th class="left">Spirit</th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td class="left">Wolf</td>';
+		str = '<table><thead><tr><th class="left">Spirit</th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchColors['Wolf']+'">Wolf</span></td>';
 		for (let i = 0; i < input.length; i++) {
 			switch (i) {
-				case 3: {str += '</tr><tr><td class="left">Otter</td>'; break;}
-				case 6: {str += '</tr><tr><td class="left">Eagle</td>'; break;}
+				case 3: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Otter']+'">Otter</span></td>'; break;}
+				case 6: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Eagle']+'">Eagle</span></td>'; break;}
 			}
 			if (input[i] == 1) {
 				str += '<td>'+yes+'</td>';
