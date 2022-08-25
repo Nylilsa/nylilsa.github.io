@@ -99,7 +99,7 @@ const bugTracker = {
 	th125: {"completed-pages": 0, "total-glitches": 3, "comment": "number is going to increase in the future"},
 	th128: {"completed-pages": 0, "total-glitches": 2, "comment": "number is going to increase in the future"},
 	th13: {"completed-pages": 0, "total-glitches": 20, "comment": "not likely to change"},
-	th14: {"completed-pages": 3, "total-glitches": 23, "comment": "not likely to change"},
+	th14: {"completed-pages": 3, "total-glitches": 24, "comment": "not likely to change"},
 	th143: {"completed-pages": 0, "total-glitches": 6, "comment": "number is going to increase in the future"},
 	th15: {"completed-pages": 2, "total-glitches": 43, "comment": "not likely to change"},
 	th16: {"completed-pages": 1, "total-glitches": 27, "comment": "not likely to change"},
