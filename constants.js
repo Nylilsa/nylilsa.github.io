@@ -15,7 +15,7 @@ const names = {
 	th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'No items after a Survival spell-card'],
 	th16: ['(Sub-)shottypes Not Functioning','Stage 5 Incorrect Spellcard name', 'Stage 3 & Stage 5 crashes', 'Mai & Satono Solo Spells Issues'],
 	th165:['nothing so far'],
-	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break'],
+	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break', 'Token duplication'],
 	th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination'],
 	th185: ['nothing so far']
 }
@@ -70,7 +70,10 @@ const citations = {
 	"yyf9Q3J4MF": {"game": "th16", "date": "2017-08-14", "author": "AlternateDimensions", "title": "Touhou 16 : Hidden Star in Four Seasons (HSiFS) - Mai and Satono Spell Practice Glitch", "url": "https://www.youtube.com/watch?v=8Dzxwj2nd8Y"},
 
 
-    "ZS7nE2L10d": {"game": "th17", "date": "2019-09-26", "author": "NNN_shooter", "title": "【紲星あかり解説】 東方鬼形獣 オオワシ妖夢＆妖夢全般解説+おまけ（ショット比較）", "url": "https://www.youtube.com/watch?v=Q7CN9ZGAiHY"}
+    "ZS7nE2L10d": {"game": "th17", "date": "2019-09-26", "author": "NNN_shooter", "title": "【紲星あかり解説】 東方鬼形獣 オオワシ妖夢＆妖夢全般解説+おまけ（ショット比較）", "url": "https://www.youtube.com/watch?v=Q7CN9ZGAiHY"},
+	"7tWc2Qfu90": {"game": "th17", "date": "2020-10-17", "author": "32th System", "title": "What is the dupe that the th17 scorerunners talk about?", "url": "https://www.youtube.com/watch?v=RsucrXjPD_8"},
+	"Jwhtg37pHy": {"game": "th17", "date": "2021-03-21", "author": "Borealis", "title": "Touhou 17: Wily Beast and Weakest Creature - 11,982,030,340 (WR) Lunatic MarisaOtter Scorerun", "url": "https://www.youtube.com/watch?v=ydYqFBM_k7g&t=102s"},
+	"qFHCsyy1AU": {"game": "th17", "date": "2021-11-25", "author": "RebotOva", "title": "Touhou 17 Wily Beast and Weakest Creature Scoring MarisaO 10.406.267.290 (Counterstop)",  "url": "https://www.youtube.com/watch?v=fG75_mNE5Nk&t=589s"}
 }
 
 const replays = {
