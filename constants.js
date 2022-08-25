@@ -16,7 +16,7 @@ const names = {
 	th16: ['(Sub-)shottypes Not Functioning','Stage 5 Incorrect Spellcard name', 'Stage 3 & Stage 5 crashes', 'Mai & Satono Solo Spells Issues', 'Okina Survival Hurtbox'],
 	th165:['nothing so far'],
 	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break', 'Token duplication','Token Desync - Stage Transition Edition', 'Token Desync - Roaring Mode Edition', 'Token Desync - Random Token Edition', 'Saki Survival Hurtbox'],
-	th18: ["Item Duplication through Game's Speed", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination'],
+	th18: ["Slowdown Item Duplication", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination'],
 	th185: ['nothing so far']
 }
 
