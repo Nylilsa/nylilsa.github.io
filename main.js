@@ -65,7 +65,7 @@ function colorRGB(add, game) {
 }
 
 function getGameFromURL() {
-	let url = window.location.hash; // is #/bugs/th18/0
+	const url = window.location.hash; // is #/bugs/th18/0
 	let gameName;
 	if (url.slice(0, 6) == "#/bugs") { // prevents page from not loading stuff if it is not true
 		gameName = /\#\/bugs\/(.*?)\//i.exec(url)[1]; // ddc
@@ -81,7 +81,7 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 	const yes = '<img src="/assets/green-check-mark.svg" class="icon-text">';
 	const no = '<img src="/assets/red-cross.svg" class="icon-text">';
 	// table-shottype is ID of div in showdown-ext.js
-	let content = document.getElementById('table-shottype');
+	const content = document.getElementById('table-shottype');
 	if (input.length == 20) { //hsifs
 		str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchColors['Spring']+'">Spring</span></td>';
 		for (let i = 0; i < input.length; i++) {
@@ -326,21 +326,19 @@ function initSidebarContent() {
 		child.style.borderTopWidth = '1px';
 		child.style.borderColor = colorHex(thnr);
 		const content = document.getElementById('bugs-'+thnr+'');
-		k += 1;
-
 		for (let j = 0; j < names[thnr].length; j++) {
 			content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" onclick="loadMarkdown(\'bugs/'+thnr+'/'+j+'.md\')" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j]+'</a></div></li>'; 
 			k += 1;
 		}
 	}
-	//console.log(k) // shows number of pages ive written so far
+	console.log(k) // shows number of pages ive written so far
 }
 
 
 
 function initMarkdown() { //puts html in id 'test'
 	const input = document.getElementById("mdcontent").innerHTML; //is md text
-	let $nav = document.querySelector("#mdcontent");
+	const $nav = document.querySelector("#mdcontent");
 	let html = "";
 	html += MD.makeHtml(input);
 	$nav.innerHTML = html;
