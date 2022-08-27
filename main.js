@@ -331,7 +331,7 @@ function initSidebarContent() {
 			k += 1;
 		}
 	}
-	console.log(k) // shows number of pages ive written so far
+	//console.log(k) // shows number of pages ive written so far
 }
 
 
