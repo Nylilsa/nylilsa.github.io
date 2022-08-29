@@ -208,6 +208,7 @@ a.article:hover {
 
 #mdcontent {
     opacity: 1;
+    overflow-wrap: break-word;
 }
 
 #mdcontent h1, #mdcontent h2, #mdcontent h3, #mdcontent h4, #mdcontent p, #mdcontent li {
@@ -294,8 +295,7 @@ code {
 }
 
 #maximum {
-    max-width: 1280px;
-    
+    max-width: min(1280px, 88vw);
     justify-content: center;
 }
 
