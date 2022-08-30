@@ -15,25 +15,30 @@ Premise: I'm not the best WBaWC player in the world, but I believe I am competen
 
 Quick paragraph list with no particular order, mostly just information dump, this is not supposed to be professional xd:
 
-+ [jumpto=#/guides/th17-maingame-score#scoregain]Score gain[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#increasingPIV]Increasing PIV[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#charactersdifferences]Characters differences[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#suicidesforotters]Suicides for otters[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#hypermanagement]Hyper management[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#bossinvincibilitybug]Boss invincibility bug[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#duplication]Duplication[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#linearcreature]Linear Creature[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#dealingwithtokenRNG]Dealing with token RNG[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#basicgameplaybreakdown]Basic gameplay breakdown[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#randomdetails]Random details[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#doingruns]Doing runs[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#stage1]Stage 1[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#stage2]Stage 2[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#stage3]Stage 3[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#stage4]Stage 4[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#stage5]Stage 5[/jumpto]
-+ [jumpto=#/guides/th17-maingame-score#stage6]Stage 6[/jumpto]
-
+<ol class='toc'>
+Table of contents
+    <li>[jumpto=#/guides/th17-maingame-score#scoregain]Score gain[/jumpto]</li>
+    <li>[jumpto=#/guides/th17-maingame-score#increasingPIV]Increasing PIV[/jumpto]</li>
+    <li>[jumpto=#/guides/th17-maingame-score#charactersdifferences]Characters differences[/jumpto]</li>
+    <li>[jumpto=#/guides/th17-maingame-score#suicidesforotters]Suicides for otters[/jumpto]</li>
+    <li>[jumpto=#/guides/th17-maingame-score#hypermanagement]Hyper management[/jumpto]</li>
+    <li>[jumpto=#/guides/th17-maingame-score#bossinvincibilitybug]Boss invincibility bug[/jumpto]</li>
+    <li>[jumpto=#/guides/th17-maingame-score#duplication]Duplication[/jumpto]</li>
+    <li>[jumpto=#/guides/th17-maingame-score#linearcreature]Linear Creature[/jumpto]</li>
+    <li>[jumpto=#/guides/th17-maingame-score#dealingwithtokenRNG]Dealing with token RNG[/jumpto]</li>
+    <li>[jumpto=#/guides/th17-maingame-score#basicgameplaybreakdown]Basic gameplay breakdown[/jumpto]</li>
+    <li>[jumpto=#/guides/th17-maingame-score#randomdetails]Random details[/jumpto]</li>
+    <li>[jumpto=#/guides/th17-maingame-score#doingruns]Doing runs[/jumpto]
+        <ol>
+            <li>[jumpto=#/guides/th17-maingame-score#stage1]Stage 1[/jumpto]</li>
+            <li>[jumpto=#/guides/th17-maingame-score#stage2]Stage 2[/jumpto]</li>
+            <li>[jumpto=#/guides/th17-maingame-score#stage3]Stage 3[/jumpto]</li>
+            <li>[jumpto=#/guides/th17-maingame-score#stage4]Stage 4[/jumpto]</li>
+            <li>[jumpto=#/guides/th17-maingame-score#stage5]Stage 5[/jumpto]</li>
+            <li>[jumpto=#/guides/th17-maingame-score#stage6]Stage 6[/jumpto]</li>
+        </ol>
+    </li>
+</ol>
 
 ## Score gain
 [hr_minor]
