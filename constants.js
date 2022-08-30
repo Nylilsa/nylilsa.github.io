@@ -6,7 +6,7 @@ const names = {
 	th95: ['nothing so far'],
 	th10: ['MarisaB 3 Power Damage', 'Corrupt replays', 'Stage 4 Desync'],
 	th11: ['Negative Spell Bonus', 'ReimuA 2 Power Damage'],
-	th12: ['ReimuA Bomb Desync', 'Score Display Overflow'],
+	th12: ['ReimuA Bomb Desync', 'Score Display Overflow', "MarisaA's Laser Damage"],
 	th125:['nothing so far'],
 	th128:['nothing so far'],
 	th13: ['Incorrect boss position during spell practice', 'Misalignment of timer'],
@@ -15,7 +15,7 @@ const names = {
 	th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'No items after a Survival spell-card', 'Reisen Desync'],
 	th16: ['(Sub-)shottypes Not Functioning','Stage 5 Incorrect Spellcard name', 'Stage 3 & Stage 5 crashes', 'Mai & Satono Solo Spells Issues', "Okina's Survival Hurtbox", "Okina's Final Bomb/Release Damage"],
 	th165:['nothing so far'],
-	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break', 'duplication','Token Desync - Stage Transition Edition', 'Desync - Roaring Mode Edition', 'Desync - Random Token Edition', "Saki's Survival Hurtbox", "Saki's Final Bomb Damage"],
+	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break', 'Token duplication','Token Desync - Stage Transition Edition', 'Desync - Roaring Mode Edition', 'Desync - Random Token Edition', "Saki's Survival Hurtbox", "Saki's Final Bomb Damage"],
 	th18: ["Slowdown Item Duplication", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination', 'Lily White Crash', "Dragon Eater\'s Cataclysm", "Momoyo's Final Bomb Damage"],
 	th185: ['nothing so far']
 }
@@ -41,6 +41,8 @@ const citations = {
 	"mhmz8e7Gue": {"game": "th12", "date": "2021-12-29", "author": "LorenzOwO", "title": "Touhou 星蓮船～UFO Lunatic SanaeB 2,676,870,230 (C)", "url": "https://www.youtube.com/watch?v=4gl4J2BoSa4"},
     "NeiE0ZVjXe": {"game": "th12", "date": "2014-09-07", "author": "kopiapoa", "title": "[TAS] TH12 - Undefined Fantastic Object \"Lunatic\" MarisaA 6,624,561,400", "url": "https://www.youtube.com/watch?v=uok1X0LjqjU"},
 	"Els7ZwnHuu": {"game": "th12", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
+	"1bBWvqDT6t": {"game": "th12", "date": "2019-07-25", "author": "ZPS", "title": "UFO Marisa A Glitchless vs. Glitched Damage Comparison", "url": "https://www.youtube.com/watch?v=jP0mj3k1P24"},
+	
 	
     "1TwZQlGqEN": {"game": "th14", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
     "tyqdbrOWJQ": {"game": "th14", "date": "2017-04-06", "author": "NNN_shooter", "title": "【TAS】TH14 DDC \"Lunatic\" SakuyaA 9,999,999,990", "url": "https://www.youtube.com/watch?v=gZgKglbe-7M"},
