@@ -27,6 +27,8 @@ const citations = {
 	"i1O1kChzeC": {"game": "th07", "date": "2020-12-29", "author": "ゆっきー", "title": "メルラン暴走バグ", "url": "https://www.youtube.com/watch?v=5CCtaC7BnOw"},
 	"EWQEGVhayi": {"game": "th07", "date": "2022-07-10", "author": "Nylilsa", "title": "東方妖々夢～メルラン・プリズムリバー暴走バグ", "url": "https://www.youtube.com/watch?v=F4b9lnb9218"},
 	"ENDSVfmrh8": {"game": "th07", "date": "2022-07-13", "author": "inakilbss", "title": "Perfect Cherry Blossom — Merlin Glitch + Prismrivers LNN (SakuyaA)", "url": "https://www.youtube.com/watch?v=aMRkmKmocsQ"},
+	"Na19l8CMf4": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "title": "東方妖々夢～リリカ・プリズムリバー暴走バグ", "url": "https://www.youtube.com/watch?v=tufvQ1fR3Y0"},
+	"cLNCEmYPwZ": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "title": "東方妖々夢～ルナサ・プリズムリバー暴走バグ", "url": "https://www.youtube.com/watch?v=q1-qCmcfB5A"},
 
 
 	"lED2ol41Co": {"game": "th10", "date": "2013-09-14", "author": "a26866152", "title": "【TAS】東方風神録Lunatic バグマリ in 13:39.25", "url": "https://www.youtube.com/watch?v=efqy8GBUNL0"},
@@ -82,10 +84,13 @@ const citations = {
 }
 
 const replays = {
-	"6QslRdYpws": {"game": "th07", "date": "2020-09-13", "author": "ゆっきー", "name": "AAAAAAAA", "difficulty": "Easy", "shot": "SakuyaA", "version": "1.00b", "note": "",  "url": "https://mega.nz/file/m24HgZrL#TDgI4560scbF6s7elPRN-BydT14z4N34OrbyVGydEWg"},
-	"PLv0zArCHT": {"game": "th07", "date": "2020-07-20", "author": "Plus", "name": "+", "difficulty": "Normal", "shot": "SakuyaB", "version": "1.00b", "note": "", "url": "https://mega.nz/file/e7gEDCSY#YWulV1JjBLZg9ro00y-8lwfR_n2fzyYGdmADIADhumY"},
-	"26nmhATHmN": {"game": "th07", "date": "2020-09-12", "author": "Ｋ・Ｇ", "name": "KiS HaSB", "difficulty": "Hard", "shot": "SakuyaB", "version": "1.00b", "note": "", "url": "https://mega.nz/file/WvA0CIxY#XLe86njASnNSKuDDzBvXI_9snIrt9x5AifcNnrCGP1M"},
-	"vSEJqDuDmA": {"game": "th07", "date": "2021-04-29", "author": "67811MKKA7", "name": "UOKIN", "difficulty": "Lunatic", "shot": "SakuyaB", "version": "1.00b", "note": "", "url": "https://mega.nz/file/HrgVlQLR#flPxml-FJlY5h7J_Kwyr60uj3u2sqGfhBQrRT4u-x44"}
+	"6QslRdYpws": {"game": "th07", "date": "2020-09-13", "author": "ゆっきー", "name": "AAAAAAAA", "difficulty": "Easy", "shot": "SakuyaA", "version": "1.00b", "note": "Merlin glitch",  "url": "https://mega.nz/file/m24HgZrL#TDgI4560scbF6s7elPRN-BydT14z4N34OrbyVGydEWg"},
+	"PLv0zArCHT": {"game": "th07", "date": "2020-07-20", "author": "Plus", "name": "+", "difficulty": "Normal", "shot": "SakuyaB", "version": "1.00b", "note": "Merlin full glitch", "url": "https://mega.nz/file/e7gEDCSY#YWulV1JjBLZg9ro00y-8lwfR_n2fzyYGdmADIADhumY"},
+	"26nmhATHmN": {"game": "th07", "date": "2020-09-12", "author": "Ｋ・Ｇ", "name": "KiS HaSB", "difficulty": "Hard", "shot": "SakuyaB", "version": "1.00b", "note": "Merlin full glitch", "url": "https://mega.nz/file/WvA0CIxY#XLe86njASnNSKuDDzBvXI_9snIrt9x5AifcNnrCGP1M"},
+	"vSEJqDuDmA": {"game": "th07", "date": "2021-04-29", "author": "67811MKKA7", "name": "UOKIN", "difficulty": "Lunatic", "shot": "SakuyaB", "version": "1.00b", "note": "Merlin glitch", "url": "https://mega.nz/file/HrgVlQLR#flPxml-FJlY5h7J_Kwyr60uj3u2sqGfhBQrRT4u-x44"},
+	"g3TRR5bGdv": {"game": "th07", "date": "2021-08-31", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "MarisaB", "version": "1.00b", "note": "Lyrica glitch", "url": "https://mega.nz/file/O2oF2C6J#Atn8nDFNdVIhkfGht_lQ5mbE8t60We79tn7Hv84wgVw"},
+	"0m17ZCJ0ef": {"game": "th07", "date": "2021-08-31", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuB", "version": "1.00b", "note": "Lunasa glitch", "url": "https://mega.nz/file/OzIVmAAZ#ko9pV5cgT4furnv0sD6eAVljbct_wdVq-ck67UH8b1Q"}
+
 }
 
 const contributors = {
