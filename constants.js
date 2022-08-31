@@ -1,6 +1,6 @@
 const names = {
 	th06: ['Boss Attack Skip', 'Dialogue Pause Desync', 'Bomb Pause Desync'],
-	th07: ['Merlin Glitch', 'Dialogue Pause Desync'],
+	th07: ['Merlin, Lyrica & Lunasa Glitch', 'Dialogue Pause Desync'],
 	th08: ['Dialogue Pause Desync', 'Unintended Last Spell Trigger'],
 	th09: ['Stage Skip'],
 	th95: ['nothing so far'],
