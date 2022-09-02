@@ -237,7 +237,7 @@ ol {
     overflow-wrap: break-word;
 }
 
-#mdcontent h1, #mdcontent h2, #mdcontent h3, #mdcontent h4, #mdcontent p, #mdcontent li {
+#mdcontent h1, #mdcontent h2, #mdcontent h3, #mdcontent h4, #mdcontent h5, #mdcontent p, #mdcontent li {
     color:#FFFFFF;
     opacity: 0.9;
     font-family: sans-serif;
