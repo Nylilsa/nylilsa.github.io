@@ -3,21 +3,21 @@ const names = {
 	th07: ['Merlin, Lyrica & Lunasa Glitch', 'Dialogue Pause Desync'],
 	th08: ['Dialogue Pause Desync', 'Unintended Last Spell Trigger'],
 	th09: ['Stage Skip'],
-	th95: ['nothing so far'],
+	th95: ['N/A'],
 	th10: ['MarisaB 3 Power Damage', 'Corrupt replays', 'Stage 4 Desync'],
-	th11: ['Negative Spell Bonus', 'ReimuA 2 Power Damage', 'Mid-boss skips'],
+	th11: ['Negative Spell Bonus', 'ReimuA 2 Power Damage', 'Mid-boss skips', 'ReimuC Desync'],
 	th12: ['ReimuA Bomb Desync', 'Score Display Overflow', "MarisaA's Laser Damage"],
-	th125:['nothing so far'],
-	th128:['nothing so far'],
+	th125:['N/A'],
+	th128:['N/A'],
 	th13: ['Incorrect boss position during spell practice', 'Misalignment of timer'],
 	th14: ['Score Underflow', 'Bulletless Kagerou', "Marisa's Lasers", 'Barrier Bug', 'Gohei Duplication', 'Benben Spell 2 Crash', 'Screen-flipping Effect Undo', "Item Duplication through Game's Speed", 'Timeouts on Tsukumo Sisters on Extra'],
-	th143:['nothing so far'],
+	th143:['N/A'],
 	th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'No items after a Survival spell-card', 'Reisen Desync'],
 	th16: ['(Sub-)shottypes Not Functioning','Stage 5 Incorrect Spellcard name', 'Stage 3 & Stage 5 crashes', 'Mai & Satono Solo Spells Issues', "Okina's Survival Hurtbox", "Okina's Final Bomb/Release Damage"],
-	th165:['nothing so far'],
+	th165:['N/A'],
 	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break', 'Token duplication','Token Desync - Stage Transition Edition', 'Desync - Roaring Mode Edition', 'Desync - Random Token Edition', "Saki's Survival Hurtbox", "Saki's Final Bomb Damage"],
 	th18: ["Slowdown Item Duplication", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination', 'Lily White Crash', "Dragon Eater\'s Cataclysm", "Momoyo's Final Bomb Damage"],
-	th185: ['nothing so far']
+	th185: ['N/A']
 }
 
 const citations = {
@@ -39,6 +39,7 @@ const citations = {
 
 	"9qHKECH5FT": {"game": "th11", "date": "2008-08-22", "author": "sesamebagels", "title": "東方地霊殿 - Subterranean Animism 魔理沙+パチュリ bug", "url": "https://www.youtube.com/watch?v=2JvH6A4lGvg"},
 	"r5TbjJYm6x": {"game": "th11", "date": "2010-04-22", "author": "George Gaumond", "title": "Touhou 11 Subterranean Animism bug: out of my way cat!", "url": "https://www.youtube.com/watch?v=ANspUlv_odk"},
+	"1ILtinP3Fc": {"game": "th11", "date": "2022-09-04", "author": "Nylilsa", "title": "東方地霊殿～霊夢Cリプレイバグ", "url": "https://www.youtube.com/watch?v=k_WorD5Zs4o"},
 
 	"obKhAnjBF9": {"game": "th12", "date": "2014-08-27", "author": "thplayer635", "title": "UFO Bomb Glitch ~ [Secret Scoring Knowledge]", "url": "https://www.youtube.com/watch?v=S7fX9z4rH0o"},
 	"ZAaA2rM7qL": {"game": "th12", "date": "2021-03-07", "author": "ZPS", "title": "Touhou 12: Undefined Fantastic Object - Lunatic 2,195,168,090 (Scorebug) - Sanae B", "url": "https://www.youtube.com/watch?v=foWVBHsoZQU"},
