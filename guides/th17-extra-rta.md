@@ -302,7 +302,7 @@ Before entering the mid-boss, pick up a bomb token. When you exit the mid-boss, 
 
 
 
-### Pre-midboss
+### Pre-mid-boss
 
 Beginner/Intermediate/advanced:
 Collect 3 [match=Eagle] tokens and 1 bomb token. Preferably don't die so that you have 4 power entering the boss. 
@@ -320,7 +320,7 @@ Bomb before her second spell-card starts. Then, right after the bomb pick up a t
 
 When the second spell-card ends, break your hyper if you haven't already. If possible, prepare for an [match=Eagle] hyper while also spamming X to bomb her third spell-card. If possible, right after the bomb pick up a token to activate an [match=Eagle] hyper. Time should be around 2.80s-4.50s. Note that this hyper is the hardest one to get in the entire stage considering you have less than 3 seconds to activate it starting from 0 tokens while also having to consider bombing and potentially using a double [match=Eagle] hyper on the attack.
 
-### post-midboss
+### post-mid-boss
 
 Beginner/Intermediate:
 Suicide once to refill your bombs. If you collected strictly more than 2 bomb pieces durung Kutaka after the suicide then it is not a big deal.

@@ -5,7 +5,7 @@ const names = {
 	th09: ['Stage Skip'],
 	th95: ['nothing so far'],
 	th10: ['MarisaB 3 Power Damage', 'Corrupt replays', 'Stage 4 Desync'],
-	th11: ['Negative Spell Bonus', 'ReimuA 2 Power Damage'],
+	th11: ['Negative Spell Bonus', 'ReimuA 2 Power Damage', 'Mid-boss skips'],
 	th12: ['ReimuA Bomb Desync', 'Score Display Overflow', "MarisaA's Laser Damage"],
 	th125:['nothing so far'],
 	th128:['nothing so far'],
@@ -36,6 +36,9 @@ const citations = {
 	"2KQJ4ddgTf": {"game": "th10", "date": "2022-05-28", "author": "Nylilsa", "title": "東方風神録 〜 Extra 6分25秒 魔理沙/B", "url": "https://www.youtube.com/watch?v=RxkHkDJvwXg"},
     "V1NCHhfu8B": {"game": "th10", "date": "2022-06-28", "author": "Nylilsa", "title": "small th10 stage 4 comparison", "url": "https://www.youtube.com/watch?v=0avljm0XfpA"},
 	//"YqNJNn17o7": {"game": "th10", "date": "n.d.", "author": "ExpHP", "title": "STD instructions", "url": "https://exphp.github.io/thpages/#/std/ins?g=10"},
+
+	"9qHKECH5FT": {"game": "th11", "date": "2008-08-22", "author": "sesamebagels", "title": "東方地霊殿 - Subterranean Animism 魔理沙+パチュリ bug", "url": "https://www.youtube.com/watch?v=2JvH6A4lGvg"},
+	"r5TbjJYm6x": {"game": "th11", "date": "2010-04-22", "author": "George Gaumond", "title": "Touhou 11 Subterranean Animism bug: out of my way cat!", "url": "https://www.youtube.com/watch?v=ANspUlv_odk"},
 
 	"obKhAnjBF9": {"game": "th12", "date": "2014-08-27", "author": "thplayer635", "title": "UFO Bomb Glitch ~ [Secret Scoring Knowledge]", "url": "https://www.youtube.com/watch?v=S7fX9z4rH0o"},
 	"ZAaA2rM7qL": {"game": "th12", "date": "2021-03-07", "author": "ZPS", "title": "Touhou 12: Undefined Fantastic Object - Lunatic 2,195,168,090 (Scorebug) - Sanae B", "url": "https://www.youtube.com/watch?v=foWVBHsoZQU"},
