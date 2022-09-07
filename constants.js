@@ -5,7 +5,7 @@ const names = {
 	th09: ['Stage Skip'],
 	th95: ['N/A'],
 	th10: ['MarisaB 3 Power Damage', 'Corrupt replays', 'Stage 4 Desync'],
-	th11: ['Negative Spell Bonus', 'ReimuA 2 Power Damage', 'Mid-boss skips', 'ReimuC Desync', 'Score Desync'],
+	th11: ['Negative Spell Bonus', 'ReimuA 2 Power Damage', 'Mid-boss skips', 'ReimuC Desync', 'Score Desync', 'ReimuA Desync'],
 	th12: ['ReimuA Bomb Desync', 'Score Display Overflow', "MarisaA's Laser Damage"],
 	th125:['N/A'],
 	th128:['N/A'],
@@ -40,7 +40,8 @@ const citations = {
 	"9qHKECH5FT": {"game": "th11", "date": "2008-08-22", "author": "sesamebagels", "title": "東方地霊殿 - Subterranean Animism 魔理沙+パチュリ bug", "url": "https://www.youtube.com/watch?v=2JvH6A4lGvg"},
 	"r5TbjJYm6x": {"game": "th11", "date": "2010-04-22", "author": "George Gaumond", "title": "Touhou 11 Subterranean Animism bug: out of my way cat!", "url": "https://www.youtube.com/watch?v=ANspUlv_odk"},
 	"1ILtinP3Fc": {"game": "th11", "date": "2022-09-04", "author": "Nylilsa", "title": "東方地霊殿～霊夢Cリプレイバグ", "url": "https://www.youtube.com/watch?v=k_WorD5Zs4o"},
-
+	"csXlNTKmMn": {"game": "th11", "date": "2022-09-08", "author": "Nylilsa", "title": "東方地霊殿～霊夢Aリプレイバグ", "url": "https://www.youtube.com/watch?v=e9yNY1ZXTRk"},
+	
 	"obKhAnjBF9": {"game": "th12", "date": "2014-08-27", "author": "thplayer635", "title": "UFO Bomb Glitch ~ [Secret Scoring Knowledge]", "url": "https://www.youtube.com/watch?v=S7fX9z4rH0o"},
 	"ZAaA2rM7qL": {"game": "th12", "date": "2021-03-07", "author": "ZPS", "title": "Touhou 12: Undefined Fantastic Object - Lunatic 2,195,168,090 (Scorebug) - Sanae B", "url": "https://www.youtube.com/watch?v=foWVBHsoZQU"},
 	"m8F7Rxv1Ps": {"game": "th12", "date": "2022-02-21", "author": "ZPS", "title": "Touhou 12: Undefined Fantastic Object - Lunatic - 2,610,822,850 points - Sanae B - Clear", "url": "https://www.youtube.com/watch?v=LvwZCva0cOA"},
@@ -116,7 +117,7 @@ const bugTracker = {
 	th09: {"completed-pages": 0, "total-glitches": 9, "comment": "likely to change much"},
 	th95: {"completed-pages": 0, "total-glitches": 2, "comment": "number is going to increase"},
 	th10: {"completed-pages": 2, "total-glitches": 19, "comment": "not likely to change"},
-	th11: {"completed-pages": 1, "total-glitches": 25, "comment": "not likely to change"},
+	th11: {"completed-pages": 3, "total-glitches": 25, "comment": "not likely to change"},
 	th12: {"completed-pages": 2, "total-glitches": 18, "comment": "not likely to change"},
 	th125: {"completed-pages": 0, "total-glitches": 3, "comment": "number is going to increase"},
 	th128: {"completed-pages": 0, "total-glitches": 2, "comment": "number is going to increase"},
