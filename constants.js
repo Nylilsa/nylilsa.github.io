@@ -12,7 +12,7 @@ const names = {
 	th13: ['Incorrect boss position during spell practice', 'Misalignment of timer'],
 	th14: ['Score Underflow', 'Bulletless Kagerou', "Marisa's Lasers", 'Barrier Bug', 'Gohei Duplication', 'Benben Spell 2 Crash', 'Screen-flipping Effect Undo', "Item Duplication through Game's Speed", 'Timeouts on Tsukumo Sisters on Extra'],
 	th143:['N/A'],
-	th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'No items after a Survival spell-card', 'Reisen Desync'],
+	th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'Hecatia opener 50% shootdown', 'Reisen Desync'],
 	th16: ['(Sub-)shottypes Not Functioning','Stage 5 Incorrect Spellcard name', 'Stage 3 & Stage 5 crashes', 'Mai & Satono Solo Spells Issues', "Okina's Survival Hurtbox", "Okina's Final Bomb/Release Damage"],
 	th165:['N/A'],
 	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break', 'Token duplication','Token Desync - Stage Transition Edition', 'Desync - Roaring Mode Edition', 'Desync - Random Token Edition', "Saki's Survival Hurtbox", "Saki's Final Bomb Damage"],
