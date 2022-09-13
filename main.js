@@ -231,9 +231,21 @@ function progressTable() {
 }
 
 function show() { //toggles all elements in navbar of Bugs if clicked on
+	const selector = document.getElementsByClassName("show-selector")[0];
 	const elements = document.querySelectorAll("#pageBugs li ul");
-	for(let i = 0; i < elements.length; i++) {
-		elements[i].classList.add("show");
+	const flag = selector.classList.contains("show-function");
+	if (flag) {
+		selector.classList.remove("show-function");
+		selector.textContent = "Hide all";
+		for(let i = 0; i < elements.length; i++) {
+			elements[i].classList.add("show");
+		}
+	} else {
+		selector.classList.add("show-function");
+		selector.textContent = "Show all";
+		for(let i = 0; i < elements.length; i++) {
+			elements[i].classList.remove("show");
+		}
 	}
 }
 
