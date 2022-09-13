@@ -92,6 +92,9 @@ const citations = {
 }
 
 const replays = {
+
+	"VPemRVi0Bq": {"game": "th06", "date": "2021-10-09", "author": "kana0603", "name": "kana0603", "difficulty": "Lunatic", "shot": "ReimuA", "version": "1.02h", "note": "Meiling 4th spell-card skip",  "url": "https://mega.nz/file/DvJRzRLa#PbhRb99Y_cLpJ_7t496GKY_yYNcb3Jvqgr3vkmS2o60"},
+
 	"6QslRdYpws": {"game": "th07", "date": "2020-09-13", "author": "ゆっきー", "name": "AAAAAAAA", "difficulty": "Easy", "shot": "SakuyaA", "version": "1.00b", "note": "Merlin final spell-card glitch - chance is 1/1720",  "url": "https://mega.nz/file/m24HgZrL#TDgI4560scbF6s7elPRN-BydT14z4N34OrbyVGydEWg"},
 	"PLv0zArCHT": {"game": "th07", "date": "2020-07-20", "author": "Plus", "name": "+", "difficulty": "Normal", "shot": "SakuyaB", "version": "1.00b", "note": "Merlin post-boss glitch - chance is 1/49", "url": "https://mega.nz/file/e7gEDCSY#YWulV1JjBLZg9ro00y-8lwfR_n2fzyYGdmADIADhumY"},
 	"26nmhATHmN": {"game": "th07", "date": "2020-09-12", "author": "Ｋ・Ｇ", "name": "KiS HaSB", "difficulty": "Hard", "shot": "SakuyaB", "version": "1.00b", "note": "Merlin post-boss glitch - chance is 1/476", "url": "https://mega.nz/file/WvA0CIxY#XLe86njASnNSKuDDzBvXI_9snIrt9x5AifcNnrCGP1M"},
@@ -99,11 +102,22 @@ const replays = {
 	"g3TRR5bGdv": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "MarisaB", "version": "1.00b", "note": "Lyrica post-boss glitch - chance is 1/60314", "url": "https://mega.nz/file/O2oF2C6J#Atn8nDFNdVIhkfGht_lQ5mbE8t60We79tn7Hv84wgVw"},
 	"0m17ZCJ0ef": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuB", "version": "1.00b", "note": "Lunasa post-boss glitch - chance is 1/40428", "url": "https://mega.nz/file/OzIVmAAZ#ko9pV5cgT4furnv0sD6eAVljbct_wdVq-ck67UH8b1Q"},
 	
-	"HPKdHaqdwC": {"game": "th15", "date": "2022-08-28", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "Reisen", "version": "1.00b", "note": "", "url": "https://mega.nz/file/jqREQYDJ#YG4xhMGw5DZkt6wo45G0G6mzXOBldyFTWj8z883rSGY"}
+	"g0dRW3SG14": {"game": "th11", "date": "2022-09-13", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "MarisaB", "version": "1.00a", "note": "", "url": "https://mega.nz/file/2vJHjLib#EYkITCt_QX7exKZ4GK2PI87Q-KaJBzhDCzj9LxaWJEc"},
+	"8yxQ1EpFJI": {"game": "th11", "date": "2022-09-04", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "MarisaA", "version": "1.00a", "note": "", "url": "https://mega.nz/file/mvAjVQBJ#dn_HYue8EQ-3Sww1VIROjBXYn_gGHpyxkRaU04IClyI"},
+	"0M0iBCNjkv": {"game": "th11", "date": "2022-09-04", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuC", "version": "1.00a", "note": "", "url": "https://mega.nz/file/DiA0gb6Q#9cW9C6w5rd2qDIAuJ8n1ZzfwT5bH2GXzNYtZAgK3IUs"},
+	"oeFZ1BABul": {"game": "th11", "date": "2022-09-10", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuC", "version": "1.00a", "note": "Desync on Stage 2 and Stage 3. Replay is unwatchable", "url": "https://mega.nz/file/H2gBiK6Q#tIh0ivUkn-alePappyklAvemD3wyZL0bqjMiiKphelk"},
+	
+	"fZ38TTtyHT": {"game": "th15", "date": "2022-09-13", "author": "Nylilsa", "name": "NySSN3", "difficulty": "Lunatic", "shot": "Sanae", "version": "1.00b", "note": "Non-spell 3 skip", "url": "https://mega.nz/file/XyA2gBIb#Ksa7nfNYFOZxs2QbsLj_dTzB17kOkDJnrX_Q7_tKSmw"},
+	"HPKdHaqdwC": {"game": "th15", "date": "2022-08-28", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "Reisen", "version": "1.00b", "note": "", "url": "https://mega.nz/file/jqREQYDJ#YG4xhMGw5DZkt6wo45G0G6mzXOBldyFTWj8z883rSGY"},
+	
+	"bYk0oqAKP0": {"game": "th16", "date": "2022-09-13", "author": "Nylilsa", "name": "PSG0625", "difficulty": "Extra", "shot": "Reimu", "version": "1.00a", "note": "", "url": "https://mega.nz/file/u74EHIID#eDHIDNgYb7_nM-p4V0-6vGnOX1pUj1DMHF-12Rjx3Ss"},
+	
+	"y4dOw7rsW0": {"game": "th17", "date": "2022-09-04", "author": "Nylilsa", "name": "PSG0539", "difficulty": "Extra", "shot": "YoumuOtter", "version": "1.00b", "note": "", "url": "https://mega.nz/file/u6R33KCC#dgRUByJMFsb9wx43CBa7xaFY2QldQtQslmHQ9V8BA24"}
 
 }
 
 const contributors = {
+	"S7daW4HHTY": {"name": "32th System", "help": "Provided various aids", "url": "https://youtube.com/32thc"},
 	"1AThrt4mzz": {"name": "Helio Knight", "help": "HSiFS page 3 research", "url": "https://www.youtube.com/channel/UCNbaT2iVuYKN5q94b9UlTEA"},
 	"0lDi5bpXmy": {"name": "kana0603", "help": "Provided various EoSD glitches & replays", "url": "https://twitter.com/kana_th6"},
 	"VSlamYrAwJ": {"name": "zero318", "help": "Massively helped with the Merlin glitch", "url": "https://github.com/zero318"}
