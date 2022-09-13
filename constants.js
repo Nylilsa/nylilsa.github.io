@@ -50,7 +50,6 @@ const citations = {
 	"Els7ZwnHuu": {"game": "th12", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
 	"1bBWvqDT6t": {"game": "th12", "date": "2019-07-25", "author": "ZPS", "title": "UFO Marisa A Glitchless vs. Glitched Damage Comparison", "url": "https://www.youtube.com/watch?v=jP0mj3k1P24"},
 	
-	
 	"1TwZQlGqEN": {"game": "th14", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
 	"tyqdbrOWJQ": {"game": "th14", "date": "2017-04-06", "author": "NNN_shooter", "title": "【TAS】TH14 DDC \"Lunatic\" SakuyaA 9,999,999,990", "url": "https://www.youtube.com/watch?v=gZgKglbe-7M"},
 	"2OdweRcuyk": {"game": "th14", "date": "2017-07-28", "author": "NNN_shooter", "title": "【TAS】TH14 DDC \"Extra\" SakuyaA 9,999,999,990 No Lateral Move No Miss", "url": "https://www.youtube.com/watch?v=Oydp7bzTJrs"},
@@ -79,7 +78,6 @@ const citations = {
 	"lNMCKb4ARr": {"game": "th16", "date": "2019-05-25", "author": "F", "title": "【東方天空璋】爾子田里乃消失バグ！？", "url": "https://www.youtube.com/watch?v=Oj4_zPNCQ2c"},
 	"yyf9Q3J4MF": {"game": "th16", "date": "2017-08-14", "author": "AlternateDimensions", "title": "Touhou 16 : Hidden Star in Four Seasons (HSiFS) - Mai and Satono Spell Practice Glitch", "url": "https://www.youtube.com/watch?v=8Dzxwj2nd8Y"},
 
-
 	"ZS7nE2L10d": {"game": "th17", "date": "2019-09-26", "author": "NNN_shooter", "title": "【紲星あかり解説】 東方鬼形獣 オオワシ妖夢＆妖夢全般解説+おまけ（ショット比較）", "url": "https://www.youtube.com/watch?v=Q7CN9ZGAiHY"},
 	"7tWc2Qfu90": {"game": "th17", "date": "2020-10-17", "author": "32th System", "title": "What is the dupe that the th17 scorerunners talk about?", "url": "https://www.youtube.com/watch?v=RsucrXjPD_8"},
 	"Jwhtg37pHy": {"game": "th17", "date": "2021-03-21", "author": "Borealis", "title": "Touhou 17: Wily Beast and Weakest Creature - 11,982,030,340 (WR) Lunatic MarisaOtter Scorerun", "url": "https://www.youtube.com/watch?v=ydYqFBM_k7g&t=102s"},
@@ -106,6 +104,10 @@ const replays = {
 	"8yxQ1EpFJI": {"game": "th11", "date": "2022-09-04", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "MarisaA", "version": "1.00a", "note": "", "url": "https://mega.nz/file/mvAjVQBJ#dn_HYue8EQ-3Sww1VIROjBXYn_gGHpyxkRaU04IClyI"},
 	"0M0iBCNjkv": {"game": "th11", "date": "2022-09-04", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuC", "version": "1.00a", "note": "", "url": "https://mega.nz/file/DiA0gb6Q#9cW9C6w5rd2qDIAuJ8n1ZzfwT5bH2GXzNYtZAgK3IUs"},
 	"oeFZ1BABul": {"game": "th11", "date": "2022-09-10", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuC", "version": "1.00a", "note": "Desync on Stage 2 and Stage 3. Replay is unwatchable", "url": "https://mega.nz/file/H2gBiK6Q#tIh0ivUkn-alePappyklAvemD3wyZL0bqjMiiKphelk"},
+	
+	"0ycu2Bqisw": {"game": "th12", "date": "2022-09-13", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuA", "version": "1.00b", "note": "Desync on Stage 2", "url": "https://mega.nz/file/fyxVwZoC#EpvP7wjmbXmaq7-D_w3RVbk2irEHsespEiBgdJSo8AU"},
+	
+	"C8JIJHBmZm": {"game": "th14", "date": "2022-09-13", "author": "Nylilsa", "name": "Ny", "difficulty": "Easy", "shot": "SakuyaA", "version": "1.00b", "note": "Wakasagihime's first spell-card", "url": "https://mega.nz/file/vi4R3L7Y#ctwxxJ_v0Crp_Lz0QjvSNiwZb8mGjc5-tSjFPva3spw"},
 	
 	"fZ38TTtyHT": {"game": "th15", "date": "2022-09-13", "author": "Nylilsa", "name": "NySSN3", "difficulty": "Lunatic", "shot": "Sanae", "version": "1.00b", "note": "Non-spell 3 skip", "url": "https://mega.nz/file/XyA2gBIb#Ksa7nfNYFOZxs2QbsLj_dTzB17kOkDJnrX_Q7_tKSmw"},
 	"HPKdHaqdwC": {"game": "th15", "date": "2022-08-28", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "Reisen", "version": "1.00b", "note": "", "url": "https://mega.nz/file/jqREQYDJ#YG4xhMGw5DZkt6wo45G0G6mzXOBldyFTWj8z883rSGY"},
