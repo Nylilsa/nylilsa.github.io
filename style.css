@@ -269,9 +269,13 @@ th {
     padding-left: 0px;
 }
 
-.url {
+.url, .url-toc {
     color:#6873d8;
     text-decoration: underline;
+}
+
+.url:visited {
+    color:#934bb4;
 }
 
 b, strong {

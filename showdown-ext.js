@@ -241,7 +241,7 @@ let ext = function() {
 		replace: function(full, anchor, text) {
 			let key = anchor.substring(1);
 			key = key.match(/[^#]*$/)[0]; // no idea how I managed to make this work
-			return "<a class='url' href="+anchor+" onclick='jumpTo(\""+key+"\", 1)'>"+text+"</a>";
+			return "<a class='url-toc' href="+anchor+" onclick='jumpTo(\""+key+"\", 1)'>"+text+"</a>";
 		}
 	}
 
