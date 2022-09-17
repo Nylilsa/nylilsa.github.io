@@ -4,7 +4,7 @@ const names = {
 	th08: ['Dialogue Pause Desync', 'Unintended Last Spell Trigger'],
 	th09: ['Stage Skip'],
 	th95: ['N/A'],
-	th10: ['MarisaB 3 Power Damage', 'Corrupt replays', 'Stage 4 Desync', 'Bullet hitboxes glitch'],
+	th10: ['MarisaB 3 Power Damage', 'Corrupt replays', 'Stage 4 Desync', 'Bullet hitboxes glitch', 'Stage transition Desync'],
 	th11: ['Negative Spell Bonus', 'ReimuA 2 Power Damage', 'Mid-boss skips', 'ReimuC Desync', 'Score Desync', 'ReimuA Desync', 'Stage 6 Desync', 'Stage transition Desync'],
 	th12: ['ReimuA Bomb Desync', 'Score Display Overflow', "MarisaA's Laser Damage"],
 	th125:['N/A'],
