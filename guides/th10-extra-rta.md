@@ -1,6 +1,5 @@
 [title=MoF: Extra RTA guide]
 # Mountain of Faith - Extra RTA guide
-
 [hr_major]  
 
 Author: Nylilsa
