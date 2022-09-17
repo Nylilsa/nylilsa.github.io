@@ -1,6 +1,5 @@
 [title=WBaWC: Extra RTA guide]
 # Wily Beast and Weakest Creature - Extra RTA guide
-
 [hr_major]  
 
 Author: Nylilsa
