@@ -7,7 +7,7 @@ const names = {
 	th10: ['MarisaB 3 Power Damage', 'Corrupt replays', 'Stage 4 Desync', 'Bullet hitboxes glitch', 'Stage transition Desync'],
 	th11: ['Negative Spell Bonus', 'ReimuA 2 Power Damage', 'Mid-boss skips', 'ReimuC Desync', 'Score Desync', 'ReimuA Desync', 'Stage 6 Desync', 'Stage transition Desync'],
 	th12: ['ReimuA Bomb Desync', 'Score Display Overflow', "MarisaA's Laser Damage"],
-	th125:['N/A'],
+	th125:['12-6 Instant death glitch'],
 	th128:['N/A'],
 	th13: ['Incorrect boss position during spell practice', 'Misalignment of timer'],
 	th14: ['Score Underflow', 'Bulletless Kagerou', "Marisa's Lasers", 'Barrier Bug', 'Gohei Duplication', 'Benben Spell 2 Crash', 'Screen-flipping Effect Undo', "Item Duplication through Game's Speed", 'Timeouts on Tsukumo Sisters on Extra'],
