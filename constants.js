@@ -107,6 +107,8 @@ const replays = {
 	"g3TRR5bGdv": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "MarisaB", "version": "1.00b", "note": "Lyrica post-boss glitch - chance is 1/60314", "url": "https://mega.nz/file/O2oF2C6J#Atn8nDFNdVIhkfGht_lQ5mbE8t60We79tn7Hv84wgVw"},
 	"0m17ZCJ0ef": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuB", "version": "1.00b", "note": "Lunasa post-boss glitch - chance is 1/40428", "url": "https://mega.nz/file/OzIVmAAZ#ko9pV5cgT4furnv0sD6eAVljbct_wdVq-ck67UH8b1Q"},
 	
+	"mawUVYi8SZ": {"game": "th10", "date": "2022-09-17", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuB", "version": "1.00a", "note": "All stages are affected", "url": "https://mega.nz/file/775FGLzA#CFgOJhRwKJi_wQ-Z9GTe7Dg2Sn0SoVO4PJ4wRFjyjdc"},
+	
 	"g0dRW3SG14": {"game": "th11", "date": "2022-09-13", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "MarisaB", "version": "1.00a", "note": "", "url": "https://mega.nz/file/2vJHjLib#EYkITCt_QX7exKZ4GK2PI87Q-KaJBzhDCzj9LxaWJEc"},
 	"8yxQ1EpFJI": {"game": "th11", "date": "2022-09-04", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "MarisaA", "version": "1.00a", "note": "", "url": "https://mega.nz/file/mvAjVQBJ#dn_HYue8EQ-3Sww1VIROjBXYn_gGHpyxkRaU04IClyI"},
 	"0M0iBCNjkv": {"game": "th11", "date": "2022-09-04", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuC", "version": "1.00a", "note": "", "url": "https://mega.nz/file/DiA0gb6Q#9cW9C6w5rd2qDIAuJ8n1ZzfwT5bH2GXzNYtZAgK3IUs"},
