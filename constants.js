@@ -11,7 +11,7 @@ const names = {
 	th128:['N/A'],
 	th13: ['Incorrect boss position during spell practice', 'Misalignment of timer'],
 	th14: ['Score Underflow', 'Bulletless Kagerou', "Marisa's Lasers", 'Barrier Bug', 'Gohei Duplication', 'Benben Spell 2 Crash', 'Screen-flipping Effect Undo', "Item Duplication through Game's Speed", 'Timeouts on Tsukumo Sisters on Extra'],
-	th143:['N/A'],
+	th143:['Score Underflow'],
 	th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'Hecatia opener 50% shootdown', 'Reisen Desync'],
 	th16: ['(Sub-)shottypes Not Functioning','Stage 5 Incorrect Spellcard name', 'Stage 3 & Stage 5 crashes', 'Mai & Satono Solo Spells Issues', "Okina's Survival Hurtbox", "Okina's Final Bomb/Release Damage"],
 	th165:['N/A'],
@@ -29,7 +29,6 @@ const citations = {
 	"ENDSVfmrh8": {"game": "th07", "date": "2022-07-13", "author": "inakilbss", "title": "Perfect Cherry Blossom — Merlin Glitch + Prismrivers LNN (SakuyaA)", "url": "https://www.youtube.com/watch?v=aMRkmKmocsQ"},
 	"Na19l8CMf4": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "title": "東方妖々夢～リリカ・プリズムリバー暴走バグ", "url": "https://www.youtube.com/watch?v=tufvQ1fR3Y0"},
 	"cLNCEmYPwZ": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "title": "東方妖々夢～ルナサ・プリズムリバー暴走バグ", "url": "https://www.youtube.com/watch?v=q1-qCmcfB5A"},
-
 
 	"lED2ol41Co": {"game": "th10", "date": "2013-09-14", "author": "a26866152", "title": "【TAS】東方風神録Lunatic バグマリ in 13:39.25", "url": "https://www.youtube.com/watch?v=efqy8GBUNL0"},
 	"vR1jF7QiOO": {"game": "th10", "date": "2022-08-15", "author": "Nylilsa", "title": "東方風神録 〜 Lunatic 13分54秒 魔理沙/B", "url": "https://www.youtube.com/watch?v=0ETirf_ywHY"},
@@ -65,6 +64,8 @@ const citations = {
 	"hql00fwC48": {"game": "th14", "date": "2017-04-04", "author": "NNN_shooter", "title": "【TAS】TH14 DDC \"Lunatic\" ReimuA in 17:13.63", "url": "https://www.youtube.com/watch?v=bZfXgqf210k"},
 	"RFhleEF25P": {"game": "th14", "date": "2022-06-22", "author": "Helio Knight", "title": "Baby's first DDC ReimuA Gohei dupe", "url": "https://www.youtube.com/watch?v=1qKdnwl5-OE"},
 	"swrajocPpX": {"game": "th14", "date": "2017-07-01", "author": "NNN_shooter", "title": "東方輝針城speedrunで重要なお祓い棒分裂の詳細（現状判明分 + 推測）", "url": "https://nnn-shooter.hatenablog.com/entry/ar1291350"},
+	
+	"a2p3Jtvow4": {"game": "th143", "date": "2016-05-21", "author": "thplayer635", "title": "scoring with sekibanki 2 [secret ISC scoring strat]", "url": "https://www.youtube.com/watch?v=-BScbpVxKLg"},
 
 	"XewIFrqJCj": {"game": "th15", "date": "2022-06-25", "author": "Nylilsa", "title": "【東方紺珠伝】サグメスキップ〜霊夢と早苗", "url": "https://www.youtube.com/watch?v=u5brd2bYor4"},
 	"9MaLyBEpwP": {"game": "th15", "date": "2017-06-27", "author": "fon", "title": "Touhou 15 - Legacy Mode (Lunatic) Speedrun in 23:48", "url": "https://www.youtube.com/watch?v=cCxeK1-i_nU&t=772s"},
@@ -117,6 +118,8 @@ const replays = {
 	"0ycu2Bqisw": {"game": "th12", "date": "2022-09-13", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuA", "version": "1.00b", "note": "Desync on Stage 2", "url": "https://mega.nz/file/fyxVwZoC#EpvP7wjmbXmaq7-D_w3RVbk2irEHsespEiBgdJSo8AU"},
 	
 	"C8JIJHBmZm": {"game": "th14", "date": "2022-09-13", "author": "Nylilsa", "name": "Ny", "difficulty": "Easy", "shot": "SakuyaA", "version": "1.00b", "note": "Wakasagihime's first spell-card", "url": "https://mega.nz/file/vi4R3L7Y#ctwxxJ_v0Crp_Lz0QjvSNiwZb8mGjc5-tSjFPva3spw"},
+	
+	"06bYhNkRnt": {"game": "th143", "date": "2022-09-18", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "1-5", "shot": "Seija", "version": "1.00a", "note": "", "url": "https://mega.nz/file/GjIE2SxS#Dc0nfF6Y0X6qL4Gak-w2yWAbO6p0Vy8yWXNtZl2ORiA"},
 	
 	"fZ38TTtyHT": {"game": "th15", "date": "2022-09-13", "author": "Nylilsa", "name": "NySSN3", "difficulty": "Lunatic", "shot": "Sanae", "version": "1.00b", "note": "Non-spell 3 skip", "url": "https://mega.nz/file/XyA2gBIb#Ksa7nfNYFOZxs2QbsLj_dTzB17kOkDJnrX_Q7_tKSmw"},
 	"HPKdHaqdwC": {"game": "th15", "date": "2022-08-28", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "Reisen", "version": "1.00b", "note": "", "url": "https://mega.nz/file/jqREQYDJ#YG4xhMGw5DZkt6wo45G0G6mzXOBldyFTWj8z883rSGY"},

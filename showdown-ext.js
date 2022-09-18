@@ -327,6 +327,17 @@ let ext = function() {
 		}
 	}
 
+	let scenes = {
+		type: "lang",
+		regex: /\[scenes=([^]*?), (true|false), (\[[0-9].*\])\]/g,
+		replace: function(notrelevant, game, flag, array) {
+			array = array.slice(1, -1).split(",").map(Number)
+			console.log(array)
+			setTimeout(() => {  gameScenes(game, flag, array)}, 1);
+			return "<div id='table-scenes'></div>";
+		}
+	}
+
 	let check = {
 		type: "lang",
 		regex: /\:YES\:/g,
@@ -339,5 +350,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [yt, hr_major, hr_minor, hr_custom, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, match, check, cross];
+	return [yt, hr_major, hr_minor, hr_custom, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, match, scenes, check, cross];
 }

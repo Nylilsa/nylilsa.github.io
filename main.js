@@ -83,7 +83,7 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 	// table-shottype is ID of div in showdown-ext.js
 	const content = document.getElementById('table-shottype');
 	if (input.length == 20) { //hsifs
-		str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchColors['Spring']+'">Spring</span></td>';
+		let str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchColors['Spring']+'">Spring</span></td>';
 		for (let i = 0; i < input.length; i++) {
 			switch (i) {
 				case 4: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Summer']+'">Summer</span></td>'; break;}
@@ -99,9 +99,10 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 		}
 		str += '</tr></tbody></table>';
 		content.innerHTML += str;
+		return;
 	} 
 	if (input.length == 9) { //wbawc
-		str = '<table><thead><tr><th class="left">Spirit</th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchColors['Wolf']+'">Wolf</span></td>';
+		let str = '<table><thead><tr><th class="left">Spirit</th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchColors['Wolf']+'">Wolf</span></td>';
 		for (let i = 0; i < input.length; i++) {
 			switch (i) {
 				case 3: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Otter']+'">Otter</span></td>'; break;}
@@ -115,6 +116,7 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 		}
 		str += '</tr></tbody></table>';
 		content.innerHTML += str;
+		return;
 	} 
 }
 
@@ -254,7 +256,6 @@ function replaceEclIns() {
 }
 
 function matchText(text) {
-
 	return "<span style='color:"+matchColors[text]+"'>"+text+"</span>";
 }
 
@@ -264,6 +265,37 @@ function hrCustom(input) {
 		return "<hr style='border-color:"+color+"'>"
 	}
 	return "<hr style='border-color:"+input+"'>" // if input is color
+}
+
+function gameScenes(game, flag, array) {
+	const content = document.getElementById('table-scenes'); // table-scenes is ID of div in showdown-ext.js
+	if (flag === 'true') {
+		var yes = '<img src="/assets/green-check-mark.svg" class="icon-text">';
+		var no = '<img src="/assets/red-cross.svg" class="icon-text">';
+	} else {
+		var no = '<img src="/assets/green-check-mark.svg" class="icon-text">';
+		var yes = '<img src="/assets/red-cross.svg" class="icon-text">';
+	}
+	
+	if (game === '143') {
+		let str = '<table><thead><tr><th class="left">Scenes</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead><tbody><tr><td class="left">Day 1</td>';
+		const days = [1, 7, 13, 20, 27, 35, 43, 51, 58, 66]; // digit k represents first day of indexOf k.
+		const maximum = 75;
+		let k = 1;
+		for (let i = 1; i <= maximum; i++) {
+			if (i === days[k]) {
+				str += '</tr><tr><td class="left">Day '+(k+1)+'</td>';
+				k += 1;
+			}
+			if (array.includes(i)) {
+				str += '<td>'+yes+'</td>';
+			} else {
+				str += '<td>'+no+'</td>';
+			}
+		}
+		content.innerHTML += str;
+		return;
+	}
 }
 
 ///////////////////// UNUSED /////////////////////
