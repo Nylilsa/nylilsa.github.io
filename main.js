@@ -480,6 +480,31 @@ function initNavColor() { // changes color to match the game's color
 	mobile.style.borderColor = colorRGB(-16);
 }
 
+
+function initSwipeCheck() {
+	let touchstartX = 0;
+	let touchendX = 0;
+	const limit = 50;
+	
+	function checkDirection() {
+		const swipeRight = touchendX > touchstartX;
+		const swipeOnLeft = limit > touchstartX;
+		const menuCheck = document.getElementById("sidebar").classList.contains("sidebar-class-desktop");
+		if (swipeRight && swipeOnLeft && menuCheck) {
+			toggleSidebar();
+		}
+	}
+
+	document.addEventListener('touchstart', e => {
+	  touchstartX = e.changedTouches[0].screenX;
+	})
+
+	document.addEventListener('touchend', e => {
+	  touchendX = e.changedTouches[0].screenX;
+	  checkDirection();
+	})
+}
+
 function init() {
 	loadMarkdown(initRemoveHash(false)); //loads in md 
 	initRememberScroll();
@@ -487,6 +512,7 @@ function init() {
 	initSidebarContent();
 	initResize();
 	initAutoHideMenu();
+	initSwipeCheck();
 	//debug();
 }
 
