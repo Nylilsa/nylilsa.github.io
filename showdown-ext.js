@@ -154,7 +154,7 @@ let ext = function() {
 	let yes = {
 		type: "lang",
 		regex: /\[yes\]([^]*?)\[\/yes\]/g,
-		replace: "<span style='color:#00ff00'>$1</span>"
+		replace: "<span style='color:#14d914'>$1</span>"
 	}
 
 	let unknown = {
@@ -166,7 +166,7 @@ let ext = function() {
 	let no = {
 		type: "lang",
 		regex: /\[no\]([^]*?)\[\/no\]/g,
-		replace: "<span style='color:#ff0000'>~~$1~~</span>"
+		replace: "<span style='color:#c91010'>~~$1~~</span>"
 	}
 
 	let specs = {
