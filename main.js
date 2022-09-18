@@ -480,7 +480,6 @@ function initNavColor() { // changes color to match the game's color
 	mobile.style.borderColor = colorRGB(-16);
 }
 
-
 function initSwipeCheck() {
 	let touchstartX = 0;
 	let touchendX = 0;
@@ -490,7 +489,11 @@ function initSwipeCheck() {
 		const swipeRight = touchendX > touchstartX;
 		const swipeOnLeft = limit > touchstartX;
 		const menuCheck = document.getElementById("sidebar").classList.contains("sidebar-class-desktop");
-		if (swipeRight && swipeOnLeft && menuCheck) {
+
+		const swipeEnoughToLeft = screen.width * 1/5;
+		const swipeToLeftCheck = (touchstartX - touchendX) > swipeEnoughToLeft
+		
+		if (swipeRight && swipeOnLeft && menuCheck || swipeToLeftCheck) {
 			toggleSidebar();
 		}
 	}
