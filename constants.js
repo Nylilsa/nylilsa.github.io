@@ -49,6 +49,8 @@ const citations = {
 	"Els7ZwnHuu": {"game": "th12", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
 	"1bBWvqDT6t": {"game": "th12", "date": "2019-07-25", "author": "ZPS", "title": "UFO Marisa A Glitchless vs. Glitched Damage Comparison", "url": "https://www.youtube.com/watch?v=jP0mj3k1P24"},
 	
+	"2r2sb5fl1o": {"game": "th125", "date": "2010-03-17", "author": "Vexe1", "title": "Touhou 12.5 ~ Double Spoiler, Stage 12-6 GLITCH", "url": "https://www.youtube.com/watch?v=3KlN0x4I4HM"},
+	
 	"1TwZQlGqEN": {"game": "th14", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
 	"tyqdbrOWJQ": {"game": "th14", "date": "2017-04-06", "author": "NNN_shooter", "title": "【TAS】TH14 DDC \"Lunatic\" SakuyaA 9,999,999,990", "url": "https://www.youtube.com/watch?v=gZgKglbe-7M"},
 	"2OdweRcuyk": {"game": "th14", "date": "2017-07-28", "author": "NNN_shooter", "title": "【TAS】TH14 DDC \"Extra\" SakuyaA 9,999,999,990 No Lateral Move No Miss", "url": "https://www.youtube.com/watch?v=Oydp7bzTJrs"},
@@ -144,7 +146,7 @@ const bugTracker = {
 	th08: {"completed-pages": 1, "total-glitches": 15, "comment": "not likely to change unless we look at glitches in older versions"},
 	th09: {"completed-pages": 0, "total-glitches": 9, "comment": "likely to change much"},
 	th95: {"completed-pages": 0, "total-glitches": 2, "comment": "number is going to increase"},
-	th10: {"completed-pages": 3, "total-glitches": 19, "comment": "not likely to change"},
+	th10: {"completed-pages": 4, "total-glitches": 18, "comment": "not likely to change"},
 	th11: {"completed-pages": 7, "total-glitches": 23, "comment": "not likely to change"},
 	th12: {"completed-pages": 2, "total-glitches": 18, "comment": "not likely to change"},
 	th125: {"completed-pages": 0, "total-glitches": 3, "comment": "number is going to increase"},
