@@ -331,8 +331,7 @@ let ext = function() {
 		type: "lang",
 		regex: /\[scenes=([^]*?), (true|false), (\[[0-9].*\])\]/g,
 		replace: function(notrelevant, game, flag, array) {
-			array = array.slice(1, -1).split(",").map(Number)
-			console.log(array)
+			array = array.slice(1, -1).split(",").map(Number);
 			setTimeout(() => {  gameScenes(game, flag, array)}, 1);
 			return "<div id='table-scenes'></div>";
 		}

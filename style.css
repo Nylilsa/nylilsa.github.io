@@ -497,6 +497,14 @@ button {
     top: -1px;
 }
 
+#table-scenes {
+    overflow: auto;
+}
+#table-scenes::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
 /* ---------------------------------------------------
 MEDIAQUERIES
 ----------------------------------------------------- */
