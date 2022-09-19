@@ -50,6 +50,7 @@ const citations = {
 	"1bBWvqDT6t": {"game": "th12", "date": "2019-07-25", "author": "ZPS", "title": "UFO Marisa A Glitchless vs. Glitched Damage Comparison", "url": "https://www.youtube.com/watch?v=jP0mj3k1P24"},
 	
 	"2r2sb5fl1o": {"game": "th125", "date": "2010-03-17", "author": "Vexe1", "title": "Touhou 12.5 ~ Double Spoiler, Stage 12-6 GLITCH", "url": "https://www.youtube.com/watch?v=3KlN0x4I4HM"},
+	"WowBsLKIF9": {"game": "th125", "date": "2019-06-08", "author": "ide\\_an", "title": "hanakopatch", "url": "https://bitbucket.org/ide\_an/hanakopatch/src/master/"},
 	
 	"1TwZQlGqEN": {"game": "th14", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
 	"tyqdbrOWJQ": {"game": "th14", "date": "2017-04-06", "author": "NNN_shooter", "title": "【TAS】TH14 DDC \"Lunatic\" SakuyaA 9,999,999,990", "url": "https://www.youtube.com/watch?v=gZgKglbe-7M"},
