@@ -124,17 +124,14 @@ function toggleSidebar() { //changes class of sidebar upon button press
 		sidebar.className = 'sidebar-class-desktop';
 		return;
 	}
-	if (sidebar.className == "sidebar-class-desktop") {
-		sidebar.className = 'sidebar-class-mobile';
-	}
-	
+	sidebar.className = 'sidebar-class-mobile';
 }
 
 function resize() { //changes property of sidebar button and sidebar class
 	const ratio = window.innerWidth / window.innerHeight;
 	const sidebar = document.getElementById('sidebar'); 
 	const hidden = document.getElementsByClassName('hidden'); //for toggling visibility of button (should only appear on mobile)
-	const maxAspectRatio =  14 / 16; // must be same as aspect ration in style.css
+	const maxAspectRatio =  14 / 16; // must be same as aspect ration in style.scss
 
 	if (ratio <= maxAspectRatio) {
 		for(let i = 0; i < hidden.length; i++) {
@@ -254,7 +251,7 @@ function show() { //toggles all elements in navbar of Bugs if clicked on
 }
 
 function replaceEclIns() {
-	console.log(1);
+	console.log(1); // TBD
 }
 
 function matchText(text) {
@@ -358,7 +355,6 @@ function debug() {
 	console.log(html);
 }
 
-
 ///////////////////// INIT /////////////////////
 
 function initSidebarContent() {
@@ -377,10 +373,8 @@ function initSidebarContent() {
 			k += 1;
 		}
 	}
-	//console.log(k) // shows number of pages ive written so far
+	//console.log(k) 
 }
-
-
 
 function initMarkdown() { //puts html in id 'test'
 	const input = document.getElementById("mdcontent").innerHTML; //is md text
@@ -388,48 +382,45 @@ function initMarkdown() { //puts html in id 'test'
 	let html = "";
 	html += MD.makeHtml(input);
 	$nav.innerHTML = html;
-	initCustomColor(); // changes color of divs based on page
+	initCustomColor(); 
 }
 
 function initScrollBar() {
-    // Create the <style>
     const style = document.createElement("style");
-
 	style.className = "scrollbars";
     let css = "::-webkit-scrollbar {width: 4px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
 	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB(32);+ "";
 	css += "; }";
-
-    // WebKit hack :
     style.appendChild(document.createTextNode(css));
-
-	// if class exists, do not append but instead change color
 	if (document.getElementsByClassName('scrollbars').length >= 1) {
 		document.getElementsByClassName('scrollbars')[0].innerHTML = css;
 		return;
 	}
-    // Add the <style> element to the page
-
     document.body.appendChild(style);
     return style.sheet;
 }
 
-
 function initAutoHideMenu() { // hides menu when scrolling
     const menu = document.getElementById('header');
-
     let previousScrollTop = document.scrollingElement.scrollTop;
-
     document.addEventListener('scroll', function () {
         if (document.scrollingElement.scrollTop < previousScrollTop) { // if scroll upwards
             menu.style.transform = 'translateY(0px)';
         } else {
             menu.style.transform = 'translateY(-60px)';
         }
-
         previousScrollTop = document.scrollingElement.scrollTop;
-		window.addEventListener('hashchange', initCustomColor(), false); // if page is reloaded then execute function
     }, { passive: true });
+}
+
+function initHashChange() {
+    window.addEventListener('hashchange', (e) => {loadMarkdown(initRemoveHash(false));}, false); 
+}
+
+function initHljs() {
+    hljs.configure({
+        ignoreUnescapedHTML: true
+      });
 }
 
 
@@ -448,7 +439,6 @@ function initRemoveHash(input) { //removes #/
 		return hash;
 	}
 	return c;
-	
 }
 
 function initResize() { // calls every time window changes
@@ -496,12 +486,12 @@ function initSwipeCheck() {
 	}
 
 	document.addEventListener('touchstart', e => {
-	  touchstartX = e.changedTouches[0].screenX;
+	    touchstartX = e.changedTouches[0].screenX;
 	})
 
 	document.addEventListener('touchend', e => {
-	  touchendX = e.changedTouches[0].screenX;
-	  checkDirection();
+	    touchendX = e.changedTouches[0].screenX;
+	    checkDirection();
 	})
 }
 
@@ -510,10 +500,11 @@ function init() {
 	initRememberScroll();
 	initCustomColor();
 	initSidebarContent();
+    initHashChange();
 	initResize();
+    initHljs();
 	initAutoHideMenu();
 	initSwipeCheck();
-	//debug();
 }
 
 init();
