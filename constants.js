@@ -120,6 +120,7 @@ const replays = {
 	"0ycu2Bqisw": {"game": "th12", "date": "2022-09-13", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuA", "version": "1.00b", "note": "Desync on Stage 2", "url": "https://mega.nz/file/fyxVwZoC#EpvP7wjmbXmaq7-D_w3RVbk2irEHsespEiBgdJSo8AU"},
 	
 	"C8JIJHBmZm": {"game": "th14", "date": "2022-09-13", "author": "Nylilsa", "name": "Ny", "difficulty": "Easy", "shot": "SakuyaA", "version": "1.00b", "note": "Wakasagihime's first spell-card", "url": "https://mega.nz/file/vi4R3L7Y#ctwxxJ_v0Crp_Lz0QjvSNiwZb8mGjc5-tSjFPva3spw"},
+	"UOqn0F4Txs": {"game": "th14", "date": "2022-09-14", "author": "Nylilsa", "name": "Ny", "difficulty": "Lunatic", "shot": "ReimuA", "version": "1.00b", "note": "", "url": "https://mega.nz/file/OrwBxbDJ#a9kfr04MdTxYPI8ON5Ta-5Y9JfDNlouk4_Rw9EBB2Vc"},
 	
 	"06bYhNkRnt": {"game": "th143", "date": "2022-09-18", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "1-5", "shot": "Seija", "version": "1.00a", "note": "", "url": "https://mega.nz/file/GjIE2SxS#Dc0nfF6Y0X6qL4Gak-w2yWAbO6p0Vy8yWXNtZl2ORiA"},
 	
@@ -152,7 +153,7 @@ const bugTracker = {
 	th125: {"completed-pages": 1, "total-glitches": 3, "comment": "Number is going to increase"},
 	th128: {"completed-pages": 0, "total-glitches": 2, "comment": "Number is going to increase"},
 	th13: {"completed-pages": 1, "total-glitches": 20, "comment": "Not likely to change"},
-	th14: {"completed-pages": 3, "total-glitches": 25, "comment": "Not likely to change"},
+	th14: {"completed-pages": 3, "total-glitches": 26, "comment": "Not likely to change"},
 	th143: {"completed-pages": 1, "total-glitches": 6, "comment": "Number is going to increase"},
 	th15: {"completed-pages": 4, "total-glitches": 43, "comment": "Not likely to change"},
 	th16: {"completed-pages": 4, "total-glitches": 27, "comment": "Not likely to change"},
