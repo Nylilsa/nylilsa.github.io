@@ -59,9 +59,7 @@ function colorRGB(add, game) {
 	if (gDec < 0) {gDec = 0;}
 	if (bDec < 0) {bDec = 0;}
 
-	let output = "rgba("+rDec+", "+gDec+ ", "+bDec+", 1.0)";
-	//console.log(output);
-	return output;
+	return "rgba("+rDec+", "+gDec+ ", "+bDec+", 1.0)";
 }
 
 function getGameFromURL() {
@@ -483,17 +481,16 @@ function initNavColor() { // changes color to match the game's color
 function initSwipeCheck() {
 	let touchstartX = 0;
 	let touchendX = 0;
-	const limit = 50;
 	
 	function checkDirection() {
+		const limit = screen.width * 1/8;
 		const swipeRight = touchendX > touchstartX;
 		const swipeOnLeft = limit > touchstartX;
 		const menuCheck = document.getElementById("sidebar").classList.contains("sidebar-class-desktop");
 
-		const swipeEnoughToLeft = screen.width * 1/5;
-		const swipeToLeftCheck = (touchstartX - touchendX) > swipeEnoughToLeft
+		const swipeToLeftCheck = (touchstartX - touchendX) > screen.width * 1/5;
 		
-		if (swipeRight && swipeOnLeft && menuCheck || swipeToLeftCheck) {
+		if (swipeRight && swipeOnLeft && menuCheck || swipeToLeftCheck && !menuCheck) {
 			toggleSidebar();
 		}
 	}
