@@ -1,20 +1,4 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-@media (max-aspect-ratio: 14 / 16), (max-width: 500px) {
-  .sidebar-class-desktop {
-    margin-left: -250px; }
-  #sidebar.active {
-    margin-left: 0; }
-  #sidebarCollapse span {
-    display: none; }
-  #header {
-    margin-top: 0;
-    margin-left: 0; }
-  #header button {
-    position: fixed; }
-  #content {
-    padding: 3vmax;
-    margin-top: 5vw; } }
-
 ::-webkit-scrollbar-track {
   background: #111111; }
 
@@ -392,3 +376,19 @@ ul.CTAs {
 #table-scenes::-webkit-scrollbar {
   width: 4px;
   height: 4px; }
+
+@media (max-aspect-ratio: 14 / 16), (max-width: 500px) {
+  .sidebar-class-desktop {
+    margin-left: -250px; }
+  #sidebar.active {
+    margin-left: 0; }
+  #sidebarCollapse span {
+    display: none; }
+  #header {
+    margin-top: 0;
+    margin-left: 0; }
+  #header button {
+    position: fixed; }
+  #content {
+    padding: 3vmax;
+    margin-top: 5vw; } }
