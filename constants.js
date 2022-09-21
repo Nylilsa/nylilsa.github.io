@@ -144,7 +144,7 @@ const contributors = {
 
 const bugTracker = {
 	th06: {"completed-pages": 2, "total-glitches": 18, "comment": "Not likely to change unless we look at glitches in older versions"},
-	th07: {"completed-pages": 2, "total-glitches": 16, "comment": "Not likely to change unless we look at glitches in older versions"},
+	th07: {"completed-pages": 2, "total-glitches": 15, "comment": "Not likely to change unless we look at glitches in older versions"},
 	th08: {"completed-pages": 1, "total-glitches": 15, "comment": "Not likely to change unless we look at glitches in older versions"},
 	th09: {"completed-pages": 0, "total-glitches": 9, "comment": "Likely to change much"},
 	th95: {"completed-pages": 0, "total-glitches": 2, "comment": "Number is going to increase"},
@@ -153,7 +153,7 @@ const bugTracker = {
 	th12: {"completed-pages": 2, "total-glitches": 18, "comment": "Not likely to change"},
 	th125: {"completed-pages": 1, "total-glitches": 3, "comment": "Number is going to increase"},
 	th128: {"completed-pages": 0, "total-glitches": 2, "comment": "Number is going to increase"},
-	th13: {"completed-pages": 1, "total-glitches": 21, "comment": "Not likely to change"},
+	th13: {"completed-pages": 1, "total-glitches": 20, "comment": "Not likely to change"},
 	th14: {"completed-pages": 3, "total-glitches": 26, "comment": "Not likely to change"},
 	th143: {"completed-pages": 1, "total-glitches": 6, "comment": "Number is going to increase"},
 	th15: {"completed-pages": 4, "total-glitches": 43, "comment": "Not likely to change"},

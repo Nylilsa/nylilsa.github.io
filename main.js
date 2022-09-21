@@ -78,8 +78,8 @@ function setWindowTitleDirect(str) {
 function generateTable(input) { // generates tables of shottypes of HSifS and WBaWC
 	const yes = '<img src="/assets/green-check-mark.svg" class="icon-text">';
 	const no = '<img src="/assets/red-cross.svg" class="icon-text">';
+	// table-shottype is ID of div in showdown-ext.js
 	const content = document.getElementById('table-shottype');
-    if (content.childElementCount > 0) {console.log(1); return;}
 	if (input.length == 20) { //hsifs
 		let str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchColors['Spring']+'">Spring</span></td>';
 		for (let i = 0; i < input.length; i++) {
@@ -208,7 +208,6 @@ function contributorsFunction() {
 
 function progressTable() {
 	const id = document.getElementById('progress-table');
-    if (id.childElementCount > 0) {return;}
 	let html = '<table><thead><tr><th class="left">Game</th><th>Finished pages</th><th>Total pages</th><th>Glitches count</th><th>Progress</th><th>Comment</th></tr></thead><tbody>';
 	let [i, countCompleted, countPages, countGlitches] = [0, 0, 0, 0];
 	for (let lambda in bugTracker) {
@@ -268,8 +267,7 @@ function hrCustom(input) {
 }
 
 function gameScenes(game, flag, array) {
-	const content = document.getElementById('table-scenes');
-    if (content.childElementCount > 0) {console.log(1); return;}
+	const content = document.getElementById('table-scenes'); // table-scenes is ID of div in showdown-ext.js
 	if (flag === 'true') {
 		var yes = '<img src="/assets/green-check-mark.svg" class="icon-text">';
 		var no = '<img src="/assets/red-cross.svg" class="icon-text">';

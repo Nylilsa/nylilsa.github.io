@@ -257,7 +257,7 @@ let ext = function() {
 		// delay must exist for at least 1ms
 		replace: function(match, content) {
 			setTimeout(() => {  generateTable(content)}, 1);
-			return "";
+			return "<div id='table-shottype'></div>";
 		}
 	}
 
@@ -333,7 +333,7 @@ let ext = function() {
 		replace: function(notrelevant, game, flag, array) {
 			array = array.slice(1, -1).split(",").map(Number);
 			setTimeout(() => {  gameScenes(game, flag, array)}, 1);
-			return "";
+			return "<div id='table-scenes'></div>";
 		}
 	}
 
