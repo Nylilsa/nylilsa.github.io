@@ -469,28 +469,34 @@ function initNavColor() { // changes color to match the game's color
 }
 
 function initSwipeCheck() {
-	let touchstartX = 0;
-	let touchendX = 0;
-	
+	let [touchstartX, touchendX, touchstartY, touchendY] = [0, 0, 0, 0];
+
 	function checkDirection() {
 		const limit = screen.width * 1/8;
 		const swipeRight = touchendX > touchstartX;
 		const swipeOnLeft = limit > touchstartX;
 		const menuCheck = document.getElementById("sidebar").classList.contains("sidebar-class-desktop");
 
-		const swipeToLeftCheck = (touchstartX - touchendX) > screen.width * 1/5;
-		
-		if (swipeRight && swipeOnLeft && menuCheck || swipeToLeftCheck && !menuCheck) {
+        const angle = Math.atan2((touchstartX-touchendX),(touchstartY-touchendY));
+        const upperbound = (-Math.PI/2) - (Math.PI/6);
+        const lowerbound = (-Math.PI/2) + (Math.PI/6);
+        const angleCheck = (angle > upperbound && angle < lowerbound)
+        
+        const swipeToLeftCheck = (touchstartX - touchendX) > screen.width * 1/5;
+
+		if (swipeRight && swipeOnLeft && menuCheck && angleCheck || swipeToLeftCheck && !menuCheck) {
 			toggleSidebar();
 		}
 	}
 
 	document.addEventListener('touchstart', e => {
 	    touchstartX = e.changedTouches[0].screenX;
+        touchstartY = e.changedTouches[0].screenY;
 	})
 
 	document.addEventListener('touchend', e => {
 	    touchendX = e.changedTouches[0].screenX;
+	    touchendY = e.changedTouches[0].screenY;
 	    checkDirection();
 	})
 }
@@ -500,7 +506,7 @@ function init() {
 	initRememberScroll();
 	initCustomColor();
 	initSidebarContent();
-    initHashChange();
+    setTimeout(initHashChange(), 500); // delay is needed or else hashchange and init are executed at once
 	initResize();
     initHljs();
 	initAutoHideMenu();
