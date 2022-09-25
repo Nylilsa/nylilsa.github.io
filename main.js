@@ -13,15 +13,20 @@ function loadMarkdown(path) { //loads page
 	xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
     	document.getElementById("mdcontent").innerHTML = this.responseText;
-		initMarkdown(); //this works somehow
+		initMarkdown(false); //this works somehow
 		jumpTo(initRemoveHash(true), 100);
 		}
 	}
 
 	if (path) { //if path exists, then load .md
 		xhttp.open("GET", path, true);
-		xhttp.send();
-		
+        xhttp.send();
+		xhttp.onload = function() { // error handling
+            if (xhttp.status === 404) {
+                initMarkdown(true);
+                return;
+            }
+        }
 	}
 
 	//if button is clicked, then sidebar (on mobile!) is closed automatically.
@@ -376,13 +381,16 @@ function initSidebarContent() {
 	//console.log(k) 
 }
 
-function initMarkdown() { //puts html in id 'test'
+function initMarkdown(error) { //puts html in id 'test'
 	const input = document.getElementById("mdcontent").innerHTML; //is md text
-	const $nav = document.querySelector("#mdcontent");
-	let html = "";
-	html += MD.makeHtml(input);
-	$nav.innerHTML = html;
-	initCustomColor(); 
+	const nav = document.querySelector("#mdcontent");
+    if (!error) {
+	    nav.innerHTML = MD.makeHtml(input);
+        initCustomColor();
+        return;
+    }
+    nav.innerHTML = MD.makeHtml("<h1><span style='color:red'>ERROR:</span> File at \""+initRemoveHash(false)+"\" not found.</h1><br><h3>Try reloading using <span class='highlight-txt'>Ctrl + F5</span>, or <span class='highlight-txt'>clearing browser cache</span> of this site.<br>If the problem persists, contact me on Discord: Nylilsa#9310.</h3><br><br><br><h2><a class='url' href='#/home'>Go to Home page</a></h2>");
+	initCustomColor();
 }
 
 function initScrollBar() {
