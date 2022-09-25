@@ -15,10 +15,132 @@ const names = {
 	th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'Hecatia opener 50% shootdown', 'Reisen Desync'],
 	th16: ['(Sub-)shottypes Not Functioning','Stage 5 Incorrect Spellcard name', 'Stage 3 & Stage 5 crashes', 'Mai & Satono Solo Spells Issues', "Okina's Survival Hurtbox", "Okina's Final Bomb/Release Damage"],
 	th165:['N/A'],
-	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break', 'Token duplication','Token Desync - Stage Transition Edition', 'Desync - Roaring Mode Edition', 'Desync - Random Token Edition', "Saki's Survival Hurtbox", "Saki's Final Bomb Damage"],
-	th18: ["Slowdown Item Duplication", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination', 'Lily White Crash', "Dragon Eater\'s Cataclysm", "Momoyo's Final Bomb Damage"],
-	th185: ['N/A']
+	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break', 'Token duplication', 'Token Desync - Stage Transition Edition', 'Desync - Roaring Mode Edition', 'Desync - Random Token Edition', "Saki's Survival Hurtbox", "Saki's Final Bomb Damage"],
+	th18: ["Slowdown Item Duplication", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination', 'Lily White Crash', "Dragon Eater's Cataclysm", "Momoyo's Final Bomb Damage"],
+	th185:['N/A']
 }
+
+const names2 = {
+	th06: {
+        0: ['Boss Attack Skip', [], true, -999999990],
+        1: ['Dialogue Pause Desync', [], true, -999999990],
+        2: ['Bomb Pause Desync', [], true, -999999990]
+    },
+	th07: {
+        0: ['Merlin, Lyrica & Lunasa Glitch', [], true, -999999990],
+        1: ['Dialogue Pause Desync', [], true, -999999990]
+    },
+	th08: {
+        0: ['Dialogue Pause Desync', [], true, -999999990],
+        1: ['Unintended Last Spell Trigger', [], false, -999999990]
+    },
+	th09: {
+        0: ['Stage Skip', [], false, -999999990]
+    },
+	th95: {
+        0: ['N/A', [], false, -999999990]
+    },
+	th10: {
+        0: ['MarisaB 3 Power Damage', [], true, -999999990],
+        1: ['Corrupt replays', [], false, -999999990],
+        2: ['Stage 4 Desync', [], true, -999999990],
+        3: ['Bullet hitboxes glitch', [], true, -999999990],
+        4: ['Stage transition Desync', [], true, -999999990]
+    },
+	th11: {
+        0: ['Negative Spell Bonus', [], false, -999999990],
+        1: ['ReimuA 2 Power Damage', [], true, -999999990],
+        2: ['Mid-boss skips', [], true, -999999990],
+        3: ['ReimuC Desync', [], true, -999999990],
+        4: ['Score Desync', [], true, -999999990],
+        5: ['ReimuA Desync', [], true, -999999990],
+        6: ['Stage 6 Desync', [], true, -999999990],
+        7: ['Stage transition Desync', [], true, -999999990]
+    },
+	th12: {
+        0: ['ReimuA Bomb Desync', [], false, -999999990],
+        1: ['Score Display Overflow', [], true, -999999990],
+        2: ["MarisaA's Laser Damage", [], true, -999999990]
+    },
+	th125: {
+        0: ['12-6 Instant death glitch', [], true, -999999990]
+    },
+	th128: {
+        0: ['N/A', [], false, -999999990],
+    },
+	th13: {
+        0: ['Incorrect boss position during spell practice', [], true, -999999990],
+        1: ['Misalignment of timer', [], false, -999999990]
+    },
+	th14: {
+        0: ['Score Underflow', [], true, -999999990],
+        1: ['Bulletless Kagerou', [], false, -999999990],
+        2: ["Marisa's Lasers", [], true, -999999990],
+        3: ['Barrier Bug', [], false, -999999990],
+        4: ['Gohei Duplication', [], false, -999999990],
+        5: ['Benben Spell 2 Crash', [], false, -999999990],
+        6: ['Screen-flipping Effect Undo', [], false, -999999990],
+        7: [" Item Duplication through Game's Speed" , [], true, -999999990],
+        8: ['Timeouts on Tsukumo Sisters on Extra', [], false, -999999990]
+    },
+	th143: {
+        0: ['Score Underflow', [], true, -999999990]
+    },
+	th15: {
+        0: ['Sagume Skip', [], true, -999999990],
+        1: ['Red Background', [], false, -999999990],
+        2: ["Doremy's First Non-spell Typo", [], true, -999999990],
+        3: ['Hecatia opener 50% shootdown', [], false, -999999990],
+        4: ['Reisen Desync', [], true, -999999990]
+    },
+	th16: {
+        0: ['(Sub-)shottypes Not Functioning', [], false, -999999990],
+        1: ['Stage 5 Incorrect Spellcard name', [], true, -999999990],
+        2: ['Stage 3 & Stage 5 crashes', [], false, -999999990],
+        3: ['Mai & Satono Solo Spells Issues', [], false, -999999990],
+        4: ["Okina's Survival Hurtbox", [], true, -999999990],
+        5: ["Okina's Final Bomb/Release Damage", [], true, -999999990]
+    },
+	th165: {
+        0: ['N/A', [], false, -999999990]
+    },
+	th17: {
+        0: ["YoumuEagle's Damage Cap", [], true, -999999990],
+        1: ['Instant Hyper Deactivation', [], true, -999999990],
+        2: ['Death by Intentional Hyper Break', [], true, -999999990],
+        3: ['Token duplication', [], true, -999999990],
+        4: ['Token Desync - Stage Transition Edition', [], true, -999999990],
+        5: ['Desync - Roaring Mode Edition', [], true, -999999990],
+        6: ['Desync - Random Token Edition', [], true, -999999990],
+        7: ["Saki's Survival Hurtbox", [], true, -999999990],
+        8: ["Saki's Final Bomb Damage", [], true, -999999990]
+    },
+	th18: {
+        0: ['Slowdown Item Duplication', [], true, -999999990],
+        1: ['Chimata Final Timeout Crash', [], false, -999999990],
+        2: ['D press Desync', [], true, -999999990],
+        3: ['Takane Card Cost', [], true, -999999990],
+        4: ['Practice mode 0 bombs', [], false, -999999990],
+        5: ['Centipede + Wolf cards combination', [], true, -999999990],
+        6: ['Lily White Crash', [], false, -999999990],
+        7: ["Dragon Eater's Cataclysm", [], true, -999999990],
+        8: ["Momoyo's Final Bomb Damage", [], true, -999999990]
+    },
+	th185: {
+        0: ['N/A', [], false, -999999990]
+    }
+};
+
+const tags = {
+    "crash": {"full": "Crash", "description": "Game crash"},
+    "desync": {"full": "Desync", "description": "Game desyncs during replay"},
+    "common": {"full": "Common", "description": "Glitch is encountered often"},
+    "uncommon": {"full": "Uncommon", "description": "Glitch is not encountered often"},
+    "skips": {"full": "Skips", "description": "Game dies"},
+    "typo": {"full": "Typo", "description": "ZUN made a typo"},
+    "shot": {"full": "Shottype", "description": "Glitch is related to the shottype"},
+    "uninitialised": {"full": "Uninitialised variable", "description": "Game uses uninitialised variables"}
+};
 
 const citations = {
 
@@ -41,7 +163,7 @@ const citations = {
 	"1ILtinP3Fc": {"game": "th11", "date": "2022-09-04", "author": "Nylilsa", "title": "東方地霊殿～霊夢Cリプレイバグ", "url": "https://www.youtube.com/watch?v=k_WorD5Zs4o"},
 	"csXlNTKmMn": {"game": "th11", "date": "2022-09-08", "author": "Nylilsa", "title": "東方地霊殿～霊夢Aリプレイバグ", "url": "https://www.youtube.com/watch?v=e9yNY1ZXTRk"},
 	
-	"obKhAnjBF9": {"game": "th12", "date": "2014-08-27", "author": "thplayer635", "title": "UFO Bomb Glitch ~ [Secret Scoring Knowledge]", "url": "https://www.youtube.com/watch?v=S7fX9z4rH0o"},
+	"obKhAnjBF9": {"game": "th12", "date": "2014-08-27", "author": "thplayer635", "title": "UFO Bomb Glitch ~ [Secret Scoring Knowledge, -999999990]", "url": "https://www.youtube.com/watch?v=S7fX9z4rH0o"},
 	"ZAaA2rM7qL": {"game": "th12", "date": "2021-03-07", "author": "ZPS", "title": "Touhou 12: Undefined Fantastic Object - Lunatic 2,195,168,090 (Scorebug) - Sanae B", "url": "https://www.youtube.com/watch?v=foWVBHsoZQU"},
 	"m8F7Rxv1Ps": {"game": "th12", "date": "2022-02-21", "author": "ZPS", "title": "Touhou 12: Undefined Fantastic Object - Lunatic - 2,610,822,850 points - Sanae B - Clear", "url": "https://www.youtube.com/watch?v=LvwZCva0cOA"},
 	"mhmz8e7Gue": {"game": "th12", "date": "2021-12-29", "author": "LorenzOwO", "title": "Touhou 星蓮船～UFO Lunatic SanaeB 2,676,870,230 (C)", "url": "https://www.youtube.com/watch?v=4gl4J2BoSa4"},
@@ -91,7 +213,7 @@ const citations = {
 
 	"L4WwIST4qA": {"game": "th17", "date": "2022-06-07", "author": "Nylilsa", "title": "東方鬼形獣 〜 Extra 5分29秒 妖夢/カワウソ",  "url": "https://www.youtube.com/watch?v=spnH2stUsVw&t=288s"},
 	"nR5vbyfi91": {"game": "th17", "date": "2022-06-07", "author": "Nylilsa", "title": "東方鬼形獣 〜 Extra 5分29秒 妖夢/カワウソ",  "url": "https://www.youtube.com/watch?v=spnH2stUsVw&t=302s"}
-}
+};
 
 const replays = {
 
@@ -132,14 +254,14 @@ const replays = {
 	
 	"y4dOw7rsW0": {"game": "th17", "date": "2022-09-04", "author": "Nylilsa", "name": "PSG0539", "difficulty": "Extra", "shot": "YoumuOtter", "version": "1.00b", "note": "", "url": "https://mega.nz/file/u6R33KCC#dgRUByJMFsb9wx43CBa7xaFY2QldQtQslmHQ9V8BA24"}
 
-}
+};
 
 const contributors = {
 	"S7daW4HHTY": {"name": "32th System", "help": "Provided various aids", "url": "https://youtube.com/32thc"},
 	"1AThrt4mzz": {"name": "Helio Knight", "help": "HSiFS page 3 research", "url": "https://www.youtube.com/channel/UCNbaT2iVuYKN5q94b9UlTEA"},
 	"0lDi5bpXmy": {"name": "kana0603", "help": "Provided various EoSD glitches & replays", "url": "https://twitter.com/kana_th6"},
 	"VSlamYrAwJ": {"name": "zero318", "help": "Massively helped with the Merlin glitch", "url": "https://github.com/zero318"}
-}
+};
 
 
 const bugTracker = {
@@ -162,7 +284,7 @@ const bugTracker = {
 	th17: {"completed-pages": 9, "total-glitches": 37, "comment": "Not likely to change"},
 	th18: {"completed-pages": 8, "total-glitches": 41, "comment": "Number is likely to increase"},
 	th185: {"completed-pages": 0, "total-glitches": 11, "comment": "Number is likely to increase"},
-}
+};
 
 
 const latestVersion = {
@@ -170,24 +292,22 @@ const latestVersion = {
 	th07: "1.00b",
 	th08: "1.00d",
 	th09: "1.50a",
+    th95: "1.50a",
 	th10: "1.00a",
 	th11: "1.00a",
 	th12: "1.00b",
+    th125: "1.00a",
+	th128: "1.00a",
 	th13: "1.00c",
 	th14: "1.00b",
+    th143: "1.00a",
 	th15: "1.00b",
 	th16: "1.00a",
+    th165: "1.00a",
 	th17: "1.00b",
 	th18: "1.00a",
-
-	th95: "1.50a",
-	th125: "1.00a",
-	th128: "1.00a",
-	th143: "1.00a",
-	th165: "1.00a",
 	th185: "1.00a"
-
-}
+};
 
 const gameColors = {
 	th06: '#FF0000',
@@ -209,7 +329,7 @@ const gameColors = {
 	th17: '#190E0E',
 	th18: '#1DD294',
 	th185: '#F58225' //color chosen randomly by me
-}
+};
 
 const matchColors = {
 	"Spring": '#FF9FC9',
@@ -220,4 +340,4 @@ const matchColors = {
 	"Wolf": '#FF4F51',
 	"Otter":'#8DFB78',
 	"Eagle": '#7E59D9',
-}
+};
