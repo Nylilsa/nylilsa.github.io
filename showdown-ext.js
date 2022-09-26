@@ -310,6 +310,14 @@ let ext = function() {
 		}
 	}
 
+	let tags = {
+		type: "lang",
+		regex: /\[tags\]/g,
+		replace: function() {
+			return tagsTable();
+		}
+	}
+
 	let eclmap = {
 		type: "lang",
 		regex: /\[eclmap=(.*?)\]([^]*?)\[\/eclmap\]/g,
@@ -349,5 +357,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [yt, hr_major, hr_minor, hr_custom, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, match, scenes, check, cross];
+	return [yt, hr_major, hr_minor, hr_custom, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, match, scenes, check, cross];
 }

@@ -110,19 +110,19 @@ const names = {
 };
 
 const tags = {
-    "crash": {"full": "Crash", "description": "A sudden failure causing the game to close"},
-    "desync": {"full": "Desync", "description": "Game desyncs during replay"},
-    "common": {"full": "Common", "description": "Glitch is encountered often"},
-    "uncommon": {"full": "Uncommon", "description": "Glitch is not encountered often"},
-    "rare": {"full": "Rare", "description": "Glitch is encountered rarely"},
-    "skips": {"full": "Skips", "description": "Glitch where attacks or sections are skipped"},
-    "typo": {"full": "Typo", "description": "Glitch exists because ZUN made a typo"},
-    "shot": {"full": "Shottype", "description": "Glitch is related to the shottype"},
-    "uninit": {"full": "Uninitialised variable", "description": "Game uses uninitialised variables"},
-    "simul": {"full": "Simultaneous", "description": "Glitch caused by two or more events happening simultaneously"},
-    "cap": {"full": "Cap", "description": "Glitch where an upper limit causes unintentional side effects"},
-    "overflow": {"full": "Overflow", "description": "Glitch where a variable is overflowed"},
-    "dupe": {"full": "Duplication", "description": "Glitch where objects are duplicated"}
+    "crash": {"full": "Crash", "description": "A sudden failure causing the game to close."},
+    "desync": {"full": "Desync", "description": "Game desyncs during replay."},
+    "common": {"full": "Common", "description": "Glitch is encountered often."},
+    "uncommon": {"full": "Uncommon", "description": "Glitch is not encountered often."},
+    "rare": {"full": "Rare", "description": "Glitch is encountered rarely."},
+    "skips": {"full": "Skips", "description": "Glitch where attacks or sections are skipped."},
+    "typo": {"full": "Typo", "description": "Glitch exists because ZUN made a typo."},
+    "shot": {"full": "Shottype", "description": "Glitch is specific to the shottype."},
+    "uninit": {"full": "Uninitialised variable", "description": "Glitch caused by the usage of uninitialised variables."},
+    "simul": {"full": "Simultaneous", "description": "Glitch caused by two or more events happening simultaneously."},
+    "cap": {"full": "Cap", "description": "Glitch where an upper limit causes unintentional side effects."},
+    "overflow": {"full": "Overflow", "description": "Glitch where a value is overflowed."},
+    "dupe": {"full": "Duplication", "description": "Glitch where objects are duplicated."}
 };
 
 const citations = {

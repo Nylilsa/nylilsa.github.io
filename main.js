@@ -70,7 +70,8 @@ function colorRGB(add, game) {
 function getGameFromURL() {
 	const url = window.location.hash; // is #/bugs/th18/0
 	let gameName;
-	if (url.slice(0, 6) == "#/bugs") { // prevents page from not loading stuff if it is not true
+    const tagsCheck = /tags/g.test(url);
+	if (url.slice(0, 6) === "#/bugs" && !tagsCheck) {
 		gameName = /\#\/bugs\/(.*?)\//i.exec(url)[1]; // ddc
 	}
 	return gameName;
@@ -152,7 +153,8 @@ function resize() { //changes property of sidebar button and sidebar class
 }
 
 function jumpTo(id, duration) {
-	if (id === '') { 
+    const tagsCheck = /tags/g.test(window.location.hash);
+	if (id === '' || tagsCheck) { 
 		return;
 	}
 	setTimeout(() => { 
@@ -297,9 +299,53 @@ function gameScenes(game, flag, array) {
 				str += '<td>'+no+'</td>';
 			}
 		}
+        str += "</thead></table>"
 		content.innerHTML += str;
 		return;
 	}
+}
+
+function tagsTable() {
+    let str = '<table id="selected-container"><tbody>';
+    for (const [key, value] of Object.entries(tags)) {
+        str += `<tr><td class="left"><span class="tag"><a onclick="toggleTags(this)" data-key="${key}" class="tag" title="${value['description']}">${value['full']}</a></span></td><td class="left">${value['description']}</td>`;
+    }
+    str += "</tbody></table>";
+    return str;
+}
+
+function tagsSelector(element) {
+    const selector = document.getElementById('bugs-tags');
+    const array = JSON.parse(selector.dataset.list);
+    let html = '';
+    for (let i=0; i < array.length; i++) {
+        html += '<span class="tag"><a onclick="toggleTags(this)" class="tag" data-key="'+array[i]+'">'+tags[array[i]].full+'</a></span>';
+    }
+    selector.innerHTML = html;
+}
+
+function toggleTags(element) {
+    const table = document.getElementById("selected-container");
+    const selector = document.getElementById('bugs-tags');
+    const key = element.dataset.key;
+    for (let i=0; i < table.childNodes[0].childNodes.length; i++) {
+        const a = table.childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0];
+        if (a.dataset.key === key) {
+            a.classList.toggle("selected");
+        }
+    }
+    const array = JSON.parse(selector.dataset.list);
+    if (array.includes(key)) {
+        for(let i = 0; i < array.length; i++){ 
+            if (array[i] === key) { 
+                array.splice(i, 1);
+            }
+        }
+    } else {
+        array.push(key);
+    }
+    selector.dataset.list = JSON.stringify(array);
+    tagsSelector(element);
 }
 
 ///////////////////// UNUSED /////////////////////
@@ -431,7 +477,7 @@ function initRemoveHash(input) { //removes #/
 	let hash = '';
 	if (c === '.md') {
 		c = 'home.md';
-	} 
+	}
 	if (c.includes("#")) {
 		hash = c.substring(c.indexOf("#") + 1).replace(".md",""); // gets whatever is after hash
 		hash = "#" + hash;

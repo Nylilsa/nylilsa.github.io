@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 ::-webkit-scrollbar-track {
   background: #111111; }
@@ -227,12 +228,33 @@ ul.CTAs {
   max-width: 100%  !important;
   width: 100%; }
 
-.toc li {
-  display: block; }
+.tag {
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: stretch;
+  margin: 2px;
+  padding-left: 0.25em;
+  padding-right: 0.25em; }
+  .tag :hover {
+    border-color: #ff92fa; }
+  .tag :before {
+    padding-right: 0.25em;
+    content: "⬡"; }
+  .tag a {
+    border: 1.5px solid #8386E5; }
+  .tag .selected {
+    background-color: #8386E5; }
 
-.toc li:before {
-  content: counters(item, ".") " ";
-  counter-increment: item; }
+.tags-bar {
+  min-height: 40px;
+  border: 1px solid #6794ab;
+  border-radius: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap; }
 
 .toc {
   background-color: #222538;
@@ -244,6 +266,11 @@ ul.CTAs {
   border-style: solid;
   margin: 10px 20px 10px 20px;
   width: fit-content; }
+  .toc li {
+    display: block; }
+  .toc li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item; }
 
 .url, .url-toc {
   color: #6873d8;
