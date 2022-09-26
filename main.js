@@ -373,8 +373,8 @@ function initSidebarContent() {
 		child.style.borderTopWidth = '1px';
 		child.style.borderColor = colorHex(thnr);
 		const content = document.getElementById('bugs-'+thnr+'');
-		for (let j = 0; j < names[thnr].length; j++) {
-			content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j]+'</a></div></li>'; 
+		for (let j = 0; j < Object.keys(names[thnr]).length; j++) {
+			content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j][0]+'</a></div></li>'; 
 			k += 1;
 		}
 	}

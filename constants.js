@@ -1,102 +1,80 @@
 const names = {
-	th06: ['Boss Attack Skip', 'Dialogue Pause Desync', 'Bomb Pause Desync'],
-	th07: ['Merlin, Lyrica & Lunasa Glitch', 'Dialogue Pause Desync'],
-	th08: ['Dialogue Pause Desync', 'Unintended Last Spell Trigger'],
-	th09: ['Stage Skip'],
-	th95: ['N/A'],
-	th10: ['MarisaB 3 Power Damage', 'Corrupt replays', 'Stage 4 Desync', 'Bullet hitboxes glitch', 'Stage transition Desync'],
-	th11: ['Negative Spell Bonus', 'ReimuA 2 Power Damage', 'Mid-boss skips', 'ReimuC Desync', 'Score Desync', 'ReimuA Desync', 'Stage 6 Desync', 'Stage transition Desync'],
-	th12: ['ReimuA Bomb Desync', 'Score Display Overflow', "MarisaA's Laser Damage"],
-	th125:['12-6 Instant death glitch'],
-	th128:['N/A'],
-	th13: ['Incorrect boss position during spell practice', 'Misalignment of timer'],
-	th14: ['Score Underflow', 'Bulletless Kagerou', "Marisa's Lasers", 'Barrier Bug', 'Gohei Duplication', 'Benben Spell 2 Crash', 'Screen-flipping Effect Undo', "Item Duplication through Game's Speed", 'Timeouts on Tsukumo Sisters on Extra'],
-	th143:['Score Underflow'],
-	th15: ['Sagume Skip', 'Red Background', "Doremy's First Non-spell Typo", 'Hecatia opener 50% shootdown', 'Reisen Desync'],
-	th16: ['(Sub-)shottypes Not Functioning','Stage 5 Incorrect Spellcard name', 'Stage 3 & Stage 5 crashes', 'Mai & Satono Solo Spells Issues', "Okina's Survival Hurtbox", "Okina's Final Bomb/Release Damage"],
-	th165:['N/A'],
-	th17: ["YoumuEagle's Damage Cap", 'Instant Hyper Deactivation', 'Death by Intentional Hyper Break', 'Token duplication', 'Token Desync - Stage Transition Edition', 'Desync - Roaring Mode Edition', 'Desync - Random Token Edition', "Saki's Survival Hurtbox", "Saki's Final Bomb Damage"],
-	th18: ["Slowdown Item Duplication", 'Chimata Final Timeout Crash', 'D press Desync', 'Takane Card Cost', 'Practice mode 0 bombs', 'Centipede + Wolf cards combination', 'Lily White Crash', "Dragon Eater's Cataclysm", "Momoyo's Final Bomb Damage"],
-	th185:['N/A']
-}
-
-const names2 = {
 	th06: {
-        0: ['Boss Attack Skip', [], true, -999999990],
-        1: ['Dialogue Pause Desync', [], true, -999999990],
-        2: ['Bomb Pause Desync', [], true, -999999990]
+        0: ['Boss Attack Skip', ['skip', 'rare', 'simul'], true, -999999990],
+        1: ['Dialogue Pause Desync', ['desync', 'uncommon'], true, -999999990],
+        2: ['Bomb Pause Desync', ['desync'], true, -999999990]
     },
 	th07: {
-        0: ['Merlin, Lyrica & Lunasa Glitch', [], true, -999999990],
-        1: ['Dialogue Pause Desync', [], true, -999999990]
+        0: ['Merlin, Lyrica & Lunasa Glitch', ['rare'], true, -999999990],
+        1: ['Dialogue Pause Desync', ['desync', 'uncommon'], true, -999999990]
     },
 	th08: {
-        0: ['Dialogue Pause Desync', [], true, -999999990],
-        1: ['Unintended Last Spell Trigger', [], false, -999999990]
+        0: ['Dialogue Pause Desync', ['desync', 'uncommon'], true, -999999990],
+        1: ['Unintended Last Spell Trigger', ['desync', 'rare'], false, -999999990]
     },
 	th09: {
-        0: ['Stage Skip', [], false, -999999990]
+        0: ['Stage Skip', ['skip'], false, -999999990]
     },
 	th95: {
         0: ['N/A', [], false, -999999990]
     },
 	th10: {
-        0: ['MarisaB 3 Power Damage', [], true, -999999990],
-        1: ['Corrupt replays', [], false, -999999990],
-        2: ['Stage 4 Desync', [], true, -999999990],
+        0: ['MarisaB 3 Power Damage', ['typo', 'shot'], true, -999999990],
+        1: ['Corrupt replays', ['crash', 'common'], false, -999999990],
+        2: ['Stage 4 Desync', ['desync', 'common'], true, -999999990],
         3: ['Bullet hitboxes glitch', [], true, -999999990],
-        4: ['Stage transition Desync', [], true, -999999990]
+        4: ['Stage transition Desync', ['desync'], true, -999999990]
     },
 	th11: {
-        0: ['Negative Spell Bonus', [], false, -999999990],
-        1: ['ReimuA 2 Power Damage', [], true, -999999990],
-        2: ['Mid-boss skips', [], true, -999999990],
-        3: ['ReimuC Desync', [], true, -999999990],
-        4: ['Score Desync', [], true, -999999990],
-        5: ['ReimuA Desync', [], true, -999999990],
-        6: ['Stage 6 Desync', [], true, -999999990],
-        7: ['Stage transition Desync', [], true, -999999990]
+        0: ['Negative Spell Bonus', ['overflow'], false, -999999990],
+        1: ['ReimuA 2 Power Damage', ['typo', 'shot'], true, -999999990],
+        2: ['Mid-boss skips', ['skips'], true, -999999990],
+        3: ['ReimuC Desync', ['desync', 'shot', 'uncommon'], true, -999999990],
+        4: ['Score Desync', ['desync'], true, -999999990],
+        5: ['ReimuA Desync', ['shot', 'rare', 'uninit'], true, -999999990],
+        6: ['Stage 6 Desync', ['desync', 'common'], true, -999999990],
+        7: ['Stage transition Desync', ['desync'], true, -999999990]
     },
 	th12: {
-        0: ['ReimuA Bomb Desync', [], false, -999999990],
-        1: ['Score Display Overflow', [], true, -999999990],
-        2: ["MarisaA's Laser Damage", [], true, -999999990]
+        0: ['ReimuA Bomb Desync', ['typo', 'shot'], false, -999999990],
+        1: ['Score Display Overflow', ['overflow'], true, -999999990],
+        2: ["MarisaA's Laser Damage", ['shot'], true, -999999990]
     },
 	th125: {
-        0: ['12-6 Instant death glitch', [], true, -999999990]
+        0: ['12-6 Instant death glitch', ['uninit', 'common'], true, -999999990]
     },
 	th128: {
         0: ['N/A', [], false, -999999990],
     },
 	th13: {
         0: ['Incorrect boss position during spell practice', [], true, -999999990],
-        1: ['Misalignment of timer', [], false, -999999990]
+        1: ['Misalignment of timer', ['uncommon'], false, -999999990]
     },
 	th14: {
-        0: ['Score Underflow', [], true, -999999990],
-        1: ['Bulletless Kagerou', [], false, -999999990],
-        2: ["Marisa's Lasers", [], true, -999999990],
-        3: ['Barrier Bug', [], false, -999999990],
-        4: ['Gohei Duplication', [], false, -999999990],
-        5: ['Benben Spell 2 Crash', [], false, -999999990],
+        0: ['Score Underflow', ['overflow'], true, -999999990],
+        1: ['Bulletless Kagerou', ['cap'], false, -999999990],
+        2: ["Marisa's Lasers", ['uninit', 'shot', 'rare'], true, -999999990],
+        3: ['Barrier Bug', ['shot', 'simul'], false, -999999990],
+        4: ['Gohei Duplication', ['shot'], false, -999999990],
+        5: ['Benben Spell 2 Crash', ['crash'], false, -999999990],
         6: ['Screen-flipping Effect Undo', [], false, -999999990],
-        7: [" Item Duplication through Game's Speed" , [], true, -999999990],
+        7: ["Item Duplication through Game's Speed" , ['dupe'], true, -999999990],
         8: ['Timeouts on Tsukumo Sisters on Extra', [], false, -999999990]
     },
 	th143: {
-        0: ['Score Underflow', [], true, -999999990]
+        0: ['Score Underflow', ['overflow'], true, -999999990]
     },
 	th15: {
-        0: ['Sagume Skip', [], true, -999999990],
-        1: ['Red Background', [], false, -999999990],
-        2: ["Doremy's First Non-spell Typo", [], true, -999999990],
+        0: ['Sagume Skip', ['skip'], true, -999999990],
+        1: ['Red Background', ['shot'], false, -999999990],
+        2: ["Doremy's First Non-spell Typo", ['typo'], true, -999999990],
         3: ['Hecatia opener 50% shootdown', [], false, -999999990],
-        4: ['Reisen Desync', [], true, -999999990]
+        4: ['Reisen Desync', ['shot', 'desync'], true, -999999990]
     },
 	th16: {
-        0: ['(Sub-)shottypes Not Functioning', [], false, -999999990],
+        0: ['(Sub-)shottypes Not Functioning', ['shot', 'uncommon'], false, -999999990],
         1: ['Stage 5 Incorrect Spellcard name', [], true, -999999990],
-        2: ['Stage 3 & Stage 5 crashes', [], false, -999999990],
+        2: ['Stage 3 & Stage 5 crashes', ['crash', 'rare'], false, -999999990],
         3: ['Mai & Satono Solo Spells Issues', [], false, -999999990],
         4: ["Okina's Survival Hurtbox", [], true, -999999990],
         5: ["Okina's Final Bomb/Release Damage", [], true, -999999990]
@@ -105,25 +83,25 @@ const names2 = {
         0: ['N/A', [], false, -999999990]
     },
 	th17: {
-        0: ["YoumuEagle's Damage Cap", [], true, -999999990],
-        1: ['Instant Hyper Deactivation', [], true, -999999990],
-        2: ['Death by Intentional Hyper Break', [], true, -999999990],
-        3: ['Token duplication', [], true, -999999990],
-        4: ['Token Desync - Stage Transition Edition', [], true, -999999990],
-        5: ['Desync - Roaring Mode Edition', [], true, -999999990],
-        6: ['Desync - Random Token Edition', [], true, -999999990],
+        0: ["YoumuEagle's Damage Cap", ['typo', 'shot'], true, -999999990],
+        1: ['Instant Hyper Deactivation', ['simul'], true, -999999990],
+        2: ['Death by Intentional Hyper Break', ['simul'], true, -999999990],
+        3: ['Token duplication', ['dupe'], true, -999999990],
+        4: ['Token Desync - Stage Transition Edition', ['desync', 'rare'], true, -999999990],
+        5: ['Desync - Roaring Mode Edition', ['desync', 'common'], true, -999999990],
+        6: ['Desync - Random Token Edition', ['desync', 'uncommon'], true, -999999990],
         7: ["Saki's Survival Hurtbox", [], true, -999999990],
         8: ["Saki's Final Bomb Damage", [], true, -999999990]
     },
 	th18: {
-        0: ['Slowdown Item Duplication', [], true, -999999990],
-        1: ['Chimata Final Timeout Crash', [], false, -999999990],
-        2: ['D press Desync', [], true, -999999990],
-        3: ['Takane Card Cost', [], true, -999999990],
+        0: ['Slowdown Item Duplication', ['dupe'], true, -999999990],
+        1: ['Chimata Final Timeout Crash', ['crash', 'uninit'], false, -999999990],
+        2: ['D press Desync', ['desync', 'uncommon'], true, -999999990],
+        3: ['Takane Card Cost', ['simul'], true, -999999990],
         4: ['Practice mode 0 bombs', [], false, -999999990],
-        5: ['Centipede + Wolf cards combination', [], true, -999999990],
-        6: ['Lily White Crash', [], false, -999999990],
-        7: ["Dragon Eater's Cataclysm", [], true, -999999990],
+        5: ['Centipede + Wolf cards combination', ['simul'], true, -999999990],
+        6: ['Lily White Crash', ['crash'], false, -999999990],
+        7: ["Dragon Eater's Cataclysm", ['overflow'], true, -999999990],
         8: ["Momoyo's Final Bomb Damage", [], true, -999999990]
     },
 	th185: {
@@ -132,14 +110,19 @@ const names2 = {
 };
 
 const tags = {
-    "crash": {"full": "Crash", "description": "Game crash"},
+    "crash": {"full": "Crash", "description": "A sudden failure causing the game to close"},
     "desync": {"full": "Desync", "description": "Game desyncs during replay"},
     "common": {"full": "Common", "description": "Glitch is encountered often"},
     "uncommon": {"full": "Uncommon", "description": "Glitch is not encountered often"},
-    "skips": {"full": "Skips", "description": "Game dies"},
-    "typo": {"full": "Typo", "description": "ZUN made a typo"},
+    "rare": {"full": "Rare", "description": "Glitch is encountered rarely"},
+    "skips": {"full": "Skips", "description": "Glitch where attacks or sections are skipped"},
+    "typo": {"full": "Typo", "description": "Glitch exists because ZUN made a typo"},
     "shot": {"full": "Shottype", "description": "Glitch is related to the shottype"},
-    "uninitialised": {"full": "Uninitialised variable", "description": "Game uses uninitialised variables"}
+    "uninit": {"full": "Uninitialised variable", "description": "Game uses uninitialised variables"},
+    "simul": {"full": "Simultaneous", "description": "Glitch caused by two or more events happening simultaneously"},
+    "cap": {"full": "Cap", "description": "Glitch where an upper limit causes unintentional side effects"},
+    "overflow": {"full": "Overflow", "description": "Glitch where a variable is overflowed"},
+    "dupe": {"full": "Duplication", "description": "Glitch where objects are duplicated"}
 };
 
 const citations = {
