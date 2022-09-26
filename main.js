@@ -422,16 +422,10 @@ function initAutoHideMenu() { // hides menu when scrolling
 }
 
 function initHashChange() {
-    window.addEventListener('hashchange', (e) => {loadMarkdown(initRemoveHash(false));}, false); 
+    setTimeout(function(){
+        window.addEventListener('hashchange', (e) => {loadMarkdown(initRemoveHash(false));}, false)}
+        , 500); // delay is needed or else hashchange and init are executed at once
 }
-
-function initHljs() {
-    hljs.configure({
-        ignoreUnescapedHTML: true
-      });
-}
-
-
 function initRemoveHash(input) { //removes #/
 	let c = window.location.hash.replace("#/","") + ".md";
 	let hash = '';
@@ -488,7 +482,7 @@ function initSwipeCheck() {
         const angle = Math.atan2((touchstartX-touchendX),(touchstartY-touchendY));
         const upperbound = (-Math.PI/2) - (Math.PI/6);
         const lowerbound = (-Math.PI/2) + (Math.PI/6);
-        const angleCheck = (angle > upperbound && angle < lowerbound)
+        const angleCheck = (angle > upperbound && angle < lowerbound);
         
         const swipeToLeftCheck = (touchstartX - touchendX) > screen.width * 1/5;
 
@@ -514,9 +508,8 @@ function init() {
 	initRememberScroll();
 	initCustomColor();
 	initSidebarContent();
-    setTimeout(initHashChange(), 500); // delay is needed or else hashchange and init are executed at once
+    initHashChange();
 	initResize();
-    initHljs();
 	initAutoHideMenu();
 	initSwipeCheck();
 }
