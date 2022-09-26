@@ -146,7 +146,7 @@ const citations = {
 	"1ILtinP3Fc": {"game": "th11", "date": "2022-09-04", "author": "Nylilsa", "title": "東方地霊殿～霊夢Cリプレイバグ", "url": "https://www.youtube.com/watch?v=k_WorD5Zs4o"},
 	"csXlNTKmMn": {"game": "th11", "date": "2022-09-08", "author": "Nylilsa", "title": "東方地霊殿～霊夢Aリプレイバグ", "url": "https://www.youtube.com/watch?v=e9yNY1ZXTRk"},
 	
-	"obKhAnjBF9": {"game": "th12", "date": "2014-08-27", "author": "thplayer635", "title": "UFO Bomb Glitch ~ [Secret Scoring Knowledge, -999999990]", "url": "https://www.youtube.com/watch?v=S7fX9z4rH0o"},
+	"obKhAnjBF9": {"game": "th12", "date": "2014-08-27", "author": "thplayer635", "title": "UFO Bomb Glitch ~ [Secret Scoring Knowledge]", "url": "https://www.youtube.com/watch?v=S7fX9z4rH0o"},
 	"ZAaA2rM7qL": {"game": "th12", "date": "2021-03-07", "author": "ZPS", "title": "Touhou 12: Undefined Fantastic Object - Lunatic 2,195,168,090 (Scorebug) - Sanae B", "url": "https://www.youtube.com/watch?v=foWVBHsoZQU"},
 	"m8F7Rxv1Ps": {"game": "th12", "date": "2022-02-21", "author": "ZPS", "title": "Touhou 12: Undefined Fantastic Object - Lunatic - 2,610,822,850 points - Sanae B - Clear", "url": "https://www.youtube.com/watch?v=LvwZCva0cOA"},
 	"mhmz8e7Gue": {"game": "th12", "date": "2021-12-29", "author": "LorenzOwO", "title": "Touhou 星蓮船～UFO Lunatic SanaeB 2,676,870,230 (C)", "url": "https://www.youtube.com/watch?v=4gl4J2BoSa4"},
