@@ -307,14 +307,18 @@ function gameScenes(game, flag, array) {
 
 function tagsTable() {
     let str = '<table id="selected-container"><tbody>';
+    let counterArray = countTags();
+    let i = 0;
     for (const [key, value] of Object.entries(tags)) {
-        str += `<tr><td class="left"><span class="tag"><a onclick="toggleTags(this)" data-key="${key}" class="tag" title="${value['description']}">${value['full']}</a></span></td><td class="left">${value['description']}</td>`;
+        if (i === 3){str += "<tr><td></td><td></td><td class='invis left'>youtu.be/dQw4w9WgXcQ</td></tr>";}
+        str += `<tr><td class="left">${counterArray[i]}</td><td class="left"><span class="tag"><a onclick="toggleTags(this)" data-key="${key}" class="tag" title="${value['description']}">${value['full']}</a></span></td><td class="left">${value['description']}</td>`;
+        i++;
     }
     str += "</tbody></table>";
     return str;
 }
 
-function tagsSelector(element) {
+function tagsSelector() {
     const selector = document.getElementById('bugs-tags');
     const array = JSON.parse(selector.dataset.list);
     let html = '';
@@ -329,9 +333,11 @@ function toggleTags(element) {
     const selector = document.getElementById('bugs-tags');
     const key = element.dataset.key;
     for (let i=0; i < table.childNodes[0].childNodes.length; i++) {
-        const a = table.childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0];
-        if (a.dataset.key === key) {
-            a.classList.toggle("selected");
+        if (i !== 3) {
+            let a = table.childNodes[0].childNodes[i].childNodes[1].childNodes[0].childNodes[0];
+            if (a.dataset.key === key) {
+                a.classList.toggle("selected");
+            }
         }
     }
     const array = JSON.parse(selector.dataset.list);
@@ -345,7 +351,26 @@ function toggleTags(element) {
         array.push(key);
     }
     selector.dataset.list = JSON.stringify(array);
-    tagsSelector(element);
+    tagsSelector();
+}
+
+function countTags() {
+    let tagsArray = [];
+    let tagsCount = [];
+    for (const [key, value] of Object.entries(tags)) {
+        tagsArray.push(key);
+        tagsCount.push(0);
+    }
+    for (const [key, value] of Object.entries(names)) {
+        for (const [i, selector] of Object.entries(value)) {
+            const array = selector[1];
+            for (let i=0; i < array.length; i++) {
+                const index = tagsArray.indexOf(array[i]);
+                tagsCount[index] += 1;
+            }
+        }
+    }
+    return tagsCount;
 }
 
 ///////////////////// UNUSED /////////////////////
@@ -520,7 +545,7 @@ function initSwipeCheck() {
 	let [touchstartX, touchendX, touchstartY, touchendY] = [0, 0, 0, 0];
 
 	function checkDirection() {
-		const limit = screen.width * 1/8;
+		const limit = screen.width * 1/9;
 		const swipeRight = touchendX > touchstartX;
 		const swipeOnLeft = limit > touchstartX;
 		const menuCheck = document.getElementById("sidebar").classList.contains("sidebar-class-desktop");

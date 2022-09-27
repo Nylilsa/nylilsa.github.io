@@ -19,16 +19,16 @@ const names = {
         0: ['N/A', [], false, -999999990]
     },
 	th10: {
-        0: ['MarisaB 3 Power Damage', ['typo', 'shot'], true, -999999990],
+        0: ['MarisaB 3 Power Damage', ['typo', 'shot', 'common'], true, -999999990],
         1: ['Corrupt replays', ['crash', 'common'], false, -999999990],
         2: ['Stage 4 Desync', ['desync', 'common'], true, -999999990],
-        3: ['Bullet hitboxes glitch', [], true, -999999990],
+        3: ['Bullet hitboxes glitch', ['common'], true, -999999990],
         4: ['Stage transition Desync', ['desync'], true, -999999990]
     },
 	th11: {
         0: ['Negative Spell Bonus', ['overflow'], false, -999999990],
         1: ['ReimuA 2 Power Damage', ['typo', 'shot'], true, -999999990],
-        2: ['Mid-boss skips', ['skips'], true, -999999990],
+        2: ['Mid-boss skips', ['skip'], true, -999999990],
         3: ['ReimuC Desync', ['desync', 'shot', 'uncommon'], true, -999999990],
         4: ['Score Desync', ['desync'], true, -999999990],
         5: ['ReimuA Desync', ['shot', 'rare', 'uninit'], true, -999999990],
@@ -36,8 +36,8 @@ const names = {
         7: ['Stage transition Desync', ['desync'], true, -999999990]
     },
 	th12: {
-        0: ['ReimuA Bomb Desync', ['typo', 'shot'], false, -999999990],
-        1: ['Score Display Overflow', ['overflow'], true, -999999990],
+        0: ['ReimuA Bomb Desync', ['typo', 'shot', 'uncommon'], false, -999999990],
+        1: ['Score Display Overflow', ['overflow', 'common'], true, -999999990],
         2: ["MarisaA's Laser Damage", ['shot'], true, -999999990]
     },
 	th125: {
@@ -48,7 +48,7 @@ const names = {
     },
 	th13: {
         0: ['Incorrect boss position during spell practice', [], true, -999999990],
-        1: ['Misalignment of timer', ['uncommon'], false, -999999990]
+        1: ['Misalignment of timer', ['rare'], false, -999999990]
     },
 	th14: {
         0: ['Score Underflow', ['overflow'], true, -999999990],
@@ -58,7 +58,7 @@ const names = {
         4: ['Gohei Duplication', ['shot'], false, -999999990],
         5: ['Benben Spell 2 Crash', ['crash'], false, -999999990],
         6: ['Screen-flipping Effect Undo', [], false, -999999990],
-        7: ["Item Duplication through Game's Speed" , ['dupe'], true, -999999990],
+        7: ["Item Duplication through Game's Speed" , ['dupe', 'uncommon'], true, -999999990],
         8: ['Timeouts on Tsukumo Sisters on Extra', [], false, -999999990]
     },
 	th143: {
@@ -69,40 +69,40 @@ const names = {
         1: ['Red Background', ['shot'], false, -999999990],
         2: ["Doremy's First Non-spell Typo", ['typo'], true, -999999990],
         3: ['Hecatia opener 50% shootdown', [], false, -999999990],
-        4: ['Reisen Desync', ['shot', 'desync'], true, -999999990]
+        4: ['Reisen Desync', ['shot', 'desync', 'rare'], true, -999999990]
     },
 	th16: {
         0: ['(Sub-)shottypes Not Functioning', ['shot', 'uncommon'], false, -999999990],
-        1: ['Stage 5 Incorrect Spellcard name', [], true, -999999990],
+        1: ['Stage 5 Incorrect Spellcard name', ['rare'], true, -999999990],
         2: ['Stage 3 & Stage 5 crashes', ['crash', 'rare'], false, -999999990],
-        3: ['Mai & Satono Solo Spells Issues', [], false, -999999990],
-        4: ["Okina's Survival Hurtbox", [], true, -999999990],
-        5: ["Okina's Final Bomb/Release Damage", [], true, -999999990]
+        3: ['Mai & Satono Solo Spells Issues', ['common'], false, -999999990],
+        4: ["Okina's Survival Hurtbox", ['common'], true, -999999990],
+        5: ["Okina's Final Bomb/Release Damage", ['rare'], true, -999999990]
     },
 	th165: {
         0: ['N/A', [], false, -999999990]
     },
 	th17: {
-        0: ["YoumuEagle's Damage Cap", ['typo', 'shot'], true, -999999990],
-        1: ['Instant Hyper Deactivation', ['simul'], true, -999999990],
-        2: ['Death by Intentional Hyper Break', ['simul'], true, -999999990],
+        0: ["YoumuEagle's Damage Cap", ['typo', 'shot', 'common'], true, -999999990],
+        1: ['Instant Hyper Deactivation', ['simul', 'rare'], true, -999999990],
+        2: ['Death by Intentional Hyper Break', ['simul', 'uncommon'], true, -999999990],
         3: ['Token duplication', ['dupe'], true, -999999990],
         4: ['Token Desync - Stage Transition Edition', ['desync', 'rare'], true, -999999990],
         5: ['Desync - Roaring Mode Edition', ['desync', 'common'], true, -999999990],
         6: ['Desync - Random Token Edition', ['desync', 'uncommon'], true, -999999990],
-        7: ["Saki's Survival Hurtbox", [], true, -999999990],
-        8: ["Saki's Final Bomb Damage", [], true, -999999990]
+        7: ["Saki's Survival Hurtbox", ['common'], true, -999999990],
+        8: ["Saki's Final Bomb Damage", ['rare'], true, -999999990]
     },
 	th18: {
         0: ['Slowdown Item Duplication', ['dupe'], true, -999999990],
         1: ['Chimata Final Timeout Crash', ['crash', 'uninit'], false, -999999990],
         2: ['D press Desync', ['desync', 'uncommon'], true, -999999990],
         3: ['Takane Card Cost', ['simul'], true, -999999990],
-        4: ['Practice mode 0 bombs', [], false, -999999990],
+        4: ['Practice mode 0 bombs', ['common'], false, -999999990],
         5: ['Centipede + Wolf cards combination', ['simul'], true, -999999990],
         6: ['Lily White Crash', ['crash'], false, -999999990],
         7: ["Dragon Eater's Cataclysm", ['overflow'], true, -999999990],
-        8: ["Momoyo's Final Bomb Damage", [], true, -999999990]
+        8: ["Momoyo's Final Bomb Damage", ['rare'], true, -999999990]
     },
 	th185: {
         0: ['N/A', [], false, -999999990]
@@ -110,19 +110,19 @@ const names = {
 };
 
 const tags = {
-    "crash": {"full": "Crash", "description": "A sudden failure causing the game to close."},
-    "desync": {"full": "Desync", "description": "Game desyncs during replay."},
     "common": {"full": "Common", "description": "Glitch is encountered often."},
     "uncommon": {"full": "Uncommon", "description": "Glitch is not encountered often."},
     "rare": {"full": "Rare", "description": "Glitch is encountered rarely."},
-    "skips": {"full": "Skips", "description": "Glitch where attacks or sections are skipped."},
-    "typo": {"full": "Typo", "description": "Glitch exists because ZUN made a typo."},
-    "shot": {"full": "Shottype", "description": "Glitch is specific to the shottype."},
-    "uninit": {"full": "Uninitialised variable", "description": "Glitch caused by the usage of uninitialised variables."},
-    "simul": {"full": "Simultaneous", "description": "Glitch caused by two or more events happening simultaneously."},
     "cap": {"full": "Cap", "description": "Glitch where an upper limit causes unintentional side effects."},
+    "crash": {"full": "Crash", "description": "A sudden failure causing the game to close unexpectedly."},
+    "desync": {"full": "Desync", "description": "Game desyncs during replay."},
+    "dupe": {"full": "Duplication", "description": "Glitch where objects are duplicated."},
     "overflow": {"full": "Overflow", "description": "Glitch where a value is overflowed."},
-    "dupe": {"full": "Duplication", "description": "Glitch where objects are duplicated."}
+    "shot": {"full": "Shottype", "description": "Glitch is specific to the shottype."},
+    "simul": {"full": "Simultaneous", "description": "Glitch caused by two or more events happening simultaneously."},
+    "skip": {"full": "Skips", "description": "Glitch where attacks or sections are skipped."},
+    "typo": {"full": "Typo", "description": "Glitch exists because ZUN made a typo."},
+    "uninit": {"full": "Uninitialised variable", "description": "Glitch caused by the usage of uninitialised variables."}
 };
 
 const citations = {
