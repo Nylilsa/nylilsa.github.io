@@ -309,8 +309,9 @@ function tagsTable() {
     let str = '<table id="selected-container"><tbody>';
     let counterArray = countTags();
     let i = 0;
+    const raritySeparator = 5;
     for (const [key, value] of Object.entries(tags)) {
-        if (i === 3){str += "<tr><td></td><td></td><td class='invis left'>youtu.be/dQw4w9WgXcQ</td></tr>";}
+        if (i === raritySeparator){str += "<tr><td></td><td></td><td class='invis left'>youtu.be/dQw4w9WgXcQ</td></tr>";}
         str += `<tr><td class="left">${counterArray[i]}</td><td class="left"><span class="tag"><a onclick="toggleTags(this)" data-key="${key}" class="tag" title="${value['description']}">${value['full']}</a></span></td><td class="left">${value['description']}</td>`;
         i++;
     }

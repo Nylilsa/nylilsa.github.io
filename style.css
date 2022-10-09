@@ -345,6 +345,11 @@ ul.CTAs {
     font-family: sans-serif;
     font-size: 0.9em; }
 
+#search {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 50px; }
+
 #sidebar {
   min-width: 250px;
   max-width: 250px;

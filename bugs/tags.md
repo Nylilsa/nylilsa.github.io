@@ -8,7 +8,10 @@ You can get the pages by their tag here :D Click on the tags below and then it f
 ## Seleted tags
 [hr_minor]  
 
-<div><div id='bugs-tags' class='tags-bar' data-list='[]'></div><div><button>wasd</button></div></div>
+<div id='search'>
+    <div id='bugs-tags' class='tags-bar' data-list='[]'></div>
+    <div><button class='button-search tags-bar' style='align-self: center'>Search</button></div>
+</div>
 
 note to self: css grid to put buttom toright of bar
 
