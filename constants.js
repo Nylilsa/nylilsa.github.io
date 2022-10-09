@@ -1,108 +1,108 @@
 const names = {
 	th06: {
-        0: ['Boss Attack Skip', ['skip', 'rare', 'simul'], true, 'placeholder', -999999990],
-        1: ['Dialogue Pause Desync', ['desync', 'uncommon'], true, 'placeholder', -999999990],
-        2: ['Bomb Pause Desync', ['desync'], true, 'placeholder', -999999990]
+        0: ['Boss Attack Skip', ['skip', 'rare', 'simul'], true, ' If a non-spell is finished when the timer of the boss is at the end of 00 seconds (a frame away from timing out), the Spell Card(s) that comes afterward is/are skipped.', -999999990],
+        1: ['Dialogue Pause Desync', ['desync', 'uncommon'], true, 'If the game is paused during dialogue, and then unpaused by pressing Z to continue playing, any replay made of such a run will desync on the stage the dialogue unpause was performed on.', -999999990],
+        2: ['Bomb Pause Desync', ['desync'], true, 'If the game is paused during dialogue, and then unpaused by pressing X to continue playing, any replay made of such a run will desync on the stage the unpause was performed on. The replay uses a bomb while the live playthrough does not use a bomb.', -999999990]
     },
 	th07: {
-        0: ['Merlin, Lyrica & Lunasa Glitch', ['rare'], true, 'placeholder', -999999990],
-        1: ['Dialogue Pause Desync', ['desync', 'uncommon'], true, 'placeholder', -999999990]
+        0: ['Merlin, Lyrica & Lunasa Glitch', ['rare'], true, 'On the final spell-card of the Prismriver sisters, they may behave weirdly. The bosses may stick around even after the boss-fight has ended, and Merlin may even use her attack of the penultimate spell-card during the final spell-card.', -999999990],
+        1: ['Dialogue Pause Desync', ['desync', 'uncommon'], true, 'If the game is paused during dialogue, and then unpaused by pressing Z to continue playing, any replay made of such a run will desync on the stage the dialogue unpause was performed on.', -999999990]
     },
 	th08: {
-        0: ['Dialogue Pause Desync', ['desync', 'uncommon'], true, 'placeholder', -999999990],
-        1: ['Unintended Last Spell Trigger', ['desync', 'rare'], false, 'placeholder', -999999990]
+        0: ['Dialogue Pause Desync', ['desync', 'uncommon'], true, 'If the game is paused during dialogue, and then unpaused by pressing Z to continue playing, any replay made of such a run will desync on the stage the dialogue unpause was performed on.', -999999990],
+        1: ['Unintended Last Spell Trigger', ['desync', 'rare'], false, 'It is possible to trigger the Last Spell despite not meeting the required Time. It is possible to trigger this on all spell-cards besides on Mokou due to the Time requirement being too low. The game runs normally when the Last Spell is triggered and nothing special happens.', -999999990]
     },
 	th09: {
-        0: ['Stage Skip', ['skip'], false, 'placeholder', -999999990]
+        0: ['Stage Skip', ['skip'], false, 'It is possible to skip to the subsequent stage by doing some messing around with the pause menu.', -999999990]
     },
 	th95: {
         0: ['N/A', [], false, 'placeholder', -999999990]
     },
 	th10: {
-        0: ['MarisaB 3 Power Damage', ['typo', 'shot', 'common'], true, 'placeholder', -999999990],
-        1: ['Corrupt replays', ['crash', 'common'], false, 'placeholder', -999999990],
-        2: ['Stage 4 Desync', ['desync', 'common'], true, 'placeholder', -999999990],
-        3: ['Bullet hitboxes glitch', ['common'], true, 'placeholder', -999999990],
-        4: ['Stage transition Desync', ['desync'], true, 'placeholder', -999999990]
+        0: ['MarisaB 3 Power Damage', ['typo', 'shot', 'common'], true, 'MarisaB deals a ton of damage when being at 3.xx power, unfocused. This can happen at any time during the game, meaning you can technically do a MarisaB LNN with this glitch and it would count.', -999999990],
+        1: ['Corrupt replays', ['crash', 'common'], false, 'Sometimes, one of your replays does not work. The replay would display an FPS of 0 in the bottom right, or it would seemingly crash at times.', -999999990],
+        2: ['Stage 4 Desync', ['desync', 'common'], true, 'Replays of full runs always desync when started from Stage 4, typically making it appear as if you failed to clear the stage. This can be prevented by starting the replay from Stage 3 or earlier.', -999999990],
+        3: ['Bullet hitboxes glitch', ['common'], true, 'The bullets on Kanako\'s 2nd spell-card and on Kananko\'s 4th spell-card are larger than what they are supposed to be.', -999999990],
+        4: ['Stage transition Desync', ['desync'], true, 'The replay desyncs when starting from the stage prior to the desync. Sometimes, it is also possible for the replay to desync even when playing the replay from the start of the stage, resulting in a replay that cannot be watched unless a third party tool is used.', -999999990]
     },
 	th11: {
-        0: ['Negative Spell Bonus', ['overflow'], false, 'placeholder', -999999990],
-        1: ['ReimuA 2 Power Damage', ['typo', 'shot'], true, 'placeholder', -999999990],
-        2: ['Mid-boss skips', ['skip'], true, 'placeholder', -999999990],
-        3: ['ReimuC Desync', ['desync', 'shot', 'uncommon'], true, 'placeholder', -999999990],
-        4: ['Score Desync', ['desync'], true, 'placeholder', -999999990],
-        5: ['ReimuA Desync', ['shot', 'rare', 'uninit'], true, 'placeholder', -999999990],
-        6: ['Stage 6 Desync', ['desync', 'common'], true, 'placeholder', -999999990],
-        7: ['Stage transition Desync', ['desync'], true, 'placeholder', -999999990]
+        0: ['Negative Spell Bonus', ['overflow'], false, 'It is possible to achieve a negative spell bonus. Upon capturing the spell-card with a negative value, your score decreases.', -999999990],
+        1: ['ReimuA 2 Power Damage', ['typo', 'shot'], true, '2 power ReimuA deals very few damage more compared to 1p ReimuA.', -999999990],
+        2: ['Mid-boss skips', ['skip'], true, 'It is possible to skip the mid-bosses Rin and Sanae in Stage 6 and Extra stage respectively by using a well-timed bomb as various player characters.', -999999990],
+        3: ['ReimuC Desync', ['desync', 'shot', 'uncommon'], true, 'Rarely, a replay using ReimuC desyncs. This only happens in stages 2 through 6 as it is caused by the Aya speed of ReimuC.', -999999990],
+        4: ['Score Desync', ['desync'], true, 'Quite often, the score at the end of stages 2 through 6 may end up with a slightly different value that only varies by a couple thousand points. This desync is purely about the score and has no gameplay effect.', -999999990],
+        5: ['ReimuA Desync', ['shot', 'rare', 'uninit'], true, 'Rarely, a replay desyncs on Stage 4. This only happens as ReimuA, and also only on the difficulty Easy mode.', -999999990],
+        6: ['Stage 6 Desync', ['desync', 'common'], true, 'All full-game replays desync on Stage 6 during Utsuho.', -999999990],
+        7: ['Stage transition Desync', ['desync'], true, 'The replay desyncs when starting from the stage prior to the desync. Sometimes, it is also possible for the replay to desync even when playing the replay from the start of the stage, resulting in a replay that cannot be watched unless a third party tool is used.', -999999990]
     },
 	th12: {
-        0: ['ReimuA Bomb Desync', ['typo', 'shot', 'uncommon'], false, 'placeholder', -999999990],
-        1: ['Score Display Overflow', ['overflow', 'common'], true, 'placeholder', -999999990],
-        2: ["MarisaA's Laser Damage", ['shot'], true, 'placeholder', -999999990]
+        0: ['ReimuA Bomb Desync', ['typo', 'shot', 'uncommon'], false, 'The game desyncs when directly starting from stages 2-6 as ReimuA. This has to do with the bomb of ReimuA.', -999999990],
+        1: ['Score Display Overflow', ['overflow', 'common'], true, 'The displayed score in-game overflows and becomes its value minus 4,294,967,296. The actual score is unaffected and is displayed normally on the player data and replay screens.', -999999990],
+        2: ["MarisaA's Laser Damage", ['shot'], true, 'Sometimes, MarisaA deals more or less damage despite being at the same power level. This can be taken advantage of by allowing MarisaA to speedkill certain attacks.', -999999990]
     },
 	th125: {
-        0: ['12-6 Instant death glitch', ['uninit', 'common'], true, 'placeholder', -999999990]
+        0: ['12-6 Instant death glitch', ['uninit', 'common'], true, 'On scene 12-6, you will sometimes be killed instantly despite the bullets not being near you. This happens at random, including during the replay.', -999999990]
     },
 	th128: {
         0: ['N/A', [], false, 'placeholder', -999999990],
     },
 	th13: {
-        0: ['Incorrect boss position during spell practice', [], true, 'placeholder', -999999990],
-        1: ['Misalignment of timer', ['rare'], false, 'placeholder', -999999990]
+        0: ['Incorrect boss position during spell practice', [], true, 'The boss\'s initial position in spell practice does not match the boss\'s position outside of spell practice mode. This affects a total of 7 different spell-cards and it affects all difficulties.', -999999990],
+        1: ['Misalignment of timer', ['rare'], false, 'Sometimes, the timer is misaligned. The second digit of the timer becomes misaligned. The timer functions as normal. The timer fixes itself once the current attack has ended.', -999999990]
     },
 	th14: {
-        0: ['Score Underflow', ['overflow'], true, 'placeholder', -999999990],
-        1: ['Bulletless Kagerou', ['cap'], false, 'placeholder', -999999990],
-        2: ["Marisa's Lasers", ['uninit', 'shot', 'rare'], true, 'placeholder', -999999990],
-        3: ['Barrier Bug', ['shot', 'simul'], false, 'placeholder', -999999990],
-        4: ['Gohei Duplication', ['shot'], false, 'placeholder', -999999990],
-        5: ['Benben Spell 2 Crash', ['crash', 'old'], false, 'placeholder', -999999990],
-        6: ['Screen-flipping Effect Undo', [], false, 'placeholder', -999999990],
-        7: ["Item Duplication through Game's Speed" , ['dupe', 'uncommon'], true, 'placeholder', -999999990],
-        8: ['Timeouts on Tsukumo Sisters on Extra', [], false, 'placeholder', -999999990]
+        0: ['Score Underflow', ['overflow'], true, 'The game sets your score to a score of 9,999,999,990. This can happen in all gamemodes, but it is easily done the easiest on spell practice mode.', -999999990],
+        1: ['Bulletless Kagerou', ['cap'], false, 'Kagerou stops shooting bullets on her second spell, third non-spell and third spell. This effect does not take place in the other stages.', -999999990],
+        2: ["Marisa's Lasers", ['uninit', 'shot', 'rare'], true, 'Marisa\'s laser(s) bugs out. It may burnout, it may be set at a 45° angle, it may undergo quantum tunneling and kill and enemy the opposite side of the screen. This event happens at random, meaning your replay may be desynced because of this bug.', -999999990],
+        3: ['Barrier Bug', ['shot', 'simul'], false, 'The player can take no damage from bullets, lasers and enemies, allowing for invincibility when SakuyaA\'s barrier is active.', -999999990],
+        4: ['Gohei Duplication', ['shot'], false, 'ReimuA can have multiple goheis on screen. All goheis are able to deal damage. Because of this, it is possible to speedkill by using multiple goheis.', -999999990],
+        5: ['Benben Spell 2 Crash', ['crash', 'old'], false, 'Benben Tsukumo\'s second spell crashes the game upon finishing the spell.', -999999990],
+        6: ['Screen-flipping Effect Undo', ['old'], false, 'The screen effects of Seija can be reversed.', -999999990],
+        7: ["Item Duplication through Game's Speed" , ['dupe', 'uncommon'], true, 'It is possible to duplicate certain items by dying during slowdown.', -999999990],
+        8: ['Timeouts on Tsukumo Sisters on Extra', [], false, 'Timing out certain attacks of the Tsukumo sisters on Extra mode sometimes do not end when the timer hits 0.00s.', -999999990]
     },
 	th143: {
-        0: ['Score Underflow', ['overflow'], true, 'placeholder', -999999990]
+        0: ['Score Underflow', ['overflow'], true, 'The game sets your score to a score of 9,999,999,990. This can only happen in scenes in which a spell-card is used, which are almost all scenes.', -999999990]
     },
 	th15: {
-        0: ['Sagume Skip', ['skip'], true, 'placeholder', -999999990],
-        1: ['Red Background', ['shot', 'old'], false, 'placeholder', -999999990],
-        2: ["Doremy's First Non-spell Typo", ['typo'], true, 'placeholder', -999999990],
-        3: ['Hecatia opener 50% shootdown', [], false, 'placeholder', -999999990],
-        4: ['Reisen Desync', ['shot', 'desync', 'rare'], true, 'placeholder', -999999990]
+        0: ['Sagume Skip', ['skip'], true, 'Upon successfully replicating the Sagume Skip, her fight ends immediately and you are brought to her post-boss dialogue. The game runs normally after skipping Sagume. Replays are compatible. This skip is done by doing a precise and well-timed bomb.', -999999990],
+        1: ['Red Background', ['shot', 'old'], false, 'The background slowly turns completely red. Spell backgrounds are affected too but they do not become entirely red.', -999999990],
+        2: ["Doremy's First Non-spell Typo", ['typo'], true, 'The uneven wave of Doremy\'s first non-spell spins faster than intended. The pattern looks very different compared to Doremy\'s other attacks. This only affects Lunatic.', -999999990],
+        3: ['Hecatia opener 50% shootdown', [], false, 'When you capture Hecatia\'s first non-spell, the shooting bonus is always 50%.', -999999990],
+        4: ['Reisen Desync', ['shot', 'desync', 'rare'], true, 'Very rarely, when starting a replay from either Stage 3, Stage 4, Stage 5 or Stage 6, the replay desyncs. This only happens with Reisen.', -999999990]
     },
 	th16: {
-        0: ['(Sub-)shottypes Not Functioning', ['shot', 'uncommon'], false, 'placeholder', -999999990],
-        1: ['Stage 5 Incorrect Spellcard name', ['rare'], true, 'placeholder', -999999990],
-        2: ['Stage 3 & Stage 5 crashes', ['crash', 'rare'], false, 'placeholder', -999999990],
-        3: ['Mai & Satono Solo Spells Issues', ['common'], false, 'placeholder', -999999990],
-        4: ["Okina's Survival Hurtbox", ['common'], true, 'placeholder', -999999990],
-        5: ["Okina's Final Bomb/Release Damage", ['rare'], true, 'placeholder', -999999990]
+        0: ['(Sub-)shottypes Not Functioning', ['shot', 'uncommon'], false, 'Occasionally, the player\'s (sub-)shottype does not work in which case some bullets are not shot.', -999999990],
+        1: ['Stage 5 Incorrect Spellcard name', ['rare'], true, 'The wrong spell card name can be displayed on the third spell. The following would be displayed: 狗符「山狗の散歩」(meaning Hound Sign "Mountain Hound\'s Walk"), instead of 舞符「ビハインドフェスティバル」(meaning Dance Sign "Behind Festival")', -999999990],
+        2: ['Stage 3 & Stage 5 crashes', ['crash', 'rare'], false, 'It is possible for the game to crash mid-run. This crash is only known to happen in two places of the game: in Stage 3 and in Stage 5.', -999999990],
+        3: ['Mai & Satono Solo Spells Issues', ['common'], false, 'Both Mai and Satono\'s 2nd solo spells, Star Festival and Behind You, have issues with their timers. ', -999999990],
+        4: ["Okina's Survival Hurtbox", ['common'], true, 'Okina gains a hurtbox during her survival spell-card. With her hurtbox active the player can shoot her and end the spell-card prematurely.', -999999990],
+        5: ["Okina's Final Bomb/Release Damage", ['rare'], true, 'Okina gains a hurtbox during her final spell-card during a bomb or release. This can usually not happen, because Okina is supposed to be immune to bombs and releases.', -999999990]
     },
 	th165: {
         0: ['N/A', [], false, 'placeholder', -999999990]
     },
 	th17: {
-        0: ["YoumuEagle's Damage Cap", ['typo', 'shot', 'common'], true, 'placeholder', -999999990],
-        1: ['Instant Hyper Deactivation', ['simul', 'rare'], true, 'placeholder', -999999990],
-        2: ['Death by Intentional Hyper Break', ['simul', 'uncommon'], true, 'placeholder', -999999990],
-        3: ['Token duplication', ['dupe'], true, 'placeholder', -999999990],
-        4: ['Token Desync - Stage Transition Edition', ['desync', 'rare'], true, 'placeholder', -999999990],
-        5: ['Desync - Roaring Mode Edition', ['desync', 'common'], true, 'placeholder', -999999990],
-        6: ['Desync - Random Token Edition', ['desync', 'uncommon'], true, 'placeholder', -999999990],
-        7: ["Saki's Survival Hurtbox", ['common'], true, 'placeholder', -999999990],
-        8: ["Saki's Final Bomb Damage", ['rare'], true, 'placeholder', -999999990]
+        0: ["YoumuEagle's Damage Cap", ['typo', 'shot', 'common'], true, 'YoumuEagle deals less damage compared to YoumuWolf and YoumuOtter. This is especially noticeable when comparing the slashes between various Youmus. This has to do with the damage cap.', -999999990],
+        1: ['Instant Hyper Deactivation', ['simul', 'rare'], true, 'It is possible to instantly deactivate a hyper after picking up the 5th token, giving the player 2 or 5 tokens after the text "Extra Beast Appeared!" shows up. This can happen with any sort of hyper.', -999999990],
+        2: ['Death by Intentional Hyper Break', ['simul', 'uncommon'], true, 'The player instantly dies whilst breaking their hyper. It is not possible to escape the death through death-bombing.', -999999990],
+        3: ['Token duplication', ['dupe'], true, 'Every mid-boss in WBaWC can drop a special token. When timing down a hyper that has one or more special tokens in it, then the player is rewarded with 5 tokens.', -999999990],
+        4: ['Token Desync - Stage Transition Edition', ['desync', 'rare'], true, 'When starting a replay from Stage 2 through Stage 6, it is possible for the replay to desync at the start of the stage. When starting from Stage 2 through Stage 6, it is possible that the replay starts off with no tokens being spawned. When letting the replay being played from the stage prior, it can be seen that there are tokens that spawn.', -999999990],
+        5: ['Desync - Roaring Mode Edition', ['desync', 'common'], true, 'When watching a replay, the replay may start off with extra tokens and/or extra items spawning. The replay is then guaranteed to desynchronise.', -999999990],
+        6: ['Desync - Random Token Edition', ['desync', 'uncommon'], true, 'When watching a replay from Stage 2 through Stage 6, the replay may desynchronise in the middle of the stage. This usually happens when having timed out a hyper in which the game gives the player different tokens, but rarely can it happen slightly differently.', -999999990],
+        7: ["Saki's Survival Hurtbox", ['common'], true, 'Saki gains a hurtbox during her survival spell-card. With her hurtbox active the player can shoot her and end the spell-card prematurely.', -999999990],
+        8: ["Saki's Final Bomb Damage", ['rare'], true, 'Saki gains a hurtbox during her final spell-card during a bomb. This can usually not happen, because Extra bosses are supposed to be immune to bombs.', -999999990]
     },
 	th18: {
-        0: ['Slowdown Item Duplication', ['dupe'], true, 'placeholder', -999999990],
-        1: ['Chimata Final Timeout Crash', ['crash', 'uninit'], false, 'placeholder', -999999990],
-        2: ['D press Desync', ['desync', 'uncommon'], true, 'placeholder', -999999990],
-        3: ['Takane Card Cost', ['simul'], true, 'placeholder', -999999990],
-        4: ['Practice mode 0 bombs', ['common'], false, 'placeholder', -999999990],
-        5: ['Centipede + Wolf cards combination', ['simul'], true, 'placeholder', -999999990],
-        6: ['Lily White Crash', ['crash'], false, 'placeholder', -999999990],
-        7: ["Dragon Eater's Cataclysm", ['overflow'], true, 'placeholder', -999999990],
-        8: ["Momoyo's Final Bomb Damage", ['rare'], true, 'placeholder', -999999990]
+        0: ['Slowdown Item Duplication', ['dupe'], true, 'It is possible to duplicate certain items by dying during slowdown.', -999999990],
+        1: ['Chimata Final Timeout Crash', ['crash', 'uninit'], false, 'The game crashes when timing out Chimata\'s final spell-card on spell-practice mode.', -999999990],
+        2: ['D press Desync', ['desync', 'uncommon'], true, 'In the stage the replay desyncs in the player starts off with the wrong card. This has to do with the D press during the stage transition.', -999999990],
+        3: ['Takane Card Cost', ['simul'], true, 'The Takane card halves the prices of all cards when equipped. The shop says the Takane card costs 80 gold. However, when buying the card, it only costs you 40 gold.', -999999990],
+        4: ['Practice mode 0 bombs', ['common'], false, 'Entering Practice mode you may see that your player has no bombs.', -999999990],
+        5: ['Centipede + Wolf cards combination', ['simul'], true, 'When equipping the Centipede and the Wolf card at the same time, the effect from the Centipede card is replaced by the effect of the Wolf card.', -999999990],
+        6: ['Lily White Crash', ['crash'], false, 'It is possible to cause a game crash by using the Lily White card.', -999999990],
+        7: ["Dragon Eater's Cataclysm", ['overflow'], true, 'Momoyo\'s 8th spell-card can freak out and spawn seemingly an infinite number of bullets.', -999999990],
+        8: ["Momoyo's Final Bomb Damage", ['rare'], true, 'Momoyo gains a hurtbox during her final spell-card during a bomb. This can usually not happen, because Extra bosses are supposed to be immune to bombs.', -999999990]
     },
 	th185: {
         0: ['N/A', [], false, 'placeholder', -999999990]
