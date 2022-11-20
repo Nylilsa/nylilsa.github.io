@@ -87,12 +87,12 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 	// table-shottype is ID of div in showdown-ext.js
 	const content = document.getElementById('table-shottype');
 	if (input.length == 20) { //hsifs
-		let str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchColors['Spring']+'">Spring</span></td>';
+		let str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchStyle['spring'].color+'">Spring</span></td>';
 		for (let i = 0; i < input.length; i++) {
 			switch (i) {
-				case 4: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Summer']+'">Summer</span></td>'; break;}
-				case 8: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Autumn']+'">Autumn</span></td>'; break;}
-				case 12: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Winter']+'">Winter</span></td>'; break;}
+				case 4: {str += '</tr><tr><td class="left"><span style="color:'+matchStyle['summer'].color+'">Summer</span></td>'; break;}
+				case 8: {str += '</tr><tr><td class="left"><span style="color:'+matchStyle['autumn'].color+'">Autumn</span></td>'; break;}
+				case 12: {str += '</tr><tr><td class="left"><span style="color:'+matchStyle['winter'].color+'">Winter</span></td>'; break;}
 				case 16: {str += '</tr><tr><td class="left">Extra</td>'; break;}
 			}
 			if (input[i] == 1) {
@@ -106,11 +106,11 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 		return;
 	} 
 	if (input.length == 9) { //wbawc
-		let str = '<table><thead><tr><th class="left">Spirit</th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchColors['Wolf']+'">Wolf</span></td>';
+		let str = '<table><thead><tr><th class="left">Spirit</th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchStyle['wolf'].color+'">Wolf</span></td>';
 		for (let i = 0; i < input.length; i++) {
 			switch (i) {
-				case 3: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Otter']+'">Otter</span></td>'; break;}
-				case 6: {str += '</tr><tr><td class="left"><span style="color:'+matchColors['Eagle']+'">Eagle</span></td>'; break;}
+				case 3: {str += '</tr><tr><td class="left"><span style="color:'+matchStyle['otter'].color+'">Otter</span></td>'; break;}
+				case 6: {str += '</tr><tr><td class="left"><span style="color:'+matchStyle['eagle'].color+'">Eagle</span></td>'; break;}
 			}
 			if (input[i] == 1) {
 				str += '<td>'+yes+'</td>';
@@ -262,7 +262,10 @@ function replaceEclIns() {
 }
 
 function matchText(text) {
-	return "<span style='color:"+matchColors[text]+"'>"+text+"</span>";
+    const lowerText = text.toLowerCase();
+    const icon = `<img src='/assets/th-sprites/${text}.png' width='20' height='20'>`;
+    const content = "<span style='color:"+matchStyle[lowerText].color+"'>"+text+"</span>";
+	return icon+content;
 }
 
 function hrCustom(input) {
@@ -356,6 +359,7 @@ function toggleTags(element) {
 }
 
 function countTags() {
+    console.time("test1");
     let tagsArray = [];
     let tagsCount = [];
     for (const [key, value] of Object.entries(tags)) {
@@ -371,8 +375,10 @@ function countTags() {
             }
         }
     }
+    console.timeEnd("test1");
     return tagsCount;
 }
+
 
 ///////////////////// UNUSED /////////////////////
 
