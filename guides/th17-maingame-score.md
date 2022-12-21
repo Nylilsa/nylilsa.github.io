@@ -38,6 +38,7 @@ Table of contents
             <li>[jumpto=#/guides/th17-maingame-score#stage6]Stage 6[/jumpto]</li>
         </ol>
     </li>
+    <li>[jumpto=#/guides/th17-maingame-score#randomdetails]Random details[/jumpto]</li>
 </ol>
 
 ## Score gain

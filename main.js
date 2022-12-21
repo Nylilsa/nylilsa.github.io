@@ -261,10 +261,11 @@ function replaceEclIns() {
 	console.log(1); // TBD
 }
 
-function matchText(text) {
-    const lowerText = text.toLowerCase();
+function matchText(text, url, match) { // TODO: make function be able to appear in a variety of options (e.g. suppose text says PIV and Point Item Value - make function such that both texts are supported with icon and color changes)
+    if (match === null) {console.log(1)}
+    const matchText = text.toLowerCase();
     const icon = `<img src='/assets/th-sprites/${text}.png' width='20' height='20'>`;
-    const content = "<span style='color:"+matchStyle[lowerText].color+"'>"+text+"</span>";
+    const content = "<span style='color:"+matchStyle[matchText].color+"'>"+text+"</span>";
 	return icon+content;
 }
 
