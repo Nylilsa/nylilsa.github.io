@@ -261,12 +261,12 @@ function replaceEclIns() {
 	console.log(1); // TBD
 }
 
-function matchText(text, url, match) { // TODO: make function be able to appear in a variety of options (e.g. suppose text says PIV and Point Item Value - make function such that both texts are supported with icon and color changes)
-    if (match === null) {console.log(1)}
-    const matchText = text.toLowerCase();
-    const icon = `<img src='/assets/th-sprites/${text}.png' width='20' height='20'>`;
-    const content = "<span style='color:"+matchStyle[matchText].color+"'>"+text+"</span>";
-	return icon+content;
+function matchText(style, iconBool, highlightedText) { // TODO: make function be able to appear in a variety of options (e.g. suppose text says PIV and Point Item Value - make function such that both texts are supported with icon and color changes)
+    console.log(matchStyle[style])
+    const icon = `<img src='/assets/th-sprites/${style}.png' width='20' height='20'>`;
+    const content = "<span style='color:"+matchStyle[style].color+"'>"+highlightedText+"</span>";
+    if (iconBool) {return icon+content}
+    return content;
 }
 
 function hrCustom(input) {

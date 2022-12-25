@@ -329,9 +329,10 @@ let ext = function() {
 
 	let match = {
 		type: "lang",
-		regex: /\[match=([^]*?)\]/g,
-		replace: function(match, content) {
-			return matchText(content);
+		regex: /\[style=([^]*?), icon=(true|false), highlightedText=([^]*?)\]/g,
+		replace: function(match, style, icon, highlightedText) {
+            icon = (icon === 'true');
+			return matchText(style, icon, highlightedText);
 		}
 	}
 
