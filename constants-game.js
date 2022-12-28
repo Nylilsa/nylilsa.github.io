@@ -58,9 +58,19 @@ const matchStyle = {
 	"wolf": new Match('assets/th-sprites/wolf.png', '#FF4F51'),
 	"otter": new Match('assets/th-sprites/otter.png', '#8DFB78'),
 	"eagle": new Match('assets/th-sprites/eagle.png', '#7E59D9'),
+	"spec1": new Match('assets/th-sprites/special1.png', '#E1D359'),
+	"spec2": new Match('assets/th-sprites/special2.png', '#E1D359'),
+	"spec3": new Match('assets/th-sprites/special3.png', '#E1D359'),
+	"spec4": new Match('assets/th-sprites/special4.png', '#E1D359'),
+	"spec5": new Match('assets/th-sprites/special5.png', '#E1D359'),
+	"spec6": new Match('assets/th-sprites/special6.png', '#E1D359'),
+	"point-token": new Match('assets/th-sprites/point-token.png', '#6873D8'),
+	"life-token": new Match('assets/th-sprites/life-token.png', '#F26BD3'),
 	
     "point": new Match('assets/th-sprites/point-item.png', '#6873D8'),
     "power": new Match('assets/th-sprites/power-item.png', '#FF5555'),
+    "bomb": new Match('assets/th-sprites/bomb-item.png', '#50D030'),
+    "life": new Match('assets/th-sprites/life-item.png', '#F26BD3'),
 
 
     "test": new Match(1, 2)
