@@ -46,7 +46,7 @@ Table of contents
 
 There are 2 main methods to increase score: 
 
-1. Point items: these items have a value equal to the point item value (PIV) the cyan number displayed on the right side of the screen;
+1. [style=point, icon=true, highlightedText=Point items]: these items have a value equal to the point item value (PIV) the cyan number displayed on the right side of the screen;
 [hl2]Note: power items will give a score gain equal to point items if the power is maxed at 4.00![/hl2]
 
 2. Green items: released with various methods are worth 1/10 of the PIV. In the later stages, they make for most of the score gain, they are mainly meant to be the items that INCREASE PIV (more on that later) but once you hit stage 4 the number of bullets starts to make the score gain from them really important
@@ -60,7 +60,7 @@ As previously mentioned, PIV is increased when collecting green items, a green i
 
 There are 4 ways you can spawn green items:
 
-1. Otter hypers: these cute green otter spirits turn every bullet canceled into a green item, otter hypers can last for a long time and if correctly managed they can be used to milk the densest sections in the game, however, do not underestimate the other methods.
+1. [style=otter, icon=true, highlightedText=Otter hypers]: these cute green [style=otter, icon=false, highlightedText=otter] spirits turn every bullet canceled into a green item, [style=otter, icon=false, highlightedText=Otter] can last for a long time and if correctly managed they can be used to milk the densest sections in the game, however, do not underestimate the other methods.
 
 2. Shot: during any kind of hyper, hitting enemies with your shot generates green items. During stages 1 to 3, PIV from the shot is just as important as hyper cancels, while from stage 4 onwards it's not as important but it's still very relevant, the ideal is to try to hit as many targets as possible during your hyper to maximize gain.
 [hl2]Note: it doesn't have to deal damage, PIV is generated even when bosses have no hp bar for example.[/hl2]
@@ -152,7 +152,7 @@ You want to enter with a bomb to deal as much damage as possible without depleti
 
 **Step 4**: You survived and your hyper has ended, 2 things can happen now:
 1. [hl2]if you have static otters on-screen, INSTANTLY suicide, quickly collect an otter hyper[/hl2]. Optimal hypers for LC are two 4 otters, so for this second hyper, if you had only 1 static otter on-screen before suicide you can guarantee a 3 otter, if you had 2 you can get 4. if you get a 3 otter but you have consumed tokens that weren't static otters (there should be 2 of these spawned at the beginning of LC) then a 3 otter is also pretty good. 
-2. [hl2]if you don't have static otters (either you didn't suicide before LC or you consumed them during LC) it's now up to luck[/hl2], pray for the one beast token that is supposed to be on screen to become an otter right when you hyper ends, or wait for your release and CONFIRM it spawns either a wolf or otter before your suicide.  5/9 times it's an otter so optimal score gain assuming you consumed otters, if you spawn a wolf you will have to wait for about 2.5 seconds. if you spawn double eagle...... I'm really sorry for you.
+2. [hl2]if you don't have static otters (either you didn't suicide before LC or you consumed them during LC) it's now up to luck[/hl2], pray for the one beast token that is supposed to be on screen to become an otter right when you hyper ends, or wait for your release and CONFIRM it spawns either a wolf or otter before your suicide.  5/9 times it's an otter so optimal score gain assuming you consumed otters, if you spawn a wolf you will have to wait for about 2.5 seconds. if you spawn double [style=eagle, icon=false, highlightedText=eagles]...... I'm really sorry for you.
 
 **Step 5**: Survive the second hyper. wth no tokens to care for it shouldn't be too difficult, make sure you KILL Keiki, you don't want to time this out, you lose on a big cancel, and 3 tokens that you are gonna need for later. the ideal cancel is as late as possible during the last second, as Marisa, this is very risky, I recommend killing Keiki at like 4 seconds, if you are Youmu this is free so go for it.
 
@@ -172,7 +172,7 @@ Understanding token RNG, and learning how to deal with it is an essential part o
 [hl2]For movement[/hl2] there isn't much to say, this doesn't matter, it can make some sections comfy, and could make others uncomfortable or even straight-up harder, but nothing impossible, If you feel like you got fucked by token movement it was avoidable. for Dupes, as Marisa dupes are fine, In 110 hours of playtime I have yet to experience a failed duplication where I felt it was impossible. For Youmu and Reimu... I believe it can sometimes be IMPOSSIBLE to dupe, it's one of the big reasons why people usually don't score with them, but again this is unlikely.
 
 [hl2]For token releases[/hl2] it's a bit more complicated, here is a little analysis:
-In an ideal world we would only get otters, but since we can't, the strats that are used accept otters as good/fine, but also wolves as fine, eagles are harder to work with but you can make EVERYTHING work with eagles. a lot of otters tend to cause score gains, eagles tend to cause score losses, you would expect them to cancel each other out into neutral gain. that is not the case, [hl2]RNG actually FAVORS score gains[/hl2].
+In an ideal world we would only get otters, but since we can't, the strats that are used accept otters as good/fine, but also wolves as fine, [style=eagle, icon=false, highlightedText=eagles] are harder to work with but you can make EVERYTHING work with [style=eagle, icon=false, highlightedText=eagles]. a lot of otters tend to cause score gains, [style=eagle, icon=false, highlightedText=eagles] tend to cause score losses, you would expect them to cancel each other out into neutral gain. that is not the case, [hl2]RNG actually FAVORS score gains[/hl2].
 
 There are 9 possible releases
 O/O, O/W, O/E, W/O, W/W, W/E, E/O, E/W, E/E.
@@ -204,6 +204,38 @@ Once your hyper ends, it's the hard part, pattern transition. You have 2 goals h
 Depending on the token RNG, you will have to adapt to it, if possible predict and hug some tokens in advance to time their otter state for the transition, failing transitions means you aren't tracking tokens well enough.
 2. Only if the tokens allow it, [hl2]go for optimal bullet cancel[/hl2], same example as earlier: assuming the optimal cancel happens 3 seconds after the optimal time to cancel and collect otters, [hl2]PRIORITIZE TOKENS[/hl2], if the tokens and optimal bullet cancel align it's good, but it's rarely necessary.
 
+Bosses practice setups
+
+Practicing boss fights can be very tiring, it's one of wbawc's flaws when you compared it's practice to other games. For realistic meaningful practice, you need tokens on screen. Players used to struggle with it, but it recent times some of us have come up with "setups" for boss fights, the fastest way to spawn all the tokens needed for practice.
+
+Note: not all setups are perfectly realistic (same exact tokens) but all come pretty close, or at least as close as possible. most of those strats make use of suicides, make sure that you aren't losing to much power and use Thprac's infinite power if needed.
+Also do keep in mind that as usual the tokens that you may have entering each boss are different depending on your route, make the modifications you may need to the setups
+
+Eika:
+Start from second half 2, with a jellyfish hyper active (make it short hyper, like wolf otter eagle wolf or something) when it ends, suicide twice, make sure to only collect the 4 statics spawned from the suicides, at this point if you killed every enemy (just bomb the last three fairies) you should have 10 tokens on screen (7 beasts 3 fishes) and 4 otters in bar, this setup is just 1 beast of from being perfect. This is assuming a dupe, if you are doing dupeless, you can just consume a beast during dialogue.
+
+Urumi:
+Start from second half 3, with an horse token hyper active (short) when it ends, suicide once, collect the 2 statics. If you spawned every single token, start 4 otter with a life piece on dialogue, you should have 4 beasts 1 fish on screen. for dupeless: use a cow token, and suicide twice instead, 4 otter hyper using all 4 statics, and consume 1 beast during dialogue.
+both of those are perfect simulations.
+
+Kutaka:
+Start from second half 3, with an horse hyper active (short) when it ends, suicide twice, make sure to only collect the 4 statics spawned from the suicides. make sure to bomb the last fairy section and spawn 5 point tokens. at this point you can start a 5 otter hyper during dialogue, consume the life piece, and you will have a PERFECT simulation.
+For the dupeless setup, use a Cow token instead, and don't consume any tokens. this one can perfectly replicate the hyper skipping that you would do on kutaka spells in the 8B reference replay.
+
+Yachie:
+Yachie fight with dupe implies otter duping turtle, meaning we start from midboss:
+2 otters 1 fish token in bar, suicide once, leave the tokens on screen. spawn the turtle token at the usual 5 second ish mark. from there the simulation of turtle dupe is perfect -  a missing fish token.
+Dupeless: start from second half 2, 2 otters 1 fish 1 turtle in bar. suicide once, once dialogue starts, start at 3 otter hyper and consume 1 beast, you should have 3 beasts on screen, (normally 2 beasts 1 fish, but you also normally have a 4 otter hyper, we moved the fish from the screen to the hyper) almost perfect.
+
+Mayumi:
+Currently the WR run doesn't dupe so it's just one simple setup:
+Start on second half 2, with a cow token hyper (short). just bomb when the hyper ends to kill all the faires, start a 5 otter on dialogue and you have a perfect simulation.
+
+Keiki:
+keiki practice requires having token on screen, meaning midboss start:
+start with 4 tokens in bar (tokens irrelevant) suicide thrice. use one of the 6 statics to hyper, break it and spawn horse. at this point you would suicide again, collect 3 statics and 1 fish token. Activate hyper with another fish on dialogue, and with that, you should have 4 beasts 4 statics 1 horse on keiki, perfect simulation.
+Dupeless: same exact setup, just instead of starting hyper with 3 otters 2 fishes, you do 3 otters 1 fish and horse.
+
 ## Random details
 [hr_minor]
 
@@ -224,22 +256,22 @@ A series of random details that don't really fit anywhere so I'll just list them
 ## Doing runs
 [hr_major]
 
-This is the section of the guide where I explain the strategies that are used, we will be talking about Marisa because she is the best and most common shot. I will show the current World record from stages 1 to 6 and explain by voice the strategies used, I will then write down tips and suggestions for lower-level scoring. keep in mind that the suggestions can still be hard to work with, and I don't feel like giving more tips than that, because at that point the routes would become extremely specific and you might as well work on your own route that you find comfortable, using the knowledge that can be learnt here. Before I can do that though I have to talk about one thing.
+This is the section of the guide where I explain the strategies that are used. we will be talking about Marisa because she is the best and most common shot.
 
-Stages 4 to 6 follow a very similar resources route (bombs usage, suicide spots, etc) in most kinds of runs, However, stages 1 to 3 may have a very different resources route depending on your preference.
-The important thing is knowing that you want to enter stage 4 with 3/4 bombs and don't lose more than 1 life. once you know that, you can start choosing where to bomb in stages 1 to 3. Usually, players follow one of these 3 options:
-1. stage 2 suicide
-2. Kutaka suicide
-3. no suicide before stage 4.
+ I will show the current World record from stages 1 to 6 and explain by voice the strategies used. I will then write down tips and suggestions for lower-level scoring. keep in mind that the suggestions can still be hard to work with, and I don't feel like giving more tips than that, because at that point the routes would become extremely specific and you might as well work on your own route that you find comfortable, using the knowledge that can be learned here.
+ I also recently added (can be found below the world record run breakdown) my commentary of an 8B run sample made by player MyonKT, of a run that makes use of very consistent and safe strategies. Before I can do that though I have to talk about one thing.
 
-I'll explain them all below:
+Stages 4 to 6 follow a very similar resource route (bomb usage, suicide spots, etc) in most kinds of runs, However, stages 1 to 3 may have a very different resource route depending on your preference.
+The important thing is knowing that you want to enter stage 4 with 3/4 bombs and don't lose more than 2 lives. once you know that, you can start choosing where to bomb in stages 1 to 3. Usually, players follow one of these 3 options: 1: stage 2 suicide    2: Kutaka suicide    3: no suicide before stage 4.
 
-1. This option allows for easier stages 1 2 3, dumb 4 bombs into stage 1 and suicide on stage 2 to replenish bombs and bonus tokens for a bonus hyper, and gives you lots of bombs for stage 3. Ofc this loses 1 life so it's not the best but it's the basic route.
+1 this option allows for easier stages 1 2 3, dumb 4 bombs into stage 1 and suicide on stage 2 to replenish bombs and bonus tokens for a bonus hyper, and gives you lots of bombs for stage 3. Ofc this loses 1 life so it's not the best but it's the basic route.
 
-2. Most players think this is a bad idea and I can see why, however in my personal experience for me, this has worked best. you trade for a harder stage 1 2 and 3, But Kutaka's fight itself is easier if you can suicide somewhere on it, even if option 1 gives you more bombs.
+2 Most players think this is a bad idea and I can see why, however in my personal experience for me, this has worked best. you trade for a harder stage 1 2 and 3, But Kutaka's fight itself is easier if you can suicide somewhere on it, even if option 1 gives you more bombs.
 I would always make a mistake somewhere on Kutaka back when I was doing stage 2 suicide route, and it would fuck me up badly, this route allows that mistake, score gain was about the same so I wouldn't worry about that. 
 
-3. This leaves the third option which is just getting good and don't suicide to replenish bombs, hold enough bombs for the entirety of stages 1 to 3. As you can imagine this makes said stages much harder to execute correctly, the reward of a bonus life into the later stages is worth it but not for lower level scoring, I suggest using this only for CS+ runs.
+3 This leaves the third option which is just getting good and don't suicide to replenish bombs, hold enough bombs for the entirety of stages 1 to 3. As you can imagine this makes said stages much harder to execute correctly, the reward of a bonus life into the later stages is worth it but not for lower level scoring, I suggest using this only for CS+ runs.
+
+If you can't keep up with safety and need more bombs, you could allow a suicide in both stage 2 and 3. However do keep in mind that going 2 lives behind will lose a good chunk of score in the late game, but as a beginner, it's worth it if it increases the number of runs in the late game. 
 
 With all of that said let's talk about stages:
 
@@ -312,7 +344,7 @@ forgot to add: right is optimal because moving from right to left cancels more b
 [video=https://www.blogger.com/video.g?token=AD6v5dy8QJO0ULJSAAHWufAE1IC5HMPhvYvbJqGkiUai9n4mXTSzuvwr9mow3KmABMRKUgGGhWyC4edja7AYf-aFmtGIKVNqr_YaPYC2LVQXLS2-hX77ni1_GLzx2CnJtHsZYNjpdno, hratio=2, other=width:720px; aspect-ratio:16/9]
 
 
-[hl2]Notes for lower level[/hl2]: as said in the stage 4 part, I highly recommend entering with 2 tokens and not 3. Doing this you have to skip the second hyper, this is because you WON'T have enough tokens to activate the second hyper in the first place. Why would you do this? Simply because the setup to do a 5 otter After mid-boss is waaaaaay harder to do if you go for the second hyper before it, second hyper gains 100M at best, I only suggest doing this for CS/11B + paces. Forgot to mention this: The RNG spam section drops 2 eagles, by the time Mayumi mid-boss dies these 2 eagles will be either otters or wolves so it's veeeery consistent with the basic strat, example here: 
+[hl2]Notes for lower level[/hl2]: as said in the stage 4 part, I highly recommend entering with 2 tokens and not 3. Doing this you have to skip the second hyper, this is because you WON'T have enough tokens to activate the second hyper in the first place. Why would you do this? Simply because the setup to do a 5 otter After mid-boss is waaaaaay harder to do if you go for the second hyper before it, second hyper gains 100M at best, I only suggest doing this for CS/11B + paces. Forgot to mention this: The RNG spam section drops 2 [style=eagle, icon=false, highlightedText=eagles], by the time Mayumi mid-boss dies these 2 [style=eagle, icon=false, highlightedText=eagles] will be either otters or wolves so it's veeeery consistent with the basic strat, example here: 
 [video=https://www.youtube.com/embed/fG75_mNE5Nk?start=1255, hratio=2, other=width:720px; aspect-ratio:16/9]
 + During green kunai, focus on the haniwa as much as you can, consuming too many tokens is not ideal but it's only a minor score loss, consuming the haniwa can be catastrophic.
 + All Mayumi nons can be extremely scary, pay really close attention, and make sure you are confident on getting good cancels on them.
@@ -333,6 +365,24 @@ forgot to add: right is optimal because moving from right to left cancels more b
 + Refrain from canceling 4th non without a bomb, that shit snipes you waaaay too fucking easily.
 + I definitely would avoid doing oni-shaped creature in the middle of the screen, it is static but it's still very scary and it's an optimization that I would only use for CS+/11B+ scores.
 + ID is a very hard spell to optimize, for low scores I would aim for around 750M gain, if you are confident to go for something higher you can do it, but it's probably not needed.
+
+8B run breakdown
+
+Notes about this run: This run features 0 dupes, many hypers are skipped on boss fights to avoid non to spell transitions and vice-versa. A total of 9 lives, 1 of which is not routed to be intentionally suicided anywhere but is instead used as a safety for a possible comeback following a mistake in the later stages (in this run it was used as a comeback on Linear creature after first hyper was broken). if you feeling comfortable doing 2 dupes somewhere, you will be able to increase the number of safety lives from 1 to 2.
+
+download : https://cdn.discordapp.com/attachments/986054135424102470/1038844476782825472/th17_25.rpy
+
+vid1
+vid2
+vid3
+vid4
+vid5
+vid6
+vid7
+
+
+
+
 
 ## End of the Guide
 [hr_major]

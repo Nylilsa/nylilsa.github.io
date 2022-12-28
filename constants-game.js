@@ -50,13 +50,18 @@ class Match {
 }
 
 const matchStyle = {
-	"spring": new Match(1, '#FF9FC9'),
-	"summer": new Match(1, '#50D030'),
-	"autumn": new Match(1, '#FF8800'),
-	"winter": new Match(1, '#465CF0'),
+	"spring": new Match('assets/th-sprites/spring.png', '#FF9FC9'),
+	"summer": new Match('assets/th-sprites/summer.png', '#50D030'),
+	"autumn": new Match('assets/th-sprites/autumn.png', '#FF8800'),
+	"winter": new Match('assets/th-sprites/winter.png', '#465CF0'),
 
 	"wolf": new Match('assets/th-sprites/wolf.png', '#FF4F51'),
-	"otter": new Match(1, '#8DFB78'),
-	"eagle": new Match(1, '#7E59D9'),
+	"otter": new Match('assets/th-sprites/otter.png', '#8DFB78'),
+	"eagle": new Match('assets/th-sprites/eagle.png', '#7E59D9'),
+	
+    "point": new Match('assets/th-sprites/point-item.png', '#6873D8'),
+    "power": new Match('assets/th-sprites/power-item.png', '#FF5555'),
+
+
     "test": new Match(1, 2)
 };

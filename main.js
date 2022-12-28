@@ -261,9 +261,8 @@ function replaceEclIns() {
 	console.log(1); // TBD
 }
 
-function matchText(style, iconBool, highlightedText) { // TODO: make function be able to appear in a variety of options (e.g. suppose text says PIV and Point Item Value - make function such that both texts are supported with icon and color changes)
-    console.log(matchStyle[style])
-    const icon = `<img src='/assets/th-sprites/${style}.png' width='20' height='20'>`;
+function matchText(style, iconBool, highlightedText) {
+    const icon = `<img src='${matchStyle[style].icon}' width='20' height='20'>`;
     const content = "<span style='color:"+matchStyle[style].color+"'>"+highlightedText+"</span>";
     if (iconBool) {return icon+content}
     return content;
