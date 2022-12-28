@@ -23,7 +23,7 @@ If the ``Comment`` says ``not likely to change`` then it means that I have gone 
 
 ...yeah, the number of glitches is quite large, but that mainly happens because a lot of the glitches are in multiple games. lol
 
-ads
+
 
 ## Contributors
 [hr_minor] 
