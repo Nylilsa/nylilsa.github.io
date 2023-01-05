@@ -5,7 +5,7 @@
 
 html {
   -webkit-text-size-adjust: auto;
-  background: #000000; }
+  background: #000000;}
 
 a,
 a:hover,
@@ -32,7 +32,8 @@ b, strong {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #fafafa; }
+  background: #fafafa;
+ }
 
 button {
   background-color: inherit;

@@ -8,7 +8,7 @@ Author: [a=https://twitter.com/RebotOvaFritte]RebotOva[/a]
 
 Hello !
 
-[hl2]This is a guide for people who are interested and/or are scoring WBaWC[/hl2]. This will contain [hl2]basic, beginner information[/hl2] to know how to get started, but also as much knowledge as I currently have of the game that is worth putting in a guide. 
+[hl2]This is a guide for people who are interested and/or are scoring [a=https://en.touhouwiki.net/wiki/Wily_Beast_and_Weakest_Creature/Gameplay]WBaWC[/a][/hl2]. This will contain [hl2]basic, beginner information[/hl2] to know how to get started, but also as much knowledge as I currently have of the game that is worth putting in a guide. 
 Please excuse any English mistakes, it's not my first language but I try my best.
 
 Premise: I'm not the best WBaWC player in the world, but I believe I am competent enough to make a guide, better than nothing.
