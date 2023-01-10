@@ -4,27 +4,127 @@
 
 Author: [a=https://www.youtube.com/channel/UCNbaT2iVuYKN5q94b9UlTEA]Helio Knight[/a]
 
+[img=guides/th15-maingame-score/seiranringo.jpg, hratio=2, other=max-height:360px]
+
 This is a basic/beginner scoring guide for [a=https://en.touhouwiki.net/wiki/Legacy_of_Lunatic_Kingdom/Gameplay]Touhou 15 Legacy of Lunatic Kingdom[/a]. It will contain as much information as I know that I think is important to include. This guide will only be going over the Legacy game mode. The only major thing to note about Pointdevice is that you cannot suicide, making scoring extremely limited. You also can’t save replays on Pointdevice mode either.
 Please note that I am not the best LoLK player, nor do I claim to be. But I do believe I am competent enough to make this guide.
-A HUGE thank you to RB and Nylilsa for helping make this guide possible. Also a big shout out to Rebot for inspiring this guide in the first place.
+A HUGE thank you to [a=https://www.youtube.com/channel/UCPb6K98vTecR3eGryaD5FjQ]RB[/a] and [a=https://www.youtube.com/channel/UCqKACPKvHg6Ub-kb8rlkrhQ]Nylilsa[/a] for helping make this guide possible. Also a big shout out to [a=https://twitter.com/RebotOvaFritte]Rebot[/a] for inspiring this guide in the first place.
 
-Contents (to be organized later)
-+ Chapter Bonuses
-+ Score Gain
-+ Increasing PIV
-+ Grazing and SlowGrazing
-+ Character Differences
-+ Boss Invincibility Bug
-+ Basic Gameplay Breakdown - wip
-+ Dango – wip?
-+ Random Info
-+ Doing Runs - wip
+This guide is separated into two parts: the gameplay mechanics part and the routing part.
+
+<ol class='toc'>
+	Table of contents: gameplay mechanics
+	<li>[jumpto=#/guides/th15-maingame-score#chapterbonuses]Chapter bonuses[/jumpto]</li>
+	<li>[jumpto=#/guides/th15-maingame-score#scoregain]Score gain[/jumpto]</li>
+	<li>[jumpto=#/guides/th15-maingame-score#increasingpiv]Increasing PIV[/jumpto]</li>
+	<li>[jumpto=#/guides/th15-maingame-score#grazingandslowgrazing]Grazing and Slowgrazing[/jumpto]</li>
+	<li>[jumpto=#/guides/th15-maingame-score#characterdifferences]Character differences[/jumpto]
+		<ol>
+            <li>[jumpto=#/guides/th15-maingame-score#reisen]Reisen[/jumpto]</li>
+            <li>[jumpto=#/guides/th15-maingame-score#sanae]Sanae[/jumpto]</li>
+            <li>[jumpto=#/guides/th15-maingame-score#marisa]Marisa[/jumpto]</li>
+            <li>[jumpto=#/guides/th15-maingame-score#reimu]Reimu[/jumpto]</li>
+        </ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#bossinvincibilitybug]Boss invincibility bug[/jumpto]</li>
+	<li>[jumpto=#/guides/th15-maingame-score#basicgameplaybreakdown]Basic gameplay breakdown[/jumpto]</li>
+	<li>[jumpto=#/guides/th15-maingame-score#dango]Dango[/jumpto]</li>
+	<li>[jumpto=#/guides/th15-maingame-score#randominfo]Random info[/jumpto]</li>
+</ol>
+
 + Stage 1
 + Stage 2
 + Stage 3
 + Stage 4
 + Stage 5
 + Stage 6
++ more inbetween stuff
+
+<ol class='toc'>
+	Table of contents: doing runs
+	<li>[jumpto=#/guides/th15-maingame-score#recommendedstartingscores]Recommended starting scores[/jumpto]</li>
+	<li>[jumpto=#/guides/th15-maingame-score#stage1]Stage 1[/jumpto]
+		<ol>
+			<li>[jumpto=#/guides/th15-maingame-score#s1c3]First midnon[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s1c3]Second midnon[/jumpto]</li>
+		</ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#seiran]Seiran[/jumpto]
+		<ol>
+			<li>[jumpto=#/guides/th15-maingame-score#s1n2]2nd non-spell[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s1s2]Lunatic Gun[/jumpto]</li>
+		</ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#stage2]Stage 2[/jumpto]
+		<ol>
+			<li>[jumpto=#/guides/th15-maingame-score#s2c4]Ringo midnon[/jumpto]</li>
+		</ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#ringo]Ringo[/jumpto]
+		<ol>
+			<li>[jumpto=#/guides/th15-maingame-score#s2n2]Second non-spell[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s2s2]Dango Influence[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s2s3]Lunatic September[/jumpto]</li>
+		</ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#stage3]Stage 3[/jumpto]
+		<ol>
+			<li>[jumpto=#/guides/th15-maingame-score#s3c1]Chapter 1[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s3c4]Doremy mid-boss[/jumpto]</li>
+		</ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#doremy]Doremy[/jumpto]
+		<ol>
+			<li>[jumpto=#/guides/th15-maingame-score#s3s1]Eternally Anxious Dream[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s3s2]Ochre Labyrinth Confusion[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s3s3]Losing Oneself in a Dream (aka. Dream Catcher)[/jumpto]</li>
+		</ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#stage4]Stage 4[/jumpto]
+		<ol>
+			<li>[jumpto=#/guides/th15-maingame-score#s4c1]Chapter 1[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s4c2]Chapter 2[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s4c4]Sagume mid-boss[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s4c5]Chapter 5[/jumpto]</li>
+		</ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#sagume]Sagume[/jumpto]
+		<ol>
+			<li>[jumpto=#/guides/th15-maingame-score#s4s1]Disorderly Flock’s Duplex Curse[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s4s3]Shinning Shotgun Coronation of the Gods[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s4s4]One-Winged Angel White Heron[/jumpto]</li>
+		</ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#stage5]Stage 5[/jumpto]
+		<ol>
+			<li>[jumpto=#/guides/th15-maingame-score#s5c1]Chapter 1[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s5c2]Chapter 2[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s5c3]Chapter 3[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s5c4]Chapter 4[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s5c5]Chapter 5: Laser Streaming[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s5c6]Chapter 6: Ring Fairies[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s5c7]Chapter 7: Laser Hell[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s5c8]Chapter 7: Fairy Highway[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s5c9]Chapter 7: Star Field[/jumpto]</li>
+		</ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#clownpiece]Clownpiece[/jumpto]
+		<ol>
+			<li>[jumpto=#/guides/th15-maingame-score#s5s3]Infernal Essence of Grazing (aka. Graze Inferno)[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s5s4]Striped Abyss[/jumpto]</li>
+		</ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#stage6]Stage 6[/jumpto]</li>
+	<li>[jumpto=#/guides/th15-maingame-score#junko]Junko[/jumpto]
+		<ol>
+			<li>[jumpto=#/guides/th15-maingame-score#s6s1]Pure Light of the Palm[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s6n3]Non-spell 3[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s6s3]Trembling, Shivering Star[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s6s4]Pristine Lunacy[/jumpto]</li>
+		</ol>
+	</li>
+	<li>[jumpto=#/guides/th15-maingame-score#finalscore]Final Score[/jumpto]</li>
+</ol>
 
 ## Chapter Bonuses
 [hr_minor]
@@ -155,7 +255,7 @@ Cons:
 
 If you bomb within the first second (60 frames) of a spell activating, the boss will effectively take no damage for the duration of the bomb. With Reisen, the boss will not take damage again until you break a shield.
 
-## Basic Gameplay Breakdown - wip
+## Basic Gameplay Breakdown
 [hr_minor]
 
 LoLK is a Graze game at its core. All its mechanics and general routing decisions are about maximizing graze for score, PIV, and resources while also collecting as many Blue point items as possible.
@@ -165,7 +265,7 @@ Because missing life pieces is really easy to do, LoLK can be pretty adaptation 
 Bosses: Bosses are where most of your resources will go. Most bosses involve bombing and suiciding for graze as well as timing down attacks for graze. In general, the more you time down boss attacks for graze, the higher your score will go. Spell Card Bonuses are worth very little in LoLK; outside of Easy mode they’re almost completely obsolete.
 This is also means that LoLK can be a pretty long score run. An average run usually lasts 40 minutes or longer.
 
-## Dango -wip?
+## Dango
 [hr_minor]
 
 Dango Influence, Ringo’s 2nd spell is one of the most important attacks in the whole run. Every route involves building up resources in order to dump them into this pattern. This spell is absolutely required to learn if you want to score LoLK.
@@ -179,14 +279,14 @@ This section is for things that don’t really fit anywhere else in the guide.
 + Reisen and Reimu deal more damage to Junko than they do to the other bosses. You want to be slightly off-center of Junko for their max dps.
 + Reimu at full power deals slightly more damage while unfocused to non-Junko bosses.
 
-## Doing Runs - wip
+## Doing Runs
 [hr_minor]
 
 I will include starting goal scores for every difficulty and character below so that everyone will at least have some idea of what kind of scores to aim for and what kind of replays to look for.
 It is recommended that you aim for a little higher than your goal when looking for replays and when practicing. If you only practice strats for your goal then you will basically need a perfect run which is not reasonable in the slightest especially for a game like LoLK. So say you want 2 billion with Lunatic Reisen, you should look up replays that range from 2 billion to at least 2.3 billion and practice routes for the higher number. This way you’ll have a lot of leeway to make mistakes while still reaching your goal.
 Looking at multiple runs will also allow you to see various strategies and see what kinds of mistakes are allowed.
 
-### Recommended Starting Goal Scores:
+### Recommended Starting Scores:
 [hr_minor]
 Easy:
 -
@@ -216,10 +316,11 @@ Also For stage chapters I won’t be counting midboss attacks as numbered chapte
 LoLK Stage 1 is quite infamous in a scoring setting. Thankfully this stage has so little gains that it’s not really necessary to learn any of the harder grazing strategies. 
 In general you want to try and get every life piece if you can as well as try to increase your PIV. The life piece after Seiran’s 2nd midboss is quite tricky. For now though, it’s not an issue to miss it. You could honestly ignore this entire stage and just do whatever gets your life pieces if you want. I will simply be showing the easier grazes for it.
 
-##### First Midnon
+<h5 id='s1c3'>First midnon</h5>
 Start on her side and when the bullets start shooting, move up to above her then bomb/deathbomb. Repeat this every wave. You actually gain more graze on the waves without shields on this pattern funny enough. Perfect first wave gets you 666 graze. You’ll spend an entire bomb and 2 extra shields from a 2nd bomb. Aim for 3,000+ graze.
 *video example*
-##### Second Midnon
+
+<h5 id='s1c5'>Second midnon</h5>
 Sit above Seiran and misdirect the triangle of gun bullets to the side. She always shoots 1 set on odd waves and 2 sets on even waves. A perfect midnon 2 would be 3,600 graze
 Also for Speed Strike, use the n in Shooting Down to graze the first wave of the spell. Just shoot it down.
 *video example?*
@@ -229,11 +330,11 @@ Also for Speed Strike, use the n in Shooting Down to graze the first wave of the
 
 Seiran is the worst boss ever created. She’s honestly not necessary at all. Opener and Eagle especially aren’t necessary to learn for quite some time. Her 2nd non and final are easier when doing the scoring strat so you’re free to time them down if you want. I won’t include Eagle graze here because I don’t feel like it’s necessary for a beginner to learn. Trust me when I say that the moment you include Eagle graze into your runs you will really, REALLY, start to hate this boss.
 
-##### 2nd non
+<h5 id='s1n2'>2nd non-spell</h5>
 Once Eagle dies, run up and collect your items; depending on how far away she is you may have to ignore the first wave and just spin around her to avoid dying. In between each wave misdirect the triangle gun bullets off to the side. Time this non down for graze and try to time the kill at the end when the circle of gun bullets appears. If for some reason you have a level 2 or 3 shield, you can time a hit or two to cancel the ring of bullets the same way you do when killing the pattern. The extra shields don’t really get you more graze and you can’t keep them into stage 2 so you may as well use them if you have them.
 If you time it down, aim for at least 2,000 graze.
 
-##### Lunatic Gun
+<h5 id='s1s2'>Lunatic Gun</h5>
 Start below her feet and once you hear the sound of getting the life piece, spin either counterclockwise or clockwise (counterclockwise is a little safer) around her and stop somewhat to the bottom side of her for extra graze, be sure to go back to between her feet before she moves. After the first wave you’ll be able to use her movement as the cue for when to spin.
 If you time it down, aim for at least 5,000 graze.
 *video example*
@@ -246,7 +347,7 @@ Stage Goal
 
 Stage 2 is a fairly straightforward stage. Most of it is just moving back and forth, killing the spirit waves while getting enough graze for the life piece.
 
-##### Midnon
+<h5 id='s1c4'>Ringo midnon</h5>
 Get your 200 graze and Speedkill the midnon for the extra fairies after. You’ll want to try and graze those.
 
 #### Ringo
@@ -254,17 +355,17 @@ Get your 200 graze and Speedkill the midnon for the extra fairies after. You’l
 
 Ringo is the big bunny. Just like how she eats Dango to get stronger, we’re going to be eating her bullets to make our score stronger. Ringo is a large source of score for LoLK runs and a boss I’d recommend practicing quite a lot.
 
-#### 2nd non*
+<h5 id='s2n2'>Second non-spell*</h5>
 Head-sit and spend your remaining bomb before accepting death. Head-sit for another wave, you have enough invul to sit through an entire wave. When the next wave is about to kill you, bomb. The wave will break 1-2 shields. Obviously bomb again when you run out of shields. Be careful not to let her headbutt you. You want to damage her down to where the next suicide will kill off the pattern as you want to suicide to set up Ringo’s 2nd spell. This strategy might seem a little scary at first, but I find that it makes damage control on this non a lot easier. Not only that but it gets you more score!
 *video example*
 
-##### Dango Influence*********************************
+<h5 id='s2s2'>Dango Influence*******************************</h5>
 This is arguably the biggest single attack in the whole game. After suiciding to start it, you want to sit on Ringo in between the circles she spawns. You want to be partially offcenter because that way you’ll gain Graze Items from the bullets on the side you’re closest to. Once every wave has spawned, you’ll swing to the side you weren’t gaining Graze Items from before exiting the walls and timing a suicide. Repeat this 5 of times. For the last wave you don’t want to suicide. Instead just spawn graze under her before killing the spell off. Aim for at least around 33,000+ graze
 Timing the suicide can be tricky. In general there are 2 ways people tend to suicide. If you want to be safe then suicide right before the mentos leave her health ring. If you want graze then suicide shortly after she shoots.
 A common trap people fall into when first learning this attack is not shooting at the start of the spell. You want to get her health down fairly low because your power is gradually lowering each death. So new players end up not being able to kill it which is a massive loss. Accidentally timing out this spell is pretty much a reset.
 *video example*
 
-##### Lunatic September*
+<h5 id='s2s3'>Lunatic September*</h5>
 There are 2 ways to do this spell. Either sit by her knee and dash through her each wave with shields. Or sit outside of where she spawns bullets and dash through her that way. The knee method is easier in my opinion. When you’re down to a level 1 shield, then instantly bomb when breaking it doing this method. Don’t do this for the last wave since the cancel items are worth more. 
 Include when the last wave happens
 *video example*
@@ -278,10 +379,10 @@ Stage Goal
 It should be noted that from this stage onward you want to try and aim for 100% shootdown on almost every chapter.
 You’ll have very low resources and basically no power entering this stage. Like usual, you’ll want to try for every life piece. However now that your PIV is quite high thanks to Ringo, you want to PoC as many items as you can from this point onward. This is why you want 100% shootdown on almost every chapter. However, your main goal is still to try and increase PIV and get as many life pieces as possible.
 
-##### Chapter 1
+<h5 id='s3c1'>Chapter 1</h5>
 Some routes suicide for this life piece. 
 
-##### Doremy’s Midboss
+<h5 id='s3c4'>Doremy mid-boss</h5>
 You’ll want to speedkill both Doremy’s non and spell. This unfortunately means you’re probably not getting the life piece from the midnon unless you leave some of the purple fairies alive at the end of Chapter 3.
 
 #### Doremy
@@ -289,18 +390,19 @@ You’ll want to speedkill both Doremy’s non and spell. This unfortunately mea
 
 Doremy can be a pretty tricky boss at first. Her nons are pretty annoying. On Lunatic, it’s recommended that you try to carry some Graze Items over into 2nd non so that you can get the life piece without needing to time it down.
 
-##### Eternally Anxious Dream
+<h5 id='s3s1'>Eternally Anxious Dream</h5>
 This spell is… weird. Clipping bullets on this spell is really easy. Technically you’re supposed to do this with a level 3 shield, but it’s not really important. Honestly the most important thing to do is to time your kill, so that you can carry some Graze Items into 2nd non.
 
-##### Ochre Labyrinthine Confusion
+<h5 id='s3s2'>Ochre Labyrinthine Confusion</h5>
 This spell is pretty easy. Start it with any level of shield active and SlowGraze the spawning bullets for a bit. Once the pattern starts spinning, do 1 full spin then break a shield. Once at level 1 shield, bomb as soon as you break it. When you’re out of bombs and at level 1, just run into the pattern once it starts spinning to both break the shield and suicide. Use your invul to spawn graze a bit before repeating the strategy.
 *video example*
 
 You’ll want to end 3rd non with a level 3 shield and an extra bomb in stock.
 
-##### Losing Oneself in a Dream (aka. Dream Catcher)*
+<h5 id='s3s3'>Losing Oneself in a Dream (aka. Dream Catcher)*</h5>
 This is easily her hardest attack. The idea is to time it down with a level 3 shield active. But I don’t think I need to tell you how difficult that is. Do the best you can and try not to get hit when the lasers are spawning. A good strategy is to try and start every wave under Doremy. If you get hit down to level 1, just break it and bomb again.
 *video example*
+
 Stage Goal
 + Score:	550,000,000 (550 million)
 + PIV:	185,000
@@ -310,16 +412,16 @@ Stage Goal
 
 Stage 4 is very awkward. There are a few chapters with quite a lot of graze to gain and a few which will make you want to pull your hair out. The final chapter of the stage in particular is really annoying. PIV is decently high by now so PoC’ing items is even more incentivized. Keep in mind that bombing as well as breaking a level 3 or 2 shield will act like a PoC.
 
-##### Chapter 1
+<h5 id='s4c1'>Chapter 1</h5>
 Similar to Stage 3 Chapter 1, you’ll most likely be out of bombs. You’ll need to suicide for bombs because you need them for Chapter 2.
 
-##### Chapter 2
+<h5 id='s4c2'>Chapter 2</h5>
 wip
 
-##### Midboss
+<h5 id='s4c4'>Sagume mid-boss</h5>
 There’s a safespot for this midnon. Move to her left before she spawns the YinYangs then move back down. Breaking a shield here is fine, just make sure you get the 200 graze. You want to speedkill this midnon. Tap focus to do some extra damage.
 
-##### Chapter 4
+<h5 id='s4c5'>Chapter 5</h5>
 Spawn graze the red arrow heads from the YinYangs. Be sure to kill each of them. When the bullets closest to you are about to shoot out, break a shield to cancel them and continue spawn grazing. Repeat this till you’re out of bombs then suicide. 
 I don’t personally feel the laser section of this chapter is necessary to learn.
 
@@ -328,15 +430,15 @@ I don’t personally feel the laser section of this chapter is necessary to lear
 
 Sagume starts off easy and gets progressively harder the more strategies you incorporate into her fight. Fortunately we’re really only interested in 1 pattern: her final spell, “One-Winged White Heron”, or just Heron.
 
-##### Disorderly Flock’s Duplex Curse
+<h5 id='s4s1'>Disorderly Flock’s Duplex Curse</h5> 
 The grazing strat for this is to start on the right side, kill the few YinYangs on that side, stream left, do the same on the left side, and repeat. Makes the spell virtually risk free.
 
 You’ll want to end 3rd non with a level 3 shield.
 
-##### Shinning Shotgun Coronation of the Gods
+<h5 id='s4s3'>Shinning Shotgun Coronation of the Gods</h5>
 Literally sit above her and shoot. Don’t move down into her when the spell ends because you want to start Heron with a level 3 shield.
 
-##### One-Winged Angel White Heron****************
+<h5 id='s4s4'>One-Winged Angel White Heron</h5>
 There are 2 strategies for Heron. The easier method that gains less overall, and the harder method that gets higher average graze but is pretty complicated. While I will showcase both methods, as I feel they are both important to know about, I recommend learning the easier method first. This pattern is definitely one of the harder spells to learn but it is such a big gain that you should be learning it regardless.
 Keep in mind that we’re going to be dumping 2 lives and 9 bombs into this spell. Also she always starts the spell on the left side. The amount of graze gained is also variable depending on how far she moves to the sides. If she goes really far you will be getting a little less graze.
 
@@ -361,41 +463,48 @@ Stage Goal
 This is the stage that you’ve been building all your PIV up to. Stage 5 holds more point items than stages 3 and 4 combined. Because of how many items are in the stage it makes this stage the largest source of score in the game. While getting the life pieces is still emphasized, every chapter is routed for enemy killing and item collection primarily. It should go without saying that you want to PoC basically every item in this stage if you can. Graying and especially dropping items will lose you a lot of score.
 This is really the only stage where I am going to break down each chapter as I feel it’s important to know what to do. The goal of this stage is very easy to understand. Kill everything and collect items. You still want to get the life pieces but items are where all your score in this stage really come from. So long as you’re killing everything and PoC’ing items you can really do whatever routes work best for you.
 
-##### Chapter 1
+<h5 id='s5c1'>Chapter 1</h5>
 You should be out of bombs after Heron. Suicide and get the 200 graze for your life piece. You’ll have to run from side to side to avoid the bullets and PoC. Use a bomb for safety.
 
-##### Chapter 2
+<h5 id='s5c2'>Chapter 2</h5>
 You want to start somewhat bottom center of the screen and stream the jellybeans. When items are about to drop, break a shield or bomb to PoC them. Continue till the end of the chapter.
 
-##### Chapter 3
+<h5 id='s5c3'>Chapter 3</h5>
 You’ll want to let the first big fairy spawn it’s lasers before shooting it down so you can get graze. You’ll be aiming to do this with every big fairy. Use shields to avoid death, PoC items, and kill all the fairies.
 
-##### Chapter 4
+<h5 id='s5c4'>Chapter 4</h5>
 If you don’t have any bombs or are on your last set of shields after chapter 3 then you’ll want to suicide. You want a level 3 shield for Chapter 5.
 
-##### Chapter 5: Laser Streaming
+<h5 id='s5c5'>Chapter 5: Laser Streaming</h5>
 Start pretty low on one side of the screen. Have a level 3 shield, focus, and rapidly tap to stream from one side of the screen to the other. Once you reach the opposite side, wait a moment then dash through the laser wall, breaking a shield in the process. Continue streaming till the chapter ends and PoC.
 
-##### Chapter 6: Ring Fairies
+<h5 id='s5c6'>Chapter 6: Ring Fairies</h5>
 Funny enough, Reisen has the worst time killing these things. These fairies have a ludicrous amount of health and Reisen isn’t really able to hit them like she’d want. Kill the one on the right and try to kill the one on the left. Survive as best you can. Spend whatever bombs you need to. You aren’t going to be killing all 3 fairies so don’t worry about it.
 
-##### Chapter 7: Laser Hell
+<h5 id='s5c7'>Chapter 7: Laser Hell</h5>
  If you’re out of bombs because of Chapter 6 then just move to the top and suicide. Bomb to collect items and use the shields to try and get graze for the life piece. Break shields if items are about to drop.
 
-##### Chapter 8: Fairy Highway
+<h5 id='s5c8'>Chapter 8: Fairy Highway</h5>
 Wip
 
-##### Chapter 9: Star Field
+<h5 id='s5c9'>Chapter 9: Star Field</h5>
 You want to move side to side, killing as many fairies as you can and use bombs to autocollect every item. You will be spending a lot of resources here but try not to dump more than 3 bombs. Some fairies will just instantly go offscreen so getting 100% shootdown here is effectively impossible. In general you’ll want at least 80% shootdown.
 
 #### Clownpiece
 [hr_minor]
+
 Clownpiece doesn’t have too many strategies to her. Keep shields active and just shootdown everything she has except for Graze Inferno (3rd spell).
 
-##### Infernal Essence of Grazing (aka. Graze Inferno)*
+<h5 id='s5s3'>Infernal Essence of Grazing (aka. Graze Inferno)*</h5>
 Sit close to side of Clownpiece to spawn graze the ring of fire that she spawns. Move in somewhat of a quarter circle towards the bottom of her, bomb/break a shield once you hear the SlowGrazing sound and move back to her side. Repeat this till you’re out of bombs. Once out, do this still but suicide in place of bombing. With your invulnerability, go up and sit just under where the ring spawns and you’ll be able to get a graze item from almost every bullet for that wave. Go back to her side and start the strat over again. She moves every 3 waves so be aware of that and try not to let her ram you.
 Clown has a LOT of health on this spell so don’t be afraid to get her HP bar pretty low. Try to end this spell either without a shield or with a level 3 active, that way you can have a level 3 shield for Striped Abyss.
 *video example*
+
+<h5 id='s5s4'>Striped Abyss</h5>
+
+This spell is quite simple but it can give you a lot of graze. Have three shields during this spell and time down the spell at the bottom of the screen. You should get around 2.5k graze by doing so. Once you have captured the spell-card, ram into clownpiece to have less shields for her survival spell-card.
+
+
 Stage Goal
 + Score:	1,550,000,000 (1.55 billion)
 + PIV:	310,000
@@ -403,26 +512,28 @@ Stage Goal
 #### Stage 6
 [hr_minor]
 
-The stage holds a decent amount of point items to collect. Learning how to best do the stage for point item collection is necessary. Afterall, your PIV is pretty much as high as it will get.
+The stage holds a decent amount of point items to collect. Learning how to best do the stage for point item collection is necessary. After all, your PIV is pretty much as high as it will get.
+
 #### Junko
 [hr_minor]
 
 Junko is unfortunately mostly bonus score at the end of the run. Most of her strats are quite fun and in many ways are easier than doing them the survival way.
 
-##### Pure Light of the Palm
+<h5 id='s6s1'>Pure Light of the Palm</h5>
 Position yourself around the bottom of Junko’s health ring, move to the side to get some Graze Items before dashing through the ring (with a bomb or shield break) to graze the lasers on the other side. Repeat this every wave until you run out of bombs or you need to kill Junko.
 *video example*
 
-##### Non 3
+<h5 id='s6n3'>Non-spell 3</h5>
 Position yourself near Junko to spawn graze the rings and move down to SlowGraze the bullets. After the last ring spawns, dash into the bullets to cancel them. If you’re on your last shield, you can use the invul to graze a few extra bullets before bombing again. You don’t necessarily want to time this attack down all the way as she spawns an extra ring each wave and eventually your bomb won’t be able to cancel them all.
 
-##### Trembling, Shivering Star
+<h5 id='s6s4'>Trembling, Shivering Star</h5>
 Position to the right of Junko and follow the ring of bullets down, bomb or break a shield to dash back to her side once you hear the sound for SlowGraze. Delay the dash till the wave stops when you’re at a level 1 shield. When you run out of bombs, suicide, and sit next to Junko for a wave before repeating the strat.
 *video example*
 
-##### Pristine Lunacy
+<h5 id='s6s5'>Pristine Lunacy</h5>
 Optimally you’d time this down with a level 3 shield active but that’s not really all that easy to do. I’ve made an entire guide on how to read this spell which will be linked here: *Link to PL guide*
 Stage Goal
 
+### Final score
 
-##### Score: 2,000,000,000 (2 billion)
+Score: 2,000,000,000 (2 billion)
