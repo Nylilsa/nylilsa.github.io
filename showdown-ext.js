@@ -3,7 +3,7 @@ let ext = function() {
 		type: "lang",
 		regex: /\[yt\](.*?)\[\/yt\]/g,
 		replace: '<div class="fit-wrapper" data-yt="$1"><div class="fit-wrapper2 yt"><div class="video-load"><div></div></div></div></div>'
-};
+	}
 	let hr_major = {
 		type: "lang",
 		regex: /\[hr_major\]/g,
