@@ -3,7 +3,7 @@ let ext = function() {
 		type: "lang",
 		regex: /\[yt\](.*?)\[\/yt\]/g,
 		replace: '<div class="fit-wrapper" data-yt="$1"><div class="fit-wrapper2 yt"><div class="video-load"><div></div></div></div></div>'
-	}
+};
 	let hr_major = {
 		type: "lang",
 		regex: /\[hr_major\]/g,
@@ -327,6 +327,15 @@ let ext = function() {
 		}
 	}
 
+	let canvas = {
+		type: "lang",
+		regex: /\[canvas\]/g,
+		replace: function() {
+			loadJSON();
+            return "";
+		}
+	}
+
 	let match = {
 		type: "lang",
 		regex: /\[style=([^]*?), icon=(true|false), highlightedText=([^]*?)\]/g,
@@ -358,5 +367,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [yt, hr_major, hr_minor, hr_custom, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, match, scenes, check, cross];
+	return [yt, hr_major, hr_minor, hr_custom, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, canvas, match, scenes, check, cross];
 }

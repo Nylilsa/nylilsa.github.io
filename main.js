@@ -379,6 +379,16 @@ function countTags() {
     return tagsCount;
 }
 
+function loadJSON() {
+    fetch('json/wrprogression.json')
+    .then((response) => response.json())
+    .then((data) => {
+        var fetchedData = [data['TD']['Lunatic']['Marisa'],data['TD']['Lunatic']['Youmu'],data['TD']['Lunatic']['Reimu'],data['TD']['Lunatic']['Sanae']];
+        //console.log(fetchedData);
+        callChartJS(fetchedData);
+    });
+}
+
 
 ///////////////////// UNUSED /////////////////////
 
