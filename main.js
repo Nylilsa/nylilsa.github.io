@@ -379,13 +379,35 @@ function countTags() {
     return tagsCount;
 }
 
-function loadJSON() {
+function loadCanvas(gameID) {
     fetch('json/wrprogression.json')
     .then((response) => response.json())
-    .then((data) => {
-        var fetchedData = [data['TD']['Lunatic']['Marisa'],data['TD']['Lunatic']['Youmu'],data['TD']['Lunatic']['Reimu'],data['TD']['Lunatic']['Sanae']];
-        //console.log(fetchedData);
-        callChartJS(fetchedData);
+    .then(dataWR => {
+        const game = 'th17';
+        const difficulty = 'Lunatic';
+        var fetchedData = [];
+        fetch('json/gameinfo.json')
+        .then((response2) => response2.json())
+        .then(data => {
+            if (game != "th16" || difficulty == 'Extra') {
+                const gameCharacters = data['Characters'][game];
+                gameCharacters.forEach(char => {
+                    const history = dataWR[game][difficulty][char];
+                    fetchedData.push(history);
+                })
+                callChartJS(fetchedData, gameCharacters);
+            } else {
+                const seasons = ["Spring", "Summer", "Autumn", "Winter"];
+                const gameCharacters = data['Characters'][game];
+                gameCharacters.forEach(char => {
+                    seasons.forEach(season => {
+                        const history = dataWR[game][difficulty][`${char}${season}`];
+                        fetchedData.push(history);
+                    })
+                })
+                callChartJS(fetchedData, gameCharacters);
+            }
+        });
     });
 }
 
@@ -433,10 +455,10 @@ function initJson() {
 	xhttp.open("GET", "citations.json", true); // has to be TRUE
 	xhttp.send(null);
 	xhttp.onreadystatechange = function() {
-	  if (xhttp.readyState === 4 && xhttp.status === 200) {
-		citations = JSON.parse(xhttp.responseText); // globally defined
-		//loadCitation(citations);
-	  }
+	    if (xhttp.readyState === 4 && xhttp.status === 200) {
+    	citations = JSON.parse(xhttp.responseText); // globally defined
+    	//loadCitation(citations);
+	    }
 	}
 }
 

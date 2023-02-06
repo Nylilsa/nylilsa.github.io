@@ -1,0 +1,42 @@
+{
+    "Characters": {
+        "th01": ["Makai", "Jigoku"],
+        "th02": ["ReimuA", "ReimuB", "ReimuC"],
+        "th03": ["Reimu", "Mima", "Marisa", "Ellen", "Kotohime", "Kana", "Rikako", "Chiyuri", "Yumemi"],
+        "th04": ["ReimuA", "ReimuB", "MarisaA", "MarisaB"],
+        "th05": ["Reimu", "Marisa", "Mima", "Yuuka"],
+        "th06": ["ReimuA", "ReimuB", "MarisaA", "MarisaB"],
+        "th07": ["ReimuA", "ReimuB", "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"],
+        "th08": ["Border Team", "Magic Team", "Scarlet Team", "Ghost Team", "Reimu", "Yukari", "Marisa", "Alice", "Sakuya", "Remilia", "Youmu", "Yuyuko"],
+        "th09": ["Reimu", "Marisa", "Sakuya", "Youmu", "Reisen", "Cirno", "Lyrica", "Mystia", "Tewi", "Aya", "Medicine", "Yuuka", "Komachi", "Eiki"],
+        "th10": ["ReimuA", "ReimuB", "ReimuC", "MarisaA", "MarisaB", "MarisaC"],
+        "th11": ["ReimuA", "ReimuB", "ReimuC", "MarisaA", "MarisaB", "MarisaC"],
+        "th12": ["ReimuA", "ReimuB", "MarisaA", "MarisaB", "SanaeA", "SanaeB"],
+        "th13": ["Reimu", "Marisa", "Sanae", "Youmu"],
+        "th14": ["ReimuA", "ReimuB", "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"],
+        "th15": ["Reimu", "Marisa", "Sanae", "Reisen"],
+        "th16": ["Reimu", "Cirno", "Aya", "Marisa"],
+        "th17": ["ReimuWolf", "ReimuOtter", "ReimuEagle", "MarisaWolf", "MarisaOtter", "MarisaEagle","YoumuWolf", "YoumuOtter", "YoumuEagle"],
+        "th18": ["Reimu", "Marisa", "Sakuya", "Sanae"]
+    },
+    "Difficulty": {
+        "th01": ["Easy", "Normal", "Hard", "Lunatic"],
+        "th02": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th03": ["Easy", "Normal", "Hard", "Lunatic"],
+        "th04": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th05": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th06": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th07": ["Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm"],
+        "th08": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th09": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th10": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th11": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th12": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th13": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th14": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th15": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th16": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th17": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th18": ["Easy", "Normal", "Hard", "Lunatic", "Extra"]
+    }
+}
