@@ -383,7 +383,7 @@ function loadCanvas(gameID) {
     fetch('json/wrprogression.json')
     .then((response) => response.json())
     .then(dataWR => {
-        const game = 'th13';
+        const game = 'th16';
         const difficulty = 'Lunatic';
         var fetchedData = [];
         fetch('json/gameinfo.json')
@@ -400,7 +400,6 @@ function loadCanvas(gameID) {
                 const gameCharacters = data['Characters'][`${game}seasons`];
                 gameCharacters.forEach(char => {
                     const history = dataWR[game][difficulty][char];
-                    history.reverse(); // needed because in hsifs json the WR entries need to be swapped around
                     fetchedData.push(history);
                 })
                 callChartJS(fetchedData, gameCharacters);
