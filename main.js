@@ -383,8 +383,8 @@ function loadCanvas(gameID) {
     fetch('json/wrprogression.json')
     .then((response) => response.json())
     .then(dataWR => {
-        const game = 'th17';
-        const difficulty = 'Lunatic';
+        const game = 'th10';
+        const difficulty = 'Extra';
         var fetchedData = [];
         fetch('json/gameinfo.json')
         .then((response2) => response2.json())
