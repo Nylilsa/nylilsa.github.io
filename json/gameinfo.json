@@ -16,6 +16,7 @@
         "th14": ["ReimuA", "ReimuB", "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"],
         "th15": ["Reimu", "Marisa", "Sanae", "Reisen"],
         "th16": ["Reimu", "Cirno", "Aya", "Marisa"],
+        "th16seasons": ["ReimuSpring", "ReimuSummer", "ReimuAutumn", "ReimuWinter", "CirnoSpring", "CirnoSummer", "CirnoAutumn", "CirnoWinter", "AyaSpring", "AyaSummer", "AyaAutumn", "AyaWinter", "MarisaSpring", "MarisaSummer", "MarisaAutumn", "MarisaWinter"],
         "th17": ["ReimuWolf", "ReimuOtter", "ReimuEagle", "MarisaWolf", "MarisaOtter", "MarisaEagle","YoumuWolf", "YoumuOtter", "YoumuEagle"],
         "th18": ["Reimu", "Marisa", "Sakuya", "Sanae"]
     },
