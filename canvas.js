@@ -15,7 +15,7 @@ class Data {
     }
 }
 
-function callChartJS(fetchedData, gameCharacters) {
+function callChartJS(fetchedData, gameCharacters, englishName, difficulty) {
     const ctx = document.getElementById('wrChart');
     let dataset = [];
     fetchedData.forEach((element) => {
@@ -72,7 +72,7 @@ function callChartJS(fetchedData, gameCharacters) {
                 },
                 title: {
                   display: true,
-                  text: 'TD WR History Lunatic',
+                  text: `${englishName} WR History ${difficulty}`,
                 },
                 subtitle: {
                   display: true,

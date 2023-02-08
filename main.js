@@ -383,43 +383,46 @@ function loadCanvas(gameID) {
     fetch('json/wrprogression.json')
     .then((response) => response.json())
     .then(dataWR => {
-        const game = 'th17';
+        const game = 'th07';
         const difficulty = 'Lunatic';
         var fetchedData = [];
         fetch('json/gameinfo.json')
         .then((response2) => response2.json())
         .then(data => {
+            const englishName = data['Names'][game]['en'];
             if (game != "th16" || difficulty == 'Extra') {
                 const gameCharacters = data['Characters'][game];
                 gameCharacters.forEach(char => {
                     const history = dataWR[game][difficulty][char];
                     fetchedData.push(history);
                 })
-                callChartJS(fetchedData, gameCharacters);
+                callChartJS(fetchedData, gameCharacters, englishName, difficulty);
             } else {
                 const gameCharacters = data['Characters'][`${game}seasons`];
                 gameCharacters.forEach(char => {
                     const history = dataWR[game][difficulty][char];
                     fetchedData.push(history);
                 })
-                callChartJS(fetchedData, gameCharacters);
+                callChartJS(fetchedData, gameCharacters, englishName, difficulty);
             }
         });
+        //catchErrors(dataWR);
     });
 }
+
 
 
 ///////////////////// UNUSED /////////////////////
 
 function parseMarkdown(markdownText) { //parses markdown - unused atm
 	const htmlText = markdownText
-		.replace(/\[no\]([^]*?)\[\/no\]/g, '<span style="color:#ff0000">~~$1~~</span>') //red color
-		.replace(/\[yes\]([^]*?)\[\/yes\]/g, '<span style="color:#00ff00">$1</span>') //green color
-		.replace(/\~\~([^]*?)\~\~/g, '<span style="text-decoration: line-through">$1</span>') //strikethrough
-		.replace(/\[specs\]/g, 'Specifications')
-		.replace(/\[what\]/g, 'What happens')
-		.replace(/\[how\]/g, 'How it happens')
-		.replace(/\[why\]/g, 'Why it happens')
+    .replace(/\[no\]([^]*?)\[\/no\]/g, '<span style="color:#ff0000">~~$1~~</span>') //red color
+    .replace(/\[yes\]([^]*?)\[\/yes\]/g, '<span style="color:#00ff00">$1</span>') //green color
+    .replace(/\~\~([^]*?)\~\~/g, '<span style="text-decoration: line-through">$1</span>') //strikethrough
+    .replace(/\[specs\]/g, 'Specifications')
+    .replace(/\[what\]/g, 'What happens')
+    .replace(/\[how\]/g, 'How it happens')
+    .replace(/\[why\]/g, 'Why it happens')
 		.replace(/\[br\]/g, '<br>')
 		.replace(/\[hr\]/g, '<hr>')
 		.replace(/\[links\]/g, 'Links')
@@ -433,29 +436,29 @@ function parseMarkdown(markdownText) { //parses markdown - unused atm
 		//.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
 		//.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
 		//.replace(/\n$/gim, '<br />')
-	return htmlText.trim();
-}
-
-function highlightCode(content) {
-	return content.replace(/_/g, "\\_").replace(/\*/g, "\\*");
-}
-
-function invertHex(hex) {
-	if (hex[0] == '#') {
-		hex = hex.substring(1);
-	}
-	return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
-}
-
-function initJson() {
-	const xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "citations.json", true); // has to be TRUE
-	xhttp.send(null);
-	xhttp.onreadystatechange = function() {
-	    if (xhttp.readyState === 4 && xhttp.status === 200) {
-    	citations = JSON.parse(xhttp.responseText); // globally defined
-    	//loadCitation(citations);
-	    }
+        return htmlText.trim();
+    }
+    
+    function highlightCode(content) {
+        return content.replace(/_/g, "\\_").replace(/\*/g, "\\*");
+    }
+    
+    function invertHex(hex) {
+        if (hex[0] == '#') {
+            hex = hex.substring(1);
+        }
+        return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
+    }
+    
+    function initJson() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "citations.json", true); // has to be TRUE
+        xhttp.send(null);
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState === 4 && xhttp.status === 200) {
+                citations = JSON.parse(xhttp.responseText); // globally defined
+                //loadCitation(citations);
+            }
 	}
 }
 
@@ -467,10 +470,31 @@ function debug() {
 	console.log(html);
 }
 
+function catchErrors(data) {
+    //console.log(data);
+    console.time("test1");
+    for (const [key, valueee] of Object.entries(data)) {
+        for (const [key, value] of Object.entries(valueee)) { // cycles through all categories
+            for (const [key2, value2] of Object.entries(value)) { // cycles through all shots of category
+                var newScore = 0
+                var newDate = 0
+                value2.forEach(element => { //wr entry of shot
+                    const flagScore = (element[0] >= newScore);
+                    newScore = element[0];
+                    const flagDate = (new Date(element[2]).getTime() >= newDate);
+                    newDate = new Date(value2[0][2]).getTime();
+                    if (!(flagScore && flagDate)) {console.error(`Error: Score before ${newScore} from ${element[1]} shot ${key2} is incorrect`)}
+                })
+            }
+        }
+    }
+    console.timeEnd("test1");
+}
+
 ///////////////////// INIT /////////////////////
 
 function initSidebarContent() {
-	const colDecrease = -16;
+    const colDecrease = -16;
 	const identifiers = document.querySelectorAll("#pageBugs li ul");
 	const header = document.querySelectorAll("#pageBugs li a");
 	let k = 0;
@@ -481,7 +505,7 @@ function initSidebarContent() {
 		child.style.borderColor = colorHex(thnr);
 		const content = document.getElementById('bugs-'+thnr+'');
 		for (let j = 0; j < Object.keys(names[thnr]).length; j++) {
-			content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j][0]+'</a></div></li>'; 
+            content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j][0]+'</a></div></li>'; 
 			k += 1;
 		}
 	}
