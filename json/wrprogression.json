@@ -1,4 +1,357 @@
 {
+    "th01": {
+        "Easy": {
+            "Makai": [
+                [12510440,"Pearl","2018-03-31"]
+            ],
+            "Jigoku": [
+                [13117240,"Pearl","2018-03-26"]
+            ]
+        },
+        "Normal": {
+            "Makai": [
+                [11200750,"Pearl","2022-03-18"]
+            ],
+            "Jigoku": [
+                [11992340,"SEO","2019-11-13"]
+            ]
+        },
+        "Hard": {
+            "Makai": [
+                [11831570,"Pearl","2018-03-29"]
+            ],
+            "Jigoku": [
+                [11668540,"tails41yoshi","2020-05-11"]
+            ]
+        },
+        "Lunatic": {
+            "Makai": [
+                [14160870,"Pearl","2018-03-30"]
+            ],
+            "Jigoku": [
+                [14503740,"mu021","2022-12-25"]
+            ]
+        }
+    },
+    "th02": {
+        "Easy": {
+            "ReimuA": [
+                [24025500,"KirbyComment","2017-03-28"]
+            ],
+            "ReimuB": [
+                [22909640,"KirbyComment","2017-03-14"]
+            ],
+            "ReimuC": [
+                [21519230,"KirbyComment","2017-03-07"]
+            ]
+        },
+        "Normal": {
+            "ReimuA": [
+                [24389840,"KirbyComment","2023-01-09"]
+            ],
+            "ReimuB": [
+                [23007770,"KirbyComment","2018-08-02"]
+            ],
+            "ReimuC": [
+                [22041350,"KirbyComment","2018-07-22"]
+            ]
+        },
+        "Hard": {
+            "ReimuA": [
+                [25782300,"Haniyasuko Okina","2022-04-19"]
+            ],
+            "ReimuB": [
+                [30898850,"KirbyComment","2016-09-30"]
+            ],
+            "ReimuC": [
+                [30310020,"KirbyComment","2020-02-26"]
+            ]
+        },
+        "Lunatic": {
+            "ReimuA": [
+                [48541620,"Miler","2022-07-22"]
+            ],
+            "ReimuB": [
+                [39387300,"KirbyComment","2019-04-05"]
+            ],
+            "ReimuC": [
+                [36050450,"KirbyComment","2019-04-08"]
+            ]
+        },
+        "Extra": {
+            "ReimuA": [
+                [42603800,"KirbyComment","2018-08-23"]
+            ],
+            "ReimuB": [
+                [38105400,"KirbyComment","2015-06-11"]
+            ],
+            "ReimuC": [
+                [35311930,"KirbyComment","2023-01-19"]
+            ]
+        }
+    },
+    "th03": {
+        "Easy": {
+            "Reimu": [
+                [44616900,"KirbyComment","2017-08-09"]
+            ],
+            "Mima": [
+                [58297370,"KirbyComment","2018-12-23"]
+            ],
+            "Marisa": [
+                [69133270,"KirbyComment","2019-01-29"]
+            ],
+            "Ellen": [
+                [49502040,"KirbyComment","2020-04-11"]
+            ],
+            "Kotohime": [
+                [54100130,"KirbyComment","2019-01-20"]
+            ],
+            "Kana": [
+                [56302960,"KirbyComment","2020-04-10"]
+            ],
+            "Rikako": [
+                [49339040,"KirbyComment","2019-01-21"]
+            ],
+            "Chiyuri": [
+                [66748390,"KirbyComment","2020-04-07"]
+            ],
+            "Yumemi": [
+                [43327550,"KirbyComment","2018-11-16"]
+            ]
+        },
+        "Normal": {
+            "Reimu": [
+                [63602800,"KirbyComment","2017-08-21"]
+            ],
+            "Mima": [
+                [75127170,"KirbyComment","2017-10-13"]
+            ],
+            "Marisa": [
+                [66465020,"KirbyComment","2017-08-24"]
+            ],
+            "Ellen": [
+                [73901980,"KirbyComment","2017-08-28"]
+            ],
+            "Kotohime": [
+                [76632120,"KirbyComment","2020-10-27"]
+            ],
+            "Kana": [
+                [77513540,"KirbyComment","2020-10-12"]
+            ],
+            "Rikako": [
+                [57851790,"KirbyComment","2020-10-01"]
+            ],
+            "Chiyuri": [
+                [69334030,"KirbyComment","2017-09-03"]
+            ],
+            "Yumemi": [
+                [62443080,"KirbyComment","2020-10-05"]
+            ]
+        },
+        "Hard": {
+            "Reimu": [
+                [78006060,"KirbyComment","2018-02-25"]
+            ],
+            "Mima": [
+                [106552090,"KirbyComment","2021-09-28"]
+            ],
+            "Marisa": [
+                [93716770,"KirbyComment","2022-08-03"]
+            ],
+            "Ellen": [
+                [101923440,"KirbyComment","2022-07-20"]
+            ],
+            "Kotohime": [
+                [96909730,"KirbyComment","2022-07-08"]
+            ],
+            "Kana": [
+                [86601170,"KirbyComment","2018-04-16"]
+            ],
+            "Rikako": [
+                [71159620,"KirbyComment","2018-04-25"]
+            ],
+            "Chiyuri": [
+                [100353630,"KirbyComment","2021-09-20"]
+            ],
+            "Yumemi": [
+                [79791440,"KirbyComment","2022-12-25"]
+            ]
+        },
+        "Lunatic": {
+            "Reimu": [
+                [125877390,"Veresdon","2021-05-14"]
+            ],
+            "Mima": [
+                [138155260,"Veresdon","2021-04-27"]
+            ],
+            "Marisa": [
+                [124477750,"Veresdon","2021-05-10"]
+            ],
+            "Ellen": [
+                [126747060,"Veresdon","2021-04-30"]
+            ],
+            "Kotohime": [
+                [144774130,"Veresdon","2021-05-11"]
+            ],
+            "Kana": [
+                [122690970,"Veresdon","2021-04-19"]
+            ],
+            "Rikako": [
+                [106352790,"Veresdon","2021-05-06"]
+            ],
+            "Chiyuri": [
+                [151344600,"Veresdon","2021-03-23"]
+            ],
+            "Yumemi": [
+                [110091770,"Veresdon","2021-04-26"]
+            ]
+        }
+    },
+    "th04": {
+        "Easy": {
+            "ReimuA": [
+                [71657220,"KirbyComment","2018-02-05"]
+            ],
+            "ReimuB": [
+                [68786970,"KirbyComment","2016-02-06"]
+            ],
+            "MarisaA": [
+                [54095970,"Haniyasuko Okina","2022-02-10"]
+            ],
+            "MarisaB": [
+                [62459930,"Haniyasuko Okina","2022-05-03"]
+            ]
+        },
+        "Normal": {
+            "ReimuA": [
+                [133146960,"KirbyComment","2022-02-14"]
+            ],
+            "ReimuB": [
+                [128477620,"KirbyComment","2016-03-22"]
+            ],
+            "MarisaA": [
+                [102418740,"Haniyasuko Okina","2022-04-21"]
+            ],
+            "MarisaB": [
+                [130533620,"KirbyComment","2022-02-09"]
+            ]
+        },
+        "Hard": {
+            "ReimuA": [
+                [104319900,"Christian Azinn","2022-09-12"]
+            ],
+            "ReimuB": [
+                [151686610,"KirbyComment","2017-10-03"]
+            ],
+            "MarisaA": [
+                [132590100,"Haniyasuko Okina","2022-11-30"]
+            ],
+            "MarisaB": [
+                [111789240,"Haniyasuko Okina","2022-03-13"]
+            ]
+        },
+        "Lunatic": {
+            "ReimuA": [
+                [109645250,"Christian Azinn","2022-08-25"]
+            ],
+            "ReimuB": [
+                [135661070,"Christian Azinn","2022-09-25"]
+            ],
+            "MarisaA": [
+                [157345690,"Haniyasuko Okina","2022-12-11"]
+            ],
+            "MarisaB": [
+                [124317900,"Haniyasuko Okina","2022-05-24"]
+            ]
+        },
+        "Extra": {
+            "ReimuA": [
+                [79460010,"Miler","2021-05-24"]
+            ],
+            "ReimuB": [
+                [80901730,"KirbyComment","2017-09-16"]
+            ],
+            "MarisaA": [
+                [80530890,"Miler","2022-03-22"]
+            ],
+            "MarisaB": [
+                [80036150,"Miler","2021-05-14"]
+            ]
+        }
+    },
+    "th05": {
+        "Easy": {
+            "Reimu": [
+                [81387190,"ARAX","2019-08-01"]
+            ],
+            "Marisa": [
+                [80457000,"KirbyComment","2017-05-08"]
+            ],
+            "Mima": [
+                [88328310,"KirbyComment","2017-06-15"]
+            ],
+            "Yuuka": [
+                [80729690,"KirbyComment","2017-05-10"]
+            ]
+        },
+        "Normal": {
+            "Reimu": [
+                [130655070,"ARAX","2020-02-23"]  
+            ],
+            "Marisa": [
+                [109295940,"Señora Papaya","2022-12-28"]
+            ],
+            "Mima": [
+                [139776270,"KirbyComment","2020-02-17"]
+            ],
+            "Yuuka": [
+                [103275100,"Haniyasuko Okina","2022-09-17"]
+            ]
+        },
+        "Hard": {
+            "Reimu": [
+                [133486460,"Scarlet Moose","2020-09-21"]
+            ],
+            "Marisa": [
+                [145311910,"Zigzagwolf","2016-03-04"]
+            ],
+            "Mima": [
+                [163109770,"Zil","2016-02-16"]
+            ],
+            "Yuuka": [
+                [132711150,"Scarlet Moose","2020-09-12"]
+            ]
+        },
+        "Lunatic": {
+            "Reimu": [
+                [153914430,"Zil","2013-01-23"]
+            ],
+            "Marisa": [
+                [145312990,"Scarlet Moose","2018-11-07"]
+            ],
+            "Mima": [
+                [202717620,"Miler","2022-01-12"]
+            ],
+            "Yuuka": [
+                [131792980,"nrook","2021-11-21"]
+            ]
+        },
+        "Extra": {
+            "Reimu": [
+                [202105820,"Zigzagwolf","2017-06-18"]
+            ],
+            "Marisa": [
+                [189402740,"Zigzagwolf","2017-07-06"]
+            ],
+            "Mima": [
+                [214560970,"anonymous","2020-06-23"]
+            ],
+            "Yuuka": [
+                [203252780,"ぴえとろ","2007-01-01"]
+            ]
+        }
+    },
     "th06": {
         "Easy": {
             "ReimuA": [
@@ -3353,7 +3706,8 @@
                 [108801370,"FUG","2016-10-12"],
                 [109064010,"FUG","2016-10-15"],
                 [109318150,"FUG","2016-10-17"],
-                [111136160,"FUG","2016-12-21"]
+                [111136160,"FUG","2016-12-21"],
+                [111918190,"Dagoth2hu","2022-06-28"]
             ],
             "A-2": [
                 [63466560,"なおきLC","2010-09-07"],
@@ -3378,7 +3732,8 @@
                 [118331590,"chum","2016-06-09"],
                 [118489440,"chum","2016-06-11"],
                 [119625730,"chum","2016-06-18"],
-                [120193990,"The Challenge","2017-03-14"]
+                [120193990,"The Challenge","2017-03-14"],
+                [129733420,"MegaPulse","2018-03-29"]
             ],
             "B-1": [
                 [49282750,"なおきLC","2010-08-19"],
