@@ -383,7 +383,7 @@ function loadCanvas(gameID) {
     fetch('json/wrprogression.json')
     .then((response) => response.json())
     .then(dataWR => {
-        const game = 'th07';
+        const game = 'th08';
         const difficulty = 'Lunatic';
         var fetchedData = [];
         fetch('json/gameinfo.json')
@@ -406,7 +406,7 @@ function loadCanvas(gameID) {
                 callChartJS(fetchedData, gameCharacters, englishName, difficulty);
             }
         });
-        //catchErrors(dataWR);
+        catchErrors(dataWR);
     });
 }
 
