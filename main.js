@@ -406,7 +406,7 @@ function loadCanvas(gameID) {
                 callChartJS(fetchedData, gameCharacters, englishName, difficulty);
             }
         });
-        catchErrors(dataWR);
+        //catchErrors(dataWR);
     });
 }
 
