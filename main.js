@@ -476,7 +476,6 @@ function debug() {
 }
 
 function catchErrors(data) {
-    //console.log(data);
     console.time("test1");
     let arr = [];
     for (const [key, valueee] of Object.entries(data)) {
@@ -486,11 +485,11 @@ function catchErrors(data) {
                 var newDate = 0
                 value2.forEach(element => { //wr entry of shot
                     arr.push(key+key3+key2)
-                    const flagScore = (element[0] >= newScore);
-                    newScore = element[0];
+                    const flagScore = (parseInt(element[0]) >= newScore);
+                    newScore = parseInt(element[0]);
                     const flagDate = (new Date(element[2]).getTime() >= newDate);
-                    newDate = new Date(value2[0][2]).getTime();
-                    if (!(flagScore && flagDate)) {console.error(`Error: Score before ${newScore} from ${element[1]} shot ${key2} is incorrect`)}
+                    newDate = new Date(element[2]).getTime();
+                    if (!flagScore || !flagDate) {console.error(`Error: Score before ${newScore} from ${element[1]} shot ${key2} is incorrect`)}
                 })
             }
         }
