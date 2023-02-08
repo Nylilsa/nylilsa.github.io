@@ -19,7 +19,6 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty) {
     const ctx = document.getElementById('wrChart');
     let dataset = [];
     fetchedData.forEach((element) => {
-        //element.reverse() //needed or else step chart will be reversed
         const arr = []
         element.forEach(subelement => {
             const dateObject = subelement[2].replace("/", "-").replace("/", "-")

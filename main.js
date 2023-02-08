@@ -158,8 +158,10 @@ function jumpTo(id, duration) {
 		return;
 	}
 	setTimeout(() => { 
-		const top = document.getElementById(id.replace("#","")).offsetTop;
-		window.scrollTo(0, top);
+		const top = document.getElementById(id.replace("#",""));
+        if (top) {
+		    window.scrollTo(0, top.offsetTop);
+        }
 	}, duration);
 }
 
@@ -380,17 +382,20 @@ function countTags() {
 }
 
 function loadCanvas(gameID) {
+    let game = gameID.slice(1); 
+    const difficulty = 'Lunatic';
+    var fetchedData = [];
+	if (game === '') { 
+		game = "th11"; //default if url is invalid
+	}
     fetch('json/wrprogression.json')
     .then((response) => response.json())
     .then(dataWR => {
-        const game = 'th18';
-        const difficulty = 'Easy';
-        var fetchedData = [];
         fetch('json/gameinfo.json')
         .then((response2) => response2.json())
         .then(data => {
             const englishName = data['Names'][game]['en'];
-            if (game != "th16" || difficulty == 'Extra') {
+            if ((game != "th16" && game != "th128") || difficulty == 'Extra') {
                 const gameCharacters = data['Characters'][game];
                 gameCharacters.forEach(char => {
                     const history = dataWR[game][difficulty][char];
@@ -398,7 +403,7 @@ function loadCanvas(gameID) {
                 })
                 callChartJS(fetchedData, gameCharacters, englishName, difficulty);
             } else {
-                const gameCharacters = data['Characters'][`${game}seasons`];
+                const gameCharacters = data['Characters'][`${game}other`];
                 gameCharacters.forEach(char => {
                     const history = dataWR[game][difficulty][char];
                     fetchedData.push(history);
@@ -473,12 +478,14 @@ function debug() {
 function catchErrors(data) {
     //console.log(data);
     console.time("test1");
+    let arr = [];
     for (const [key, valueee] of Object.entries(data)) {
-        for (const [key, value] of Object.entries(valueee)) { // cycles through all categories
+        for (const [key3, value] of Object.entries(valueee)) { // cycles through all categories
             for (const [key2, value2] of Object.entries(value)) { // cycles through all shots of category
                 var newScore = 0
                 var newDate = 0
                 value2.forEach(element => { //wr entry of shot
+                    arr.push(key+key3+key2)
                     const flagScore = (element[0] >= newScore);
                     newScore = element[0];
                     const flagDate = (new Date(element[2]).getTime() >= newDate);
@@ -488,7 +495,28 @@ function catchErrors(data) {
             }
         }
     }
+    console.log(mode(arr))
     console.timeEnd("test1");
+}
+
+function mode(array) {
+    if(array.length == 0)
+        return null;
+    var modeMap = {};
+    var maxEl = array[0], maxCount = 1;
+    for(var i = 0; i < array.length; i++) {
+        var el = array[i];
+        if(modeMap[el] == null)
+            modeMap[el] = 1;
+        else
+            modeMap[el]++;  
+        if(modeMap[el] > maxCount)
+        {
+            maxEl = el;
+            maxCount = modeMap[el];
+        }
+    }
+    return [maxEl, maxCount];
 }
 
 ///////////////////// INIT /////////////////////
