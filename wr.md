@@ -12,7 +12,6 @@ Select your game: [game selector]
 
 
 
-[canvas]
 
 <canvas id="wrChart" style=" max-width: 95%"class="fit-wrapper"></canvas>
 
@@ -21,5 +20,8 @@ Select your game: [game selector]
 [table of data maybe of mobile users?]
 
 ## WR history of GAME on difficulty DIFFICULTY
+
+[canvas]
+<table id='wrTable'></table>
 
 category | score | player | date

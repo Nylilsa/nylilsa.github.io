@@ -413,7 +413,67 @@ function loadCanvas(gameID) {
         });
         catchErrors(dataWR);
     });
+    return generateWRTable();
 }
+
+function generateWRTable(data) {
+
+    return 123;
+}
+
+
+///////////////////// DEBUG /////////////////////
+
+function debug() {
+    const text = '## hello, **markdown**!',
+    html = MD.makeHtml(text);
+	console.log(html);
+}
+
+function catchErrors(data) {
+    console.time("test1");
+    let arr = [];
+    for (const [key, valueee] of Object.entries(data)) {
+        for (const [key3, value] of Object.entries(valueee)) { // cycles through all categories
+            for (const [key2, value2] of Object.entries(value)) { // cycles through all shots of category
+                var newScore = 0
+                var newDate = 0
+                value2.forEach(element => { //wr entry of shot
+                    arr.push(key+key3+key2)
+                    const flagScore = (parseInt(element[0]) >= newScore);
+                    newScore = parseInt(element[0]);
+                    const flagDate = (new Date(element[2]).getTime() >= newDate);
+                    newDate = new Date(element[2]).getTime();
+                    if (!flagScore || !flagDate) {console.error(`Error: Score before ${newScore} from ${element[1]} shot ${key2} is incorrect`)}
+                })
+            }
+        }
+    }
+    console.log(mode(arr))
+    console.timeEnd("test1");
+}
+
+function mode(array) {
+    if(array.length == 0)
+        return null;
+    var modeMap = {};
+    var maxEl = array[0], maxCount = 1;
+    for(var i = 0; i < array.length; i++) {
+        var el = array[i];
+        if(modeMap[el] == null)
+            modeMap[el] = 1;
+        else
+            modeMap[el]++;  
+        if(modeMap[el] > maxCount)
+        {
+            maxEl = el;
+            maxCount = modeMap[el];
+        }
+    }
+    return [maxEl, maxCount];
+}
+
+
 
 
 
@@ -467,56 +527,7 @@ function parseMarkdown(markdownText) { //parses markdown - unused atm
 	}
 }
 
-///////////////////// DEBUG /////////////////////
 
-function debug() {
-    const text = '## hello, **markdown**!',
-    html = MD.makeHtml(text);
-	console.log(html);
-}
-
-function catchErrors(data) {
-    console.time("test1");
-    let arr = [];
-    for (const [key, valueee] of Object.entries(data)) {
-        for (const [key3, value] of Object.entries(valueee)) { // cycles through all categories
-            for (const [key2, value2] of Object.entries(value)) { // cycles through all shots of category
-                var newScore = 0
-                var newDate = 0
-                value2.forEach(element => { //wr entry of shot
-                    arr.push(key+key3+key2)
-                    const flagScore = (parseInt(element[0]) >= newScore);
-                    newScore = parseInt(element[0]);
-                    const flagDate = (new Date(element[2]).getTime() >= newDate);
-                    newDate = new Date(element[2]).getTime();
-                    if (!flagScore || !flagDate) {console.error(`Error: Score before ${newScore} from ${element[1]} shot ${key2} is incorrect`)}
-                })
-            }
-        }
-    }
-    console.log(mode(arr))
-    console.timeEnd("test1");
-}
-
-function mode(array) {
-    if(array.length == 0)
-        return null;
-    var modeMap = {};
-    var maxEl = array[0], maxCount = 1;
-    for(var i = 0; i < array.length; i++) {
-        var el = array[i];
-        if(modeMap[el] == null)
-            modeMap[el] = 1;
-        else
-            modeMap[el]++;  
-        if(modeMap[el] > maxCount)
-        {
-            maxEl = el;
-            maxCount = modeMap[el];
-        }
-    }
-    return [maxEl, maxCount];
-}
 
 ///////////////////// INIT /////////////////////
 
