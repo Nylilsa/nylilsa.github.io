@@ -47,6 +47,7 @@
         },
         "Normal": {
             "ReimuA": [
+                [19649000,"Haniyasuko Okina","2022-04-17"],
                 [24389840,"KirbyComment","2023-01-09"]
             ],
             "ReimuB": [
@@ -239,12 +240,14 @@
         },
         "Hard": {
             "ReimuA": [
+                [103272660,"Haniyasuko Okina","2022-02-19"],
                 [104319900,"Christian Azinn","2022-09-12"]
             ],
             "ReimuB": [
                 [151686610,"KirbyComment","2017-10-03"]
             ],
             "MarisaA": [
+                [118393920,"Haniyasuko Okina","2022-03-14"],
                 [132590100,"Haniyasuko Okina","2022-11-30"]
             ],
             "MarisaB": [
