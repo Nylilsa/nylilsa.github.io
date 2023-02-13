@@ -15,7 +15,7 @@ class Data {
     }
 }
 
-function callChartJS(fetchedData, gameCharacters, englishName, difficulty) {
+function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time) {
     const ctx = document.getElementById('wrChart');
     let dataset = [];
     fetchedData.forEach((element) => {
@@ -39,7 +39,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty) {
                 x: {
                     type: 'time',
                     time: {
-                        unit: 'month'
+                        unit: time,
                     },
                     grid: {
                         color: 'rgba(255, 255, 255, 0.1)',

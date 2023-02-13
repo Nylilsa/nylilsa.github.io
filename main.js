@@ -382,6 +382,9 @@ function countTags() {
 }
 
 function loadCanvas(gameID) {
+    const fourYears = 126144000000;
+    const now = new Date().getTime();
+    var time = 1;
     let game = gameID.slice(1); 
     const difficulty = 'Lunatic';
     var fetchedData = [];
@@ -394,6 +397,14 @@ function loadCanvas(gameID) {
         fetch('json/gameinfo.json')
         .then((response2) => response2.json())
         .then(data => {
+            const releaseDate = new Date(data['LatestReleaseDate'][game]).getTime();
+
+            if (releaseDate > now - fourYears) {
+                time = 'month';
+            } else {
+                time = 'year';
+            }
+
             const englishName = data['Names'][game]['en'];
             if ((game != "th16" && game != "th128") || difficulty == 'Extra') {
                 const gameCharacters = data['Characters'][game];
@@ -401,25 +412,70 @@ function loadCanvas(gameID) {
                     const history = dataWR[game][difficulty][char];
                     fetchedData.push(history);
                 })
-                callChartJS(fetchedData, gameCharacters, englishName, difficulty);
+                generateWRTable(fetchedData, gameCharacters);
+                callChartJS(fetchedData, gameCharacters, englishName, difficulty, time);
             } else {
                 const gameCharacters = data['Characters'][`${game}other`];
                 gameCharacters.forEach(char => {
                     const history = dataWR[game][difficulty][char];
                     fetchedData.push(history);
                 })
-                callChartJS(fetchedData, gameCharacters, englishName, difficulty);
+                generateWRTable(fetchedData, gameCharacters);
+                callChartJS(fetchedData, gameCharacters, englishName, difficulty, time);
             }
         });
-        catchErrors(dataWR);
+        //catchErrors(dataWR);
     });
-    return generateWRTable();
+    return 
 }
 
-function generateWRTable(data) {
-
-    return 123;
+function generateWRTable(data, gameCharacters) {
+    for (let i = 0; i < data.length; i++) { // tables
+        const section = document.getElementById("main-wr-tables");
+        const tblBody = document.createElement("tbody");
+        const headers = ["Shottype", "Score", "Player", "Date"];
+        const table = document.createElement("table");
+        table.setAttribute("id", `${gameCharacters[i]}table`);
+        table.classList.add('all-wr-tables');
+        section.appendChild(document.createElement("br"));
+        for (let j = 0; j < data[i].length; j++) { // rows
+          const row = document.createElement("tr");
+          const [score, player, date] = data[i][j];
+          const scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            for (let k = 0; k < 4; k++) { // columns
+                if (j == 0) {
+                    const icon = document.createElementNS("http://www.w3.org/2000/svg","svg");
+                    switch (k) {
+                        case 0: {icon.classList.add('icon', 'icon-bullet'); break;}
+                        case 1: {icon.classList.add('icon', 'icon-trophy'); break;}
+                        case 2: {icon.classList.add('icon', 'icon-user'); break;}
+                        case 3: {icon.classList.add('icon', 'icon-calendar'); break;}
+                        default: {console.error(`Oops, something went wrong.`)}
+                    }
+                    var cell = document.createElement("th");
+                    var cellText = document.createTextNode(`${headers[k]}`);
+                    cell.appendChild(icon);
+                } else {
+                    switch (k) {
+                        case 0: {var cellText = document.createTextNode(gameCharacters[i]); break;}
+                        case 1: {var cellText = document.createTextNode(`${scoreWithCommas}`); break;}
+                        case 2: {var cellText = document.createTextNode(`${player}`); break;}
+                        case 3: {var cellText = document.createTextNode(`${date}`); break;}
+                        default: {console.error(`Oops, something went wrong.`)}
+                    }
+                    var cell = document.createElement("td");
+                }
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+            }
+            tblBody.appendChild(row);
+            table.appendChild(tblBody);
+            section.appendChild(table);
+        }
+        
+    }
 }
+  
 
 
 ///////////////////// DEBUG /////////////////////

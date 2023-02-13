@@ -331,7 +331,8 @@ let ext = function() {
 		type: "lang",
 		regex: /\[canvas\]/g,
 		replace: function() {
-			return loadCanvas(initRemoveHash(true));
+            setTimeout(() => {loadCanvas(initRemoveHash(true))}, 1);
+            return "";
 		}
 	}
 
