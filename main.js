@@ -397,54 +397,106 @@ function loadCanvas(gameID) {
         fetch('json/gameinfo.json')
         .then((response2) => response2.json())
         .then(data => {
+            const englishName = data['Names'][game]['en'];
             const releaseDate = new Date(data['LatestReleaseDate'][game]).getTime();
-
+            const maxValue = [];
             if (releaseDate > now - fourYears) {
                 time = 'month';
             } else {
                 time = 'year';
             }
-
-            const englishName = data['Names'][game]['en'];
             if ((game != "th16" && game != "th128") || difficulty == 'Extra') {
-                const gameCharacters = data['Characters'][game];
-                gameCharacters.forEach(char => {
-                    const history = dataWR[game][difficulty][char];
-                    fetchedData.push(history);
-                })
-                generateWRTable(fetchedData, gameCharacters);
-                callChartJS(fetchedData, gameCharacters, englishName, difficulty, time);
+                var gameCharacters = data['Characters'][game];
             } else {
-                const gameCharacters = data['Characters'][`${game}other`];
-                gameCharacters.forEach(char => {
-                    const history = dataWR[game][difficulty][char];
-                    fetchedData.push(history);
-                })
-                generateWRTable(fetchedData, gameCharacters);
-                callChartJS(fetchedData, gameCharacters, englishName, difficulty, time);
+                var gameCharacters = data['Characters'][`${game}other`];
             }
+            gameCharacters.forEach(char => {
+                const history = dataWR[game][difficulty][char];
+                const maxScoreOfShot = history[history.length-1][0];
+                maxValue.push(maxScoreOfShot);
+                fetchedData.push(history);
+            })
+            const overallWRCharacter = gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))]
+            console.log(overallWRCharacter)
+            generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter);
+            callChartJS(fetchedData, gameCharacters, englishName, difficulty, time);
         });
         //catchErrors(dataWR);
+        doButtonStuffButForGameSelector()
     });
     return 
 }
 
-function generateWRTable(data, gameCharacters) {
+function doButtonStuffButForGameSelector() {
+    const parent = document.getElementById("wr-game-buttons");
+    for(i=0; i<parent.children.length; i++) {
+        const button = parent.children[i];
+        button.addEventListener("click", selectGame);
+        function selectGame() {
+            window.location.hash = `#/wr#${this.dataset.game}`;
+        }
+    }
+}
+
+function doButtonStuff(id) {
+    const button = document.getElementById(id);
+    button.addEventListener("click", selectGame);
+    function selectGame() {
+        const otherTables = document.getElementsByClassName("all-wr-tables");
+        const otherButtons = document.getElementsByClassName("wr-shottype-buttons");
+        Array.prototype.forEach.call(otherTables, function(child) {
+            child.style.display = "none";
+        });
+        Array.prototype.forEach.call(otherButtons, function(child) {
+            child.style.backgroundColor = "rgb(3 5 15)";
+        });
+        const selectedTable = document.getElementById(`${id}table`);
+        selectedTable.style.display = "";
+        this.style.backgroundColor = "#08101C";
+    }
+}
+
+function generateWRButtons(gameCharacters, game, overallWRCharacter) {
+    const section = document.getElementById("wr-buttons");
+    for (let i = 0; i < gameCharacters.length; i++) {
+        const button = document.createElement("button");
+        const id = `${game}${gameCharacters[i]}`
+        button.style.width = "100%";
+        button.style.color = "#ddd";
+        button.style.fontSize = "14px";
+        button.setAttribute("id", id);
+        button.setAttribute("class", "wr-shottype-buttons");
+        button.innerText = gameCharacters[i];
+        if (gameCharacters[i] == overallWRCharacter) {
+            button.style.backgroundColor = "#08101C";
+        }
+        section.appendChild(button);
+        doButtonStuff(id);
+    }
+}
+
+function generateWRTable(data, gameCharacters, game, overallWRCharacter) {
+    generateWRButtons(gameCharacters, game, overallWRCharacter);
     for (let i = 0; i < data.length; i++) { // tables
-        const section = document.getElementById("main-wr-tables");
+        const section = document.getElementById("wr-tables");
+        const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
         const headers = ["Shottype", "Score", "Player", "Date"];
-        const table = document.createElement("table");
-        table.setAttribute("id", `${gameCharacters[i]}table`);
+        const id = `${game}${gameCharacters[i]}`;
+        table.setAttribute("id", `${id}table`);
         table.classList.add('all-wr-tables');
-        section.appendChild(document.createElement("br"));
+        if (i != gameCharacters.indexOf(overallWRCharacter)) {
+            table.style.display = "none";
+        }
         for (let j = 0; j < data[i].length; j++) { // rows
-          const row = document.createElement("tr");
+          let row = document.createElement("tr");
           const [score, player, date] = data[i][j];
           const scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            for (let k = 0; k < 4; k++) { // columns
-                if (j == 0) {
+            if (j == 0) { // header column
+                for (let k = 0; k < 4; k++) {
                     const icon = document.createElementNS("http://www.w3.org/2000/svg","svg");
+                    const cell = document.createElement("th");
+                    const cellText = document.createTextNode(`${headers[k]}`);
                     switch (k) {
                         case 0: {icon.classList.add('icon', 'icon-bullet'); break;}
                         case 1: {icon.classList.add('icon', 'icon-trophy'); break;}
@@ -452,21 +504,27 @@ function generateWRTable(data, gameCharacters) {
                         case 3: {icon.classList.add('icon', 'icon-calendar'); break;}
                         default: {console.error(`Oops, something went wrong.`)}
                     }
-                    var cell = document.createElement("th");
-                    var cellText = document.createTextNode(`${headers[k]}`);
                     cell.appendChild(icon);
-                } else {
-                    switch (k) {
-                        case 0: {var cellText = document.createTextNode(gameCharacters[i]); break;}
-                        case 1: {var cellText = document.createTextNode(`${scoreWithCommas}`); break;}
-                        case 2: {var cellText = document.createTextNode(`${player}`); break;}
-                        case 3: {var cellText = document.createTextNode(`${date}`); break;}
-                        default: {console.error(`Oops, something went wrong.`)}
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                    if (k==3) {
+                        tblBody.appendChild(row);
+                        row = document.createElement("tr");
                     }
-                    var cell = document.createElement("td");
                 }
-            cell.appendChild(cellText);
-            row.appendChild(cell);
+            }
+            for (let k = 0; k < 4; k++) { // entry columns
+                let cellText;
+                const cell = document.createElement("td");
+                switch (k) {
+                    case 0: {cellText = document.createTextNode(gameCharacters[i]); break;}
+                    case 1: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
+                    case 2: {cellText = document.createTextNode(`${player}`); break;}
+                    case 3: {cellText = document.createTextNode(`${date}`); break;}
+                    default: {console.error(`Oops, something went wrong.`)}
+                }
+                cell.appendChild(cellText);
+                row.appendChild(cell);
             }
             tblBody.appendChild(row);
             table.appendChild(tblBody);
