@@ -408,7 +408,9 @@ ul.CTAs {
   overflow-y: scroll;
   top: 0;
   bottom: 0;
-  z-index: 2; }
+  z-index: 2;
+  scrollbar-color: #47748B #111111;
+  scrollbar-width: thin; }
   #sidebar .sidebar-header {
     padding: 20px;
     background: #121c28; }
