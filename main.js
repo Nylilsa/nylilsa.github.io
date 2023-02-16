@@ -587,62 +587,6 @@ function mode(array) {
     return [maxEl, maxCount];
 }
 
-
-
-
-
-///////////////////// UNUSED /////////////////////
-
-function parseMarkdown(markdownText) { //parses markdown - unused atm
-	const htmlText = markdownText
-    .replace(/\[no\]([^]*?)\[\/no\]/g, '<span style="color:#ff0000">~~$1~~</span>') //red color
-    .replace(/\[yes\]([^]*?)\[\/yes\]/g, '<span style="color:#00ff00">$1</span>') //green color
-    .replace(/\~\~([^]*?)\~\~/g, '<span style="text-decoration: line-through">$1</span>') //strikethrough
-    .replace(/\[specs\]/g, 'Specifications')
-    .replace(/\[what\]/g, 'What happens')
-    .replace(/\[how\]/g, 'How it happens')
-    .replace(/\[why\]/g, 'Why it happens')
-		.replace(/\[br\]/g, '<br>')
-		.replace(/\[hr\]/g, '<hr>')
-		.replace(/\[links\]/g, 'Links')
-		.replace(/\[rpy\]/g, 'Replays')
-		.replace(/\[vid\]/g, 'Videos')
-		.replace(/^## (.*$)/gim, '<h2>$1</h2>')
-		.replace(/^# (.*$)/gim, '<h1>$1</h1>')
-		.replace(/\[title=(.*?)\]/gim, function(match, content) {setWindowTitleDirect(content);return "";}) //no idea why it works but ty priw
-		//.replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
-		//.replace(/\*(.*)\*/gim, '<i>$1</i>')
-		//.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
-		//.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
-		//.replace(/\n$/gim, '<br />')
-        return htmlText.trim();
-    }
-    
-    function highlightCode(content) {
-        return content.replace(/_/g, "\\_").replace(/\*/g, "\\*");
-    }
-    
-    function invertHex(hex) {
-        if (hex[0] == '#') {
-            hex = hex.substring(1);
-        }
-        return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
-    }
-    
-    function initJson() {
-        const xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "citations.json", true); // has to be TRUE
-        xhttp.send(null);
-        xhttp.onreadystatechange = function() {
-            if (xhttp.readyState === 4 && xhttp.status === 200) {
-                citations = JSON.parse(xhttp.responseText); // globally defined
-                //loadCitation(citations);
-            }
-	}
-}
-
-
-
 ///////////////////// INIT /////////////////////
 
 function initSidebarContent() {
