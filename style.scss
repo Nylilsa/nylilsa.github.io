@@ -64,6 +64,11 @@ hr.hr_minor {
     border-color: #233343;
 }
 
+html {
+    scrollbar-color: #47748B #111111;
+    scrollbar-width: thin;
+}
+
 ol {
     counter-reset: item;
     padding-left: 20px;
@@ -131,7 +136,7 @@ ul.CTAs {
     max-width: 600px;
     background-color: #121c28;
     th {
-        padding-left: 16px;
+        
         padding-bottom: 10px;
         padding-top: 10px;
     }
@@ -153,7 +158,8 @@ ul.CTAs {
         text-align: center;
         padding-top: 12px;
         padding-bottom: 12px;
-        padding-left: 16px;
+        padding-left: 12px;
+        padding-right: 12px;
         font-size: 12px;
     }
 
@@ -459,7 +465,7 @@ ul.CTAs {
 }
 
 #mdcontent {
-	h1, h2, h3, h4, h5, p, li {
+	h1, h2, h3, h4, h5, h6, p, li {
 		color: #FFFFFF;
 		opacity: 0.9;
 		font-family: sans-serif;
