@@ -162,7 +162,7 @@ const bugTracker = {
 	th15: {"completed-pages": 4, "total-glitches": 43, "comment": "Not likely to change"},
 	th16: {"completed-pages": 4, "total-glitches": 27, "comment": "Not likely to change"},
 	th165: {"completed-pages": 0, "total-glitches": 12, "comment": "Number is very likely to increase"},
-	th17: {"completed-pages": 9, "total-glitches": 37, "comment": "Not likely to change"},
+	th17: {"completed-pages": 9, "total-glitches": 38, "comment": "Not likely to change"},
 	th18: {"completed-pages": 8, "total-glitches": 41, "comment": "Number is likely to increase"},
 	th185: {"completed-pages": 0, "total-glitches": 11, "comment": "Number is likely to increase"},
 };
