@@ -286,12 +286,14 @@ let ext = function() {
 	}
 
 	let cite = {
-		type: "lang",
-		regex: /\[cite=([^]*?)\]/g,
-		replace: async function(match, content) {
-			return await citeFunction(content);
-		}
-	}
+        type: "lang",
+        regex: /\[cite=([^]*?)\]/g,
+        replace:  function(match, content) {
+            let id = citeId++;
+            fillCite(id, content);
+            return `<span id="cite-${id}"></span>`;
+        }
+    }
 
 	let replay = {
 		type: "lang",
