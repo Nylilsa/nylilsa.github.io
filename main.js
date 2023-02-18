@@ -165,8 +165,11 @@ function jumpTo(id, duration) {
 	}, duration);
 }
 
-function citeFunction(key) {
-	const content = citations[key];
+async function citeFunction(key) {
+    const webdata = await fetch('json/webdata.json')
+    .then((response) => response.json())
+    .then(data => {return data});
+	const content = webdata["Citations"][key];
 	let datum;
 	const intl = "en-US";
 	const options = {calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric'};
@@ -176,7 +179,7 @@ function citeFunction(key) {
 	} else {
 		datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
 	}
-	return citeAPA(datum, content.author, content.title, content.url);
+    return await citeAPA(datum, content.author, content.title, content.url);
 }
 
 function replayFunction(key) {

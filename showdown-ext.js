@@ -288,8 +288,8 @@ let ext = function() {
 	let cite = {
 		type: "lang",
 		regex: /\[cite=([^]*?)\]/g,
-		replace: function(match, content) {
-			return citeFunction(content);
+		replace: async function(match, content) {
+			return await citeFunction(content);
 		}
 	}
 
