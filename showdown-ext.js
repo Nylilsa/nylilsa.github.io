@@ -290,7 +290,7 @@ let ext = function() {
         regex: /\[cite=([^]*?)\]/g,
         replace:  function(match, content) {
             let id = citeId++;
-            fillCite(id, content);
+            fillCite(id, content, videoFunction);
             return `<span id="cite-${id}"></span>`;
         }
     }
@@ -299,7 +299,9 @@ let ext = function() {
 		type: "lang",
 		regex: /\[replay=([^]*?)\]/g,
 		replace: function(match, content) {
-			return replayFunction(content);
+            let id = citeId++;
+            fillCite(id, content, replayFunction);
+            return `<span id="cite-${id}"></span>`;
 		}
 	}
 

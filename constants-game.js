@@ -72,6 +72,5 @@ const matchStyle = {
     "bomb": new Match('assets/th-sprites/bomb-item.png', '#50D030'),
     "life": new Match('assets/th-sprites/life-item.png', '#F26BD3'),
 
-
     "test": new Match(1, 2)
 };

@@ -166,12 +166,12 @@ function jumpTo(id, duration) {
 	}, duration);
 }
 
-async function fillCite(id, key) {
-    const cite = await citeFunction(key);
+async function fillCite(id, key, citingFunction) {
+    const cite = await citingFunction(key);
     document.querySelector(`#cite-${id}`).innerHTML = cite;
 }
 
-async function citeFunction(key) {
+async function videoFunction(key) {
     const webdata = await fetch('json/webdata.json')
     .then((response) => response.json())
     .then(data => {return data});
@@ -188,8 +188,11 @@ async function citeFunction(key) {
     return await citeAPA(datum, content.author, content.title, content.url);
 }
 
-function replayFunction(key) {
-	const content = replays[key];
+async function replayFunction(key) {
+    const webdata = await fetch('json/webdata.json')
+    .then((response) => response.json())
+    .then(data => {return data});
+	const content = webdata["Replays"][key];
 	let datum;
 	const intl = "en-US";
 	const options = {calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric'};
@@ -199,7 +202,7 @@ function replayFunction(key) {
 	} else {
 		datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
 	}
-	return citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, content.url, content.note);
+	return await citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, content.url, content.note);
 }
 
 function citeAPA(date, author, title, url) {
