@@ -428,7 +428,6 @@ function loadCanvas(gameID) {
                 fetchedData.push(history);
             })
             const overallWRCharacter = gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))]
-            console.log(overallWRCharacter)
             generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter);
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time);
         });
