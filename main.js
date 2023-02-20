@@ -463,15 +463,14 @@ function doButtonStuff(id) {
         selectedTable.style.display = "";
         this.style.backgroundColor = "#08101C";
         this.style.color = "#ddd";
-        this.style.borderTop = "1px solid #47748B";
+        this.style.borderTop = "2px solid #47748B";
     }
 }
 
 function generateWRButtons(gameCharacters, game, overallWRCharacter) {
     const section = document.getElementById("wr-buttons");
-    console.log(section);
     const number = gameCharacters.length;
-    const width = (1/number - 0.01) * 100;
+    const width = (1/gameCharacters.length - 0.01) * 100;
     for (let i = 0; i < number; i++) {
         const button = document.createElement("button");
         const id = `${game}${gameCharacters[i]}`;
@@ -482,9 +481,7 @@ function generateWRButtons(gameCharacters, game, overallWRCharacter) {
         if (gameCharacters[i] == overallWRCharacter) {
             button.style.backgroundColor = "#08101C";
             button.style.color = "#ddd";
-            button.style.borderTop = "1px solid #47748B";
-
-            console.log(button.innerText)
+            button.style.borderTop = "2px solid #47748B";
         }
         section.appendChild(button);
         doButtonStuff(id);

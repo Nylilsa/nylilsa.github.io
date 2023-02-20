@@ -52,6 +52,7 @@ body {
   background: var(--almost-white); }
 
 button {
+  cursor: pointer;
   background-color: inherit;
   border-width: 0;
   padding: 0;
