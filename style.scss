@@ -1,12 +1,30 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+:root {
+    --discord-lightblue: #8386E5;
+    --discord-blue: #7386D5;
+    --discord-purple: #6d7fcc;
+    --url: #6873D8;
+    --url-visited: #934BB4;
+    --almost-white: #FAFAFA;
+    --white: #FFFFFF;
+    --pink: #FF92FA;
+    --dark-blue: #222538;
+    --default: #47748B;
+    --dark-teal: #121C28;
+    --grey: #233343;
+    --black: #000000;
+    --almost-black: #111111;
+    --black-blue: #08101C;
+}
+
 ::-webkit-scrollbar-track {
-    background: #111111; 
+    background: var(--almost-black); 
 }
 
 html {
     -webkit-text-size-adjust: auto;
-	background: #000000;
+	background: var(--almost-black); 
 }
 
 a,
@@ -20,13 +38,13 @@ a:focus {
 
 a.article,
 a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
+    background: var(--discord-purple) !important;
+    color: var(--white) !important;
 }
 
 a.download {
-    background: #fff;
-    color: #7386D5;
+    background: var(--white);
+    color: var(--discord-blue);
 }
 
 a[data-toggle="collapse"] {
@@ -40,7 +58,7 @@ b, strong {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    background: var(--almost-white);
 }
 
 button {
@@ -52,7 +70,7 @@ button {
 
 code {
     font-size: 90.0%;
-    color: #ff92fa;
+    color: var(--pink);
     word-break: break-word;
 }
 
@@ -61,11 +79,11 @@ hr {
 }
 
 hr.hr_minor {
-    border-color: #233343;
+    border-color: var(--grey);
 }
 
 html {
-    scrollbar-color: #47748B #111111;
+    scrollbar-color: var(--default) var(--almost-black);
     scrollbar-width: thin;
 }
 
@@ -79,7 +97,7 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: white;
+    color: var(--white);
 }
 
 td {
@@ -88,7 +106,7 @@ td {
 }
 
 th {
-    border-bottom: 0.2px solid #233343;
+    border-bottom: 0.2px solid var(--grey);
     padding-bottom: 2px;
 }
 
@@ -98,7 +116,7 @@ th, tr {
     border: 0px;
     font-weight: normal;
     font-size: 14px;
-    color:#FFFFFF;
+    color:var(--white);
     opacity: 0.9;
     font-family: sans-serif;
 }
@@ -134,14 +152,14 @@ ul.CTAs {
     margin-right: auto;
     width: 100%;
     max-width: 600px;
-    background-color: #121c28;
+    background-color: var(--dark-teal);
     th {
         
         padding-bottom: 10px;
         padding-top: 10px;
     }
     tr {
-        border-top: 1px solid #47748B;
+        border-top: 1px solid var(--default);
         font-size: 16px;
         transition-duration: 0.5s;
     }
@@ -149,7 +167,7 @@ ul.CTAs {
         background-color: #08101C;
     }
     tr:nth-child(1) {
-        background-color: #47748B;
+        background-color: var(--default);
     }
     td:nth-child(3) {
         text-align: left;
@@ -166,8 +184,8 @@ ul.CTAs {
 }
 
 .box {
-    background-color: #222538;
-    color: white;
+    //background-color: var(--dark-blue);
+    color: var(--white);
     font-size: 16px;
     padding: 8px 12px 8px 12px;
     border-radius: 0px;
@@ -211,8 +229,8 @@ ul.CTAs {
 
 
 .github {
-    background-color: #7376D5;
-    color: #FFFFFF;
+    background-color: var(--discord-blue);
+    color: var(--white);
 }
 
 .highlight-bg {
@@ -268,6 +286,11 @@ ul.CTAs {
     margin-right: 8px;
 }
 
+.icon-star {
+    transform: scale(0.8);
+    background-image: url(assets/star.svg);
+}
+
 .icon-text {
     aspect-ratio: 1 / 1;
     width: 24px;
@@ -320,7 +343,7 @@ ul.CTAs {
 
 .navbar {
     padding: 15px 10px;
-    background: #fff;
+    background: var(--white);
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
@@ -339,24 +362,24 @@ ul.CTAs {
 }
 
 .tag {
-    color: #FFFFFF;
+    color: var(--white);
     display: inline-flex;
     align-items: stretch;
     margin: 2px;
     padding-left: 0.25em;
     padding-right: 0.25em;
     :hover {
-        border-color: #ff92fa;
+        border-color: var(--pink);
     }
     :before {
         padding-right: 0.25em;
         content: "⬡";
     }
     a {
-        border: 1.5px solid #8386E5;
+        border: 1.5px solid var(--discord-lightblue);
     }
     .selected {
-        background-color: #8386E5;
+        background-color: var(--discord-lightblue);
     }
 }
 
@@ -380,8 +403,8 @@ ul.CTAs {
         content: counters(item, ".") " "; // " " is needed for extra spacing
         counter-increment: item;
     }
-    background-color: #222538;
-    color: white;
+    //background-color: var(--dark-blue);
+    color: var(--white);
     padding: 8px 12px 8px 12px;
     border-radius: 0px;
     border-color: #414363;
@@ -392,12 +415,19 @@ ul.CTAs {
 }
 
 .url, .url-toc {
-    color:#6873d8;
+    color:var(--url);
     text-decoration: underline;
 }
 
 .url:visited {
-    color:#934bb4;
+    color: var(--url-visited);
+}
+
+.wr-shottype-buttons {
+    font-size: 14px;
+    color: var(--discord-purple);
+    background-color: rgb(3, 5, 15);
+
 }
 
 .wrapper {
@@ -408,12 +438,12 @@ ul.CTAs {
 }
 
 .youtube {
-    background-color: #7376D5;
-    color: #FFFFFF;
+    background-color: var(--discord-blue);
+    color: var(--white);
 }
 
 #button {
-    background-color: #8386E5;
+    background-color: var(--discord-lightblue);
     border-top-right-radius: 4em;
     border-top-left-radius: 4em;
     height: 6em;
@@ -445,17 +475,17 @@ ul.CTAs {
 	h5 {
 		text-align: center;
 		padding-top: 0px;
-		color: #fafafa;
+		color: var(--almost-white);
 	}
 	margin-top: -5vmax;
 	height: 5vmax;
 	position: fixed;
 	width: 100%;
-	background-color: #121c28;
+	background-color: var(--dark-teal);
 	z-index: 1;
 	transition: all 0.3s;
 	margin-left: 250px;
-	border-bottom: 1px solid #7376D5;
+	border-bottom: 1px solid var(--discord-blue);
 	display: table;
 }
 
@@ -466,7 +496,7 @@ ul.CTAs {
 
 #mdcontent {
 	h1, h2, h3, h4, h5, h6, p, li {
-		color: #FFFFFF;
+		color: var(--white);
 		opacity: 0.9;
 		font-family: sans-serif;
 	}
@@ -487,7 +517,7 @@ ul.CTAs {
 #sidebar {
 	.sidebar-header {
 		padding: 20px;
-		background: #121c28;
+		background: var(--dark-teal);
 	}
 	ul {
 		li {
@@ -496,8 +526,8 @@ ul.CTAs {
 				font-size: 1.1em;
 				display: block;
 				&:hover {
-					color: #7386D5;
-					background: #000;
+					color: var(--discord-blue);
+					background: var(--black);
 				}
 			}
 			ul {
@@ -507,14 +537,14 @@ ul.CTAs {
 						font-size: 1.1em;
 						display: block;
 						&:hover {
-							color: #7386D5;
-							background: #000;
+							color: var(--discord-blue);
+							background: var(--black);
 						}
 					}
 				}
 				li.active {
 					>a {
-						color: #fff;
+						color: var(--white);
 						background: #08101C;
 					}
 				}
@@ -522,31 +552,31 @@ ul.CTAs {
 		}
 		li.active {
 			>a {
-				color: #000;
-				background: #6d7fcc;
+				color: var(--black);
+				background: var(--discord-purple);
 			}
 		}
 		p {
-			color: #fff;
+			color: var(--white);
 			padding: 10px;
 		}
 	}
 	ul.components {
 		padding: 20px 0;
-		border-bottom: 1px solid #47748b;
-		border-top: 1px solid #47748b;
+		border-bottom: 1px solid var(--default);
+		border-top: 1px solid var(--default);
 	}
 	min-width: 250px;
 	max-width: 250px;
-	background: #121c28;
-	color: #fff;
+	background: var(--dark-teal);
+	color: var(--white);
 	transition: all 0.3s;
 	position: fixed;
 	overflow-y: scroll;
 	top: 0;
 	bottom: 0;
 	z-index: 2;
-    scrollbar-color: #47748B #111111;
+    scrollbar-color: var(--default) var(--almost-black);
     scrollbar-width: thin;
 }
 

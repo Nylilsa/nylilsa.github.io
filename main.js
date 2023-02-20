@@ -18,7 +18,6 @@ function loadMarkdown(path) { //loads page
 		jumpTo(initRemoveHash(true), 100);
 		}
 	}
-
 	if (path) { //if path exists, then load .md
 		xhttp.open("GET", path, true);
         xhttp.send();
@@ -29,10 +28,8 @@ function loadMarkdown(path) { //loads page
             }
         }
 	}
-
 	//if button is clicked, then sidebar (on mobile!) is closed automatically.
 	document.getElementById('sidebar').className = 'sidebar-class-desktop';
-
 }
 
 function colorHex(input) { // argument is optional
@@ -428,13 +425,13 @@ function loadCanvas(gameID) {
                 fetchedData.push(history);
             })
             const overallWRCharacter = gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))]
-            generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter);
+            generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time);
         });
         //catchErrors(dataWR);
-        doButtonStuffButForGameSelector()
+        doButtonStuffButForGameSelector();
     });
-    return 
+    return;
 }
 
 function doButtonStuffButForGameSelector() {
@@ -458,40 +455,49 @@ function doButtonStuff(id) {
             child.style.display = "none";
         });
         Array.prototype.forEach.call(otherButtons, function(child) {
-            child.style.backgroundColor = "rgb(3 5 15)";
+            child.style.backgroundColor = "";
+            child.style.color = "";
+            child.style.border = "";
         });
         const selectedTable = document.getElementById(`${id}table`);
         selectedTable.style.display = "";
         this.style.backgroundColor = "#08101C";
+        this.style.color = "#ddd";
+        this.style.borderTop = "1px solid #47748B";
     }
 }
 
 function generateWRButtons(gameCharacters, game, overallWRCharacter) {
     const section = document.getElementById("wr-buttons");
-    for (let i = 0; i < gameCharacters.length; i++) {
+    console.log(section);
+    const number = gameCharacters.length;
+    const width = (1/number - 0.01) * 100;
+    for (let i = 0; i < number; i++) {
         const button = document.createElement("button");
-        const id = `${game}${gameCharacters[i]}`
-        button.style.width = "100%";
-        button.style.color = "#ddd";
-        button.style.fontSize = "14px";
+        const id = `${game}${gameCharacters[i]}`;
+        button.style.width = `${width}%`;
         button.setAttribute("id", id);
         button.setAttribute("class", "wr-shottype-buttons");
         button.innerText = gameCharacters[i];
         if (gameCharacters[i] == overallWRCharacter) {
             button.style.backgroundColor = "#08101C";
+            button.style.color = "#ddd";
+            button.style.borderTop = "1px solid #47748B";
+
+            console.log(button.innerText)
         }
         section.appendChild(button);
         doButtonStuff(id);
     }
 }
 
-function generateWRTable(data, gameCharacters, game, overallWRCharacter) {
+function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficulty) {
     generateWRButtons(gameCharacters, game, overallWRCharacter);
     for (let i = 0; i < data.length; i++) { // tables
         const section = document.getElementById("wr-tables");
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
-        const headers = ["Shottype", "Score", "Player", "Date"];
+        const headers = ["Shottype", "Difficulty", "Score", "Player", "Date"];
         const id = `${game}${gameCharacters[i]}`;
         table.setAttribute("id", `${id}table`);
         table.classList.add('all-wr-tables');
@@ -503,34 +509,36 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter) {
           const [score, player, date] = data[i][j];
           const scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             if (j == 0) { // header column
-                for (let k = 0; k < 4; k++) {
+                for (let k = 0; k < 5; k++) {
                     const icon = document.createElementNS("http://www.w3.org/2000/svg","svg");
                     const cell = document.createElement("th");
                     const cellText = document.createTextNode(`${headers[k]}`);
                     switch (k) {
                         case 0: {icon.classList.add('icon', 'icon-bullet'); break;}
-                        case 1: {icon.classList.add('icon', 'icon-trophy'); break;}
-                        case 2: {icon.classList.add('icon', 'icon-user'); break;}
-                        case 3: {icon.classList.add('icon', 'icon-calendar'); break;}
+                        case 1: {icon.classList.add('icon', 'icon-star'); break;}
+                        case 2: {icon.classList.add('icon', 'icon-trophy'); break;}
+                        case 3: {icon.classList.add('icon', 'icon-user'); break;}
+                        case 4: {icon.classList.add('icon', 'icon-calendar'); break;}
                         default: {console.error(`Oops, something went wrong.`)}
                     }
                     cell.appendChild(icon);
                     cell.appendChild(cellText);
                     row.appendChild(cell);
-                    if (k==3) {
+                    if (k==4) {
                         tblBody.appendChild(row);
                         row = document.createElement("tr");
                     }
                 }
             }
-            for (let k = 0; k < 4; k++) { // entry columns
+            for (let k = 0; k < 5; k++) { // entry columns
                 let cellText;
                 const cell = document.createElement("td");
                 switch (k) {
                     case 0: {cellText = document.createTextNode(gameCharacters[i]); break;}
-                    case 1: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
-                    case 2: {cellText = document.createTextNode(`${player}`); break;}
-                    case 3: {cellText = document.createTextNode(`${date}`); break;}
+                    case 1: {cellText = document.createTextNode(`${difficulty}`); break;}
+                    case 2: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
+                    case 3: {cellText = document.createTextNode(`${player}`); break;}
+                    case 4: {cellText = document.createTextNode(`${date}`); break;}
                     default: {console.error(`Oops, something went wrong.`)}
                 }
                 cell.appendChild(cellText);
@@ -559,8 +567,8 @@ function catchErrors(data) {
     for (const [key, valueee] of Object.entries(data)) {
         for (const [key3, value] of Object.entries(valueee)) { // cycles through all categories
             for (const [key2, value2] of Object.entries(value)) { // cycles through all shots of category
-                var newScore = 0
-                var newDate = 0
+                var newScore = 0;
+                var newDate = 0;
                 value2.forEach(element => { //wr entry of shot
                     arr.push(key+key3+key2)
                     const flagScore = (parseInt(element[0]) >= newScore);
@@ -572,7 +580,8 @@ function catchErrors(data) {
             }
         }
     }
-    console.log(mode(arr))
+    console.log(mode(arr));
+    console.log((arr).length);
     console.timeEnd("test1");
 }
 
@@ -587,8 +596,7 @@ function mode(array) {
             modeMap[el] = 1;
         else
             modeMap[el]++;  
-        if(modeMap[el] > maxCount)
-        {
+        if(modeMap[el] > maxCount) {
             maxEl = el;
             maxCount = modeMap[el];
         }
