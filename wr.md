@@ -30,6 +30,6 @@ Select your game:
 [canvas]
 
 <section id='main-wr-tables' style="display: grid; justify-items: stretch; justify-content: center;">
-<div id="wr-buttons" style="display: flex; justify-content: space-between;"></div>
+<div id="wr-buttons"></div>
 <div id="wr-tables"></div>
 </section>

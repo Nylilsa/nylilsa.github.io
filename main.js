@@ -468,13 +468,18 @@ function doButtonStuff(id) {
 }
 
 function generateWRButtons(gameCharacters, game, overallWRCharacter) {
+	console.log(game);
+	if (game == "th08") {
+		console.log(123);
+
+	}
     const section = document.getElementById("wr-buttons");
     const number = gameCharacters.length;
-    const width = (1/gameCharacters.length - 0.01) * 100;
+    const width = (1/number - 0.01) * 100;
     for (let i = 0; i < number; i++) {
         const button = document.createElement("button");
         const id = `${game}${gameCharacters[i]}`;
-        button.style.width = `${width}%`;
+        //button.style.width = `${width}%`;
         button.setAttribute("id", id);
         button.setAttribute("class", "wr-shottype-buttons");
         button.innerText = gameCharacters[i];
@@ -494,7 +499,7 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
         const section = document.getElementById("wr-tables");
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
-        const headers = ["Shottype", "Difficulty", "Score", "Player", "Date"];
+        const headers = ["#", "Shottype", "Difficulty", "Score", "Player", "Date"];
         const id = `${game}${gameCharacters[i]}`;
         table.setAttribute("id", `${id}table`);
         table.classList.add('all-wr-tables');
@@ -506,36 +511,38 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
           const [score, player, date] = data[i][j];
           const scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             if (j == 0) { // header column
-                for (let k = 0; k < 5; k++) {
+                for (let k = 0; k < headers.length; k++) {
                     const icon = document.createElementNS("http://www.w3.org/2000/svg","svg");
                     const cell = document.createElement("th");
                     const cellText = document.createTextNode(`${headers[k]}`);
                     switch (k) {
                         case 0: {icon.classList.add('icon', 'icon-bullet'); break;}
-                        case 1: {icon.classList.add('icon', 'icon-star'); break;}
-                        case 2: {icon.classList.add('icon', 'icon-trophy'); break;}
-                        case 3: {icon.classList.add('icon', 'icon-user'); break;}
-                        case 4: {icon.classList.add('icon', 'icon-calendar'); break;}
+                        case 1: {icon.classList.add('icon', 'icon-bullet'); break;}
+                        case 2: {icon.classList.add('icon', 'icon-star'); break;}
+                        case 3: {icon.classList.add('icon', 'icon-trophy'); break;}
+                        case 4: {icon.classList.add('icon', 'icon-user'); break;}
+                        case 5: {icon.classList.add('icon', 'icon-calendar'); break;}
                         default: {console.error(`Oops, something went wrong.`)}
                     }
                     cell.appendChild(icon);
                     cell.appendChild(cellText);
                     row.appendChild(cell);
-                    if (k==4) {
+                    if (k == (headers.length-1)) {
                         tblBody.appendChild(row);
                         row = document.createElement("tr");
                     }
                 }
             }
-            for (let k = 0; k < 5; k++) { // entry columns
+            for (let k = 0; k < headers.length; k++) { // entry columns
                 let cellText;
                 const cell = document.createElement("td");
                 switch (k) {
-                    case 0: {cellText = document.createTextNode(gameCharacters[i]); break;}
-                    case 1: {cellText = document.createTextNode(`${difficulty}`); break;}
-                    case 2: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
-                    case 3: {cellText = document.createTextNode(`${player}`); break;}
-                    case 4: {cellText = document.createTextNode(`${date}`); break;}
+                    case 0: {cellText = document.createTextNode(data[i].length-j); break;}
+                    case 1: {cellText = document.createTextNode(gameCharacters[i]); break;}
+                    case 2: {cellText = document.createTextNode(`${difficulty}`); break;}
+                    case 3: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
+                    case 4: {cellText = document.createTextNode(`${player}`); break;}
+                    case 5: {cellText = document.createTextNode(`${date}`); break;}
                     default: {console.error(`Oops, something went wrong.`)}
                 }
                 cell.appendChild(cellText);

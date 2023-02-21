@@ -22,11 +22,6 @@
     background: var(--almost-black); 
 }
 
-html {
-    -webkit-text-size-adjust: auto;
-	background: var(--almost-black); 
-}
-
 a,
 a:hover,
 a:focus {
@@ -86,6 +81,8 @@ hr.hr_minor {
 html {
     scrollbar-color: var(--default) var(--almost-black);
     scrollbar-width: thin;
+    -webkit-text-size-adjust: auto;
+	background: var(--almost-black); 
 }
 
 ol {
@@ -598,6 +595,15 @@ ul.CTAs {
 #table-scenes::-webkit-scrollbar {
     width: 4px;
     height: 4px;
+}
+
+#wr-buttons {
+    scrollbar-color: var(--default) var(--almost-black);
+    scrollbar-width: thin;
+    display: grid;
+    //justify-content: space-between;
+    white-space: nowrap;
+    grid-auto-flow: column;
 }
 
 @media (max-aspect-ratio: 14 / 16), (max-width: 500px) {
