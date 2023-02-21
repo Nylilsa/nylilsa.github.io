@@ -190,16 +190,21 @@ async function replayFunction(key) {
     .then((response) => response.json())
     .then(data => {return data});
 	const content = webdata["Replays"][key];
-	let datum;
+	const datum = dateFormat(content.date);
+	return await citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, content.url, content.note);
+}
+
+function dateFormat(date) {
+	let output;
 	const intl = "en-US";
 	const options = {calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric'};
-	const rawDatum = new Date(content.date);
-	if (typeof rawDatum == "object" && rawDatum == "Invalid Date") {
-		datum = content.date;
+	const dateType = new Date(date);
+	if (typeof dateType == "object" && dateType == "Invalid Date") {
+		output = content.date;
 	} else {
-		datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
+		output = new Intl.DateTimeFormat(intl, options).format(dateType);
 	}
-	return await citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, content.url, content.note);
+	return output;
 }
 
 function citeAPA(date, author, title, url) {
@@ -533,6 +538,7 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
         for (let j = 0; j < data[i].length; j++) { // rows
           let row = document.createElement("tr");
           const [score, player, date] = data[i][j];
+		  const dateFormatted = dateFormat(date);
           const scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             if (j == 0) { // header column
                 for (let k = 0; k < headers.length; k++) {
@@ -566,7 +572,7 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
                     case 2: {cellText = document.createTextNode(`${difficulty}`); break;}
                     case 3: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
                     case 4: {cellText = document.createTextNode(`${player}`); break;}
-                    case 5: {cellText = document.createTextNode(`${date}`); break;}
+                    case 5: {cellText = document.createTextNode(`${dateFormatted}`); break;}
                     default: {console.error(`Oops, something went wrong.`)}
                 }
                 cell.appendChild(cellText);
