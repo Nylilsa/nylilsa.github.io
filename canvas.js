@@ -15,7 +15,7 @@ class Data {
     }
 }
 
-function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time) {
+function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game) {
     const ctx = document.getElementById('wrChart');
     let dataset = [];
     fetchedData.forEach((element) => {
@@ -53,7 +53,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time)
                     beginAtZero: false,
                     ticks: {
                         callback: function(value, index, values) {
-                            return (value / 1e9).toFixed(2) + 'b';
+                            return roundedTicks(value, index, values, game);
                         }
                     },
                     grid: {
@@ -100,4 +100,29 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time)
             }
         }
     });
+}
+
+function roundedTicks(value, index, values, game) {
+    const largeNumbers = {
+        "Millions": {
+            "number": 1e6,
+            "suffix": 'm'
+        },
+        "Billions": {
+            "number": 1e9,
+            "suffix": 'b'
+        },
+    }
+    let decimals = 2;
+    let selector = "Billions";
+    if (game == "th01") {selector = "Millions"}
+    if (game == "th02") {selector = "Millions"}
+    if (game == "th03") {selector = "Millions"; decimals = 0}
+    if (game == "th04") {selector = "Millions"; decimals = 0}
+    if (game == "th05") {selector = "Millions"; decimals = 0}
+    if (game == "th06") {selector = "Millions"; decimals = 0}
+    if (game == "th09") {selector = "Millions"; decimals = 0}
+    if (game == "th10") {selector = "Billions"; decimals = 3}
+    if (game == "th128") {selector = "Millions"; decimals = 0}
+    return (value / largeNumbers[selector]["number"]).toFixed(decimals) + largeNumbers[selector]["suffix"];
 }
