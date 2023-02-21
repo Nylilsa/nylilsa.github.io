@@ -484,6 +484,7 @@ ul.CTAs {
   scrollbar-color: var(--default) var(--almost-black);
   scrollbar-width: thin;
   display: grid;
+  grid-gap: 10px;
   white-space: nowrap;
   grid-auto-flow: column; }
 

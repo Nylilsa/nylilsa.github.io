@@ -602,6 +602,7 @@ ul.CTAs {
     scrollbar-width: thin;
     display: grid;
     //justify-content: space-between;
+    grid-gap: 10px;
     white-space: nowrap;
     grid-auto-flow: column;
 }

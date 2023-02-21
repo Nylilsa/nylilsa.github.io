@@ -467,17 +467,13 @@ function doButtonStuff(id) {
     }
 }
 
-function generateWRButtons(gameCharacters, game, overallWRCharacter) {
+function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty) {
+	const section = document.getElementById("wr-buttons");
+	const number = gameCharacters.length;
+	const width = (1/number - 0.01) * 100;
 	console.log(game);
-	if (game == "th08") {
-		console.log(123);
-
-	}
-    const section = document.getElementById("wr-buttons");
-    const number = gameCharacters.length;
-    const width = (1/number - 0.01) * 100;
     for (let i = 0; i < number; i++) {
-        const button = document.createElement("button");
+		const button = document.createElement("button");
         const id = `${game}${gameCharacters[i]}`;
         //button.style.width = `${width}%`;
         button.setAttribute("id", id);
@@ -488,13 +484,41 @@ function generateWRButtons(gameCharacters, game, overallWRCharacter) {
             button.style.color = "#ddd";
             button.style.borderTop = "2px solid #47748B";
         }
+		if (game == "th03") {
+			section.style.gridTemplateColumns = "repeat(3, 1fr)";
+			section.style.gridTemplateRows =  " repeat(3, 1fr)" ;
+			section.style.gridAutoFlow = "row";
+		}
+		if (game == "th08") {
+			section.style.gridTemplateColumns = "repeat(8, 1fr)";
+			section.style.gridTemplateRows =  " repeat(2, 1fr)" ;
+			section.style.gridAutoFlow = "row";
+			if (i < 4) {
+				button.style.gridColumn = "span 2";
+			}
+		}
+		if (game == "th09") {
+			section.style.gridTemplateColumns = "repeat(7, 1fr)";
+			section.style.gridTemplateRows =  " repeat(2, 1fr)" ;
+			section.style.gridAutoFlow = "row";
+		}
+		if (game == "th16" && difficulty != "Extra") {
+			section.style.gridTemplateColumns = "repeat(4, 1fr)";
+			section.style.gridTemplateRows =  " repeat(4, 1fr)" ;
+			section.style.gridAutoFlow = "row";
+		}
+		if (game == "th17") {
+			section.style.gridTemplateColumns = "repeat(3, 1fr)";
+			section.style.gridTemplateRows =  " repeat(3, 1fr)" ;
+			section.style.gridAutoFlow = "row";
+		}
         section.appendChild(button);
         doButtonStuff(id);
     }
 }
 
 function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficulty) {
-    generateWRButtons(gameCharacters, game, overallWRCharacter);
+    generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty);
     for (let i = 0; i < data.length; i++) { // tables
         const section = document.getElementById("wr-tables");
         const table = document.createElement("table");
