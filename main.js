@@ -395,7 +395,7 @@ function countTags() {
 }
 
 function loadCanvas(gameID) {
-    const fourYears = 126144000000;
+    const twoYears = 63072000000;
     const now = new Date().getTime();
     var time = 1;
     let game = gameID.slice(1); 
@@ -413,7 +413,7 @@ function loadCanvas(gameID) {
             const englishName = data['Names'][game]['en'];
             const releaseDate = new Date(data['LatestReleaseDate'][game]).getTime();
             const maxValue = [];
-            if (releaseDate > now - fourYears) {
+            if (releaseDate > now - twoYears) {
                 time = 'month';
             } else {
                 time = 'year';

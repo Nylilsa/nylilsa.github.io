@@ -199,6 +199,10 @@ ul.CTAs {
 
 }
 
+.card-game {
+    background-color: lime;
+}
+
 .code {
     font-size: 82.5%;
     background-color: #191919;
@@ -607,6 +611,24 @@ ul.CTAs {
     grid-auto-flow: column;
 }
 
+#wr-game-buttons {
+    transition: all 0.3s;
+    background-color: lime;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: row;
+    overflow: auto;
+    white-space: nowrap;
+    width: calc(100vw - 250px - 12vw); // 100vw=width, 250px=sidebar, 12vw=padding
+    button {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+    }
+}
+
 @media (max-aspect-ratio: 14 / 16), (max-width: 500px) {
     .sidebar-class-desktop  {
         margin-left: -250px;
@@ -627,6 +649,9 @@ ul.CTAs {
     #content {
         padding: 3vmax;
         margin-top: 5vw;
+    }
+    #wr-game-buttons {
+        width: calc(100vw - 0px - 12vw);
     }
 }
 

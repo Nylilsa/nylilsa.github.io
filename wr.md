@@ -9,13 +9,14 @@ If there are any mistakes, please contact me on Discord about it !
 
 Select your game: 
 
-<div id="wr-game-buttons" style="background-color: lime; display: flex;">
-    <button href="#/wr/th01" data-game="th01" style="width: 100%" id="hrtp">hrtp</button>
-    <button href="#/wr/th08" data-game="th08" style="width: 100%" id="in">in</button>
-    <button href="#/wr/th09" data-game="th09" style="width: 100%" id="pofv">pofv</button>
-    <button href="#/wr/th11" data-game="th11" style="width: 100%" id="sa">sa</button>
-    <button href="#/wr/th16" data-game="th16" style="width: 100%" id="hsifs">hsifs</button>
-    <button href="#/wr/th17" data-game="th17" style="width: 100%" id="wbawc">wbawc</button>
+
+
+
+<div id="wr-game-buttons">
+    <button href="#/wr/th01" data-game="th01" id="hrtp">hrtp</button>
+    <button href="#/wr/th08" data-game="th08" id="in">in</button>
+    <button href="#/wr/th09" data-game="th09" id="pofv">pofv</button>
+    <button href="#/wr/th11" data-game="th11" id="sa">sa</button>
 </div>
 
 ## Graph
