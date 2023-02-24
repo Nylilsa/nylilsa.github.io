@@ -74,3 +74,25 @@ const matchStyle = {
 
     "test": new Match(1, 2)
 };
+
+const names1 = {
+    "th01": {"abbreviation": "HRtP", "jp": "靈異伝", "en": "Highly Responsive to Prayers"},
+    "th02": {"abbreviation": "SoEW", "jp": "封魔録", "en": "The Story of Eastern Wonderland"},
+    "th03": {"abbreviation": "PoDD", "jp": "夢時空", "en": "Phantasmagoria of Dim. Dream"},
+    "th04": {"abbreviation": "LSS", "jp": "幻想郷", "en": "Lotus Land Story"},
+    "th05": {"abbreviation": "MS", "jp": "怪綺談", "en": "Mystic Square"},
+    "th06": {"abbreviation": "EoSD", "jp": "紅魔郷", "en": "The Embodiment of Scarlet Devil"},
+    "th07": {"abbreviation": "PCB", "jp": "妖々夢", "en": "Perfect Cherry Blossom"},
+    "th08": {"abbreviation": "IN", "jp": "永夜抄", "en": "Imperishable Night"},
+    "th09": {"abbreviation": "PoFV", "jp": "花映塚", "en": "Phantasmagoria of Flower View"},
+    "th10": {"abbreviation": "MoF", "jp": "風神録", "en": "Mountain of Faith"},
+    "th11": {"abbreviation": "SA", "jp": "地霊殿", "en": "Subterrenean Animism"},
+    "th12": {"abbreviation": "UFO", "jp": "星蓮船", "en": "Undefined Fantastic Object"},
+    "th128": {"abbreviation": "FW", "jp": "妖精大戦争", "en": "Fairy Wars"},
+    "th13": {"abbreviation": "TD", "jp": "神霊廟", "en": "Ten Desires"},
+    "th14": {"abbreviation": "DDC", "jp": "輝針城", "en": "Double Dealing Character"},
+    "th15": {"abbreviation": "LoLK", "jp": "紺珠伝", "en": "Legacy of Lunatic Kingdom"},
+    "th16": {"abbreviation": "HSiFS", "jp": "天空璋", "en": "Hidden Star in Four Seasons"},
+    "th17": {"abbreviation": "WBaWC", "jp": "鬼形獣", "en": "Wily Beast and Weakest Creature"},
+    "th18": {"abbreviation": "UM", "jp": "虹龍洞", "en": "Unconnected Marketeers"}
+}

@@ -164,7 +164,38 @@ ul.CTAs {
   text-align: right; }
 
 .card-game {
-  background-color: lime; }
+  position: relative;
+  background-color: lime;
+  height: 120px;
+  aspect-ratio: 16 / 9; }
+  .card-game div:nth-of-type(1) {
+    position: relative;
+    color: white;
+    height: 120px;
+    aspect-ratio: 16 / 9;
+    filter: grayscale(65%) brightness(0.8) blur(1px);
+    background-position: center;
+    background-size: 100%; }
+  .card-game span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%); }
+  .card-game div:nth-of-type(2) {
+    -webkit-mask: conic-gradient(from -135deg at right, #0000, #000 1deg 89deg, #0000 90deg) right/100% 20px repeat-y;
+    max-width: 25%;
+    background-color: #19b46c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 120px;
+    aspect-ratio: 16 / 9; }
 
 .code {
   font-size: 82.5%;
@@ -495,17 +526,12 @@ ul.CTAs {
   transition: all 0.3s;
   background-color: black;
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-auto-flow: row;
+  grid-gap: 16px;
   overflow: auto;
   white-space: nowrap;
   width: calc(100vw - 250px - 12vw); }
-  #wr-game-buttons button {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none; }
 
 @media (max-aspect-ratio: 14 / 16), (max-width: 500px) {
   .sidebar-class-desktop {

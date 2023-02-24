@@ -434,15 +434,18 @@ function loadCanvas(gameID) {
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game);
         });
         //catchErrors(dataWR);
-        doButtonStuffButForGameSelector();
+        doButtonStuffButForGameSelector(game);
     });
     return;
 }
 
-function doButtonStuffButForGameSelector() {
-    const parent = document.getElementById("wr-game-buttons");
-    for(i=0; i<parent.children.length; i++) {
-        const button = parent.children[i];
+function doButtonStuffButForGameSelector(game) {
+    const parent = document.getElementsByClassName("card-game");
+    for(i = 0; i < parent.length; i++) {
+        const button = parent[i];
+        button.children[0].style.backgroundImage = `url(assets/thcovers/${button.dataset.game}.jpg)`;
+        button.children[2].style.backgroundColor = gameColors[button.dataset.game];
+        button.children[1].innerText = names1[button.dataset.game]["jp"];
         button.addEventListener("click", selectGame);
         function selectGame() {
             window.location.hash = `#/wr#${this.dataset.game}`;
@@ -474,10 +477,7 @@ function doButtonStuff(id) {
 
 function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty) {
 	const section = document.getElementById("wr-buttons");
-	const number = gameCharacters.length;
-	const width = (1/number - 0.01) * 100;
-	console.log(game);
-    for (let i = 0; i < number; i++) {
+    for (let i = 0; i < gameCharacters.length; i++) {
 		const button = document.createElement("button");
         const id = `${game}${gameCharacters[i]}`;
         //button.style.width = `${width}%`;
