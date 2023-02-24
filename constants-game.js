@@ -21,6 +21,11 @@ const latestVersion = {
 };
 
 const gameColors = {
+	th01: '#B6423C',
+	th02: '#7D3884',
+	th03: '#FFD700',
+	th04: '#90EE90',
+	th05: '#AE11D5',
 	th06: '#FF0000',
 	th07: '#FF8ED2',
 	th08: '#333399',

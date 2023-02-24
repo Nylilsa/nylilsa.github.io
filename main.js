@@ -39,7 +39,7 @@ function colorHex(input) { // argument is optional
 	return gameColors[input] || "#47748B";
 }
 
-function colorRGB(add, game) {
+function colorRGB(add, opacity, game) {
 	let colourHex = colorHex(game);
 
 	if (typeof game === 'undefined') { 
@@ -62,7 +62,7 @@ function colorRGB(add, game) {
 	if (gDec < 0) {gDec = 0;}
 	if (bDec < 0) {bDec = 0;}
 
-	return "rgba("+rDec+", "+gDec+ ", "+bDec+", 1.0)";
+	return "rgba("+rDec+", "+gDec+ ", "+bDec+", "+opacity+")";
 }
 
 function getGameFromURL() {
@@ -285,7 +285,7 @@ function matchText(style, iconBool, highlightedText) {
 
 function hrCustom(input) {
 	if (gameColors[input]) { // if input is game
-		const color = colorRGB(16, input);
+		const color = colorRGB(16, 1, input);
 		return "<hr style='border-color:"+color+"'>"
 	}
 	return "<hr style='border-color:"+input+"'>" // if input is color
@@ -433,19 +433,24 @@ function loadCanvas(gameID) {
             generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game);
         });
-        //catchErrors(dataWR);
-        doButtonStuffButForGameSelector(game);
+        catchErrors(dataWR);
+        doButtonStuffButForGameSelector();
     });
     return;
 }
 
-function doButtonStuffButForGameSelector(game) {
+function doButtonStuffButForGameSelector() {
     const parent = document.getElementsByClassName("card-game");
     for(i = 0; i < parent.length; i++) {
         const button = parent[i];
+        button.style.backgroundColor = gameColors[button.dataset.game];
+        console.dir(button)
+        button.title = `${names1[button.dataset.game]["jp"]} 〜 ${names1[button.dataset.game]["en"]}`
         button.children[0].style.backgroundImage = `url(assets/thcovers/${button.dataset.game}.jpg)`;
         button.children[2].style.backgroundColor = gameColors[button.dataset.game];
         button.children[1].innerText = names1[button.dataset.game]["jp"];
+        button.children[1].style.backgroundColor = colorRGB(-64, 0.2, button.dataset.game);
+        button.children[4].style.backgroundColor = gameColors[button.dataset.game];
         button.addEventListener("click", selectGame);
         function selectGame() {
             window.location.hash = `#/wr#${this.dataset.game}`;
@@ -480,7 +485,6 @@ function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty)
     for (let i = 0; i < gameCharacters.length; i++) {
 		const button = document.createElement("button");
         const id = `${game}${gameCharacters[i]}`;
-        //button.style.width = `${width}%`;
         button.setAttribute("id", id);
         button.setAttribute("class", "wr-shottype-buttons");
         button.innerText = gameCharacters[i];
@@ -528,7 +532,7 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
         const section = document.getElementById("wr-tables");
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
-        const headers = ["#", "Shottype", "Difficulty", "Score", "Player", "Date"];
+        const headers = ["Shottype", "Difficulty", "Score", "Player", "Date"];
         const id = `${game}${gameCharacters[i]}`;
         table.setAttribute("id", `${id}table`);
         table.classList.add('all-wr-tables');
@@ -547,11 +551,10 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
                     const cellText = document.createTextNode(`${headers[k]}`);
                     switch (k) {
                         case 0: {icon.classList.add('icon', 'icon-bullet'); break;}
-                        case 1: {icon.classList.add('icon', 'icon-bullet'); break;}
-                        case 2: {icon.classList.add('icon', 'icon-star'); break;}
-                        case 3: {icon.classList.add('icon', 'icon-trophy'); break;}
-                        case 4: {icon.classList.add('icon', 'icon-user'); break;}
-                        case 5: {icon.classList.add('icon', 'icon-calendar'); break;}
+                        case 1: {icon.classList.add('icon', 'icon-star'); break;}
+                        case 2: {icon.classList.add('icon', 'icon-trophy'); break;}
+                        case 3: {icon.classList.add('icon', 'icon-user'); break;}
+                        case 4: {icon.classList.add('icon', 'icon-calendar'); break;}
                         default: {console.error(`Oops, something went wrong.`)}
                     }
                     cell.appendChild(icon);
@@ -567,12 +570,11 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
                 let cellText;
                 const cell = document.createElement("td");
                 switch (k) {
-                    case 0: {cellText = document.createTextNode(data[i].length-j); break;}
-                    case 1: {cellText = document.createTextNode(gameCharacters[i]); break;}
-                    case 2: {cellText = document.createTextNode(`${difficulty}`); break;}
-                    case 3: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
-                    case 4: {cellText = document.createTextNode(`${player}`); break;}
-                    case 5: {cellText = document.createTextNode(`${dateFormatted}`); break;}
+                    case 0: {cellText = document.createTextNode(gameCharacters[i]); break;}
+                    case 1: {cellText = document.createTextNode(`${difficulty}`); break;}
+                    case 2: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
+                    case 3: {cellText = document.createTextNode(`${player}`); break;}
+                    case 4: {cellText = document.createTextNode(`${dateFormatted}`); break;}
                     default: {console.error(`Oops, something went wrong.`)}
                 }
                 cell.appendChild(cellText);
@@ -652,7 +654,7 @@ function initSidebarContent() {
 		child.style.borderColor = colorHex(thnr);
 		const content = document.getElementById('bugs-'+thnr+'');
 		for (let j = 0; j < Object.keys(names[thnr]).length; j++) {
-            content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" style="border-color: '+colorRGB(colDecrease, thnr)+';">'+names[thnr][j][0]+'</a></div></li>'; 
+            content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" style="border-color: '+colorRGB(colDecrease, 1, thnr)+';">'+names[thnr][j][0]+'</a></div></li>'; 
 			k += 1;
 		}
 	}
@@ -675,7 +677,7 @@ function initScrollBar() {
     const style = document.createElement("style");
 	style.className = "scrollbars";
     let css = "::-webkit-scrollbar {width: 4px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
-	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB(32);+ "";
+	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB(32, 1);+ "";
 	css += "; }";
     style.appendChild(document.createTextNode(css));
 	if (document.getElementsByClassName('scrollbars').length >= 1) {
@@ -742,10 +744,10 @@ function initCustomColor() {
 function initNavColor() { // changes color to match the game's color
 	const elements = document.getElementsByClassName('hr_major'); // get all elements
 	for(let i = 0; i < elements.length; i++) {
-		elements[i].style.borderColor = colorRGB(32);
+		elements[i].style.borderColor = colorRGB(32, 1);
 	}
 	const mobile = document.getElementById('header');
-	mobile.style.borderColor = colorRGB(-16);
+	mobile.style.borderColor = colorRGB(-16, 1);
 }
 
 function initSwipeCheck() {
