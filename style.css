@@ -596,7 +596,7 @@ ul.CTAs {
   grid-gap: 16px;
   overflow: auto;
   white-space: nowrap;
-  width: calc(100vw - 250px - 12vw); }
+  width: calc(min(1280px, 88vw, (100vw - 250px - 12vw - 10px))); }
   #wr-game-buttons::-webkit-scrollbar {
     width: 4px;
     height: 4px; }
@@ -617,4 +617,4 @@ ul.CTAs {
     padding: 3vmax;
     margin-top: 5vw; }
   #wr-game-buttons {
-    width: calc(100vw - 0px - 12vw); } }
+    width: calc(min(1280px, 88vw, (100vw - 0px - 12vw - 10px))); } }
