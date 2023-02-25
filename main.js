@@ -444,7 +444,6 @@ function doButtonStuffButForGameSelector() {
     for(i = 0; i < parent.length; i++) {
         const button = parent[i];
         button.style.backgroundColor = gameColors[button.dataset.game];
-        console.dir(button)
         button.title = `${names1[button.dataset.game]["jp"]} 〜 ${names1[button.dataset.game]["en"]}`
         button.children[0].style.backgroundImage = `url(assets/thcovers/${button.dataset.game}.jpg)`;
         button.children[2].style.backgroundColor = gameColors[button.dataset.game];
