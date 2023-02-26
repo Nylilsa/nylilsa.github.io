@@ -451,7 +451,7 @@ function loadCanvas(gameID, difficulty) {
             generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game);
         });
-        catchErrors(dataWR);
+        //catchErrors(dataWR);
     });
     return;
 }
@@ -668,6 +668,8 @@ function catchErrors(data) {
                 var newDate = 0;
                 value2.forEach(element => { //wr entry of shot
                     arr.push(key+key3+key2)
+                    //arr.push(element[1])
+                    //arr.push(element[2])
                     const flagScore = (parseInt(element[0]) >= newScore);
                     newScore = parseInt(element[0]);
                     const flagDate = (new Date(element[2]).getTime() >= newDate);
