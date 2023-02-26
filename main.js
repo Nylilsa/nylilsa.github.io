@@ -448,22 +448,29 @@ function loadCanvas(gameID, difficulty) {
             generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game);
         });
-        catchErrors(dataWR);
+        //catchErrors(dataWR);
     });
     return;
 }
 
 function doButtonStuffButForGameDifficulty(allDifficulties) {
     const diffSelector = document.getElementById("wr-difficulty-buttons");
-    console.log(allDifficulties);
     allDifficulties.forEach(difficulty => {
         const createButton = document.createElement("button");
         createButton.setAttribute("class", difficulty);
         createButton.innerText = difficulty;
         createButton.dataset.difficulty = difficulty;
         createButton.addEventListener("click", selectDifficulty);
+        if (difficulty === "Lunatic") {
+            createButton.setAttribute("class", "selected-full");
+        }
         function selectDifficulty() {
             loadCanvas(initRemoveHash(true), difficulty);
+            const allElements = document.querySelectorAll('*');
+            allElements.forEach((element) => {
+                element.classList.remove('selected-full');
+              });
+            this.setAttribute("class", "selected-full");
         }
         diffSelector.appendChild(createButton);
     });

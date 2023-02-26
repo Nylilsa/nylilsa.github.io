@@ -122,7 +122,7 @@ th, tr {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 20px !important;
-    background: #08101C;
+    background: var(--black-blue);
 }
 
 ul ul ul a {
@@ -145,7 +145,7 @@ ul.CTAs {
 }
 
 .all-wr-tables {
-    border: solid #08101C 16px;
+    border: solid var(--black-blue) 16px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -162,7 +162,7 @@ ul.CTAs {
         transition-duration: 0.5s;
     }
     tr:hover {
-        background-color: #08101C;
+        background-color: var(--black-blue);
     }
     tr:nth-child(1) {
         background-color: var(--default);
@@ -461,6 +461,11 @@ ul.CTAs {
     border: none;
 }
 
+.selected-full {
+    background-color: var(--black-blue);
+    color: var(--almost-white);
+}
+
 .sidebar-class-mobile {
     max-width: 100%  !important;
     width: 100%;
@@ -713,13 +718,24 @@ ul.CTAs {
 }
 
 #wr-difficulty-buttons {
-    background: lime;
     display: grid;
     grid-auto-flow: column;
-    grid-gap: 1rem;
+    grid-gap: 0.0rem;
     button {
-        background-color: red;
+        border: 1px var(--default) solid;
+        font-size: 14px;
+        color: var(--discord-purple);
+        transition: all 0.2s linear;
+        &:hover {
+            background-color: var(--default);
+            color: var(--almost-white);
+        }
     }
+    .selected-full{ 
+        background-color: var(--default);
+        color: var(--almost-white);
+    }
+
 }
 
 #wr-game-buttons {
