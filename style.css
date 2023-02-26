@@ -165,7 +165,7 @@ ul.CTAs {
 
 .card-game {
   position: relative;
-  background-color: lime;
+  background-color: var(--default);
   height: 120px;
   aspect-ratio: 16 / 9; }
   .card-game:hover {
@@ -533,7 +533,7 @@ ul.CTAs {
   overflow-y: scroll;
   top: 0;
   bottom: 0;
-  z-index: 2;
+  z-index: 3;
   scrollbar-color: var(--default) var(--almost-black);
   scrollbar-width: thin; }
   #sidebar .sidebar-header {

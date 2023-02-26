@@ -48,6 +48,8 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
 ## Tables
 [hr_major]
 
+[br]
+
 [canvas]
 
 <section id='main-wr-tables' style="display: grid; justify-items: stretch; justify-content: center;">
@@ -55,7 +57,6 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
 <div id="wr-tables"></div>
 </section>
 
-[br]
 
 ## Credits
 [hr_major]

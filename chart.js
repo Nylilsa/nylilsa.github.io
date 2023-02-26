@@ -195,7 +195,8 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
     }
     generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty);
     for (let i = 0; i < data.length; i++) { // tables
-        const reverse = data[i].length - 1;
+        let reverse;
+        if (true) {reverse = data[i].length - 1;} else {reverse = 0}
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
         let firstElement = "Shottype";
@@ -209,7 +210,8 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
         }
         for (let j = 0; j < data[i].length; j++) { // rows
           let row = document.createElement("tr");
-          const [score, player, date] = data[i][reverse - j];
+          const index = Math.abs(j - reverse);
+          const [score, player, date] = data[i][index];
 		  const dateFormatted = dateFormat(date);
           const scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             if (j == 0) { // header column
