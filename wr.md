@@ -3,7 +3,7 @@
 [hr_major]  
 
 
-If there are any inaccuracies on this page, please contact me on Discord about it !
+If there are any inaccuracies on this page, please contact me on Discord (at ``Nylilsa#9310``) about it !
 
 ## Game
 [hr_major]
@@ -60,4 +60,6 @@ If there are any inaccuracies on this page, please contact me on Discord about i
 ## Credits
 [hr_major]
 
+Major thanks to all these wonderful people for having contributed to the data to this project !
 
+[contributors=1]

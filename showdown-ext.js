@@ -307,10 +307,10 @@ let ext = function() {
 
 	let contributors = {
 		type: "lang",
-		regex: /\[contributors\]/g,
-		replace: function() {
+		regex: /\[contributors=([^]*?)\]/g,
+		replace: function(match, content) {
 			setTimeout(() => {  progressTable()}, 1);
-			return contributorsFunction();
+			return contributorsFunction(content);
 		}
 	}
 

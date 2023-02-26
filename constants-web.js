@@ -144,6 +144,14 @@ const contributors = {
 	"VSlamYrAwJ": {"name": "zero318", "help": "Massively helped with the Merlin glitch", "url": "https://github.com/zero318"}
 };
 
+const contributorsWRs = {
+	"s6": {"name": "Maribel Hearn", "help": "Royalflare Archive and the WR page", "url": "https://maribelhearn.com/"},
+	"S7": {"name": "morth", "help": "TD Extra", "url": "https://www.youtube.com/channel/UCpURmfyYBzoLJJLa3DDvY8g"},
+	"1A": {"name": "Crispy", "help": "MoF Lunatic", "url": "https://twitter.com/Crispyz_th"},
+	"0l": {"name": "Christian Azinn", "help": "PC-98 games", "url": "https://www.twitch.tv/christianazinn"},
+	"VS": {"name": "Rivers", "help": "IN Lunatic", "url": "https://www.twitch.tv/rivers_th08"}
+};
+
 
 const bugTracker = {
 	th06: {"completed-pages": 2, "total-glitches": 18, "comment": "Not likely to change unless we look at glitches in older versions"},
