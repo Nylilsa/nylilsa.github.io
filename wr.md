@@ -54,3 +54,8 @@ If there are any inaccuracies on this page, please contact me on Discord about i
 <div id="wr-buttons"></div>
 <div id="wr-tables"></div>
 </section>
+
+[br]
+
+## Credits
+[hr_major]

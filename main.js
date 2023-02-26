@@ -451,7 +451,7 @@ function loadCanvas(gameID, difficulty) {
             generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game);
         });
-        //catchErrors(dataWR);
+        catchErrors(dataWR);
     });
     return;
 }
@@ -591,7 +591,9 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
     for (let i = 0; i < data.length; i++) { // tables
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
-        const headers = ["Shottype", "Difficulty", "Score", "Player", "Date"];
+        let firstElement = "Shottype";
+        if (game == "th01" || game == "th128") {firstElement = "Route"}
+        const headers = [firstElement, "Difficulty", "Score", "Player", "Date"];
         const id = `${game}${gameCharacters[i]}`;
         table.setAttribute("id", `${id}table`);
         table.classList.add('all-wr-tables');
