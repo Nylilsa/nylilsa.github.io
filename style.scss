@@ -201,7 +201,7 @@ ul.CTAs {
 
 .card-game {
     position: relative;
-    background-color: lime;
+    background-color: var(--default);
     height: 120px;
     aspect-ratio: 16 / 9;
     &:hover {
