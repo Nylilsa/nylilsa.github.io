@@ -705,13 +705,21 @@ ul.CTAs {
 }
 
 #wr-buttons {
-    scrollbar-color: var(--default) var(--almost-black);
-    scrollbar-width: thin;
     display: grid;
     //justify-content: space-between;
     grid-gap: 10px;
     white-space: nowrap;
     grid-auto-flow: column;
+}
+
+#wr-difficulty-buttons {
+    background: lime;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1rem;
+    button {
+        background-color: red;
+    }
 }
 
 #wr-game-buttons {
@@ -723,7 +731,8 @@ ul.CTAs {
     grid-gap: 16px;
     overflow: auto;
     white-space: nowrap;
-    
+    scrollbar-color: var(--default) var(--almost-black);
+    scrollbar-width: thin;
     width: calc(min(1280px, 88vw, (100vw - 250px - 12vw - 10px))); // 100vw=width, 250px=sidebar, 12vw=padding, 10px because its too large otherwise
     &::-webkit-scrollbar {
         width: 4px;

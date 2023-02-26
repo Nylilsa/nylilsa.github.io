@@ -580,12 +580,18 @@ ul.CTAs {
   height: 4px; }
 
 #wr-buttons {
-  scrollbar-color: var(--default) var(--almost-black);
-  scrollbar-width: thin;
   display: grid;
   grid-gap: 10px;
   white-space: nowrap;
   grid-auto-flow: column; }
+
+#wr-difficulty-buttons {
+  background: lime;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem; }
+  #wr-difficulty-buttons button {
+    background-color: red; }
 
 #wr-game-buttons {
   transition: all 0.3s;
@@ -596,6 +602,8 @@ ul.CTAs {
   grid-gap: 16px;
   overflow: auto;
   white-space: nowrap;
+  scrollbar-color: var(--default) var(--almost-black);
+  scrollbar-width: thin;
   width: calc(min(1280px, 88vw, (100vw - 250px - 12vw - 10px))); }
   #wr-game-buttons::-webkit-scrollbar {
     width: 4px;

@@ -34,13 +34,18 @@ Select your game:
     <button href="#/wr/th17" data-game="th17" class="card-game"><div></div><span></span><div></div><div></div><div></div></button>
     <button href="#/wr/th18" data-game="th18" class="card-game"><div></div><span></span><div></div><div></div><div></div></button>
 </div>
+
+[br]
+
+<div id="wr-difficulty-buttons"></div>
+
 [br]
 
 ## Graph
 [hr_major]
 
 
-<canvas id="wrChart" style=" max-width: 95%"class="fit-wrapper"></canvas>
+<div id="wr-chart-wrapper"></div>
 
 ## Tables
 [hr_major]

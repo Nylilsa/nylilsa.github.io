@@ -16,12 +16,19 @@ class Data {
 }
 
 function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game) {
-    const ctx = document.getElementById('wrChart');
+    const wrapper = document.getElementById("wr-chart-wrapper");
+    const ctx = document.createElement("canvas");
+    ctx.setAttribute("class", 'wr-chart');
+    wrapper.appendChild(ctx);
+    const chartChecker = document.getElementsByClassName('wr-chart');
+    if(chartChecker.length != 1) { // removes old and allows for new to be generated
+        chartChecker[0].parentNode.removeChild(chartChecker[0])
+    }
     let dataset = [];
     fetchedData.forEach((element) => {
-        const arr = []
+        const arr = [];
         element.forEach(subelement => {
-            const dateObject = subelement[2].replace("/", "-").replace("/", "-")
+            const dateObject = subelement[2].replaceAll("/", "-");
             arr.push(new Points(dateObject, subelement[0], subelement[1]))
         });
         const character = gameCharacters[fetchedData.indexOf(element)];

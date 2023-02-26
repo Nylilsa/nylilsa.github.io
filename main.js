@@ -394,15 +394,30 @@ function countTags() {
     return tagsCount;
 }
 
-function loadCanvas(gameID) {
+function initCanvas(gameID, difficulty) {
+    let game = gameID.slice(1); 
+    loadCanvas(gameID, difficulty);
+    doButtonStuffButForGameSelector();
+    fetch('json/gameinfo.json')
+        .then((response2) => response2.json())
+        .then(data => {
+            const allDifficulties = data['Difficulty'][game];
+            doButtonStuffButForGameDifficulty(allDifficulties);
+        });
+    
+}
+
+function loadCanvas(gameID, difficulty) {
     const twoYears = 63072000000;
     const now = new Date().getTime();
     var time = 1;
     let game = gameID.slice(1); 
-    const difficulty = 'Lunatic';
     var fetchedData = [];
 	if (game === '') { 
 		game = "th11"; //default if url is invalid
+	}
+    if (difficulty === undefined) { 
+		var difficulty = "Lunatic"; //default if url is invalid
 	}
     fetch('json/wrprogression.json')
     .then((response) => response.json())
@@ -434,22 +449,39 @@ function loadCanvas(gameID) {
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game);
         });
         catchErrors(dataWR);
-        doButtonStuffButForGameSelector();
     });
     return;
+}
+
+function doButtonStuffButForGameDifficulty(allDifficulties) {
+    const diffSelector = document.getElementById("wr-difficulty-buttons");
+    console.log(allDifficulties);
+    allDifficulties.forEach(difficulty => {
+        const createButton = document.createElement("button");
+        createButton.setAttribute("class", difficulty);
+        createButton.innerText = difficulty;
+        createButton.dataset.difficulty = difficulty;
+        createButton.addEventListener("click", selectDifficulty);
+        function selectDifficulty() {
+            loadCanvas(initRemoveHash(true), difficulty);
+        }
+        diffSelector.appendChild(createButton);
+    });
+
 }
 
 function doButtonStuffButForGameSelector() {
     const parent = document.getElementsByClassName("card-game");
     for(i = 0; i < parent.length; i++) {
         const button = parent[i];
-        button.style.backgroundColor = gameColors[button.dataset.game];
-        button.title = `${names1[button.dataset.game]["jp"]} 〜 ${names1[button.dataset.game]["en"]}`
-        button.children[0].style.backgroundImage = `url(assets/thcovers/${button.dataset.game}.jpg)`;
-        button.children[2].style.backgroundColor = gameColors[button.dataset.game];
-        button.children[1].innerText = names1[button.dataset.game]["jp"];
-        button.children[1].style.backgroundColor = colorRGB(-64, 0.2, button.dataset.game);
-        button.children[4].style.backgroundColor = gameColors[button.dataset.game];
+        const btndata = button.dataset.game;
+        button.style.backgroundColor = gameColors[btndata];
+        button.title = `${names1[btndata]["jp"]} 〜 ${names1[btndata]["en"]}`
+        button.children[0].style.backgroundImage = `url(assets/thcovers/${btndata}.jpg)`;
+        button.children[2].style.backgroundColor = gameColors[btndata];
+        button.children[1].innerText = names1[btndata]["jp"];
+        button.children[1].style.backgroundColor = colorRGB(-64, 0.2, btndata);
+        button.children[4].style.backgroundColor = gameColors[btndata];
         button.addEventListener("click", selectGame);
         function selectGame() {
             window.location.hash = `#/wr#${this.dataset.game}`;
@@ -481,6 +513,12 @@ function doButtonStuff(id) {
 
 function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty) {
 	const section = document.getElementById("wr-buttons");
+    const length = section.children.length;
+    if(length > 0) { // removes old and allows for new to be generated
+        for(let i=0; i<length; i++) {
+            section.removeChild(section.children[0]);
+        }
+    }
     for (let i = 0; i < gameCharacters.length; i++) {
 		const button = document.createElement("button");
         const id = `${game}${gameCharacters[i]}`;
@@ -526,9 +564,15 @@ function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty)
 }
 
 function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficulty) {
+    const section = document.getElementById("wr-tables");
+    const length = section.children.length;
+    if(length > 0) { // removes old and allows for new to be generated
+        for(let i=0; i<length; i++) {
+            section.removeChild(section.children[0]);
+        }
+    }
     generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty);
     for (let i = 0; i < data.length; i++) { // tables
-        const section = document.getElementById("wr-tables");
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
         const headers = ["Shottype", "Difficulty", "Score", "Player", "Date"];
