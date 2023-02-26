@@ -395,7 +395,6 @@ function countTags() {
 }
 
 function initCanvas(gameID, difficulty) {
-    
     let game = gameID.slice(1); 
     if (game === '') { 
 		game = "th11"; //default if url is invalid
