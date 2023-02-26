@@ -397,7 +397,7 @@ function countTags() {
 function initCanvas(gameID, difficulty) {
     let game = gameID.slice(1); 
     loadCanvas(gameID, difficulty);
-    doButtonStuffButForGameSelector();
+    doButtonStuffButForGameSelector(game);
     fetch('json/gameinfo.json')
         .then((response2) => response2.json())
         .then(data => {
@@ -477,7 +477,7 @@ function doButtonStuffButForGameDifficulty(allDifficulties) {
 
 }
 
-function doButtonStuffButForGameSelector() {
+function doButtonStuffButForGameSelector(game) {
     const parent = document.getElementsByClassName("card-game");
     for(i = 0; i < parent.length; i++) {
         const button = parent[i];
@@ -494,6 +494,12 @@ function doButtonStuffButForGameSelector() {
             window.location.hash = `#/wr#${this.dataset.game}`;
         }
     }
+    const selector = document.getElementById("wr-game-buttons");
+    const width = selector.scrollWidth;
+    const index = Object.keys(gameColors).indexOf(game);
+    const max = Object.keys(gameColors).length;
+    const number = index / max * width;
+    selector.scrollLeft = number;
 }
 
 function doButtonStuff(id) {
