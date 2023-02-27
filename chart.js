@@ -110,7 +110,6 @@ function doButtonStuffButForGameSelector(game) {
     const max = array.length;
     const number = index / max * width;
     selector.scrollLeft = number;
-    console.log(Object.keys(gameColors))
 }
 
 function doButtonStuff(id) {
@@ -270,9 +269,9 @@ function catchErrors(data) {
                 var newScore = 0;
                 var newDate = 0;
                 value2.forEach(element => { //wr entry of shot
-                    arr.push(key+key3+key2)
+                    //arr.push(key+key3+key2)
                     //arr.push(element[1])
-                    //arr.push(element[2])
+                    arr.push(element[2])
                     const flagScore = (parseInt(element[0]) >= newScore);
                     newScore = parseInt(element[0]);
                     const flagDate = (new Date(element[2]).getTime() >= newDate);
@@ -301,6 +300,8 @@ class Data {
         this.data = data;
         this.borderWidth = 1;
         this.stepped = true;
+        //this.backgroundColor = "white"; 
+        //this.borderColor = "white";
     }
 }
 
@@ -321,9 +322,10 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
             arr.push(new Points(dateObject, subelement[0], subelement[1]))
         });
         const character = gameCharacters[fetchedData.indexOf(element)];
-        const playerData = new Data(arr, character); //wip
+        const playerData = new Data(arr, character);
         dataset.push(playerData);
     });
+    console.log(dataset)
     new Chart(ctx, {
         type: 'line',
         data: {
@@ -362,16 +364,36 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
                 }
             },
             plugins: {
-                legend: {
-                  position: 'bottom',
+                colors: {
+                    enabled: true,
                 },
+                legend: {
+                    position: 'bottom',
+                    reverse: false,
+                    rtl: false,
+                    labels: {
+                        boxWidth: 40,
+                    },
+                },
+                legendCallback: chart => {
+                    console.log(123)
+                    let html = '<ul>';
+                    chart.data.datasets.forEach((ds, i) => {
+                      html += '<li>' +
+                        '<span style="width: 36px; height: 14px; background-color:' + ds.backgroundColor + '; border:' + ds.borderWidth + 'px solid ' + ds.borderColor + '" onclick="onLegendClicked(event, \'' + i + '\')">&nbsp;</span>' +
+                        '<span id="legend-label-' + i + '" onclick="onLegendClicked(event, \'' + i + '\')">' +
+                        ds.label + '</span>' +
+                        '</li>';
+                    });
+                    return html + '</ul>';
+                  },
                 title: {
-                  display: true,
-                  text: `${englishName} WR History ${difficulty}`,
+                    display: true,
+                    text: `${englishName} WR History ${difficulty}`,
                 },
                 subtitle: {
-                  display: true,
-                  text: 'Click on a category in the legend to toggle its visibility'
+                    display: true,
+                    text: 'Click on a category in the legend to toggle its visibility'
                 },
                 tooltip: {
                     callbacks: {
@@ -397,6 +419,16 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
         }
     });
 }
+
+
+function onLegendClicked(e, i) {
+    console.log(a)
+  const hidden = !chart.data.datasets[i].hidden;
+  chart.data.datasets[i].hidden = hidden;
+  const legendLabelSpan = document.getElementById("legend-label-" + i);
+  legendLabelSpan.style.textDecoration = hidden ? 'line-through' : '';
+  chart.update();
+};
 
 function roundedTicks(value, index, values, game) {
     const largeNumbers = {
