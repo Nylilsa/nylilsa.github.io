@@ -19,7 +19,7 @@ function initCanvas(gameID, difficulty) {
 function loadCanvas(gameID, difficulty) {
     const twoYears = 63072000000;
     const now = new Date().getTime();
-    var time = 1;
+    let time;
     let game = gameID.slice(1); 
     var fetchedData = [];
 	if (game === '') { 
