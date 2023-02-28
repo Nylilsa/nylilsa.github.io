@@ -295,17 +295,20 @@ class Points {
 }
 
 class Data {
-    constructor(data, label) {
+    constructor(data, label, color, colorsWithOpacity) {
         this.label = label;
         this.data = data;
         this.borderWidth = 1;
         this.stepped = true;
-        //this.backgroundColor = "white"; 
-        //this.borderColor = "white";
+        //this.pointBackgroundColor = colorsWithOpacity;
+        //this.backgroundColor = colorsWithOpacity; 
+        //this.borderColor = color;
     }
 }
 
 function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game) {
+    const colors = ['#FF88B1', '#48D642', '#FF8F69', '#3B40BF'];
+    const colorsWithOpacity = colors.map(color => `${color}80`);
     const wrapper = document.getElementById("wr-chart-wrapper");
     const ctx = document.createElement("canvas");
     ctx.setAttribute("class", 'wr-chart');
@@ -315,16 +318,16 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
         chartChecker[0].parentNode.removeChild(chartChecker[0])
     }
     let dataset = [];
-    fetchedData.forEach((element) => {
+    for(let i=0; i<fetchedData.length; i++) {
         const arr = [];
-        element.forEach(subelement => {
+        fetchedData[i].forEach(subelement => {
             const dateObject = subelement[2].replaceAll("/", "-");
             arr.push(new Points(dateObject, subelement[0], subelement[1]))
         });
-        const character = gameCharacters[fetchedData.indexOf(element)];
-        const playerData = new Data(arr, character);
+        const character = gameCharacters[fetchedData.indexOf(fetchedData[i])];
+        const playerData = new Data(arr, character, colors, colorsWithOpacity);
         dataset.push(playerData);
-    });
+    }
     console.log(dataset)
     new Chart(ctx, {
         type: 'line',
