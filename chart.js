@@ -1,4 +1,4 @@
-
+"use strict";
 
 function initCanvas(gameID, difficulty) {
     let game = gameID.slice(1); 
@@ -88,7 +88,7 @@ function doButtonStuffButForGameDifficulty(allDifficulties) {
 
 function doButtonStuffButForGameSelector(game) {
     const parent = document.getElementsByClassName("card-game");
-    for(i = 0; i < parent.length; i++) {
+    for(let i = 0; i < parent.length; i++) {
         const button = parent[i];
         const btndata = button.dataset.game;
         button.style.backgroundColor = gameColors[btndata];
@@ -300,9 +300,9 @@ class Data {
         this.data = data;
         this.borderWidth = 1;
         this.stepped = true;
-        //this.pointBackgroundColor = colorsWithOpacity;
-        //this.backgroundColor = colorsWithOpacity; 
-        //this.borderColor = color;
+        this.pointBackgroundColor = colorsWithOpacity; 
+        this.pointBorderColor = colorsWithOpacity; 
+        this.borderColor = color;
     }
 }
 
@@ -325,11 +325,13 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
             arr.push(new Points(dateObject, subelement[0], subelement[1]))
         });
         const character = gameCharacters[fetchedData.indexOf(fetchedData[i])];
-        const playerData = new Data(arr, character, colors, colorsWithOpacity);
+        const playerData = new Data(arr, character, colors[i%4], colorsWithOpacity[i % 4]);
         dataset.push(playerData);
     }
-    console.log(dataset)
+    console.log(colors, colorsWithOpacity)
+    console.table(dataset)
     new Chart(ctx, {
+        maintainAspectRatio: true,
         type: 'line',
         data: {
             labels: [],

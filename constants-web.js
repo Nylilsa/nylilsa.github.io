@@ -174,3 +174,7 @@ const bugTracker = {
 	th18: {"completed-pages": 8, "total-glitches": 41, "comment": "Number is likely to increase"},
 	th185: {"completed-pages": 0, "total-glitches": 11, "comment": "Number is likely to increase"},
 };
+
+const iDontKnowWhatToNameThis = {
+    
+}

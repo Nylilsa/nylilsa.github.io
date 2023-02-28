@@ -1,3 +1,5 @@
+"use strict";
+
 let citeId = 0;
 let MD = new showdown.Converter({
 	extensions: [ext],
