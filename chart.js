@@ -351,6 +351,11 @@ function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty)
 			section.style.gridTemplateRows =  " repeat(4, 1fr)" ;
 			section.style.gridAutoFlow = "row";
 		}
+		if (game == "th16" && difficulty == "Extra") {
+			section.style.gridTemplateColumns = "repeat(4, 1fr)";
+			section.style.gridTemplateRows =  "" ;
+			section.style.gridAutoFlow = "row";
+		}
 		if (game == "th17") {
 			section.style.gridTemplateColumns = "repeat(3, 1fr)";
 			section.style.gridTemplateRows =  " repeat(3, 1fr)" ;
