@@ -1,5 +1,180 @@
 "use strict";
 
+class Points {
+    constructor(date, score, player) {
+      this.x = date;
+      this.y = score;
+      this.player = player;
+    }
+}
+
+class Data {
+    constructor(data, label, color, colorsWithOpacity) {
+        let length;
+        const dashedLength = [1.6, 3, 10, 17];
+        if (color[0] == 'd') {
+            length = parseInt(dashedLength[color[1]]);
+            color = color.slice(2);
+            this.borderDash = [length, length];
+        }
+        this.borderWidth = 1;
+        this.label = label;
+        this.data = data;
+        this.stepped = true;
+        this.pointBackgroundColor = colorsWithOpacity; 
+        this.pointBorderColor = colorsWithOpacity; 
+        this.borderColor = color;
+    }
+}
+
+function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game) {
+    let colors;
+    if ((game != "th16" && game != "th128") || difficulty == 'Extra') {
+        colors = colorsForChart[game]['colors'];
+    } else {
+        colors = colorsForChart[`${game}other`]['colors'];
+    }
+    const colorsWithOpacity = colors.map(color => {
+        if (color[0] == 'd') {
+            color = color.slice(2);
+        }
+        return `${color}80`;
+    });
+    const wrapper = document.getElementById("wr-chart-wrapper");
+    const ctx = document.createElement("canvas");
+    ctx.setAttribute("class", 'wr-chart');
+    wrapper.appendChild(ctx);
+    const chartChecker = document.getElementsByClassName('wr-chart');
+    if(chartChecker.length != 1) { // removes old and allows for new to be generated
+        chartChecker[0].parentNode.removeChild(chartChecker[0])
+    }
+    let dataset = [];
+    for(let i=0; i<fetchedData.length; i++) {
+        const arr = [];
+        fetchedData[i].forEach(subelement => {
+            const dateObject = subelement[2].replaceAll("/", "-");
+            arr.push(new Points(dateObject, subelement[0], subelement[1]))
+        });
+        const character = gameCharacters[fetchedData.indexOf(fetchedData[i])];
+        const playerData = new Data(arr, character, colors[i], colorsWithOpacity[i]);
+        dataset.push(playerData);
+    }
+    new Chart(ctx, {
+        maintainAspectRatio: true,
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: dataset,
+        },   
+        options: {
+            scales: {
+                x: {
+                    type: 'time',
+                    time: {
+                        unit: time,
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Date'
+                      }
+                },
+                y: {
+                    beginAtZero: false,
+                    ticks: {
+                        callback: function(value, index, values) {
+                            return roundedTicks(value, index, values, game);
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.05)',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Score'
+                    }
+                }
+            },
+            plugins: {
+                colors: {
+                    enabled: true,
+                },
+                legend: {
+                    position: 'bottom',
+                    reverse: false,
+                    rtl: false,
+                    labels: {
+                        boxWidth: 40,
+                    },
+                },
+                title: {
+                    display: true,
+                    text: `${englishName} WR History ${difficulty}`,
+                },
+                subtitle: {
+                    display: true,
+                    text: 'Click on a category in the legend to toggle its visibility'
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(context) {
+                            const char = context[0]['dataset']['label'];
+                            return "Category: "+char;
+                        },
+                        beforeLabel: function(context) {
+                            const score = context['formattedValue'];
+                            return "Score: "+score;
+                        },
+                        label: function(context) {
+                            const player = context['raw']['player'];
+                            return "By: "+player;
+                        },
+                        afterLabel: function(context) {
+                            const date = context['label'].split(",", 2).join(",");
+                            return "Date: "+date;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+
+
+function roundedTicks(value, index, values, game) {
+    const largeNumbers = {
+        "Millions": {
+            "number": 1e6,
+            "suffix": 'm'
+        },
+        "Billions": {
+            "number": 1e9,
+            "suffix": 'b'
+        },
+    }
+    let decimals = 2;
+    let selector = "Billions";
+    if (game == "th01") {selector = "Millions"}
+    if (game == "th02") {selector = "Millions"}
+    if (game == "th03") {selector = "Millions"; decimals = 0}
+    if (game == "th04") {selector = "Millions"; decimals = 0}
+    if (game == "th05") {selector = "Millions"; decimals = 0}
+    if (game == "th06") {selector = "Millions"; decimals = 0}
+    if (game == "th09") {selector = "Millions"; decimals = 0}
+    if (game == "th10") {selector = "Billions"; decimals = 3}
+    if (game == "th128") {selector = "Millions"; decimals = 0}
+    return (value / largeNumbers[selector]["number"]).toFixed(decimals) + largeNumbers[selector]["suffix"];
+}
+
+function* dashedLineLength() {
+    yield 2;
+}
+
+
+
 function initCanvas(gameID, difficulty) {
     let game = gameID.slice(1); 
     if (game === '') { 
@@ -286,176 +461,3 @@ function catchErrors(data) {
     console.timeEnd("test1");
 }
 
-class Points {
-    constructor(date, score, player) {
-      this.x = date;
-      this.y = score;
-      this.player = player;
-    }
-}
-
-class Data {
-    constructor(data, label, color, colorsWithOpacity) {
-        this.label = label;
-        this.data = data;
-        this.borderWidth = 1;
-        this.stepped = true;
-        this.pointBackgroundColor = colorsWithOpacity; 
-        this.pointBorderColor = colorsWithOpacity; 
-        this.borderColor = color;
-    }
-}
-
-function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game) {
-    const colors = ['#FF88B1', '#48D642', '#FF8F69', '#3B40BF'];
-    const colorsWithOpacity = colors.map(color => `${color}80`);
-    const wrapper = document.getElementById("wr-chart-wrapper");
-    const ctx = document.createElement("canvas");
-    ctx.setAttribute("class", 'wr-chart');
-    wrapper.appendChild(ctx);
-    const chartChecker = document.getElementsByClassName('wr-chart');
-    if(chartChecker.length != 1) { // removes old and allows for new to be generated
-        chartChecker[0].parentNode.removeChild(chartChecker[0])
-    }
-    let dataset = [];
-    for(let i=0; i<fetchedData.length; i++) {
-        const arr = [];
-        fetchedData[i].forEach(subelement => {
-            const dateObject = subelement[2].replaceAll("/", "-");
-            arr.push(new Points(dateObject, subelement[0], subelement[1]))
-        });
-        const character = gameCharacters[fetchedData.indexOf(fetchedData[i])];
-        const playerData = new Data(arr, character, colors[i%4], colorsWithOpacity[i % 4]);
-        dataset.push(playerData);
-    }
-    console.log(colors, colorsWithOpacity)
-    console.table(dataset)
-    new Chart(ctx, {
-        maintainAspectRatio: true,
-        type: 'line',
-        data: {
-            labels: [],
-            datasets: dataset,
-        },   
-        options: {
-            scales: {
-                x: {
-                    type: 'time',
-                    time: {
-                        unit: time,
-                    },
-                    grid: {
-                        color: 'rgba(255, 255, 255, 0.1)',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Date'
-                      }
-                },
-                y: {
-                    beginAtZero: false,
-                    ticks: {
-                        callback: function(value, index, values) {
-                            return roundedTicks(value, index, values, game);
-                        }
-                    },
-                    grid: {
-                        color: 'rgba(255, 255, 255, 0.05)',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Score'
-                    }
-                }
-            },
-            plugins: {
-                colors: {
-                    enabled: true,
-                },
-                legend: {
-                    position: 'bottom',
-                    reverse: false,
-                    rtl: false,
-                    labels: {
-                        boxWidth: 40,
-                    },
-                },
-                legendCallback: chart => {
-                    console.log(123)
-                    let html = '<ul>';
-                    chart.data.datasets.forEach((ds, i) => {
-                      html += '<li>' +
-                        '<span style="width: 36px; height: 14px; background-color:' + ds.backgroundColor + '; border:' + ds.borderWidth + 'px solid ' + ds.borderColor + '" onclick="onLegendClicked(event, \'' + i + '\')">&nbsp;</span>' +
-                        '<span id="legend-label-' + i + '" onclick="onLegendClicked(event, \'' + i + '\')">' +
-                        ds.label + '</span>' +
-                        '</li>';
-                    });
-                    return html + '</ul>';
-                  },
-                title: {
-                    display: true,
-                    text: `${englishName} WR History ${difficulty}`,
-                },
-                subtitle: {
-                    display: true,
-                    text: 'Click on a category in the legend to toggle its visibility'
-                },
-                tooltip: {
-                    callbacks: {
-                        title: function(context) {
-                            const char = context[0]['dataset']['label'];
-                            return "Category: "+char;
-                        },
-                        beforeLabel: function(context) {
-                            const score = context['formattedValue'];
-                            return "Score: "+score;
-                        },
-                        label: function(context) {
-                            const player = context['raw']['player'];
-                            return "By: "+player;
-                        },
-                        afterLabel: function(context) {
-                            const date = context['label'].split(",", 2).join(",");
-                            return "Date: "+date;
-                        }
-                    }
-                }
-            }
-        }
-    });
-}
-
-
-function onLegendClicked(e, i) {
-    console.log(a)
-  const hidden = !chart.data.datasets[i].hidden;
-  chart.data.datasets[i].hidden = hidden;
-  const legendLabelSpan = document.getElementById("legend-label-" + i);
-  legendLabelSpan.style.textDecoration = hidden ? 'line-through' : '';
-  chart.update();
-};
-
-function roundedTicks(value, index, values, game) {
-    const largeNumbers = {
-        "Millions": {
-            "number": 1e6,
-            "suffix": 'm'
-        },
-        "Billions": {
-            "number": 1e9,
-            "suffix": 'b'
-        },
-    }
-    let decimals = 2;
-    let selector = "Billions";
-    if (game == "th01") {selector = "Millions"}
-    if (game == "th02") {selector = "Millions"}
-    if (game == "th03") {selector = "Millions"; decimals = 0}
-    if (game == "th04") {selector = "Millions"; decimals = 0}
-    if (game == "th05") {selector = "Millions"; decimals = 0}
-    if (game == "th06") {selector = "Millions"; decimals = 0}
-    if (game == "th09") {selector = "Millions"; decimals = 0}
-    if (game == "th10") {selector = "Billions"; decimals = 3}
-    if (game == "th128") {selector = "Millions"; decimals = 0}
-    return (value / largeNumbers[selector]["number"]).toFixed(decimals) + largeNumbers[selector]["suffix"];
-}
