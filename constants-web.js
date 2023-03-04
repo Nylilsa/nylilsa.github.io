@@ -149,7 +149,8 @@ const contributorsWRs = {
 	"S7": {"name": "morth", "help": "TD Extra", "url": "https://www.youtube.com/channel/UCpURmfyYBzoLJJLa3DDvY8g"},
 	"1A": {"name": "Crispy", "help": "MoF Lunatic", "url": "https://twitter.com/Crispyz_th"},
 	"0l": {"name": "Christian Azinn", "help": "PC-98 games", "url": "https://www.twitch.tv/christianazinn"},
-	"VS": {"name": "Rivers", "help": "IN Lunatic", "url": "https://www.twitch.tv/rivers_th08"}
+	"VS": {"name": "Rivers", "help": "IN Lunatic", "url": "https://www.twitch.tv/rivers_th08"},
+	"dQ": {"name": "Diamenciory", "help": "EoSD Lunatic", "url": "https://www.youtube.com/@diamenciory1439"}
 };
 
 
