@@ -303,12 +303,14 @@ function hrCustom(input) {
 
 function gameScenes(game, flag, array) {
 	const content = document.getElementById('table-scenes'); // table-scenes is ID of div in showdown-ext.js
-	if (flag === 'true') {
-		var yes = '<img src="/assets/green-check-mark.svg" class="icon-text">';
-		var no = '<img src="/assets/red-cross.svg" class="icon-text">';
+	let yes;
+    let no;
+    if (flag === 'true') {
+		yes = '<img src="/assets/green-check-mark.svg" class="icon-text">';
+		no = '<img src="/assets/red-cross.svg" class="icon-text">';
 	} else {
-		var no = '<img src="/assets/green-check-mark.svg" class="icon-text">';
-		var yes = '<img src="/assets/red-cross.svg" class="icon-text">';
+		no = '<img src="/assets/green-check-mark.svg" class="icon-text">';
+		yes = '<img src="/assets/red-cross.svg" class="icon-text">';
 	}
 	
 	if (game === '143') {
@@ -417,10 +419,10 @@ function debug() {
 function mode(array) {
     if(array.length == 0)
         return null;
-    var modeMap = {};
-    var maxEl = array[0], maxCount = 1;
-    for(var i = 0; i < array.length; i++) {
-        var el = array[i];
+    let modeMap = {};
+    let maxEl = array[0], maxCount = 1;
+    for(let i = 0; i < array.length; i++) {
+        let el = array[i];
         if(modeMap[el] == null)
             modeMap[el] = 1;
         else

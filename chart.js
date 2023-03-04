@@ -169,11 +169,6 @@ function roundedTicks(value, index, values, game) {
     return (value / largeNumbers[selector]["number"]).toFixed(decimals) + largeNumbers[selector]["suffix"];
 }
 
-function* dashedLineLength() {
-    yield 2;
-}
-
-
 
 function initCanvas(gameID, difficulty) {
     let game = gameID.slice(1); 
@@ -183,12 +178,11 @@ function initCanvas(gameID, difficulty) {
     loadCanvas(gameID, difficulty);
     doButtonStuffButForGameSelector(game);
     fetch('json/gameinfo.json')
-        .then((response2) => response2.json())
-        .then(data => {
-            const allDifficulties = data['Difficulty'][game];
-            doButtonStuffButForGameDifficulty(allDifficulties);
-        });
-    
+    .then((response2) => response2.json())
+    .then(data => {
+        const allDifficulties = data['Difficulty'][game];
+        doButtonStuffButForGameDifficulty(allDifficulties);
+    });
 }
 
 function loadCanvas(gameID, difficulty) {
@@ -196,12 +190,12 @@ function loadCanvas(gameID, difficulty) {
     const now = new Date().getTime();
     let time;
     let game = gameID.slice(1); 
-    var fetchedData = [];
+    let fetchedData = [];
 	if (game === '') { 
 		game = "th11"; //default if url is invalid
 	}
     if (difficulty === undefined) { 
-		var difficulty = "Lunatic"; //default if url is invalid
+		difficulty = "Lunatic"; //default if url is invalid
 	}
     fetch('json/wrprogression.json')
     .then((response) => response.json())
@@ -209,6 +203,7 @@ function loadCanvas(gameID, difficulty) {
         fetch('json/gameinfo.json')
         .then((response2) => response2.json())
         .then(data => {
+            let gameCharacters;
             const englishName = data['Names'][game]['en'];
             const releaseDate = new Date(data['LatestReleaseDate'][game]).getTime();
             const maxValue = [];
@@ -218,9 +213,9 @@ function loadCanvas(gameID, difficulty) {
                 time = 'year';
             }
             if ((game != "th16" && game != "th128") || difficulty == 'Extra') {
-                var gameCharacters = data['Characters'][game];
+                gameCharacters = data['Characters'][game];
             } else {
-                var gameCharacters = data['Characters'][`${game}other`];
+                gameCharacters = data['Characters'][`${game}other`];
             }
             gameCharacters.forEach(char => {
                 const history = dataWR[game][difficulty][char];
@@ -446,8 +441,8 @@ function catchErrors(data) {
     for (const [key, valueee] of Object.entries(data)) {
         for (const [key3, value] of Object.entries(valueee)) { // cycles through all categories
             for (const [key2, value2] of Object.entries(value)) { // cycles through all shots of category
-                var newScore = 0;
-                var newDate = 0;
+                let newScore = 0;
+                let newDate = 0;
                 value2.forEach(element => { //wr entry of shot
                     //arr.push(key+key3+key2)
                     //arr.push(element[1])
