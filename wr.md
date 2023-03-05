@@ -42,8 +42,8 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
 ## Graph
 [hr_major]
 
-
 <div id="wr-chart-wrapper"></div>
+<div id="legend-container"></div>
 
 ## Tables
 [hr_major]

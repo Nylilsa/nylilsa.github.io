@@ -11,7 +11,7 @@ class Points {
 class Data {
     constructor(data, label, color, colorsWithOpacity) {
         let length;
-        const dashedLength = [1.6, 3, 10, 17];
+        const dashedLength = [2, 4, 10, 17];
         if (color[0] == 'd') {
             length = parseInt(dashedLength[color[1]]);
             color = color.slice(2);
@@ -65,7 +65,69 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
         data: {
             labels: [],
             datasets: dataset,
-        },   
+        },
+        plugins: [{
+            id: 'htmlLegend',
+            afterUpdate(chart, args, options) {
+                const ul = getOrCreateLegendList(game, options.containerID, gameCharacters);   
+                // Remove old legend items
+                while (ul.firstChild) {
+                    ul.firstChild.remove();
+                }
+                // Reuse the built-in legendItems generator
+                const items = chart.options.plugins.legend.labels.generateLabels(chart);
+                for (let i=0; i<items.length; i++) {
+                    const item = items[i];
+                    const li = document.createElement('li');
+                    li.style.alignItems = 'center';
+                    li.style.cursor = 'pointer';
+                    li.style.justifyContent = 'center';
+                    li.style.display = 'flex';
+                    li.style.flexDirection = 'row';
+                    li.style.marginLeft = '0px';
+                    li.onclick = () => {
+                        const {type} = chart.config;
+                        if (type === 'pie' || type === 'doughnut') {
+                            // Pie and doughnut charts only have a single dataset and visibility is per item
+                            chart.toggleDataVisibility(item.index);
+                        } else {
+                            chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+                        }
+                        chart.update();
+                    };  
+                    // Color box
+                    const boxSpan = document.createElement('span');
+                    boxSpan.style.background = item.fillStyle;
+                    boxSpan.style.borderColor = item.strokeStyle;
+                    boxSpan.style.borderWidth = item.lineWidth + 'px';
+                    boxSpan.style.borderStyle  = "solid";
+                    boxSpan.style.display = 'inline-block';
+                    boxSpan.style.height = '12px';
+                    boxSpan.style.marginRight = '10px';
+                    boxSpan.style.width = '40px';
+                    if (colors[i].length == 7) {
+                        boxSpan.style.background = `${colors[i]}80`;
+                    } else {
+                        const dashedLength = [2, 4, 8, 12];
+                        const bgLineWidth = dashedLength[Number(colors[i][1])];
+                        const c = `${colors[i].slice(2)}80`;
+                        boxSpan.style.background = `repeating-linear-gradient(135deg, ${c}, ${c} ${bgLineWidth}px, #020c18 ${bgLineWidth}px, #020c18 ${2*bgLineWidth}px)`;
+                    }
+                    // Text
+                    const textContainer = document.createElement('p');
+                    textContainer.style.color = item.fontColor;
+                    textContainer.style.margin = 0;
+                    textContainer.style.padding = 0;
+                    textContainer.style.textDecoration = item.hidden ? 'line-through' : ''; 
+                    const text = document.createTextNode(item.text);
+                    textContainer.appendChild(text);    
+                    li.appendChild(boxSpan);
+                    li.appendChild(textContainer);
+                    ul.appendChild(li);
+                }
+            }
+        }
+    ],
         options: {
             scales: {
                 x: {
@@ -102,12 +164,17 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
                     enabled: true,
                 },
                 legend: {
+                    display: false,
                     position: 'bottom',
                     reverse: false,
                     rtl: false,
                     labels: {
                         boxWidth: 40,
                     },
+                },
+                htmlLegend: {
+                    // ID of the container to put the legend in
+                    containerID: 'legend-container',
                 },
                 title: {
                     display: true,
@@ -138,11 +205,34 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
                     }
                 }
             }
-        }
+        },
     });
 }
 
+function getOrCreateLegendList(game, id, gameCharacters) {
+    let computedCharacters = (100 / gameCharacters.length)+'%';
+    const legendContainer = document.getElementById(id);
+    let listContainer = legendContainer.querySelector('ul');
+    if (!listContainer) {
+        listContainer = document.createElement('ul');
+        if (gameCharacters.length > 4) {
+            computedCharacters = '25%';
+        }
+        if (game == 'th17') {
+            computedCharacters = '33.333%';
+        }
+        gridLegend(listContainer, computedCharacters);
+        legendContainer.appendChild(listContainer);
+    }
+    return listContainer;
+}
 
+function gridLegend(element, value) {
+    element.style.display = 'grid';
+    element.style.justifyItems = 'stretch';
+    element.style.justifyContent = 'center';
+    element.style.gridTemplateColumns = `repeat(auto-fill, minmax(${value}, 1fr))`;
+}
 
 function roundedTicks(value, index, values, game) {
     const largeNumbers = {
@@ -175,7 +265,7 @@ function initCanvas(gameID, difficulty) {
     if (game === '') { 
 		game = "th11"; //default if url is invalid
 	}
-    loadCanvas(gameID, difficulty);
+    loadCanvas(game, difficulty);
     doButtonStuffButForGameSelector(game);
     fetch('json/gameinfo.json')
     .then((response2) => response2.json())
@@ -185,18 +275,11 @@ function initCanvas(gameID, difficulty) {
     });
 }
 
-function loadCanvas(gameID, difficulty) {
+function loadCanvas(game, difficulty = "Lunatic") {
     const twoYears = 63072000000;
     const now = new Date().getTime();
     let time;
-    let game = gameID.slice(1); 
     let fetchedData = [];
-	if (game === '') { 
-		game = "th11"; //default if url is invalid
-	}
-    if (difficulty === undefined) { 
-		difficulty = "Lunatic"; //default if url is invalid
-	}
     fetch('json/wrprogression.json')
     .then((response) => response.json())
     .then(dataWR => {
@@ -244,7 +327,7 @@ function doButtonStuffButForGameDifficulty(allDifficulties) {
             createButton.setAttribute("class", "selected-full");
         }
         function selectDifficulty() {
-            loadCanvas(initRemoveHash(true), difficulty);
+            loadCanvas(initRemoveHash(true).slice(1), difficulty);
             const allElements = document.querySelectorAll('*');
             allElements.forEach((element) => {
                 element.classList.remove('selected-full');

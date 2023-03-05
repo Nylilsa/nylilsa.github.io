@@ -44,8 +44,7 @@ b, strong {
   background-color: rgba(16, 0, 243, 0); }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--almost-white); }
+  font-family: 'Poppins', sans-serif; }
 
 button {
   cursor: pointer;
