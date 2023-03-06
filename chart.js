@@ -74,7 +74,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
         plugins: [{
             id: 'htmlLegend',
             afterUpdate(chart, args, options) {
-                createLegend(chart, args, options, gameCharacters, colors, game);
+                createLegend(chart, args, options, gameCharacters, colors, game, difficulty);
             }
         }
     ],
@@ -159,7 +159,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
     });
 }
 
-function toggleLegend(chart, items, game) {
+function toggleLegend(chart, items, game, difficulty) {
     const top = document.getElementById("legend-toggle-all");
     const li = document.createElement('li');
     const flag = top.classList.contains("show-function");
@@ -172,28 +172,30 @@ function toggleLegend(chart, items, game) {
     textContainer.style.padding = 0;
     let text;
     if (flag) {
-        text = document.createTextNode("Show all");
+        text = document.createTextNode("Show all categories");
     } else {
-        text = document.createTextNode("Hide all");
+        text = document.createTextNode("Hide all categories");
     }
-    li.style.alignItems = 'center';
-    li.style.cursor = 'pointer';
-    li.style.justifyContent = 'center';
+    top.style.alignItems = 'center';
+    top.style.cursor = 'pointer';
+    top.style.justifyContent = 'center';
+    top.style.display = 'grid';
+    top.style.padding = '8px';
     li.style.display = 'flex';
-    li.style.padding = '8px';
+    li.style.justifyContent = 'center';
+    li.style.gridColumn = '1/-1';
     li.onclick = () => {
-        //chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
         for (let i=0; i<items.length; i++) {
             const item = items[i];
 	        if (flag) {
 	        	top.classList.remove("show-function");
 	        	if (item.hidden) {
-	        		chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+                    chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
 	        	}
 	        } else {
-	        	top.classList.add("show-function");
+                top.classList.add("show-function");
 	        	if (!item.hidden) {
-	        		chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+                    chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
 	        	}
 	        }
         }
@@ -202,16 +204,97 @@ function toggleLegend(chart, items, game) {
     textContainer.appendChild(text);
     li.appendChild(textContainer);
     top.appendChild(li);
+    //write stuff that allows toggle Season/Animal button
+    if(game == "th17" || (game == "th16" && difficulty != "Extra")) {
+        extraLegendButtons(top, game, items, chart);
+    }
 }
 
-function createLegend(chart, args, options, gameCharacters, colors, game) {
+function extraLegendButtons(top, game, items, chart) {
+    let sub;
+    let n;
+    let colors;
+    if (game == "th17") {
+        sub = ["Wolf", "Otter", "Eagle"];
+        colors = colorsForChart[game]['colors'];
+        top.style.gridTemplateColumns = `repeat(auto-fill, 33%)`;
+        n = 3;
+    }
+    if (game == "th16") {
+        sub = ["Spring", "Summer", "Autumn", "Winter"];
+        colors = colorsForChart[`${game}other`]['colors'];
+        top.style.gridTemplateColumns = `repeat(auto-fill, 25%)`;
+        n = 4;
+    }
+    for (let i=0; i<sub.length; i++) {
+        const boxSpan = document.createElement('span');
+        const flag = top.classList.contains(`show-${sub[i].toLocaleLowerCase()}`);
+        let text;
+        if (flag) {
+            text = document.createTextNode(`Show all ${sub[i]}s`);
+        } else {
+            text = document.createTextNode(`Hide all ${sub[i]}s`);
+        }
+        const li = document.createElement("li");
+        li.style.paddingTop = '8px';
+        li.style.display = 'flex';
+        li.style.justifyContent = 'center';
+        li.style.alignItems = 'center';
+        li.onclick = () => {
+            const flag = top.classList.contains(`show-${sub[i].toLocaleLowerCase()}`);
+            let indexes = [i, i + n, i + 2*n];
+            if (game == "th17") {
+                indexes = [i, i + n, i + 2*n];
+            }
+            if (game == "th16") {
+                indexes = [i, i + n, i + 2*n, i + 3*n];
+            }
+            const selectedCharacters = indexes.map(j => {
+                return items[j];
+            })
+            for (let j=0; j<selectedCharacters.length; j++) {
+                const item = selectedCharacters[j];
+                if (flag) {
+                    top.classList.remove(`show-${sub[i].toLocaleLowerCase()}`);
+                    if (item.hidden) {
+                        chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+                    }
+                } else {
+                    top.classList.add(`show-${sub[i].toLocaleLowerCase()}`);
+                    if (!item.hidden) {
+                        chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+                    }
+                }
+            }
+            chart.update();
+        };
+        boxSpan.style.background = `${colors[i]}80`;
+        boxSpan.style.borderColor = colors[i];
+        boxSpan.style.borderWidth = 1+'px';
+        boxSpan.style.borderStyle  = "solid";
+        boxSpan.style.display = 'inline-block';
+        boxSpan.style.height = '12px';
+        boxSpan.style.marginRight = '10px';
+        boxSpan.style.width = '40px';
+        const textContainer = document.createElement('p');
+        textContainer.style.color = "#666";
+        textContainer.style.margin = 0;
+        textContainer.style.padding = 0;
+        textContainer.appendChild(text);    
+        li.appendChild(boxSpan);
+        top.appendChild(li);
+        li.appendChild(textContainer);
+    }
+}
+
+function createLegend(chart, args, options, gameCharacters, colors, game, difficulty) {
     const ul = getOrCreateLegendList(game, options.containerID, gameCharacters);
     while (ul.firstChild) {
         ul.firstChild.remove();
     }
     // Reuse the built-in legendItems generator
     const items = chart.options.plugins.legend.labels.generateLabels(chart);
-    toggleLegend(chart, items, game);
+    toggleLegend(chart, items, game, difficulty);
     for (let i=0; i<items.length; i++) {
         const item = items[i];
         const li = document.createElement('li');
@@ -248,7 +331,7 @@ function createLegend(chart, args, options, gameCharacters, colors, game) {
         textContainer.style.color = item.fontColor;
         textContainer.style.margin = 0;
         textContainer.style.padding = 0;
-        textContainer.style.textDecoration = item.hidden ? 'line-through' : ''; 
+        textContainer.style.textDecoration = item.hidden ? 'line-through' : '';
         const text = document.createTextNode(item.text);
         textContainer.appendChild(text);    
         li.appendChild(boxSpan);
@@ -383,7 +466,7 @@ function doButtonStuffButForGameDifficulty(allDifficulties) {
             });
             this.setAttribute("class", "selected-full");
             const top = document.getElementById("legend-toggle-all");
-            top.classList.remove("show-function");
+            top.className = '';
         }
         diffSelector.appendChild(createButton);
     });
