@@ -11,11 +11,16 @@ class Points {
 class Data {
     constructor(data, label, color, colorsWithOpacity) {
         let length;
-        const dashedLength = [2, 4, 10, 17];
+        this.radius = 3.5;
         if (color[0] == 'd') {
-            length = parseInt(dashedLength[color[1]]);
-            color = color.slice(2);
+            const dashedLength = [2, 4, 10, 17];
+            const point = ['rect', 'triangle', 'rectRot', 'star'];
+            const r = [4.5, 4.5, 4, 6];
+            length = dashedLength[color[1]];
+            this.pointStyle = point[color[1]];
             this.borderDash = [length, length];
+            this.radius = r[color[1]];
+            color = color.slice(2);
         }
         this.borderWidth = 1;
         this.label = label;
@@ -69,62 +74,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
         plugins: [{
             id: 'htmlLegend',
             afterUpdate(chart, args, options) {
-                const ul = getOrCreateLegendList(game, options.containerID, gameCharacters);   
-                // Remove old legend items
-                while (ul.firstChild) {
-                    ul.firstChild.remove();
-                }
-                // Reuse the built-in legendItems generator
-                const items = chart.options.plugins.legend.labels.generateLabels(chart);
-                for (let i=0; i<items.length; i++) {
-                    const item = items[i];
-                    const li = document.createElement('li');
-                    li.style.alignItems = 'center';
-                    li.style.cursor = 'pointer';
-                    li.style.justifyContent = 'center';
-                    li.style.display = 'flex';
-                    li.style.flexDirection = 'row';
-                    li.style.marginLeft = '0px';
-                    li.onclick = () => {
-                        const {type} = chart.config;
-                        if (type === 'pie' || type === 'doughnut') {
-                            // Pie and doughnut charts only have a single dataset and visibility is per item
-                            chart.toggleDataVisibility(item.index);
-                        } else {
-                            chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
-                        }
-                        chart.update();
-                    };  
-                    // Color box
-                    const boxSpan = document.createElement('span');
-                    boxSpan.style.background = item.fillStyle;
-                    boxSpan.style.borderColor = item.strokeStyle;
-                    boxSpan.style.borderWidth = item.lineWidth + 'px';
-                    boxSpan.style.borderStyle  = "solid";
-                    boxSpan.style.display = 'inline-block';
-                    boxSpan.style.height = '12px';
-                    boxSpan.style.marginRight = '10px';
-                    boxSpan.style.width = '40px';
-                    if (colors[i].length == 7) {
-                        boxSpan.style.background = `${colors[i]}80`;
-                    } else {
-                        const dashedLength = [2, 4, 8, 12];
-                        const bgLineWidth = dashedLength[Number(colors[i][1])];
-                        const c = `${colors[i].slice(2)}80`;
-                        boxSpan.style.background = `repeating-linear-gradient(135deg, ${c}, ${c} ${bgLineWidth}px, #020c18 ${bgLineWidth}px, #020c18 ${2*bgLineWidth}px)`;
-                    }
-                    // Text
-                    const textContainer = document.createElement('p');
-                    textContainer.style.color = item.fontColor;
-                    textContainer.style.margin = 0;
-                    textContainer.style.padding = 0;
-                    textContainer.style.textDecoration = item.hidden ? 'line-through' : ''; 
-                    const text = document.createTextNode(item.text);
-                    textContainer.appendChild(text);    
-                    li.appendChild(boxSpan);
-                    li.appendChild(textContainer);
-                    ul.appendChild(li);
-                }
+                createLegend(chart, args, options, gameCharacters, colors, game);
             }
         }
     ],
@@ -209,10 +159,108 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
     });
 }
 
+function toggleLegend(chart, items, game) {
+    const top = document.getElementById("legend-toggle-all");
+    const li = document.createElement('li');
+    const flag = top.classList.contains("show-function");
+    while (top.firstChild) {
+        top.firstChild.remove();
+    }
+    const textContainer = document.createElement('p');
+    textContainer.style.color = "#666";
+    textContainer.style.margin = 0;
+    textContainer.style.padding = 0;
+    let text;
+    if (flag) {
+        text = document.createTextNode("Show all");
+    } else {
+        text = document.createTextNode("Hide all");
+    }
+    li.style.alignItems = 'center';
+    li.style.cursor = 'pointer';
+    li.style.justifyContent = 'center';
+    li.style.display = 'flex';
+    li.style.padding = '8px';
+    li.onclick = () => {
+        //chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+        for (let i=0; i<items.length; i++) {
+            const item = items[i];
+	        if (flag) {
+	        	top.classList.remove("show-function");
+	        	if (item.hidden) {
+	        		chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+	        	}
+	        } else {
+	        	top.classList.add("show-function");
+	        	if (!item.hidden) {
+	        		chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+	        	}
+	        }
+        }
+        chart.update();
+    };
+    textContainer.appendChild(text);
+    li.appendChild(textContainer);
+    top.appendChild(li);
+}
+
+function createLegend(chart, args, options, gameCharacters, colors, game) {
+    const ul = getOrCreateLegendList(game, options.containerID, gameCharacters);
+    while (ul.firstChild) {
+        ul.firstChild.remove();
+    }
+    // Reuse the built-in legendItems generator
+    const items = chart.options.plugins.legend.labels.generateLabels(chart);
+    toggleLegend(chart, items, game);
+    for (let i=0; i<items.length; i++) {
+        const item = items[i];
+        const li = document.createElement('li');
+        li.style.alignItems = 'center';
+        li.style.cursor = 'pointer';
+        li.style.justifyContent = 'center';
+        li.style.display = 'flex';
+        li.style.flexDirection = 'row';
+        li.style.marginLeft = '0px';
+        li.onclick = () => {
+            chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+            chart.update();
+        };  
+        // Color box
+        const boxSpan = document.createElement('span');
+        boxSpan.style.background = item.fillStyle;
+        boxSpan.style.borderColor = item.strokeStyle;
+        boxSpan.style.borderWidth = item.lineWidth + 'px';
+        boxSpan.style.borderStyle  = "solid";
+        boxSpan.style.display = 'inline-block';
+        boxSpan.style.height = '12px';
+        boxSpan.style.marginRight = '10px';
+        boxSpan.style.width = '40px';
+        if (colors[i].length == 7) {
+            boxSpan.style.background = `${colors[i]}80`;
+        } else {
+            const dashedLength = [2, 4, 8, 12];
+            const bgLineWidth = dashedLength[Number(colors[i][1])];
+            const c = `${colors[i].slice(2)}80`;
+            boxSpan.style.background = `repeating-linear-gradient(135deg, ${c}, ${c} ${bgLineWidth}px, #020c18 ${bgLineWidth}px, #020c18 ${2*bgLineWidth}px)`;
+        }
+        // Text
+        const textContainer = document.createElement('p');
+        textContainer.style.color = item.fontColor;
+        textContainer.style.margin = 0;
+        textContainer.style.padding = 0;
+        textContainer.style.textDecoration = item.hidden ? 'line-through' : ''; 
+        const text = document.createTextNode(item.text);
+        textContainer.appendChild(text);    
+        li.appendChild(boxSpan);
+        li.appendChild(textContainer);
+        ul.appendChild(li);
+    }
+}
+
 function getOrCreateLegendList(game, id, gameCharacters) {
-    let computedCharacters = (100 / gameCharacters.length)+'%';
     const legendContainer = document.getElementById(id);
     let listContainer = legendContainer.querySelector('ul');
+    let computedCharacters = (100 / gameCharacters.length)+'%';
     if (!listContainer) {
         listContainer = document.createElement('ul');
         if (gameCharacters.length > 4) {
@@ -232,6 +280,7 @@ function gridLegend(element, value) {
     element.style.justifyItems = 'stretch';
     element.style.justifyContent = 'center';
     element.style.gridTemplateColumns = `repeat(auto-fill, minmax(${value}, 1fr))`;
+    element.style.padding = `0`;
 }
 
 function roundedTicks(value, index, values, game) {
@@ -327,12 +376,14 @@ function doButtonStuffButForGameDifficulty(allDifficulties) {
             createButton.setAttribute("class", "selected-full");
         }
         function selectDifficulty() {
-            loadCanvas(initRemoveHash(true).slice(1), difficulty);
+            loadCanvas(initRemoveHash(true).slice(1) || "th11", difficulty);
             const allElements = document.querySelectorAll('*');
             allElements.forEach((element) => {
                 element.classList.remove('selected-full');
-              });
+            });
             this.setAttribute("class", "selected-full");
+            const top = document.getElementById("legend-toggle-all");
+            top.classList.remove("show-function");
         }
         diffSelector.appendChild(createButton);
     });

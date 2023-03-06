@@ -43,6 +43,7 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
 [hr_major]
 
 <div id="wr-chart-wrapper"></div>
+<div id="legend-toggle-all" style="min-height:10px"></div>
 <div id="legend-container"></div>
 
 ## Tables
