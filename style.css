@@ -6,7 +6,7 @@
   --discord-purple: #6d7fcc;
   --url: #6873D8;
   --url-visited: #934BB4;
-  --almost-white: #FAFAFA;
+  --almost-white: #F0F0F0;
   --white: #FFFFFF;
   --pink: #FF92FA;
   --dark-blue: #222538;
@@ -30,10 +30,10 @@ a:focus {
 a.article,
 a.article:hover {
   background: var(--discord-purple) !important;
-  color: var(--white) !important; }
+  color: var(--almost-white) !important; }
 
 a.download {
-  background: var(--white);
+  background: var(--almost-white);
   color: var(--discord-blue); }
 
 a[data-toggle="collapse"] {
@@ -79,7 +79,7 @@ p {
   font-size: 1.1em;
   font-weight: 300;
   line-height: 1.7em;
-  color: var(--white); }
+  color: var(--almost-white); }
 
 td {
   padding-left: 4px;
@@ -95,7 +95,7 @@ th, tr {
   border: 0px;
   font-weight: normal;
   font-size: 14px;
-  color: var(--white);
+  color: var(--almost-white);
   opacity: 0.9;
   font-family: sans-serif; }
 
@@ -131,25 +131,27 @@ ul.CTAs {
     padding-bottom: 10px;
     padding-top: 10px; }
   .all-wr-tables tr {
-    border-top: 1px solid var(--default);
     font-size: 16px;
     transition-duration: 0.5s; }
   .all-wr-tables tr:hover {
-    background-color: var(--black-blue); }
+    background-color: var(--dark-blue) !important; }
   .all-wr-tables tr:nth-child(1) {
-    background-color: var(--default); }
+    border: 1px solid var(--default); }
   .all-wr-tables td:nth-child(3) {
     text-align: left; }
+  .all-wr-tables tr:nth-child(odd) {
+    background-color: var(--black-blue); }
   .all-wr-tables td {
     text-align: center;
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 12px;
     padding-right: 12px;
-    font-size: 12px; }
+    font-size: 12px;
+    color: var(--almost-white); }
 
 .box {
-  color: var(--white);
+  color: var(--almost-white);
   font-size: 16px;
   padding: 8px 12px 8px 12px;
   border-radius: 0px;
@@ -286,7 +288,7 @@ ul.CTAs {
 
 .github {
   background-color: var(--discord-blue);
-  color: var(--white); }
+  color: var(--almost-white); }
 
 .highlight-bg {
   background-color: #123840; }
@@ -306,10 +308,12 @@ ul.CTAs {
 
 .icon-bullet {
   transform: scale(0.65);
+  filter: invert(100%);
   background-image: url(assets/bullet.svg); }
 
 .icon-calendar {
-  transform: scale(0.7);
+  transform: scale(0.75);
+  filter: invert(100%);
   background-image: url(assets/calendar.svg); }
 
 .icon-cross {
@@ -325,7 +329,7 @@ ul.CTAs {
   background-image: url(assets/hamburger.svg);
   transform: scale(0.8);
   /*makes it white*/
-  filter: invert(100%) sepia(0%) saturate(7496%) hue-rotate(160deg) brightness(101%) contrast(102%); }
+  filter: invert(100%); }
 
 .icon-small {
   height: 20px;
@@ -334,6 +338,7 @@ ul.CTAs {
 
 .icon-star {
   transform: scale(0.8);
+  filter: invert(100%);
   background-image: url(assets/star.svg); }
 
 .icon-text {
@@ -342,10 +347,12 @@ ul.CTAs {
 
 .icon-trophy {
   transform: scale(0.7);
+  filter: invert(100%);
   background-image: url(assets/trophy.svg); }
 
 .icon-user {
-  transform: scale(0.7);
+  transform: scale(0.8);
+  filter: invert(100%);
   background-image: url(assets/user.svg); }
 
 .icon-youtube {
@@ -378,7 +385,7 @@ ul.CTAs {
 
 .navbar {
   padding: 15px 10px;
-  background: var(--white);
+  background: var(--almost-white);
   border: none;
   border-radius: 0;
   margin-bottom: 40px;
@@ -398,7 +405,7 @@ ul.CTAs {
   width: 100%; }
 
 .tag {
-  color: var(--white);
+  color: var(--almost-white);
   display: inline-flex;
   align-items: stretch;
   margin: 2px;
@@ -425,7 +432,7 @@ ul.CTAs {
   flex-flow: row wrap; }
 
 .toc {
-  color: var(--white);
+  color: var(--almost-white);
   padding: 8px 12px 8px 12px;
   border-radius: 0px;
   border-color: #414363;
@@ -458,7 +465,7 @@ ul.CTAs {
 
 .youtube {
   background-color: var(--discord-blue);
-  color: var(--white); }
+  color: var(--almost-white); }
 
 #button {
   background-color: var(--discord-lightblue);
@@ -488,7 +495,7 @@ ul.CTAs {
   position: fixed;
   width: 100%;
   background-color: var(--dark-teal);
-  z-index: 1;
+  z-index: 3;
   transition: all 0.3s;
   margin-left: 250px;
   border-bottom: 1px solid var(--discord-blue);
@@ -510,7 +517,7 @@ ul.CTAs {
   opacity: 1;
   overflow-wrap: break-word; }
   #mdcontent h1, #mdcontent h2, #mdcontent h3, #mdcontent h4, #mdcontent h5, #mdcontent h6, #mdcontent p, #mdcontent li {
-    color: var(--white);
+    color: var(--almost-white);
     opacity: 0.9;
     font-family: sans-serif; }
   #mdcontent p, #mdcontent li {
@@ -526,7 +533,7 @@ ul.CTAs {
   min-width: 250px;
   max-width: 250px;
   background: var(--dark-teal);
-  color: var(--white);
+  color: var(--almost-white);
   transition: all 0.3s;
   position: fixed;
   overflow-y: scroll;
@@ -553,13 +560,13 @@ ul.CTAs {
       color: var(--discord-blue);
       background: var(--black); }
   #sidebar ul li ul li.active > a {
-    color: var(--white);
+    color: var(--almost-white);
     background: #08101C; }
   #sidebar ul li.active > a {
     color: var(--black);
     background: var(--discord-purple); }
   #sidebar ul p {
-    color: var(--white);
+    color: var(--almost-white);
     padding: 10px; }
   #sidebar ul.components {
     padding: 20px 0;

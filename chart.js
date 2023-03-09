@@ -400,7 +400,6 @@ function initCanvas(gameID, difficulty) {
     if (game === '') { 
 		game = "th11"; //default if url is invalid
 	}
-    console.log(game)
     localStorage.selectedGame = game;
     loadCanvas(game, difficulty);
     doButtonStuffButForGameSelector(game);
