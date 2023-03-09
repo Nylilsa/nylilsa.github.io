@@ -394,9 +394,14 @@ function roundedTicks(value, index, values, game) {
 
 function initCanvas(gameID, difficulty) {
     let game = gameID.slice(1); 
+    if (localStorage.selectedGame && game === '') {
+        game = localStorage.selectedGame;
+    }
     if (game === '') { 
 		game = "th11"; //default if url is invalid
 	}
+    console.log(game)
+    localStorage.selectedGame = game;
     loadCanvas(game, difficulty);
     doButtonStuffButForGameSelector(game);
     fetch('json/gameinfo.json')
