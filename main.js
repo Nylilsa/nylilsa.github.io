@@ -480,7 +480,6 @@ function initScrollBar() {
 		return;
 	}
     document.body.appendChild(style);
-    return style.sheet;
 }
 
 function initAutoHideMenu() { // hides menu when scrolling
