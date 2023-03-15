@@ -3,7 +3,19 @@
 [hr_major]  
 
 
+A comprehensive list of Touhou world records, updated every so often. This page includes an interactive graph (currently bugged on phone) and a table of your selected game.
+
+This page has [hl2]no replay support[/hl2]. If you are looking for replays, you might be better off looking at one of the following websites:
+1. [a=https://maribelhearn.com/wr]Touhou World Records[/a] - by Maribel Hearn
+2. [a=https://maribelhearn.com/royalflare]Royalflare Archive[/a] - by Maribel Hearn
+3. [a=https://wikiwiki.jp/thscorekg/]東方スコア記録wiki Wiki*[/a] - by Ｋ・Ｇ
+4. [a=http://replay.lunarcast.net/]LunarCast Replay Database[/a] - by Tom
+5. [a=https://thscore.pndsng.com/index.php]東方スコア記録wiki Wiki*[/a] - by pndsng
+
+The data from this page are primarily gathered from the [a=https://maribelhearn.com/royalflare]Royalflare Archive[/a] and from (snapshots of) [a=https://maribelhearn.com/wr]Touhou World Records[/a]. Other sources include Discord messages, the other aforementioned sites, feedback from players.
+
 If there are any inaccuracies on this page, please contact me on Discord (at ``Nylilsa#9310``) about it !
+
 
 ## Game
 [hr_major]

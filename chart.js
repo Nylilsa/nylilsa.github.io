@@ -582,7 +582,7 @@ function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty)
     }
 }
 
-function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficulty) {
+function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficulty, flag = true) {
     const section = document.getElementById("wr-tables");
     const length = section.children.length;
     if(length > 0) { // removes old and allows for new to be generated
@@ -593,7 +593,7 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
     generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty);
     for (let i = 0; i < data.length; i++) { // tables
         let reverse;
-        if (true) {reverse = data[i].length - 1;} else {reverse = 0}
+        if (flag) {reverse = data[i].length - 1;} else {reverse = 0}
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
         let firstElement = "Shottype";
