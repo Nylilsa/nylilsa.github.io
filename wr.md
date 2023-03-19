@@ -3,9 +3,9 @@
 [hr_major]  
 
 
-A comprehensive Touhou world records tracker, updated every so often. This page includes an interactive graph (currently bugged on phone) and a table of your selected game. [hl2]This is not a scoreboard[/hl2].
+A comprehensive Touhou world records tracker, updated every so often. This page includes an interactive graph and a table of your selected game. For best viewing experience I recommend viewing this on [hl2]desktop[/hl2]. 
 
-This page has [hl2]no replay support[/hl2]. If you are looking for replays, you might be better off looking at one of the following websites:
+[hl2]This is not a scoreboard[/hl2]. This page has [hl2]no replay support[/hl2]. If you are looking for replays, you might be better off looking at one of the following websites:
 1. [a=https://maribelhearn.com/wr]Touhou World Records[/a] - by Maribel Hearn
 2. [a=https://maribelhearn.com/royalflare]Royalflare Archive[/a] - by Maribel Hearn
 3. [a=https://wikiwiki.jp/thscorekg/]東方スコア記録wiki Wiki*[/a] - by Ｋ・Ｇ
@@ -44,21 +44,18 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
 </div>
 
 [br]
-## Difficulty
-[hr_major]
 
+## Chart & Tables
+[hr_major]
 <div id="wr-difficulty-buttons"></div>
-
 [br]
-
-## Graph
-[hr_major]
 
 <div id="wr-chart-wrapper"></div>
 <div id="legend-toggle-all" style="min-height:10px"></div>
 <div id="legend-container"></div>
 
-## Tables
+[br]
+
 [hr_major]
 
 [br]

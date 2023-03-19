@@ -16,6 +16,7 @@
     --black: #000000;
     --almost-black: #111111;
     --black-blue: #08101C;
+    --sidebar-width: 250px;
 }
 
 ::-webkit-scrollbar-track {
@@ -473,11 +474,13 @@ ul.CTAs {
     color: var(--almost-white);
 }
 
-.sidebar-class-mobile {
-    max-width: 100%  !important;
-    width: 100%;
+.sidebar-class-width {
+    transform: translateX(calc(var(--sidebar-width) * -1));
 }
 
+.sidebar-class-negative-width {
+    padding-left: calc(var(--sidebar-width) * -1);
+}
 .tag {
     color: var(--almost-white);
     display: inline-flex;
@@ -570,10 +573,9 @@ ul.CTAs {
 #content {
     flex: 1;
     width: 100%;
-    padding-top: 30px;
-    padding-right: 6vw;
-    padding-bottom: 20px;
-    padding-left: 6vw;
+    padding: 3vmax;
+    padding-left: calc(var(--sidebar-width) + 3vmax);
+    margin-top: 3vh;
     min-height: 100vh;
     transition: all 0.3s;
     background-color: #020c18;
@@ -592,16 +594,17 @@ ul.CTAs {
 		padding-top: 0px;
 		color: var(--almost-white);
 	}
-	margin-top: -5vmax;
-	height: 5vmax;
+	height: 4vmax;
 	position: fixed;
 	width: 100%;
 	background-color: var(--dark-teal);
 	z-index: 3;
 	transition: all 0.3s;
-	margin-left: 250px;
 	border-bottom: 1px solid var(--discord-blue);
 	display: table;
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: var(--sidebar-width);
 }
 
 #maximum {
@@ -681,8 +684,8 @@ ul.CTAs {
 		border-bottom: 1px solid var(--default);
 		border-top: 1px solid var(--default);
 	}
-	min-width: 250px;
-	max-width: 250px;
+
+	width: var(--sidebar-width);
 	background: var(--dark-teal);
 	color: var(--almost-white);
 	transition: all 0.3s;
@@ -696,14 +699,7 @@ ul.CTAs {
 }
 
 #sidebar.active {
-    margin-left: -250px;
-}
-
-#sidebar2 {
-	visibility: hidden;
-    min-width: 250px;
-    max-width: 250px;
-    transition: all 0.3s;
+    margin-left: -var(--sidebar-width);
 }
 
 #table-scenes {
@@ -755,36 +751,38 @@ ul.CTAs {
     white-space: nowrap;
     scrollbar-color: var(--default) var(--almost-black);
     scrollbar-width: thin;
-    width: calc(min(1280px, 88vw, (100vw - 250px - 12vw - 10px))); // 100vw=width, 250px=sidebar, 12vw=padding, 10px because its too large otherwise
+    width: calc(min(1280px, 88vw)); // 100vw=width, var(--sidebar-width)=sidebar, 12vw=padding, 10px because its too large otherwise
     &::-webkit-scrollbar {
         width: 4px;
         height: 4px;
     }
 }
 
-@media (max-aspect-ratio: 14 / 16), (max-width: 500px) {
-    .sidebar-class-desktop  {
-        margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-    #sidebarCollapse span {
-        display: none;
+@media screen and (max-width: 500px) {
+    :root {
+        --sidebar-width: 100% !important;
     }
     #header {
-        margin-top: 0;
-        margin-left: 0;
-    }
-    #header button {
-        position: fixed;
+        padding-left: 0px;
     }
     #content {
-        padding: 3vmax;
-        margin-top: 5vw;
+        padding-left: 0;
     }
-    #wr-game-buttons {
-        width: calc(min(1280px, 88vw, (100vw - 0px - 12vw - 10px)));
+    #legend-container ul {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr)) !important;
     }
-}
-
+    table.all-wr-tables tbody tr {
+        th:nth-child(1) {
+            display: none;
+        }
+        td:nth-child(1) {
+            display: none;
+        }
+        th:nth-child(2) {
+            display: none;
+        }
+        td:nth-child(2) {
+            display: none;
+        }
+    }
+  }

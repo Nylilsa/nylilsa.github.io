@@ -125,12 +125,19 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 }
 
 function toggleSidebar() { //changes class of sidebar upon button press
-	const sidebar = document.getElementById('sidebar'); 
-	if (sidebar.className == "sidebar-class-mobile") {
-		sidebar.className = 'sidebar-class-desktop';
+	const sidebar = document.getElementById('sidebar');
+	const content = document.getElementById('content');
+	const header = document.getElementById('header');
+	if (sidebar.className == "sidebar-class-width") {
+        content.style.paddingLeft = '';
+		header.style.paddingLeft = '';
+		sidebar.className = '';
 		return;
 	}
-	sidebar.className = 'sidebar-class-mobile';
+    content.style.paddingLeft = '3vmax';
+    header.style.paddingLeft = '3vmax';
+	sidebar.className = 'sidebar-class-width';
+    
 }
 
 function resize() { //changes property of sidebar button and sidebar class
@@ -497,7 +504,10 @@ function initAutoHideMenu() { // hides menu when scrolling
 
 function initHashChange() {
     setTimeout(function(){
-        window.addEventListener('hashchange', (e) => {loadMarkdown(initRemoveHash(false));}, false)}
+        window.addEventListener('hashchange', (e) => {
+            loadMarkdown(initRemoveHash(false));
+            toggleSidebar();
+        }, false)}
         , 500); // delay is needed or else hashchange and init are executed at once
 }
 function initRemoveHash(input) { //removes #/
@@ -575,6 +585,20 @@ function initSwipeCheck() {
 	    touchendY = e.changedTouches[0].screenY;
 	    checkDirection();
 	})
+
+}
+
+function initKeys() {
+    document.addEventListener('keydown', evt => {
+        if (evt.key === 'Escape') {
+            const sidebar = document.getElementById('sidebar'); 
+            sidebar.className = 'sidebar-class-desktop';
+        }
+        if (evt.key === 'Tab') {
+            const sidebar = document.getElementById('sidebar'); 
+            sidebar.className = 'sidebar-class-mobile';
+        }
+    });
 }
 
 function init() {
@@ -583,9 +607,11 @@ function init() {
 	initCustomColor();
 	initSidebarContent();
     initHashChange();
-	initResize();
+	//initResize();
+    initKeys();
 	initAutoHideMenu();
-	initSwipeCheck();
+	//initSwipeCheck();
+    toggleSidebar();
 }
 
 init();
