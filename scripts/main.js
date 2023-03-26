@@ -505,7 +505,7 @@ function initAutoHideMenu() { // hides menu when scrolling
         if (document.scrollingElement.scrollTop < previousScrollTop) { // if scroll upwards
             menu.style.transform = 'translateY(0px)';
         } else {
-            menu.style.transform = 'translateY(-60px)';
+            menu.style.transform = 'translateY(-4vmax)';
         }
         previousScrollTop = document.scrollingElement.scrollTop;
     }, { passive: true });
