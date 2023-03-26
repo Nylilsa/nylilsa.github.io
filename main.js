@@ -122,11 +122,11 @@ function generateTable(input) { // generates tables of shottypes of HSifS and WB
 	} 
 }
 
-function toggleSidebar() { //changes class of sidebar upon button press
+function toggleSidebar(bool) { //changes class of sidebar upon button press
 	const sidebar = document.getElementById('sidebar');
 	const content = document.getElementById('content');
 	const header = document.getElementById('header');
-	if (sidebar.className == "sidebar-class-width") {
+	if (bool || sidebar.className == "sidebar-class-width") {
         sidebar.style.transform = '';
         content.style.paddingLeft = '';
 		header.style.paddingLeft = '';
@@ -506,7 +506,7 @@ function initHashChange() {
     setTimeout(function(){
         window.addEventListener('hashchange', (e) => {
             loadMarkdown(initRemoveHash(false));
-            toggleSidebar();
+            toggleSidebar(true);
         }, false)}
         , 500); // delay is needed or else hashchange and init are executed at once
 }
@@ -611,7 +611,7 @@ function init() {
     initKeys();
 	initAutoHideMenu();
 	//initSwipeCheck();
-    //toggleSidebar();
+    //toggleSidebar()
 }
 
 init();
