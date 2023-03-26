@@ -30,8 +30,6 @@ function loadMarkdown(path) { //loads page
             }
         }
 	}
-	//if button is clicked, then sidebar (on mobile!) is closed automatically.
-	document.getElementById('sidebar').className = 'sidebar-class-desktop';
 }
 
 function colorHex(input) { // argument is optional
@@ -129,13 +127,15 @@ function toggleSidebar() { //changes class of sidebar upon button press
 	const content = document.getElementById('content');
 	const header = document.getElementById('header');
 	if (sidebar.className == "sidebar-class-width") {
+        sidebar.style.transform = '';
         content.style.paddingLeft = '';
 		header.style.paddingLeft = '';
 		sidebar.className = '';
 		return;
 	}
-    content.style.paddingLeft = '3vmax';
-    header.style.paddingLeft = '3vmax';
+    sidebar.style.transform = 'translateX(0)';
+    content.style.paddingLeft = 'calc(var(--sidebar-width) + 3vmax)';
+    header.style.paddingLeft = 'calc(var(--sidebar-width) + 3vmax)';
 	sidebar.className = 'sidebar-class-width';
     
 }
@@ -611,7 +611,7 @@ function init() {
     initKeys();
 	initAutoHideMenu();
 	//initSwipeCheck();
-    toggleSidebar();
+    //toggleSidebar();
 }
 
 init();

@@ -401,9 +401,6 @@ ul.CTAs {
   background-color: var(--black-blue);
   color: var(--almost-white); }
 
-.sidebar-class-width {
-  transform: translateX(calc(var(--sidebar-width) * -1)); }
-
 .sidebar-class-negative-width {
   padding-left: calc(var(--sidebar-width) * -1); }
 
@@ -483,7 +480,6 @@ ul.CTAs {
   flex: 1;
   width: 100%;
   padding: 3vmax;
-  padding-left: calc(var(--sidebar-width) + 3vmax);
   margin-top: 3vh;
   min-height: 100vh;
   transition: all 0.3s;
@@ -501,8 +497,7 @@ ul.CTAs {
   border-bottom: 1px solid var(--discord-blue);
   display: table;
   margin-top: 0;
-  margin-left: 0;
-  padding-left: var(--sidebar-width); }
+  margin-left: 0; }
   #header button {
     position: absolute;
     height: inherit;
@@ -512,12 +507,8 @@ ul.CTAs {
     padding-top: 0px;
     color: var(--almost-white); }
 
-#maximum {
-  max-width: calc(min(1280px, 88vw));
-  justify-content: center; }
-
 #mdcontent {
-  opacity: 1;
+  max-width: calc(min(1280px, 88vw));
   overflow-wrap: break-word; }
   #mdcontent h1, #mdcontent h2, #mdcontent h3, #mdcontent h4, #mdcontent h5, #mdcontent h6, #mdcontent p, #mdcontent li {
     color: var(--almost-white);
@@ -536,6 +527,7 @@ ul.CTAs {
   width: var(--sidebar-width);
   background: var(--dark-teal);
   color: var(--almost-white);
+  transform: translateX(calc(var(--sidebar-width) * -1));
   transition: all 0.3s;
   position: fixed;
   overflow-y: scroll;
@@ -574,6 +566,8 @@ ul.CTAs {
     padding: 20px 0;
     border-bottom: 1px solid var(--default);
     border-top: 1px solid var(--default); }
+  #sidebar .sidebar-class-width {
+    transform: translateX(calc(var(--sidebar-width) * -1)); }
 
 #sidebar.active {
   margin-left: -var(--sidebar-width); }
