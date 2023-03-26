@@ -132,16 +132,20 @@ function toggleSidebar(bool) { //changes class of sidebar upon button press
         sidebar.style.transform = '';
         content.style.paddingLeft = '';
 		header.style.paddingLeft = '';
-        chart.style.maxWidth = '';
-        wrButtons.style.maxWidth = '';
+        if (chart) {
+            chart.style.maxWidth = '';
+            wrButtons.style.maxWidth = '';
+        }
 		sidebar.className = '';
 		return;
 	}
     sidebar.style.transform = 'translateX(0)';
     content.style.paddingLeft = 'calc(var(--sidebar-width) + 3vmax)';
     header.style.paddingLeft = 'calc(var(--sidebar-width) + 3vmax)';
-    chart.style.maxWidth = 'calc(min(1030px, calc(88vw - var(--sidebar-width) + 3vmax))';
-    wrButtons.style.maxWidth = 'calc(min(1030px, calc(88vw - var(--sidebar-width) + 3vmax))';
+    if (chart) {
+        chart.style.maxWidth = 'calc(min(1030px, calc(88vw - var(--sidebar-width) + 3vmax))';
+        wrButtons.style.maxWidth = 'calc(min(1030px, calc(88vw - var(--sidebar-width) + 3vmax))';
+    }
 	sidebar.className = 'sidebar-class-width';
 }
 
