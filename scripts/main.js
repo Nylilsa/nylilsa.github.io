@@ -149,24 +149,6 @@ function toggleSidebar(bool) { //changes class of sidebar upon button press
 	sidebar.className = 'sidebar-class-width';
 }
 
-function resize() { //changes property of sidebar button and sidebar class
-	const ratio = window.innerWidth / window.innerHeight;
-	const sidebar = document.getElementById('sidebar'); 
-	const hidden = document.getElementsByClassName('hidden'); //for toggling visibility of button (should only appear on mobile)
-	const maxAspectRatio =  14 / 16; // must be same as aspect ration in style.scss
-
-	if (ratio <= maxAspectRatio) {
-		for(let i = 0; i < hidden.length; i++) {
-			hidden[i].style.visibility = 'visible';
-		}
-	} else {
-		sidebar.className = "sidebar-class-desktop";
-	
-		for(let i = 0; i < hidden.length; i++) {
-			hidden[i].style.visibility = 'hidden';
-		}
-	}
-}
 
 function jumpTo(id, duration) {
     const tagsCheck = /tags/g.test(window.location.hash);
@@ -536,11 +518,6 @@ function initRemoveHash(input) { //removes #/
 	return c;
 }
 
-function initResize() { // calls every time window changes
-	window.onresize = resize;
-	resize();
-};
-
 function initRememberScroll() {
 	if (initRemoveHash(true).length > 0) {
 		history.scrollRestoration = 'manual';
@@ -563,49 +540,10 @@ function initNavColor() { // changes color to match the game's color
 	mobile.style.borderColor = colorRGB(-16, 1);
 }
 
-function initSwipeCheck() {
-	let [touchstartX, touchendX, touchstartY, touchendY] = [0, 0, 0, 0];
-
-	function checkDirection() {
-		const limit = screen.width * 1/9;
-		const swipeRight = touchendX > touchstartX;
-		const swipeOnLeft = limit > touchstartX;
-		const menuCheck = document.getElementById("sidebar").classList.contains("sidebar-class-desktop");
-
-        const angle = Math.atan2((touchstartX-touchendX),(touchstartY-touchendY));
-        const upperbound = (-Math.PI/2) - (Math.PI/6);
-        const lowerbound = (-Math.PI/2) + (Math.PI/6);
-        const angleCheck = (angle > upperbound && angle < lowerbound);
-        
-        const swipeToLeftCheck = (touchstartX - touchendX) > screen.width * 1/5;
-
-		if (swipeRight && swipeOnLeft && menuCheck && angleCheck || swipeToLeftCheck && !menuCheck) {
-			toggleSidebar();
-		}
-	}
-
-	document.addEventListener('touchstart', e => {
-	    touchstartX = e.changedTouches[0].screenX;
-        touchstartY = e.changedTouches[0].screenY;
-	})
-
-	document.addEventListener('touchend', e => {
-	    touchendX = e.changedTouches[0].screenX;
-	    touchendY = e.changedTouches[0].screenY;
-	    checkDirection();
-	})
-
-}
-
 function initKeys() {
     document.addEventListener('keydown', evt => {
         if (evt.key === 'Escape') {
-            const sidebar = document.getElementById('sidebar'); 
-            sidebar.className = 'sidebar-class-desktop';
-        }
-        if (evt.key === 'Tab') {
-            const sidebar = document.getElementById('sidebar'); 
-            sidebar.className = 'sidebar-class-mobile';
+            toggleSidebar(true);
         }
     });
 }
@@ -616,11 +554,8 @@ function init() {
 	initCustomColor();
 	initSidebarContent();
     initHashChange();
-	//initResize();
     initKeys();
 	initAutoHideMenu();
-	//initSwipeCheck();
-    //toggleSidebar()
 }
 
 init();
