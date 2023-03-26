@@ -453,6 +453,9 @@ ul.CTAs {
 .url:visited {
   color: var(--url-visited); }
 
+#wr-chart-wrapper {
+  min-height: 420px; }
+
 .wr-shottype-buttons {
   font-size: 14px;
   color: var(--discord-purple); }
@@ -620,6 +623,8 @@ ul.CTAs {
 @media screen and (max-width: 500px) {
   :root {
     --sidebar-width: 100% !important; }
+  #wr-chart-wrapper {
+    max-width: 100%; }
   #header {
     padding-left: 0px; }
   #content {

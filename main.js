@@ -126,18 +126,23 @@ function toggleSidebar(bool) { //changes class of sidebar upon button press
 	const sidebar = document.getElementById('sidebar');
 	const content = document.getElementById('content');
 	const header = document.getElementById('header');
+	const chart = document.getElementById('wr-chart-wrapper');
+	const wrButtons = document.getElementById('wr-game-buttons');
 	if (bool || sidebar.className == "sidebar-class-width") {
         sidebar.style.transform = '';
         content.style.paddingLeft = '';
 		header.style.paddingLeft = '';
+        chart.style.maxWidth = '';
+        wrButtons.style.maxWidth = '';
 		sidebar.className = '';
 		return;
 	}
     sidebar.style.transform = 'translateX(0)';
     content.style.paddingLeft = 'calc(var(--sidebar-width) + 3vmax)';
     header.style.paddingLeft = 'calc(var(--sidebar-width) + 3vmax)';
+    chart.style.maxWidth = 'calc(min(1030px, calc(88vw - var(--sidebar-width) + 3vmax))';
+    wrButtons.style.maxWidth = 'calc(min(1030px, calc(88vw - var(--sidebar-width) + 3vmax))';
 	sidebar.className = 'sidebar-class-width';
-    
 }
 
 function resize() { //changes property of sidebar button and sidebar class

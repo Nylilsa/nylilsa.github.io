@@ -79,6 +79,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
         }
     ],
         options: {
+            maintainAspectRatio: false,
             scales: {
                 x: {
                     type: 'time',
@@ -471,6 +472,7 @@ function doButtonStuffButForGameDifficulty(allDifficulties) {
             this.setAttribute("class", "selected-full");
             const top = document.getElementById("legend-toggle-all");
             top.className = '';
+            
         }
         diffSelector.appendChild(createButton);
     });
