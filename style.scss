@@ -131,16 +131,18 @@ ul ul ul a {
     background: #03050F;
 }
 
-ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    padding-left: 10px;
-}
-
 ul.CTAs {
+    a {
+        &:hover {
+            svg {
+                filter: invert(52%) sepia(86%) saturate(298%) hue-rotate(192deg) brightness(87%) contrast(91%);
+            }
+        }
+        text-align: center;
+        font-size: 0.9em !important;
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
     padding: 20px;
 }
 

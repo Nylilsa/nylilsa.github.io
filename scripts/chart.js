@@ -1,6 +1,6 @@
 "use strict";
 
-class Points {
+export class Points {
     constructor(date, score, player) {
       this.x = date;
       this.y = score;
@@ -8,7 +8,7 @@ class Points {
     }
 }
 
-class Data {
+export class Data {
     constructor(data, label, color, colorsWithOpacity) {
         let length;
         this.radius = 3.5;
@@ -32,7 +32,7 @@ class Data {
     }
 }
 
-function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game) {
+export function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game) {
     let colors;
     if ((game != "th16" && game != "th128") || difficulty == 'Extra') {
         colors = colorsForChart[game]['colors'];
@@ -160,7 +160,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
     });
 }
 
-function toggleLegend(chart, items, game, difficulty) {
+export function toggleLegend(chart, items, game, difficulty) {
     const top = document.getElementById("legend-toggle-all");
     const li = document.createElement('li');
     const flag = top.classList.contains("show-function");
@@ -211,7 +211,7 @@ function toggleLegend(chart, items, game, difficulty) {
     }
 }
 
-function extraLegendButtons(top, game, items, chart) {
+export function extraLegendButtons(top, game, items, chart) {
     let sub;
     let n;
     let colors;
@@ -288,7 +288,7 @@ function extraLegendButtons(top, game, items, chart) {
     }
 }
 
-function createLegend(chart, args, options, gameCharacters, colors, game, difficulty) {
+export function createLegend(chart, args, options, gameCharacters, colors, game, difficulty) {
     const ul = getOrCreateLegendList(game, options.containerID, gameCharacters);
     while (ul.firstChild) {
         ul.firstChild.remove();
@@ -341,7 +341,7 @@ function createLegend(chart, args, options, gameCharacters, colors, game, diffic
     }
 }
 
-function getOrCreateLegendList(game, id, gameCharacters) {
+export function getOrCreateLegendList(game, id, gameCharacters) {
     const legendContainer = document.getElementById(id);
     let listContainer = legendContainer.querySelector('ul');
     let computedCharacters = (100 / gameCharacters.length)+'%';
@@ -359,7 +359,7 @@ function getOrCreateLegendList(game, id, gameCharacters) {
     return listContainer;
 }
 
-function gridLegend(element, value) {
+export function gridLegend(element, value) {
     element.style.display = 'grid';
     element.style.justifyItems = 'stretch';
     element.style.justifyContent = 'center';
@@ -367,7 +367,7 @@ function gridLegend(element, value) {
     element.style.padding = `0`;
 }
 
-function roundedTicks(value, index, values, game) {
+export function roundedTicks(value, index, values, game) {
     const largeNumbers = {
         "Millions": {
             "number": 1e6,
@@ -393,7 +393,7 @@ function roundedTicks(value, index, values, game) {
 }
 
 
-function initCanvas(gameID, difficulty) {
+export function initCanvas(gameID, difficulty) {
     let game = gameID.slice(1); 
     if (localStorage.selectedGame && game === '') {
         game = localStorage.selectedGame;
@@ -412,7 +412,7 @@ function initCanvas(gameID, difficulty) {
     });
 }
 
-function loadCanvas(game, difficulty = "Lunatic") {
+export function loadCanvas(game, difficulty = "Lunatic") {
     const twoYears = 63072000000;
     const now = new Date().getTime();
     let time;
@@ -452,7 +452,7 @@ function loadCanvas(game, difficulty = "Lunatic") {
     return;
 }
 
-function doButtonStuffButForGameDifficulty(allDifficulties) {
+export function doButtonStuffButForGameDifficulty(allDifficulties) {
     const diffSelector = document.getElementById("wr-difficulty-buttons");
     allDifficulties.forEach(difficulty => {
         const createButton = document.createElement("button");
@@ -479,7 +479,7 @@ function doButtonStuffButForGameDifficulty(allDifficulties) {
 
 }
 
-function doButtonStuffButForGameSelector(game) {
+export function doButtonStuffButForGameSelector(game) {
     const parent = document.getElementsByClassName("card-game");
     for(let i = 0; i < parent.length; i++) {
         const button = parent[i];
@@ -505,7 +505,7 @@ function doButtonStuffButForGameSelector(game) {
     selector.scrollLeft = number;
 }
 
-function doButtonStuff(id) {
+export function doButtonStuff(id) {
     const button = document.getElementById(id);
     button.addEventListener("click", selectGame);
     function selectGame() {
@@ -527,7 +527,7 @@ function doButtonStuff(id) {
     }
 }
 
-function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty) {
+export function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty) {
 	const section = document.getElementById("wr-buttons");
     const length = section.children.length;
     if(length > 0) { // removes old and allows for new to be generated
@@ -584,7 +584,7 @@ function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty)
     }
 }
 
-function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficulty, flag = true) {
+export function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficulty, flag = true) {
     const section = document.getElementById("wr-tables");
     const length = section.children.length;
     if(length > 0) { // removes old and allows for new to be generated
@@ -656,9 +656,7 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
     }
 }
 
-
-
-function catchErrors(data) {
+export function catchErrors(data) {
     console.time("test1");
     let arr = [];
     for (const [key, valueee] of Object.entries(data)) {
@@ -683,4 +681,3 @@ function catchErrors(data) {
     console.log((arr).length);
     console.timeEnd("test1");
 }
-

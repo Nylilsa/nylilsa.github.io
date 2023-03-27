@@ -494,10 +494,21 @@ function initAutoHideMenu() { // hides menu when scrolling
 }
 
 function initHashChange() {
-    setTimeout(function(){
+    setTimeout(() => {
         window.addEventListener('hashchange', (e) => {
-            loadMarkdown(initRemoveHash(false));
             toggleSidebar(true);
+            if (initRemoveHash(false) == 'wr.md') {
+                import('./chart.js')
+                .then((module) => {
+                    Object.entries(module).forEach(([name, exported]) => window[name] = exported);
+                    loadMarkdown(initRemoveHash(false));
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+                return;
+            }
+            loadMarkdown(initRemoveHash(false));
         }, false)}
         , 500); // delay is needed or else hashchange and init are executed at once
 }
@@ -549,6 +560,22 @@ function initKeys() {
 }
 
 function init() {
+    if (initRemoveHash(false) == 'wr.md') {
+        import('./chart.js')
+        .then((module) => {
+            Object.entries(module).forEach(([name, exported]) => window[name] = exported);
+            loadMarkdown(initRemoveHash(false));
+            initRememberScroll();
+            initCustomColor();
+            initSidebarContent();
+            initHashChange();
+            initKeys();
+            initAutoHideMenu();
+        }).catch((error) => {
+            console.error(error);
+        });
+        return;
+    }
 	loadMarkdown(initRemoveHash(false)); //loads in md 
 	initRememberScroll();
 	initCustomColor();
