@@ -12,6 +12,7 @@
   --dark-blue: #222538;
   --default: #47748B;
   --dark-teal: #121C28;
+  --background: #020c18;
   --grey: #233343;
   --black: #000000;
   --almost-black: #111111;
@@ -463,7 +464,7 @@ ul.CTAs {
   display: flex;
   width: 100%;
   align-items: stretch;
-  background-color: #020c18; }
+  background-color: var(--background); }
 
 .youtube {
   background-color: var(--discord-blue);
@@ -485,7 +486,7 @@ ul.CTAs {
   margin-top: 3vh;
   min-height: 100vh;
   transition: all 0.3s;
-  background-color: #020c18;
+  background-color: var(--background);
   display: flex;
   justify-content: center; }
 
@@ -605,7 +606,7 @@ ul.CTAs {
 
 #wr-game-buttons {
   transition: all 0.3s;
-  background-color: black;
+  background-color: var(--background);
   display: grid;
   grid-template-columns: repeat(19, 1fr);
   grid-auto-flow: row;
