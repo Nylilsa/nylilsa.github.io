@@ -348,6 +348,9 @@ export function getOrCreateLegendList(game, id, gameCharacters) {
     if (!listContainer) {
         listContainer = document.createElement('ul');
         if (gameCharacters.length > 4) {
+            computedCharacters = '16.6666%';
+        }
+        if (game == 'th16' || game == 'th08') {
             computedCharacters = '25%';
         }
         if (game == 'th17') {
@@ -363,7 +366,7 @@ export function gridLegend(element, value) {
     element.style.display = 'grid';
     element.style.justifyItems = 'stretch';
     element.style.justifyContent = 'center';
-    element.style.gridTemplateColumns = `repeat(auto-fill, minmax(${value}, 1fr))`;
+    element.style.gridTemplateColumns = `repeat(auto-fill, minmax(max(${value}, 200px), 1fr))`;
     element.style.padding = `0`;
 }
 
@@ -408,7 +411,7 @@ export function initCanvas(gameID, difficulty) {
     .then((response2) => response2.json())
     .then(data => {
         const allDifficulties = data['Difficulty'][game];
-        doButtonStuffButForGameDifficulty(allDifficulties);
+        doButtonStuffButForGameDifficulty(allDifficulties, game);
     });
 }
 
@@ -452,7 +455,7 @@ export function loadCanvas(game, difficulty = "Lunatic") {
     return;
 }
 
-export function doButtonStuffButForGameDifficulty(allDifficulties) {
+export function doButtonStuffButForGameDifficulty(allDifficulties, game) {
     const diffSelector = document.getElementById("wr-difficulty-buttons");
     allDifficulties.forEach(difficulty => {
         const createButton = document.createElement("button");
@@ -464,7 +467,7 @@ export function doButtonStuffButForGameDifficulty(allDifficulties) {
             createButton.setAttribute("class", "selected-full");
         }
         function selectDifficulty() {
-            loadCanvas(initRemoveHash(true).slice(1) || "th11", difficulty);
+            loadCanvas(initRemoveHash(true).slice(1) || game, difficulty);
             const allElements = document.querySelectorAll('*');
             allElements.forEach((element) => {
                 element.classList.remove('selected-full');
