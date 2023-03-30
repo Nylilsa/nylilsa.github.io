@@ -686,6 +686,8 @@ ul.CTAs {
         transform: translateX(calc(var(--sidebar-width) * -1));
     }
 	width: var(--sidebar-width);
+    max-width: 100vw;
+    max-width: 100dvw;
 	background: var(--dark-teal);
 	color: var(--almost-white);
     transform: translateX(calc(var(--sidebar-width) * -1));
