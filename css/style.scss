@@ -366,28 +366,28 @@ ul.CTAs {
 .icon-bullet {
     transform: scale(0.65);
     filter: invert(100%);
-    background-image: url(assets/bullet.svg);
+    background-image: url(../assets/bullet.svg);
 }
 
 .icon-calendar {
     transform: scale(0.75);
     filter: invert(100%);
-    background-image: url(assets/calendar.svg);
+    background-image: url(../assets/calendar.svg);
 }
 
 .icon-cross {
-    background-image: url(assets/cross.svg);
+    background-image: url(../assets/cross.svg);
     transform: scale(1);
     /*makes it white*/
     filter: invert(100%) sepia(0%) saturate(7496%) hue-rotate(160deg) brightness(101%) contrast(102%); 
 }
 
 .icon-github {
-    background-image: url(assets/brand-github.svg);
+    background-image: url(../assets/brand-github.svg);
 }
 
 .icon-hamburger {
-    background-image: url(assets/hamburger.svg);
+    background-image: url(../assets/hamburger.svg);
     transform: scale(0.8);
     /*makes it white*/
     filter: invert(100%); 
@@ -402,7 +402,7 @@ ul.CTAs {
 .icon-star {
     transform: scale(0.8);
     filter: invert(100%);
-    background-image: url(assets/star.svg);
+    background-image: url(../assets/star.svg);
 }
 
 .icon-text {
@@ -413,17 +413,17 @@ ul.CTAs {
 .icon-trophy {
     transform: scale(0.7);
     filter: invert(100%);
-    background-image: url(assets/trophy.svg);
+    background-image: url(../assets/trophy.svg);
 }
 
 .icon-user {
     transform: scale(0.8);
     filter: invert(100%);
-    background-image: url(assets/user.svg);
+    background-image: url(../assets/user.svg);
 }
 
 .icon-youtube {
-    background-image: url(assets/brand-youtube.svg);
+    background-image: url(../assets/brand-youtube.svg);
 }
 
 .invis {
