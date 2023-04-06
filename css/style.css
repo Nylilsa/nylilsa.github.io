@@ -630,7 +630,7 @@ ul.CTAs {
   #header {
     padding-left: 0px; }
   #content {
-    padding-left: 0; }
+    padding-left: 0 !important; }
   #legend-container ul {
     grid-template-columns: repeat(auto-fill, minmax(50%, 1fr)) !important; }
   table.all-wr-tables tbody tr th:nth-child(1) {
