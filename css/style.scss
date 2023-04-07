@@ -49,6 +49,21 @@ a[data-toggle="collapse"] {
     position: relative;
 }
 
+a[href]:not(:where(
+  /* exclude hash only links */
+  [href^="#"],
+  /* exclude relative but not double slash only links */
+  [href^="/"]:not([href^="//"]),
+  /* domains to exclude */
+  [href*="//stackoverflow.com"],
+  /* subdomains to exclude */
+  [href*="//meta.stackoverflow.com"],
+)):after {
+    content: url(../assets/external-link.svg);
+    filter: invert(43%) sepia(8%) saturate(2271%) hue-rotate(156deg) brightness(93%) contrast(85%);
+    aspect-ratio: 1;
+}
+
 b, strong {
     font-weight: bold;
     background-color: rgba(16, 0, 243, 0.0)
@@ -802,5 +817,16 @@ ul.CTAs {
         td:nth-child(2) {
             display: none;
         }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
   }

@@ -613,9 +613,10 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
         for (let j = 0; j < data[i].length; j++) { // rows
           let row = document.createElement("tr");
           const index = Math.abs(j - reverse);
-          const [score, player, date] = data[i][index];
+          const [score, player, date, url] = data[i][index];
+          console.log(url)
 		  const dateFormatted = dateFormat(date);
-          const scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          let scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             if (j == 0) { // header column
                 for (let k = 0; k < headers.length; k++) {
                     const icon = document.createElementNS("http://www.w3.org/2000/svg","svg");
@@ -644,7 +645,19 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
                 switch (k) {
                     case 0: {cellText = document.createTextNode(gameCharacters[i]); break;}
                     case 1: {cellText = document.createTextNode(`${difficulty}`); break;}
-                    case 2: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
+                    case 2: {
+                        if (url) {
+                            const a = document.createElement("a");
+                            a.href = url;
+                            a.classList = "url";
+                            a.innerText = `${scoreWithCommas}`;
+                            cellText = a;
+                            break;
+                        } else {
+                            cellText = document.createTextNode(`${scoreWithCommas}`);
+                            break;
+                        }
+                    }
                     case 3: {cellText = document.createTextNode(`${player}`); break;}
                     case 4: {cellText = document.createTextNode(`${dateFormatted}`); break;}
                     default: {console.error(`Oops, something went wrong.`)}
