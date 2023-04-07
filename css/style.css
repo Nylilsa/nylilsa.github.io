@@ -17,6 +17,7 @@
   --black: #000000;
   --almost-black: #111111;
   --black-blue: #08101C;
+  --clr-light-gray: #cdcdcd;
   --sidebar-width: 250px; }
 
 ::-webkit-scrollbar-track {
@@ -122,6 +123,7 @@ ul.CTAs {
       filter: invert(52%) sepia(86%) saturate(298%) hue-rotate(192deg) brightness(87%) contrast(91%); }
 
 .all-wr-tables {
+  color: var(--clr-light-gray);
   border: solid var(--black-blue) 16px;
   margin-left: auto;
   margin-right: auto;
@@ -129,9 +131,11 @@ ul.CTAs {
   max-width: 600px;
   background-color: var(--dark-teal); }
   .all-wr-tables th {
+    color: inherit;
     padding-bottom: 10px;
     padding-top: 10px; }
   .all-wr-tables tr {
+    color: inherit;
     font-size: 16px;
     transition-duration: 0.5s; }
   .all-wr-tables tr:hover {
@@ -149,7 +153,7 @@ ul.CTAs {
     padding-left: 12px;
     padding-right: 12px;
     font-size: 12px;
-    color: var(--almost-white); }
+    color: inherit; }
 
 .aria-navigation {
   background-color: var(--default);

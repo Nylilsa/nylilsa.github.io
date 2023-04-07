@@ -17,6 +17,7 @@
     --black: #000000;
     --almost-black: #111111;
     --black-blue: #08101C;
+    --clr-light-gray: #cdcdcd;
     --sidebar-width: 250px;
 }
 
@@ -148,6 +149,7 @@ ul.CTAs {
 }
 
 .all-wr-tables {
+    color: var(--clr-light-gray);
     border: solid var(--black-blue) 16px;
     margin-left: auto;
     margin-right: auto;
@@ -155,11 +157,12 @@ ul.CTAs {
     max-width: 600px;
     background-color: var(--dark-teal);
     th {
-        
+        color: inherit;
         padding-bottom: 10px;
         padding-top: 10px;
     }
     tr {
+        color: inherit;
         font-size: 16px;
         transition-duration: 0.5s;
     }
@@ -182,7 +185,7 @@ ul.CTAs {
         padding-left: 12px;
         padding-right: 12px;
         font-size: 12px;
-        color: var(--almost-white);
+        color: inherit;
     }
 
 }
