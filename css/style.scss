@@ -187,6 +187,17 @@ ul.CTAs {
 
 }
 
+.aria-navigation {
+    background-color: var(--default);
+    color: var(--almost-white);
+    position: absolute;
+    transform: translateY(-150%);
+    &:focus-within {
+        transform: translateY(0%);
+    }
+}
+
+
 .box {
     //background-color: var(--dark-blue);
     color: var(--almost-white);

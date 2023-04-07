@@ -33,18 +33,17 @@
 <script src="scripts/main.js" defer></script>
 </head>
 <body>
-
-<div id="header">
+<header id="header">
 	<button onclick="toggleSidebar()"><svg class="icon icon-hamburger"></svg></button>
-	<p style="display: table-cell; vertical-align: middle; text-align: center;">Nylilsa's Github Page</p>
-</div>
+    <p style="display: table-cell; vertical-align: middle; text-align: center;">Nylilsa's Github Page</p>
+</header>
 
 <div class="wrapper">
 
 
-<div id="sidebar">
+<nav id="sidebar">
 	<div class="sidebar-header">
-		<h3>Nylilsa's Github Page</h3>
+        <h3>Nylilsa's Github Page</h3>
 		<button class="hidden" onclick="toggleSidebar()"><svg class="icon icon-cross"></svg></button>
 	</div>
 
@@ -220,7 +219,7 @@
 			<a href="https://github.com/Nylilsa/nylilsa.github.io" target="_blank" class="github"><svg class="icon icon-github"></svg><span class="button-text">GitHub Repository</span></a>
 		</li>
 	</ul>
-</div>
+</nav>
 
 <article id="content">
 	<div id="mdcontent" type="text/markdown"></div>
