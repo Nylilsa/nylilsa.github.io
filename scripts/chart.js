@@ -450,7 +450,7 @@ export function loadCanvas(game, difficulty = "Lunatic") {
             generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game);
         });
-        //catchErrors(dataWR);
+        catchErrors(dataWR);
     });
     return;
 }
