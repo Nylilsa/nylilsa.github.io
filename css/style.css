@@ -131,7 +131,7 @@ ul.CTAs {
   max-width: 600px;
   background-color: var(--dark-teal); }
   .all-wr-tables th {
-    color: inherit;
+    color: var(--almost-white);
     padding-bottom: 10px;
     padding-top: 10px; }
   .all-wr-tables tr {
