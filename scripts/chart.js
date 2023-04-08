@@ -256,7 +256,6 @@ export function extraLegendButtons(top, game, items, chart) {
             for (let j = 0; j < indexes.length; j++) {
                 const storedSelected = JSON.parse(sessionStorage.selected);
                 const index = storedSelected.indexOf(indexes[j]);
-                console.log(j, storedSelected)
                 if (index > -1) {
                     storedSelected.splice(index, 1);
                 } else {
@@ -306,11 +305,8 @@ export function runOnce() {
     let hasRun = false;
     return function(func) {
         if (!hasRun) {
-            console.log("Function has run!");
             hasRun = true;
             func();
-        } else {
-            console.log("Can't run this again !");
         }
     };
 }
@@ -321,7 +317,6 @@ export function createLegend(chart, args, options, gameCharacters, colors, game,
     while (ul.firstChild) {
         ul.firstChild.remove();
     }
-    console.log(666)
     const items = chart.options.plugins.legend.labels.generateLabels(chart);
     toggleLegend(chart, items, game, difficulty);
     runOnlyOnce(toggleBetweenDiffs);
@@ -442,7 +437,6 @@ export function roundedTicks(value, index, values, game) {
 }
 
 export function initCanvas(gameID, difficulty) {
-    console.log("initCanvas")
     const func = runOnce();
     let game = gameID.slice(1); 
     if (localStorage.selectedGame && game === '') {
@@ -518,7 +512,6 @@ export function doButtonStuffButForGameDifficulty(allDifficulties, game) {
             const func = runOnce();
             loadCanvas(initRemoveHash(true).slice(1) || game, difficulty, func);
             const allElements = document.querySelectorAll('*');
-            console.log(sessionStorage.selected)
             allElements.forEach((element) => {
                 element.classList.remove('selected-full');
             });
