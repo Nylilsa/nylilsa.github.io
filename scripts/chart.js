@@ -32,7 +32,7 @@ export class Data {
     }
 }
 
-export function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game) {
+export function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func) {
     let colors;
     if ((game != "th16" && game != "th128") || difficulty == 'Extra') {
         colors = colorsForChart[game]['colors'];
@@ -74,7 +74,7 @@ export function callChartJS(fetchedData, gameCharacters, englishName, difficulty
         plugins: [{
             id: 'htmlLegend',
             afterUpdate(chart, args, options) {
-                createLegend(chart, args, options, gameCharacters, colors, game, difficulty);
+                createLegend(chart, args, options, gameCharacters, colors, game, difficulty, func);
             }
         }
     ],
@@ -186,6 +186,9 @@ export function toggleLegend(chart, items, game, difficulty) {
     li.style.justifyContent = 'center';
     li.style.gridColumn = '1/-1';
     li.onclick = () => {
+        const arrayOfLength = (length) => {return Array.from({length}, (_, i) => i)}
+        const arr1 = arrayOfLength(items.length);
+        sessionStorage.selected = flag ? "[]" : JSON.stringify(arr1);
         for (let i=0; i<items.length; i++) {
             const item = items[i];
 	        if (flag) {
@@ -250,6 +253,17 @@ export function extraLegendButtons(top, game, items, chart) {
             if (game == "th16") {
                 indexes = [i, i + n, i + 2*n, i + 3*n];
             }
+            for (let j = 0; j < indexes.length; j++) {
+                const storedSelected = JSON.parse(sessionStorage.selected);
+                const index = storedSelected.indexOf(indexes[j]);
+                console.log(j, storedSelected)
+                if (index > -1) {
+                    storedSelected.splice(index, 1);
+                } else {
+                    storedSelected.push(indexes[j]);
+                }
+                sessionStorage.selected = JSON.stringify(storedSelected);
+            }
             const selectedCharacters = indexes.map(j => {
                 return items[j];
             })
@@ -288,14 +302,36 @@ export function extraLegendButtons(top, game, items, chart) {
     }
 }
 
-export function createLegend(chart, args, options, gameCharacters, colors, game, difficulty) {
+export function runOnce() {
+    let hasRun = false;
+    return function(func) {
+        if (!hasRun) {
+            console.log("Function has run!");
+            hasRun = true;
+            func();
+        } else {
+            console.log("Can't run this again !");
+        }
+    };
+}
+
+export function createLegend(chart, args, options, gameCharacters, colors, game, difficulty, runOnlyOnce) {
+    const deselected = JSON.parse(sessionStorage.selected)
     const ul = getOrCreateLegendList(game, options.containerID, gameCharacters);
     while (ul.firstChild) {
         ul.firstChild.remove();
     }
-    // Reuse the built-in legendItems generator
+    console.log(666)
     const items = chart.options.plugins.legend.labels.generateLabels(chart);
     toggleLegend(chart, items, game, difficulty);
+    runOnlyOnce(toggleBetweenDiffs);
+    function toggleBetweenDiffs() {
+        for (let j=0; j < deselected.length; j++) {
+            const index = deselected[j];
+            chart.setDatasetVisibility(index, !chart.isDatasetVisible(index));
+        }
+        chart.update();
+    }
     for (let i=0; i<items.length; i++) {
         const item = items[i];
         const li = document.createElement('li');
@@ -306,6 +342,14 @@ export function createLegend(chart, args, options, gameCharacters, colors, game,
         li.style.flexDirection = 'row';
         li.style.marginLeft = '0px';
         li.onclick = () => {
+            const storedSelected = JSON.parse(sessionStorage.selected);
+            const index = storedSelected.indexOf(item.datasetIndex);
+            if (index > -1) {
+                storedSelected.splice(index, 1);
+            } else {
+                storedSelected.push(item.datasetIndex);
+            }
+            sessionStorage.selected = JSON.stringify(storedSelected);
             chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
             chart.update();
         };  
@@ -337,7 +381,9 @@ export function createLegend(chart, args, options, gameCharacters, colors, game,
         textContainer.appendChild(text);    
         li.appendChild(boxSpan);
         li.appendChild(textContainer);
-        ul.appendChild(li);
+        if (ul.children.length < items.length) {
+            ul.appendChild(li);
+        }
     }
 }
 
@@ -395,8 +441,9 @@ export function roundedTicks(value, index, values, game) {
     return (value / largeNumbers[selector]["number"]).toFixed(decimals) + largeNumbers[selector]["suffix"];
 }
 
-
 export function initCanvas(gameID, difficulty) {
+    console.log("initCanvas")
+    const func = runOnce();
     let game = gameID.slice(1); 
     if (localStorage.selectedGame && game === '') {
         game = localStorage.selectedGame;
@@ -405,7 +452,8 @@ export function initCanvas(gameID, difficulty) {
 		game = "th11"; //default if url is invalid
 	}
     localStorage.selectedGame = game;
-    loadCanvas(game, difficulty);
+    sessionStorage.selected = "[]";
+    loadCanvas(game, difficulty, func);
     doButtonStuffButForGameSelector(game);
     fetch('json/gameinfo.json')
     .then((response2) => response2.json())
@@ -415,7 +463,7 @@ export function initCanvas(gameID, difficulty) {
     });
 }
 
-export function loadCanvas(game, difficulty = "Lunatic") {
+export function loadCanvas(game, difficulty = "Lunatic", func) {
     const twoYears = 63072000000;
     const now = new Date().getTime();
     let time;
@@ -448,7 +496,7 @@ export function loadCanvas(game, difficulty = "Lunatic") {
             })
             const overallWRCharacter = gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))]
             generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
-            callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game);
+            callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func);
         });
         //catchErrors(dataWR);
     });
@@ -467,8 +515,10 @@ export function doButtonStuffButForGameDifficulty(allDifficulties, game) {
             createButton.setAttribute("class", "selected-full");
         }
         function selectDifficulty() {
-            loadCanvas(initRemoveHash(true).slice(1) || game, difficulty);
+            const func = runOnce();
+            loadCanvas(initRemoveHash(true).slice(1) || game, difficulty, func);
             const allElements = document.querySelectorAll('*');
+            console.log(sessionStorage.selected)
             allElements.forEach((element) => {
                 element.classList.remove('selected-full');
             });
@@ -614,7 +664,6 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
           let row = document.createElement("tr");
           const index = Math.abs(j - reverse);
           const [score, player, date, url] = data[i][index];
-          console.log(url)
 		  const dateFormatted = dateFormat(date);
           let scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             if (j == 0) { // header column
