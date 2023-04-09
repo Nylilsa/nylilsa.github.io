@@ -492,7 +492,7 @@ export function loadCanvas(game, difficulty = "Lunatic", func) {
             generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func);
         });
-        catchErrors(dataWR);
+        //catchErrors(dataWR);
     });
     return;
 }
@@ -715,7 +715,7 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
 }
 
 export function catchErrors(data) {
-    console.time("test1");
+    console.time("Time");
     let arr = [];
     for (const [key, valueee] of Object.entries(data)) {
         for (const [key3, value] of Object.entries(valueee)) { // cycles through all categories
@@ -723,9 +723,9 @@ export function catchErrors(data) {
                 let newScore = 0;
                 let newDate = 0;
                 value2.forEach(element => { //wr entry of shot
-                    //arr.push(key+key3+key2)
+                    arr.push(key+key3+key2)
                     //arr.push(element[1])
-                    arr.push(element[2])
+                    //arr.push(element[2])
                     const flagScore = (parseInt(element[0]) >= newScore);
                     newScore = parseInt(element[0]);
                     const flagDate = (new Date(element[2]).getTime() >= newDate);
@@ -737,5 +737,5 @@ export function catchErrors(data) {
     }
     console.log(mode(arr));
     console.log((arr).length);
-    console.timeEnd("test1");
+    console.timeEnd("Time");
 }
