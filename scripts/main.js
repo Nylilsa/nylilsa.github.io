@@ -497,18 +497,9 @@ function initHashChange() {
     setTimeout(() => {
         window.addEventListener('hashchange', (e) => {
             toggleSidebar(true);
-            if (initRemoveHash(false) == 'wr.md') {
-                import('./chart.js')
-                .then((module) => {
-                    Object.entries(module).forEach(([name, exported]) => window[name] = exported);
-                    loadMarkdown(initRemoveHash(false));
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-                return;
-            }
-            loadMarkdown(initRemoveHash(false));
+            initChartStuff(() => {
+                loadMarkdown(initRemoveHash(false));
+            })
         }, false)}
         , 500); // delay is needed or else hashchange and init are executed at once
 }
@@ -559,30 +550,41 @@ function initKeys() {
     });
 }
 
-function init() {
+function initChartStuff(callback) {
     if (initRemoveHash(false) == 'wr.md') {
-        import('./chart.js')
-        .then((module) => {
-            Object.entries(module).forEach(([name, exported]) => window[name] = exported);
-            loadMarkdown(initRemoveHash(false));
-            initRememberScroll();
-            initCustomColor();
-            initSidebarContent();
-            initHashChange();
-            initKeys();
-            initAutoHideMenu();
+        Promise.all([
+            import('./chart.js'),
+            import('../lib/chart.js'),
+        ]).then(([myChart, libChart]) => {
+            Object.entries(myChart).forEach(([name, exported]) => window[name] = exported);
+            Object.entries(libChart).forEach(([name, exported]) => window[name] = exported);
+            return import('../lib/chartjs-adapter-date-fns.bundle.min.js');
+        }).then((libChartHelper) => {
+            Object.entries(libChartHelper).forEach(([name, exported]) => window[name] = exported);
+        }).then(() => {
+            callback();
         }).catch((error) => {
             console.error(error);
         });
         return;
+    } else {
+        callback();
     }
-	loadMarkdown(initRemoveHash(false)); //loads in md 
-	initRememberScroll();
-	initCustomColor();
-	initSidebarContent();
-    initHashChange();
-    initKeys();
-	initAutoHideMenu();
+}
+
+function init() {
+    function commonInit() {
+        loadMarkdown(initRemoveHash(false));
+        initRememberScroll();
+        initCustomColor();
+        initSidebarContent();
+        initHashChange();
+        initKeys();
+        initAutoHideMenu();
+    }
+    initChartStuff(() => {
+        commonInit();
+    })
 }
 
 init();
