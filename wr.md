@@ -12,8 +12,6 @@ A comprehensive Touhou world records tracker, updated every so often. This page 
 4. [a=http://replay.lunarcast.net/]LunarCast Replay Database[/a] - by Tom
 5. [a=https://thscore.pndsng.com/index.php]東方スコア記録wiki Wiki*[/a] - by pndsng
 
-As of 2023-04-15, there are a grand total of ``6027`` WR entries saved.
-
 If there are any inaccuracies on this page, please contact me on Discord (at ``Nylilsa#9310``) about it !
 
 ## Game
@@ -78,17 +76,16 @@ Major thanks to all these wonderful people for having contributed to the data to
 [hr_major]
 
 + [a=https://maribelhearn.com/]https://maribelhearn.com/[/a]
-+ [a=https://en.touhouwiki.net/wiki/Touhou_Wiki]https://en.touhouwiki.net/wiki/Touhou_Wiki[/a]
-+ [a=https://zh.touhouwiki.net/wiki/%E6%9C%80%E9%AB%98%E5%88%86%E7%BA%AA%E5%BD%95]https://zh.touhouwiki.net/wiki/%E6%9C%80%E9%AB%98%E5%88%86%E7%BA%AA%E5%BD%95[/a]
++ [a=https://en.touhouwiki.net/]https://en.touhouwiki.net/wiki/Touhou_Wiki[/a]
++ [a=https://zh.touhouwiki.net/]https://zh.touhouwiki.net/[/a]
 + [a=https://www.shrinemaiden.org/forum/index.php]https://www.shrinemaiden.org/forum/index.php[/a]
-+ [a=https://zh.touhouwiki.net/wiki/%E6%9D%B1%E6%96%B9%E7%B6%AD%E5%9F%BA]https://zh.touhouwiki.net/wiki/%E6%9D%B1%E6%96%B9%E7%B6%AD%E5%9F%BA[/a]
 + [a=https://wikiwiki.jp/let/]https://wikiwiki.jp/let/[/a]
 + [a=https://eientei.boards.net/]https://eientei.boards.net/[/a]
 + [a=https://www.youtube.com/]https://www.youtube.com/[/a]
 + [a=https://www.nicovideo.jp/]https://www.nicovideo.jp/[/a]
 + [a=https://twitter.com/]https://twitter.com/[/a]
 + [a=https://www.restartsyndrome.com/]https://www.restartsyndrome.com/[/a]
-+ [a=http://web.archive.org/web/20010816002449/http://www.ht-net21.ne.jp/~perry/score.html]http://web.archive.org/web/20010816002449/http://www.ht-net21.ne.jp/~perry/score.html[/a]
++ [a=http://web.archive.org/web/20010816002449/http://www.ht-net21.ne.jp/~perry/score.html]http://www.ht-net21.ne.jp/~perry/score.html[/a]
 + [a=http://happymilk.net/]http://happymilk.net/[/a]
 
 
