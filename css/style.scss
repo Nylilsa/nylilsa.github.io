@@ -49,21 +49,6 @@ a[data-toggle="collapse"] {
     position: relative;
 }
 
-a[href]:not(:where(
-  /* exclude hash only links */
-  [href^="#"],
-  /* exclude relative but not double slash only links */
-  [href^="/"]:not([href^="//"]),
-  /* domains to exclude */
-  [href*="//stackoverflow.com"],
-  /* subdomains to exclude */
-  [href*="//meta.stackoverflow.com"],
-)):after {
-    content: url(../assets/external-link.svg);
-    filter: invert(43%) sepia(8%) saturate(2271%) hue-rotate(156deg) brightness(93%) contrast(85%);
-    aspect-ratio: 1;
-}
-
 b, strong {
     font-weight: bold;
     background-color: rgba(16, 0, 243, 0.0)
@@ -565,6 +550,12 @@ ul.CTAs {
 .url, .url-toc {
     color:var(--url);
     text-decoration: underline;
+}
+
+.url::after {
+    content: url(../assets/external-link.svg);
+    filter: invert(45%) sepia(41%) saturate(1783%) hue-rotate(210deg) brightness(91%) contrast(84%);
+    aspect-ratio: 1;
 }
 
 .url:visited {
