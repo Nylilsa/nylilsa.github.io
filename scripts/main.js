@@ -575,6 +575,8 @@ function initChartStuff(callback) {
 
 function initDropdownToggle() {
     const menus = document.getElementsByClassName("dropdown-toggle");
+    const time = getComputedStyle(document.documentElement).getPropertyValue('--time-animation')
+    const numTime = time.match(/\d+/g).map(Number)[0];
     for (let i=0; i < menus.length; i++) {
         const dropdown = menus[i];
         const child = dropdown.nextElementSibling;
@@ -586,7 +588,7 @@ function initDropdownToggle() {
                 setTimeout(() => {
                     child.classList.toggle("collapsing");
                     child.classList.toggle("show");
-                }, 300);
+                }, numTime);
                 const height = child.scrollHeight;
                 if (!child.classList.contains("show")) {
                     child.style.minHeight = `${height}px`;

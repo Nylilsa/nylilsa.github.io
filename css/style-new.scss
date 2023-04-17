@@ -21,6 +21,7 @@
     --fs-1300: 2.4rem;
 
     --sidebar-width: 250px;
+    --time-animation: 3000ms;
 }
 
 body {
@@ -143,7 +144,7 @@ h6 {
     position: relative;
     height: 0;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all var(--time-animation) ease;
 }
 
 .collapse:not(.show) {
