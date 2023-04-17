@@ -257,27 +257,30 @@ function progressTable() {
 	id.innerHTML += html;
 }
 
-function show() { //toggles all elements in navbar of Bugs if clicked on
-	const selector = document.getElementsByClassName("show-selector")[0];
-	const elements = document.getElementsByClassName("sidebar-bugs");
-	const flag = selector.classList.contains("show-function");
-	if (flag) {
-		selector.classList.remove("show-function");
-		selector.textContent = "Hide all";
-		for(let i = 0; i < elements.length; i++) {
-			if (elements[i].classList.contains("collapsed")) {
-				elements[i].click();
-			}
-		}
-	} else {
-		selector.classList.add("show-function");
-		selector.textContent = "Show all";
-		for(let i = 0; i < elements.length; i++) {
-			if (!elements[i].classList.contains("collapsed")) {
-				elements[i].click();
-			}
-		}
-	}
+function showNavbarChildren() { //toggles all elements in navbar of Bugs if clicked on
+    const elements = document.getElementsByClassName("sidebar-bugs");
+    const collapsing = elements[0].nextElementSibling.classList.contains("collapsing");
+    if (!collapsing) {
+        const selector = document.querySelector(".show-selector");
+        const flag = selector.classList.contains("show-function");
+        if (flag) {
+            selector.classList.remove("show-function");
+            selector.textContent = "Hide all";
+            for(let i = 0; i < elements.length; i++) {
+                if (elements[i].nextElementSibling.classList.contains("collapse")) {
+                    elements[i].click();
+                }
+            }
+        } else {
+            selector.classList.add("show-function");
+            selector.textContent = "Show all";
+            for(let i = 0; i < elements.length; i++) {
+                if (!elements[i].nextElementSibling.classList.contains("collapse")) {
+                    elements[i].click();
+                }
+            }
+        }
+    }
 }
 
 function replaceEclIns() {

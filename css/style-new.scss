@@ -21,7 +21,7 @@
     --fs-1300: 2.4rem;
 
     --sidebar-width: 250px;
-    --time-animation: 3000ms;
+    --time-animation: 300ms;
 }
 
 body {
@@ -53,7 +53,6 @@ h5 {
 h6 {
     font-size: var(--fs-800);
 }
-  
 
 #header {
     position: fixed;
