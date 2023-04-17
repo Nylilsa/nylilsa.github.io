@@ -437,12 +437,13 @@ function mode(array) {
 
 function initSidebarContent() {
     const colDecrease = -16;
-	const identifiers = document.querySelectorAll("#pageBugs li ul");
-	const header = document.querySelectorAll("#pageBugs li a");
+	const identifiers = document.querySelectorAll("#page-bugs li ul");
+	const header = document.querySelectorAll("#page-bugs li button");
 	let k = 0;
 	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
 		const thnr = identifiers[i].id.slice(5); // bugs-th10 ---> th10
 		const child = header[i+1];
+		child.style.borderStyle = 'solid';
 		child.style.borderTopWidth = '1px';
 		child.style.borderColor = colorHex(thnr);
 		const content = document.getElementById('bugs-'+thnr+'');
@@ -572,10 +573,36 @@ function initChartStuff(callback) {
     }
 }
 
+function initDropdownToggle() {
+    const menus = document.getElementsByClassName("dropdown-toggle");
+    for (let i=0; i < menus.length; i++) {
+        const dropdown = menus[i];
+        const child = dropdown.nextElementSibling;
+        child.style.minHeight = "0";
+        dropdown.onclick = () => {
+            if (!child.classList.contains("collapsing")) {
+                child.classList.toggle("collapse");
+                child.classList.toggle("collapsing");
+                setTimeout(() => {
+                    child.classList.toggle("collapsing");
+                    child.classList.toggle("show");
+                }, 300);
+                const height = child.scrollHeight;
+                if (!child.classList.contains("show")) {
+                    child.style.minHeight = `${height}px`;
+                } else {
+                    child.style.minHeight = "0";
+                }
+            }
+        }
+    }
+}
+
 function init() {
     function commonInit() {
         loadMarkdown(initRemoveHash(false));
         initRememberScroll();
+        initDropdownToggle();
         initCustomColor();
         initSidebarContent();
         initHashChange();

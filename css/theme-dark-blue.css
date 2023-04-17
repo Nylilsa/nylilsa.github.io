@@ -1,0 +1,41 @@
+:root {
+
+    --clr-pastel-blue: #b0b2ff;
+    --clr-saturated-blue: #8386E5;
+    --clr-discord-blue: #7386D5;
+    --clr-discord-purple: #6d7fcc;
+    --clr-ocean-blue: #0b8ada;
+    --clr-sky-blue: #3BB9FF;
+    --clr-aqua-blue: #00ffff;
+    --clr-celeste-blue: #bfffff;
+
+    --clr-white: #FFFFFF;
+    --clr-almost-white: #F0F0F0;
+    --clr-light-gray: #cdcdcd;
+    --clr-grey: #233343;
+    --clr-almost-black: #111111;
+    --clr-black: #000000;
+
+    --clr-pink: #FF92FA;
+    --clr-dark-blue: #222538;
+    --clr-dark-teal: #121C28;
+    --clr-black-blue: #08101C;
+    --clr-blackest-blue: #03050F;
+    
+    
+    
+    --clr-text-normal: var(--clr-almost-white);
+    --clr-text-highlighted: var(--clr-aqua-blue);
+    --clr-text-code: var(--clr-discord-purple);
+    --clr-text-key: -1;
+    
+    --clr-default: #47748b;
+    --clr-text-url: #6873D8;
+    --clr-text-url-visited: #934BB4;
+
+    --clr-background-main: var(--clr-blackest-blue);
+    /*  e.g. for sidebar  */
+    --clr-background-element: var(--clr-dark-teal);
+    --clr-background-sub-element: var(--clr-black-blue);
+    --clr-background-sub-sub-element: var(--clr-blackest-blue);
+}

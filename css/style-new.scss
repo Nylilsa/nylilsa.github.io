@@ -1,0 +1,157 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+:root {
+    --ff-primary: 'Poppins', sans-serif;
+
+    --fw-slim: 300;
+    --fw-regular: 400;
+    --fw-semi-bold: 500;
+    --fw-bold: 700;
+
+    --fs-300: 0.7rem;
+    --fs-400: 0.75rem;
+    --fs-500: 0.85rem;
+    --fs-600: 1rem;
+    --fs-700: 1.1rem;
+    --fs-800: 1.25rem;
+    --fs-900: 1.4rem;
+    --fs-1000: 1.6rem;
+    --fs-1100: 1.8rem;
+    --fs-1200: 2.1rem;
+    --fs-1300: 2.4rem;
+
+    --sidebar-width: 250px;
+}
+
+body {
+    font-family: var(--ff-primary);
+    line-height: 1.5;
+    text-align: left;
+}
+
+h1 {
+    font-size: var(--fs-1300);
+}
+
+h2 {
+    font-size: var(--fs-1200);
+}
+
+h3 {
+    font-size: var(--fs-1100);
+}
+
+h4 {
+    font-size: var(--fs-1000);
+}
+
+h5 {
+    font-size: var(--fs-900);
+}
+
+h6 {
+    font-size: var(--fs-800);
+}
+  
+
+#header {
+    position: fixed;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon {
+    width: 24px;
+    aspect-ratio: 1;
+    background-image: var(--icon-image);
+}
+
+.inverted {
+    filter: invert(1);
+}
+
+#sidebar {
+    background-color: var(--clr-background-element);
+    color: var(--clr-text-normal);
+    width: var(--sidebar-width);
+    transform: translateX(calc(var(--sidebar-width) * -1));
+    transition: transform 0.3s;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar-header {
+    font-size: var(--fs-1000);
+    padding: 20px;
+}
+
+.navigation {
+    padding-block: 20px;
+    border-block: 1px solid var(--clr-default);
+    a, button {
+        display: block;
+        text-decoration: none;
+        color: var(--clr-text-normal);
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+    }
+    & > li a, li button {
+        padding: 10px;
+        font-size: var(--fs-700);
+    }
+    ul {
+        background-color: var(--clr-background-sub-element);
+        & > li a, li button {
+            padding-left: 20px;
+            font-size: var(--fs-500);
+        }
+        ul {
+            background-color: var(--clr-background-sub-sub-element);
+            & > li a, li button{
+                padding-left: 30px;
+            }
+        }
+    }
+}
+
+.dropdown-toggle {
+    position: relative;
+    &::after {
+        content: "";
+        display: block;
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+}
+
+.icon-touhou {
+    width: 20px;
+    aspect-ratio: 1;
+    margin-right: 8px;
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.collapse:not(.show) {
+    display: none;
+}
+
+.collapse, .show {
+    display: block;
+}
+
+
