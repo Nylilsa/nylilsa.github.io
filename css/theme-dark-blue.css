@@ -11,31 +11,39 @@
 
     --clr-white: #FFFFFF;
     --clr-almost-white: #F0F0F0;
+    --clr-dim-white: #d8d8d8;
     --clr-light-gray: #cdcdcd;
     --clr-grey: #233343;
     --clr-almost-black: #111111;
     --clr-black: #000000;
 
-    --clr-pink: #FF92FA;
+    --clr-pastel-pink: #FF92FA;
+    --clr-pink: #e278f5;
+    --clr-dark-cyan: #123840;
     --clr-dark-blue: #222538;
     --clr-dark-teal: #121C28;
     --clr-black-blue: #08101C;
-    --clr-blackest-blue: #03050F;
+    --clr-blacker-blue: #03050F;
+    --clr-blackest-blue: #020C18;
     
     
     
     --clr-text-normal: var(--clr-almost-white);
-    --clr-text-highlighted: var(--clr-aqua-blue);
+    --clr-text-dim: var(--clr-dim-white);
+    --clr-text-highlighted: var(--clr-pink);
     --clr-text-code: var(--clr-discord-purple);
-    --clr-text-key: -1;
+    --clr-text-key: var(--clr-aqua-blue);
     
     --clr-default: #47748b;
-    --clr-text-url: #6873D8;
-    --clr-text-url-visited: #934BB4;
+    --clr-text-url: #525bad;
+    --clr-text-url-visited: #783c94;
+    --clr-hr: var(--clr-grey);
 
+    --clr-border-main: var(--clr-grey);
+    
+    --clr-background-highlighted: var(--clr-dark-cyan);
     --clr-background-main: var(--clr-blackest-blue);
-    /*  e.g. for sidebar  */
     --clr-background-element: var(--clr-dark-teal);
     --clr-background-sub-element: var(--clr-black-blue);
-    --clr-background-sub-sub-element: var(--clr-blackest-blue);
+    --clr-background-sub-sub-element: var(--clr-blacker-blue);
 }

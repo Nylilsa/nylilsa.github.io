@@ -4,7 +4,6 @@
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
     box-sizing: border-box;
@@ -28,9 +27,9 @@ body {
 	line-height: 1;
 }
 
-ol, ul {
+/* ol, ul {
 	list-style: none;
-}
+} */
 
 button {
     background-color: transparent;

@@ -446,7 +446,6 @@ function initSidebarContent() {
 	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
 		const thnr = identifiers[i].id.slice(5); // bugs-th10 ---> th10
 		const child = header[i+1];
-		child.style.borderStyle = 'solid';
 		child.style.borderTopWidth = '1px';
 		child.style.borderColor = colorHex(thnr);
 		const content = document.getElementById('bugs-'+thnr+'');
@@ -487,11 +486,12 @@ function initScrollBar() {
 function initAutoHideMenu() { // hides menu when scrolling
     const menu = document.getElementById('header');
     let previousScrollTop = document.scrollingElement.scrollTop;
+    const height = getComputedStyle(document.documentElement).getPropertyValue('--header-height');
     document.addEventListener('scroll', function () {
         if (document.scrollingElement.scrollTop < previousScrollTop) { // if scroll upwards
             menu.style.transform = 'translateY(0px)';
         } else {
-            menu.style.transform = 'translateY(-4vmax)';
+            menu.style.transform = `translateY(calc(-1 * calc(${height})))`;
         }
         previousScrollTop = document.scrollingElement.scrollTop;
     }, { passive: true });
@@ -578,7 +578,7 @@ function initChartStuff(callback) {
 
 function initDropdownToggle() {
     const menus = document.getElementsByClassName("dropdown-toggle");
-    const time = getComputedStyle(document.documentElement).getPropertyValue('--time-animation')
+    const time = getComputedStyle(document.documentElement).getPropertyValue('--time-animation');
     const numTime = time.match(/\d+/g).map(Number)[0];
     for (let i=0; i < menus.length; i++) {
         const dropdown = menus[i];
