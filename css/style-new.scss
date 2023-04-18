@@ -10,6 +10,7 @@
     --fw-semi-bold: 500;
     --fw-bold: 700;
 
+    --fs-100: 0.7rem;
     --fs-200: 0.75rem;
     --fs-300: 0.8rem;
     --fs-400: 0.85rem;
@@ -22,6 +23,9 @@
     --fs-1100: 1.8rem;
     --fs-1200: 2.1rem;
     --fs-1300: 2.4rem;
+
+    --z-header: 1;
+    --z-sidebar: 2;
 
     --sidebar-width: 250px;
     --header-height: 4vh + 8px;
@@ -77,6 +81,7 @@ h6 {
     transition: transform 0.3s ease-in-out;
     background-color: var(--clr-background-element);
     border-bottom: 1px solid var(--clr-background-element);
+    z-index: var(--z-header);
 }
 
 .icon {
@@ -99,6 +104,7 @@ h6 {
     overflow-y: scroll;
     top: 0;
     bottom: 0;
+    z-index: var(--z-sidebar);
 }
 
 .sidebar-header {
@@ -138,6 +144,7 @@ h6 {
             background-color: var(--clr-background-sub-sub-element);
             & > li a, li button{
                 padding-left: 30px;
+                font-size: var(--fs-300);
             }
         }
     }
@@ -207,7 +214,6 @@ h6 {
     }
     ol {
         padding-left: 20px;
-        margin-bottom: 1rem;
     }
     li {
         font-size: 0.9em;
@@ -234,7 +240,7 @@ hr {
     color: var(--clr-text-dim);
     padding-inline: 8px;
     padding-block: 12px;
-    border-color: #414363;
+    border-color: var(--clr-default);
     border-width: 1px;
     border-style: solid;
     margin-inline: 10px;
@@ -310,6 +316,9 @@ th {
     padding: 8px;
     text-align: center;
 }
+tr {
+    text-align: center;
+}
 
 .highlight-bg {
     background-color: var(--clr-background-highlighted);
@@ -318,10 +327,38 @@ th {
 .key {
     font-weight: var(--fw-bold);
     color: var(--clr-text-key);
-    border: 2px solid var(--clr-border-main);
-    padding-inline: 3px;
 }
 
-.fit-content {
+.fit-image {
+    display: block;
     margin-inline: auto;
+}
+
+.box {
+    font-family: var(--ff-primary);
+    padding-block: 8px;
+    padding-inline-start: 12px;
+    border-radius: 0px;
+    border-color: var(--clr-default);
+    border-width: 1px;
+    border-style: solid;
+    margin-block: 10px;
+    margin-inline: 20px;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: var(--fs-100);
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --sidebar-width: 100% !important;
+    }
+    #header {
+        padding-left: 0px !important;
+    }
+    #content {
+        padding-inline: 4vmax !important;
+    }
 }

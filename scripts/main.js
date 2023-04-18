@@ -538,12 +538,20 @@ function initCustomColor() {
 }
 
 function initNavColor() { // changes color to match the game's color
-	const elements = document.getElementsByClassName('hr_major'); // get all elements
-	for(let i = 0; i < elements.length; i++) {
-		elements[i].style.borderColor = colorRGB(32, 1);
+	const hr = document.getElementsByClassName('hr_major');
+	const box = document.getElementsByClassName('box');
+	const toc = document.getElementsByClassName('toc');
+    const header = document.getElementById('header');
+	for(let i = 0; i < hr.length; i++) {
+		hr[i].style.borderColor = colorRGB(32, 1);
 	}
-	const mobile = document.getElementById('header');
-	mobile.style.borderColor = colorRGB(-16, 1);
+	for(let i = 0; i < box.length; i++) {
+		box[i].style.borderColor = colorRGB(-32, 1);
+	}
+	for(let i = 0; i < toc.length; i++) {
+		toc[i].style.borderColor = colorRGB(-32, 1);
+	}
+	header.style.borderColor = colorRGB(-16, 1);
 }
 
 function initKeys() {
