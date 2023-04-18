@@ -273,7 +273,8 @@ tr {
 
 .fit-image {
   display: block;
-  margin-inline: auto; }
+  margin-inline: auto;
+  max-width: 100%; }
 
 .box {
   font-family: var(--ff-primary);
