@@ -269,6 +269,7 @@ ol {
 .url, .url-toc {
     color: var(--clr-text-url);
     text-decoration: underline;
+    overflow-wrap: anywhere;
 }
 
 .url:visited {
