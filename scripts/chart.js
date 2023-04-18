@@ -168,6 +168,7 @@ export function toggleLegend(chart, items, game, difficulty) {
         top.firstChild.remove();
     }
     const textContainer = document.createElement('p');
+    textContainer.classList.add("legend-item");
     textContainer.style.color = "#666";
     textContainer.style.margin = 0;
     textContainer.style.padding = 0;
@@ -291,6 +292,7 @@ export function extraLegendButtons(top, game, items, chart) {
         boxSpan.style.marginRight = '10px';
         boxSpan.style.width = '40px';
         const textContainer = document.createElement('p');
+        textContainer.classList.add("legend-item");
         textContainer.style.color = "#666";
         textContainer.style.margin = 0;
         textContainer.style.padding = 0;
@@ -368,6 +370,7 @@ export function createLegend(chart, args, options, gameCharacters, colors, game,
         }
         // Text
         const textContainer = document.createElement('p');
+        textContainer.classList.add("legend-item");
         textContainer.style.color = item.fontColor;
         textContainer.style.margin = 0;
         textContainer.style.padding = 0;
@@ -492,7 +495,7 @@ export function loadCanvas(game, difficulty = "Lunatic", func) {
             generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func);
         });
-        catchErrors(dataWR);
+        //catchErrors(dataWR);
     });
     return;
 }
@@ -567,14 +570,12 @@ export function doButtonStuff(id) {
         });
         const selectedTable = document.getElementById(`${id}table`);
         selectedTable.style.display = "";
-        this.style.backgroundColor = "#08101C";
         this.style.color = "#ddd";
-        this.style.borderTop = "2px solid #47748B";
     }
 }
 
 export function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty) {
-	const section = document.getElementById("wr-buttons");
+	const section = document.getElementById("wr-table-buttons");
     const length = section.children.length;
     if(length > 0) { // removes old and allows for new to be generated
         for(let i=0; i<length; i++) {
@@ -588,9 +589,7 @@ export function generateWRButtons(gameCharacters, game, overallWRCharacter, diff
         button.setAttribute("class", "wr-shottype-buttons");
         button.innerText = gameCharacters[i];
         if (gameCharacters[i] == overallWRCharacter) {
-            button.style.backgroundColor = "#08101C";
             button.style.color = "#ddd";
-            button.style.borderTop = "2px solid #47748B";
         }
 		if (game == "th03") {
 			section.style.gridTemplateColumns = "repeat(3, 1fr)";
@@ -672,7 +671,7 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
                         case 4: {icon.classList.add('icon', 'icon-calendar'); break;}
                         default: {console.error(`Oops, something went wrong.`)}
                     }
-                    cell.appendChild(icon);
+                    //cell.appendChild(icon);
                     cell.appendChild(cellText);
                     row.appendChild(cell);
                     if (k == (headers.length-1)) {

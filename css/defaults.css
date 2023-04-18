@@ -27,12 +27,9 @@ body {
 	line-height: 1;
 }
 
-/* ol, ul {
-	list-style: none;
-} */
-
 button {
     background-color: transparent;
+    cursor: pointer;
 }
 
 blockquote, q {

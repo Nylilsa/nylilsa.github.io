@@ -205,15 +205,15 @@ h6 {
     padding-block: 6vh;
     padding-inline: 6vmax;
     font-family: var(--ff-sans);
-    p {
-        font-size: var(--fs-500);
-    }
     ul {
         padding-left: 40px;
         margin-bottom: 1rem;
     }
     ol {
         padding-left: 20px;
+        &:not(:is(.toc, .toc ol)) {
+            margin-bottom: 1rem;
+        }
     }
     li {
         font-size: 0.9em;
@@ -221,6 +221,7 @@ h6 {
 }
 
 p {
+    font-size: var(--fs-500);
     line-height: 1.7em;
     margin-bottom: calc(max(1em, 1rem));
 }

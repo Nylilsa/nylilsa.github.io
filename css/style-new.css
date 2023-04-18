@@ -169,17 +169,18 @@ h6 {
   padding-block: 6vh;
   padding-inline: 6vmax;
   font-family: var(--ff-sans); }
-  #content p {
-    font-size: var(--fs-500); }
   #content ul {
     padding-left: 40px;
     margin-bottom: 1rem; }
   #content ol {
     padding-left: 20px; }
+    #content ol:not(:is(.toc, .toc ol)) {
+      margin-bottom: 1rem; }
   #content li {
     font-size: 0.9em; }
 
 p {
+  font-size: var(--fs-500);
   line-height: 1.7em;
   margin-bottom: calc(max(1em, 1rem)); }
 
