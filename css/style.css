@@ -66,7 +66,7 @@ h6 {
   position: fixed;
   color: var(--clr-text-normal);
   width: 100%;
-  transition: transform 0.3s ease-in-out;
+  transition: padding-left var(--time-animation) ease-in-out;
   background-color: var(--clr-background-element);
   border-bottom: 1px solid var(--clr-background-element);
   z-index: var(--z-header); }
@@ -84,7 +84,7 @@ h6 {
   color: var(--clr-text-normal);
   width: var(--sidebar-width);
   transform: translateX(calc(var(--sidebar-width) * -1));
-  transition: transform 0.3s;
+  transition: transform var(--time-animation) ease-in-out;
   position: fixed;
   overflow-y: scroll;
   top: 0;
