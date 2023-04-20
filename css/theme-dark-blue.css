@@ -13,7 +13,8 @@
     --clr-almost-white: #F0F0F0;
     --clr-dim-white: #d8d8d8;
     --clr-light-gray: #cdcdcd;
-    --clr-grey: #233343;
+    --clr-grey: #666666;
+    --clr-dark-grey: #233343;
     --clr-almost-black: #111111;
     --clr-black: #000000;
 
@@ -31,6 +32,7 @@
     
     --clr-text-normal: var(--clr-almost-white);
     --clr-text-dim: var(--clr-dim-white);
+    --clr-text-unimportant: var(--clr-grey);
     --clr-text-highlighted: var(--clr-pink);
     --clr-text-code: var(--clr-discord-purple);
     --clr-text-key: var(--clr-aqua-blue);
@@ -38,9 +40,9 @@
     --clr-default: #47748b;
     --clr-text-url: #525bad;
     --clr-text-url-visited: #783c94;
-    --clr-hr: var(--clr-grey);
+    --clr-hr: var(--clr-dark-grey);
 
-    --clr-border-main: var(--clr-grey);
+    --clr-border-main: var(--clr-dark-grey);
     
     --clr-background-highlighted: var(--clr-dark-cyan);
     --clr-background-main: var(--clr-blackest-blue);

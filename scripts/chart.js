@@ -495,7 +495,7 @@ export function loadCanvas(game, difficulty = "Lunatic", func) {
             generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func);
         });
-        //catchErrors(dataWR);
+        catchErrors(dataWR);
     });
     return;
 }
@@ -600,6 +600,7 @@ export function generateWRButtons(gameCharacters, game, overallWRCharacter, diff
 			section.style.gridTemplateColumns = "repeat(8, 1fr)";
 			section.style.gridTemplateRows =  " repeat(2, 1fr)" ;
 			section.style.gridAutoFlow = "row";
+            section.classList.add("grid-th08");
 			if (i < 4) {
 				button.style.gridColumn = "span 2";
 			}
@@ -608,16 +609,30 @@ export function generateWRButtons(gameCharacters, game, overallWRCharacter, diff
 			section.style.gridTemplateColumns = "repeat(7, 1fr)";
 			section.style.gridTemplateRows =  " repeat(2, 1fr)" ;
 			section.style.gridAutoFlow = "row";
+            section.classList.add("grid-th09");
+		}
+		if (game == "th07" || game == "th10" || game == "th11" || (game == "th128" && difficulty != "Extra") || game == "th14") {
+            section.style.gridTemplateColumns = "repeat(6, 1fr)";
+			section.style.gridTemplateRows =  " repeat(1, 1fr)" ;
+			section.style.gridAutoFlow = "row";
+            section.classList.add("grid-6");
+		}
+		if (game == "th128" && difficulty == "Extra") {
+            section.style.gridTemplateColumns = "";
+			section.style.gridTemplateRows =  "" ;
+			section.style.gridAutoFlow = "row";
 		}
 		if (game == "th16" && difficulty != "Extra") {
-			section.style.gridTemplateColumns = "repeat(4, 1fr)";
+            section.style.gridTemplateColumns = "repeat(4, 1fr)";
 			section.style.gridTemplateRows =  " repeat(4, 1fr)" ;
 			section.style.gridAutoFlow = "row";
+            section.classList.add("grid-th16");
 		}
 		if (game == "th16" && difficulty == "Extra") {
 			section.style.gridTemplateColumns = "repeat(4, 1fr)";
 			section.style.gridTemplateRows =  "" ;
 			section.style.gridAutoFlow = "row";
+            section.classList.remove("grid-th16");
 		}
 		if (game == "th17") {
 			section.style.gridTemplateColumns = "repeat(3, 1fr)";
@@ -643,9 +658,9 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
         if (flag) {reverse = data[i].length - 1;} else {reverse = 0}
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
-        let firstElement = "Shottype";
-        if (game == "th01" || game == "th128") {firstElement = "Route"}
-        const headers = [firstElement, "Difficulty", "Score", "Player", "Date"];
+        let selector = "Shottype";
+        if (game == "th01" || game == "th128") {selector = "Route"}
+        const headers = ["#", selector, "Difficulty", "Score", "Player", "Date", "Score gain"];
         const id = `${game}${gameCharacters[i]}`;
         table.setAttribute("id", `${id}table`);
         table.classList.add('all-wr-tables');
@@ -657,21 +672,13 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
           const index = Math.abs(j - reverse);
           const [score, player, date, url] = data[i][index];
 		  const dateFormatted = dateFormat(date);
+          const nextScore = data[i][index-1]?.[0] ?? 0;
+          const scoreDifference = (score - nextScore).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           let scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             if (j == 0) { // header column
                 for (let k = 0; k < headers.length; k++) {
-                    const icon = document.createElementNS("http://www.w3.org/2000/svg","svg");
                     const cell = document.createElement("th");
                     const cellText = document.createTextNode(`${headers[k]}`);
-                    switch (k) {
-                        case 0: {icon.classList.add('icon', 'icon-bullet'); break;}
-                        case 1: {icon.classList.add('icon', 'icon-star'); break;}
-                        case 2: {icon.classList.add('icon', 'icon-trophy'); break;}
-                        case 3: {icon.classList.add('icon', 'icon-user'); break;}
-                        case 4: {icon.classList.add('icon', 'icon-calendar'); break;}
-                        default: {console.error(`Oops, something went wrong.`)}
-                    }
-                    //cell.appendChild(icon);
                     cell.appendChild(cellText);
                     row.appendChild(cell);
                     if (k == (headers.length-1)) {
@@ -684,23 +691,13 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
                 let cellText;
                 const cell = document.createElement("td");
                 switch (k) {
-                    case 0: {cellText = document.createTextNode(gameCharacters[i]); break;}
-                    case 1: {cellText = document.createTextNode(`${difficulty}`); break;}
-                    case 2: {
-                        if (url) {
-                            const a = document.createElement("a");
-                            a.href = url;
-                            a.classList = "url";
-                            a.innerText = `${scoreWithCommas}`;
-                            cellText = a;
-                            break;
-                        } else {
-                            cellText = document.createTextNode(`${scoreWithCommas}`);
-                            break;
-                        }
-                    }
-                    case 3: {cellText = document.createTextNode(`${player}`); break;}
-                    case 4: {cellText = document.createTextNode(`${dateFormatted}`); break;}
+                    case 0: {cellText = document.createTextNode(j+1); break;}
+                    case 1: {cellText = document.createTextNode(gameCharacters[i]); break;}
+                    case 2: {cellText = document.createTextNode(`${difficulty}`); break;}
+                    case 3: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
+                    case 4: {cellText = document.createTextNode(`${player}`); break;}
+                    case 5: {cellText = document.createTextNode(`${dateFormatted}`); break;}
+                    case 6: {cellText = document.createTextNode(`+${scoreDifference}`); break;}
                     default: {console.error(`Oops, something went wrong.`)}
                 }
                 cell.appendChild(cellText);

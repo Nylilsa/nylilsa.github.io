@@ -67,6 +67,7 @@
 
 .all-wr-tables {
     border-top: solid transparent 8px;
+    margin: 0 auto;
 }
 
 .all-wr-tables > tbody > tr > * {
@@ -169,4 +170,46 @@
     --bg: radial-gradient(circle at center, var(--stops)), radial-gradient(circle at center, var(--stops));
     filter: contrast(1.6);
     mix-blend-mode: multiply;
+}
+
+@media screen and (max-width: 700px) {
+    .all-wr-tables > * > tr > *:nth-child(2) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .all-wr-tables > * > tr > *:nth-child(3) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .all-wr-tables > * > tr > *:nth-child(7) {
+        display: none;
+    }
+    .grid-6 {
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-rows: repeat(2, 1fr) !important
+    }
+    .grid-th08 {
+        grid-template-columns: auto !important;
+    }
+    .grid-th09 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .grid-th16 {
+        grid-template-rows: repeat(8, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-auto-flow: column !important;
+    }
+    #wr-difficulty-buttons {
+        grid-auto-flow: row;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .all-wr-tables > * > tr > *:nth-child(1) {
+        display: none;
+    }
 }
