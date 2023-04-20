@@ -66,7 +66,9 @@ h6 {
   position: fixed;
   color: var(--clr-text-normal);
   width: 100%;
-  transition: padding-left var(--time-animation) ease-in-out;
+  transition-property: padding-left, transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: var(--time-animation);
   background-color: var(--clr-background-element);
   border-bottom: 1px solid var(--clr-background-element);
   z-index: var(--z-header); }
