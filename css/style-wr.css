@@ -188,7 +188,12 @@
     .all-wr-tables > * > tr > *:nth-child(7) {
         display: none;
     }
-    .grid-6 {
+    .grid-6-ab {
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-rows: repeat(2, 1fr) !important;
+        grid-auto-flow: column !important;
+    }
+    .grid-6-abc {
         grid-template-columns: repeat(3, 1fr) !important;
         grid-template-rows: repeat(2, 1fr) !important
     }

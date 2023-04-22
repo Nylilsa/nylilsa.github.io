@@ -16,14 +16,14 @@ function loadMarkdown(path) { //loads page
 	xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
     	document.getElementById("mdcontent").innerHTML = this.responseText;
-		initMarkdown(false); //this works somehow
+		initMarkdown(false); 
 		jumpTo(initRemoveHash(true), 100);
 		}
 	}
-	if (path) { //if path exists, then load .md
+	if (path) {
 		xhttp.open("GET", path, true);
         xhttp.send();
-		xhttp.onload = function() { // error handling
+		xhttp.onload = function() {
             if (xhttp.status === 404) {
                 initMarkdown(true);
                 return;
@@ -32,10 +32,7 @@ function loadMarkdown(path) { //loads page
 	}
 }
 
-function colorHex(input) { // argument is optional
-	if (typeof input === 'undefined') { // checks if argument does not exist
-		input = getGameFromURL();
-	}
+function colorHex(input = getGameFromURL()) {
 	return gameColors[input] || "#47748B";
 }
 
@@ -295,11 +292,8 @@ function matchText(style, iconBool, highlightedText) {
 }
 
 function hrCustom(input) {
-	if (gameColors[input]) { // if input is game
-		const color = colorRGB(16, 1, input);
-		return "<hr style='border-color:"+color+"'>"
-	}
-	return "<hr style='border-color:"+input+"'>" // if input is color
+    const borderColor = gameColors[input] ? colorRGB(16, 1, input) : input;
+    return "<hr style='border-color:" + borderColor + "'>";
 }
 
 function gameScenes(game, flag, array) {

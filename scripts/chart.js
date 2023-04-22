@@ -611,11 +611,17 @@ export function generateWRButtons(gameCharacters, game, overallWRCharacter, diff
 			section.style.gridAutoFlow = "row";
             section.classList.add("grid-th09");
 		}
-		if (game == "th07" || game == "th10" || game == "th11" || (game == "th128" && difficulty != "Extra") || game == "th14") {
+		if (game == "th07" || game == "th12" || (game == "th128" && difficulty != "Extra") || game == "th14") {
             section.style.gridTemplateColumns = "repeat(6, 1fr)";
 			section.style.gridTemplateRows =  " repeat(1, 1fr)" ;
 			section.style.gridAutoFlow = "row";
-            section.classList.add("grid-6");
+            section.classList.add("grid-6-ab");
+		}
+		if (game == "th10" || game == "th11") {
+            section.style.gridTemplateColumns = "repeat(6, 1fr)";
+			section.style.gridTemplateRows =  " repeat(1, 1fr)" ;
+			section.style.gridAutoFlow = "row";
+            section.classList.add("grid-6-abc");
 		}
 		if (game == "th128" && difficulty == "Extra") {
             section.style.gridTemplateColumns = "";
