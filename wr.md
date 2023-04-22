@@ -181,6 +181,7 @@ Major thanks to all these wonderful people for having contributed to the data to
 + [a=https://twitter.com/]https://twitter.com/[/a]
 + [a=https://www.restartsyndrome.com/]https://www.restartsyndrome.com/[/a]
 + [a=http://web.archive.org/web/20010816002449/http://www.ht-net21.ne.jp/~perry/score.html]http://www.ht-net21.ne.jp/~perry/score.html[/a]
++ [a=https://web.archive.org/web/20040112145107/http://score.ah1qw.info/]http://score.ah1qw.info/[/a]
 + [a=http://happymilk.net/]http://happymilk.net/[/a]
 
 
