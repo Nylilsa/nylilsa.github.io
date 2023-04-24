@@ -1,9 +1,4 @@
 let ext = function() {
-	let yt = {
-		type: "lang",
-		regex: /\[yt\](.*?)\[\/yt\]/g,
-		replace: '<div class="fit-wrapper" data-yt="$1"><div class="fit-wrapper2 yt"><div class="video-load"><div></div></div></div></div>'
-};
 	let hr_major = {
 		type: "lang",
 		regex: /\[hr_major\]/g,
@@ -26,11 +21,6 @@ let ext = function() {
 		regex: /\[br\]/g,
 		replace: "<br>"
 	}
-	let ts = {
-		type: "lang",
-		regex: /\[timestamp=(.*?)\]/g,
-		replace: "<div style='float: right'>$1</div>"
-	}
 	let img = {
 		type: "lang",
 		regex: /\[img=(.*?), hratio=(.*?), other=(.*?)\]/g,
@@ -38,7 +28,7 @@ let ext = function() {
 	}
 	let img_small = {
 		type: "lang",
-		regex: /\[img=(.*?)]/g,
+		regex: /\[img=(.*?)\]/g,
 		replace: '<img title="$1" style="cursor:pointer; margin: 5px;" onclick="window.open(\'$1\')" src="$1">'		
 	}
 
@@ -70,46 +60,6 @@ let ext = function() {
 		replace: "<div class='$1'>$2</div>"
 	}
 
-	let colors = {
-		6: "#990000",
-		7: "#ff8ed2",
-		8: "#333399",
-		9: "#058060",
-		95: "#009973",
-		10: "#96b300",
-		11: "#adb0e6",
-		12: "#4169e1",
-		125: "#7d3884",
-		128: "#40ffeb",
-		13: "#4a808c",
-		14: "#aa7777",
-		143: "#b6423c",
-		15: "#6a47be",
-		16: "#176e0e",
-		165: "#ae11d5",
-		17: "#190e0e",
-		18: "#1dd294"
-	}
-
-	let game = {
-		type: "lang",
-		regex: /\[game=([0-9]*?)\]([^]*?)\[\/game\]/g,
-		replace: function(match, game, txt) {
-			if (colors[game] == "#190e0e") {
-				return "<span style='background-color:#bbaabb;color:"+colors[game]+"'>"+txt+"</span>";
-			}
-			return "<span style='color: "+colors[game]+"'>"+txt+"</span>";
-		}
-	}
-
-	let rawGame = {
-		type: "lang",
-		regex: /%GAMECOLOR-([0-9]*?)%/g,
-		replace: function(match, game) {
-			return colors[game];
-		}
-	}
-
 	let html = {
 		type: "lang",
 		regex: /\[html\]([^]*?)\[\/html\]/g,
@@ -137,18 +87,6 @@ let ext = function() {
 		type: "lang",
 		regex: /\[video=(.*?), hratio=(.*?), other=(.*?)\]/g,
 		replace: '<div class="fit-wrapper"><iframe class="fit-image" style="padding-bottom: $2%; $3" src="$1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media" allowfullscreen></iframe></div>'
-	}
-
-	let flex = {
-		type: "lang",
-		regex: /\[flex\]([^]*?)\[\/flex\]/g,
-		replace: '<div class="flexbox">$1</div>'
-	}
-
-	let flex2 = {
-		type: "lang",
-		regex: /\[flex=(.*?)\]([^]*?)\[\/flex\]/g,
-		replace: '<div class="flexbox" style="align-items: $1">$2</div>'
 	}
 
 	let yes = {
@@ -371,5 +309,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [yt, hr_major, hr_minor, hr_custom, br, ts, img, img_small, code, title, c, game, rawGame, html, script, tip, video, flex, flex2, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, canvas, match, scenes, check, cross];
+	return [hr_major, hr_minor, hr_custom, br, img, img_small, code, title, c, html, script, tip, video, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, canvas, match, scenes, check, cross];
 }
