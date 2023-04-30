@@ -20,115 +20,134 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
 
 <div id="wr-game-buttons">
     <button href="#/wr/th01" data-game="th01" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th02" data-game="th02" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th03" data-game="th03" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th04" data-game="th04" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th05" data-game="th05" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th06" data-game="th06" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th07" data-game="th07" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th08" data-game="th08" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th09" data-game="th09" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th10" data-game="th10" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th11" data-game="th11" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th12" data-game="th12" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th128" data-game="th128" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th13" data-game="th13" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th14" data-game="th14" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th15" data-game="th15" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th16" data-game="th16" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th17" data-game="th17" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
     <button href="#/wr/th18" data-game="th18" class="card-game">
-        <div class="card-bg-image"></div><span class="card-centered-text"></span>
+        <div class="card-bg-image"></div>
+        <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
@@ -174,6 +193,7 @@ Major thanks to all these wonderful people for having contributed to the data to
 + [a=https://en.touhouwiki.net/]https://en.touhouwiki.net/wiki/Touhou_Wiki[/a]
 + [a=https://zh.touhouwiki.net/]https://zh.touhouwiki.net/[/a]
 + [a=https://www.shrinemaiden.org/forum/index.php]https://www.shrinemaiden.org/forum/index.php[/a]
++ [a=https://wikiwiki.jp/reirako/%E6%B0%B8%E5%A4%9C%E6%8A%84%E5%B1%A5%E6%AD%B4]https://wikiwiki.jp/reirako/%E6%B0%B8%E5%A4%9C%E6%8A%84%E5%B1%A5%E6%AD%B4[/a]
 + [a=https://wikiwiki.jp/let/]https://wikiwiki.jp/let/[/a]
 + [a=https://eientei.boards.net/]https://eientei.boards.net/[/a]
 + [a=https://www.youtube.com/]https://www.youtube.com/[/a]
