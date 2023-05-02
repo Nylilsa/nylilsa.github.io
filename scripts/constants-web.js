@@ -101,7 +101,7 @@ const names = {
         4: ['Practice mode 0 bombs', ['common'], 1, false, 'Entering Practice mode you may see that your player has no bombs.', -999999990],
         5: ['Centipede + Wolf cards combination', ['simul'], 2, true, 'When equipping the Centipede and the Wolf card at the same time, the effect from the Centipede card is replaced by the effect of the Wolf card.', -999999990],
         6: ['Lily White Crash', ['crash'], 4, false, 'It is possible to cause a game crash by using the Lily White card.', -999999990],
-        7: ["Dragon Eater's Cataclysm", ['overflow'], 2, true, 'Momoyo\'s 8th spell-card can freak out and spawn seemingly an infinite number of bullets.', -999999990],
+        7: ["Dragon Eater Timeout", ['overflow'], 2, true, 'Momoyo\'s 8th spell-card can freak out and spawn seemingly an infinite number of bullets.', -999999990],
         8: ["Momoyo's Final Bomb Damage", ['rare'], 3, true, 'Momoyo gains a hurtbox during her final spell-card during a bomb. This can usually not happen, because Extra bosses are supposed to be immune to bombs.', -999999990]
     },
 	th185: {
