@@ -33,7 +33,8 @@ function loadMarkdown(path) { //loads page
 }
 
 function colorHex(input = getGameFromURL()) {
-	return gameColors[input] || "#47748B";
+    const def = getComputedStyle(document.documentElement).getPropertyValue('--clr-default');
+	return gameColors[input] || def || "#498b47";
 }
 
 function colorRGB(add, opacity, game) {
@@ -42,6 +43,8 @@ function colorRGB(add, opacity, game) {
 	if (typeof game === 'undefined') { 
 		colourHex = colorHex();
 	}
+
+    colourHex = colourHex.replaceAll(" ", "");
  
 	let rHex = "0x" + colourHex.substring(1, 3); // 0xAB
 	let gHex = "0x" + colourHex.substring(3, 5); // 0xCD
