@@ -1,5 +1,4 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-@import url(themes/dark-blue.css);
 @import url(defaults.css);
 
 :root {
@@ -121,11 +120,11 @@ h6 {
 }
 
 .navigation {
+    padding-block: 15px;
+    border-bottom: 1px solid var(--clr-default);
     & * {
-        transition: all var(--time-animation) ease;
+        transition: min-height var(--time-animation) ease;
     }
-    padding-block: 20px;
-    border-block: 1px solid var(--clr-default);
     a, button {
         display: block;
         text-decoration: none;
@@ -203,7 +202,7 @@ h6 {
 
 
 #content {
-    transition: all var(--time-animation) ease-in-out;
+    transition: padding var(--time-animation) ease-in-out;
     background-color: var(--clr-background-main);
     color: var(--clr-text-dim);
     padding-block: 6vh;
@@ -356,6 +355,63 @@ tr {
 sub {
     vertical-align: sub;
     font-size: var(--fs-100);
+}
+
+.circle-wrapper {
+    width: 40px;
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.circle {
+    height: 50%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: saturate(0.5);
+    background: repeating-linear-gradient(
+        90deg,
+        var(--clr-theme) 0%,
+        var(--clr-theme) 50%,
+        #0000 50%,
+        #0000 101%);
+    &::before {
+        content: '';
+        height: 100%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        display: inline-block;
+        background: repeating-linear-gradient(
+            270deg,
+            var(--clr-theme) 0%,
+            var(--clr-theme) 50%,
+            #0000 50%,
+            #0000 101%);
+        filter: brightness(50%);
+    }
+}
+
+.checkmark {
+    position: relative;
+    flex: 1 1 0;
+    padding: 10px;
+    &::after {
+        content: '';
+        height: 80%;
+        aspect-ratio: 1;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        background-color: var(--clr-default);
+        transform: translate(-30%, -50%);
+        -webkit-mask-image: url(/assets/check-mark.svg);
+        mask-image: url(/assets/check-mark.svg);
+        opacity: var(--opacity, 0);
+    }
 }
 
 @media screen and (max-width: 500px) {

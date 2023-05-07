@@ -16,10 +16,11 @@
 <script src="lib/highlight.min.js"></script>
 <link rel="stylesheet" href="css/style-hljs.css">
 <!-- My stuffs -->
+<script src="scripts/themes.js"></script>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style-wr.css">
-<script src="scripts/constants-web.js"></script>
-<script src="scripts/constants-game.js"></script>
+<script src="scripts/constants-web.js" defer></script>
+<script src="scripts/constants-game.js" defer></script>
 <script src="scripts/main.js" defer></script>
 </head>
 <body>
@@ -40,6 +41,173 @@
             <svg class="icon inverted" style="--icon-image: url(../assets/cross.svg)"></svg>
         </button>
 	</div>
+    <ul class="navigation" style="border-top: 0px">
+        <li>
+            <button class="dropdown-toggle">Themes</button>
+			<ul class="collapse">
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th06" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">EoSD</div>
+                    </button>
+				</li>
+                <!-- <li>
+                    <button style="display: flex; padding: 0;" data-theme="th07" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">PCB</div>
+                    </button>
+				</li> -->
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th08" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">IN</div>
+                    </button>
+				</li>
+                <!-- <li>
+                    <button style="display: flex; padding: 0;" data-theme="th09" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">PoFV</div>
+                    </button>
+				</li>
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th95" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">StB</div>
+                    </button>
+				</li> -->
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th10" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">MoF</div>
+                    </button>
+				</li>
+                <!-- <li>
+                    <button style="display: flex; padding: 0;" data-theme="th11" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">SA</div>
+                    </button>
+				</li>
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th12" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">UFO</div>
+                    </button>
+				</li> --->
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th125" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">DS</div>
+                    </button>
+				</li>
+                <!-- <li>
+                    <button style="display: flex; padding: 0;" data-theme="th128" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">FW</div>
+                    </button>
+				</li>
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th13" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">TD</div>
+                    </button>
+				</li>
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th14" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">DDC</div>
+                    </button>
+				</li> --->
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th143" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">ISC</div>
+                    </button>
+				</li>
+                <!-- <li>
+                    <button style="display: flex; padding: 0;" data-theme="th15" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">LoLK</div>
+                    </button>
+				</li> -->
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th16" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">HSiFS</div>
+                    </button>
+				</li>
+                <!-- <li>
+                    <button style="display: flex; padding: 0;" data-theme="th165" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">VD</div>
+                    </button>
+				</li>
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th17" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">WBaWC</div>
+                    </button>
+				</li>
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th18" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">UM</div>
+                    </button>
+				</li>
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th185" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">100BM</div>
+                    </button>
+				</li>
+                <li>
+                    <button style="display: flex; padding: 0;" data-theme="th11" onclick="setTheme(this)">
+                        <div class="circle-wrapper">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="checkmark">Light blue</div>
+                    </button>
+				</li> -->
+			</ul>
+		</li>
+    </ul>
 	<ul class="navigation">
 		<li>
 			<a href="#/home">Home</a>
@@ -201,16 +369,7 @@
 		</li>
 		------->
 	</ul>
-    <ul class="navigation" style="border-top: 0px">
-        <li>
-            <button class="dropdown-toggle">Themes</button>
-			<ul class="collapse">
-				<li>
-					<a href="https://maribelhearn.com/" target="_blank">Maribel Hearn's website</a>
-				</li>
-			</ul>
-		</li>
-    </ul>
+
 </nav>
 
 <article id="content">

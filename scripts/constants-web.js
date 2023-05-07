@@ -106,6 +106,9 @@ const names = {
     },
 	th185: {
         0: ['N/A', [], 1, false, 'placeholder', -999999990]
+    },
+	th19: {
+        0: ['N/A', [], 1, false, 'placeholder', -999999990]
     }
 };
 
@@ -177,6 +180,7 @@ const bugTracker = {
 	th17: {"completed-pages": 9, "total-glitches": 38, "comment": "Not likely to change"},
 	th18: {"completed-pages": 8, "total-glitches": 41, "comment": "Number is likely to increase"},
 	th185: {"completed-pages": 0, "total-glitches": 11, "comment": "Number is likely to increase"},
+	th19: {"completed-pages": 0, "total-glitches": 1, "comment": "Number is going to increase when the game releases"},
 };
 
 

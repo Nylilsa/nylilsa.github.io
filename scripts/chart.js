@@ -366,7 +366,7 @@ export function createLegend(chart, args, options, gameCharacters, colors, game,
             const dashedLength = [2, 4, 8, 12];
             const bgLineWidth = dashedLength[Number(colors[i][1])];
             const c = `${colors[i].slice(2)}80`;
-            boxSpan.style.background = `repeating-linear-gradient(135deg, ${c}, ${c} ${bgLineWidth}px, #020c18 ${bgLineWidth}px, #020c18 ${2*bgLineWidth}px)`;
+            boxSpan.style.background = `repeating-linear-gradient(135deg, ${c}, ${c} ${bgLineWidth}px, #0000 ${bgLineWidth}px, #0000 ${2*bgLineWidth}px)`;
         }
         // Text
         const textContainer = document.createElement('p');

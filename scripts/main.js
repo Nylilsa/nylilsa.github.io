@@ -405,6 +405,14 @@ function countTags() {
 }
 
 
+function setTheme(element) {
+    const game = element.dataset.theme;
+    const other = document.querySelector("[data-css]");
+    other.href = `css/themes/${game}.css`
+    loadMarkdown(initRemoveHash(false));
+    localStorage.selectedTheme = game;
+}
+
 
 ///////////////////// DEBUG /////////////////////
 
@@ -451,7 +459,19 @@ function initSidebarContent() {
 			k += 1;
 		}
 	}
-	//console.log(k) 
+    const themes = document.getElementsByClassName("circle-wrapper");
+    for (let i=0; i < themes.length; i++) {
+        const parent = themes[i].parentElement;
+        const game = parent.dataset.theme;
+        let color = colorRGB(colDecrease, 1, game);
+        if (game == "th17") {
+            color = colorRGB(8, 1, game);
+        }
+        parent.style.setProperty('--clr-theme', color);
+
+        const next = themes[i].nextElementSibling;
+        next.innerText = `${names1[game]["jp"]}～${names1[game]["en"]}`;
+    }
 }
 
 function initMarkdown(error) { //puts html in id 'test'
