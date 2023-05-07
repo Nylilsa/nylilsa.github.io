@@ -409,7 +409,10 @@ function setTheme(element) {
     const game = element.dataset.theme;
     const other = document.querySelector("[data-css]");
     other.href = `css/themes/${game}.css`
-    loadMarkdown(initRemoveHash(false));
+    initCustomColor();
+    setTimeout(() => {
+        initCustomColor();
+    }, 100);
     localStorage.selectedTheme = game;
 }
 
