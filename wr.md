@@ -10,7 +10,7 @@ A comprehensive Touhou world records tracker, updated every so often. This page 
 2. [a=https://maribelhearn.com/royalflare]Royalflare Archive[/a] - by Maribel Hearn
 3. [a=https://wikiwiki.jp/thscorekg/]東方スコア記録wiki Wiki*[/a] - by Ｋ・Ｇ
 4. [a=http://replay.lunarcast.net/]LunarCast Replay Database[/a] - by Tom
-5. [a=https://thscore.pndsng.com/index.php]東方スコア記録wiki Wiki*[/a] - by pndsng
+5. [a=https://thscore.pndsng.com/index.php]裏スコボみたいなメモ書き[/a] - by pndsng
 
 If there are any inaccuracies on this page, please contact me on Discord (at ``Nylilsa#9310``) about it !
 
@@ -193,6 +193,7 @@ Major thanks to all these wonderful people for having contributed to the data to
 + [a=https://en.touhouwiki.net/]https://en.touhouwiki.net/wiki/Touhou_Wiki[/a]
 + [a=https://zh.touhouwiki.net/]https://zh.touhouwiki.net/[/a]
 + [a=https://www.shrinemaiden.org/forum/index.php]https://www.shrinemaiden.org/forum/index.php[/a]
++ [a=https://web.archive.org/web/20070912110712/http://score.touhou-storm.com/]http://score.touhou-storm.com[/a]
 + [a=https://wikiwiki.jp/reirako/%E6%B0%B8%E5%A4%9C%E6%8A%84%E5%B1%A5%E6%AD%B4]https://wikiwiki.jp/reirako/%E6%B0%B8%E5%A4%9C%E6%8A%84%E5%B1%A5%E6%AD%B4[/a]
 + [a=https://wikiwiki.jp/let/]https://wikiwiki.jp/let/[/a]
 + [a=https://eientei.boards.net/]https://eientei.boards.net/[/a]
