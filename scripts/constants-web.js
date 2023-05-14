@@ -156,7 +156,7 @@ const contributorsWRs = {
 	"aw": {"name": "Levea", "help": "IN Lunatic", "url": "https://twitter.com/Levea18/"},
 	"s6": {"name": "Maribel Hearn", "help": "Royalflare Archive and the WR page", "url": "https://maribelhearn.com/"},
 	"S7": {"name": "morth", "help": "TD Extra", "url": "https://www.youtube.com/channel/UCpURmfyYBzoLJJLa3DDvY8g"},
-	"S7": {"name": "pingval", "help": "EoSD, PCB and PoFV", "url": "https://twitter.com/pingval"},
+	"S8": {"name": "pingval", "help": "EoSD, PCB, IN and PoFV", "url": "https://twitter.com/pingval"},
 	"VS": {"name": "Rivers", "help": "IN Lunatic", "url": "https://www.twitch.tv/rivers_th08"}
 };
 
