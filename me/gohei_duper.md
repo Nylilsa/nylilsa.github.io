@@ -36,7 +36,7 @@ Now that gohei is used to its fullest potential, but our damage certainly isn't.
 
 [img=me/gohei2.png, hratio=2, other= ] [br]
 
-There exists a [a=/#/bugs/th14/4]glitch[/a] that allows for multiple goheis to be created. The glitch can create up to 4 goheis at once, and all of the goheis act the same way. The name of the glitch is also known as [hl2]Gohei duplication[/hl2] or [hl2]Gohei dupe[/hl2] or [hl2]dupe[/hl2] in short. For more details, see THIS PAGE.
+There exists a [a=/#/bugs/th14/4]glitch[/a] that allows for multiple goheis to be created. The glitch can create up to 4 goheis at once, and all of the goheis act the same way. The name of the glitch is also known as [hl2]Gohei duplication[/hl2] or [hl2]Gohei dupe[/hl2] or [hl2]dupe[/hl2] in short.
 
 ## Gohei duplication glitch
 [hr_minor]
@@ -71,7 +71,9 @@ Instead, you want to have a great enough distance such that the gohei doesn't in
 
 [img=me/cps.png, hratio=0, other= ] [br]
 
-The general rule is that the faster you can mash your buttons the better it is. This section isn't very much about talking about the techniques of button mashing (though I might add a section about this later). I personally average about 12 clicks per second on my [key=Shift] key, though it is possible to get multiple goheis even when your clicks per second is 6. If you want to check out what your clicks per second is, you can check it out on [a=https://cps-check.com/keyboard-cps]this website[/a].
+The general rule is that the faster you can mash your buttons the better it is. This section isn't very much about talking about the techniques of button mashing (though I might add a section about this later). I personally use one keyboard for all my inputs. With it, I average about 12 clicks per second on my [key=Shift] key, though it is possible to get multiple goheis even when your clicks per second is 6. If you want to check out what your clicks per second is, you can check it out on [a=https://cps-check.com/keyboard-cps]this website[/a].
+
+Some people might prefer other input devices, such as the use of a controller, a separate keyboard for your other hand or a Guitar Hero. I don't know how those devices work, but I am sure the same concept applies where you need a high CPS.
 
 ### Luck
 [hr_minor]
@@ -79,18 +81,28 @@ The general rule is that the faster you can mash your buttons the better it is. 
 Honestly, sometimes it doesn't really make much sense, but luck is involved when doing this glitch. You can do the exact same inputs twice, but in one instance you may only get 1 gohei and in the other you may be lucky to get 3 goheis. There isn't much else I can say, really...
 
 ## Video
+[hr_minor]
 
-[insert video]
 
-1. focus only- no centering
-2. focus with re-centering
-3. no centering amulet spam
-4. centering + amulet spam
-5. uncentered double gohei + no amulet spam
-6. uncentered double gohei + amulet spam
-7. 2/2 centered double gohei + amulet spam
-8. 0/3 centered double gohei + amulet spam
+[video=https://www.youtube.com/embed/Swh3whaeXcQ, hratio=2, other=width:720px; aspect-ratio:16/9]
 
+
+The video above demonstrates the different ways ReimuA can maximise her damage. The times mentioned below is the same time I got in this video but two seconds are subtracted from it. This was done because Seija starts off with invincibility frames for one second, and her death animation lasts for one second.
+
+Method 1. Focus only + no amulet spam | 20.41s
+Method 2. Re-centering + no amulet spam | 16.16s
+Method 3. No centering + amulet spam | 15.46s
+Method 4. 0/2 centered double gohei + no amulet spam | 14.01s
+Method 5. Centering + amulet spam | 13.68s
+Method 6. 0/2 centered double gohei + amulet spam | 12.01s
+Method 7. 2/2 centered double gohei + amulet spam | 10.63s
+Method 8. 0/3 centered triple gohei + amulet spam | 9.10s
+Method 9. 3/3 centered triple gohei + amulet spam | 8.25s
+
+There are some things to keep note of though.
+
+Method 2 and method 5 are only possible if the player can go high enough to reach the boss. This is possible on most patterns except those that force the player to be low on-screen.
+While method 7 and method 9 are extremely powerful, their additional power comes from the first couple of seconds in which the goheis are centered. After those couple seconds the goheis slowly diverge from the boss and less DPS is dealt to the boss. In this video, the 2/2 centered double gohei is about 12.9% faster than the 0/2 centered double gohei method. If I chose a different attack that has more HP, then the ratio would be less than 12.9% because the 2/2 centered double gohei only deals more damage at the beginning of the attack.
 
 ## Sum of Best
 [hr_minor]
