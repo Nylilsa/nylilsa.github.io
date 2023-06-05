@@ -10,7 +10,8 @@ const names = {
     },
 	th08: {
         0: ['Dialogue Pause Desync', ['desync', 'uncommon'], 3, true, 'If the game is paused during dialogue, and then unpaused by pressing Z to continue playing, any replay made of such a run will desync on the stage the dialogue unpause was performed on.', -999999990],
-        1: ['Unintended Last Spell Trigger', ['desync', 'rare'], 4, false, 'It is possible to trigger the Last Spell despite not meeting the required Time. It is possible to trigger this on all spell-cards besides on Mokou due to the Time requirement being too low. The game runs normally when the Last Spell is triggered and nothing special happens.', -999999990]
+        1: ['Unintended Last Spell Trigger', ['desync', 'rare'], 4, false, 'It is possible to trigger the Last Spell despite not meeting the required Time. It is possible to trigger this on all spell-cards besides on Mokou due to the Time requirement being too low. The game runs normally when the Last Spell is triggered and nothing special happens.', -999999990],
+        2: ['Hourai Jewel Bounce', ['rare'], 4, false, '-1', -999999990]
     },
 	th09: {
         0: ['Stage Skip', ['skip'], 4, false, 'It is possible to skip to the subsequent stage by doing some messing around with the pause menu.', -999999990]
