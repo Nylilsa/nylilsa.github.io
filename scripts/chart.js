@@ -718,7 +718,7 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
 
 export function catchErrors(data) {
     console.time("Time");
-    let [a, b, c, d] = [[], [], [], []];
+    let [a, b, c, d, e] = [[], [], [], [], []];
     for (const [key, valueee] of Object.entries(data)) {
         for (const [key3, value] of Object.entries(valueee)) { // cycles through all categories
             for (const [key2, value2] of Object.entries(value)) { // cycles through all shots of category
@@ -729,6 +729,7 @@ export function catchErrors(data) {
                     b.push(element[1])
                     c.push(element[2])
                     d.push(element[0])
+                    e.push(key)
                     const flagScore = (parseInt(element[0]) >= newScore);
                     newScore = parseInt(element[0]);
                     const flagDate = (new Date(element[2]).getTime() >= newDate);
@@ -742,6 +743,19 @@ export function catchErrors(data) {
     console.log(mode(b));
     console.log(mode(c));
     console.log(mode(d));
+    console.log(frequencyList(e));
     console.log(a.length);
     console.timeEnd("Time");
 }
+
+export function frequencyList(arr) {
+    const result = {};
+    for (const item of arr) {
+        if (result[item]) {
+            result[item]++;
+        } else {
+            result[item] = 1;
+        }
+    }
+    return result;
+  }

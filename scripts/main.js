@@ -79,49 +79,6 @@ function setWindowTitleDirect(str) {
 	document.title = str;
 }
 
-function generateTable(input) { // generates tables of shottypes of HSifS and WBaWC
-	const yes = '<img src="/assets/green-check-mark.svg" class="icon-text">';
-	const no = '<img src="/assets/red-cross.svg" class="icon-text">';
-	// table-shottype is ID of div in showdown-ext.js
-	const content = document.getElementById('table-shottype');
-	if (input.length == 20) { //hsifs
-		let str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchStyle['spring'].color+'">Spring</span></td>';
-		for (let i = 0; i < input.length; i++) {
-			switch (i) {
-				case 4: {str += '</tr><tr><td class="left"><span style="color:'+matchStyle['summer'].color+'">Summer</span></td>'; break;}
-				case 8: {str += '</tr><tr><td class="left"><span style="color:'+matchStyle['autumn'].color+'">Autumn</span></td>'; break;}
-				case 12: {str += '</tr><tr><td class="left"><span style="color:'+matchStyle['winter'].color+'">Winter</span></td>'; break;}
-				case 16: {str += '</tr><tr><td class="left">Extra</td>'; break;}
-			}
-			if (input[i] == 1) {
-				str += '<td>'+yes+'</td>';
-			} else {
-				str += '<td>'+no+'</td>';
-			}
-		}
-		str += '</tr></tbody></table>';
-		content.innerHTML += str;
-		return;
-	} 
-	if (input.length == 9) { //wbawc
-		let str = '<table><thead><tr><th class="left">Spirit</th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td class="left"><span style="color:'+matchStyle['wolf'].color+'">Wolf</span></td>';
-		for (let i = 0; i < input.length; i++) {
-			switch (i) {
-				case 3: {str += '</tr><tr><td class="left"><span style="color:'+matchStyle['otter'].color+'">Otter</span></td>'; break;}
-				case 6: {str += '</tr><tr><td class="left"><span style="color:'+matchStyle['eagle'].color+'">Eagle</span></td>'; break;}
-			}
-			if (input[i] == 1) {
-				str += '<td>'+yes+'</td>';
-			} else {
-				str += '<td>'+no+'</td>';
-			}
-		}
-		str += '</tr></tbody></table>';
-		content.innerHTML += str;
-		return;
-	} 
-}
-
 function toggleSidebar(bool) { //changes class of sidebar upon button press
 	const sidebar = document.getElementById('sidebar');
 	const content = document.getElementById('content');
@@ -217,46 +174,6 @@ function citeReplay(game, date, author, name, difficulty, shot, version, url, no
 	return 'Replay \`'+name+'\` by "'+author+'". '+difficulty+', '+shot+', '+version+'. 「'+date+'」. <a class="url" href="'+url+'" target="_blank">Download link</a> '+note;
 }
 
-function contributorsFunction(check) {
-    let object;
-    if (check == 0) {
-        object = contributors;
-    }
-    if (check == 1) {
-        object = contributorsWRs;
-    }
-	let i = 0;
-	let html = '';
-	for (let lambda in object) {
-		const value = Object.values(object)[i];
-		html += '+ <a class="url" href="'+value.url+'" target="_blank">'+value.name+'</a> - '+value.help;
-		html += '\n';
-		i++;
-	}
-	return html;
-}
-
-function progressTable() {
-	const id = document.getElementById('progress-table');
-    if (!id) {return;}
-	let html = '<table><thead><tr><th class="left">Game</th><th>Finished pages</th><th>Total pages</th><th>Glitches count</th><th>Progress</th><th>Comment</th></tr></thead><tbody>';
-	let [i, countCompleted, countPages, countGlitches] = [0, 0, 0, 0];
-	for (let lambda in bugTracker) {
-		const th = Object.keys(bugTracker)[i];
-		const value = Object.values(bugTracker)[i];
-		let percentage = (value["completed-pages"]/value["total-glitches"]*100);
-		percentage = +percentage.toFixed(2)+'%';
-
-		countCompleted += value["completed-pages"];
-		countPages += Object.keys(names[th]).length;
-		countGlitches += value["total-glitches"];
-		html += '<tr><td style="border-left: 2px solid '+gameColors[th]+';">'+th+'</td><td>'+value["completed-pages"]+'</td><td>'+Object.keys(names[th]).length+'</td><td>'+value["total-glitches"]+'</td><td class="left">'+percentage+'</td><td class="left">'+value.comment+'</td>'
-		i++;
-	}
-	html += '<tr><td>Total</td><td>'+countCompleted+'</td><td>'+countPages+'</td><td>'+countGlitches+'</td><td class="left">'+(countCompleted/countGlitches*100).toFixed(2)+'%</td><td class="left">So many pages left to go through ;__;</td>'
-	id.innerHTML += html;
-}
-
 function showNavbarChildren() { //toggles all elements in navbar of Bugs if clicked on
     const elements = document.getElementsByClassName("sidebar-bugs");
     const collapsing = elements[0].nextElementSibling.classList.contains("collapsing");
@@ -299,112 +216,6 @@ function hrCustom(input) {
     return "<hr style='border-color:" + borderColor + "'>";
 }
 
-function gameScenes(game, flag, array) {
-	const content = document.getElementById('table-scenes'); // table-scenes is ID of div in showdown-ext.js
-	let yes;
-    let no;
-    if (flag === 'true') {
-		yes = '<img src="/assets/green-check-mark.svg" class="icon-text">';
-		no = '<img src="/assets/red-cross.svg" class="icon-text">';
-	} else {
-		no = '<img src="/assets/green-check-mark.svg" class="icon-text">';
-		yes = '<img src="/assets/red-cross.svg" class="icon-text">';
-	}
-	
-	if (game === '143') {
-		let str = '<table><thead><tr><th class="left">Scenes</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead><tbody><tr><td class="left">Day 1</td>';
-		const days = [1, 7, 13, 20, 27, 35, 43, 51, 58, 66]; // digit k represents first day of indexOf k.
-		const maximum = 75;
-		let k = 1;
-		for (let i = 1; i <= maximum; i++) {
-			if (i === days[k]) {
-				str += '</tr><tr><td class="left">Day '+(k+1)+'</td>';
-				k += 1;
-			}
-			if (array.includes(i)) {
-				str += '<td>'+yes+'</td>';
-			} else {
-				str += '<td>'+no+'</td>';
-			}
-		}
-        str += "</thead></table>"
-		content.innerHTML += str;
-		return;
-	}
-}
-
-function tagsTable() {
-    let str = '<table id="selected-container"><tbody>';
-    let counterArray = countTags();
-    let i = 0;
-    const raritySeparator = 5;
-    for (const [key, value] of Object.entries(tags)) {
-        if (i === raritySeparator){str += "<tr><td></td><td></td><td class='invis left'>youtu.be/dQw4w9WgXcQ</td></tr>";}
-        str += `<tr><td class="left">${counterArray[i]}</td><td class="left"><span class="tag"><a onclick="toggleTags(this)" data-key="${key}" class="tag" title="${value['description']}">${value['full']}</a></span></td><td class="left">${value['description']}</td>`;
-        i++;
-    }
-    str += "</tbody></table>";
-    return str;
-}
-
-function tagsSelector() {
-    const selector = document.getElementById('bugs-tags');
-    const array = JSON.parse(selector.dataset.list);
-    let html = '';
-    for (let i=0; i < array.length; i++) {
-        html += '<span class="tag"><a onclick="toggleTags(this)" class="tag" data-key="'+array[i]+'">'+tags[array[i]].full+'</a></span>';
-    }
-    selector.innerHTML = html;
-}
-
-function toggleTags(element) {
-    const table = document.getElementById("selected-container");
-    const selector = document.getElementById('bugs-tags');
-    const key = element.dataset.key;
-    for (let i=0; i < table.childNodes[0].childNodes.length; i++) {
-        if (i !== 3) {
-            let a = table.childNodes[0].childNodes[i].childNodes[1].childNodes[0].childNodes[0];
-            if (a.dataset.key === key) {
-                a.classList.toggle("selected");
-            }
-        }
-    }
-    const array = JSON.parse(selector.dataset.list);
-    if (array.includes(key)) {
-        for(let i = 0; i < array.length; i++){ 
-            if (array[i] === key) { 
-                array.splice(i, 1);
-            }
-        }
-    } else {
-        array.push(key);
-    }
-    selector.dataset.list = JSON.stringify(array);
-    tagsSelector();
-}
-
-function countTags() {
-    console.time("test1");
-    let tagsArray = [];
-    let tagsCount = [];
-    for (const [key, value] of Object.entries(tags)) {
-        tagsArray.push(key);
-        tagsCount.push(0);
-    }
-    for (const [key, value] of Object.entries(names)) {
-        for (const [i, selector] of Object.entries(value)) {
-            const array = selector[1];
-            for (let i=0; i < array.length; i++) {
-                const index = tagsArray.indexOf(array[i]);
-                tagsCount[index] += 1;
-            }
-        }
-    }
-    console.timeEnd("test1");
-    return tagsCount;
-}
-
-
 function setTheme(element) {
     const game = element.dataset.theme;
     const other = document.querySelector("[data-css]");
@@ -443,6 +254,15 @@ function mode(array) {
     }
     return [maxEl, maxCount];
 }
+
+async function checkFileExists(fileUrl) {
+    try {
+        const response = await fetch(fileUrl);
+        return response.status === 200;
+    } catch (error) {
+        return false;
+    }
+  }
 
 ///////////////////// INIT /////////////////////
 
