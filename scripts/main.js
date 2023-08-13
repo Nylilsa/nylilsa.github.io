@@ -268,20 +268,11 @@ async function checkFileExists(fileUrl) {
 
 function initSidebarContent() {
     const colDecrease = -16;
-	const identifiers = document.querySelectorAll("#page-bugs li ul");
-	const header = document.querySelectorAll("#page-bugs li button");
-	let k = 0;
-	for (let i = 0; i < identifiers.length; i++) { // does it games.length times
-		const thnr = identifiers[i].id.slice(5); // bugs-th10 ---> th10
-		const child = header[i+1];
-		child.style.borderTopWidth = '1px';
-		child.style.borderColor = colorHex(thnr);
-		const content = document.getElementById('bugs-'+thnr+'');
-		for (let j = 0; j < Object.keys(names[thnr]).length; j++) {
-            content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" style="border-color: '+colorRGB(colDecrease, 1, thnr)+';">'+names[thnr][j][0]+'</a></div></li>'; 
-			k += 1;
-		}
-	}
+    initSidebarGlitches(colDecrease);
+    initSidebarThemes(colDecrease);
+}
+
+function initSidebarThemes(colDecrease) {
     const themes = document.getElementsByClassName("circle-wrapper");
     for (let i=0; i < themes.length; i++) {
         const parent = themes[i].parentElement;
@@ -294,6 +285,30 @@ function initSidebarContent() {
 
         const next = themes[i].nextElementSibling;
         next.innerText = `${names1[game]["jp"]}～${names1[game]["en"]}`;
+    }
+}
+
+async function initSidebarGlitches(colDecrease) {
+    try {
+        const response = await fetch('json/glitch-tree.json'); // Fetch the JSON file
+        const namesData = await response.json();    // Parse JSON response
+        // Now you can work with the `namesData` object
+        const identifiers = document.querySelectorAll("#page-bugs li ul");
+        const header = document.querySelectorAll("#page-bugs li button");
+        let k = 0;
+        for (let i = 0; i < identifiers.length; i++) { // does it games.length times
+            const thnr = identifiers[i].id.slice(5); // bugs-th10 ---> th10
+            const child = header[i+1];
+            child.style.borderTopWidth = '1px';
+            child.style.borderColor = colorHex(thnr);
+            const content = document.getElementById('bugs-'+thnr+'');
+            for (let j = 0; j < Object.keys(namesData[thnr]).length; j++) {
+                content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" style="border-color: '+colorRGB(colDecrease, 1, thnr)+';">'+namesData[thnr][j]['title']+'</a></div></li>'; 
+                k += 1;
+            }
+        }
+    } catch (error) {
+        console.error('Error fetching or parsing names.json:', error);
     }
 }
 

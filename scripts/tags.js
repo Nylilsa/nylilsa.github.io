@@ -68,3 +68,32 @@ function countTags() {
     console.timeEnd("test1");
     return tagsCount;
 }
+
+
+const rarity = {
+    1: {"full": "Rarity 1", "description": "Giving the game to a random player, the glitch is almost always encountered"},
+    2: {"full": "Rarity 2", "description": "Giving the game to a random player, the glitch is encountered often"},
+    3: {"full": "Rarity 3", "description": "Giving the game to a random player, the glitch is encountered sometimes."},
+    4: {"full": "Rarity 4", "description": "Giving the game to a random player, the glitch is encountered rarely."},
+    5: {"full": "Rarity 5", "description": "Giving the game to a random player, the glitch is almost never encountered."}
+};
+
+const tags = {
+    "r1": {"full": "Rarity 1", "description": "Giving the game to a random player, the glitch is almost always encountered"},
+    "r2": {"full": "Rarity 2", "description": "Giving the game to a random player, the glitch is encountered often"},
+    "r3": {"full": "Rarity 3", "description": "Giving the game to a random player, the glitch is encountered sometimes."},
+    "r4": {"full": "Rarity 4", "description": "Giving the game to a random player, the glitch is encountered rarely."},
+    "r5": {"full": "Rarity 5", "description": "Giving the game to a random player, the glitch is almost never encountered."},
+
+    "cap": {"full": "Cap", "description": "Glitch where an upper limit causes unintentional side effects."},
+    "crash": {"full": "Crash", "description": "A sudden failure causing the game to close unexpectedly."},
+    "desync": {"full": "Desync", "description": "Game desyncs during replay."},
+    "dupe": {"full": "Duplication", "description": "Glitch where objects are duplicated."},
+    "old": {"full": "Old", "description": "Glitch is only in previous version(s) of the game."},
+    "overflow": {"full": "Overflow", "description": "Glitch where a value is overflowed."},
+    "shot": {"full": "Shottype", "description": "Glitch is specific to the shottype."},
+    "simul": {"full": "Simultaneous", "description": "Glitch caused by two or more events happening simultaneously."},
+    "skip": {"full": "Skips", "description": "Glitch where attacks or sections are skipped."},
+    "typo": {"full": "Typo", "description": "Glitch exists because ZUN made a typo."},
+    "uninit": {"full": "Uninitialised variable", "description": "Glitch caused by the usage of uninitialised variables."}
+};
