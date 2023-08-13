@@ -62,27 +62,6 @@ function contributorsFunction(check) {
 	return html;
 }
 
-function progressTable() {
-	const id = document.getElementById('progress-table');
-    if (!id) {return;}
-	let html = '<table><thead><tr><th class="left">Game</th><th>Finished pages</th><th>Total pages</th><th>Glitches count</th><th>Progress</th><th>Comment</th></tr></thead><tbody>';
-	let [i, countCompleted, countPages, countGlitches] = [0, 0, 0, 0];
-	for (let lambda in bugTracker) {
-		const th = Object.keys(bugTracker)[i];
-		const value = Object.values(bugTracker)[i];
-		let percentage = (value["completed-pages"]/value["total-glitches"]*100);
-		percentage = +percentage.toFixed(2)+'%';
-
-		countCompleted += value["completed-pages"];
-		countPages += Object.keys(names[th]).length;
-		countGlitches += value["total-glitches"];
-		html += '<tr><td style="border-left: 2px solid '+gameColors[th]+';">'+th+'</td><td>'+value["completed-pages"]+'</td><td>'+Object.keys(names[th]).length+'</td><td>'+value["total-glitches"]+'</td><td class="left">'+percentage+'</td><td class="left">'+value.comment+'</td>'
-		i++;
-	}
-	html += '<tr><td>Total</td><td>'+countCompleted+'</td><td>'+countPages+'</td><td>'+countGlitches+'</td><td class="left">'+(countCompleted/countGlitches*100).toFixed(2)+'%</td><td class="left">So many pages left to go through ;__;</td>'
-	id.innerHTML += html;
-}
-
 function gameScenes(game, flag, array) {
 	const content = document.getElementById('table-scenes'); // table-scenes is ID of div in showdown-ext.js
 	let yes;

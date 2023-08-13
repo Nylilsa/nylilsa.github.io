@@ -7,22 +7,6 @@ On this website, you will find all documented bugs and glitches of Touhou Projec
 
 Additionally, there are a few guides written on various topics that may not necessarily be related to one another which can be found over on the Guides section in the sidebar.
 
-## Bugs/Glitches pages progress
-[hr_minor]
-
-Below I note down how many pages have been written on this website compared to the number of Touhou glitches per game:
-
-<div id='progress-table'></div>
-[br]
-
-The ``Finished pages`` denotes how many completed pages I have written. A page is considered [hl2]completed[/hl2] if its [hl2]cause[/hl2] is 100% understood. 
-The ``Total Pages`` counts how many pages you have access to through the sidebar.
-The ``Glitches count`` is a number that tells me [hl2]how many glitches[/hl2] there are [hl2]per game[/hl2]. You can tell which games I have spent more time on than others :D.  This number comes from a [hl2]personal spreadsheet[/hl2] of mine that I am continuously updating.
-The ``Comment`` tells how likely that number is to change in the future, and if so, what to expect.
-If the ``Comment`` says ``not likely to change`` then it means that I have gone through all the glitches in the game and gone through some discussions with available experts of the game to determine this number of glitches. It also means that it is very very unlikely that this number will be updated, unless something very obscure were to be found.
-
-...yeah, the number of glitches is quite large, but that mainly happens because a lot of the glitches are in multiple games. lol
-
 
 
 ## Contributors

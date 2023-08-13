@@ -18,31 +18,6 @@ const contributorsWRs = {
 	"VS": {"name": "Rivers", "help": "IN Lunatic", "url": "https://www.twitch.tv/rivers_th08"}
 };
 
-
-const bugTracker = {
-	th06: {"completed-pages": 2, "total-glitches": 18, "comment": "Not likely to change unless we look at glitches in older versions"},
-	th07: {"completed-pages": 2, "total-glitches": 15, "comment": "Not likely to change unless we look at glitches in older versions"},
-	th08: {"completed-pages": 1, "total-glitches": 15, "comment": "Not likely to change unless we look at glitches in older versions"},
-	th09: {"completed-pages": 0, "total-glitches": 9, "comment": "Likely to change much"},
-	th95: {"completed-pages": 0, "total-glitches": 2, "comment": "Number is going to increase"},
-	th10: {"completed-pages": 4, "total-glitches": 18, "comment": "Not likely to change"},
-	th11: {"completed-pages": 7, "total-glitches": 23, "comment": "Not likely to change"},
-	th12: {"completed-pages": 2, "total-glitches": 18, "comment": "Not likely to change"},
-	th125: {"completed-pages": 1, "total-glitches": 3, "comment": "Number is going to increase"},
-	th128: {"completed-pages": 0, "total-glitches": 2, "comment": "Number is going to increase"},
-	th13: {"completed-pages": 1, "total-glitches": 20, "comment": "Not likely to change"},
-	th14: {"completed-pages": 3, "total-glitches": 26, "comment": "Not likely to change"},
-	th143: {"completed-pages": 1, "total-glitches": 6, "comment": "Number is going to increase"},
-	th15: {"completed-pages": 4, "total-glitches": 43, "comment": "Not likely to change"},
-	th16: {"completed-pages": 4, "total-glitches": 27, "comment": "Not likely to change"},
-	th165: {"completed-pages": 0, "total-glitches": 12, "comment": "Number is very likely to increase"},
-	th17: {"completed-pages": 9, "total-glitches": 38, "comment": "Not likely to change"},
-	th18: {"completed-pages": 8, "total-glitches": 41, "comment": "Number is likely to increase"},
-	th185: {"completed-pages": 0, "total-glitches": 11, "comment": "Number is likely to increase"},
-	th19: {"completed-pages": 0, "total-glitches": 1, "comment": "Number is going to increase when the game releases"},
-};
-
-
 const colorsForChart = {
     th01: {"colors": ['#36a2eb', '#ff6384']},
     th02: {"colors": ['#36a2eb', '#ff6384', '#ff9f40']},
