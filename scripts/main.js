@@ -290,21 +290,18 @@ function initSidebarThemes(colDecrease) {
 
 async function initSidebarGlitches(colDecrease) {
     try {
-        const response = await fetch('json/glitch-tree.json'); // Fetch the JSON file
-        const namesData = await response.json();    // Parse JSON response
-        // Now you can work with the `namesData` object
+        const response = await fetch('json/glitch-tree.json');
+        const data = await response.json();
         const identifiers = document.querySelectorAll("#page-bugs li ul");
         const header = document.querySelectorAll("#page-bugs li button");
-        let k = 0;
         for (let i = 0; i < identifiers.length; i++) { // does it games.length times
             const thnr = identifiers[i].id.slice(5); // bugs-th10 ---> th10
             const child = header[i+1];
             child.style.borderTopWidth = '1px';
             child.style.borderColor = colorHex(thnr);
             const content = document.getElementById('bugs-'+thnr+'');
-            for (let j = 0; j < Object.keys(namesData[thnr]).length; j++) {
-                content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" style="border-color: '+colorRGB(colDecrease, 1, thnr)+';">'+namesData[thnr][j]['title']+'</a></div></li>'; 
-                k += 1;
+            for (let j = 0; j < Object.keys(data[thnr]).length; j++) {
+                content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" style="border-color: '+colorRGB(colDecrease, 1, thnr)+';">'+data[thnr][j]['title']+'</a></div></li>'; 
             }
         }
     } catch (error) {

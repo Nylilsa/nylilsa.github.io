@@ -1,0 +1,402 @@
+{
+    "th06": {
+        "0": {
+            "title": "Boss Attack Skip",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "1": {
+            "title": "Dialogue Pause Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "2": {
+            "title": "Bomb Pause Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        }
+    },
+    "th07": {
+        "0": {
+            "title": "Merlin, Lyrica & Lunasa Glitch",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "1": {
+            "title": "Dialogue Pause Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        }
+    },
+    "th08": {
+        "0": {
+            "title": "Dialogue Pause Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "1": {
+            "title": "Unintended Last Spell Trigger",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "2": {
+            "title": "Hourai Jewel Bounce",
+            "url-name": ["placeholder"],
+            "finished": false
+        }
+    },
+    "th09": {
+        "0": {
+            "title": "Stage Skip",
+            "url-name": ["placeholder"],
+            "finished": false
+        }
+    },
+    "th95": {
+        "0": {
+            "title": "N/A",
+            "url-name": ["placeholder"],
+            "finished": false
+        }
+    },
+    "th10": {
+        "0": {
+            "title": "MarisaB 3 Power Damage",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "1": {
+            "title": "Corrupt replays",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "2": {
+            "title": "Stage 4 Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "3": {
+            "title": "Bullet hitboxes glitch",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "4": {
+            "title": "Stage transition Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        }
+    },
+    "th11": {
+        "0": {
+            "title": "Negative Spell Bonus",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "1": {
+            "title": "ReimuA 2 Power Damage",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "2": {
+            "title": "Mid-boss skips",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "3": {
+            "title": "ReimuC Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "4": {
+            "title": "Score Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "5": {
+            "title": "ReimuA Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "6": {
+            "title": "Stage 6 Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "7": {
+            "title": "Stage transition Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        }
+    },
+    "th12": {
+        "0": {
+            "title": "ReimuA Bomb Desync",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "1": {
+            "title": "Score Display Overflow",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "2": {
+            "title": "MarisaA's Laser Damage",
+            "url-name": ["placeholder"],
+            "finished": true
+        }
+    },
+    "th125": {
+        "0": {
+            "title": "12-6 Instant death glitch",
+            "url-name": ["placeholder"],
+            "finished": true
+        }
+    },
+    "th128": {
+        "0": {
+            "title": "N/A",
+            "url-name": ["placeholder"],
+            "finished": false
+        }
+    },
+    "th13": {
+        "0": {
+            "title": "Incorrect boss position during spell practice",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "1": {
+            "title": "Misalignment of timer",
+            "url-name": ["placeholder"],
+            "finished": false
+        }
+    },
+    "th14": {
+        "0": {
+            "title": "Score Underflow",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "1": {
+            "title": "Bulletless Kagerou",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "2": {
+            "title": "Marisa's Lasers",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "3": {
+            "title": "Barrier Bug",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "4": {
+            "title": "Gohei Duplication",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "5": {
+            "title": "Benben Spell 2 Crash",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "6": {
+            "title": "Screen-flipping Effect Undo",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "7": {
+            "title": "Item Duplication through Game's Speed",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "8": {
+            "title": "Timeouts on Tsukumo Sisters on Extra",
+            "url-name": ["placeholder"],
+            "finished": false
+        }
+    },
+    "th143": {
+        "0": {
+            "title": "Score Underflow",
+            "url-name": ["placeholder"],
+            "finished": true
+        }
+    },
+    "th15": {
+        "0": {
+            "title": "Sagume Skip",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "1": {
+            "title": "Red Background",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "2": {
+            "title": "Doremy's First Non-spell Typo",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "3": {
+            "title": "Hecatia opener 50% shootdown",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "4": {
+            "title": "Reisen Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        }
+    },
+    "th16": {
+        "0": {
+            "title": "(Sub-)shottypes Not Functioning",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "1": {
+            "title": "Stage 5 Incorrect Spellcard name",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "2": {
+            "title": "Stage 3 & Stage 5 crashes",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "3": {
+            "title": "Mai & Satono Solo Spells Issues",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "4": {
+            "title": "Okina's Survival Hurtbox",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "5": {
+            "title": "Okina's Final Bomb/Release Damage",
+            "url-name": ["placeholder"],
+            "finished": true
+        }
+    },
+    "th165": {
+        "0": {
+            "title": "N/A",
+            "url-name": ["placeholder"],
+            "finished": false
+        }
+    },
+    "th17": {
+        "0": {
+            "title": "YoumuEagle's Damage Cap",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "1": {
+            "title": "Instant Hyper Deactivation",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "2": {
+            "title": "Death by Intentional Hyper Break",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "3": {
+            "title": "Token duplication",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "4": {
+            "title": "Token Desync - Stage Transition Edition",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "5": {
+            "title": "Desync - Roaring Mode Edition",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "6": {
+            "title": "Desync - Random Token Edition",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "7": {
+            "title": "Saki's Survival Hurtbox",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "8": {
+            "title": "Saki's Final Bomb Damage",
+            "url-name": ["placeholder"],
+            "finished": true
+        }
+    },
+    "th18": {
+        "0": {
+            "title": "Slowdown Item Duplication",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "1": {
+            "title": "Chimata Final Timeout Crash",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "2": {
+            "title": "D press Desync",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "3": {
+            "title": "Takane Card Cost",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "4": {
+            "title": "Practice mode 0 bombs",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "5": {
+            "title": "Centipede + Wolf cards combination",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "6": {
+            "title": "Lily White Crash",
+            "url-name": ["placeholder"],
+            "finished": false
+        },
+        "7": {
+            "title": "Dragon Eater Timeout",
+            "url-name": ["placeholder"],
+            "finished": true
+        },
+        "8": {
+            "title": "Momoyo's Final Bomb Damage",
+            "url-name": ["placeholder"],
+            "finished": true
+        }
+    },
+    "th185": {
+        "0": {
+            "title": "N/A",
+            "url-name": ["placeholder"],
+            "finished": false
+        }
+    },
+    "th19": {
+        "0": {
+            "title": "N/A",
+            "url-name": ["placeholder"],
+            "finished": false
+        }
+    }
+}
