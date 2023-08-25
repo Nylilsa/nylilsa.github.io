@@ -666,7 +666,7 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
         const tblBody = document.createElement("tbody");
         let selector = "Shottype";
         if (game == "th01" || game == "th128") {selector = "Route"}
-        const headers = ["#", selector, "Difficulty", "Score", "Player", "Date", "Score gain"];
+        const headers = ["#", "Difficulty", selector, "Score", "Player", "Date", "Score gain"];
         const id = `${game}${gameCharacters[i]}`;
         table.setAttribute("id", `${id}table`);
         table.classList.add('all-wr-tables');
@@ -698,8 +698,8 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
                 const cell = document.createElement("td");
                 switch (k) {
                     case 0: {cellText = document.createTextNode(j+1); break;}
-                    case 1: {cellText = document.createTextNode(gameCharacters[i]); break;}
-                    case 2: {cellText = document.createTextNode(`${difficulty}`); break;}
+                    case 1: {cellText = document.createTextNode(`${difficulty}`); break;}
+                    case 2: {cellText = document.createTextNode(gameCharacters[i]); break;}
                     case 3: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
                     case 4: {cellText = document.createTextNode(`${player}`); break;}
                     case 5: {cellText = document.createTextNode(`${dateFormatted}`); break;}
