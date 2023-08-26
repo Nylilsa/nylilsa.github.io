@@ -494,10 +494,128 @@ export function loadCanvas(game, difficulty = "Lunatic", func) {
             const overallWRCharacter = gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))]
             generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
             callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func);
+            createDropdown(dataWR);
         });
-        catchErrors(dataWR);
+        // catchErrors(dataWR);
     });
     return;
+}
+
+export function createDropdown(dataWR) {
+    const dropdown = document.getElementById('nameDropdown');
+    const scoresTable = document.getElementById('scoresTable');
+    const scoreInfo = document.getElementById('scoreInfo');
+    let names = [];
+    Object.entries(dataWR).forEach(a => {
+        const diffs = a[1];
+        Object.entries(diffs).forEach(b => {
+            const shots = b[1];
+            Object.entries(shots).forEach(c => {
+                const entries = c[1];
+                entries.forEach(d => {
+                    const name = d[1];
+                    names.push(name);
+                    // console.log(name)
+                });
+            });
+        });
+    });
+    const uniqueArray = [...new Set(names)].sort()
+
+    uniqueArray.forEach(name => {
+        const option = document.createElement('option');
+        option.value = name;
+        option.textContent = name;
+        dropdown.appendChild(option);
+    });
+
+    if (localStorage.selectedWRName) {
+        const a = document.querySelector(`[value="${localStorage.selectedWRName}"]`);
+        a.selected = "selected";
+        makeTable(localStorage.selectedWRName);
+    }
+
+    dropdown.addEventListener('change', (event) => {
+        const selectedName = event.target.value;
+        localStorage.selectedWRName = selectedName;
+        makeTable(selectedName);
+    });
+    function makeTable(selectedName) {
+        const selectedEntries = [];
+        scoresTable.innerHTML = ''; // Clear previous results
+        if (selectedName) {
+            Object.entries(dataWR).forEach(a => {
+                const diffs = a[1];
+                Object.entries(diffs).forEach(b => {
+                    const shots = b[1];
+                    Object.entries(shots).forEach(c => {
+                        const entries = c[1];
+                        entries.forEach(d => {
+                            if (d[1] === selectedName) {
+                                d.push(c[0])
+                                d.push(b[0])
+                                d.push(a[0])
+                                selectedEntries.push(d)
+                            }
+                        });
+                    });
+                });
+            });
+
+            selectedEntries.sort((entry1, entry2) => {
+                const date1 = new Date(entry1[2]);
+                const date2 = new Date(entry2[2]);
+                return date2 - date1;
+            });
+
+            const table = document.createElement("table");
+            const tblBody = document.createElement("tbody");
+            const headers = ["#", "Game", "Difficulty", "Shottype/Route", "Score", "Player", "Date"];
+
+            for (let j = 0; j < selectedEntries.length; j++) { // rows
+                let row = document.createElement("tr");
+                const [score, name, date, shot, diff, game] = selectedEntries[j];
+                const dateFormatted = dateFormat(date);
+                let scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                if (j == 0) { // header column
+                    for (let k = 0; k < headers.length; k++) {
+                        const cell = document.createElement("th");
+                        const cellText = document.createTextNode(`${headers[k]}`);
+                        cell.appendChild(cellText);
+                        row.appendChild(cell);
+                        if (k == (headers.length-1)) {
+                            tblBody.appendChild(row);
+                            row = document.createElement("tr");
+                        }
+                    }
+                }
+                for (let k = 0; k < headers.length; k++) { // entry columns
+                    let cellText;
+                    const cell = document.createElement("td");
+                    switch (k) {
+                        case 0: {cellText = document.createTextNode(j+1); break;}
+                        case 1: {cellText = document.createTextNode(`${names1[game]["abbreviation"]}`); break;}
+                        case 2: {cellText = document.createTextNode(`${diff}`); break;}
+                        case 3: {cellText = document.createTextNode(shot); break;}
+                        case 4: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
+                        case 5: {cellText = document.createTextNode(`${name}`); break;}
+                        case 6: {cellText = document.createTextNode(`${dateFormatted}`); break;}
+                        default: {console.error(`Oops, something went wrong.`)}
+                    }
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                }
+                tblBody.appendChild(row);
+                table.appendChild(tblBody);
+                table.classList.add("wr-player-table");
+                table.style.marginInline = "auto";
+                scoresTable.appendChild(table);
+            }
+            scoreInfo.style.display = 'block';
+        } else {
+            scoreInfo.style.display = 'none';
+        }
+    }
 }
 
 export function doButtonStuffButForGameDifficulty(allDifficulties, game) {
@@ -674,13 +792,13 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
             table.style.display = "none";
         }
         for (let j = 0; j < data[i].length; j++) { // rows
-          let row = document.createElement("tr");
-          const index = Math.abs(j - reverse);
-          const [score, player, date, url] = data[i][index];
-		  const dateFormatted = dateFormat(date);
-          const nextScore = data[i][index-1]?.[0] ?? 0;
-          const scoreDifference = (score - nextScore).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-          let scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            let row = document.createElement("tr");
+            const index = Math.abs(j - reverse);
+            const [score, player, date, url] = data[i][index];
+		    const dateFormatted = dateFormat(date);
+            const nextScore = data[i][index-1]?.[0] ?? 0;
+            const scoreDifference = (score - nextScore).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            let scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             if (j == 0) { // header column
                 for (let k = 0; k < headers.length; k++) {
                     const cell = document.createElement("th");

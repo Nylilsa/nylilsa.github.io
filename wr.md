@@ -178,6 +178,20 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
 <div id="wr-tables"></div>
 </section>
 
+[br]
+
+## Player search
+[hr_major]
+
+Choose a player name from the menu below to show their WRs. For the best experience please view this on either landscape mode, or view this on your desktop.
+
+<select id="nameDropdown">
+  <option value="" id="dropdown">Select a name</option>
+</select>
+
+<div id="scoreInfo">
+  <div id="scoresTable"></div>
+</div>
 
 ## Credits
 [hr_major]
