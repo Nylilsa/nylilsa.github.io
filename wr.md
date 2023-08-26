@@ -193,6 +193,8 @@ Choose a player name from the menu below to show their WRs. For the best experie
   <div id="scoresTable"></div>
 </div>
 
+[br]
+
 ## Credits
 [hr_major]
 
