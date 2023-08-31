@@ -10,8 +10,29 @@ let MD = new showdown.Converter({
 	tables: true
 });
 
-function loadMarkdown(path) { //loads page
-	window.location.href = window.location.origin + '/#/' + path.replace(".md","") + initRemoveHash(true); //changes url
+async function checkBugPath(path) {
+    const check = path.slice(0, 5);
+    if (check !== "bugs/") {return path}
+    const response = await fetch('json/glitch-tree.json');
+    const data = await response.json();
+    const game = path.split("/")[1];
+    const longName = path.split("/")[2].replace(".md", "");
+    for (const key in data[game]) {
+        if (data[game].hasOwnProperty(key)) {
+            const urlNames = data[game][key]["url-name"];
+            if (urlNames.includes(longName)) {
+                const numericPath = path.replace(longName, key)
+                return numericPath;
+            }
+        }
+    }
+    return path;
+}
+
+async function loadMarkdown(path) { //loads page
+    const anchor = initRemoveHash(true);
+    const correctPath = await checkBugPath(path);
+	window.location.href = window.location.origin + '/#/' + path.replace(".md","") + anchor //changes url
 	const xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
 	xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
@@ -21,7 +42,7 @@ function loadMarkdown(path) { //loads page
 		}
 	}
 	if (path) {
-		xhttp.open("GET", path, true);
+		xhttp.open("GET", correctPath, true);
         xhttp.send();
 		xhttp.onload = function() {
             if (xhttp.status === 404) {
@@ -301,7 +322,17 @@ async function initSidebarGlitches(colDecrease) {
             child.style.borderColor = colorHex(thnr);
             const content = document.getElementById('bugs-'+thnr+'');
             for (let j = 0; j < Object.keys(data[thnr]).length; j++) {
-                content.innerHTML += '<li><div class="left-border-color"><a href="#/bugs/'+thnr+'/'+j+'" style="border-color: '+colorRGB(colDecrease, 1, thnr)+';">'+data[thnr][j]['title']+'</a></div></li>'; 
+                const li = document.createElement("li");
+                const div = document.createElement("div");
+                const a = document.createElement("a");
+                // a.href = `#/bugs/${thnr}/${j}`;
+                a.href = `#/bugs/${thnr}/${data[thnr][j]["url-name"][0]}`;
+                a.style.borderColor = colorRGB(colDecrease, 1, thnr);
+                a.innerText = data[thnr][j]['title'];
+                div.classList.add("left-border-color");
+                div.appendChild(a);
+                li.appendChild(div);
+                content.appendChild(li)
             }
         }
     } catch (error) {
