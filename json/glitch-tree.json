@@ -208,7 +208,7 @@
             "finished": false
         },
         "7": {
-            "title": "Item Duplication through Game's Speed",
+            "title": "Slowdown Item Duplication",
             "url-name": ["slowdown-dupe"],
             "finished": true
         },
