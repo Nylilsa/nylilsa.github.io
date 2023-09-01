@@ -93,7 +93,7 @@ const names1 = {
     "th08": {"abbreviation": "IN", "jp": "永夜抄", "en": "Imperishable Night"},
     "th09": {"abbreviation": "PoFV", "jp": "花映塚", "en": "Phantasmagoria of Flower View"},
     "th10": {"abbreviation": "MoF", "jp": "風神録", "en": "Mountain of Faith"},
-    "th11": {"abbreviation": "SA", "jp": "地霊殿", "en": "Subterrenean Animism"},
+    "th11": {"abbreviation": "SA", "jp": "地霊殿", "en": "Subterranean Animism"},
     "th12": {"abbreviation": "UFO", "jp": "星蓮船", "en": "Undefined Fantastic Object"},
     "th125": {"abbreviation": "DS", "jp": "ダブルスポイラー", "en": "Double Spoiler"},
     "th128": {"abbreviation": "FW", "jp": "妖精大戦争", "en": "Fairy Wars"},
