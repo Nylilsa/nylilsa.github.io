@@ -17,7 +17,8 @@ const latestVersion = {
     th165: "1.00a",
 	th17: "1.00b",
 	th18: "1.00a",
-	th185: "1.00a"
+	th185: "1.00a",
+	th19: "1.00a"
 };
 
 const gameColors = {
@@ -44,7 +45,8 @@ const gameColors = {
 	th165: '#AE11D5',
 	th17: '#190E0E',
 	th18: '#1DD294',
-	th185: '#F58225' //color chosen randomly by me
+	th185: '#F58225', //color chosen randomly by me
+	th19: '#97D81' //color chosen randomly by me
 };
 
 class Match {
@@ -101,5 +103,6 @@ const names1 = {
     "th15": {"abbreviation": "LoLK", "jp": "紺珠伝", "en": "Legacy of Lunatic Kingdom"},
     "th16": {"abbreviation": "HSiFS", "jp": "天空璋", "en": "Hidden Star in Four Seasons"},
     "th17": {"abbreviation": "WBaWC", "jp": "鬼形獣", "en": "Wily Beast and Weakest Creature"},
-    "th18": {"abbreviation": "UM", "jp": "虹龍洞", "en": "Unconnected Marketeers"}
+    "th18": {"abbreviation": "UM", "jp": "虹龍洞", "en": "Unconnected Marketeers"},
+    "th19": {"abbreviation": "UDoALG", "jp": "獣王園", "en": "Unfinished Dream of All Living Ghost"}
 }
