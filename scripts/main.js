@@ -133,8 +133,9 @@ function jumpTo(id, duration) {
 	if (id === '' || tagsCheck) { 
 		return;
 	}
-	setTimeout(() => { 
-		const top = document.getElementById(id.replace("#",""));
+	setTimeout(() => {
+        const top = document.getElementById(id.replace("#",""));
+        console.log(id, top)
         if (top) {
 		    window.scrollTo(0, top.offsetTop);
         }
