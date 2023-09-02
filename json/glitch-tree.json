@@ -408,9 +408,14 @@
             "url-name": ["rin-lvl-2"],
             "finished": false
         },
-        "3": {
+        "4": {
             "title": "Quit during result screen",
             "url-name": ["timed-exit"],
+            "finished": false
+        },
+        "3": {
+            "title": "Hisami's laser crash",
+            "url-name": ["hisami-crash"],
             "finished": false
         }
     }
