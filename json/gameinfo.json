@@ -43,7 +43,7 @@
         "th16other": ["ReimuSpring", "ReimuSummer", "ReimuAutumn", "ReimuWinter", "CirnoSpring", "CirnoSummer", "CirnoAutumn", "CirnoWinter", "AyaSpring", "AyaSummer", "AyaAutumn", "AyaWinter", "MarisaSpring", "MarisaSummer", "MarisaAutumn", "MarisaWinter"],
         "th17": ["ReimuWolf", "ReimuOtter", "ReimuEagle", "MarisaWolf", "MarisaOtter", "MarisaEagle","YoumuWolf", "YoumuOtter", "YoumuEagle"],
         "th18": ["Reimu", "Marisa", "Sakuya", "Sanae"],
-        "th19": ["Reimu", "Marisa", "Sanae", "Ran", "Aunn", "Nazrin", "Seiran", "Rin", "Tsukasa", "Mamizou", "Yachie", "Saki", "Yuuma", "Suika", "Son", "Enoko", "Chiyari", "Hisami", "Zanmu"]
+        "th19": ["Reimu", "Marisa", "Sanae", "Ran", "Aunn", "Nazrin", "Seiran", "Rin", "Tsukasa", "Mamizou", "Yachie", "Saki", "Yuuma", "Suika", "Biten", "Enoko", "Chiyari", "Hisami", "Zanmu"]
     },
     "Difficulty": {
         "th01": ["Easy", "Normal", "Hard", "Lunatic"],
