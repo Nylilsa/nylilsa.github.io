@@ -401,7 +401,12 @@
         "1": {
             "title": "Unobtainable achievement",
             "url-name": ["unobtainable-achievement"],
-            "finished": false
+            "finished": true
+        },
+        "2": {
+            "title": "Rin level 2 damage",
+            "url-name": ["rin-lvl-2"],
+            "finished": true
         }
     }
 }
