@@ -394,8 +394,8 @@
     },
     "th19": {
         "0": {
-            "title": "N/A",
-            "url-name": ["not-available"],
+            "title": "Story mode Draw glitch",
+            "url-name": ["draw-glitch"],
             "finished": false
         }
     }

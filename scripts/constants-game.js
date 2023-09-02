@@ -45,8 +45,8 @@ const gameColors = {
 	th165: '#AE11D5',
 	th17: '#190E0E',
 	th18: '#1DD294',
-	th185: '#F58225', //color chosen randomly by me
-	th19: '#97D81' //color chosen randomly by me
+	th185: '#F58225',
+	th19: '#4CD810' //color chosen randomly by me
 };
 
 class Match {
