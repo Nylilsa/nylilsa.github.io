@@ -397,6 +397,11 @@
             "title": "Story mode Draw glitch",
             "url-name": ["draw-glitch"],
             "finished": false
+        },
+        "1": {
+            "title": "Unobtainable achievement",
+            "url-name": ["unobtainable-achievement"],
+            "finished": false
         }
     }
 }
