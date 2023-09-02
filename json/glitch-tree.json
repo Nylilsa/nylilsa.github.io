@@ -406,7 +406,12 @@
         "2": {
             "title": "Rin level 2 damage",
             "url-name": ["rin-lvl-2"],
-            "finished": true
+            "finished": false
+        },
+        "3": {
+            "title": "Quit during result screen",
+            "url-name": ["timed-exit"],
+            "finished": false
         }
     }
 }
