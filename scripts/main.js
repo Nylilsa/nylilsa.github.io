@@ -326,7 +326,6 @@ async function initSidebarGlitches(colDecrease) {
                 const li = document.createElement("li");
                 const div = document.createElement("div");
                 const a = document.createElement("a");
-                const marker = document.createElement("div");
                 const finished = data[thnr][j]["finished"];
                 a.href = `#/bugs/${thnr}/${data[thnr][j]["url-name"][0]}`;
                 a.style.borderColor = colorRGB(colDecrease, 1, thnr);
@@ -335,18 +334,19 @@ async function initSidebarGlitches(colDecrease) {
                 div.style.position = "relative";
                 div.appendChild(a);
                 if (finished) {
+                    const marker = document.createElement("div");
                     marker.style.position = "absolute";
-                    marker.style.width = "16px";
-                    marker.style.height = "16px";
+                    marker.style.width = "12px";
+                    marker.style.height = "12px";
                     marker.style.inset = "0px";
-                    marker.style.margin = "auto 8px auto auto";
-                    //make it a star instead tomorrow using a svg
-                    marker.style.backgroundColor = "lime";
-                    marker.style.opacity = "0.5";
+                    marker.style.margin = "auto 10px auto auto";
+                    marker.style.setProperty("--icon-image", "url(../assets/star.svg)")
+                    marker.style.maskImage = "url(../assets/star.svg)";
+                    marker.style.webkitMaskImage = "url(../assets/star.svg)";
+                    marker.style.backgroundColor = "var(--clr-default)";
                     a.appendChild(marker);
                 }
                 li.appendChild(div);
-                console.log(finished)
                 content.appendChild(li)
             }
         }
