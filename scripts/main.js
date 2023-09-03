@@ -326,13 +326,27 @@ async function initSidebarGlitches(colDecrease) {
                 const li = document.createElement("li");
                 const div = document.createElement("div");
                 const a = document.createElement("a");
-                // a.href = `#/bugs/${thnr}/${j}`;
+                const marker = document.createElement("div");
+                const finished = data[thnr][j]["finished"];
                 a.href = `#/bugs/${thnr}/${data[thnr][j]["url-name"][0]}`;
                 a.style.borderColor = colorRGB(colDecrease, 1, thnr);
                 a.innerText = data[thnr][j]['title'];
                 div.classList.add("left-border-color");
+                div.style.position = "relative";
                 div.appendChild(a);
+                if (finished) {
+                    marker.style.position = "absolute";
+                    marker.style.width = "16px";
+                    marker.style.height = "16px";
+                    marker.style.inset = "0px";
+                    marker.style.margin = "auto 8px auto auto";
+                    //make it a star instead tomorrow using a svg
+                    marker.style.backgroundColor = "lime";
+                    marker.style.opacity = "0.5";
+                    a.appendChild(marker);
+                }
                 li.appendChild(div);
+                console.log(finished)
                 content.appendChild(li)
             }
         }
