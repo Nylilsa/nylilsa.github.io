@@ -10,7 +10,7 @@
         "th08": {"abbreviation": "IN", "jp": "永夜抄", "en": "Imperishable Night"},
         "th09": {"abbreviation": "PoFV", "jp": "花映塚", "en": "Phantasmagoria of Flower View"},
         "th10": {"abbreviation": "MoF", "jp": "風神録", "en": "Mountain of Faith"},
-        "th11": {"abbreviation": "SA", "jp": "地霊殿", "en": "Subterrenean Animism"},
+        "th11": {"abbreviation": "SA", "jp": "地霊殿", "en": "Subterranean Animism"},
         "th12": {"abbreviation": "UFO", "jp": "星蓮船", "en": "Undefined Fantastic Object"},
         "th128": {"abbreviation": "FW", "jp": "妖精大戦争", "en": "Fairy Wars"},
         "th13": {"abbreviation": "TD", "jp": "神霊廟", "en": "Ten Desires"},
@@ -18,7 +18,8 @@
         "th15": {"abbreviation": "LoLK", "jp": "紺珠伝", "en": "Legacy of Lunatic Kingdom"},
         "th16": {"abbreviation": "HSiFS", "jp": "天空璋", "en": "Hidden Star in Four Seasons"},
         "th17": {"abbreviation": "WBaWC", "jp": "鬼形獣", "en": "Wily Beast and Weakest Creature"},
-        "th18": {"abbreviation": "UM", "jp": "虹龍洞", "en": "Unconnected Marketeers"}
+        "th18": {"abbreviation": "UM", "jp": "虹龍洞", "en": "Unconnected Marketeers"},
+        "th19": {"abbreviation": "UDoALG", "jp": "獣王園", "en": "Unfinished Dream of All Living Ghost"}
     },
     "Characters": {
         "th01": ["Makai", "Jigoku"],
@@ -41,7 +42,8 @@
         "th16": ["Reimu", "Cirno", "Aya", "Marisa"],
         "th16other": ["ReimuSpring", "ReimuSummer", "ReimuAutumn", "ReimuWinter", "CirnoSpring", "CirnoSummer", "CirnoAutumn", "CirnoWinter", "AyaSpring", "AyaSummer", "AyaAutumn", "AyaWinter", "MarisaSpring", "MarisaSummer", "MarisaAutumn", "MarisaWinter"],
         "th17": ["ReimuWolf", "ReimuOtter", "ReimuEagle", "MarisaWolf", "MarisaOtter", "MarisaEagle","YoumuWolf", "YoumuOtter", "YoumuEagle"],
-        "th18": ["Reimu", "Marisa", "Sakuya", "Sanae"]
+        "th18": ["Reimu", "Marisa", "Sakuya", "Sanae"],
+        "th19": ["Reimu", "Marisa", "Sanae", "Ran", "Aunn", "Nazrin", "Seiran", "Rin", "Tsukasa", "Mamizou", "Yachie", "Saki", "Yuuma", "Suika", "Biten", "Enoko", "Chiyari", "Hisami", "Zanmu"]
     },
     "Difficulty": {
         "th01": ["Easy", "Normal", "Hard", "Lunatic"],
@@ -62,7 +64,8 @@
         "th15": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
         "th16": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
         "th17": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-        "th18": ["Easy", "Normal", "Hard", "Lunatic", "Extra"]
+        "th18": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+        "th19": ["Easy", "Normal", "Hard", "Lunatic"]
     },
     "LatestVersion": {
         "th01": null,
@@ -88,7 +91,8 @@
         "th165": "1.00a",
         "th17": "1.00b",
         "th18": "1.00a",
-        "th185": "1.00a"
+        "th185": "1.00a",
+        "th19": "1.00a"
     },
     "LatestReleaseDate": {
         "th01": "1997-08-15",
@@ -114,6 +118,7 @@
         "th165": "2018-08-10",
         "th17": "2019-08-10",
         "th18": "2021-05-04",
-        "th185": "2022-08-14"
+        "th185": "2022-08-14",
+        "th19": "2023-08-13"
     }
 }

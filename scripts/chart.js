@@ -664,7 +664,7 @@ export function doButtonStuffButForGameSelector(game) {
         }
     }
     const selector = document.getElementById("wr-game-buttons");
-    const array = ['th01', 'th02', 'th03', 'th04', 'th05', 'th06', 'th07', 'th08', 'th09', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th165', 'th17', 'th18'];
+    const array = ['th01', 'th02', 'th03', 'th04', 'th05', 'th06', 'th07', 'th08', 'th09', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'];
     const width = selector.scrollWidth;
     const index = array.indexOf(game);
     const max = array.length;
