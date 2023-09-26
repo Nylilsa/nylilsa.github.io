@@ -165,6 +165,9 @@ h6 {
   .left-border-color.dropdown-toggle:hover,
   .left-border-color a:hover {
     border-left-width: 12px; }
+    .left-border-color.dropdown-toggle:hover > .star,
+    .left-border-color a:hover > .star {
+      margin-left: calc(var(--margin-left) + 8px); }
 
 #content {
   transition: padding var(--time-animation) ease-in-out;
@@ -337,6 +340,17 @@ sub {
     -webkit-mask-image: url(/assets/check-mark.svg);
     mask-image: url(/assets/check-mark.svg);
     opacity: var(--opacity, 0); }
+
+.star {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  inset: 0px;
+  --margin-left: 12px;
+  margin: auto auto auto var(--margin-left);
+  -webkit-mask-image: url("../assets/star.svg");
+  mask-image: url("../assets/star.svg");
+  background-color: var(--clr-default); }
 
 @media screen and (max-width: 500px) {
   :root {

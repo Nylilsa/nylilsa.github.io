@@ -335,15 +335,7 @@ async function initSidebarGlitches(colDecrease) {
                 div.appendChild(a);
                 if (finished) {
                     const marker = document.createElement("div");
-                    marker.style.position = "absolute";
-                    marker.style.width = "12px";
-                    marker.style.height = "12px";
-                    marker.style.inset = "0px";
-                    marker.style.margin = "auto 10px auto auto";
-                    marker.style.setProperty("--icon-image", "url(../assets/star.svg)")
-                    marker.style.maskImage = "url(../assets/star.svg)";
-                    marker.style.webkitMaskImage = "url(../assets/star.svg)";
-                    marker.style.backgroundColor = "var(--clr-default)";
+                    marker.classList.add("star");
                     a.appendChild(marker);
                 }
                 li.appendChild(div);

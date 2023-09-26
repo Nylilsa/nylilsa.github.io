@@ -198,6 +198,9 @@ h6 {
     border-bottom-width: 0px;
     &:hover {
         border-left-width: 12px;
+        &> .star {
+            margin-left: calc(var(--margin-left) + 8px);
+        }
     }
 }
 
@@ -415,6 +418,18 @@ sub {
         mask-image: url(/assets/check-mark.svg);
         opacity: var(--opacity, 0);
     }
+}
+
+.star {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    inset: 0px;
+    --margin-left: 12px;
+    margin: auto auto auto var(--margin-left);
+    -webkit-mask-image: url("../assets/star.svg");
+    mask-image: url("../assets/star.svg");
+    background-color: var(--clr-default);
 }
 
 @media screen and (max-width: 500px) {
