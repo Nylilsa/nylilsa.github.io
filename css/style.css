@@ -74,6 +74,7 @@ h6 {
 
 .icon {
   width: 24px;
+  max-height: 24px;
   aspect-ratio: 1;
   background-image: var(--icon-image); }
 
@@ -295,11 +296,12 @@ sub {
 
 .circle-wrapper {
   width: 40px;
-  position: relative;
-  aspect-ratio: 1; }
+  height: 40px;
+  position: relative; }
 
 .circle {
   height: 50%;
+  width: 50%;
   aspect-ratio: 1;
   border-radius: 50%;
   display: inline-block;
@@ -312,6 +314,7 @@ sub {
   .circle::before {
     content: '';
     height: 100%;
+    width: 100%;
     aspect-ratio: 1;
     border-radius: 50%;
     display: inline-block;
