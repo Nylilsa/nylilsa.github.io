@@ -322,6 +322,7 @@ async function initSidebarGlitches(colDecrease) {
             child.style.borderTopWidth = '1px';
             child.style.borderColor = colorHex(thnr);
             const content = document.getElementById('bugs-'+thnr+'');
+            content.style.setProperty('--clr-game', `${colorHex(thnr)}`);
             for (let j = 0; j < Object.keys(data[thnr]).length; j++) {
                 const li = document.createElement("li");
                 const div = document.createElement("div");

@@ -429,7 +429,7 @@ sub {
     margin: auto auto auto var(--margin-left);
     -webkit-mask-image: url("../assets/star.svg");
     mask-image: url("../assets/star.svg");
-    background-color: var(--clr-default);
+    background-color: var(--clr-game);
 }
 
 @media screen and (max-width: 500px) {
