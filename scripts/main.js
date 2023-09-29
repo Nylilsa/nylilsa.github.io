@@ -240,8 +240,7 @@ function hrCustom(input) {
 
 function setTheme(element) {
     const game = element.dataset.theme;
-    const other = document.querySelector("[data-css]");
-    other.href = `css/themes/${game}.css`
+    document.querySelector("html").setAttribute("data-theme", game);
     initCustomColor();
     setTimeout(() => {
         initCustomColor();

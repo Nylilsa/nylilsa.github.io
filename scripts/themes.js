@@ -6,7 +6,7 @@ function hasTheme() {
 
 function loadTheme() {
     const theme = localStorage.selectedTheme;
-    document.head.innerHTML += `<link rel="stylesheet" href="css/themes/${theme}.css" data-css="theme">`;
+    document.querySelector("html").setAttribute("data-theme", theme);
 }
 
 function initThemes() {
