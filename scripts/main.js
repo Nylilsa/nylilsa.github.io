@@ -55,7 +55,7 @@ async function loadMarkdown(path) { //loads page
 
 function colorHex(input = getGameFromURL()) {
     const def = getComputedStyle(document.documentElement).getPropertyValue('--clr-default');
-	return gameColors[input] || def || "#498b47";
+	return gameColors[input] || def || "#47748b";
 }
 
 function colorRGB(add, opacity, game) {
@@ -241,10 +241,9 @@ function hrCustom(input) {
 function setTheme(element) {
     const game = element.dataset.theme;
     document.querySelector("html").setAttribute("data-theme", game);
+    console.log(game);
+    debugger;
     initCustomColor();
-    setTimeout(() => {
-        initCustomColor();
-    }, 100);
     localStorage.selectedTheme = game;
 }
 

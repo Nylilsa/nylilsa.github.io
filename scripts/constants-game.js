@@ -102,7 +102,9 @@ const names1 = {
     "th143": {"abbreviation": "ISC", "jp": "弾幕アマノジャク", "en": "Impossible Spell Card"},
     "th15": {"abbreviation": "LoLK", "jp": "紺珠伝", "en": "Legacy of Lunatic Kingdom"},
     "th16": {"abbreviation": "HSiFS", "jp": "天空璋", "en": "Hidden Star in Four Seasons"},
+    "th165": {"abbreviation": "VD", "jp": "秘封ナイトメアダイアリー", "en": "Violet Detector"},
     "th17": {"abbreviation": "WBaWC", "jp": "鬼形獣", "en": "Wily Beast and Weakest Creature"},
     "th18": {"abbreviation": "UM", "jp": "虹龍洞", "en": "Unconnected Marketeers"},
+    "th185": {"abbreviation": "100BM", "jp": "バレットフィリア達の闇市場", "en": "100th Black Market"},
     "th19": {"abbreviation": "UDoALG", "jp": "獣王園", "en": "Unfinished Dream of All Living Ghost"}
 }

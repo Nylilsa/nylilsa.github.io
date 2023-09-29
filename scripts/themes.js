@@ -1,6 +1,6 @@
 function hasTheme() {
     if(!localStorage.selectedTheme) {
-        localStorage.selectedTheme = "th08";
+        localStorage.selectedTheme = "th13";
     }
 }
 
