@@ -135,7 +135,6 @@ function jumpTo(id, duration) {
 	}
 	setTimeout(() => {
         const top = document.getElementById(id.replace("#",""));
-        console.log(id, top)
         if (top) {
 		    window.scrollTo(0, top.offsetTop);
         }
@@ -241,8 +240,6 @@ function hrCustom(input) {
 function setTheme(element) {
     const game = element.dataset.theme;
     document.querySelector("html").setAttribute("data-theme", game);
-    console.log(game);
-    debugger;
     initCustomColor();
     localStorage.selectedTheme = game;
 }
