@@ -248,9 +248,6 @@ export function extraLegendButtons(top, game, items, chart) {
         li.onclick = () => {
             const flag = top.classList.contains(`show-${sub[i].toLocaleLowerCase()}`);
             let indexes = [i, i + n, i + 2*n];
-            if (game == "th17") {
-                indexes = [i, i + n, i + 2*n];
-            }
             if (game == "th16") {
                 indexes = [i, i + n, i + 2*n, i + 3*n];
             }
