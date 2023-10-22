@@ -223,6 +223,11 @@
             "title": "Score Underflow",
             "url-name": ["underflow"],
             "finished": true
+        },
+        "1": {
+            "title": "Reimu Timeout Glitch",
+            "url-name": ["reimu-timeout"],
+            "finished": false
         }
     },
     "th15": {
