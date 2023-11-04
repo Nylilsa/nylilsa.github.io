@@ -35,7 +35,7 @@ let ext = function() {
 	let code = {
 		type: "lang",
 		regex: /\[code\]([^]+?)\[\/code\]/g,
-		replace: "<pre><code class='code language-c'>$1</code></pre>"
+		replace: "<pre><code class='code language-c mono'>$1</code></pre>"
 	}
 
 	let title = {
@@ -220,7 +220,7 @@ let ext = function() {
 	let key = {
 		type: "lang",
 		regex: /\[key=([^]*?)\]/g,
-		replace: "<code class='key'>$1</code>"
+		replace: "<code class='key mono'>$1</code>"
 	}
 
 	let cite = {
@@ -259,12 +259,13 @@ let ext = function() {
 		}
 	}
 
-	let eclmap = {
+	let ins = {
 		type: "lang",
-		regex: /\[eclmap=(.*?)\]([^]*?)\[\/eclmap\]/g,
-		replace: function() {
-			setTimeout(() => {  replaceEclIns()}, 1);
-			return "potato";
+		regex: /\[ins=(.*?), n=(.*?)\]/g,
+		replace: function(match, content, n) {
+            let id = eclJsonId++;
+            replaceEclIns(content, n, id);
+            return `<code id="ecl-cite-${id}" class="mono dotted"></code>`;
 		}
 	}
 
@@ -308,5 +309,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [hr_major, hr_minor, hr_custom, br, img, img_small, code, title, c, html, script, tip, video, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, canvas, match, scenes, check, cross];
+	return [hr_major, hr_minor, hr_custom, br, img, img_small, code, title, c, html, script, tip, video, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, match, scenes, check, cross];
 }

@@ -1,5 +1,8 @@
 "use strict";
 
+let loadingPromise = null; // Promise to track the loading state.
+let eclJson = null;
+let eclJsonId = 0;
 let citeId = 0;
 let MD = new showdown.Converter({
 	extensions: [ext],
@@ -221,8 +224,110 @@ function showNavbarChildren() { //toggles all elements in navbar of Bugs if clic
     }
 }
 
-function replaceEclIns() {
-	console.log(1); // TBD
+async function callJson(str) {
+    if (loadingPromise !== null) {
+        // If a loading operation is already in progress, wait for it to complete.
+        await loadingPromise;
+        return eclData;
+    }
+    const response = await fetch(str);
+    console.log("Called function!")
+    return await response.json();
+}
+
+async function loadJsonData(str) {
+    if (eclJson !== null) {
+        return eclJson;
+    }
+    if (loadingPromise !== null) {
+        await loadingPromise;
+        return eclJson;
+    }
+    // If eclJson is null and no loading operation is in progress, initiate a new one.
+    loadingPromise = fetch(str)
+    .then((response) => response.json())
+    .then((data) => {
+            console.log("Loaded JSON!")
+            eclJson = data;
+            loadingPromise = null; // Reset the loading promise.
+            return data;
+        })
+    return loadingPromise;
+}
+
+
+async function replaceEclIns(type, n, id) {
+    if (eclJsonId < 2) {
+        document.body.addEventListener("mouseover", (event) => {
+            const visible = document.querySelectorAll(".visible");
+            let [tip, targ] = getTip(event.target, "tooltip");
+            const valid = targ?.firstElementChild?.classList.contains("tooltip");
+            visible.forEach(el => {el.classList.remove("visible")})
+            if (tip && valid) {
+                targ.firstElementChild.classList.add("visible");
+            }
+        })
+    }
+    await loadJsonData("json/ecl.json");
+    const map = ["Instructions", "Globals", "Custom"];
+    const ins = map[type];
+    const obj = eclJson[ins][n];
+    const name = obj["Name"];
+    const div = document.createElement('div');
+    const el = document.querySelector(`#ecl-cite-${id}`);
+    el.dataset.tooltip = "true";
+    div.innerHTML = getStringFromIns(obj, n);
+    div.classList.add("tooltip");
+    el.innerHTML = name;
+    el.style.position = "relative";
+    el.appendChild(div);
+}
+
+function getTip(elem, key) {
+	do {
+		if (typeof elem.dataset[key] != "undefined")
+			return [elem.dataset[key], elem];
+	} while (elem = elem.parentElement);
+	return ["", null];
+}
+
+
+function getStringFromIns(obj, n) {
+    const div = document.createElement("div");
+    const hr = document.createElement("hr");
+    const p1 = document.createElement("p");
+    const p2 = document.createElement("p");
+    const span = document.createElement("span");
+
+    let description = obj["Description"]
+    const name = obj["Name"];
+    
+    const para = obj["Parameters"];
+    let parameterStrings = para.map(paramObj => {
+        const paramName = Object.keys(paramObj)[0];
+        const paramType = paramObj[paramName];
+        return `${paramType} <code class="mono">${paramName}</code>`;
+    });
+    parameterStrings = parameterStrings.join(", ");
+
+    const titleText = `${n} - ${name}(${parameterStrings})`;
+    span.classList.add("mono");
+    span.innerHTML = titleText;
+    
+    for(let i=0; i < para.length; i++) {
+        const value = Object.keys(para[i])[0];
+        description = description.replaceAll(`$${i+1}`, `<code class="mono">${value}</code>`);
+    }
+
+    p1.innerHTML = span.outerHTML;
+    p2.innerHTML = description;
+
+    div.appendChild(p1);
+    div.appendChild(hr);
+    div.appendChild(p2);
+
+
+    return div.outerHTML;
 }
 
 function matchText(style, iconBool, highlightedText) {
