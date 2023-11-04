@@ -1,0 +1,58 @@
+{
+    "Instructions": {
+        "501": {
+            "Name": "setHitbox",
+            "Parameters": [
+                {"w": "float"},
+                {"h": "float"}
+            ],
+            "Description": "Sets caller's hitbox width to $1 and height to $2."
+        },
+        "503": {
+            "Name": "flagClear",
+            "Parameters": [
+                {"n": "int"}
+            ],
+            "Description": "Clears flag(s) according to $1. Refer to the flag table <a target=\"_blank\"href=\"https://priw8.github.io/#s=MERLIN/doc/globals/enemy-etc\">here</a>  for exact values."
+        },
+        "525": {
+            "Name": "enmKillAll",
+            "Parameters": [],
+            "Description": "Kills all other enemies (unless they have a flag that prevents that set)."
+        },
+        "546": {
+            "Name": "bombShield",
+            "Parameters": [
+                {"a": "int"},
+                {"script": "int"}
+            ],
+            "Description": "Sets the bomb invulnerability flag ($1=0 false, $1=1 true), the caller's ANM script will change to $2 when a bomb is active."
+        },
+        "547": {
+            "Name": "gameSpeed",
+            "Parameters": [
+                {"s": "int"}
+            ],
+            "Description": "Sets game speed to $1 of the normal speed."
+        }
+    },
+    "Globals": {
+        "-9959": {
+            "Name": "DIFF",
+            "Description": "Difficulty (E=0, N=1, H=2, L=3, EX=4, O=5).",
+            "Type": "int"
+        },
+        "-9998": {
+            "Name": "RANDRAD",
+            "Description": "Random float from -pi to pi.",
+            "Type": "float"
+        }
+    },
+    "Custom": {
+        "1": {
+            "Name": "BOSS_IDS",
+            "Description": "unused",
+            "Type": "unused"
+        }
+    }
+}
