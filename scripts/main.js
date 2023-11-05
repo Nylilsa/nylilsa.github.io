@@ -62,17 +62,17 @@ function colorHex(input = getGameFromURL()) {
 }
 
 function colorRGB(add, opacity, game) {
-	let colourHex = colorHex(game);
+	let clrHex = colorHex(game);
 
 	if (typeof game === 'undefined') { 
-		colourHex = colorHex();
+		clrHex = colorHex();
 	}
 
-    colourHex = colourHex.replaceAll(" ", "");
+    clrHex = clrHex.replaceAll(" ", "");
  
-	let rHex = "0x" + colourHex.substring(1, 3); // 0xAB
-	let gHex = "0x" + colourHex.substring(3, 5); // 0xCD
-	let bHex = "0x" + colourHex.substring(5, 7); // 0xEF
+	let rHex = "0x" + clrHex.substring(1, 3); // 0xAB
+	let gHex = "0x" + clrHex.substring(3, 5); // 0xCD
+	let bHex = "0x" + clrHex.substring(5, 7); // 0xEF
 
 	let rDec = parseInt(rHex) + add;
 	let gDec = parseInt(gHex) + add;
@@ -172,7 +172,7 @@ async function replayFunction(key) {
     .then(data => {return data});
 	const content = webdata["Replays"][key];
 	const datum = dateFormat(content.date);
-	return await citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, content.url, content.note);
+	return citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, content.url, content.note);
 }
 
 function dateFormat(date) {
@@ -219,17 +219,6 @@ function showNavbarChildren() { //toggles all elements in navbar of Bugs if clic
     }
 }
 
-async function callJson(str) {
-    if (loadingPromise !== null) {
-        // If a loading operation is already in progress, wait for it to complete.
-        await loadingPromise;
-        return eclData;
-    }
-    const response = await fetch(str);
-    console.log("Called function!")
-    return await response.json();
-}
-
 async function loadJsonData(str) {
     if (eclJson !== null) {
         return eclJson;
@@ -242,7 +231,6 @@ async function loadJsonData(str) {
     loadingPromise = fetch(str)
     .then((response) => response.json())
     .then((data) => {
-            console.log("Loaded JSON!")
             eclJson = data;
             loadingPromise = null; // Reset the loading promise.
             return data;
@@ -424,7 +412,6 @@ function initSidebarThemes(colDecrease) {
             color = colorRGB(8, 1, game);
         }
         parent.style.setProperty('--clr-theme', color);
-
         const next = themes[i].nextElementSibling;
         next.innerText = `${names1[game]["jp"]}～${names1[game]["en"]}`;
     }
@@ -469,14 +456,13 @@ async function initSidebarGlitches(colDecrease) {
 }
 
 function initMarkdown(error) { //puts html in id 'test'
-	const input = document.getElementById("mdcontent").innerHTML; //is md text
-	const nav = document.querySelector("#mdcontent");
+	const md = document.getElementById("mdcontent");
     if (!error) {
-	    nav.innerHTML = MD.makeHtml(input);
+	    md.innerHTML = MD.makeHtml(md.innerHTML);
         initCustomColor();
         return;
     }
-    nav.innerHTML = MD.makeHtml("<h1><span style='color:red'>ERROR:</span> File at \""+window.location.href+"\" not found.</h1><br><h3>Try reloading using <span class='highlight-txt'>Ctrl + F5</span>, or <span class='highlight-txt'>clearing browser cache</span> of this site.<br>If the problem persists, contact me on Discord: Nylilsa#9310.</h3><br><br><br><h2><a class='url' href='#/home'>Go to Home page</a></h2>");
+    md.innerHTML = MD.makeHtml("<h1><span style='color:red'>ERROR:</span> File at \""+window.location.href+"\" not found.</h1><br><h3>Try reloading using <span class='highlight-txt'>Ctrl + F5</span>, or <span class='highlight-txt'>clearing browser cache</span> of this site.<br>If the problem persists, contact me on Discord: Nylilsa#9310.</h3><br><br><br><h2><a class='url' href='#/home'>Go to Home page</a></h2>");
 	initCustomColor();
 }
 
@@ -515,8 +501,8 @@ function initHashChange() {
             initChartStuff(() => {
                 loadMarkdown(initRemoveHash(false));
             })
-        }, false)}
-        , 500); // delay is needed or else hashchange and init are executed at once
+        }, false)
+    }, 500); // delay is needed or else hashchange and init are executed at once
 }
 function initRemoveHash(input) { //removes #/
 	let c = window.location.hash.replace("#/","") + ".md";
