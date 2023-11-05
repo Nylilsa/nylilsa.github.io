@@ -33,12 +33,8 @@ export class Data {
 }
 
 export function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func) {
-    let colors;
-    if ((game != "th16" && game != "th128") || difficulty == 'Extra') {
-        colors = colorsForChart[game]['colors'];
-    } else {
-        colors = colorsForChart[`${game}other`]['colors'];
-    }
+    const cond = (game != "th16" && game != "th128") || difficulty == 'Extra';
+    const colors = cond ? colorsForChart[game]['colors'] : colorsForChart[`${game}other`]['colors'];
     const colorsWithOpacity = colors.map(color => {
         if (color[0] == 'd') {
             color = color.slice(2);
@@ -97,8 +93,8 @@ export function callChartJS(fetchedData, gameCharacters, englishName, difficulty
                 y: {
                     beginAtZero: false,
                     ticks: {
-                        callback: function(value, index, values) {
-                            return roundedTicks(value, index, values, game);
+                        callback: function(value) {
+                            return roundedTicks(value, game);
                         }
                     },
                     grid: {
@@ -234,12 +230,7 @@ export function extraLegendButtons(top, game, items, chart) {
     for (let i=0; i<sub.length; i++) {
         const boxSpan = document.createElement('span');
         const flag = top.classList.contains(`show-${sub[i].toLocaleLowerCase()}`);
-        let text;
-        if (flag) {
-            text = document.createTextNode(`Show all ${sub[i]}s`);
-        } else {
-            text = document.createTextNode(`Hide all ${sub[i]}s`);
-        }
+        const text = flag ? document.createTextNode(`Show all ${sub[i]}s`) : document.createTextNode(`Hide all ${sub[i]}s`);
         const li = document.createElement("li");
         li.style.paddingTop = '8px';
         li.style.display = 'flex';
@@ -411,7 +402,7 @@ export function gridLegend(element, value) {
     element.style.padding = `0`;
 }
 
-export function roundedTicks(value, index, values, game) {
+export function roundedTicks(value, game) {
     const largeNumbers = {
         "Millions": {
             "number": 1e6,
@@ -558,17 +549,14 @@ export function createDropdown(dataWR) {
                     });
                 });
             });
-
             selectedEntries.sort((entry1, entry2) => {
                 const date1 = new Date(entry1[2]);
                 const date2 = new Date(entry2[2]);
                 return date2 - date1;
             });
-
             const table = document.createElement("table");
             const tblBody = document.createElement("tbody");
             const headers = ["#", "Game", "Difficulty", "Shottype/Route", "Score", "Player", "Date"];
-
             for (let j = 0; j < selectedEntries.length; j++) { // rows
                 let row = document.createElement("tr");
                 const [score, name, date, shot, diff, game] = selectedEntries[j];
@@ -779,8 +767,7 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
         if (flag) {reverse = data[i].length - 1;} else {reverse = 0}
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
-        let selector = "Shottype";
-        if (game == "th01" || game == "th128") {selector = "Route"}
+        const selector = (game == "th01" || game == "th128") ? "Route" : "Shottype"; 
         const headers = ["#", "Difficulty", selector, "Score", "Player", "Date", "Score gain"];
         const id = `${game}${gameCharacters[i]}`;
         table.setAttribute("id", `${id}table`);
