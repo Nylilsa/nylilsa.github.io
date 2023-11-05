@@ -163,7 +163,7 @@ async function videoFunction(key) {
 	} else {
 		datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
 	}
-    return await citeAPA(datum, content.author, content.title, content.url);
+    return citeAPA(datum, content.author, content.title, content.url);
 }
 
 async function replayFunction(key) {
