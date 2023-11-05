@@ -176,16 +176,11 @@ async function replayFunction(key) {
 }
 
 function dateFormat(date) {
-	let output;
 	const intl = "en-US";
 	const options = {calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric'};
 	const dateType = new Date(date);
-	if (typeof dateType == "object" && dateType == "Invalid Date") {
-		output = content.date;
-	} else {
-		output = new Intl.DateTimeFormat(intl, options).format(dateType);
-	}
-	return output;
+    const cond = typeof dateType == "object" && dateType == "Invalid Date";
+    return cond ? date : new Intl.DateTimeFormat(intl, options).format(dateType);
 }
 
 function citeAPA(date, author, title, url) {
