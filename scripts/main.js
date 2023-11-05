@@ -368,11 +368,10 @@ function hrCustom(input) {
     return "<hr style='border-color:" + borderColor + "'>";
 }
 
-function setTheme(element) {
-    const game = element.dataset.theme;
-    document.querySelector("html").setAttribute("data-theme", game);
+function setTheme(theme) {
+    document.querySelector("html").setAttribute("data-theme", theme);
     initCustomColor();
-    localStorage.selectedTheme = game;
+    localStorage.selectedTheme = theme;
 }
 
 
