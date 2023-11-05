@@ -104,6 +104,10 @@ function setWindowTitleDirect(str) {
 }
 
 function toggleSidebar(bool) { //changes class of sidebar upon button press
+    const time = getComputedStyle(document.documentElement).getPropertyValue('--time-animation').match(/\d+/g).map(Number)[0];
+    setTimeout(() => {
+        checkElementResize();
+    }, time)
 	const sidebar = document.getElementById('sidebar');
 	const content = document.getElementById('content');
 	const header = document.getElementById('header');
@@ -128,6 +132,7 @@ function toggleSidebar(bool) { //changes class of sidebar upon button press
         wrButtons.style.maxWidth = 'calc(max(1030px, calc(88vw - var(--sidebar-width) + 3vmax))';
     }
 	sidebar.className = 'sidebar-class-width';
+
 }
 
 
@@ -239,29 +244,30 @@ async function loadJsonData(str) {
 }
 
 
+function checkElementResize(self) {
+    const tooltips = self ? [self] : document.querySelectorAll(".tooltip");
+    tooltips.forEach((tooltip) => {
+        const element = tooltip.nextElementSibling;
+        const elementPosition = element.getBoundingClientRect();
+        const mdPosition =  document.getElementById("mdcontent").getBoundingClientRect();
+        const parentPosition = element.parentElement.getBoundingClientRect();
+        if (elementPosition.right > mdPosition.right) {
+            tooltip.style.left = ``; 
+            tooltip.style.right = `${parentPosition.right - mdPosition.right}px`;
+            tooltip.style.translate = `0`; 
+        } else if (elementPosition.left < mdPosition.left) {
+            tooltip.style.left = `-${parentPosition.left - mdPosition.left}px`; 
+            tooltip.style.right = ``; 
+            tooltip.style.translate = `0`; 
+        } else {
+            tooltip.style.left = ``; 
+            tooltip.style.right = ``; 
+            tooltip.style.translate = ``; 
+        }
+    })
+}
+
 async function replaceEclIns(type, n, id) {
-    function checkElementResize(self) {
-        const tooltips = self ? [self] : document.querySelectorAll(".tooltip");
-        tooltips.forEach((tooltip) => {
-            const element = tooltip.nextElementSibling;
-            const elementPosition = element.getBoundingClientRect();
-            const mdPosition =  document.getElementById("mdcontent").getBoundingClientRect();
-            const parentPosition = element.parentElement.getBoundingClientRect();
-            if (elementPosition.right > mdPosition.right) {
-                tooltip.style.left = ``; 
-                tooltip.style.right = `${parentPosition.right - mdPosition.right}px`;
-                tooltip.style.translate = `0`; 
-            } else if (elementPosition.left < mdPosition.left) {
-                tooltip.style.left = `-${parentPosition.left - mdPosition.left}px`; 
-                tooltip.style.right = ``; 
-                tooltip.style.translate = `0`; 
-            } else {
-                tooltip.style.left = ``; 
-                tooltip.style.right = ``; 
-                tooltip.style.translate = ``; 
-            }
-        })
-    }
     if (eclJsonId < 2) {
         document.body.addEventListener("mouseover", (event) => {
             const visible = document.querySelectorAll(".visible");
@@ -583,7 +589,7 @@ function initChartStuff(callback) {
 
 function initDropdownToggle() {
     const menus = document.getElementsByClassName("dropdown-toggle");
-    const time = getComputedStyle(document.documentElement).getPropertyValue('--time-animation');
+    const time = getComputedStyle(document.documentElement).getPropertyValue('--time-animation')
     const numTime = time.match(/\d+/g).map(Number)[0];
     for (let i=0; i < menus.length; i++) {
         const dropdown = menus[i];
