@@ -26,6 +26,8 @@
     --clr-background-element: var(--clr-dark-saturated-5);
     --clr-background-sub-element: var(--clr-dark-3);
     --clr-background-sub-sub-element: var(--clr-dark-4);
+
+    --clr-background-hljs: var(--clr-dark-4);
 }
 
 html[data-theme="th06"] {

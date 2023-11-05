@@ -1,5 +1,5 @@
 .hljs {
-    background-color: #191919;
+    background-color: var(--clr-background-hljs);
 }
 
 .hljs-number {
