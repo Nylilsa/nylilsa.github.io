@@ -257,6 +257,28 @@ async function loadJsonData(str) {
 
 
 async function replaceEclIns(type, n, id) {
+    function checkElementResize(self) {
+        const tooltips = self ? [self] : document.querySelectorAll(".tooltip");
+        tooltips.forEach((tooltip) => {
+            const element = tooltip.nextElementSibling;
+            const elementPosition = element.getBoundingClientRect();
+            const mdPosition =  document.getElementById("mdcontent").getBoundingClientRect();
+            const parentPosition = element.parentElement.getBoundingClientRect();
+            if (elementPosition.right > mdPosition.right) {
+                tooltip.style.left = ``; 
+                tooltip.style.right = `${parentPosition.right - mdPosition.right}px`;
+                tooltip.style.translate = `0`; 
+            } else if (elementPosition.left < mdPosition.left) {
+                tooltip.style.left = `-${parentPosition.left - mdPosition.left}px`; 
+                tooltip.style.right = ``; 
+                tooltip.style.translate = `0`; 
+            } else {
+                tooltip.style.left = ``; 
+                tooltip.style.right = ``; 
+                tooltip.style.translate = ``; 
+            }
+        })
+    }
     if (eclJsonId < 2) {
         document.body.addEventListener("mouseover", (event) => {
             const visible = document.querySelectorAll(".visible");
@@ -265,8 +287,10 @@ async function replaceEclIns(type, n, id) {
             visible.forEach(el => {el.classList.remove("visible")})
             if (tip && valid) {
                 targ.firstElementChild.classList.add("visible");
+                checkElementResize(targ.firstElementChild);
             }
         })
+
     }
     await loadJsonData("json/ecl.json");
     const map = ["Instructions", "Globals", "Custom"];
@@ -281,6 +305,16 @@ async function replaceEclIns(type, n, id) {
     el.innerHTML = name;
     el.style.position = "relative";
     el.appendChild(div);
+
+    //div2 is invisible and acts as a tooltip that doesn't move around
+    const div2 = document.createElement("div");
+    div2.style.width = `${div.getBoundingClientRect().width}px`;
+    div2.style.position = `absolute`;
+    div2.style.right = `50%`;
+    div2.style.translate = `50%`;
+    div2.style.visibility = `hidden`;
+    el.appendChild(div2);
+    checkElementResize(div);
 }
 
 function getTip(elem, key) {
@@ -298,10 +332,8 @@ function getStringFromIns(obj, n) {
     const p1 = document.createElement("p");
     const p2 = document.createElement("p");
     const span = document.createElement("span");
-
     let description = obj["Description"]
     const name = obj["Name"];
-    
     const para = obj["Parameters"];
     let parameterStrings = para.map(paramObj => {
         const paramName = Object.keys(paramObj)[0];
@@ -309,24 +341,18 @@ function getStringFromIns(obj, n) {
         return `${paramType} <code class="mono">${paramName}</code>`;
     });
     parameterStrings = parameterStrings.join(", ");
-
     const titleText = `${n} - ${name}(${parameterStrings})`;
     span.classList.add("mono");
     span.innerHTML = titleText;
-    
     for(let i=0; i < para.length; i++) {
         const value = Object.keys(para[i])[0];
         description = description.replaceAll(`$${i+1}`, `<code class="mono">${value}</code>`);
     }
-
     p1.innerHTML = span.outerHTML;
     p2.innerHTML = description;
-
     div.appendChild(p1);
     div.appendChild(hr);
     div.appendChild(p2);
-
-
     return div.outerHTML;
 }
 
