@@ -1,5 +1,51 @@
 {
     "Instructions": {
+        "1": {
+            "Name": "delete",
+            "Parameters": [],
+            "Description": "Returns to the top of current call stack."
+        },
+        "23": {
+            "Name": "wait",
+            "Parameters": [
+                {"time": "int"}
+            ],
+            "Description": "Stops sub execution for $1 frames."
+        },
+        "81": {
+            "Name": "circlePos",
+            "Parameters": [
+                {"varX": "float"},
+                {"varY": "float"},
+                {"angle": "float"},
+                {"radius": "float"}
+            ],
+            "Description": "Performs following operation: $1 = cos($3) * $4 and $2 = cos($3) * $4"
+        },
+        "91": {
+            "Name": "floatTime",
+            "Parameters": [
+                {"slot": "int"},
+                {"var": "float"},
+                {"time": "int"},
+                {"mode": "int"},
+                {"start": "float"},
+                {"final": "float"}
+            ],
+            "Description": "In $3 frames using <a target=\"_blank\"href=\"https://exphp.github.io/thpages/#/anm/interpolation\">mode</a> $4, variable $2 changes from $5 to $6. $1 is used to set the slot to be used by this ins, every enemy has 8 slots."
+        },
+        "300": {
+            "Name": "enmCreate",
+            "Parameters": [
+                {"sub": "string"},
+                {"x": "float"},
+                {"y": "float"},
+                {"hp": "int"},
+                {"score": "int"},
+                {"item": "int"}
+            ],
+            "Description": "Creates an enemy using subroutine $1 at coordinates ($2, $3) (relative to position of the parent), health of created enemy is $4, score bonus is $5 and item drop is $6."
+        },
         "501": {
             "Name": "setHitbox",
             "Parameters": [
@@ -34,18 +80,90 @@
                 {"s": "int"}
             ],
             "Description": "Sets game speed to $1 of the normal speed."
+        },
+        "601": {
+            "Name": "etOn",
+            "Parameters": [
+                {"etId": "int"}
+            ],
+            "Description": "Shoots bullet(s) using properties from bullet manager $1."
         }
     },
     "Globals": {
-        "-9959": {
-            "Name": "DIFF",
-            "Description": "Difficulty (E=0, N=1, H=2, L=3, EX=4, O=5).",
-            "Type": "int"
-        },
         "-9998": {
             "Name": "RANDRAD",
             "Description": "Random float from -pi to pi.",
             "Type": "float"
+        },
+        "-9991": {
+            "Name": "PLAYER_X",
+            "Description": "Player's X position.",
+            "Type": "float"
+        },
+        "-9990": {
+            "Name": "PLAYER_Y",
+            "Description": "Player's Y position.",
+            "Type": "float"
+        },
+        "-9989": {
+            "Name": "ANGLE_PLAYER",
+            "Description": "Angle from the enemy to the player.",
+            "Type": "float"
+        },
+        "-9985": {
+            "Name": "I0",
+            "Description": "Local integer variable, inherited by spawned enemies.",
+            "Type": "int"
+        },
+        "-9984": {
+            "Name": "I1",
+            "Description": "Local integer variable, inherited by spawned enemies.",
+            "Type": "int"
+        },
+        "-9983": {
+            "Name": "I2",
+            "Description": "Local integer variable, inherited by spawned enemies.",
+            "Type": "int"
+        },
+        "-9982": {
+            "Name": "I3",
+            "Description": "Local integer variable, inherited by spawned enemies.",
+            "Type": "int"
+        },
+        "-9981": {
+            "Name": "F0",
+            "Description": "Local float variable, inherited by spawned enemies.",
+            "Type": "float"
+        },
+        "-9980": {
+            "Name": "F1",
+            "Description": "Local float variable, inherited by spawned enemies.",
+            "Type": "float"
+        },
+        "-9979": {
+            "Name": "F2",
+            "Description": "Local float variable, inherited by spawned enemies.",
+            "Type": "float"
+        },
+        "-9978": {
+            "Name": "F3",
+            "Description": "Local float variable, inherited by spawned enemies.",
+            "Type": "float"
+        },
+        "-9963": {
+            "Name": "BOSS_X",
+            "Description": "Final X position of the boss.",
+            "Type": "float"
+        },
+        "-9962": {
+            "Name": "BOSS_Y",
+            "Description": "Final Y position of the boss.",
+            "Type": "float"
+        },
+        "-9959": {
+            "Name": "DIFF",
+            "Description": "Difficulty (E=0, N=1, H=2, L=3, EX=4, O=5).",
+            "Type": "int"
         }
     },
     "Custom": {

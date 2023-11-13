@@ -305,6 +305,7 @@ pre {
 }
 
 code {
+    font-family: var(--ff-mono);
     color: var(--clr-text-code);
     &:not(.code) {
         font-size: var(--fs-400);

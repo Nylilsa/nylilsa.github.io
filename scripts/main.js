@@ -324,19 +324,22 @@ function getStringFromIns(obj, n) {
     let description = obj["Description"]
     const name = obj["Name"];
     const para = obj["Parameters"];
-    let parameterStrings = para.map(paramObj => {
-        const paramName = Object.keys(paramObj)[0];
-        const paramType = paramObj[paramName];
-        return `${paramType} <code class="mono">${paramName}</code>`;
-    });
-    parameterStrings = parameterStrings.join(", ");
-    const titleText = `${n} - ${name}(${parameterStrings})`;
+    let titleText = `${n} - ${name}`;
+    if (para) {
+        let parameterStrings = para.map(paramObj => {
+            const paramName = Object.keys(paramObj)[0];
+            const paramType = paramObj[paramName];
+            return `${paramType} <code class="mono">${paramName}</code>`;
+        });
+        parameterStrings = parameterStrings.join(", ");
+        titleText += `(${parameterStrings})`;
+        for(let i=0; i < para.length; i++) {
+            const value = Object.keys(para[i])[0];
+            description = description.replaceAll(`$${i+1}`, `<code class="mono">${value}</code>`);
+        }
+    }
     span.classList.add("mono");
     span.innerHTML = titleText;
-    for(let i=0; i < para.length; i++) {
-        const value = Object.keys(para[i])[0];
-        description = description.replaceAll(`$${i+1}`, `<code class="mono">${value}</code>`);
-    }
     p1.innerHTML = span.outerHTML;
     p2.innerHTML = description;
     div.appendChild(p1);
