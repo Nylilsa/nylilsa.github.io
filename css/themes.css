@@ -76,6 +76,29 @@ html[data-theme="th08"] {
     --clr-default: #5a5abe;
 }
 
+html[data-theme="th09"] {
+    --clr-light-saturated-10: #b0b5ff;
+    --clr-light-saturated-9: rgb(191, 255, 220);
+    --clr-light-saturated-8: #83e5ac;
+    --clr-light-saturated-7: #73d5a7;
+    --clr-light-saturated-5: #6dcc98;
+    --clr-saturated-shift: #0bda84;
+    --clr-light-saturated-shift-5: #3bff9d;
+    --clr-light-saturated-shift-8: #00ff73;
+    
+    --clr-contrast: #FF92FA;
+    --clr-highlight: #e278f5;
+    --clr-greyish-blend: #416353;
+    --clr-dark-saturated-shift-2: #103d2e;
+    --clr-dark-saturated-2: #1b3126;
+    --clr-dark-saturated-5: #0e291c;
+    --clr-dark-3: #061d10;
+    --clr-dark-4: #030f0a;
+    --clr-dark-5: #02180a;
+    
+    --clr-default: #088060;
+}
+
 html[data-theme="th10"] {
     --clr-light-saturated-10: #feffb0;
     --clr-light-saturated-9: #feffbf;
