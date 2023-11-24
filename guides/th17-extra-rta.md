@@ -143,7 +143,7 @@ If you are an intermediate player, then I recommend to aim for a speedrun that l
 
 Beginner
 
-Due to a bug, Saki takes damage when bombing during her Survival spell card. You definitely want to bomb as you will skip an entire 90-second long spell-card with this.
+Due to a bug, Saki takes damage when bombing during her Survival spell-card. You definitely want to bomb as you will skip an entire 90-second long spell-card with this.
 
 ### Bombing before a spell-card
 

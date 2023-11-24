@@ -72,7 +72,7 @@ There are 2 main methods to increase score:
 
 2. Green items: released with various methods are worth 1/10 of the PIV. In the later stages, they make for most of the score gain, they are mainly meant to be the items that INCREASE PIV (more on that later) but once you hit stage 4 the number of bullets starts to make the score gain from them really important
 
-Minor methods to increase score include the usual shooting down enemies and spell card bonus (SCB) 
+Minor methods to increase score include the usual shooting down enemies and spell-card bonus (SCB) 
 
 ## Increasing PIV
 [hr_minor]
@@ -86,7 +86,7 @@ There are 4 ways you can spawn green items:
 2. Shot: during any kind of hyper, hitting enemies with your shot generates green items. During stages 1 to 3, PIV from the shot is just as important as hyper cancels, while from stage 4 onwards it's not as important but it's still very relevant, the ideal is to try to hit as many targets as possible during your hyper to maximize gain.
 [hl2]Note: it doesn't have to deal damage, PIV is generated even when bosses have no hp bar for example.[/hl2]
 
-3. Spell and non-cancels: killing a non-spell or a spell card turns every bullet left on screen into green items, optimizing cancels is ideal when possible.
+3. Spell and non-cancels: killing a non-spell or a spell-card turns every bullet left on screen into green items, optimizing cancels is ideal when possible.
 
 4. Spirit strikes: manually breaking your own hyper by pressing the bomb button performs a spirit strike, an explosion that cancels bullets around you and turns them into green items, this is only used during penult spell and the final spell of Keiki.
 [hl2]Note: spirit strikes and hyper breaks are not the same, and explosions triggered by getting hit during a hyper do NOT turn bullets into green items.[/hl2]
@@ -139,7 +139,7 @@ Quick right-left counterspin movement like this is very useful in patterns like 
 ## Boss invincibility bug
 [hr_minor]
 
-A bug has existed since LoLK, if you bomb during the first second of a boss spell card, the boss will become invincible for the bomb's duration.
+A bug has existed since LoLK, if you bomb during the first second of a boss spell-card, the boss will become invincible for the bomb's duration.
 
 Bombs are often used during patterns to safely collect tokens, doing this however damages the boss (especially Youmu and Reimu) and less health = less PIV from the shot, this bug allows players to bomb without worrying about bosses losing hp.
 
@@ -162,7 +162,7 @@ Why is this important? the reward is 5 tokens instead of 2, 1 of these is always
 ## Linear Creature
 [hr_minor]
 
-Linear Creature (often shortened into LC or lines) is Keiki's third spell card and is infamous for being really cool-looking, very juicy, and very hard to do. Why am I making an entire paragraph for just a spell? This spell if correctly executed [hl2]gives between 1.7 to 1.9 BILLION score[/hl2]. Knowing how to correctly execute this, and making it as consistent as possible is important, because any kind of pace for a score you are trying to achieve, will be killed if you fail this spell. Here is how to correctly set up and execute LC.
+Linear Creature (often shortened into LC or lines) is Keiki's third spell-card and is infamous for being really cool-looking, very juicy, and very hard to do. Why am I making an entire paragraph for just a spell? This spell if correctly executed [hl2]gives between 1.7 to 1.9 BILLION score[/hl2]. Knowing how to correctly execute this, and making it as consistent as possible is important, because any kind of pace for a score you are trying to achieve, will be killed if you fail this spell. Here is how to correctly set up and execute LC.
 
 **Step 1**: if you want to guarantee [hl2]maximum score gain, you need 2 lives[/hl2], suicide somewhere before LC (usually either 2nd or 3rd non) if you don't have two lives, you can still attempt LC but you will have to rely on luck to get maximum gain, which is something you don't want to risk. You want to bring the static [style=otter, icon=false, highlightedText=otters] into LC, 2 is ideal, 1 can work but it's a bit riskier but if you are forced to bring only 1 it's fine. 
 

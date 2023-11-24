@@ -4,7 +4,7 @@
 Overview \
 The optimal shot type to use is Youmu Otter. Youmu Otter has got the best DPS out of all characters and her bomb is perfect against Saki’s non-spells. The hypers Youmu must get are all either Wolf or Eagle hypers since they are the strongest. Eagle is used against attacks that can be shotgunned and Wolf is used on patterns that are impossible to shotgun RTA. 
 
-Kutaka mid-boss can be bombed on her spells, so a bomb on all three spell cards are used. Since Saki is an Extra boss, it is impossible to bomb her spells. However, it is possible to activate her hitbox on the spell card “Oni-Shaped Hoi Polloi” by bombing either before or during the card. This allows the spell card to be speedkilled with ease.
+Kutaka mid-boss can be bombed on her spells, so a bomb on all three spell-cards are used. Since Saki is an Extra boss, it is impossible to bomb her spells. However, it is possible to activate her hitbox on the spell-card “Oni-Shaped Hoi Polloi” by bombing either before or during the card. This allows the spell-card to be speedkilled with ease.
 
 In-depth mechanics
 
@@ -195,13 +195,13 @@ Kutaka [1:17.00, 1:17.00]
 
 No Hypers, 1 Bomb
 
-The reason why no bomb is used before the spell is because it is impossible to since there is dialogue before the spell starts. The reason why no hyper is used is because using a hyper would kill the spell too fast. In fact, Youmu can kill the spell card in around 4.15s without hypers. The reason why it mustn’t be killed in less than 4.15s is so that a bomb can be used before her second spell “Hell Realm Sight-Line” starts.
+The reason why no bomb is used before the spell is because it is impossible to since there is dialogue before the spell starts. The reason why no hyper is used is because using a hyper would kill the spell too fast. In fact, Youmu can kill the spell-card in around 4.15s without hypers. The reason why it mustn’t be killed in less than 4.15s is so that a bomb can be used before her second spell “Hell Realm Sight-Line” starts.
 
 **Break**
 
 Bomb
 
-Bomb as soon as possible. If the speedkill on her first spell “Watershed of Blood” goes well, it means Youmu has about less than half a second to bomb before Kutaka’s second spell card “Hell Realm Sight-Line” is declared.
+Bomb as soon as possible. If the speedkill on her first spell “Watershed of Blood” goes well, it means Youmu has about less than half a second to bomb before Kutaka’s second spell-card “Hell Realm Sight-Line” is declared.
 
 **“Hell Realm Sight-Line” [3.20s, 3.50s]**
 

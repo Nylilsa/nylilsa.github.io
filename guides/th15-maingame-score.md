@@ -157,7 +157,7 @@ There are 2 main ways to gain score in this game
 Clear Bonus is also worth mentioning. At the end of the game, you will receive an extra 10 million for each life you have left as well as an extra 3 million for each bomb you have left. The clear bonus isn’t very relevant outside of Easy mode, however.
 Power items do give a little score. Each gives 100 points.
 Cancel items also give you score. Each Cancel item is only worth 10 points so they aren’t very important for generating score. 
-Other minor methods to gain score include the universal shooting enemies and Spell Card Bonuses (SCB).
+Other minor methods to gain score include the universal shooting enemies and Spell-Card Bonuses (SCB).
 
 ## Increasing PIV
 [hr_minor]
@@ -262,7 +262,7 @@ LoLK is a Graze game at its core. All its mechanics and general routing decision
 Stages: Stages generally revolve around getting life pieces from the chapters and collecting items. LoLK stages are fairly route intensive as you need to know how to get the life piece from almost every chapter in the game. Missing a few life pieces here and there is fine when starting out, you just need to know how to recover from missing extra lives.
 Because missing life pieces is really easy to do, LoLK can be pretty adaptation heavy for newer runners.
 
-Bosses: Bosses are where most of your resources will go. Most bosses involve bombing and suiciding for graze as well as timing down attacks for graze. In general, the more you time down boss attacks for graze, the higher your score will go. Spell Card Bonuses are worth very little in LoLK; outside of Easy mode they’re almost completely obsolete.
+Bosses: Bosses are where most of your resources will go. Most bosses involve bombing and suiciding for graze as well as timing down attacks for graze. In general, the more you time down boss attacks for graze, the higher your score will go. Spell-Card Bonuses are worth very little in LoLK; outside of Easy mode they’re almost completely obsolete.
 This is also means that LoLK can be a pretty long score run. An average run usually lasts 40 minutes or longer.
 
 ## Dango
