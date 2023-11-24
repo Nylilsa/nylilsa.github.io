@@ -341,6 +341,11 @@
             "title": "Saki's Final Bomb Damage",
             "url-name": ["saki-final-damage"],
             "finished": true
+        },
+        "9": {
+            "title": "Slowdown Item Duplication",
+            "url-name": ["slowdown-dupe"],
+            "finished": true
         }
     },
     "th18": {
