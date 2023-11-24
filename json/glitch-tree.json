@@ -255,6 +255,11 @@
             "title": "Reisen Desync",
             "url-name": ["reisen-desync"],
             "finished": true
+        },
+        "5": {
+            "title": "Slowdown Item Duplication",
+            "url-name": ["slowdown-dupe"],
+            "finished": true
         }
     },
     "th16": {
