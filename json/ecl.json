@@ -171,6 +171,11 @@
             "Name": "BOSS_IDS",
             "Description": "unused",
             "Type": "unused"
+        },
+        "2": {
+            "Name": "GAME_SPEED",
+            "Description": "The value controls by how much faster the game speed is run. This variable is often set to a number between 0 and 1. This value is often changed when a (final) boss dies or when a photo is taken. Its default value is 1.",
+            "Type": "float"
         }
     }
 }
