@@ -439,12 +439,12 @@ export function initCanvas(gameID, difficulty) {
     localStorage.selectedGame = game;
     sessionStorage.selected = "[]";
     loadCanvas(game, difficulty, func);
-    doButtonStuffButForGameSelector(game);
+    styleGameSelectorButtons(game);
     fetch('json/gameinfo.json')
-    .then((response2) => response2.json())
+    .then((response) => response.json())
     .then(data => {
         const allDifficulties = data['Difficulty'][game];
-        doButtonStuffButForGameDifficulty(allDifficulties, game);
+        styleGameDifficultyButtons(allDifficulties, game);
     });
 }
 
@@ -603,7 +603,7 @@ export function createDropdown(dataWR) {
     }
 }
 
-export function doButtonStuffButForGameDifficulty(allDifficulties, game) {
+export function styleGameDifficultyButtons(allDifficulties, game) {
     const diffSelector = document.getElementById("wr-difficulty-buttons");
     allDifficulties.forEach(difficulty => {
         const createButton = document.createElement("button");
@@ -631,7 +631,7 @@ export function doButtonStuffButForGameDifficulty(allDifficulties, game) {
 
 }
 
-export function doButtonStuffButForGameSelector(game) {
+export function styleGameSelectorButtons(game) {
     const parent = document.getElementsByClassName("card-game");
     for(let i = 0; i < parent.length; i++) {
         const button = parent[i];
@@ -657,7 +657,7 @@ export function doButtonStuffButForGameSelector(game) {
     selector.scrollLeft = number;
 }
 
-export function doButtonStuff(id) {
+export function setButtonLogic(id) {
     const button = document.getElementById(id);
     button.addEventListener("click", selectGame);
     function selectGame() {
@@ -749,7 +749,7 @@ export function generateWRButtons(gameCharacters, game, overallWRCharacter, diff
 			section.style.gridAutoFlow = "row";
 		}
         section.appendChild(button);
-        doButtonStuff(id);
+        setButtonLogic(id);
     }
 }
 
