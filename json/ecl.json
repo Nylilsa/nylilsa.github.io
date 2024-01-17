@@ -79,7 +79,7 @@
             "Parameters": [
                 {"s": "int"}
             ],
-            "Description": "Sets game speed to $1 of the normal speed."
+            "Description": "Sets GAME_SPEED to $1 of the normal speed."
         },
         "601": {
             "Name": "etOn",
