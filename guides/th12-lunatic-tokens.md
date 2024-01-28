@@ -20,7 +20,7 @@ UFO tokens can come in two states: static and blinking. When a UFO token is stat
 ### First Half #3
 + Static Blue token (left fairy)
 + Blinking Green token (right fairy)
-
+[br]
 + Blinking Blue token (middle fairy before mid-boss)
 
 ### Mid-boss
@@ -55,7 +55,7 @@ UFO tokens can come in two states: static and blinking. When a UFO token is stat
 ### Second Half #2
 + Blinking Red token (left big fairy)
 + Blinking Blue token (right big fairy)
-
+[br]
 + Blinking Red token (left big fairy)
 + Blinking Blue token (right big fairy)
 
@@ -77,7 +77,7 @@ UFO tokens can come in two states: static and blinking. When a UFO token is stat
 ### Second Half #1
 + Blinking Red token (left big fairy)
 + Static Blue token (right big fairy)
-
+[br]
 + Blinking Red token (left big fairy)
 
 ### Second Half #2
@@ -126,7 +126,7 @@ UFO tokens can come in two states: static and blinking. When a UFO token is stat
 + Blinking Red token (right yin-yang)
 + Blinking Green token (right yin-yang)
 + Blinking Green token (right yin-yang)
-
+[br]
 + Blinking Green token (left big fairy)
 + Static Green token (right big fairy)
 
@@ -172,7 +172,7 @@ UFO tokens can come in two states: static and blinking. When a UFO token is stat
 ### Chapter #2
 + Blinking Green token (left yin-yang)
 + Blinking Red token (right yin-yang)
-
+[br]
 + Blinking Blue token (left yin-yang)
 + Blinking Green token (right yin-yang)
 
