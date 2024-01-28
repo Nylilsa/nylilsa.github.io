@@ -73,6 +73,13 @@ const matchStyle = {
 	"spec6": new Match('assets/th-sprites/special6.png', '#E1D359'),
 	"point-token": new Match('assets/th-sprites/point-token.png', '#6873D8'),
 	"life-token": new Match('assets/th-sprites/life-token.png', '#F26BD3'),
+
+	"static-red-token": new Match('assets/th-sprites/static-red-token.png', '#FF0000'),
+	"static-blue-token": new Match('assets/th-sprites/static-blue-token.png', '#00FF00'),
+	"static-green-token": new Match('assets/th-sprites/static-green-token.png', '#0000FF'),
+	"blink-red-token": new Match('assets/th-sprites/blink-red-token.png', '#FF0000'),
+	"blink-blue-token": new Match('assets/th-sprites/blink-blue-token.png', '#00FF00'),
+	"blink-green-token": new Match('assets/th-sprites/blink-green-token.png', '#0000FF'),
 	
     "point": new Match('assets/th-sprites/point-item.png', '#6873D8'),
     "power": new Match('assets/th-sprites/power-item.png', '#FF5555'),
