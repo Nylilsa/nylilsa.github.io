@@ -1,0 +1,524 @@
+{
+    "Names": {
+        "th01": {
+            "abbreviation": "HRtP"                        ,
+            "jp"          : "靈異伝"                      ,
+            "en"          : "Highly Responsive to Prayers"
+        },
+        "th02": {
+            "abbreviation": "SoEW"                           ,
+            "jp"          : "封魔録"                         ,
+            "en"          : "The Story of Eastern Wonderland"
+        },
+        "th03": {
+            "abbreviation": "PoDD"                        ,
+            "jp"          : "夢時空"                      ,
+            "en"          : "Phantasmagoria of Dim. Dream"
+        },
+        "th04": {
+            "abbreviation": "LLS"             ,
+            "jp"          : "幻想郷"          ,
+            "en"          : "Lotus Land Story"
+        },
+        "th05": {
+            "abbreviation": "MS"           ,
+            "jp"          : "怪綺談"       ,
+            "en"          : "Mystic Square"
+        },
+        "th06": {
+            "abbreviation": "EoSD"                           ,
+            "jp"          : "紅魔郷"                         ,
+            "en"          : "The Embodiment of Scarlet Devil"
+        },
+        "th07": {
+            "abbreviation": "PCB"                   ,
+            "jp"          : "妖々夢"                ,
+            "en"          : "Perfect Cherry Blossom"
+        },
+        "th08": {
+            "abbreviation": "IN"                ,
+            "jp"          : "永夜抄"            ,
+            "en"          : "Imperishable Night"
+        },
+        "th09": {
+            "abbreviation": "PoFV"                         ,
+            "jp"          : "花映塚"                       ,
+            "en"          : "Phantasmagoria of Flower View"
+        },
+        "th10": {
+            "abbreviation": "MoF"              ,
+            "jp"          : "風神録"           ,
+            "en"          : "Mountain of Faith"
+        },
+        "th11": {
+            "abbreviation": "SA"                  ,
+            "jp"          : "地霊殿"              ,
+            "en"          : "Subterranean Animism"
+        },
+        "th12": {
+            "abbreviation": "UFO"                       ,
+            "jp"          : "星蓮船"                    ,
+            "en"          : "Undefined Fantastic Object"
+        },
+        "th128": {
+            "abbreviation": "FW"        ,
+            "jp"          : "妖精大戦争",
+            "en"          : "Fairy Wars"
+        },
+        "th13": {
+            "abbreviation": "TD"         ,
+            "jp"          : "神霊廟"     ,
+            "en"          : "Ten Desires"
+        },
+        "th14": {
+            "abbreviation": "DDC"                     ,
+            "jp"          : "輝針城"                  ,
+            "en"          : "Double Dealing Character"
+        },
+        "th15": {
+            "abbreviation": "LoLK"                     ,
+            "jp"          : "紺珠伝"                   ,
+            "en"          : "Legacy of Lunatic Kingdom"
+        },
+        "th16": {
+            "abbreviation": "HSiFS"                      ,
+            "jp"          : "天空璋"                     ,
+            "en"          : "Hidden Star in Four Seasons"
+        },
+        "th165": {
+            "abbreviation": "VD"                      ,
+            "jp"          : "秘封ナイトメアダイアリー",
+            "en"          : "Violet Detector"
+        },
+        "th17": {
+            "abbreviation": "WBaWC"                          ,
+            "jp"          : "鬼形獣"                         ,
+            "en"          : "Wily Beast and Weakest Creature"
+        },
+        "th18": {
+            "abbreviation": "UM"                    ,
+            "jp"          : "虹龍洞"                ,
+            "en"          : "Unconnected Marketeers"
+        },
+        "th185": {
+            "abbreviation": "100BM"                     ,
+            "jp"          : "バレットフィリア達の闇市場",
+            "en"          : "100th Black Market"
+        },
+        "th19": {
+            "abbreviation": "UDoALG"                              ,
+            "jp"          : "獣王園"                              ,
+            "en"          : "Unfinished Dream of All Living Ghost"
+        }
+    },
+    "DifficultyCharacters": {
+        "th01": {
+            "Easy"   : ["Makai", "Jigoku"],
+            "Normal" : ["Makai", "Jigoku"],
+            "Hard"   : ["Makai", "Jigoku"],
+            "Lunatic": ["Makai", "Jigoku"]
+        },
+        "th02": {
+            "Easy"   : ["ReimuA", "ReimuB", "ReimuC"],
+            "Normal" : ["ReimuA", "ReimuB", "ReimuC"],
+            "Hard"   : ["ReimuA", "ReimuB", "ReimuC"],
+            "Lunatic": ["ReimuA", "ReimuB", "ReimuC"],
+            "Extra"  : ["ReimuA", "ReimuB", "ReimuC"]
+        },
+        "th03": {
+            "Easy": [
+                "Reimu"   , "Mima"    , "Marisa"  , "Ellen"   , "Kotohime",
+                "Kana"    , "Rikako"  , "Chiyuri" , "Yumemi"
+            ],
+            "Normal": [
+                "Reimu"   , "Mima"    , "Marisa"  , "Ellen"   , "Kotohime",
+                "Kana"    , "Rikako"  , "Chiyuri" , "Yumemi"
+            ],
+            "Hard": [
+                "Reimu"   , "Mima"    , "Marisa"  , "Ellen"   , "Kotohime",
+                "Kana"    , "Rikako"  , "Chiyuri" , "Yumemi"
+            ],
+            "Lunatic": [
+                "Reimu"   , "Mima"    , "Marisa"  , "Ellen"   , "Kotohime",
+                "Kana"    , "Rikako"  , "Chiyuri" , "Yumemi"
+            ]
+        },
+        "th04": {
+            "Easy"   : ["ReimuA", "ReimuB", "MarisaA", "MarisaB"],
+            "Normal" : ["ReimuA", "ReimuB", "MarisaA", "MarisaB"],
+            "Hard"   : ["ReimuA", "ReimuB", "MarisaA", "MarisaB"],
+            "Lunatic": ["ReimuA", "ReimuB", "MarisaA", "MarisaB"],
+            "Extra"  : ["ReimuA", "ReimuB", "MarisaA", "MarisaB"]
+        },
+        "th05": {
+            "Easy"   : ["Reimu", "Marisa", "Mima", "Yuuka"],
+            "Normal" : ["Reimu", "Marisa", "Mima", "Yuuka"],
+            "Hard"   : ["Reimu", "Marisa", "Mima", "Yuuka"],
+            "Lunatic": ["Reimu", "Marisa", "Mima", "Yuuka"],
+            "Extra"  : ["Reimu", "Marisa", "Mima", "Yuuka"]
+        },
+        "th06": {
+            "Easy"   : ["ReimuA", "ReimuB", "MarisaA", "MarisaB"],
+            "Normal" : ["ReimuA", "ReimuB", "MarisaA", "MarisaB"],
+            "Hard"   : ["ReimuA", "ReimuB", "MarisaA", "MarisaB"],
+            "Lunatic": ["ReimuA", "ReimuB", "MarisaA", "MarisaB"],
+            "Extra"  : ["ReimuA", "ReimuB", "MarisaA", "MarisaB"]
+        },
+        "th07": {
+            "Easy": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"
+            ],
+            "Normal": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"
+            ],
+            "Hard": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"
+            ],
+            "Lunatic": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"
+            ],
+            "Extra": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"
+            ],
+            "Phantasm": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"
+            ]
+        },
+        "th08": {
+            "Easy": [
+                "Border Team" , "Magic Team"  , "Scarlet Team", "Ghost Team"  ,
+                "Reimu"       , "Yukari"      , "Marisa"      , "Alice"       ,
+                "Sakuya"      , "Remilia"     , "Youmu"       , "Yuyuko"
+            ],
+            "Normal": [
+                "Border Team" , "Magic Team"  , "Scarlet Team", "Ghost Team"  ,
+                "Reimu"       , "Yukari"      , "Marisa"      , "Alice"       ,
+                "Sakuya"      , "Remilia"     , "Youmu"       , "Yuyuko"
+            ],
+            "Hard": [
+                "Border Team" , "Magic Team"  , "Scarlet Team", "Ghost Team"  ,
+                "Reimu"       , "Yukari"      , "Marisa"      , "Alice"       ,
+                "Sakuya"      , "Remilia"     , "Youmu"       , "Yuyuko"
+            ],
+            "Lunatic": [
+                "Border Team" , "Magic Team"  , "Scarlet Team", "Ghost Team"  ,
+                "Reimu"       , "Yukari"      , "Marisa"      , "Alice"       ,
+                "Sakuya"      , "Remilia"     , "Youmu"       , "Yuyuko"
+            ],
+            "Extra": [
+                "Border Team" , "Magic Team"  , "Scarlet Team", "Ghost Team"  ,
+                "Reimu"       , "Yukari"      , "Marisa"      , "Alice"       ,
+                "Sakuya"      , "Remilia"     , "Youmu"       , "Yuyuko"
+            ]
+        },
+        "th09": {
+            "Easy": [
+                "Reimu"   , "Marisa"  , "Sakuya"  , "Youmu"   , "Reisen"  ,
+                "Cirno"   , "Lyrica"  , "Mystia"  , "Tewi"    , "Aya"     ,
+                "Medicine", "Yuuka"   , "Komachi" , "Eiki"
+            ],
+            "Normal": [
+                "Reimu"   , "Marisa"  , "Sakuya"  , "Youmu"   , "Reisen"  ,
+                "Cirno"   , "Lyrica"  , "Mystia"  , "Tewi"    , "Aya"     ,
+                "Medicine", "Yuuka"   , "Komachi" , "Eiki"
+            ],
+            "Hard": [
+                "Reimu"   , "Marisa"  , "Sakuya"  , "Youmu"   , "Reisen"  ,
+                "Cirno"   , "Lyrica"  , "Mystia"  , "Tewi"    , "Aya"     ,
+                "Medicine", "Yuuka"   , "Komachi" , "Eiki"
+            ],
+            "Lunatic": [
+                "Reimu"   , "Marisa"  , "Sakuya"  , "Youmu"   , "Reisen"  ,
+                "Cirno"   , "Lyrica"  , "Mystia"  , "Tewi"    , "Aya"     ,
+                "Medicine", "Yuuka"   , "Komachi" , "Eiki"
+            ],
+            "Extra": [
+                "Reimu"   , "Marisa"  , "Sakuya"  , "Youmu"   , "Reisen"  ,
+                "Cirno"   , "Lyrica"  , "Mystia"  , "Tewi"    , "Aya"     ,
+                "Medicine", "Yuuka"   , "Komachi" , "Eiki"
+            ]
+        },
+        "th10": {
+            "Easy": [
+                "ReimuA" , "ReimuB" , "ReimuC" , "MarisaA", "MarisaB", "MarisaC"
+            ],
+            "Normal": [
+                "ReimuA" , "ReimuB" , "ReimuC" , "MarisaA", "MarisaB", "MarisaC"
+            ],
+            "Hard": [
+                "ReimuA" , "ReimuB" , "ReimuC" , "MarisaA", "MarisaB", "MarisaC"
+            ],
+            "Lunatic": [
+                "ReimuA" , "ReimuB" , "ReimuC" , "MarisaA", "MarisaB", "MarisaC"
+            ],
+            "Extra": [
+                "ReimuA" , "ReimuB" , "ReimuC" , "MarisaA", "MarisaB", "MarisaC"
+            ]
+        },
+        "th11": {
+            "Easy": [
+                "ReimuA" , "ReimuB" , "ReimuC" , "MarisaA", "MarisaB", "MarisaC"
+            ],
+            "Normal": [
+                "ReimuA" , "ReimuB" , "ReimuC" , "MarisaA", "MarisaB", "MarisaC"
+            ],
+            "Hard": [
+                "ReimuA" , "ReimuB" , "ReimuC" , "MarisaA", "MarisaB", "MarisaC"
+            ],
+            "Lunatic": [
+                "ReimuA" , "ReimuB" , "ReimuC" , "MarisaA", "MarisaB", "MarisaC"
+            ],
+            "Extra": [
+                "ReimuA" , "ReimuB" , "ReimuC" , "MarisaA", "MarisaB", "MarisaC"
+            ]
+        },
+        "th12": {
+            "Easy": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SanaeA" , "SanaeB"
+            ],
+            "Normal": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SanaeA" , "SanaeB"
+            ],
+            "Hard": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SanaeA" , "SanaeB"
+            ],
+            "Lunatic": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SanaeA" , "SanaeB"
+            ],
+            "Extra": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SanaeA" , "SanaeB"
+            ]
+        },
+        "th128": {
+            "Easy"   : ["A-1"  , "A-2", "B-1", "B-2", "C-1", "C-2"],
+            "Normal" : ["A-1"  , "A-2", "B-1", "B-2", "C-1", "C-2"],
+            "Hard"   : ["A-1"  , "A-2", "B-1", "B-2", "C-1", "C-2"],
+            "Lunatic": ["A-1"  , "A-2", "B-1", "B-2", "C-1", "C-2"],
+            "Extra"  : ["Cirno"                                   ]
+        },
+        "th13": {
+            "Easy"     : ["Reimu", "Marisa", "Sanae", "Youmu"],
+            "Normal"   : ["Reimu", "Marisa", "Sanae", "Youmu"],
+            "Hard"     : ["Reimu", "Marisa", "Sanae", "Youmu"],
+            "Lunatic"  : ["Reimu", "Marisa", "Sanae", "Youmu"],
+            "Extra"    : ["Reimu", "Marisa", "Sanae", "Youmu"],
+            "Overdrive": ["Reimu", "Marisa", "Sanae", "Youmu"]
+        },
+        "th14": {
+            "Easy": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"
+            ],
+            "Normal": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"
+            ],
+            "Hard": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"
+            ],
+            "Lunatic": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"
+            ],
+            "Extra": [
+                "ReimuA" , "ReimuB" , "MarisaA", "MarisaB", "SakuyaA", "SakuyaB"
+            ]
+        },
+        "th15": {
+            "Easy"   : ["Reimu", "Marisa", "Sanae", "Reisen"],
+            "Normal" : ["Reimu", "Marisa", "Sanae", "Reisen"],
+            "Hard"   : ["Reimu", "Marisa", "Sanae", "Reisen"],
+            "Lunatic": ["Reimu", "Marisa", "Sanae", "Reisen"],
+            "Extra"  : ["Reimu", "Marisa", "Sanae", "Reisen"]
+        },
+        "th16": {
+            "Easy": [
+                "ReimuSpring" , "ReimuSummer" , "ReimuAutumn" , "ReimuWinter" ,
+                "CirnoSpring" , "CirnoSummer" , "CirnoAutumn" , "CirnoWinter" ,
+                "AyaSpring"   , "AyaSummer"   , "AyaAutumn"   , "AyaWinter"   ,
+                "MarisaSpring", "MarisaSummer", "MarisaAutumn", "MarisaWinter"
+            ],
+            "Normal": [
+                "ReimuSpring" , "ReimuSummer" , "ReimuAutumn" , "ReimuWinter" ,
+                "CirnoSpring" , "CirnoSummer" , "CirnoAutumn" , "CirnoWinter" ,
+                "AyaSpring"   , "AyaSummer"   , "AyaAutumn"   , "AyaWinter"   ,
+                "MarisaSpring", "MarisaSummer", "MarisaAutumn", "MarisaWinter"
+            ],
+            "Hard": [
+                "ReimuSpring" , "ReimuSummer" , "ReimuAutumn" , "ReimuWinter" ,
+                "CirnoSpring" , "CirnoSummer" , "CirnoAutumn" , "CirnoWinter" ,
+                "AyaSpring"   , "AyaSummer"   , "AyaAutumn"   , "AyaWinter"   ,
+                "MarisaSpring", "MarisaSummer", "MarisaAutumn", "MarisaWinter"
+            ],
+            "Lunatic": [
+                "ReimuSpring" , "ReimuSummer" , "ReimuAutumn" , "ReimuWinter" ,
+                "CirnoSpring" , "CirnoSummer" , "CirnoAutumn" , "CirnoWinter" ,
+                "AyaSpring"   , "AyaSummer"   , "AyaAutumn"   , "AyaWinter"   ,
+                "MarisaSpring", "MarisaSummer", "MarisaAutumn", "MarisaWinter"
+            ],
+            "Extra": ["Reimu", "Cirno", "Aya", "Marisa"]
+        },
+        "th17": {
+            "Easy": [
+                "ReimuWolf"  , "ReimuOtter" , "ReimuEagle" , "MarisaWolf" ,
+                "MarisaOtter", "MarisaEagle", "YoumuWolf"  , "YoumuOtter" ,
+                "YoumuEagle"
+            ],
+            "Normal": [
+                "ReimuWolf"  , "ReimuOtter" , "ReimuEagle" , "MarisaWolf" ,
+                "MarisaOtter", "MarisaEagle", "YoumuWolf"  , "YoumuOtter" ,
+                "YoumuEagle"
+            ],
+            "Hard": [
+                "ReimuWolf"  , "ReimuOtter" , "ReimuEagle" , "MarisaWolf" ,
+                "MarisaOtter", "MarisaEagle", "YoumuWolf"  , "YoumuOtter" ,
+                "YoumuEagle"
+            ],
+            "Lunatic": [
+                "ReimuWolf"  , "ReimuOtter" , "ReimuEagle" , "MarisaWolf" ,
+                "MarisaOtter", "MarisaEagle", "YoumuWolf"  , "YoumuOtter" ,
+                "YoumuEagle"
+            ],
+            "Extra": [
+                "ReimuWolf"  , "ReimuOtter" , "ReimuEagle" , "MarisaWolf" ,
+                "MarisaOtter", "MarisaEagle", "YoumuWolf"  , "YoumuOtter" ,
+                "YoumuEagle"
+            ]
+        },
+        "th18": {
+            "Easy"   : ["Reimu", "Marisa", "Sakuya", "Sanae"],
+            "Normal" : ["Reimu", "Marisa", "Sakuya", "Sanae"],
+            "Hard"   : ["Reimu", "Marisa", "Sakuya", "Sanae"],
+            "Lunatic": ["Reimu", "Marisa", "Sakuya", "Sanae"],
+            "Extra"  : ["Reimu", "Marisa", "Sakuya", "Sanae"]
+        },
+        "th19": {
+            "Easy": [
+                "Reimu"  , "Marisa" , "Sanae"  , "Ran"    , "Aunn"   ,
+                "Nazrin" , "Seiran" , "Rin"    , "Tsukasa", "Mamizou",
+                "Yachie" , "Saki"   , "Yuuma"  , "Suika"  , "Biten"  ,
+                "Enoko"  , "Chiyari", "Hisami" , "Zanmu"
+            ],
+            "Normal": [
+                "Reimu"  , "Marisa" , "Sanae"  , "Ran"    , "Aunn"   ,
+                "Nazrin" , "Seiran" , "Rin"    , "Tsukasa", "Mamizou",
+                "Yachie" , "Saki"   , "Yuuma"  , "Suika"  , "Biten"  ,
+                "Enoko"  , "Chiyari", "Hisami" , "Zanmu"
+            ],
+            "Hard": [
+                "Reimu"  , "Marisa" , "Sanae"  , "Ran"    , "Aunn"   ,
+                "Nazrin" , "Seiran" , "Rin"    , "Tsukasa", "Mamizou",
+                "Yachie" , "Saki"   , "Yuuma"  , "Suika"  , "Biten"  ,
+                "Enoko"  , "Chiyari", "Hisami" , "Zanmu"
+            ],
+            "Lunatic": [
+                "Reimu"  , "Marisa" , "Sanae"  , "Ran"    , "Aunn"   ,
+                "Nazrin" , "Seiran" , "Rin"    , "Tsukasa", "Mamizou",
+                "Yachie" , "Saki"   , "Yuuma"  , "Suika"  , "Biten"  ,
+                "Enoko"  , "Chiyari", "Hisami" , "Zanmu"
+            ]
+        }
+    },
+    "ReleaseDates": {
+        "th01": {
+            "1.00": "1997-08-15"
+        },
+        "th02": {
+            "1.00": "1997-08-15"
+        },
+        "th03": {
+            "1.00": "1997-12-29"
+        },
+        "th04": {
+            "1.00": "1998-08-14"
+        },
+        "th05": {
+            "1.00": "1998-12-30",
+            "1.01": "1999-02-11"
+        },
+        "th06": {
+            "1.00": "2002-08-11",
+            "1.01": "2002-08-14",
+            "1.02": "2002-08-21",
+            "1.02a": "2002-08-21",
+            "1.02b": "2002-08-21",
+            "1.02c": "2002-08-22",
+            "1.02d": "2002-08-25",
+            "1.02e": "2002-08-25",
+            "1.02f": "2002-08-30",
+            "1.02g": "2002-12-01",
+            "1.02h": "2002-12-01"
+        },
+        "th07": {
+            "1.00": "2003-08-17",
+            "1.00a": "2003-08-30",
+            "1.00b": "2003-10-24"
+        },
+        "th08": {
+            "1.00": "2004-08-15",
+            "1.00a": "2004-08-19",
+            "1.00b": "2004-08-26",
+            "1.00c": "2004-09-19",
+            "1.00d": "2004-09-20"
+        },
+        "th09": {
+            "1.00": "2005-08-17",
+            "1.50a": "2005-10-08"
+        },
+        "th95": {
+            "1.00a": "2005-12-30",
+            "1.01a": "2005-01-09",
+            "1.01b": "2005-01-10",
+            "1.01c": "2005-01-11",
+            "1.02a": "2005-01-12"
+        },
+        "th10": {
+            "1.00a": "2007-08-17"
+        },
+        "th11": {
+            "1.00a": "2008-08-16"
+        },
+        "th12": {
+            "1.00a": "2009-08-15",
+            "1.00b": "2009-08-27"
+        },
+        "th125": {
+            "1.00a": "2010-03-14"
+        },
+        "th128": {
+            "1.00a": "2010-08-14"
+        },
+        "th13": {
+            "1.00a": "2011-08-13",
+            "1.00b": "2011-08-17",
+            "1.00c": "2011-08-17"
+        },
+        "th14": {
+            "1.00a": "2013-08-12",
+            "1.00b": "2013-08-16"
+        },
+        "th143": {
+            "1.00a": "2014-05-11"
+        },
+        "th15": {
+            "1.00a": "2015-08-14",
+            "1.00b": "2015-10-05"
+        },
+        "th16": {
+            "1.00a": "2017-08-11"
+        },
+        "th165": {
+            "1.00a": "2018-08-10"
+        },
+        "th17": {
+            "1.00a": "2019-08-12",
+            "1.00b": "2019-08-10"
+        },
+        "th18": {
+            "1.00a": "2021-05-04"
+        },
+        "th185": {
+            "1.00a": "2022-08-14"
+        },
+        "th19": {
+            "1.00a": "2023-08-13"
+        }
+    }
+}
