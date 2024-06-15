@@ -440,7 +440,7 @@ export function initCanvas(gameID, difficulty) {
         game = "th11"; //default if url is invalid
     }
     if (localStorage.hideUnverified === undefined) {
-        localStorage.hideUnverified = true;
+        localStorage.hideUnverified = false;
     }
     localStorage.selectedGame = game;
     sessionStorage.selected = "[]";
@@ -690,8 +690,8 @@ export function styleUnverified(isUnverified, row) {
 
 export function styleToggleSwitch(game) {
     const selector = document.getElementById("wr-toggle-switch");
-    const options = ["Hide unverified records", "Show unverified records"];
-    const ids = ["hide-unverified", "show-unverified"];
+    const options = ["Show unverified records", "Hide unverified records"];
+    const ids = ["show-unverified", "hide-unverified"];
     const state = JSON.parse(localStorage.hideUnverified);
     for (let i = 0; i < 2; i++) {
         const createButton = document.createElement("button");
@@ -715,9 +715,9 @@ export function styleToggleSwitch(game) {
         selector.appendChild(createButton);
     }
     if (state) {
-        selector.childNodes[0].setAttribute("class", "selected-full");
-    } else {
         selector.childNodes[1].setAttribute("class", "selected-full");
+    } else {
+        selector.childNodes[0].setAttribute("class", "selected-full");
     }
 }
 
