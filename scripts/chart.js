@@ -485,7 +485,7 @@ export function loadCanvas(game, difficulty = "Lunatic", func) {
         }
         const maxValue = [];
         const hidesUnverified = JSON.parse(localStorage.hideUnverified);
-        const wrData = hidesUnverified ? verified : mergeEntries(unverified, verified) ?? verified;
+        const wrData = hidesUnverified ? mergeEntries(verified) : mergeEntries(verified, unverified) ?? mergeEntries(verified);
         gameCharacters.forEach(char => {
             const history = wrData[difficulty][char];
             const maxScoreOfShot = history.length == 0 ? 0 : history[history.length - 1][0];
@@ -502,16 +502,15 @@ export function loadCanvas(game, difficulty = "Lunatic", func) {
     return;
 }
 
-export function mergeEntries(unverified, verified) {
+export function mergeEntries(verified, unverified) {
     const output = {};
     const difficulties = Object.keys(verified);
     difficulties.forEach((difficulty) => {
-        // if (difficulty == "Normal") {debugger;}
         output[difficulty] = {};
         const characters = Object.keys(verified[difficulty]);
         characters.forEach((character) => {
             const verifiedEntry = verified[difficulty][character];
-            const unverifiedEntry = unverified[difficulty][character];
+            const unverifiedEntry = unverified?.[difficulty]?.[character] ?? [];
             // this is to distinct unverified from verified entries when they have been merged
             unverifiedEntry.forEach(entry => {
                 entry.push({
