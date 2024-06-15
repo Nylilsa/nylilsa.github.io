@@ -496,7 +496,7 @@ export function loadCanvas(game, difficulty = "Lunatic", func) {
         generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty);
         generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
         callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func);
-        createDropdown(wrData);
+        // createDropdown(wrData);
     })
     // catchErrors(dataWR);
     return;

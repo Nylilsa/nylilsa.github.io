@@ -180,7 +180,7 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
 <div id="wr-tables"></div>
 </section>
 
-[br]
+<!-- [br]
 
 ## Player search
 [hr_major]
@@ -193,7 +193,7 @@ Choose a player name from the menu below to show their WRs. For the best experie
 
 <div id="scoreInfo">
   <div id="scoresTable"></div>
-</div>
+</div> -->
 
 [br]
 
