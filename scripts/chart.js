@@ -2,9 +2,9 @@
 
 export class Points {
     constructor(date, score, player) {
-      this.x = date;
-      this.y = score;
-      this.player = player;
+        this.x = date;
+        this.y = score;
+        this.player = player;
     }
 }
 
@@ -26,8 +26,8 @@ export class Data {
         this.label = label;
         this.data = data;
         this.stepped = true;
-        this.pointBackgroundColor = colorsWithOpacity; 
-        this.pointBorderColor = colorsWithOpacity; 
+        this.pointBackgroundColor = colorsWithOpacity;
+        this.pointBorderColor = colorsWithOpacity;
         this.borderColor = color;
     }
 }
@@ -46,11 +46,11 @@ export function callChartJS(fetchedData, gameCharacters, englishName, difficulty
     ctx.setAttribute("class", 'wr-chart');
     wrapper.appendChild(ctx);
     const chartChecker = document.getElementsByClassName('wr-chart');
-    if(chartChecker.length != 1) { // removes old and allows for new to be generated
+    if (chartChecker.length != 1) { // removes old and allows for new to be generated
         chartChecker[0].parentNode.removeChild(chartChecker[0])
     }
     let dataset = [];
-    for(let i=0; i<fetchedData.length; i++) {
+    for (let i = 0; i < fetchedData.length; i++) {
         const arr = [];
         fetchedData[i].forEach(subelement => {
             const dateObject = subelement[2].replaceAll("/", "-");
@@ -73,8 +73,11 @@ export function callChartJS(fetchedData, gameCharacters, englishName, difficulty
                 createLegend(chart, args, options, gameCharacters, colors, game, difficulty, func);
             }
         }
-    ],
+        ],
         options: {
+            animation: {
+                duration: 0
+            },
             maintainAspectRatio: false,
             scales: {
                 x: {
@@ -88,12 +91,12 @@ export function callChartJS(fetchedData, gameCharacters, englishName, difficulty
                     title: {
                         display: true,
                         text: 'Date'
-                      }
+                    }
                 },
                 y: {
                     beginAtZero: false,
                     ticks: {
-                        callback: function(value) {
+                        callback: function (value) {
                             return roundedTicks(value, game);
                         }
                     },
@@ -133,21 +136,21 @@ export function callChartJS(fetchedData, gameCharacters, englishName, difficulty
                 },
                 tooltip: {
                     callbacks: {
-                        title: function(context) {
+                        title: function (context) {
                             const char = context[0]['dataset']['label'];
-                            return "Category: "+char;
+                            return "Category: " + char;
                         },
-                        beforeLabel: function(context) {
+                        beforeLabel: function (context) {
                             const score = context['formattedValue'];
-                            return "Score: "+score;
+                            return "Score: " + score;
                         },
-                        label: function(context) {
+                        label: function (context) {
                             const player = context['raw']['player'];
-                            return "By: "+player;
+                            return "By: " + player;
                         },
-                        afterLabel: function(context) {
+                        afterLabel: function (context) {
                             const date = context['label'].split(",", 2).join(",");
-                            return "Date: "+date;
+                            return "Date: " + date;
                         }
                     }
                 }
@@ -183,22 +186,22 @@ export function toggleLegend(chart, items, game, difficulty) {
     li.style.justifyContent = 'center';
     li.style.gridColumn = '1/-1';
     li.onclick = () => {
-        const arrayOfLength = (length) => {return Array.from({length}, (_, i) => i)}
+        const arrayOfLength = (length) => { return Array.from({ length }, (_, i) => i) }
         const arr1 = arrayOfLength(items.length);
         sessionStorage.selected = flag ? "[]" : JSON.stringify(arr1);
-        for (let i=0; i<items.length; i++) {
+        for (let i = 0; i < items.length; i++) {
             const item = items[i];
-	        if (flag) {
-	        	top.classList.remove("show-function");
-	        	if (item.hidden) {
+            if (flag) {
+                top.classList.remove("show-function");
+                if (item.hidden) {
                     chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
-	        	}
-	        } else {
+                }
+            } else {
                 top.classList.add("show-function");
-	        	if (!item.hidden) {
+                if (!item.hidden) {
                     chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
-	        	}
-	        }
+                }
+            }
         }
         chart.update();
     };
@@ -206,7 +209,7 @@ export function toggleLegend(chart, items, game, difficulty) {
     li.appendChild(textContainer);
     top.appendChild(li);
     //write stuff that allows toggle Season/Animal button
-    if(game == "th17" || (game == "th16" && difficulty != "Extra")) {
+    if (game == "th17" || (game == "th16" && difficulty != "Extra")) {
         extraLegendButtons(top, game, items, chart);
     }
 }
@@ -227,7 +230,7 @@ export function extraLegendButtons(top, game, items, chart) {
         top.style.gridTemplateColumns = `repeat(auto-fill, 25%)`;
         n = 4;
     }
-    for (let i=0; i<sub.length; i++) {
+    for (let i = 0; i < sub.length; i++) {
         const boxSpan = document.createElement('span');
         const flag = top.classList.contains(`show-${sub[i].toLocaleLowerCase()}`);
         const text = flag ? document.createTextNode(`Show all ${sub[i]}s`) : document.createTextNode(`Hide all ${sub[i]}s`);
@@ -238,9 +241,9 @@ export function extraLegendButtons(top, game, items, chart) {
         li.style.alignItems = 'center';
         li.onclick = () => {
             const flag = top.classList.contains(`show-${sub[i].toLocaleLowerCase()}`);
-            let indexes = [i, i + n, i + 2*n];
+            let indexes = [i, i + n, i + 2 * n];
             if (game == "th16") {
-                indexes = [i, i + n, i + 2*n, i + 3*n];
+                indexes = [i, i + n, i + 2 * n, i + 3 * n];
             }
             for (let j = 0; j < indexes.length; j++) {
                 const storedSelected = JSON.parse(sessionStorage.selected);
@@ -255,7 +258,7 @@ export function extraLegendButtons(top, game, items, chart) {
             const selectedCharacters = indexes.map(j => {
                 return items[j];
             })
-            for (let j=0; j<selectedCharacters.length; j++) {
+            for (let j = 0; j < selectedCharacters.length; j++) {
                 const item = selectedCharacters[j];
                 if (flag) {
                     top.classList.remove(`show-${sub[i].toLocaleLowerCase()}`);
@@ -273,8 +276,8 @@ export function extraLegendButtons(top, game, items, chart) {
         };
         boxSpan.style.background = `${colors[i]}80`;
         boxSpan.style.borderColor = colors[i];
-        boxSpan.style.borderWidth = 1+'px';
-        boxSpan.style.borderStyle  = "solid";
+        boxSpan.style.borderWidth = 1 + 'px';
+        boxSpan.style.borderStyle = "solid";
         boxSpan.style.display = 'inline-block';
         boxSpan.style.height = '12px';
         boxSpan.style.marginRight = '10px';
@@ -284,7 +287,7 @@ export function extraLegendButtons(top, game, items, chart) {
         textContainer.style.color = "#666";
         textContainer.style.margin = 0;
         textContainer.style.padding = 0;
-        textContainer.appendChild(text);    
+        textContainer.appendChild(text);
         li.appendChild(boxSpan);
         top.appendChild(li);
         li.appendChild(textContainer);
@@ -293,7 +296,7 @@ export function extraLegendButtons(top, game, items, chart) {
 
 export function runOnce() {
     let hasRun = false;
-    return function(func) {
+    return function (func) {
         if (!hasRun) {
             hasRun = true;
             func();
@@ -311,13 +314,13 @@ export function createLegend(chart, args, options, gameCharacters, colors, game,
     toggleLegend(chart, items, game, difficulty);
     runOnlyOnce(toggleBetweenDiffs);
     function toggleBetweenDiffs() {
-        for (let j=0; j < deselected.length; j++) {
+        for (let j = 0; j < deselected.length; j++) {
             const index = deselected[j];
             chart.setDatasetVisibility(index, !chart.isDatasetVisible(index));
         }
         chart.update();
     }
-    for (let i=0; i<items.length; i++) {
+    for (let i = 0; i < items.length; i++) {
         const item = items[i];
         const li = document.createElement('li');
         li.style.alignItems = 'center';
@@ -337,13 +340,13 @@ export function createLegend(chart, args, options, gameCharacters, colors, game,
             sessionStorage.selected = JSON.stringify(storedSelected);
             chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
             chart.update();
-        };  
+        };
         // Color box
         const boxSpan = document.createElement('span');
         boxSpan.style.background = item.fillStyle;
         boxSpan.style.borderColor = item.strokeStyle;
         boxSpan.style.borderWidth = item.lineWidth + 'px';
-        boxSpan.style.borderStyle  = "solid";
+        boxSpan.style.borderStyle = "solid";
         boxSpan.style.display = 'inline-block';
         boxSpan.style.height = '12px';
         boxSpan.style.marginRight = '10px';
@@ -354,7 +357,7 @@ export function createLegend(chart, args, options, gameCharacters, colors, game,
             const dashedLength = [2, 4, 8, 12];
             const bgLineWidth = dashedLength[Number(colors[i][1])];
             const c = `${colors[i].slice(2)}80`;
-            boxSpan.style.background = `repeating-linear-gradient(135deg, ${c}, ${c} ${bgLineWidth}px, #0000 ${bgLineWidth}px, #0000 ${2*bgLineWidth}px)`;
+            boxSpan.style.background = `repeating-linear-gradient(135deg, ${c}, ${c} ${bgLineWidth}px, #0000 ${bgLineWidth}px, #0000 ${2 * bgLineWidth}px)`;
         }
         // Text
         const textContainer = document.createElement('p');
@@ -364,7 +367,7 @@ export function createLegend(chart, args, options, gameCharacters, colors, game,
         textContainer.style.padding = 0;
         textContainer.style.textDecoration = item.hidden ? 'line-through' : '';
         const text = document.createTextNode(item.text);
-        textContainer.appendChild(text);    
+        textContainer.appendChild(text);
         li.appendChild(boxSpan);
         li.appendChild(textContainer);
         if (ul.children.length < items.length) {
@@ -376,7 +379,7 @@ export function createLegend(chart, args, options, gameCharacters, colors, game,
 export function getOrCreateLegendList(game, id, gameCharacters) {
     const legendContainer = document.getElementById(id);
     let listContainer = legendContainer.querySelector('ul');
-    let computedCharacters = (100 / gameCharacters.length)+'%';
+    let computedCharacters = (100 / gameCharacters.length) + '%';
     if (!listContainer) {
         listContainer = document.createElement('ul');
         if (gameCharacters.length > 4) {
@@ -415,78 +418,152 @@ export function roundedTicks(value, game) {
     }
     let decimals = 2;
     let selector = "Billions";
-    if (game == "th01") {selector = "Millions"}
-    if (game == "th02") {selector = "Millions"}
-    if (game == "th03") {selector = "Millions"; decimals = 0}
-    if (game == "th04") {selector = "Millions"; decimals = 0}
-    if (game == "th05") {selector = "Millions"; decimals = 0}
-    if (game == "th06") {selector = "Millions"; decimals = 0}
-    if (game == "th09") {selector = "Millions"; decimals = 0}
-    if (game == "th10") {selector = "Billions"; decimals = 3}
-    if (game == "th128") {selector = "Millions"; decimals = 0}
+    if (game == "th01") { selector = "Millions" }
+    if (game == "th02") { selector = "Millions" }
+    if (game == "th03") { selector = "Millions"; decimals = 0 }
+    if (game == "th04") { selector = "Millions"; decimals = 0 }
+    if (game == "th05") { selector = "Millions"; decimals = 0 }
+    if (game == "th06") { selector = "Millions"; decimals = 0 }
+    if (game == "th09") { selector = "Millions"; decimals = 0 }
+    if (game == "th10") { selector = "Billions"; decimals = 3 }
+    if (game == "th128") { selector = "Millions"; decimals = 0 }
     return (value / largeNumbers[selector]["number"]).toFixed(decimals) + largeNumbers[selector]["suffix"];
 }
 
 export function initCanvas(gameID, difficulty) {
     const func = runOnce();
-    let game = gameID.slice(1); 
+    let game = gameID.slice(1);
     if (localStorage.selectedGame && game === '') {
         game = localStorage.selectedGame;
     }
-    if (game === '') { 
-		game = "th11"; //default if url is invalid
-	}
+    if (game === '') {
+        game = "th11"; //default if url is invalid
+    }
+    if (localStorage.hideUnverified === undefined) {
+        localStorage.hideUnverified = true;
+    }
     localStorage.selectedGame = game;
     sessionStorage.selected = "[]";
     loadCanvas(game, difficulty, func);
     styleGameSelectorButtons(game);
-    fetch('json/gameinfo.json')
-    .then((response) => response.json())
-    .then(data => {
-        const allDifficulties = data['Difficulty'][game];
-        styleGameDifficultyButtons(allDifficulties, game);
-    });
+    styleToggleSwitch(game);
+    fetchData('json/gameinfo.json')
+        .then(data => {
+            const allDifficulties = data['Difficulty'][game];
+            styleGameDifficultyButtons(allDifficulties, game);
+        });
+}
+
+function fetchData(url) {
+    return fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to fetch ${url}. Status: ${response.status}`);
+            }
+            return response.json();
+        });
 }
 
 export function loadCanvas(game, difficulty = "Lunatic", func) {
     const twoYears = 63072000000;
     const now = new Date().getTime();
-    let time;
     let fetchedData = [];
-    fetch('json/wrprogression.json')
-    .then((response) => response.json())
-    .then(dataWR => {
-        fetch('json/gameinfo.json')
-        .then((response2) => response2.json())
-        .then(data => {
-            let gameCharacters;
-            const englishName = data['Names'][game]['en'];
-            const releaseDate = new Date(data['LatestReleaseDate'][game]).getTime();
-            const maxValue = [];
-            if (releaseDate > now - twoYears) {
-                time = 'month';
-            } else {
-                time = 'year';
-            }
-            if ((game != "th16" && game != "th128") || difficulty == 'Extra') {
-                gameCharacters = data['Characters'][game];
-            } else {
-                gameCharacters = data['Characters'][`${game}other`];
-            }
-            gameCharacters.forEach(char => {
-                const history = dataWR[game][difficulty][char];
-                const maxScoreOfShot = history[history.length-1][0];
-                maxValue.push(maxScoreOfShot);
-                fetchedData.push(history);
-            })
-            const overallWRCharacter = gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))]
-            generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
-            callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func);
-            createDropdown(dataWR);
-        });
-        // catchErrors(dataWR);
-    });
+    Promise.all([
+        fetchData('json/gameinfo.json'),
+        fetchData(`json/wr/unverified/${game}.json`),
+        fetchData(`json/wr/verified/${game}.json`),
+        fetchData(`json/wrprogression.json`)
+    ]).then(([data, unverified, verified, dataWR]) => {
+        const englishName = data['Names'][game]['en'];
+        const releaseDate = new Date(data['LatestReleaseDate'][game]).getTime();
+        const time = releaseDate > now - twoYears ? 'month' : 'year';
+        let gameCharacters;
+        if ((game != "th16" && game != "th128") || difficulty == 'Extra') {
+            gameCharacters = data['Characters'][game];
+        } else {
+            gameCharacters = data['Characters'][`${game}other`];
+        }
+        const maxValue = [];
+        const hidesUnverified = JSON.parse(localStorage.hideUnverified);
+        const wrData = hidesUnverified ? verified : mergeEntries(unverified, verified) ?? verified;
+        gameCharacters.forEach(char => {
+            const history = wrData[difficulty][char];
+            const maxScoreOfShot = history.length == 0 ? 0 : history[history.length - 1][0];
+            maxValue.push(maxScoreOfShot);
+            fetchedData.push(history);
+        })
+        const overallWRCharacter = gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))]
+        generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty);
+        generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
+        callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func);
+        createDropdown(wrData);
+    })
+    // catchErrors(dataWR);
     return;
+}
+
+export function mergeEntries(unverified, verified) {
+    const output = {};
+    const difficulties = Object.keys(verified);
+    difficulties.forEach((difficulty) => {
+        // if (difficulty == "Normal") {debugger;}
+        output[difficulty] = {};
+        const characters = Object.keys(verified[difficulty]);
+        characters.forEach((character) => {
+            const verifiedEntry = verified[difficulty][character];
+            const unverifiedEntry = unverified[difficulty][character];
+            // this is to distinct unverified from verified entries when they have been merged
+            unverifiedEntry.forEach(entry => {
+                entry.push({
+                    "isUnverified": true
+                });
+            })
+            const total = [...verifiedEntry, ...unverifiedEntry];
+            total.sort((a, b) => new Date(a[2]) - new Date(b[2])); // sort by date
+            reduceByScore(total);
+            output[difficulty][`${character}`] = total;
+        })
+    })
+    return removeInvalidEntries(output);
+}
+
+export function reduceByScore(arr) {
+    let highest = 0;
+    let removedElements = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i][0] > highest) {
+            highest = arr[i][0];
+        } else {
+            removedElements.push(arr[i]);
+            arr.splice(i, 1);
+            i--;
+        }
+    }
+    return removedElements;
+}
+
+export function removeInvalidEntries(data) {
+    Object.keys(data).forEach((difficulty) => {
+        Object.keys(data[difficulty]).forEach((character) => {
+            let newScore = 0;
+            let newDate = 0;
+            const entry = data[difficulty][character];
+            let previousEntry;
+            for (let i = 0; i < entry.length; i++) {
+                const flagScore = (parseInt(entry[i][0]) >= newScore);
+                newScore = parseInt(entry[i][0]);
+                const flagDate = (new Date(entry[i][2]).getTime() >= newDate);
+                newDate = new Date(entry[i][2]).getTime();
+                if (!flagScore || !flagDate) {
+                    console.error(`Error: Score ${previousEntry[0]} from ${previousEntry[1]} shot ${character} is incorrect`)
+                    entry.splice(i - 1, 1); // removes entry of previousEntry from array;
+                    i--; // makes sure i value is not updated
+                }
+                previousEntry = entry[i];
+            }
+        })
+    })
+    return data;
 }
 
 export function createDropdown(dataWR) {
@@ -494,17 +571,14 @@ export function createDropdown(dataWR) {
     const scoresTable = document.getElementById('scoresTable');
     const scoreInfo = document.getElementById('scoreInfo');
     let names = [];
-    Object.entries(dataWR).forEach(a => {
-        const diffs = a[1];
-        Object.entries(diffs).forEach(b => {
-            const shots = b[1];
-            Object.entries(shots).forEach(c => {
-                const entries = c[1];
-                entries.forEach(d => {
-                    const name = d[1];
-                    names.push(name);
-                    // console.log(name)
-                });
+    Object.entries(dataWR).forEach(b => {
+        const shots = b[1];
+        Object.entries(shots).forEach(c => {
+            const entries = c[1];
+            entries.forEach(d => {
+                const name = d[1];
+                names.push(name);
+                // console.log(name)
             });
         });
     });
@@ -532,20 +606,23 @@ export function createDropdown(dataWR) {
         const selectedEntries = [];
         scoresTable.innerHTML = ''; // Clear previous results
         if (selectedName) {
-            Object.entries(dataWR).forEach(a => {
-                const diffs = a[1];
-                Object.entries(diffs).forEach(b => {
-                    const shots = b[1];
-                    Object.entries(shots).forEach(c => {
-                        const entries = c[1];
-                        entries.forEach(d => {
-                            if (d[1] === selectedName) {
-                                d.push(c[0])
-                                d.push(b[0])
-                                d.push(a[0])
-                                selectedEntries.push(d)
+            Object.entries(dataWR).forEach(b => {
+                const shots = b[1];
+                Object.entries(shots).forEach(c => {
+                    const entries = c[1];
+                    entries.forEach(d => {
+                        if (d[1] === selectedName) { // if name matches
+                            if (d[3]) {
+                                d[3]["Shottype"] = c[0];
+                                d[3]["Difficulty"] = b[0];
+                            } else {
+                                d[3] = {
+                                    "Shottype": c[0],
+                                    "Difficulty": b[0]
+                                }
                             }
-                        });
+                            selectedEntries.push(d)
+                        }
                     });
                 });
             });
@@ -556,19 +633,23 @@ export function createDropdown(dataWR) {
             });
             const table = document.createElement("table");
             const tblBody = document.createElement("tbody");
-            const headers = ["#", "Game", "Difficulty", "Shottype/Route", "Score", "Player", "Date"];
+            const headers = ["#", "Difficulty", "Shottype/Route", "Score", "Player", "Date"];
             for (let j = 0; j < selectedEntries.length; j++) { // rows
                 let row = document.createElement("tr");
-                const [score, name, date, shot, diff, game] = selectedEntries[j];
+                const [score, name, date] = selectedEntries[j];
+                const shot = selectedEntries[j][3]["Shottype"];
+                const diff = selectedEntries[j][3]["Difficulty"];
+                const isUnverified = selectedEntries[j][3]?.["isUnverified"] ?? false;
                 const dateFormatted = dateFormat(date);
-                let scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                const scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                styleUnverified(isUnverified, row);
                 if (j == 0) { // header column
                     for (let k = 0; k < headers.length; k++) {
                         const cell = document.createElement("th");
                         const cellText = document.createTextNode(`${headers[k]}`);
                         cell.appendChild(cellText);
                         row.appendChild(cell);
-                        if (k == (headers.length-1)) {
+                        if (k == (headers.length - 1)) {
                             tblBody.appendChild(row);
                             row = document.createElement("tr");
                         }
@@ -578,14 +659,13 @@ export function createDropdown(dataWR) {
                     let cellText;
                     const cell = document.createElement("td");
                     switch (k) {
-                        case 0: {cellText = document.createTextNode(j+1); break;}
-                        case 1: {cellText = document.createTextNode(`${names1[game]["abbreviation"]}`); break;}
-                        case 2: {cellText = document.createTextNode(`${diff}`); break;}
-                        case 3: {cellText = document.createTextNode(shot); break;}
-                        case 4: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
-                        case 5: {cellText = document.createTextNode(`${name}`); break;}
-                        case 6: {cellText = document.createTextNode(`${dateFormatted}`); break;}
-                        default: {console.error(`Oops, something went wrong.`)}
+                        case 0: { cellText = document.createTextNode(j + 1); break; }
+                        case 1: { cellText = document.createTextNode(`${diff}`); break; }
+                        case 2: { cellText = document.createTextNode(shot); break; }
+                        case 3: { cellText = document.createTextNode(`${scoreWithCommas}`); break; }
+                        case 4: { cellText = document.createTextNode(`${name}`); break; }
+                        case 5: { cellText = document.createTextNode(`${dateFormatted}`); break; }
+                        default: { console.error(`Oops, something went wrong.`) }
                     }
                     cell.appendChild(cellText);
                     row.appendChild(cell);
@@ -603,6 +683,55 @@ export function createDropdown(dataWR) {
     }
 }
 
+export function styleUnverified(isUnverified, row) {
+    if (!isUnverified) { return; }
+    // row.style.color = "var(--clr-default)";
+}
+
+export function styleToggleSwitch(game) {
+    const selector = document.getElementById("wr-toggle-switch");
+    const options = ["Hide unverified records", "Show unverified records"];
+    const ids = ["hide-unverified", "show-unverified"];
+    const state = JSON.parse(localStorage.hideUnverified);
+    for (let i = 0; i < 2; i++) {
+        const createButton = document.createElement("button");
+        createButton.innerText = options[i];
+        createButton.id = ids[i];
+        createButton.addEventListener("click", function () {
+            const func = runOnce();
+            const difficulty = getDifficultyFromButtons();
+            loadCanvas(initRemoveHash(true).slice(1) || game, difficulty, func);
+            const children = selector.childNodes;
+            children.forEach((element) => {
+                element.classList.remove('selected-full');
+            });
+            createButton.setAttribute("class", "selected-full");
+            if (this.id == "hide-unverified") {
+                localStorage.hideUnverified = true;
+            } else {
+                localStorage.hideUnverified = false;
+            }
+        });
+        selector.appendChild(createButton);
+    }
+    if (state) {
+        selector.childNodes[0].setAttribute("class", "selected-full");
+    } else {
+        selector.childNodes[1].setAttribute("class", "selected-full");
+    }
+}
+
+export function getDifficultyFromButtons() {
+    const diffSelector = document.getElementById("wr-difficulty-buttons");
+    let output;
+    diffSelector.childNodes.forEach((child) => {
+        if (child.classList.contains("selected-full")) {
+            output = child.dataset.difficulty;
+        }
+    })
+    return output;
+}
+
 export function styleGameDifficultyButtons(allDifficulties, game) {
     const diffSelector = document.getElementById("wr-difficulty-buttons");
     allDifficulties.forEach(difficulty => {
@@ -617,23 +746,21 @@ export function styleGameDifficultyButtons(allDifficulties, game) {
         function selectDifficulty() {
             const func = runOnce();
             loadCanvas(initRemoveHash(true).slice(1) || game, difficulty, func);
-            const allElements = document.querySelectorAll('*');
-            allElements.forEach((element) => {
+            const children = diffSelector.childNodes;
+            children.forEach((element) => {
                 element.classList.remove('selected-full');
             });
             this.setAttribute("class", "selected-full");
             const top = document.getElementById("legend-toggle-all");
             top.className = '';
-            
         }
         diffSelector.appendChild(createButton);
     });
-
 }
 
 export function styleGameSelectorButtons(game) {
     const parent = document.getElementsByClassName("card-game");
-    for(let i = 0; i < parent.length; i++) {
+    for (let i = 0; i < parent.length; i++) {
         const button = parent[i];
         const btndata = button.dataset.game;
         button.style.backgroundColor = gameColors[btndata];
@@ -649,10 +776,11 @@ export function styleGameSelectorButtons(game) {
         }
     }
     const selector = document.getElementById("wr-game-buttons");
-    const array = ['th01', 'th02', 'th03', 'th04', 'th05', 'th06', 'th07', 'th08', 'th09', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'];
+    // const array = ['th01', 'th02', 'th03', 'th04', 'th05', 'th06', 'th07', 'th08', 'th09', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'];
+    const array = ['th06', 'th07', 'th08', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'];
     const width = selector.scrollWidth;
     const index = array.indexOf(game);
-    const max = array.length;
+    const max = array.length; 
     const number = index / max * width;
     selector.scrollLeft = number;
 }
@@ -663,10 +791,10 @@ export function setButtonLogic(id) {
     function selectGame() {
         const otherTables = document.getElementsByClassName("all-wr-tables");
         const otherButtons = document.getElementsByClassName("wr-shottype-buttons");
-        Array.prototype.forEach.call(otherTables, function(child) {
+        Array.prototype.forEach.call(otherTables, function (child) {
             child.style.display = "none";
         });
-        Array.prototype.forEach.call(otherButtons, function(child) {
+        Array.prototype.forEach.call(otherButtons, function (child) {
             child.style.backgroundColor = "";
             child.style.color = "";
             child.style.border = "";
@@ -678,15 +806,12 @@ export function setButtonLogic(id) {
 }
 
 export function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty) {
-	const section = document.getElementById("wr-table-buttons");
-    const length = section.children.length;
-    if(length > 0) { // removes old and allows for new to be generated
-        for(let i=0; i<length; i++) {
-            section.removeChild(section.children[0]);
-        }
+    const section = document.getElementById("wr-table-buttons");
+    while (section.children.length > 0) { // removes old and allows for new to be generated
+        section.removeChild(section.children[0]);
     }
     for (let i = 0; i < gameCharacters.length; i++) {
-		const button = document.createElement("button");
+        const button = document.createElement("button");
         const id = `${game}${gameCharacters[i]}`;
         button.setAttribute("id", id);
         button.setAttribute("class", "wr-shottype-buttons");
@@ -694,60 +819,60 @@ export function generateWRButtons(gameCharacters, game, overallWRCharacter, diff
         if (gameCharacters[i] == overallWRCharacter) {
             button.style.color = "#ddd";
         }
-		if (game == "th03") {
-			section.style.gridTemplateColumns = "repeat(3, 1fr)";
-			section.style.gridTemplateRows =  " repeat(3, 1fr)" ;
-			section.style.gridAutoFlow = "row";
-		}
-		if (game == "th08") {
-			section.style.gridTemplateColumns = "repeat(8, 1fr)";
-			section.style.gridTemplateRows =  " repeat(2, 1fr)" ;
-			section.style.gridAutoFlow = "row";
+        if (game == "th03") {
+            section.style.gridTemplateColumns = "repeat(3, 1fr)";
+            section.style.gridTemplateRows = " repeat(3, 1fr)";
+            section.style.gridAutoFlow = "row";
+        }
+        if (game == "th08") {
+            section.style.gridTemplateColumns = "repeat(8, 1fr)";
+            section.style.gridTemplateRows = " repeat(2, 1fr)";
+            section.style.gridAutoFlow = "row";
             section.classList.add("grid-th08");
-			if (i < 4) {
-				button.style.gridColumn = "span 2";
-			}
-		}
-		if (game == "th09") {
-			section.style.gridTemplateColumns = "repeat(7, 1fr)";
-			section.style.gridTemplateRows =  " repeat(2, 1fr)" ;
-			section.style.gridAutoFlow = "row";
+            if (i < 4) {
+                button.style.gridColumn = "span 2";
+            }
+        }
+        if (game == "th09") {
+            section.style.gridTemplateColumns = "repeat(7, 1fr)";
+            section.style.gridTemplateRows = " repeat(2, 1fr)";
+            section.style.gridAutoFlow = "row";
             section.classList.add("grid-th09");
-		}
-		if (game == "th07" || game == "th12" || (game == "th128" && difficulty != "Extra") || game == "th14") {
+        }
+        if (game == "th07" || game == "th12" || (game == "th128" && difficulty != "Extra") || game == "th14") {
             section.style.gridTemplateColumns = "repeat(6, 1fr)";
-			section.style.gridTemplateRows =  " repeat(1, 1fr)" ;
-			section.style.gridAutoFlow = "row";
+            section.style.gridTemplateRows = " repeat(1, 1fr)";
+            section.style.gridAutoFlow = "row";
             section.classList.add("grid-6-ab");
-		}
-		if (game == "th10" || game == "th11") {
+        }
+        if (game == "th10" || game == "th11") {
             section.style.gridTemplateColumns = "repeat(6, 1fr)";
-			section.style.gridTemplateRows =  " repeat(1, 1fr)" ;
-			section.style.gridAutoFlow = "row";
+            section.style.gridTemplateRows = " repeat(1, 1fr)";
+            section.style.gridAutoFlow = "row";
             section.classList.add("grid-6-abc");
-		}
-		if (game == "th128" && difficulty == "Extra") {
+        }
+        if (game == "th128" && difficulty == "Extra") {
             section.style.gridTemplateColumns = "";
-			section.style.gridTemplateRows =  "" ;
-			section.style.gridAutoFlow = "row";
-		}
-		if (game == "th16" && difficulty != "Extra") {
+            section.style.gridTemplateRows = "";
+            section.style.gridAutoFlow = "row";
+        }
+        if (game == "th16" && difficulty != "Extra") {
             section.style.gridTemplateColumns = "repeat(4, 1fr)";
-			section.style.gridTemplateRows =  " repeat(4, 1fr)" ;
-			section.style.gridAutoFlow = "row";
+            section.style.gridTemplateRows = " repeat(4, 1fr)";
+            section.style.gridAutoFlow = "row";
             section.classList.add("grid-th16");
-		}
-		if (game == "th16" && difficulty == "Extra") {
-			section.style.gridTemplateColumns = "repeat(4, 1fr)";
-			section.style.gridTemplateRows =  "" ;
-			section.style.gridAutoFlow = "row";
+        }
+        if (game == "th16" && difficulty == "Extra") {
+            section.style.gridTemplateColumns = "repeat(4, 1fr)";
+            section.style.gridTemplateRows = "";
+            section.style.gridAutoFlow = "row";
             section.classList.remove("grid-th16");
-		}
-		if (game == "th17") {
-			section.style.gridTemplateColumns = "repeat(3, 1fr)";
-			section.style.gridTemplateRows =  " repeat(3, 1fr)" ;
-			section.style.gridAutoFlow = "row";
-		}
+        }
+        if (game == "th17") {
+            section.style.gridTemplateColumns = "repeat(3, 1fr)";
+            section.style.gridTemplateRows = " repeat(3, 1fr)";
+            section.style.gridAutoFlow = "row";
+        }
         section.appendChild(button);
         setButtonLogic(id);
     }
@@ -756,18 +881,17 @@ export function generateWRButtons(gameCharacters, game, overallWRCharacter, diff
 export function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficulty, flag = true) {
     const section = document.getElementById("wr-tables");
     const length = section.children.length;
-    if(length > 0) { // removes old and allows for new to be generated
-        for(let i=0; i<length; i++) {
+    if (length > 0) { // removes old and allows for new to be generated
+        for (let i = 0; i < length; i++) {
             section.removeChild(section.children[0]);
         }
     }
-    generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty);
     for (let i = 0; i < data.length; i++) { // tables
         let reverse;
-        if (flag) {reverse = data[i].length - 1;} else {reverse = 0}
+        if (flag) { reverse = data[i].length - 1; } else { reverse = 0 }
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
-        const selector = (game == "th01" || game == "th128") ? "Route" : "Shottype"; 
+        const selector = (game == "th01" || game == "th128") ? "Route" : "Shottype";
         const headers = ["#", "Difficulty", selector, "Score", "Player", "Date", "Score gain"];
         const id = `${game}${gameCharacters[i]}`;
         table.setAttribute("id", `${id}table`);
@@ -778,9 +902,11 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
         for (let j = 0; j < data[i].length; j++) { // rows
             let row = document.createElement("tr");
             const index = Math.abs(j - reverse);
-            const [score, player, date, url] = data[i][index];
-		    const dateFormatted = dateFormat(date);
-            const nextScore = data[i][index-1]?.[0] ?? 0;
+            const [score, player, date, fourth] = data[i][index];
+            const isUnverified = fourth?.["isUnverified"] ?? false;
+            styleUnverified(isUnverified, row);
+            const dateFormatted = dateFormat(date);
+            const nextScore = data[i][index - 1]?.[0] ?? 0;
             const scoreDifference = (score - nextScore).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             let scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             if (j == 0) { // header column
@@ -789,7 +915,7 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
                     const cellText = document.createTextNode(`${headers[k]}`);
                     cell.appendChild(cellText);
                     row.appendChild(cell);
-                    if (k == (headers.length-1)) {
+                    if (k == (headers.length - 1)) {
                         tblBody.appendChild(row);
                         row = document.createElement("tr");
                     }
@@ -798,15 +924,31 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
             for (let k = 0; k < headers.length; k++) { // entry columns
                 let cellText;
                 const cell = document.createElement("td");
+                let pathToSite;
+                if (!isUnverified) {
+                    const rpyName = `${game}_${difficulty}_${gameCharacters[i]}_${score}.rpy`.toLowerCase();
+                    pathToSite = `https://github.com/Nylilsa/wr-replays/raw/main/${game}/${difficulty}/${gameCharacters[i]}/${rpyName}`;
+
+                }
                 switch (k) {
-                    case 0: {cellText = document.createTextNode(j+1); break;}
-                    case 1: {cellText = document.createTextNode(`${difficulty}`); break;}
-                    case 2: {cellText = document.createTextNode(gameCharacters[i]); break;}
-                    case 3: {cellText = document.createTextNode(`${scoreWithCommas}`); break;}
-                    case 4: {cellText = document.createTextNode(`${player}`); break;}
-                    case 5: {cellText = document.createTextNode(`${dateFormatted}`); break;}
-                    case 6: {cellText = document.createTextNode(`+${scoreDifference}`); break;}
-                    default: {console.error(`Oops, something went wrong.`)}
+                    case 0: { cellText = document.createTextNode(j + 1); break; }
+                    case 1: { cellText = document.createTextNode(`${difficulty}`); break; }
+                    case 2: { cellText = document.createTextNode(gameCharacters[i]); break; }
+                    case 3: {
+                        if (!isUnverified) {
+                            cellText = document.createElement(`a`);
+                            let text = scoreWithCommas;
+                            cellText.innerText = text;
+                            cellText.classList.add("url");
+                            cellText.href = pathToSite;
+                        } else {
+                            cellText = document.createTextNode(`${scoreWithCommas}`);
+                        }
+                        break; }
+                    case 4: { cellText = document.createTextNode(`${player}`); break; }
+                    case 5: { cellText = document.createTextNode(`${dateFormatted}`); break; }
+                    case 6: { cellText = document.createTextNode(`+${scoreDifference}`); break; }
+                    default: { console.error(`Oops, something went wrong.`) }
                 }
                 cell.appendChild(cellText);
                 row.appendChild(cell);
@@ -827,7 +969,7 @@ export function catchErrors(data) {
                 let newScore = 0;
                 let newDate = 0;
                 value2.forEach(element => { //wr entry of shot
-                    a.push(key+key3+key2)
+                    a.push(key + key3 + key2)
                     b.push(element[1])
                     c.push(element[2])
                     d.push(element[0])
@@ -836,7 +978,7 @@ export function catchErrors(data) {
                     newScore = parseInt(element[0]);
                     const flagDate = (new Date(element[2]).getTime() >= newDate);
                     newDate = new Date(element[2]).getTime();
-                    if (!flagScore || !flagDate) {console.error(`Error: Score before ${newScore} from ${element[1]} shot ${key2} is incorrect`)}
+                    if (!flagScore || !flagDate) { console.error(`Error: Score before ${newScore} from ${element[1]} shot ${key2} is incorrect`) }
                 })
             }
         }
@@ -860,4 +1002,4 @@ export function frequencyList(arr) {
         }
     }
     return result;
-  }
+}

@@ -10,25 +10,25 @@
     --chart-height: 420px;
 }
 
-#wr-difficulty-buttons {
+.toggle-buttons {
     font-family: var(--ff-primary);
     display: grid;
     grid-auto-flow: column;
 }
 
-#wr-difficulty-buttons button {
+.toggle-buttons button {
     font-weight: var(--fw-semi-bold);
     border: 1px var(--clr-default) solid;
     color: var(--clr-default);
     transition: all 0.2s linear;
 }
 
-#wr-difficulty-buttons button:hover {
+.toggle-buttons button:hover {
     background-color: var(--clr-default);
     color: var(--clr-text-normal);
 }
 
-#wr-difficulty-buttons .selected-full {
+.toggle-buttons .selected-full {
     background-color: var(--clr-default);
     color: var(--clr-text-normal);
 }
@@ -38,7 +38,8 @@
 }
 
 #wr-game-buttons {
-    --game-count: 19;
+    /* --game-count: 19; */
+    --game-count: 13;
     display: grid;
     grid-template-columns: repeat(var(--game-count), 1fr);
     grid-auto-flow: row;
@@ -221,7 +222,7 @@
         grid-template-columns: repeat(2, 1fr) !important;
         grid-auto-flow: column !important;
     }
-    #wr-difficulty-buttons {
+    .toggle-buttons {
         grid-auto-flow: row;
     }
 }

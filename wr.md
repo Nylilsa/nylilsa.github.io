@@ -11,6 +11,7 @@ A comprehensive Touhou world records tracker, updated every so often. This page 
 3. [a=https://wikiwiki.jp/thscorekg/]東方スコア記録wiki Wiki*[/a] - by Ｋ・Ｇ
 4. [a=http://replay.lunarcast.net/]LunarCast Replay Database[/a] - by Tom
 5. [a=https://thscore.pndsng.com/index.php]裏スコボみたいなメモ書き[/a] - by pndsng
+6. [a=https://www.puresign.tokyo/index.html]けーろだ　-K- Uploader[/a] - by Yumiya
 
 If there are any inaccuracies on this page, please contact me on Discord (at ``Nylilsa#9310``) about it !
 
@@ -19,7 +20,7 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
 
 
 <div id="wr-game-buttons">
-    <button href="#/wr/th01" data-game="th01" class="card-game">
+    <!-- <button href="#/wr/th01" data-game="th01" class="card-game">
         <div class="card-bg-image"></div>
         <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
@@ -53,7 +54,7 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
-    </button>
+    </button> -->
     <button href="#/wr/th06" data-game="th06" class="card-game">
         <div class="card-bg-image"></div>
         <span class="card-centered-text"></span>
@@ -75,13 +76,13 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
     </button>
-    <button href="#/wr/th09" data-game="th09" class="card-game">
+    <!-- <button href="#/wr/th09" data-game="th09" class="card-game">
         <div class="card-bg-image"></div>
         <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
-    </button>
+    </button> -->
     <button href="#/wr/th10" data-game="th10" class="card-game">
         <div class="card-bg-image"></div>
         <span class="card-centered-text"></span>
@@ -158,7 +159,8 @@ If there are any inaccuracies on this page, please contact me on Discord (at ``N
 
 ## Chart & Tables
 [hr_major]
-<div id="wr-difficulty-buttons"></div>
+<div id="wr-toggle-switch" class="toggle-buttons" style="margin-bottom: 1em"></div>
+<div id="wr-difficulty-buttons" class="toggle-buttons"></div>
 [br]
 
 <div id="wr-chart-wrapper"></div>
