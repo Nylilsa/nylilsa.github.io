@@ -53,8 +53,8 @@ export function callChartJS(fetchedData, gameCharacters, englishName, difficulty
     for (let i = 0; i < fetchedData.length; i++) {
         const arr = [];
         fetchedData[i].forEach(subelement => {
-            const dateObject = subelement[2].replaceAll("/", "-");
-            arr.push(new Points(dateObject, subelement[0], subelement[1]))
+            const dateObject = subelement.date.replaceAll("/", "-");
+            arr.push(new Points(dateObject, subelement.score, subelement.name))
         });
         const character = gameCharacters[fetchedData.indexOf(fetchedData[i])];
         const playerData = new Data(arr, character, colors[i], colorsWithOpacity[i]);
@@ -488,7 +488,7 @@ export function loadCanvas(game, difficulty = "Lunatic", func) {
         const wrData = hidesUnverified ? mergeEntries(verified) : mergeEntries(verified, unverified) ?? mergeEntries(verified);
         gameCharacters.forEach(char => {
             const history = wrData[difficulty][char];
-            const maxScoreOfShot = history.length == 0 ? 0 : history[history.length - 1][0];
+            const maxScoreOfShot = history.length == 0 ? 0 : history[history.length - 1].score;
             maxValue.push(maxScoreOfShot);
             fetchedData.push(history);
         })
@@ -513,12 +513,13 @@ export function mergeEntries(verified, unverified) {
             const unverifiedEntry = unverified?.[difficulty]?.[character] ?? [];
             // this is to distinct unverified from verified entries when they have been merged
             unverifiedEntry.forEach(entry => {
-                entry.push({
-                    "isUnverified": true
-                });
+                // entry.push({
+                //     "isUnverified": true
+                // });
+                entry.isUnverified = true;
             })
             const total = [...verifiedEntry, ...unverifiedEntry];
-            total.sort((a, b) => new Date(a[2]) - new Date(b[2])); // sort by date
+            total.sort((a, b) => new Date(a.date) - new Date(b.date)); // sort by date
             reduceByScore(total);
             output[difficulty][`${character}`] = total;
         })
@@ -530,8 +531,8 @@ export function reduceByScore(arr) {
     let highest = 0;
     let removedElements = [];
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i][0] > highest) {
-            highest = arr[i][0];
+        if (arr[i].score > highest) {
+            highest = arr[i].score;
         } else {
             removedElements.push(arr[i]);
             arr.splice(i, 1);
@@ -549,12 +550,12 @@ export function removeInvalidEntries(data) {
             const entry = data[difficulty][character];
             let previousEntry;
             for (let i = 0; i < entry.length; i++) {
-                const flagScore = (parseInt(entry[i][0]) >= newScore);
-                newScore = parseInt(entry[i][0]);
-                const flagDate = (new Date(entry[i][2]).getTime() >= newDate);
-                newDate = new Date(entry[i][2]).getTime();
+                const flagScore = (parseInt(entry[i].score) >= newScore);
+                newScore = parseInt(entry[i].score);
+                const flagDate = (new Date(entry[i].date).getTime() >= newDate);
+                newDate = new Date(entry[i].date).getTime();
                 if (!flagScore || !flagDate) {
-                    console.error(`Error: Score ${previousEntry[0]} from ${previousEntry[1]} shot ${character} is incorrect`)
+                    console.error(`Error: Score ${previousEntry.score} from ${previousEntry.id} shot ${character} is incorrect`)
                     entry.splice(i - 1, 1); // removes entry of previousEntry from array;
                     i--; // makes sure i value is not updated
                 }
@@ -626,8 +627,8 @@ export function createDropdown(dataWR) {
                 });
             });
             selectedEntries.sort((entry1, entry2) => {
-                const date1 = new Date(entry1[2]);
-                const date2 = new Date(entry2[2]);
+                const date1 = new Date(entry1.date);
+                const date2 = new Date(entry2.date);
                 return date2 - date1;
             });
             const table = document.createElement("table");
@@ -901,8 +902,8 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
         for (let j = 0; j < data[i].length; j++) { // rows
             let row = document.createElement("tr");
             const index = Math.abs(j - reverse);
-            const [score, player, date, fourth] = data[i][index];
-            const isUnverified = fourth?.["isUnverified"] ?? false;
+            const {score, name, date, isUnverified} = data[i][index];
+            // const isUnverified = isUnverified?.["isUnverified"] ?? false;
             styleUnverified(isUnverified, row);
             const dateFormatted = dateFormat(date);
             const nextScore = data[i][index - 1]?.[0] ?? 0;
@@ -944,7 +945,7 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
                             cellText = document.createTextNode(`${scoreWithCommas}`);
                         }
                         break; }
-                    case 4: { cellText = document.createTextNode(`${player}`); break; }
+                    case 4: { cellText = document.createTextNode(`${name}`); break; }
                     case 5: { cellText = document.createTextNode(`${dateFormatted}`); break; }
                     case 6: { cellText = document.createTextNode(`+${scoreDifference}`); break; }
                     default: { console.error(`Oops, something went wrong.`) }
