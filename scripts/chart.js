@@ -510,7 +510,13 @@ function addNamesToData(data, playerData) {
         characters.forEach((character) => {
             const entries = data[difficulty][character];
             entries.forEach(entry => {
-                const en = playerData[entry.id]?.name_en ?? "NO NAME"; //fallback
+                let en;
+                if (playerData[entry.id]?.name_en === undefined) {
+                    en = "NO NAME";
+                    console.error(`The id ${entry.id} does not exist`)
+                } else {
+                    en = playerData[entry.id]?.name_en;
+                }
                 const jp = playerData[entry.id]?.name_jp;
                 if (jp === undefined || jp === "") {
                     entry.name = en;
