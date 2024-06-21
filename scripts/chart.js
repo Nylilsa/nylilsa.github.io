@@ -1,6 +1,6 @@
 "use strict";
 
-export class Points {
+class Points {
     constructor(date, score, player) {
         this.x = date;
         this.y = score;
@@ -8,7 +8,7 @@ export class Points {
     }
 }
 
-export class Data {
+class Data {
     constructor(data, label, color, colorsWithOpacity) {
         let length;
         this.radius = 3.5;
@@ -32,7 +32,7 @@ export class Data {
     }
 }
 
-export function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func) {
+function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func) {
     const cond = (game != "th16" && game != "th128") || difficulty == 'Extra';
     const colors = cond ? colorsForChart[game]['colors'] : colorsForChart[`${game}other`]['colors'];
     const colorsWithOpacity = colors.map(color => {
@@ -159,7 +159,7 @@ export function callChartJS(fetchedData, gameCharacters, englishName, difficulty
     });
 }
 
-export function toggleLegend(chart, items, game, difficulty) {
+function toggleLegend(chart, items, game, difficulty) {
     const top = document.getElementById("legend-toggle-all");
     const li = document.createElement('li');
     const flag = top.classList.contains("show-function");
@@ -214,7 +214,7 @@ export function toggleLegend(chart, items, game, difficulty) {
     }
 }
 
-export function extraLegendButtons(top, game, items, chart) {
+function extraLegendButtons(top, game, items, chart) {
     let sub;
     let n;
     let colors;
@@ -294,7 +294,7 @@ export function extraLegendButtons(top, game, items, chart) {
     }
 }
 
-export function runOnce() {
+function runOnce() {
     let hasRun = false;
     return function (func) {
         if (!hasRun) {
@@ -304,7 +304,7 @@ export function runOnce() {
     };
 }
 
-export function createLegend(chart, args, options, gameCharacters, colors, game, difficulty, runOnlyOnce) {
+function createLegend(chart, args, options, gameCharacters, colors, game, difficulty, runOnlyOnce) {
     const deselected = JSON.parse(sessionStorage.selected)
     const ul = getOrCreateLegendList(game, options.containerID, gameCharacters);
     while (ul.firstChild) {
@@ -376,7 +376,7 @@ export function createLegend(chart, args, options, gameCharacters, colors, game,
     }
 }
 
-export function getOrCreateLegendList(game, id, gameCharacters) {
+function getOrCreateLegendList(game, id, gameCharacters) {
     const legendContainer = document.getElementById(id);
     let listContainer = legendContainer.querySelector('ul');
     let computedCharacters = (100 / gameCharacters.length) + '%';
@@ -397,7 +397,7 @@ export function getOrCreateLegendList(game, id, gameCharacters) {
     return listContainer;
 }
 
-export function gridLegend(element, value) {
+function gridLegend(element, value) {
     element.style.display = 'grid';
     element.style.justifyItems = 'stretch';
     element.style.justifyContent = 'center';
@@ -405,7 +405,7 @@ export function gridLegend(element, value) {
     element.style.padding = `0`;
 }
 
-export function roundedTicks(value, game) {
+function roundedTicks(value, game) {
     const largeNumbers = {
         "Millions": {
             "number": 1e6,
@@ -464,7 +464,7 @@ function fetchData(url) {
         });
 }
 
-export function loadCanvas(game, difficulty = "Lunatic", func) {
+function loadCanvas(game, difficulty = "Lunatic", func) {
     const twoYears = 63072000000;
     const now = new Date().getTime();
     let fetchedData = [];
@@ -472,8 +472,8 @@ export function loadCanvas(game, difficulty = "Lunatic", func) {
         fetchData('json/gameinfo.json'),
         fetchData(`json/wr/unverified/${game}.json`),
         fetchData(`json/wr/verified/${game}.json`),
-        fetchData(`json/wrprogression.json`)
-    ]).then(([data, unverified, verified, dataWR]) => {
+        fetchData(`json/players.json`)
+    ]).then(([data, unverified, verified, allPlayerData]) => {
         const englishName = data['Names'][game]['en'];
         const releaseDate = new Date(data['LatestReleaseDate'][game]).getTime();
         const time = releaseDate > now - twoYears ? 'month' : 'year';
@@ -486,6 +486,7 @@ export function loadCanvas(game, difficulty = "Lunatic", func) {
         const maxValue = [];
         const hidesUnverified = JSON.parse(localStorage.hideUnverified);
         const wrData = hidesUnverified ? mergeEntries(verified) : mergeEntries(verified, unverified) ?? mergeEntries(verified);
+        addNamesToData(wrData, allPlayerData);
         gameCharacters.forEach(char => {
             const history = wrData[difficulty][char];
             const maxScoreOfShot = history.length == 0 ? 0 : history[history.length - 1].score;
@@ -502,7 +503,27 @@ export function loadCanvas(game, difficulty = "Lunatic", func) {
     return;
 }
 
-export function mergeEntries(verified, unverified) {
+function addNamesToData(data, playerData) {
+    const difficulties = Object.keys(data);
+    difficulties.forEach((difficulty) => {
+        const characters = Object.keys(data[difficulty]);
+        characters.forEach((character) => {
+            const entries = data[difficulty][character];
+            entries.forEach(entry => {
+                const en = playerData[entry.id]?.name_en ?? "NO NAME"; //fallback
+                const jp = playerData[entry.id]?.name_jp;
+                if (jp === undefined || jp === "") {
+                    entry.name = en;
+                } else {
+                    entry.name = `${jp} (${en})`;
+                }
+            })
+
+        })
+    })
+}
+
+function mergeEntries(verified, unverified) {
     const output = {};
     const difficulties = Object.keys(verified);
     difficulties.forEach((difficulty) => {
@@ -527,7 +548,7 @@ export function mergeEntries(verified, unverified) {
     return removeInvalidEntries(output);
 }
 
-export function reduceByScore(arr) {
+function reduceByScore(arr) {
     let highest = 0;
     let removedElements = [];
     for (let i = 0; i < arr.length; i++) {
@@ -542,7 +563,7 @@ export function reduceByScore(arr) {
     return removedElements;
 }
 
-export function removeInvalidEntries(data) {
+function removeInvalidEntries(data) {
     Object.keys(data).forEach((difficulty) => {
         Object.keys(data[difficulty]).forEach((character) => {
             let newScore = 0;
@@ -566,7 +587,7 @@ export function removeInvalidEntries(data) {
     return data;
 }
 
-export function createDropdown(dataWR) {
+function createDropdown(dataWR) {
     const dropdown = document.getElementById('nameDropdown');
     const scoresTable = document.getElementById('scoresTable');
     const scoreInfo = document.getElementById('scoreInfo');
@@ -683,12 +704,12 @@ export function createDropdown(dataWR) {
     }
 }
 
-export function styleUnverified(isUnverified, row) {
+function styleUnverified(isUnverified, row) {
     if (!isUnverified) { return; }
     // row.style.color = "var(--clr-default)";
 }
 
-export function styleToggleSwitch(game) {
+function styleToggleSwitch(game) {
     const selector = document.getElementById("wr-toggle-switch");
     const options = ["Show unverified records", "Hide unverified records"];
     const ids = ["show-unverified", "hide-unverified"];
@@ -721,7 +742,7 @@ export function styleToggleSwitch(game) {
     }
 }
 
-export function getDifficultyFromButtons() {
+function getDifficultyFromButtons() {
     const diffSelector = document.getElementById("wr-difficulty-buttons");
     let output;
     diffSelector.childNodes.forEach((child) => {
@@ -732,7 +753,7 @@ export function getDifficultyFromButtons() {
     return output;
 }
 
-export function styleGameDifficultyButtons(allDifficulties, game) {
+function styleGameDifficultyButtons(allDifficulties, game) {
     const diffSelector = document.getElementById("wr-difficulty-buttons");
     allDifficulties.forEach(difficulty => {
         const createButton = document.createElement("button");
@@ -758,7 +779,7 @@ export function styleGameDifficultyButtons(allDifficulties, game) {
     });
 }
 
-export function styleGameSelectorButtons(game) {
+function styleGameSelectorButtons(game) {
     const parent = document.getElementsByClassName("card-game");
     for (let i = 0; i < parent.length; i++) {
         const button = parent[i];
@@ -780,12 +801,12 @@ export function styleGameSelectorButtons(game) {
     const array = ['th06', 'th07', 'th08', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'];
     const width = selector.scrollWidth;
     const index = array.indexOf(game);
-    const max = array.length; 
+    const max = array.length;
     const number = index / max * width;
     selector.scrollLeft = number;
 }
 
-export function setButtonLogic(id) {
+function setButtonLogic(id) {
     const button = document.getElementById(id);
     button.addEventListener("click", selectGame);
     function selectGame() {
@@ -805,7 +826,7 @@ export function setButtonLogic(id) {
     }
 }
 
-export function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty) {
+function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty) {
     const section = document.getElementById("wr-table-buttons");
     while (section.children.length > 0) { // removes old and allows for new to be generated
         section.removeChild(section.children[0]);
@@ -878,7 +899,7 @@ export function generateWRButtons(gameCharacters, game, overallWRCharacter, diff
     }
 }
 
-export function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficulty, flag = true) {
+function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficulty, flag = true) {
     const section = document.getElementById("wr-tables");
     const length = section.children.length;
     if (length > 0) { // removes old and allows for new to be generated
@@ -902,7 +923,7 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
         for (let j = 0; j < data[i].length; j++) { // rows
             let row = document.createElement("tr");
             const index = Math.abs(j - reverse);
-            const {score, name, date, isUnverified} = data[i][index];
+            const { score, name, date, isUnverified } = data[i][index];
             // const isUnverified = isUnverified?.["isUnverified"] ?? false;
             styleUnverified(isUnverified, row);
             const dateFormatted = dateFormat(date);
@@ -944,7 +965,8 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
                         } else {
                             cellText = document.createTextNode(`${scoreWithCommas}`);
                         }
-                        break; }
+                        break;
+                    }
                     case 4: { cellText = document.createTextNode(`${name}`); break; }
                     case 5: { cellText = document.createTextNode(`${dateFormatted}`); break; }
                     case 6: { cellText = document.createTextNode(`+${scoreDifference}`); break; }
@@ -960,7 +982,7 @@ export function generateWRTable(data, gameCharacters, game, overallWRCharacter, 
     }
 }
 
-export function catchErrors(data) {
+function catchErrors(data) {
     console.time("Time");
     let [a, b, c, d, e] = [[], [], [], [], []];
     for (const [key, valueee] of Object.entries(data)) {
@@ -992,7 +1014,7 @@ export function catchErrors(data) {
     console.timeEnd("Time");
 }
 
-export function frequencyList(arr) {
+function frequencyList(arr) {
     const result = {};
     for (const item of arr) {
         if (result[item]) {
