@@ -964,6 +964,7 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
                     case 3: {
                         if (!isUnverified) {
                             cellText = document.createElement(`a`);
+                            cellText.target = '_blank';
                             let text = scoreWithCommas;
                             cellText.innerText = text;
                             cellText.classList.add("url");
