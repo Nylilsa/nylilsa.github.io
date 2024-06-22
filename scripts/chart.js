@@ -933,7 +933,7 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
             // const isUnverified = isUnverified?.["isUnverified"] ?? false;
             styleUnverified(isUnverified, row);
             const dateFormatted = dateFormat(date);
-            const nextScore = data[i][index - 1]?.[0] ?? 0;
+            const nextScore = data[i][index - 1]?.score ?? 0;
             const scoreDifference = (score - nextScore).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             let scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             if (j == 0) { // header column
