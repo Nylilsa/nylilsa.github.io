@@ -1,6 +1,7 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 @import url(defaults.css);
 :root {
+  color-scheme: dark;
   --ff-primary: 'Poppins', sans-serif;
   --ff-sans: sans-serif, Helvetica, Arial;
   --ff-mono: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
