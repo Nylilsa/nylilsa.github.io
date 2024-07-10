@@ -56,7 +56,7 @@ async function loadMarkdown(path) { //loads page
 	}
 }
 
-function colorHex(input = getGameFromURL()) {
+function colorHex(input) {
     const def = getComputedStyle(document.documentElement).getPropertyValue('--clr-default');
 	return gameColors[input] || def || "#47748b";
 }
