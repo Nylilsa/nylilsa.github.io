@@ -499,7 +499,6 @@ function loadCanvas(game, difficulty = "Lunatic", func) {
         callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func);
         // createDropdown(wrData);
     })
-    // catchErrors(dataWR);
     return;
 }
 
@@ -987,48 +986,4 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
             section.appendChild(table);
         }
     }
-}
-
-function catchErrors(data) {
-    console.time("Time");
-    let [a, b, c, d, e] = [[], [], [], [], []];
-    for (const [key, valueee] of Object.entries(data)) {
-        for (const [key3, value] of Object.entries(valueee)) { // cycles through all categories
-            for (const [key2, value2] of Object.entries(value)) { // cycles through all shots of category
-                let newScore = 0;
-                let newDate = 0;
-                value2.forEach(element => { //wr entry of shot
-                    a.push(key + key3 + key2)
-                    b.push(element[1])
-                    c.push(element[2])
-                    d.push(element[0])
-                    e.push(key)
-                    const flagScore = (parseInt(element[0]) >= newScore);
-                    newScore = parseInt(element[0]);
-                    const flagDate = (new Date(element[2]).getTime() >= newDate);
-                    newDate = new Date(element[2]).getTime();
-                    if (!flagScore || !flagDate) { console.error(`Error: Score before ${newScore} from ${element[1]} shot ${key2} is incorrect`) }
-                })
-            }
-        }
-    }
-    console.log(mode(a));
-    console.log(mode(b));
-    console.log(mode(c));
-    console.log(mode(d));
-    console.log(frequencyList(e));
-    console.log(a.length);
-    console.timeEnd("Time");
-}
-
-function frequencyList(arr) {
-    const result = {};
-    for (const item of arr) {
-        if (result[item]) {
-            result[item]++;
-        } else {
-            result[item] = 1;
-        }
-    }
-    return result;
 }

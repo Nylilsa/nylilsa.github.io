@@ -89,16 +89,6 @@ function colorRGB(add, opacity, game) {
 	return "rgba("+rDec+", "+gDec+ ", "+bDec+", "+opacity+")";
 }
 
-function getGameFromURL() {
-	const url = window.location.hash; // is #/bugs/th18/0
-	let gameName;
-    const tagsCheck = /tags/g.test(url);
-	if (url.slice(0, 6) === "#/bugs" && !tagsCheck) {
-		gameName = /\#\/bugs\/(.*?)\//i.exec(url)[1]; // ddc
-	}
-	return gameName;
-}
-
 function setWindowTitleDirect(str) {
 	document.title = str;
 }
