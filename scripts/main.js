@@ -1,10 +1,11 @@
 "use strict";
 
+let isEclListenedAdded = false;
 let loadingPromise = null; // Promise to track the loading state.
 let eclJson = null;
 let eclJsonId = 0;
 let citeId = 0;
-let MD = new showdown.Converter({
+const MD = new showdown.Converter({
 	extensions: [ext],
 	noHeaderId: false,
 	openLinksInNewWindow: true,
@@ -258,7 +259,8 @@ function checkElementResize(self) {
 }
 
 async function replaceEclIns(type, n, id) {
-    if (eclJsonId < 2) {
+    if (!isEclListenedAdded) {
+        isEclListenedAdded = true;
         document.body.addEventListener("mouseover", (event) => {
             const visible = document.querySelectorAll(".visible");
             let [tip, targ] = getTip(event.target, "tooltip");
@@ -269,7 +271,6 @@ async function replaceEclIns(type, n, id) {
                 checkElementResize(targ.firstElementChild);
             }
         })
-
     }
     await loadJsonData("json/ecl.json");
     const map = ["Instructions", "Globals", "Custom"];
@@ -355,43 +356,6 @@ function setTheme(theme) {
     initCustomColor();
     localStorage.selectedTheme = theme;
 }
-
-
-///////////////////// DEBUG /////////////////////
-
-function debug() {
-    const text = '## hello, **markdown**!',
-    html = MD.makeHtml(text);
-	console.log(html);
-}
-
-function mode(array) {
-    if(array.length == 0)
-        return null;
-    let modeMap = {};
-    let maxEl = array[0], maxCount = 1;
-    for(let i = 0; i < array.length; i++) {
-        let el = array[i];
-        if(modeMap[el] == null)
-            modeMap[el] = 1;
-        else
-            modeMap[el]++;  
-        if(modeMap[el] > maxCount) {
-            maxEl = el;
-            maxCount = modeMap[el];
-        }
-    }
-    return [maxEl, maxCount];
-}
-
-async function checkFileExists(fileUrl) {
-    try {
-        const response = await fetch(fileUrl);
-        return response.status === 200;
-    } catch (error) {
-        return false;
-    }
-  }
 
 ///////////////////// INIT /////////////////////
 
