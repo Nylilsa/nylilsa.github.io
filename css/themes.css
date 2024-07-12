@@ -18,7 +18,9 @@
     --clr-text-code: var(--clr-light-saturated-10);
     --clr-text-key: var(--clr-light-saturated-shift-8);
     
-    --clr-hr: var(--clr-dark-grey);
+    --clr-hr-minor: var(--clr-dark-grey);
+    --clr-hr-major: var(--clr-default);
+    --clr-box: var(--clr-default);
     --clr-border-main: var(--clr-dark-grey);
     
     --clr-background-highlighted: var(--clr-dark-saturated-shift-2);

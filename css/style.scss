@@ -86,7 +86,7 @@ h6 {
     transition-timing-function: ease-in-out;
     transition-duration: var(--time-animation);
     background-color: var(--clr-background-element);
-    border-bottom: 1px solid var(--clr-background-element);
+    border-bottom: 1px solid var(--clr-box);
     z-index: var(--z-header);
 }
 
@@ -243,8 +243,12 @@ hr {
     border-top: 1px solid rgba(0,0,0,.1);
 }
 
+.hr_major {
+    border-color: var(--clr-hr-major);
+}
+
 .hr_minor {
-    border-color: var(--clr-hr);
+    border-color: var(--clr-hr-minor);
 }
 
 .toc {
@@ -361,7 +365,7 @@ tr {
     padding-block: 8px;
     padding-inline-start: 12px;
     border-radius: 0px;
-    border-color: var(--clr-default);
+    border-color: var(--clr-box);
     border-width: 1px;
     border-style: solid;
     margin-block: 10px;
