@@ -60,23 +60,6 @@ let ext = function() {
 		replace: "<div class='$1'>$2</div>"
 	}
 
-	let html = {
-		type: "lang",
-		regex: /\[html\]([^]*?)\[\/html\]/g,
-		replace: "$1"
-	}
-
-	let script = {
-		type: "lang",
-		regex: /\[script\]([^]*?)\[\/script\]/g,
-		replace: function(match, content) {
-			const $script = document.createElement("script");
-			$script.innerHTML = content;
-			$scriptContent.appendChild($script);
-			return "";
-		}
-	}
-
 	let tip = {
 		type: "lang",
 		regex: /\[tip=(.*?)\]([^]*?)\[\/tip\]/g,
@@ -309,5 +292,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [hr_major, hr_minor, hr_custom, br, img, img_small, code, title, c, html, script, tip, video, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, match, scenes, check, cross];
+	return [hr_major, hr_minor, hr_custom, br, img, img_small, code, title, c, tip, video, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, match, scenes, check, cross];
 }
