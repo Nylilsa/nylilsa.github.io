@@ -1,7 +1,5 @@
 "use strict";
 
-let loadingPromise = null; // Promise to track the loading state.
-let eclJson = null;
 let eclJsonId = 0;
 let citeId = 0;
 let MD = new showdown.Converter({
@@ -16,8 +14,7 @@ let MD = new showdown.Converter({
 async function checkBugPath(path) {
     const check = path.slice(0, 5);
     if (check !== "bugs/") {return path}
-    const response = await fetch('json/glitch-tree.json');
-    const data = await response.json();
+    const data = await fetchData("json/glitch-tree.json");
     const game = path.split("/")[1];
     const longName = path.split("/")[2].replace(".md", "");
     for (const key in data[game]) {
@@ -144,10 +141,27 @@ async function fillCite(id, key, citingFunction) {
     document.querySelector(`#cite-${id}`).innerHTML = cite;
 }
 
+const fetchData = (() => {
+    const cache = new Map();
+    const fetchPromises = new Map();
+    return async (path) => {
+        if (!cache.has(path)) {
+            if (!fetchPromises.has(path)) {
+                fetchPromises.set(path, fetch(path)
+                    .then(response => response.json())
+                    .then(data => {
+                        cache.set(path, data);
+                        return data;
+                    }));
+            }
+            return fetchPromises.get(path);
+        }
+        return cache.get(path);
+    };
+})();
+
 async function videoFunction(key) {
-    const webdata = await fetch('json/webdata.json')
-    .then((response) => response.json())
-    .then(data => {return data});
+    const webdata = await fetchData("json/webdata.json");
 	const content = webdata["Citations"][key];
 	let datum;
 	const intl = "en-US";
@@ -162,9 +176,7 @@ async function videoFunction(key) {
 }
 
 async function replayFunction(key) {
-    const webdata = await fetch('json/webdata.json')
-    .then((response) => response.json())
-    .then(data => {return data});
+    const webdata = await fetchData("json/webdata.json");
 	const content = webdata["Replays"][key];
 	const datum = dateFormat(content.date);
 	return citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, content.url, content.note);
@@ -214,26 +226,6 @@ function showNavbarChildren() { //toggles all elements in navbar of Bugs if clic
     }
 }
 
-async function loadJsonData(str) {
-    if (eclJson !== null) {
-        return eclJson;
-    }
-    if (loadingPromise !== null) {
-        await loadingPromise;
-        return eclJson;
-    }
-    // If eclJson is null and no loading operation is in progress, initiate a new one.
-    loadingPromise = fetch(str)
-    .then((response) => response.json())
-    .then((data) => {
-            eclJson = data;
-            loadingPromise = null; // Reset the loading promise.
-            return data;
-        })
-    return loadingPromise;
-}
-
-
 function checkElementResize(self) {
     const tooltips = self ? [self] : document.querySelectorAll(".tooltip");
     tooltips.forEach((tooltip) => {
@@ -258,7 +250,7 @@ function checkElementResize(self) {
 }
 
 async function replaceEclIns(type, n, id) {
-    if (eclJsonId < 2) {
+    if (eclJsonId < 2) { // called once
         document.body.addEventListener("mouseover", (event) => {
             const visible = document.querySelectorAll(".visible");
             let [tip, targ] = getTip(event.target, "tooltip");
@@ -269,12 +261,11 @@ async function replaceEclIns(type, n, id) {
                 checkElementResize(targ.firstElementChild);
             }
         })
-
     }
-    await loadJsonData("json/ecl.json");
+    const data = await fetchData("json/ecl.json");
     const map = ["Instructions", "Globals", "Custom"];
     const ins = map[type];
-    const obj = eclJson[ins][n];
+    const obj = data[ins][n];
     const name = obj["Name"];
     const div = document.createElement('div');
     const el = document.querySelector(`#ecl-cite-${id}`);
@@ -418,8 +409,7 @@ function initSidebarThemes(colDecrease) {
 
 async function initSidebarGlitches(colDecrease) {
     try {
-        const response = await fetch('json/glitch-tree.json');
-        const data = await response.json();
+        const data = await fetchData("json/glitch-tree.json");
         const identifiers = document.querySelectorAll("#page-bugs li ul");
         const header = document.querySelectorAll("#page-bugs li button");
         for (let i = 0; i < identifiers.length; i++) { // does it games.length times

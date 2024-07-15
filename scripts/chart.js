@@ -454,16 +454,6 @@ export function initCanvas(gameID, difficulty) {
         });
 }
 
-function fetchData(url) {
-    return fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to fetch ${url}. Status: ${response.status}`);
-            }
-            return response.json();
-        });
-}
-
 function loadCanvas(game, difficulty = "Lunatic", func) {
     const twoYears = 63072000000;
     const now = new Date().getTime();
