@@ -257,8 +257,6 @@ code {
   font-family: var(--ff-mono);
   color: var(--clr-text-code);
   background-color: var(--clr-background-highlighted-text); }
-  code:not(.code) {
-    font-size: var(--fs-400); }
 
 .icon-text {
   aspect-ratio: 1 / 1;
