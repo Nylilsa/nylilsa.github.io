@@ -176,6 +176,18 @@
             "Name": "GAME_SPEED",
             "Description": "The value controls by how much faster the game speed is run. This variable is often set to a number between 0 and 1. This value is often changed when a (final) boss dies or when a photo is taken. Its default value is 1.",
             "Type": "float"
+        },
+        "270": {
+            "Name": "enmCreate270",
+            "Parameters": [
+                {"sub": "string"},
+                {"x": "float"},
+                {"y": "float"},
+                {"hp": "int"},
+                {"score": "int"},
+                {"item": "int"}
+            ],
+            "Description": "Creates an enemy using subroutine $1 at coordinates ($2, $3) (relative to position of the stage background camera), health of created enemy is $4, score bonus is $5 and item drop is $6."
         }
     }
 }
