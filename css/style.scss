@@ -344,7 +344,9 @@ tr {
 
 .key {
     font-weight: var(--fw-bold);
-    color: var(--clr-text-key);
+    outline-width: 1px;
+    outline-color: var(--clr-default);
+    outline-style: solid;
 }
 
 .fit-image {
