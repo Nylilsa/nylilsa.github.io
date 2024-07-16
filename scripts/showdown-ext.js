@@ -75,19 +75,19 @@ let ext = function() {
 	let yes = {
 		type: "lang",
 		regex: /\[yes\]([^]*?)\[\/yes\]/g,
-		replace: "<span style='color:#14d914'>$1</span>"
+		replace: "<span><img src='/assets/green-check-mark.svg' class='icon-text'>$1</span>"
 	}
 
 	let unknown = {
 		type: "lang",
 		regex: /\[unknown\]([^]*?)\[\/unknown\]/g,
-		replace: "<span style='color:#888888'>$1?</span>"
+		replace: "<span class='unknown'><img src='/assets/question-mark.svg' class='icon-text'>$1</span>"
 	}
 
 	let no = {
 		type: "lang",
 		regex: /\[no\]([^]*?)\[\/no\]/g,
-		replace: "<span style='color:#c91010'>~~$1~~</span>"
+		replace: "<span><img src='/assets/red-cross.svg' class='icon-text'>~~$1~~</span>"
 	}
 
 	let specs = {
