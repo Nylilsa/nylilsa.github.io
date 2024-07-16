@@ -45,8 +45,8 @@ This guide is separated into two parts: the gameplay mechanics part and the rout
 	<li>[jumpto=#/guides/th15-maingame-score#recommendedstartingscores]Recommended starting scores[/jumpto]</li>
 	<li>[jumpto=#/guides/th15-maingame-score#stage1]Stage 1[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s1c3]First midnon[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s1c3]Second midnon[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s1c3]First mid-non[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s1c3]Second mid-non[/jumpto]</li>
 		</ol>
 	</li>
 	<li>[jumpto=#/guides/th15-maingame-score#seiran]Seiran[/jumpto]
@@ -57,7 +57,7 @@ This guide is separated into two parts: the gameplay mechanics part and the rout
 	</li>
 	<li>[jumpto=#/guides/th15-maingame-score#stage2]Stage 2[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s2c4]Ringo midnon[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s2c4]Ringo mid-non[/jumpto]</li>
 		</ol>
 	</li>
 	<li>[jumpto=#/guides/th15-maingame-score#ringo]Ringo[/jumpto]
@@ -316,12 +316,12 @@ Also For stage chapters I won’t be counting midboss attacks as numbered chapte
 LoLK Stage 1 is quite infamous in a scoring setting. Thankfully this stage has so little gains that it’s not really necessary to learn any of the harder grazing strategies. 
 In general you want to try and get every life piece if you can as well as try to increase your PIV. The life piece after Seiran’s 2nd midboss is quite tricky. For now though, it’s not an issue to miss it. You could honestly ignore this entire stage and just do whatever gets your life pieces if you want. I will simply be showing the easier grazes for it.
 
-<h5 id='s1c3'>First midnon</h5>
+<h5 id='s1c3'>First mid-non</h5>
 Start on her side and when the bullets start shooting, move up to above her then bomb/deathbomb. Repeat this every wave. You actually gain more graze on the waves without shields on this pattern funny enough. Perfect first wave gets you 666 graze. You’ll spend an entire bomb and 2 extra shields from a 2nd bomb. Aim for 3,000+ graze.
 *video example*
 
-<h5 id='s1c5'>Second midnon</h5>
-Sit above Seiran and misdirect the triangle of gun bullets to the side. She always shoots 1 set on odd waves and 2 sets on even waves. A perfect midnon 2 would be 3,600 graze
+<h5 id='s1c5'>Second mid-non</h5>
+Sit above Seiran and misdirect the triangle of gun bullets to the side. She always shoots 1 set on odd waves and 2 sets on even waves. A perfect mid-non 2 would be 3,600 graze
 Also for Speed Strike, use the n in Shooting Down to graze the first wave of the spell. Just shoot it down.
 *video example?*
  
@@ -347,8 +347,8 @@ Stage Goal
 
 Stage 2 is a fairly straightforward stage. Most of it is just moving back and forth, killing the spirit waves while getting enough graze for the life piece.
 
-<h5 id='s1c4'>Ringo midnon</h5>
-Get your 200 graze and Speedkill the midnon for the extra fairies after. You’ll want to try and graze those.
+<h5 id='s1c4'>Ringo mid-non</h5>
+Get your 200 graze and Speedkill the mid-non for the extra fairies after. You’ll want to try and graze those.
 
 #### Ringo
 [hr_minor]
@@ -383,7 +383,7 @@ You’ll have very low resources and basically no power entering this stage. Lik
 Some routes suicide for this life piece. 
 
 <h5 id='s3c4'>Doremy mid-boss</h5>
-You’ll want to speedkill both Doremy’s non and spell. This unfortunately means you’re probably not getting the life piece from the midnon unless you leave some of the purple fairies alive at the end of Chapter 3.
+You’ll want to speedkill both Doremy’s non and spell. This unfortunately means you’re probably not getting the life piece from the mid-non unless you leave some of the purple fairies alive at the end of Chapter 3.
 
 #### Doremy
 [hr_minor]
@@ -419,7 +419,7 @@ Similar to Stage 3 Chapter 1, you’ll most likely be out of bombs. You’ll nee
 wip
 
 <h5 id='s4c4'>Sagume mid-boss</h5>
-There’s a safespot for this midnon. Move to her left before she spawns the YinYangs then move back down. Breaking a shield here is fine, just make sure you get the 200 graze. You want to speedkill this midnon. Tap focus to do some extra damage.
+There’s a safespot for this mid-non. Move to her left before she spawns the YinYangs then move back down. Breaking a shield here is fine, just make sure you get the 200 graze. You want to speedkill this mid-non. Tap focus to do some extra damage.
 
 <h5 id='s4c5'>Chapter 5</h5>
 Spawn graze the red arrow heads from the YinYangs. Be sure to kill each of them. When the bullets closest to you are about to shoot out, break a shield to cancel them and continue spawn grazing. Repeat this till you’re out of bombs then suicide. 

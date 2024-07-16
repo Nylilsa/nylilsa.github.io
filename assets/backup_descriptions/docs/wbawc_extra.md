@@ -2,7 +2,7 @@
 
 
 Overview \
-The optimal shot type to use is Youmu Otter. Youmu Otter has got the best DPS out of all characters and her bomb is perfect against Saki’s non-spells. The hypers Youmu must get are all either Wolf or Eagle hypers since they are the strongest. Eagle is used against attacks that can be shotgunned and Wolf is used on patterns that are impossible to shotgun RTA. 
+The optimal shottype to use is Youmu Otter. Youmu Otter has got the best DPS out of all characters and her bomb is perfect against Saki’s non-spells. The hypers Youmu must get are all either Wolf or Eagle hypers since they are the strongest. Eagle is used against attacks that can be shotgunned and Wolf is used on patterns that are impossible to shotgun RTA. 
 
 Kutaka mid-boss can be bombed on her spells, so a bomb on all three spell-cards are used. Since Saki is an Extra boss, it is impossible to bomb her spells. However, it is possible to activate her hitbox on the spell-card “Oni-Shaped Hoi Polloi” by bombing either before or during the card. This allows the spell-card to be speedkilled with ease.
 
