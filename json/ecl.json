@@ -177,6 +177,13 @@
             "Description": "The value controls by how much faster the game speed is run. This variable is often set to a number between 0 and 1. This value is often changed when a (final) boss dies or when a photo is taken. Its default value is 1.",
             "Type": "float"
         },
+        "17": {
+            "Name": "distortion",
+            "Parameters": [
+                {"a": "int"}
+            ],
+            "Description": "Triggers distortion effects on the edge of the screen. The meaning of the argument is not entirely clear. SA uses a value of 1 to create distortion at the bottom of the screen, while UFO uses this same value to create distortion at the top."
+        },
         "270": {
             "Name": "enmCreate270",
             "Parameters": [
