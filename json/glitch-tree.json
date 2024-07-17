@@ -436,7 +436,12 @@
         "4": {
             "title": "Hisami's laser crash",
             "url-name": ["hisami-crash"],
-            "finished": false
+            "finished": true
+        },
+        "5": {
+            "title": "Rin Boss Skip",
+            "url-name": ["rin-boss-skip"],
+            "finished": true
         }
     }
 }
