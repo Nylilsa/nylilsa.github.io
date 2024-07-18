@@ -442,6 +442,11 @@
             "title": "Rin Boss Skip",
             "url-name": ["rin-boss-skip"],
             "finished": true
+        },
+        "6": {
+            "title": "Rin Charge Attack 2 Crash",
+            "url-name": ["rin-c2-crash"],
+            "finished": false
         }
     }
 }
