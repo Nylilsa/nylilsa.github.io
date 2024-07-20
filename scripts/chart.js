@@ -1,7 +1,8 @@
 "use strict";
 
 const globalConfigs = {
-    game: "th13",
+    game: null,  
+    gameCharacters: null,
 
 }
 
@@ -37,7 +38,7 @@ class Data {
     }
 }
 
-function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, func) {
+function callChartJS(fetchedData, englishName, difficulty, time, func) {
     const cond = (globalConfigs.game != "th16" && globalConfigs.game != "th128") || difficulty == 'Extra';
     const colors = cond ? colorsForChart[globalConfigs.game]['colors'] : colorsForChart[`${globalConfigs.game}other`]['colors'];
     const colorsWithOpacity = colors.map(color => {
@@ -61,7 +62,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
             const dateObject = subelement.date.replaceAll("/", "-");
             arr.push(new Points(dateObject, subelement.score, subelement.name))
         });
-        const character = gameCharacters[fetchedData.indexOf(fetchedData[i])];
+        const character = globalConfigs.gameCharacters[fetchedData.indexOf(fetchedData[i])];
         const playerData = new Data(arr, character, colors[i], colorsWithOpacity[i]);
         dataset.push(playerData);
     }
@@ -75,7 +76,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
         plugins: [{
             id: 'htmlLegend',
             afterUpdate(chart, args, options) {
-                createLegend(chart, args, options, gameCharacters, colors, difficulty, func);
+                createLegend(chart, args, options, colors, difficulty, func);
             }
         }
         ],
@@ -309,9 +310,9 @@ function runOnce() {
     };
 }
 
-function createLegend(chart, args, options, gameCharacters, colors, difficulty, runOnlyOnce) {
+function createLegend(chart, args, options, colors, difficulty, runOnlyOnce) {
     const deselected = JSON.parse(sessionStorage.selected)
-    const ul = getOrCreateLegendList(options.containerID, gameCharacters);
+    const ul = getOrCreateLegendList(options.containerID);
     while (ul.firstChild) {
         ul.firstChild.remove();
     }
@@ -381,13 +382,13 @@ function createLegend(chart, args, options, gameCharacters, colors, difficulty, 
     }
 }
 
-function getOrCreateLegendList(id, gameCharacters) {
+function getOrCreateLegendList(id) {
     const legendContainer = document.getElementById(id);
     let listContainer = legendContainer.querySelector('ul');
-    let computedCharacters = (100 / gameCharacters.length) + '%';
+    let computedCharacters = (100 / globalConfigs.gameCharacters.length) + '%';
     if (!listContainer) {
         listContainer = document.createElement('ul');
-        if (gameCharacters.length > 4) {
+        if (globalConfigs.gameCharacters.length > 4) {
             computedCharacters = '16.6666%';
         }
         if (globalConfigs.game == 'th16' || globalConfigs.game == 'th08') {
@@ -484,26 +485,25 @@ function loadCanvas(difficulty = "Lunatic", func) {
         const englishName = data['Names'][globalConfigs.game]['en'];
         const releaseDate = new Date(data['LatestReleaseDate'][globalConfigs.game]).getTime();
         const time = releaseDate > now - twoYears ? 'month' : 'year';
-        let gameCharacters;
         if ((globalConfigs.game != "th16" && globalConfigs.game != "th128") || difficulty == 'Extra') {
-            gameCharacters = data['Characters'][globalConfigs.game];
+            globalConfigs.gameCharacters = data['Characters'][globalConfigs.game];
         } else {
-            gameCharacters = data['Characters'][`${globalConfigs.game}other`];
+            globalConfigs.gameCharacters = data['Characters'][`${globalConfigs.game}other`];
         }
         const maxValue = [];
         const hidesUnverified = JSON.parse(localStorage.hideUnverified);
         const wrData = hidesUnverified ? mergeEntries(verified) : mergeEntries(verified, unverified) ?? mergeEntries(verified);
         addNamesToData(wrData, allPlayerData);
-        gameCharacters.forEach(char => {
+        globalConfigs.gameCharacters.forEach(char => {
             const history = wrData[difficulty][char];
             const maxScoreOfShot = history.length == 0 ? 0 : history[history.length - 1].score;
             maxValue.push(maxScoreOfShot);
             fetchedData.push(history);
         })
-        const overallWRCharacter = gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))]
-        generateWRButtons(gameCharacters, overallWRCharacter, difficulty);
-        generateWRTable(fetchedData, gameCharacters, overallWRCharacter, difficulty);
-        callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, func);
+        const overallWRCharacter = globalConfigs.gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))]
+        generateWRButtons(overallWRCharacter, difficulty);
+        generateWRTable(fetchedData, overallWRCharacter, difficulty);
+        callChartJS(fetchedData, englishName, difficulty, time, func);
         // createDropdown(wrData);
     })
     return;
@@ -546,9 +546,6 @@ function mergeEntries(verified, unverified) {
             const unverifiedEntry = unverified?.[difficulty]?.[character] ?? [];
             // this is to distinct unverified from verified entries when they have been merged
             unverifiedEntry.forEach(entry => {
-                // entry.push({
-                //     "isUnverified": true
-                // });
                 entry.isUnverified = true;
             })
             const total = [...verifiedEntry, ...unverifiedEntry];
@@ -838,18 +835,18 @@ function setButtonLogic(id) {
     }
 }
 
-function generateWRButtons(gameCharacters, overallWRCharacter, difficulty) {
+function generateWRButtons(overallWRCharacter, difficulty) {
     const section = document.getElementById("wr-table-buttons");
     while (section.children.length > 0) { // removes old and allows for new to be generated
         section.removeChild(section.children[0]);
     }
-    for (let i = 0; i < gameCharacters.length; i++) {
+    for (let i = 0; i < globalConfigs.gameCharacters.length; i++) {
         const button = document.createElement("button");
-        const id = `${globalConfigs.game}${gameCharacters[i]}`;
+        const id = `${globalConfigs.game}${globalConfigs.gameCharacters[i]}`;
         button.setAttribute("id", id);
         button.setAttribute("class", "wr-shottype-buttons");
-        button.innerText = gameCharacters[i];
-        if (gameCharacters[i] == overallWRCharacter) {
+        button.innerText = globalConfigs.gameCharacters[i];
+        if (globalConfigs.gameCharacters[i] == overallWRCharacter) {
             button.style.color = "#ddd";
         }
         if (globalConfigs.game == "th03") {
@@ -911,7 +908,7 @@ function generateWRButtons(gameCharacters, overallWRCharacter, difficulty) {
     }
 }
 
-function generateWRTable(data, gameCharacters, overallWRCharacter, difficulty, flag = true) {
+function generateWRTable(data, overallWRCharacter, difficulty, flag = true) {
     const section = document.getElementById("wr-tables");
     const length = section.children.length;
     if (length > 0) { // removes old and allows for new to be generated
@@ -925,10 +922,10 @@ function generateWRTable(data, gameCharacters, overallWRCharacter, difficulty, f
         const tblBody = document.createElement("tbody");
         const selector = (globalConfigs.game == "th01" || globalConfigs.game == "th128") ? "Route" : "Shottype";
         const headers = ["#", "Difficulty", selector, "Score", "Player", "Date", "Score gain"];
-        const id = `${globalConfigs.game}${gameCharacters[i]}`;
+        const id = `${globalConfigs.game}${globalConfigs.gameCharacters[i]}`;
         table.setAttribute("id", `${id}table`);
         table.classList.add('all-wr-tables');
-        if (i != gameCharacters.indexOf(overallWRCharacter)) {
+        if (i != globalConfigs.gameCharacters.indexOf(overallWRCharacter)) {
             table.style.display = "none";
         }
         for (let j = 0; j < data[i].length; j++) { // rows
@@ -958,14 +955,14 @@ function generateWRTable(data, gameCharacters, overallWRCharacter, difficulty, f
                 const cell = document.createElement("td");
                 let pathToSite;
                 if (!isUnverified) {
-                    const rpyName = `${globalConfigs.game}_${difficulty}_${gameCharacters[i]}_${score}.rpy`.toLowerCase();
-                    pathToSite = `https://github.com/Nylilsa/wr-replays/raw/main/${globalConfigs.game}/${difficulty}/${gameCharacters[i]}/${rpyName}`;
+                    const rpyName = `${globalConfigs.game}_${difficulty}_${globalConfigs.gameCharacters[i]}_${score}.rpy`.toLowerCase();
+                    pathToSite = `https://github.com/Nylilsa/wr-replays/raw/main/${globalConfigs.game}/${difficulty}/${globalConfigs.gameCharacters[i]}/${rpyName}`;
 
                 }
                 switch (k) {
                     case 0: { cellText = document.createTextNode(j + 1); break; }
                     case 1: { cellText = document.createTextNode(`${difficulty}`); break; }
-                    case 2: { cellText = document.createTextNode(gameCharacters[i]); break; }
+                    case 2: { cellText = document.createTextNode(globalConfigs.gameCharacters[i]); break; }
                     case 3: {
                         if (!isUnverified) {
                             cellText = document.createElement(`a`);
