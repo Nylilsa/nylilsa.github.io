@@ -4,7 +4,8 @@ const globalConfigs = {
     game: null,  
     gameCharacters: null,
     selectedDifficulty: null,
-
+    englishName: null,
+    overallWRCharacter: null,
 }
 
 class Points {
@@ -39,7 +40,7 @@ class Data {
     }
 }
 
-function callChartJS(fetchedData, englishName, time, func) {
+function callChartJS(fetchedData, time, func) {
     const cond = (globalConfigs.game != "th16" && globalConfigs.game != "th128") || globalConfigs.selectedDifficulty == 'Extra';
     const colors = cond ? colorsForChart[globalConfigs.game]['colors'] : colorsForChart[`${globalConfigs.game}other`]['colors'];
     const colorsWithOpacity = colors.map(color => {
@@ -135,7 +136,7 @@ function callChartJS(fetchedData, englishName, time, func) {
                 },
                 title: {
                     display: true,
-                    text: `${englishName} WR History ${globalConfigs.selectedDifficulty}`,
+                    text: `${globalConfigs.englishName} WR History ${globalConfigs.selectedDifficulty}`,
                 },
                 subtitle: {
                     display: true,
@@ -484,7 +485,7 @@ function loadCanvas(difficulty = "Lunatic", func) {
         fetchData(`json/wr/verified/${globalConfigs.game}.json`),
         fetchData(`json/players.json`)
     ]).then(([data, unverified, verified, allPlayerData]) => {
-        const englishName = data['Names'][globalConfigs.game]['en'];
+        globalConfigs.englishName = data['Names'][globalConfigs.game]['en'];
         const releaseDate = new Date(data['LatestReleaseDate'][globalConfigs.game]).getTime();
         const time = releaseDate > now - twoYears ? 'month' : 'year';
         if ((globalConfigs.game != "th16" && globalConfigs.game != "th128") || globalConfigs.selectedDifficulty == 'Extra') {
@@ -502,10 +503,10 @@ function loadCanvas(difficulty = "Lunatic", func) {
             maxValue.push(maxScoreOfShot);
             fetchedData.push(history);
         })
-        const overallWRCharacter = globalConfigs.gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))]
-        generateWRButtons(overallWRCharacter);
-        generateWRTable(fetchedData, overallWRCharacter);
-        callChartJS(fetchedData, englishName, time, func);
+        globalConfigs.overallWRCharacter = globalConfigs.gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))];
+        generateWRButtons();
+        generateWRTable(fetchedData);
+        callChartJS(fetchedData, time, func);
         // createDropdown(wrData);
     })
     return;
@@ -837,7 +838,7 @@ function setButtonLogic(id) {
     }
 }
 
-function generateWRButtons(overallWRCharacter) {
+function generateWRButtons() {
     const section = document.getElementById("wr-table-buttons");
     while (section.children.length > 0) { // removes old and allows for new to be generated
         section.removeChild(section.children[0]);
@@ -848,7 +849,7 @@ function generateWRButtons(overallWRCharacter) {
         button.setAttribute("id", id);
         button.setAttribute("class", "wr-shottype-buttons");
         button.innerText = globalConfigs.gameCharacters[i];
-        if (globalConfigs.gameCharacters[i] == overallWRCharacter) {
+        if (globalConfigs.gameCharacters[i] == globalConfigs.overallWRCharacter) {
             button.style.color = "#ddd";
         }
         if (globalConfigs.game == "th03") {
@@ -910,7 +911,7 @@ function generateWRButtons(overallWRCharacter) {
     }
 }
 
-function generateWRTable(data, overallWRCharacter, flag = true) {
+function generateWRTable(data, flag = true) {
     const section = document.getElementById("wr-tables");
     const length = section.children.length;
     if (length > 0) { // removes old and allows for new to be generated
@@ -927,7 +928,7 @@ function generateWRTable(data, overallWRCharacter, flag = true) {
         const id = `${globalConfigs.game}${globalConfigs.gameCharacters[i]}`;
         table.setAttribute("id", `${id}table`);
         table.classList.add('all-wr-tables');
-        if (i != globalConfigs.gameCharacters.indexOf(overallWRCharacter)) {
+        if (i != globalConfigs.gameCharacters.indexOf(globalConfigs.overallWRCharacter)) {
             table.style.display = "none";
         }
         for (let j = 0; j < data[i].length; j++) { // rows
