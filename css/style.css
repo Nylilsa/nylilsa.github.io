@@ -195,6 +195,17 @@ p {
   line-height: 1.7em;
   margin-bottom: calc(max(1em, 1rem)); }
 
+figure {
+  border: 1px solid var(--clr-default);
+  padding: 0.4em;
+  display: inline-block;
+  background-color: var(--clr-background-element); }
+
+figcaption {
+  text-align: left;
+  font-style: italic;
+  font-size: var(--fs-500); }
+
 hr {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -296,7 +307,8 @@ tr {
 .fit-image {
   display: block;
   margin-inline: auto;
-  max-width: 100%; }
+  max-width: 100%;
+  padding-bottom: 0.5em; }
 
 .dotted {
   text-decoration: underline dotted; }

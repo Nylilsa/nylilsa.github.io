@@ -23,8 +23,11 @@ let ext = function() {
 	}
 	let img = {
 		type: "lang",
-		regex: /\[img=(.*?), hratio=(.*?), other=(.*?)\]/g,
-		replace: '<div class="fit-wrapper"><img style="padding-bottom: $2%; $3" class="fit-image" title="$1" src="$1"></div>'
+		regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?), other=(.*?)\]/g,
+		replace: function(all, img, figtitle, alt, other) {
+            figureId++;
+			return `<div style="text-align: center;" id="figure-${figureId}"><figure class="fit-wrapper"><img style="${other}" class="fit-image" title="${figtitle}" src="${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div>`;
+        }
 	}
 	let img_small = {
 		type: "lang",
@@ -42,6 +45,7 @@ let ext = function() {
 		type: "lang",
 		regex: /\[title=(.*?)\]/gim,
 		replace: function(match, content) {
+            figureId = 0;
 			setWindowTitleDirect(content);
 			setTimeout(() => {
 				hljs.highlightAll();

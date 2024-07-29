@@ -1,5 +1,6 @@
 "use strict";
 
+let figureId = 0;
 let eclJsonId = 0;
 let citeId = 0;
 let MD = new showdown.Converter({
