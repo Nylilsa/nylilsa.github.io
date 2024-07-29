@@ -346,9 +346,14 @@ tr {
 
 .key {
     font-weight: var(--fw-bold);
-    outline-width: 1px;
-    outline-color: var(--clr-default);
-    outline-style: solid;
+    font-size: var(--fs-400);
+    border-width: 1px;
+    border-color: var(--clr-default);
+    border-style: solid;
+    border-radius: 3px;
+    color: var(--clr-text-code);
+    background-color: var(--clr-background-highlighted-text);
+    padding-inline: 2px;
 }
 
 .fit-image {

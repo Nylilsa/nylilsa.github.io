@@ -203,7 +203,7 @@ let ext = function() {
 	let key = {
 		type: "lang",
 		regex: /\[key=([^]*?)\]/g,
-		replace: "<code class='key mono'>$1</code>"
+		replace: "<kbd class='key mono'>$1</kbd>"
 	}
 
 	let cite = {
