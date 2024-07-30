@@ -238,17 +238,28 @@ p {
     margin-bottom: calc(max(1em, 1rem));
 }
 
-figure {
+.figure-outer-wrapper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.figure-inner-wrapper {
     border: 1px solid var(--clr-default);
     padding: 0.4em;
-    display: inline-block;
     background-color: var(--clr-background-element);
+}
+
+figure {
+    display: table;
 }
 
 figcaption {
     text-align: left;
     font-style: italic;
     font-size: var(--fs-500);
+    display: table-caption;
+    caption-side: bottom;
 }
 
 hr {
