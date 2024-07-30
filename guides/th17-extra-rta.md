@@ -165,7 +165,7 @@ There are cases where you will be running across the screen collecting tokens du
 
 Intermediate
 
-[img=guides/th17-extra-rta/not-enough-tokens.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other= ]
+[img=guides/th17-extra-rta/not-enough-tokens.png, figtitle=TOBEADDED, alt=TOBEADDED]
 
 Yeah, that's a lot of tokens to deal with, and there are actually runs where there are double the tokens on-screen!
 

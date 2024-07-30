@@ -18,17 +18,17 @@ Think of each wave as having 3 parts to it:
 
 Part one: The initial blast where the lasers spawn and pan out. Notice how the laser is forming an S shape around Reimu. Keep in mind that the lasers have a random initial rotation to them.
 
-[img=guides/th15-pristine-lunacy/breakdown1.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-pristine-lunacy/breakdown1.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 
 Part two: The second part, which I’m going to call the loop around, where the lasers come from off screen below you.
 
-[img=guides/th15-pristine-lunacy/breakdown2.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-pristine-lunacy/breakdown2.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 
 Part three: And the final part, which I will call followthrough, where the lasers once again loop and come back. This part overlaps with the next wave which is why people have so much trouble with this spell.
 
-[img=guides/th15-pristine-lunacy/breakdown3.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-pristine-lunacy/breakdown3.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 Every wave will operate this way alternating between Red and Purple lasers.
 
@@ -39,7 +39,7 @@ It is easy to understand the laser formation but it is more difficult to read th
 
 For the loop around it is extremely easy. As mentioned before, when the lasers pan out there will be an S or mirrored S depending on which wave it is. By simply putting yourself into the curved area of the laser you will be completely safe from the laser coming from below.
 
-[img=guides/th15-pristine-lunacy/looparound1.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-pristine-lunacy/looparound1.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 As you can see, the laser coming from below comes slightly to the side of where it ends. Over at the bottom left corner you can see how the laser loops offscreen.
 
@@ -48,7 +48,7 @@ As you can see, the laser coming from below comes slightly to the side of where 
 
 The followthrough is one thing that trips people up a lot when they first experience this pattern. On Lunatic it is actually quite simple. By simply positioning yourself close to the laser in the convex side (for purple waves it’ll be the laser to your left. For red the laser on your right) you won’t even have to move to avoid the lasers coming back.
 
-[img=guides/th15-pristine-lunacy/followthrough1.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-pristine-lunacy/followthrough1.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 As you can see, I have not moved from my spot and the lasers pretty much put Reimu centered of the gap.
 
@@ -65,11 +65,11 @@ If it weren’t for the fact that the followthrough can be avoided simply by sta
 
 For the method I use, I keep my eyes locked to right in front of Junko. This area (the blue circle) is where you want to read.
 
-[img=guides/th15-pristine-lunacy/readingtheoverlaps1.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-pristine-lunacy/readingtheoverlaps1.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 I look at the gaps that form between the lasers and use those to judge where the safe areas are going to be. In this example I have 2 potential gaps that I can choose. Both of these will work but one is significantly easier to reach. Once again you have to keep the wave in mind as the red initial blast will put a laser to your left instead.
 
-[img=guides/th15-pristine-lunacy/readingtheoverlaps2.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-pristine-lunacy/readingtheoverlaps2.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 You may have also noticed that I didn’t just draw a straight line down from the gap but rather an angled line that starts at Junko. This is undoubtedly the hardest part to understand. The pattern is basically a perfect circle around Junko.
 
@@ -77,7 +77,7 @@ It doesn’t stop there, as I mentioned at the start, the lasers have a random i
 
 So what do we do if the only gap that can work is further to the side, such as below? Quite simple actually. If you feel as if you aren’t able to move to the left or right to easily avoid a wave then you’ll have to take the somewhat scarier option of moving up through the laser lane you’re in. You have to press up and either the left or right at basically the same time. You have to be careful as you’ll move up at an angle steeper than the laser lane so if you go too much you’ll hit the top laser. It takes some getting used to for sure.
 
-[img=guides/th15-pristine-lunacy/readingtheoverlaps3.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-pristine-lunacy/readingtheoverlaps3.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 In situations like this you’ll also want to keep in mind the loop around as there might be a chance that you get put into an awkward spot to avoid it. It’s rare thankfully.
 
@@ -90,17 +90,17 @@ I don’t have much (or any) experience with these reading methods so I’m not 
 
 One method is looking at where the laser is going. This method I don’t like as I’m not very good at seeing the correct laser and also it is hard to see this in the first place when it’s hidden behind a followthrough.
 
-[img=guides/th15-pristine-lunacy/otherreadingmethods1.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-pristine-lunacy/otherreadingmethods1.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 Another method is the look at where the lasers are looping around closest to you.
 
-[img=guides/th15-pristine-lunacy/otherreadingmethods2.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-pristine-lunacy/otherreadingmethods2.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 Again, I personally find it difficult to see that most of the time and this also gives you the least amount of time to read it so I don’t recommend it.
 
 You can also try reading these gaps the lasers form.
 
-[img=guides/th15-pristine-lunacy/otherreadingmethods3.png, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-pristine-lunacy/otherreadingmethods3.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 I personally find this method awkward but that’s just me. 
 There’s also a really stupid, RNG heavy method that I’m not going to show because for one. I don’t know it. And two. You shouldn’t attempt it in the first place.

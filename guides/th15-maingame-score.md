@@ -4,7 +4,7 @@
 
 Author: [a=https://www.youtube.com/channel/UCNbaT2iVuYKN5q94b9UlTEA]Helio Knight[/a]
 
-[img=guides/th15-maingame-score/seiranringo.jpg, figtitle=TITLETOBEADDED, alt=ALTTOBEADDED, other=max-height:360px]
+[img=guides/th15-maingame-score/seiranringo.jpg, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
 
 This is a basic/beginner scoring guide for [a=https://en.touhouwiki.net/wiki/Legacy_of_Lunatic_Kingdom/Gameplay]Touhou 15 Legacy of Lunatic Kingdom[/a]. It will contain as much information as I know that I think is important to include. This guide will only be going over the Legacy game mode. The only major thing to note about Pointdevice is that you cannot suicide, making scoring extremely limited. You also can’t save replays on Pointdevice mode either.
 Please note that I am not the best LoLK player, nor do I claim to be. But I do believe I am competent enough to make this guide.
