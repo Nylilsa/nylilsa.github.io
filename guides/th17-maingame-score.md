@@ -4,7 +4,7 @@
 
 Author: [a=https://twitter.com/RebotOvaFritte]RebotOva[/a]
 
-[img=guides/th17-maingame-score/otter.jpg, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
+[img=guides/th17-maingame-score/otter.jpg, figtitle=An otter being happy to see you., alt=An image of a cute otter, other=max-height:360px]
 
 Hello !
 
@@ -211,7 +211,7 @@ we are gonna define "fine" as optimal/expected score gains, and "not ideal" as R
 
 Having to get more than 1 [style=otter, icon=true, highlightedText=otter] right after a release is not needed, getting more than 1 [style=otter, icon=true, highlightedText=otter] would be nice but not necessary.
 
-[img=guides/th17-maingame-score/Senza-nome.png, figtitle=TOBEADDED, alt=TOBEADDED, other=max-height:360px]
+[img=guides/th17-maingame-score/Senza-nome.png, figtitle=Guide on optimal token spawns, alt=A diagram of the best tokens to get after timing down a hyper., other=max-height:360px]
 
 Conclusion: if you whine about bad token RNG, you are coping because statistically it actually helps you on average, eventually if you improve it should stop being a problem.
 
@@ -287,7 +287,7 @@ A series of random details that don't really fit anywhere so I'll just list them
 + A token once first spawned takes 4 seconds to switch beast, after the first switch every subsequent one takes only 3 seconds, (this next detail was kind of hard to test but it looks like): if a token is hugged, its current timer is pushed back by roughly 1.5-1.75 seconds, up to its maximum duration (4 or 3 depending on the number of switches)
 + Did you know that Marisa's PoC line is lower compared to Youmu's and Reimu's? Not only that but it's not as high as you might think, This PoCs... kinda weird but yeah
 
-[img=guides/th17-maingame-score/th17_000.jpg, figtitle=TOBEADDED, alt=TOBEADDED, other=max-width:360px]
+[img=guides/th17-maingame-score/th17_000.jpg, figtitle=Marisa being at the height of her PoC line., alt=Marisa being around the PoC line, other=max-width:360px]
 
 + Tokens have a lifetime of 02m10s, after this time they will turn gray and despawn after around 15 seconds. they can bounce as long as these 15 seconds don't end, once it reaches 15 seconds the token will just fly off the screen instead of bouncing.
 + Unlike UFOs, [hl2]hugging tokens does not freeze their life timer[/hl2]. 
