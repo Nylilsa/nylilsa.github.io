@@ -104,8 +104,8 @@ This guide is separated into two parts: the gameplay mechanics part and the rout
 			<li>[jumpto=#/guides/th15-maingame-score#s5c5]Chapter 5: Laser Streaming[/jumpto]</li>
 			<li>[jumpto=#/guides/th15-maingame-score#s5c6]Chapter 6: Ring Fairies[/jumpto]</li>
 			<li>[jumpto=#/guides/th15-maingame-score#s5c7]Chapter 7: Laser Hell[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s5c8]Chapter 7: Fairy Highway[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s5c9]Chapter 7: Star Field[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s5c8]Chapter 8: Fairy Highway[/jumpto]</li>
+			<li>[jumpto=#/guides/th15-maingame-score#s5c9]Chapter 9: Star Field[/jumpto]</li>
 		</ol>
 	</li>
 	<li>[jumpto=#/guides/th15-maingame-score#clownpiece]Clownpiece[/jumpto]
