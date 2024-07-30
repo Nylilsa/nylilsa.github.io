@@ -47,6 +47,7 @@
     overflow: auto;
     white-space: nowrap;
     isolation: isolate;
+    overscroll-behavior: contain;
 }
 
 #wr-game-buttons::-webkit-scrollbar {
