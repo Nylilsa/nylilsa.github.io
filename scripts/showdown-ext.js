@@ -106,6 +106,12 @@ let ext = function() {
 		replace: "<span><img src='/assets/red-cross.svg' class='icon-text'>~~$1~~</span>"
 	}
 
+	let discord = {
+		type: "lang",
+		regex: /\[discord\]/g,
+		replace: "``Nylilsa#9310``"
+	}
+
 	let specs = {
 		type: "lang",
 		regex: /\[specs\]/g,
@@ -308,5 +314,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, match, scenes, check, cross];
+	return [hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, match, scenes, check, cross];
 }
