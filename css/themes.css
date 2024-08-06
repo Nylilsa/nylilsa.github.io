@@ -125,6 +125,29 @@ html[data-theme="th10"] {
     --clr-default: #8b8647;
 }
 
+html[data-theme="th12"] {
+    --clr-light-saturated-10: #b0d2ff;
+    --clr-light-saturated-9: #bfdbff;
+    --clr-light-saturated-8: #83a7e5;
+    --clr-light-saturated-7: #739cd5;
+    --clr-light-saturated-5: #6d8ecc;
+    --clr-saturated-shift: #0b65da;
+    --clr-light-saturated-shift-5: #3b89ff;
+    --clr-light-saturated-shift-8: #0062ff;
+    
+    --clr-contrast: #FF92FA;
+    --clr-highlight: #e278f5;
+    --clr-greyish-blend: #394866;
+    --clr-dark-saturated-shift-2: #122740;
+    --clr-dark-saturated-2: #142232;
+    --clr-dark-saturated-5: #10142b;
+    --clr-dark-3: #070e1d;
+    --clr-dark-4: #020a14;
+    --clr-dark-5: #020e27;
+    
+    --clr-default: #4169E1;
+}
+
 html[data-theme="th125"] {
     --clr-light-saturated-10: #e2b0ff;
     --clr-light-saturated-9: #fdbfff;
