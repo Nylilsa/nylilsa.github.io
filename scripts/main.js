@@ -431,7 +431,7 @@ async function initSidebarGlitches(colDecrease) {
                 div.classList.add("left-border-color");
                 div.style.position = "relative";
                 div.appendChild(a);
-                if (finished) {
+                if (false && finished) {
                     const marker = document.createElement("div");
                     marker.classList.add("star");
                     a.appendChild(marker);
