@@ -169,6 +169,11 @@
             "title": "Misalignment of timer",
             "url-name": ["weird-timer"],
             "finished": false
+        },
+        "2": {
+            "title": "Slowdown Item Duplication",
+            "url-name": ["slowdown-dupe"],
+            "finished": true
         }
     },
     "th14": {
