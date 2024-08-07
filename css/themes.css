@@ -1,5 +1,5 @@
 :root {
-    --clr-text-url: var(--clr-saturated-shift);
+    --clr-text-url: var(--clr-default);
     --clr-text-url-visited: var(--clr-default);
     
     --clr-white: #FFFFFF;
@@ -283,6 +283,27 @@ html[data-theme="th165"] {
     --clr-dark-5: #100020;
     
     --clr-default: #841cad;
+}
+
+html[data-theme="th18"] {
+    --clr-light-saturated-10: #b0fff1;
+    --clr-light-saturated-9: #bffff9;
+    --clr-light-saturated-8: #83dee5;
+    --clr-light-saturated-7: #08d3d0;
+    --clr-light-saturated-5: #6dc4cc;
+    --clr-saturated-shift: #0bd7da;
+    --clr-light-saturated-shift-5: #3bf8ff;
+    --clr-light-saturated-shift-8: #00ffff;
+    
+    --clr-greyish-blend: #3e666d;
+    --clr-dark-saturated-shift-2: #124b4f;
+    --clr-dark-saturated-2: #264a4a;
+    --clr-dark-saturated-5: #13302f;
+    --clr-dark-3: #092826;
+    --clr-dark-4: #041b1b;
+    --clr-dark-5: #011b19;
+    
+    --clr-default: #2db585;
 }
 
 html[data-theme="th185"] {
