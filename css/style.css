@@ -104,7 +104,7 @@ h6 {
 
 .navigation {
   padding-block: 15px;
-  border-bottom: 1px solid var(--clr-default); }
+  border-bottom: 1px solid var(--clr-box); }
   .navigation * {
     transition: min-height var(--time-animation) ease; }
   .navigation a, .navigation button {
@@ -201,7 +201,7 @@ p {
   justify-content: center; }
 
 .figure-inner-wrapper {
-  border: 1px solid var(--clr-default);
+  border: 1px solid var(--clr-box);
   padding: 0.4em;
   background-color: var(--clr-background-element); }
 
@@ -231,7 +231,7 @@ hr {
   color: var(--clr-text-dim);
   padding-inline: 8px;
   padding-block: 12px;
-  border-color: var(--clr-default);
+  border-color: var(--clr-box);
   border-width: 1px;
   border-style: solid;
   margin-inline: 10px;
@@ -265,7 +265,7 @@ pre {
   margin-bottom: 20px; }
 
 .code {
-  border: 1px solid var(--clr-default);
+  border: 1px solid var(--clr-box);
   color: var(--clr-text-dim);
   padding: 8px;
   word-break: break-word;
@@ -306,7 +306,7 @@ tr {
   font-weight: var(--fw-bold);
   font-size: var(--fs-400);
   border-width: 1px;
-  border-color: var(--clr-default);
+  border-color: var(--clr-box);
   border-style: solid;
   border-radius: 3px;
   color: var(--clr-text-code);
@@ -348,14 +348,14 @@ tr {
   right: 50%;
   translate: 50%;
   visibility: hidden;
-  border: 1px solid var(--clr-default);
+  border: 1px solid var(--clr-box);
   z-index: var(--z-tooltip); }
   .tooltip *:not(hr) {
     font-size: var(--fs-300);
     margin: 0; }
   .tooltip hr {
     margin-block: 0.5em;
-    background-color: var(--clr-default); }
+    background-color: var(--clr-hr-major); }
 
 sub {
   vertical-align: sub;
@@ -389,21 +389,8 @@ sub {
     filter: brightness(50%); }
 
 .checkmark {
-  position: relative;
   flex: 1 1 0;
   padding: 10px; }
-  .checkmark::after {
-    content: '';
-    height: 80%;
-    aspect-ratio: 1;
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    background-color: var(--clr-default);
-    transform: translate(-30%, -50%);
-    -webkit-mask-image: url(/assets/check-mark.svg);
-    mask-image: url(/assets/check-mark.svg);
-    opacity: var(--opacity, 0); }
 
 .star {
   position: absolute;
