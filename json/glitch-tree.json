@@ -143,6 +143,11 @@
             "title": "MarisaA's Laser Damage",
             "url-name": ["marisaa-laser"],
             "finished": true
+        },
+        "3": {
+            "title": "Slowdown Item Duplication",
+            "url-name": ["slowdown-dupe"],
+            "finished": true
         }
     },
     "th125": {
