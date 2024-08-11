@@ -32,7 +32,7 @@
                 {"start": "float"},
                 {"final": "float"}
             ],
-            "Description": "In $3 frames using <a target=\"_blank\"href=\"https://exphp.github.io/thpages/#/anm/interpolation\">mode</a> $4, variable $2 changes from $5 to $6. $1 is used to set the slot to be used by this ins, every enemy has 8 slots."
+            "Description": "In $3 frames using <a class=\"url\" target=\"_blank\"href=\"https://exphp.github.io/thpages/#/anm/interpolation\">mode</a> $4, variable $2 changes from $5 to $6. $1 is used to set the slot to be used by this ins, every enemy has 8 slots."
         },
         "300": {
             "Name": "enmCreate",
@@ -59,7 +59,7 @@
             "Parameters": [
                 {"n": "int"}
             ],
-            "Description": "Clears flag(s) according to $1. Refer to the flag table <a target=\"_blank\"href=\"https://priw8.github.io/#s=MERLIN/doc/globals/enemy-etc\">here</a>  for exact values."
+            "Description": "Clears flag(s) according to $1. Refer to the flag table <a class=\"url\" target=\"_blank\" href=\"https://priw8.github.io/#s=MERLIN/doc/globals/enemy-etc\">here</a>  for exact values."
         },
         "525": {
             "Name": "enmKillAll",
@@ -77,7 +77,7 @@
         "547": {
             "Name": "gameSpeed",
             "Parameters": [
-                {"s": "int"}
+                {"s": "float"}
             ],
             "Description": "Sets GAME_SPEED to $1 of the normal speed."
         },
@@ -176,6 +176,25 @@
             "Name": "GAME_SPEED",
             "Description": "The value controls by how much faster the game speed is run. This variable is often set to a number between 0 and 1. This value is often changed when a (final) boss dies or when a photo is taken. Its default value is 1.",
             "Type": "float"
+        },
+        "17": {
+            "Name": "distortion",
+            "Parameters": [
+                {"a": "int"}
+            ],
+            "Description": "Triggers distortion effects on the edge of the screen. The meaning of the argument is not entirely clear. SA uses a value of 1 to create distortion at the bottom of the screen, while UFO uses this same value to create distortion at the top."
+        },
+        "270": {
+            "Name": "enmCreate270",
+            "Parameters": [
+                {"sub": "string"},
+                {"x": "float"},
+                {"y": "float"},
+                {"hp": "int"},
+                {"score": "int"},
+                {"item": "int"}
+            ],
+            "Description": "Creates an enemy using subroutine $1 at coordinates ($2, $3) (relative to position of the stage background camera), health of created enemy is $4, score bonus is $5 and item drop is $6."
         }
     }
 }

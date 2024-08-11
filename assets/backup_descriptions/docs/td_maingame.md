@@ -13,12 +13,12 @@
 <h2>Overview</h2>
 
 
-The best shot type for speedrunning is Marisa. Not only her trance is very powerful, but also her bomb. In addition, her trance allows her to become a lot quicker meaning it is easier to hop from one side to the other. Trancing is done on both bosses and stages while bombing is strictly restricted to bosses only. The resources in TD are sparse meaning that the route will not work if you do not have the perfect number of resources. Every life and nearly every bomb you get is used. It’s a strict game to speedrun but very joyful once you get the hang of it.
+The best shottype for speedrunning is Marisa. Not only her trance is very powerful, but also her bomb. In addition, her trance allows her to become a lot quicker meaning it is easier to hop from one side to the other. Trancing is done on both bosses and stages while bombing is strictly restricted to bosses only. The resources in TD are sparse meaning that the route will not work if you do not have the perfect number of resources. Every life and nearly every bomb you get is used. It’s a strict game to speedrun but very joyful once you get the hang of it.
 
 <h2>Marisa vs Youmu</h2>
 
 
-Marisa and Youmu are both incredibly powerful shot types in Ten Desires. Marisa has her powerful missiles and Youmu cuts through everything like how a hot knife cuts through butter. 
+Marisa and Youmu are both incredibly powerful shottypes in Ten Desires. Marisa has her powerful missiles and Youmu cuts through everything like how a hot knife cuts through butter. 
 
 When comparing both the damage output of the trances, it turns out that Youmu’s damage is roughly equivalent to Marisa’s. Though, the results are so identical [time difference is +/- 0.10s] that one can say both trances are equally effective. 
 
@@ -39,7 +39,7 @@ Bombing is done by pressing X if the player has at least one bomb in its invento
 <h3>Trancing</h3>
 
 
-Trancing is a mechanic that makes the player invincible for a short duration whilst also buffing the player’s shot type. Trancing also changes how many resources you get from spirits. More detail can be found in the next section.  \
+Trancing is a mechanic that makes the player invincible for a short duration whilst also buffing the player’s shottype. Trancing also changes how many resources you get from spirits. More detail can be found in the next section.  \
  \
 Trancing done in various ways. There is a gauge at the bottom left that goes up to 3 spirits. Once filled, you cannot gain more.
 
@@ -101,19 +101,19 @@ Marisa has the ability to deal more damage when shotgunning, hence you want to b
 
 There are a few notable differences across the difficulties.
 
-Easy: Yuyuko’s 4th spell card does **not** exist. Seiga’s mid-spell does **not** exist either. Final section of stage 5 has **6** fairies.
+Easy: Yuyuko’s 4th spell-card does **not** exist. Seiga’s mid-spell does **not** exist either. Final section of stage 5 has **6** fairies.
 
-Normal: Yuyuko’s 4th spell card does **not** exist. Seiga’s mid-spell does exist. Final section of stage 5 has **7** fairies.
+Normal: Yuyuko’s 4th spell-card does **not** exist. Seiga’s mid-spell does exist. Final section of stage 5 has **7** fairies.
 
-Hard: Yuyuko’s 4th spell card does exist. Seiga’s mid-spell does exist. Final section of stage 5 has **7** fairies.
+Hard: Yuyuko’s 4th spell-card does exist. Seiga’s mid-spell does exist. Final section of stage 5 has **7** fairies.
 
-Lunatic: Yuyuko’s 4th spell card does exist. Seiga’s mid-spell does exist. Final section of stage 5 has **7** fairies.
+Lunatic: Yuyuko’s 4th spell-card does exist. Seiga’s mid-spell does exist. Final section of stage 5 has **7** fairies.
 
 All three differences affect how fast your run is.
 
 
 
-1. Yuyuko’s 4th spell card adds about 12s to the run.
+1. Yuyuko’s 4th spell-card adds about 12s to the run.
 2. Seiga’s mid-spell does not add any time to the run. However, according to the game’s code the post-midboss stage section is triggered 10 frames after Seiga spawns on Easy mode. On other difficulties where the mid-spell does exist, the post-midboss section starts 730 frames after Seiga’s entry. This means the stage 4 section is 12 seconds shorter on Easy mode by default.*
 3. The final part of stage 5 features either 6 or 7 fairies. The stage section ends once there are no more enemies left. Since there is an additional enemy on Normal/Hard/Lunatic, it takes about half a second extra to kill it.
 
@@ -470,15 +470,15 @@ On **Kyouko**’s first non-spell, the trance also collects bomb spirits from th
 
 **Yoshika**’s second spell is tricky to do. You start off point blanking her and the bomb is used right as she moves. During the bomb you want to move down to not get hit by any bullets. For the third spell, start the trance exactly one second after it has started. When the blue spirits are spawned, you must lean to the side where they spawn whilst shooting Yoshika. Once Yoshika attracts the spirits, you must move horizontally in a very vigorous manner. This way you will deal damage whilst picking up the majority of the spirits. 
 
-On **Seiga**’s first non-spell, you need to trance one second after you are able to shoot. This way you will deal the right amount of damage to take down her first spell card.
+On **Seiga**’s first non-spell, you need to trance one second after you are able to shoot. This way you will deal the right amount of damage to take down her first spell-card.
 
-During the trance on **Futo**’s second non-spell, the player must be low enough for it to not collect any spirits. Once the trance ends, rush upwards and bomb twice. This stalling is done to guarantee a trance on her third non-spell. Likewise, the same thing is done during the trance on her third spell card.
+During the trance on **Futo**’s second non-spell, the player must be low enough for it to not collect any spirits. Once the trance ends, rush upwards and bomb twice. This stalling is done to guarantee a trance on her third non-spell. Likewise, the same thing is done during the trance on her third spell-card.
 
 **Miko**’s first non starts off with a trance where you collect four life spirits at the same time.
 
-On the third spell card, you must stall for some spirits which will be used for a death trance on the fourth non-spell. The same thing can also be done on Miko’s sixth spell card but it is not required.
+On the third spell-card, you must stall for some spirits which will be used for a death trance on the fourth non-spell. The same thing can also be done on Miko’s sixth spell-card but it is not required.
 
-For the final spell card, the most optimal time to trance is right when Miko freezes the bullets on-screen. Unfortunately, no trance or bomb can be used for the final phase of NDS, so you must do it normally.
+For the final spell-card, the most optimal time to trance is right when Miko freezes the bullets on-screen. Unfortunately, no trance or bomb can be used for the final phase of NDS, so you must do it normally.
 
 If you are playing on Easy mode you will have an extra life (since the suicide on Yuyuko cannot be done) you can go for a double KO, saving about .5s. 
 

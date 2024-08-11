@@ -47,6 +47,7 @@
     overflow: auto;
     white-space: nowrap;
     isolation: isolate;
+    overscroll-behavior: contain;
 }
 
 #wr-game-buttons::-webkit-scrollbar {
@@ -90,6 +91,26 @@
 
 .legend-item {
     font-size: var(--fs-300);
+    color: var(--clr-grey);
+    margin: 0;
+    padding: 0;
+}
+
+#legend-toggle-all {
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    display: grid;
+    padding-top: 0.5em;
+}
+
+.toggle-buttons-large {
+    border-width: 1px;
+    border-style: solid;
+    display: inline-block;
+    height: 12px;
+    margin-right: 10px;
+    width: 40px;
 }
 
 .card-game {

@@ -143,6 +143,11 @@
             "title": "MarisaA's Laser Damage",
             "url-name": ["marisaa-laser"],
             "finished": true
+        },
+        "3": {
+            "title": "Slowdown Item Duplication",
+            "url-name": ["slowdown-dupe"],
+            "finished": true
         }
     },
     "th125": {
@@ -169,6 +174,11 @@
             "title": "Misalignment of timer",
             "url-name": ["weird-timer"],
             "finished": false
+        },
+        "2": {
+            "title": "Slowdown Item Duplication",
+            "url-name": ["slowdown-dupe"],
+            "finished": true
         }
     },
     "th14": {
@@ -269,7 +279,7 @@
             "finished": false
         },
         "1": {
-            "title": "Stage 5 Incorrect Spellcard name",
+            "title": "Stage 5 Incorrect Spell-card name",
             "url-name": ["wrong-spell-name"],
             "finished": true
         },
@@ -436,6 +446,16 @@
         "4": {
             "title": "Hisami's laser crash",
             "url-name": ["hisami-crash"],
+            "finished": true
+        },
+        "5": {
+            "title": "Rin Boss Skip",
+            "url-name": ["rin-boss-skip"],
+            "finished": true
+        },
+        "6": {
+            "title": "Rin Charge Attack 2 Crash",
+            "url-name": ["rin-c2-crash"],
             "finished": false
         }
     }

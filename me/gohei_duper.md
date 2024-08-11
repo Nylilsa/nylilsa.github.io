@@ -20,21 +20,21 @@
 
 We all know ReimuA DDC is goated. I mean, just _look_ at her. She has a massive Gohei that deals above average damage compared to the other shottypes.
 
-[img=me/gohei.png, hratio=2, other= ] [br]
+[img=me/gohei.png, figtitle=TOBEADDED, alt=TOBEADDED] [br]
 
 But wait, the gohei isn't at its full potential - currently a part of it is hitting the boss. This is because the Gohei gets recoiled by the hitbox it is currently hitting. However, we can prevent this by [hl2]centering[/hl2] the gohei !
 
-[img=me/gohei_center.png, hratio=2, other= ] [br]
+[img=me/gohei_center.png, figtitle=TOBEADDED, alt=TOBEADDED] [br]
 
 Now that gohei is used to its fullest potential, but our damage certainly isn't. We can also summon homing amulets by [hl2]shiftspamming[/hl2] quickly unshifting and shifting while keeping the gohei alive !
 
-[img=me/gohei_amulets.png, hratio=2, other= ] [br]
+[img=me/gohei_amulets.png, figtitle=TOBEADDED, alt=TOBEADDED] [br]
 
 ...alright, surely that must the maximum damage we can deal, right? We're getting the most out of our single gohei through [hl2]centering[/hl2], and at the same time we're shooting the amulets by [hl2]shiftspamming[/hl2]. There's nothing else we can do to achieve more damage it seems as we've quite literally run out of fire power.
 
 ...well, not quite.
 
-[img=me/gohei2.png, hratio=2, other= ] [br]
+[img=me/gohei2.png, figtitle=TOBEADDED, alt=TOBEADDED] [br]
 
 There exists a [a=/#/bugs/th14/4]glitch[/a] that allows for multiple goheis to be created. The glitch can create up to 4 goheis at once, and all of the goheis act the same way. The name of the glitch is also known as [hl2]Gohei duplication[/hl2] or [hl2]Gohei dupe[/hl2] or [hl2]dupe[/hl2] in short.
 
@@ -55,7 +55,7 @@ Note that you don't need any enemies to be on-screen to perform the dupe glitch.
 
 The gohei dupe can only be done [hl2]at specific heights[/hl2]. Below is an image that should roughly give you an indicator where to be if you want to do the dupe.
 
-[img=me/range.png, hratio=2, other= ] [br]
+[img=me/range.png, figtitle=TOBEADDED, alt=TOBEADDED] [br]
 
 Since it's at quite a height it means you need to go to the top if you want to do the dupe glitch. If you want to do the dupe on bosses, it means you have to go to the top left or top right for it to work.
 
@@ -69,7 +69,7 @@ Instead, you want to have a great enough distance such that the gohei doesn't in
 ### Button spamming
 [hr_minor]
 
-[img=me/cps.png, hratio=0, other= ] [br]
+[img=me/cps.png, figtitle=TOBEADDED, alt=TOBEADDED] [br]
 
 The general rule is that the faster you can mash your buttons the better it is. This section isn't very much about talking about the techniques of button mashing (though I might add a section about this later). I personally use one keyboard for all my inputs. With it, I average about 12 clicks per second on my [key=Shift] key, though it is possible to get multiple goheis even when your clicks per second is 6. If you want to check out what your clicks per second is, you can check it out on [a=https://cps-check.com/keyboard-cps]this website[/a].
 

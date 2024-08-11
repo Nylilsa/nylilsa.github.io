@@ -23,8 +23,23 @@ let ext = function() {
 	}
 	let img = {
 		type: "lang",
-		regex: /\[img=(.*?), hratio=(.*?), other=(.*?)\]/g,
-		replace: '<div class="fit-wrapper"><img style="padding-bottom: $2%; $3" class="fit-image" title="$1" src="$1"></div>'
+		regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?)\]/g,
+		replace: function(all, img, figtitle, alt) {
+            figureId++;
+            if (figtitle == "TOBEADDED") { // remove once all is done
+                return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" src="${img}"></figure></div></div>`;
+
+            }
+			return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" title="${figtitle}" src="${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div></div>`;
+        }
+	}
+	let imgcss = {
+		type: "lang",
+		regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?), other=(.*?)\]/g,
+		replace: function(all, img, figtitle, alt, other) {
+            figureId++;
+			return `<div style="text-align: center;" id="figure-${figureId}"><figure class="fit-wrapper"><img style="${other}" class="fit-image" title="${figtitle}" src="${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div>`;
+        }
 	}
 	let img_small = {
 		type: "lang",
@@ -42,6 +57,7 @@ let ext = function() {
 		type: "lang",
 		regex: /\[title=(.*?)\]/gim,
 		replace: function(match, content) {
+            figureId = 0;
 			setWindowTitleDirect(content);
 			setTimeout(() => {
 				hljs.highlightAll();
@@ -60,23 +76,6 @@ let ext = function() {
 		replace: "<div class='$1'>$2</div>"
 	}
 
-	let html = {
-		type: "lang",
-		regex: /\[html\]([^]*?)\[\/html\]/g,
-		replace: "$1"
-	}
-
-	let script = {
-		type: "lang",
-		regex: /\[script\]([^]*?)\[\/script\]/g,
-		replace: function(match, content) {
-			const $script = document.createElement("script");
-			$script.innerHTML = content;
-			$scriptContent.appendChild($script);
-			return "";
-		}
-	}
-
 	let tip = {
 		type: "lang",
 		regex: /\[tip=(.*?)\]([^]*?)\[\/tip\]/g,
@@ -92,19 +91,25 @@ let ext = function() {
 	let yes = {
 		type: "lang",
 		regex: /\[yes\]([^]*?)\[\/yes\]/g,
-		replace: "<span style='color:#14d914'>$1</span>"
+		replace: "<span><img src='/assets/green-check-mark.svg' class='icon-text'>$1</span>"
 	}
 
 	let unknown = {
 		type: "lang",
 		regex: /\[unknown\]([^]*?)\[\/unknown\]/g,
-		replace: "<span style='color:#888888'>$1?</span>"
+		replace: "<span class='unknown'><img src='/assets/question-mark.svg' class='icon-text'>$1</span>"
 	}
 
 	let no = {
 		type: "lang",
 		regex: /\[no\]([^]*?)\[\/no\]/g,
-		replace: "<span style='color:#c91010'>~~$1~~</span>"
+		replace: "<span><img src='/assets/red-cross.svg' class='icon-text'>~~$1~~</span>"
+	}
+
+	let discord = {
+		type: "lang",
+		regex: /\[discord\]/g,
+		replace: "``Nylilsa#9310``"
 	}
 
 	let specs = {
@@ -220,7 +225,7 @@ let ext = function() {
 	let key = {
 		type: "lang",
 		regex: /\[key=([^]*?)\]/g,
-		replace: "<code class='key mono'>$1</code>"
+		replace: "<kbd class='key mono'>$1</kbd>"
 	}
 
 	let cite = {
@@ -309,5 +314,5 @@ let ext = function() {
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [hr_major, hr_minor, hr_custom, br, img, img_small, code, title, c, html, script, tip, video, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, match, scenes, check, cross];
+	return [hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, match, scenes, check, cross];
 }

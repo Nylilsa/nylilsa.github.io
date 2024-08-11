@@ -1,5 +1,13 @@
 "use strict";
 
+const globalConfigs = {
+    game: null,  
+    gameCharacters: null,
+    selectedDifficulty: null,
+    englishName: null,
+    overallWRCharacter: null,
+}
+
 class Points {
     constructor(date, score, player) {
         this.x = date;
@@ -32,9 +40,9 @@ class Data {
     }
 }
 
-function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func) {
-    const cond = (game != "th16" && game != "th128") || difficulty == 'Extra';
-    const colors = cond ? colorsForChart[game]['colors'] : colorsForChart[`${game}other`]['colors'];
+function callChartJS(fetchedData, time, func) {
+    const cond = (globalConfigs.game != "th16" && globalConfigs.game != "th128") || globalConfigs.selectedDifficulty == 'Extra';
+    const colors = cond ? colorsForChart[globalConfigs.game]['colors'] : colorsForChart[`${globalConfigs.game}other`]['colors'];
     const colorsWithOpacity = colors.map(color => {
         if (color[0] == 'd') {
             color = color.slice(2);
@@ -56,7 +64,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
             const dateObject = subelement.date.replaceAll("/", "-");
             arr.push(new Points(dateObject, subelement.score, subelement.name))
         });
-        const character = gameCharacters[fetchedData.indexOf(fetchedData[i])];
+        const character = globalConfigs.gameCharacters[fetchedData.indexOf(fetchedData[i])];
         const playerData = new Data(arr, character, colors[i], colorsWithOpacity[i]);
         dataset.push(playerData);
     }
@@ -70,7 +78,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
         plugins: [{
             id: 'htmlLegend',
             afterUpdate(chart, args, options) {
-                createLegend(chart, args, options, gameCharacters, colors, game, difficulty, func);
+                createLegend(chart, args, options, colors, func);
             }
         }
         ],
@@ -97,7 +105,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
                     beginAtZero: false,
                     ticks: {
                         callback: function (value) {
-                            return roundedTicks(value, game);
+                            return roundedTicks(value);
                         }
                     },
                     grid: {
@@ -128,7 +136,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
                 },
                 title: {
                     display: true,
-                    text: `${englishName} WR History ${difficulty}`,
+                    text: `${globalConfigs.englishName} WR History ${globalConfigs.selectedDifficulty}`,
                 },
                 subtitle: {
                     display: true,
@@ -159,7 +167,7 @@ function callChartJS(fetchedData, gameCharacters, englishName, difficulty, time,
     });
 }
 
-function toggleLegend(chart, items, game, difficulty) {
+function toggleLegend(chart, items) {
     const top = document.getElementById("legend-toggle-all");
     const li = document.createElement('li');
     const flag = top.classList.contains("show-function");
@@ -168,20 +176,12 @@ function toggleLegend(chart, items, game, difficulty) {
     }
     const textContainer = document.createElement('p');
     textContainer.classList.add("legend-item");
-    textContainer.style.color = "#666";
-    textContainer.style.margin = 0;
-    textContainer.style.padding = 0;
     let text;
     if (flag) {
         text = document.createTextNode("Show all categories");
     } else {
         text = document.createTextNode("Hide all categories");
     }
-    top.style.alignItems = 'center';
-    top.style.cursor = 'pointer';
-    top.style.justifyContent = 'center';
-    top.style.display = 'grid';
-    top.style.padding = '8px';
     li.style.display = 'flex';
     li.style.justifyContent = 'center';
     li.style.gridColumn = '1/-1';
@@ -209,24 +209,24 @@ function toggleLegend(chart, items, game, difficulty) {
     li.appendChild(textContainer);
     top.appendChild(li);
     //write stuff that allows toggle Season/Animal button
-    if (game == "th17" || (game == "th16" && difficulty != "Extra")) {
-        extraLegendButtons(top, game, items, chart);
+    if (globalConfigs.game == "th17" || (globalConfigs.game == "th16" && globalConfigs.selectedDifficulty != "Extra")) {
+        extraLegendButtons(top, items, chart);
     }
 }
 
-function extraLegendButtons(top, game, items, chart) {
+function extraLegendButtons(top, items, chart) {
     let sub;
     let n;
     let colors;
-    if (game == "th17") {
+    if (globalConfigs.game == "th17") {
         sub = ["Wolf", "Otter", "Eagle"];
-        colors = colorsForChart[game]['colors'];
+        colors = colorsForChart[globalConfigs.game]['colors'];
         top.style.gridTemplateColumns = `repeat(auto-fill, 33%)`;
         n = 3;
     }
-    if (game == "th16") {
+    if (globalConfigs.game == "th16") {
         sub = ["Spring", "Summer", "Autumn", "Winter"];
-        colors = colorsForChart[`${game}other`]['colors'];
+        colors = colorsForChart[`${globalConfigs.game}other`]['colors'];
         top.style.gridTemplateColumns = `repeat(auto-fill, 25%)`;
         n = 4;
     }
@@ -242,7 +242,7 @@ function extraLegendButtons(top, game, items, chart) {
         li.onclick = () => {
             const flag = top.classList.contains(`show-${sub[i].toLocaleLowerCase()}`);
             let indexes = [i, i + n, i + 2 * n];
-            if (game == "th16") {
+            if (globalConfigs.game == "th16") {
                 indexes = [i, i + n, i + 2 * n, i + 3 * n];
             }
             for (let j = 0; j < indexes.length; j++) {
@@ -274,14 +274,9 @@ function extraLegendButtons(top, game, items, chart) {
             }
             chart.update();
         };
-        boxSpan.style.background = `${colors[i]}80`;
+        boxSpan.style.backgroundColor = `${colors[i]}80`;
         boxSpan.style.borderColor = colors[i];
-        boxSpan.style.borderWidth = 1 + 'px';
-        boxSpan.style.borderStyle = "solid";
-        boxSpan.style.display = 'inline-block';
-        boxSpan.style.height = '12px';
-        boxSpan.style.marginRight = '10px';
-        boxSpan.style.width = '40px';
+        boxSpan.classList.add("toggle-buttons-large");
         const textContainer = document.createElement('p');
         textContainer.classList.add("legend-item");
         textContainer.style.color = "#666";
@@ -304,14 +299,14 @@ function runOnce() {
     };
 }
 
-function createLegend(chart, args, options, gameCharacters, colors, game, difficulty, runOnlyOnce) {
+function createLegend(chart, args, options, colors, runOnlyOnce) {
     const deselected = JSON.parse(sessionStorage.selected)
-    const ul = getOrCreateLegendList(game, options.containerID, gameCharacters);
+    const ul = getOrCreateLegendList(options.containerID);
     while (ul.firstChild) {
         ul.firstChild.remove();
     }
     const items = chart.options.plugins.legend.labels.generateLabels(chart);
-    toggleLegend(chart, items, game, difficulty);
+    toggleLegend(chart, items);
     runOnlyOnce(toggleBetweenDiffs);
     function toggleBetweenDiffs() {
         for (let j = 0; j < deselected.length; j++) {
@@ -376,19 +371,19 @@ function createLegend(chart, args, options, gameCharacters, colors, game, diffic
     }
 }
 
-function getOrCreateLegendList(game, id, gameCharacters) {
+function getOrCreateLegendList(id) {
     const legendContainer = document.getElementById(id);
     let listContainer = legendContainer.querySelector('ul');
-    let computedCharacters = (100 / gameCharacters.length) + '%';
+    let computedCharacters = (100 / globalConfigs.gameCharacters.length) + '%';
     if (!listContainer) {
         listContainer = document.createElement('ul');
-        if (gameCharacters.length > 4) {
+        if (globalConfigs.gameCharacters.length > 4) {
             computedCharacters = '16.6666%';
         }
-        if (game == 'th16' || game == 'th08') {
+        if (globalConfigs.game == 'th16' || globalConfigs.game == 'th08') {
             computedCharacters = '25%';
         }
-        if (game == 'th17') {
+        if (globalConfigs.game == 'th17') {
             computedCharacters = '33.333%';
         }
         gridLegend(listContainer, computedCharacters);
@@ -405,7 +400,7 @@ function gridLegend(element, value) {
     element.style.padding = `0`;
 }
 
-function roundedTicks(value, game) {
+function roundedTicks(value) {
     const largeNumbers = {
         "Millions": {
             "number": 1e6,
@@ -418,85 +413,87 @@ function roundedTicks(value, game) {
     }
     let decimals = 2;
     let selector = "Billions";
-    if (game == "th01") { selector = "Millions" }
-    if (game == "th02") { selector = "Millions" }
-    if (game == "th03") { selector = "Millions"; decimals = 0 }
-    if (game == "th04") { selector = "Millions"; decimals = 0 }
-    if (game == "th05") { selector = "Millions"; decimals = 0 }
-    if (game == "th06") { selector = "Millions"; decimals = 0 }
-    if (game == "th09") { selector = "Millions"; decimals = 0 }
-    if (game == "th10") { selector = "Billions"; decimals = 3 }
-    if (game == "th128") { selector = "Millions"; decimals = 0 }
+    if (globalConfigs.game == "th01") { selector = "Millions" }
+    else if (globalConfigs.game == "th02") { selector = "Millions" }
+    else if (globalConfigs.game == "th03") { selector = "Millions"; decimals = 0 }
+    else if (globalConfigs.game == "th04") { selector = "Millions"; decimals = 0 }
+    else if (globalConfigs.game == "th05") { selector = "Millions"; decimals = 0 }
+    else if (globalConfigs.game == "th06") { selector = "Millions"; decimals = 0 }
+    else if (globalConfigs.game == "th09") { selector = "Millions"; decimals = 0 }
+    else if (globalConfigs.game == "th10") { selector = "Billions"; decimals = 3 }
+    else if (globalConfigs.game == "th128") { selector = "Millions"; decimals = 0 }
     return (value / largeNumbers[selector]["number"]).toFixed(decimals) + largeNumbers[selector]["suffix"];
 }
 
-export function initCanvas(gameID, difficulty) {
-    const func = runOnce();
+function getGame(gameID) {
     let game = gameID.slice(1);
     if (localStorage.selectedGame && game === '') {
         game = localStorage.selectedGame;
     }
     if (game === '') {
-        game = "th11"; //default if url is invalid
+        game = "th13"; //default if url is invalid
     }
+    return game;
+}
+
+function setGame() {
+    const game = initRemoveHash(true).slice(1) || globalConfigs.game;
+    globalConfigs.game = game;
+}
+
+export function initCanvas(gameID) {
+    const func = runOnce();
+    const game = getGame(gameID);
     if (localStorage.hideUnverified === undefined) {
         localStorage.hideUnverified = false;
     }
+    globalConfigs.game = game;
     localStorage.selectedGame = game;
     sessionStorage.selected = "[]";
-    loadCanvas(game, difficulty, func);
-    styleGameSelectorButtons(game);
-    styleToggleSwitch(game);
+    loadCanvas(undefined, func);
+    styleGameSelectorButtons();
+    styleToggleSwitch();
     fetchData('json/gameinfo.json')
         .then(data => {
-            const allDifficulties = data['Difficulty'][game];
-            styleGameDifficultyButtons(allDifficulties, game);
+            const allDifficulties = data['Difficulty'][globalConfigs.game];
+            styleGameDifficultyButtons(allDifficulties);
         });
 }
 
-function fetchData(url) {
-    return fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to fetch ${url}. Status: ${response.status}`);
-            }
-            return response.json();
-        });
-}
-
-function loadCanvas(game, difficulty = "Lunatic", func) {
+function loadCanvas(difficulty = "Lunatic", func) {
+    globalConfigs.selectedDifficulty = difficulty;
+    setGame();
     const twoYears = 63072000000;
     const now = new Date().getTime();
     let fetchedData = [];
     Promise.all([
         fetchData('json/gameinfo.json'),
-        fetchData(`json/wr/unverified/${game}.json`),
-        fetchData(`json/wr/verified/${game}.json`),
+        fetchData(`json/wr/unverified/${globalConfigs.game}.json`),
+        fetchData(`json/wr/verified/${globalConfigs.game}.json`),
         fetchData(`json/players.json`)
     ]).then(([data, unverified, verified, allPlayerData]) => {
-        const englishName = data['Names'][game]['en'];
-        const releaseDate = new Date(data['LatestReleaseDate'][game]).getTime();
+        globalConfigs.englishName = data['Names'][globalConfigs.game]['en'];
+        const releaseDate = new Date(data['LatestReleaseDate'][globalConfigs.game]).getTime();
         const time = releaseDate > now - twoYears ? 'month' : 'year';
-        let gameCharacters;
-        if ((game != "th16" && game != "th128") || difficulty == 'Extra') {
-            gameCharacters = data['Characters'][game];
+        if ((globalConfigs.game != "th16" && globalConfigs.game != "th128") || globalConfigs.selectedDifficulty == 'Extra') {
+            globalConfigs.gameCharacters = data['Characters'][globalConfigs.game];
         } else {
-            gameCharacters = data['Characters'][`${game}other`];
+            globalConfigs.gameCharacters = data['Characters'][`${globalConfigs.game}other`];
         }
         const maxValue = [];
         const hidesUnverified = JSON.parse(localStorage.hideUnverified);
         const wrData = hidesUnverified ? mergeEntries(verified) : mergeEntries(verified, unverified) ?? mergeEntries(verified);
         addNamesToData(wrData, allPlayerData);
-        gameCharacters.forEach(char => {
-            const history = wrData[difficulty][char];
+        globalConfigs.gameCharacters.forEach(char => {
+            const history = wrData[globalConfigs.selectedDifficulty][char];
             const maxScoreOfShot = history.length == 0 ? 0 : history[history.length - 1].score;
             maxValue.push(maxScoreOfShot);
             fetchedData.push(history);
         })
-        const overallWRCharacter = gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))]
-        generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty);
-        generateWRTable(fetchedData, gameCharacters, game, overallWRCharacter, difficulty);
-        callChartJS(fetchedData, gameCharacters, englishName, difficulty, time, game, func);
+        globalConfigs.overallWRCharacter = globalConfigs.gameCharacters[maxValue.indexOf(Math.max.apply(null, maxValue))];
+        generateWRButtons();
+        generateWRTable(fetchedData);
+        callChartJS(fetchedData, time, func);
         // createDropdown(wrData);
     })
     return;
@@ -539,9 +536,6 @@ function mergeEntries(verified, unverified) {
             const unverifiedEntry = unverified?.[difficulty]?.[character] ?? [];
             // this is to distinct unverified from verified entries when they have been merged
             unverifiedEntry.forEach(entry => {
-                // entry.push({
-                //     "isUnverified": true
-                // });
                 entry.isUnverified = true;
             })
             const total = [...verifiedEntry, ...unverifiedEntry];
@@ -714,7 +708,7 @@ function styleUnverified(isUnverified, row) {
     // row.style.color = "var(--clr-default)";
 }
 
-function styleToggleSwitch(game) {
+function styleToggleSwitch() {
     const selector = document.getElementById("wr-toggle-switch");
     const options = ["Show unverified records", "Hide unverified records"];
     const ids = ["show-unverified", "hide-unverified"];
@@ -726,7 +720,7 @@ function styleToggleSwitch(game) {
         createButton.addEventListener("click", function () {
             const func = runOnce();
             const difficulty = getDifficultyFromButtons();
-            loadCanvas(initRemoveHash(true).slice(1) || game, difficulty, func);
+            loadCanvas(difficulty, func);
             const children = selector.childNodes;
             children.forEach((element) => {
                 element.classList.remove('selected-full');
@@ -758,7 +752,7 @@ function getDifficultyFromButtons() {
     return output;
 }
 
-function styleGameDifficultyButtons(allDifficulties, game) {
+function styleGameDifficultyButtons(allDifficulties) {
     const diffSelector = document.getElementById("wr-difficulty-buttons");
     allDifficulties.forEach(difficulty => {
         const createButton = document.createElement("button");
@@ -771,7 +765,7 @@ function styleGameDifficultyButtons(allDifficulties, game) {
         }
         function selectDifficulty() {
             const func = runOnce();
-            loadCanvas(initRemoveHash(true).slice(1) || game, difficulty, func);
+            loadCanvas(difficulty, func);
             const children = diffSelector.childNodes;
             children.forEach((element) => {
                 element.classList.remove('selected-full');
@@ -784,7 +778,7 @@ function styleGameDifficultyButtons(allDifficulties, game) {
     });
 }
 
-function styleGameSelectorButtons(game) {
+function styleGameSelectorButtons() {
     const parent = document.getElementsByClassName("card-game");
     for (let i = 0; i < parent.length; i++) {
         const button = parent[i];
@@ -805,7 +799,7 @@ function styleGameSelectorButtons(game) {
     // const array = ['th01', 'th02', 'th03', 'th04', 'th05', 'th06', 'th07', 'th08', 'th09', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'];
     const array = ['th06', 'th07', 'th08', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'];
     const width = selector.scrollWidth;
-    const index = array.indexOf(game);
+    const index = array.indexOf(globalConfigs.game);
     const max = array.length;
     const number = index / max * width;
     selector.scrollLeft = number;
@@ -831,26 +825,26 @@ function setButtonLogic(id) {
     }
 }
 
-function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty) {
+function generateWRButtons() {
     const section = document.getElementById("wr-table-buttons");
     while (section.children.length > 0) { // removes old and allows for new to be generated
         section.removeChild(section.children[0]);
     }
-    for (let i = 0; i < gameCharacters.length; i++) {
+    for (let i = 0; i < globalConfigs.gameCharacters.length; i++) {
         const button = document.createElement("button");
-        const id = `${game}${gameCharacters[i]}`;
+        const id = `${globalConfigs.game}${globalConfigs.gameCharacters[i]}`;
         button.setAttribute("id", id);
         button.setAttribute("class", "wr-shottype-buttons");
-        button.innerText = gameCharacters[i];
-        if (gameCharacters[i] == overallWRCharacter) {
+        button.innerText = globalConfigs.gameCharacters[i];
+        if (globalConfigs.gameCharacters[i] == globalConfigs.overallWRCharacter) {
             button.style.color = "#ddd";
         }
-        if (game == "th03") {
+        if (globalConfigs.game == "th03") {
             section.style.gridTemplateColumns = "repeat(3, 1fr)";
             section.style.gridTemplateRows = " repeat(3, 1fr)";
             section.style.gridAutoFlow = "row";
         }
-        if (game == "th08") {
+        if (globalConfigs.game == "th08") {
             section.style.gridTemplateColumns = "repeat(8, 1fr)";
             section.style.gridTemplateRows = " repeat(2, 1fr)";
             section.style.gridAutoFlow = "row";
@@ -859,42 +853,42 @@ function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty)
                 button.style.gridColumn = "span 2";
             }
         }
-        if (game == "th09") {
+        if (globalConfigs.game == "th09") {
             section.style.gridTemplateColumns = "repeat(7, 1fr)";
             section.style.gridTemplateRows = " repeat(2, 1fr)";
             section.style.gridAutoFlow = "row";
             section.classList.add("grid-th09");
         }
-        if (game == "th07" || game == "th12" || (game == "th128" && difficulty != "Extra") || game == "th14") {
+        if (globalConfigs.game == "th07" || globalConfigs.game == "th12" || (globalConfigs.game == "th128" && globalConfigs.selectedDifficulty != "Extra") || globalConfigs.game == "th14") {
             section.style.gridTemplateColumns = "repeat(6, 1fr)";
             section.style.gridTemplateRows = " repeat(1, 1fr)";
             section.style.gridAutoFlow = "row";
             section.classList.add("grid-6-ab");
         }
-        if (game == "th10" || game == "th11") {
+        if (globalConfigs.game == "th10" || globalConfigs.game == "th11") {
             section.style.gridTemplateColumns = "repeat(6, 1fr)";
             section.style.gridTemplateRows = " repeat(1, 1fr)";
             section.style.gridAutoFlow = "row";
             section.classList.add("grid-6-abc");
         }
-        if (game == "th128" && difficulty == "Extra") {
+        if (globalConfigs.game == "th128" && globalConfigs.selectedDifficulty == "Extra") {
             section.style.gridTemplateColumns = "";
             section.style.gridTemplateRows = "";
             section.style.gridAutoFlow = "row";
         }
-        if (game == "th16" && difficulty != "Extra") {
+        if (globalConfigs.game == "th16" && globalConfigs.selectedDifficulty != "Extra") {
             section.style.gridTemplateColumns = "repeat(4, 1fr)";
             section.style.gridTemplateRows = " repeat(4, 1fr)";
             section.style.gridAutoFlow = "row";
             section.classList.add("grid-th16");
         }
-        if (game == "th16" && difficulty == "Extra") {
+        if (globalConfigs.game == "th16" && globalConfigs.selectedDifficulty == "Extra") {
             section.style.gridTemplateColumns = "repeat(4, 1fr)";
             section.style.gridTemplateRows = "";
             section.style.gridAutoFlow = "row";
             section.classList.remove("grid-th16");
         }
-        if (game == "th17") {
+        if (globalConfigs.game == "th17") {
             section.style.gridTemplateColumns = "repeat(3, 1fr)";
             section.style.gridTemplateRows = " repeat(3, 1fr)";
             section.style.gridAutoFlow = "row";
@@ -904,7 +898,7 @@ function generateWRButtons(gameCharacters, game, overallWRCharacter, difficulty)
     }
 }
 
-function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficulty, flag = true) {
+function generateWRTable(data, flag = true) {
     const section = document.getElementById("wr-tables");
     const length = section.children.length;
     if (length > 0) { // removes old and allows for new to be generated
@@ -913,16 +907,15 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
         }
     }
     for (let i = 0; i < data.length; i++) { // tables
-        let reverse;
-        if (flag) { reverse = data[i].length - 1; } else { reverse = 0 }
+        const reverse = flag ? data[i].length - 1 : 0;
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
-        const selector = (game == "th01" || game == "th128") ? "Route" : "Shottype";
+        const selector = (globalConfigs.game == "th01" || globalConfigs.game == "th128") ? "Route" : "Shottype";
         const headers = ["#", "Difficulty", selector, "Score", "Player", "Date", "Score gain"];
-        const id = `${game}${gameCharacters[i]}`;
+        const id = `${globalConfigs.game}${globalConfigs.gameCharacters[i]}`;
         table.setAttribute("id", `${id}table`);
         table.classList.add('all-wr-tables');
-        if (i != gameCharacters.indexOf(overallWRCharacter)) {
+        if (i != globalConfigs.gameCharacters.indexOf(globalConfigs.overallWRCharacter)) {
             table.style.display = "none";
         }
         for (let j = 0; j < data[i].length; j++) { // rows
@@ -952,14 +945,14 @@ function generateWRTable(data, gameCharacters, game, overallWRCharacter, difficu
                 const cell = document.createElement("td");
                 let pathToSite;
                 if (!isUnverified) {
-                    const rpyName = `${game}_${difficulty}_${gameCharacters[i]}_${score}.rpy`.toLowerCase();
-                    pathToSite = `https://github.com/Nylilsa/wr-replays/raw/main/${game}/${difficulty}/${gameCharacters[i]}/${rpyName}`;
+                    const rpyName = `${globalConfigs.game}_${globalConfigs.selectedDifficulty}_${globalConfigs.gameCharacters[i]}_${score}.rpy`.toLowerCase();
+                    pathToSite = `https://github.com/Nylilsa/wr-replays/raw/main/${globalConfigs.game}/${globalConfigs.selectedDifficulty}/${globalConfigs.gameCharacters[i]}/${rpyName}`;
 
                 }
                 switch (k) {
                     case 0: { cellText = document.createTextNode(j + 1); break; }
-                    case 1: { cellText = document.createTextNode(`${difficulty}`); break; }
-                    case 2: { cellText = document.createTextNode(gameCharacters[i]); break; }
+                    case 1: { cellText = document.createTextNode(`${globalConfigs.selectedDifficulty}`); break; }
+                    case 2: { cellText = document.createTextNode(globalConfigs.gameCharacters[i]); break; }
                     case 3: {
                         if (!isUnverified) {
                             cellText = document.createElement(`a`);

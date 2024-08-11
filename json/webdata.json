@@ -8,7 +8,9 @@
 	    "Na19l8CMf4": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "title": "東方妖々夢～リリカ・プリズムリバー暴走バグ", "url": "https://www.youtube.com/watch?v=tufvQ1fR3Y0"},
 	    "cLNCEmYPwZ": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "title": "東方妖々夢～ルナサ・プリズムリバー暴走バグ", "url": "https://www.youtube.com/watch?v=q1-qCmcfB5A"},
         
-	    "lED2ol41Co": {"game": "th10", "date": "2013-09-14", "author": "a26866152", "title": "【TAS】東方風神録Lunatic バグマリ in 13:39.25", "url": "https://www.youtube.com/watch?v=efqy8GBUNL0"},
+        "6cYBeHxcvN": {"game": "th09", "date": "2022-05-02", "author": "Maribel Hearn", "title": "Touhou 9 - Phantasmagoria of Flower View - Stage Skip Glitch", "url": "https://www.youtube.com/watch?v=q5J8_tn8Ibs"},
+	    
+        "lED2ol41Co": {"game": "th10", "date": "2013-09-14", "author": "a26866152", "title": "【TAS】東方風神録Lunatic バグマリ in 13:39.25", "url": "https://www.youtube.com/watch?v=efqy8GBUNL0"},
 	    "vR1jF7QiOO": {"game": "th10", "date": "2022-08-15", "author": "Nylilsa", "title": "東方風神録 〜 Lunatic 13分54秒 魔理沙/B", "url": "https://www.youtube.com/watch?v=0ETirf_ywHY"},
 	    "2KQJ4ddgTf": {"game": "th10", "date": "2022-05-28", "author": "Nylilsa", "title": "東方風神録 〜 Extra 6分25秒 魔理沙/B", "url": "https://www.youtube.com/watch?v=RxkHkDJvwXg"},
 	    "V1NCHhfu8B": {"game": "th10", "date": "2022-06-28", "author": "Nylilsa", "title": "small th10 stage 4 comparison", "url": "https://www.youtube.com/watch?v=0avljm0XfpA"},
@@ -26,8 +28,9 @@
 	    "Els7ZwnHuu": {"game": "th12", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
 	    "1bBWvqDT6t": {"game": "th12", "date": "2019-07-25", "author": "ZPS", "title": "UFO Marisa A Glitchless vs. Glitched Damage Comparison", "url": "https://www.youtube.com/watch?v=jP0mj3k1P24"},
         
+	    "hmHMZXGVnq": {"game": "th125", "date": "2019-08-15", "author": "Luthier is best boy", "title": "Touhou 12.5 Double Spoiler: 12-6 bug", "url": "https://www.youtube.com/watch?v=PkxhyCMozo4"},
 	    "2r2sb5fl1o": {"game": "th125", "date": "2010-03-17", "author": "Vexe1", "title": "Touhou 12.5 ~ Double Spoiler, Stage 12-6 GLITCH", "url": "https://www.youtube.com/watch?v=3KlN0x4I4HM"},
-	    "WowBsLKIF9": {"game": "th125", "date": "2019-06-08", "author": "ide\\_an", "title": "hanakopatch", "url": "https://bitbucket.org/ide\\_an/hanakopatch/src/master/"},
+	    "WowBsLKIF9": {"game": "th125", "date": "2019-06-08", "author": "ide_an", "title": "hanakopatch", "url": "https://bitbucket.org/ide_an/hanakopatch/src/master/"},
         
 	    "1TwZQlGqEN": {"game": "th14", "date": "n.d.", "author": "Wikipedia", "title": "Integer overflow", "url": "https://en.wikipedia.org/wiki/Integer_overflow"},
 	    "tyqdbrOWJQ": {"game": "th14", "date": "2017-04-06", "author": "NNN_shooter", "title": "【TAS】TH14 DDC \"Lunatic\" SakuyaA 9,999,999,990", "url": "https://www.youtube.com/watch?v=gZgKglbe-7M"},
@@ -46,6 +49,10 @@
 	    "swrajocPpX": {"game": "th14", "date": "2017-07-01", "author": "NNN_shooter", "title": "東方輝針城speedrunで重要なお祓い棒分裂の詳細（現状判明分 + 推測）", "url": "https://nnn-shooter.hatenablog.com/entry/ar1291350"},
         
 	    "a2p3Jtvow4": {"game": "th143", "date": "2016-05-21", "author": "thplayer635", "title": "scoring with sekibanki 2 [secret ISC scoring strat]", "url": "https://www.youtube.com/watch?v=-BScbpVxKLg"},
+	    "8ediV3QmZ3": {"game": "th143", "date": "2024-07-12", "author": "srn_ity", "title": "Touhou 14.3 (ISC): New* bug leads to new* counterstops", "url": "https://www.youtube.com/watch?v=TYB3bWmA7Pk"},
+	    "ppUUSjCgO6": {"game": "th143", "date": "2024-03-25", "author": "srn_ity", "title": "Touhou 14.3 (ISC): 8-3 Counterstop", "url": "https://www.youtube.com/watch?v=YfEufwQXgUc"},
+	    "PHBgUptPNj": {"game": "th143", "date": "2024-01-11", "author": "srn_ity", "title": "Touhou 14.3 (ISC): 2-4 Counterstop", "url": "https://www.youtube.com/watch?v=82A4NnP_bOs"},
+	    "v68mVkO2HA": {"game": "th143", "date": "2023-10-23", "author": "srn_ity", "title": "Touhou 14.3 (ISC): Reimu 8-5 Timeout Glitch", "url": "https://www.youtube.com/watch?v=0Vb04SmP7TE"},
         
 	    "XewIFrqJCj": {"game": "th15", "date": "2022-06-25", "author": "Nylilsa", "title": "【東方紺珠伝】サグメスキップ〜霊夢と早苗", "url": "https://www.youtube.com/watch?v=u5brd2bYor4"},
 	    "9MaLyBEpwP": {"game": "th15", "date": "2017-06-27", "author": "fon", "title": "Touhou 15 - Legacy Mode (Lunatic) Speedrun in 23:48", "url": "https://www.youtube.com/watch?v=cCxeK1-i_nU&t=772s"},
@@ -58,6 +65,8 @@
 	    "HMaFJDVRYi": {"game": "th16", "date": "2017-09-06", "author": "3rareProject", "title": "東方天空璋　５面　スペルカード集　normal 　※バグシーン（敵消失）あり", "url": "https://www.youtube.com/watch?v=oHuGs4Um_ZE"},
 	    "lNMCKb4ARr": {"game": "th16", "date": "2019-05-25", "author": "F", "title": "【東方天空璋】爾子田里乃消失バグ！？", "url": "https://www.youtube.com/watch?v=Oj4_zPNCQ2c"},
 	    "yyf9Q3J4MF": {"game": "th16", "date": "2017-08-14", "author": "AlternateDimensions", "title": "Touhou 16 : Hidden Star in Four Seasons (HSiFS) - Mai and Satono Spell Practice Glitch", "url": "https://www.youtube.com/watch?v=8Dzxwj2nd8Y"},
+	    "BtnAqa5IoI": {"game": "th16", "date": "2017-08-11", "author": "Pearl | ASE-PRL", "title": "Okina Survival Spell Glitch", "url": "https://www.youtube.com/watch?v=2ZZPsPRZujc"},
+	    "VgiiSCpKvV": {"game": "th16", "date": "2023-02-09", "author": "小小哦晰晰", "title": "Touhou 16 Extra Speedrun 6:14.05 Reimu", "url": "https://www.youtube.com/watch?v=u2Pdl01e9Jc&t=347"},
         
 	    "ZS7nE2L10d": {"game": "th17", "date": "2019-09-26", "author": "NNN_shooter", "title": "【紲星あかり解説】 東方鬼形獣 オオワシ妖夢＆妖夢全般解説+おまけ（ショット比較）", "url": "https://www.youtube.com/watch?v=Q7CN9ZGAiHY"},
 	    "7tWc2Qfu90": {"game": "th17", "date": "2020-10-17", "author": "32th System", "title": "What is the dupe that the th17 scorerunners talk about?", "url": "https://www.youtube.com/watch?v=RsucrXjPD_8"},
@@ -67,7 +76,16 @@
 	    "tkOd4IHAos": {"game": "th17", "date": "2022-09-04", "author": "Nylilsa", "title": "東方鬼形獣～リプレイバグ",  "url": "https://www.youtube.com/watch?v=-FXzOT3_trg"},
         
 	    "L4WwIST4qA": {"game": "th17", "date": "2022-06-07", "author": "Nylilsa", "title": "東方鬼形獣 〜 Extra 5分29秒 妖夢/カワウソ",  "url": "https://www.youtube.com/watch?v=spnH2stUsVw&t=288s"},
-	    "nR5vbyfi91": {"game": "th17", "date": "2022-06-07", "author": "Nylilsa", "title": "東方鬼形獣 〜 Extra 5分29秒 妖夢/カワウソ",  "url": "https://www.youtube.com/watch?v=spnH2stUsVw&t=302s"}
+	    "nR5vbyfi91": {"game": "th17", "date": "2022-06-07", "author": "Nylilsa", "title": "東方鬼形獣 〜 Extra 5分29秒 妖夢/カワウソ",  "url": "https://www.youtube.com/watch?v=spnH2stUsVw&t=302s"},
+	    
+        "ako9OccKW9": {"game": "th18", "date": "2023-03-31", "author": "Notaco", "title": "Touhou UM - Momoyo Oomukade \"Dragon Eater\" Timeout [TAS]",  "url": "https://www.youtube.com/watch?v=IBU67XMK1FA"},
+        "zfDVXeAFWP": {"game": "th18", "date": "2024-07-21", "author": "dannan14", "title": "[TAS] Touhou 18 - Unconnected Marketeers - Dragon Eater Timeout",  "url": "https://www.youtube.com/watch?v=Nb1_943sBJE"},
+	    
+        "KYpucTdk17": {"game": "th19", "date": "2024-07-08", "author": "ZUN", "title": "'Unfinished Dream of All Living Ghost.' ver 1.10c is available.",  "url": "https://store.steampowered.com/news/app/2400340?updates=true&emclan=103582791473618951&emgid=4220517501592769690"},
+        "JH1JFPV8L0": {"game": "th19", "date": "2024-06-30", "author": "CrestedPeak9", "title": "zanmu phase skip??? + spirit bug",  "url": "https://www.youtube.com/watch?v=zRjg6YrGaoY"},
+        "XhSfFMq8RL": {"game": "th19", "date": "2023-08-18", "author": "Suguri", "title": "Touhou 19: Hisami crash (bug)",  "url": "https://www.youtube.com/watch?v=hEh3iot5XTo"},
+        "vaFLqDnrYQ": {"game": "th19", "date": "2023-08-16", "author": "Serus", "title": "Hisami crashes",  "url": "https://www.youtube.com/watch?v=bPWEyd-Mr_s"},
+        "gOsukZAinT": {"game": "th19", "date": "2024-07-02", "author": "Nylilsa", "title": "東方獣王園 〜 Crash% 1m27s",  "url": "https://www.youtube.com/watch?v=G9roMFL8j5w"}
     },
     "Replays": {
         "VPemRVi0Bq": {"game": "th06", "date": "2021-10-09", "author": "kana0603", "name": "kana0603", "difficulty": "Lunatic", "shot": "ReimuA", "version": "1.02h", "note": "Meiling's 4th spell-card skip",  "url": "https://mega.nz/file/DvJRzRLa#PbhRb99Y_cLpJ_7t496GKY_yYNcb3Jvqgr3vkmS2o60"},
@@ -86,7 +104,7 @@
         "vSEJqDuDmA": {"game": "th07", "date": "2021-04-29", "author": "67811MKKA7", "name": "UOKIN", "difficulty": "Lunatic", "shot": "SakuyaB", "version": "1.00b", "note": "Merlin final spell-card glitch - chance is 1/854", "url": "https://mega.nz/file/HrgVlQLR#flPxml-FJlY5h7J_Kwyr60uj3u2sqGfhBQrRT4u-x44"},
         "g3TRR5bGdv": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "MarisaB", "version": "1.00b", "note": "Lyrica post-boss glitch - chance is 1/60314", "url": "https://mega.nz/file/O2oF2C6J#Atn8nDFNdVIhkfGht_lQ5mbE8t60We79tn7Hv84wgVw"},
         "0m17ZCJ0ef": {"game": "th07", "date": "2022-08-31", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuB", "version": "1.00b", "note": "Lunasa post-boss glitch - chance is 1/40428", "url": "https://mega.nz/file/OzIVmAAZ#ko9pV5cgT4furnv0sD6eAVljbct_wdVq-ck67UH8b1Q"},
-        
+                
         "mawUVYi8SZ": {"game": "th10", "date": "2022-09-17", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "ReimuB", "version": "1.00a", "note": "All stages are affected", "url": "https://mega.nz/file/775FGLzA#CFgOJhRwKJi_wQ-Z9GTe7Dg2Sn0SoVO4PJ4wRFjyjdc"},
         
         "owI5mOSMmn": {"game": "th11", "date": "2023-02-15", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Hard", "shot": "ReimuA", "version": "1.00a", "note": "", "url": "https://mega.nz/file/2rYgjBZJ#mTr_Ui71E0KW66w6rflQ6zcof7jJ_Dd7VrN99c7dYXk"},

@@ -13,7 +13,7 @@ A comprehensive Touhou world records tracker, updated every so often. This page 
 5. [a=https://thscore.pndsng.com/index.php]裏スコボみたいなメモ書き[/a] - by pndsng
 6. [a=https://www.puresign.tokyo/index.html]けーろだ　-K- Uploader[/a] - by Yumiya
 
-If there are any inaccuracies on this page, or if you have a missing replay, then please contact me on Discord (at ``Nylilsa#9310``) about it !
+If there are any inaccuracies on this page, or if you have a missing replay, then please contact me on Discord [discord] about it !
 
 ## Game
 [hr_major]
@@ -226,7 +226,7 @@ Major thanks to all these wonderful people for having contributed to the data to
 
 Of course, various (private) Discord messages were used for this as well. Thank you to everyone who has helped make this project possible !
 
-If there are any inaccuracies on this page, please contact me on Discord (at ``Nylilsa#9310``) about it !
+If there are any inaccuracies on this page, please contact me on Discord [discord] about it !
 
 
 
