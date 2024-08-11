@@ -176,20 +176,12 @@ function toggleLegend(chart, items) {
     }
     const textContainer = document.createElement('p');
     textContainer.classList.add("legend-item");
-    textContainer.style.color = "#666";
-    textContainer.style.margin = 0;
-    textContainer.style.padding = 0;
     let text;
     if (flag) {
         text = document.createTextNode("Show all categories");
     } else {
         text = document.createTextNode("Hide all categories");
     }
-    top.style.alignItems = 'center';
-    top.style.cursor = 'pointer';
-    top.style.justifyContent = 'center';
-    top.style.display = 'grid';
-    top.style.padding = '8px';
     li.style.display = 'flex';
     li.style.justifyContent = 'center';
     li.style.gridColumn = '1/-1';
@@ -282,14 +274,9 @@ function extraLegendButtons(top, items, chart) {
             }
             chart.update();
         };
-        boxSpan.style.background = `${colors[i]}80`;
+        boxSpan.style.backgroundColor = `${colors[i]}80`;
         boxSpan.style.borderColor = colors[i];
-        boxSpan.style.borderWidth = 1 + 'px';
-        boxSpan.style.borderStyle = "solid";
-        boxSpan.style.display = 'inline-block';
-        boxSpan.style.height = '12px';
-        boxSpan.style.marginRight = '10px';
-        boxSpan.style.width = '40px';
+        boxSpan.classList.add("toggle-buttons-large");
         const textContainer = document.createElement('p');
         textContainer.classList.add("legend-item");
         textContainer.style.color = "#666";
