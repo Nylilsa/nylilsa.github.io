@@ -90,7 +90,7 @@
     "92"  : {"name_en": "HRS"                                          },
     "93"  : {"name_en": "nicoyon"                                      },
     "94"  : {"name_en": "古明地筍"                                     },
-    "96"  : {"name_en": "くどう"                                       },
+    "96"  : {"name_en": "kudo"              , "name_jp": "くどう"      },
     "98"  : {"name_en": "HWRR"                                         },
     "99"  : {"name_en": "ARF"                                          },
     "100" : {"name_en": "P.K"                                          },
