@@ -38,8 +38,8 @@
 }
 
 #wr-game-buttons {
-    /* --game-count: 19; */
-    --game-count: 13;
+    --game-count: 19;
+    /* --game-count: 13; */
     display: grid;
     grid-template-columns: repeat(var(--game-count), 1fr);
     grid-auto-flow: row;

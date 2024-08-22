@@ -1,11 +1,13 @@
 "use strict";
 
 const globalConfigs = {
-    game: null,  
+    game: null,
     gameCharacters: null,
     selectedDifficulty: null,
     englishName: null,
     overallWRCharacter: null,
+    defaultGame: "th13",
+    isPc98: false,
 }
 
 class Points {
@@ -431,8 +433,9 @@ function getGame(gameID) {
         game = localStorage.selectedGame;
     }
     if (game === '') {
-        game = "th13"; //default if url is invalid
+        game = globalConfigs.defaultGame;
     }
+    globalConfigs.isPc98 = ["th01", "th02", "th03", "th04", "th05"].includes(game);
     return game;
 }
 
@@ -797,7 +800,8 @@ function styleGameSelectorButtons() {
     }
     const selector = document.getElementById("wr-game-buttons");
     // const array = ['th01', 'th02', 'th03', 'th04', 'th05', 'th06', 'th07', 'th08', 'th09', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'];
-    const array = ['th06', 'th07', 'th08', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'];
+    const array = ['th01', 'th02', 'th03', 'th04', 'th05', 'th06', 'th07', 'th08', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'];
+    // const array = ['th06', 'th07', 'th08', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'];
     const width = selector.scrollWidth;
     const index = array.indexOf(globalConfigs.game);
     const max = array.length;
@@ -921,7 +925,7 @@ function generateWRTable(data, flag = true) {
         for (let j = 0; j < data[i].length; j++) { // rows
             let row = document.createElement("tr");
             const index = Math.abs(j - reverse);
-            const { score, name, date, isUnverified } = data[i][index];
+            const { score, name, date, isUnverified, sources } = data[i][index];
             // const isUnverified = isUnverified?.["isUnverified"] ?? false;
             styleUnverified(isUnverified, row);
             const dateFormatted = dateFormat(date);
@@ -945,8 +949,12 @@ function generateWRTable(data, flag = true) {
                 const cell = document.createElement("td");
                 let pathToSite;
                 if (!isUnverified) {
-                    const rpyName = `${globalConfigs.game}_${globalConfigs.selectedDifficulty}_${globalConfigs.gameCharacters[i]}_${score}.rpy`.toLowerCase();
-                    pathToSite = `https://github.com/Nylilsa/wr-replays/raw/main/${globalConfigs.game}/${globalConfigs.selectedDifficulty}/${globalConfigs.gameCharacters[i]}/${rpyName}`;
+                    if (globalConfigs.isPc98) {
+                        pathToSite = sources[0]
+                    } else {
+                        const rpyName = `${globalConfigs.game}_${globalConfigs.selectedDifficulty}_${globalConfigs.gameCharacters[i]}_${score}.rpy`.toLowerCase();
+                        pathToSite = `https://github.com/Nylilsa/wr-replays/raw/main/${globalConfigs.game}/${globalConfigs.selectedDifficulty}/${globalConfigs.gameCharacters[i]}/${rpyName}`;
+                    }
 
                 }
                 switch (k) {
@@ -954,11 +962,10 @@ function generateWRTable(data, flag = true) {
                     case 1: { cellText = document.createTextNode(`${globalConfigs.selectedDifficulty}`); break; }
                     case 2: { cellText = document.createTextNode(globalConfigs.gameCharacters[i]); break; }
                     case 3: {
-                        if (!isUnverified) {
+                        if (!isUnverified && pathToSite) {
                             cellText = document.createElement(`a`);
                             cellText.target = '_blank';
-                            let text = scoreWithCommas;
-                            cellText.innerText = text;
+                            cellText.innerText = scoreWithCommas;
                             cellText.classList.add("url");
                             cellText.href = pathToSite;
                         } else {

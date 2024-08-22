@@ -20,7 +20,7 @@ If there are any inaccuracies on this page, or if you have a missing replay, the
 
 
 <div id="wr-game-buttons">
-    <!-- <button href="#/wr/th01" data-game="th01" class="card-game">
+    <button href="#/wr/th01" data-game="th01" class="card-game">
         <div class="card-bg-image"></div>
         <span class="card-centered-text"></span>
         <div class="card-zigzag-left"></div>
@@ -54,7 +54,7 @@ If there are any inaccuracies on this page, or if you have a missing replay, the
         <div class="card-zigzag-left"></div>
         <div class="card-halftone-zigzag card-halftone"></div>
         <div class="card-halftone-right card-halftone"></div>
-    </button> -->
+    </button>
     <button href="#/wr/th06" data-game="th06" class="card-game">
         <div class="card-bg-image"></div>
         <span class="card-centered-text"></span>
