@@ -788,7 +788,7 @@ function styleGameSelectorButtons() {
         const btndata = button.dataset.game;
         button.style.backgroundColor = gameColors[btndata];
         button.title = `${names1[btndata]["jp"]} 〜 ${names1[btndata]["en"]}`
-        button.children[0].style.backgroundImage = `url(assets/thcovers/${btndata}.jpg)`;
+        button.children[0].style.backgroundImage = `url(assets/thcovers/smaller/${btndata}.jpg)`;
         button.children[2].style.backgroundColor = gameColors[btndata];
         button.children[1].innerText = names1[btndata]["jp"];
         button.children[1].style.backgroundColor = colorRGB(-64, 0.2, btndata);
