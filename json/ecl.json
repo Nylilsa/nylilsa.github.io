@@ -177,6 +177,11 @@
             "Description": "The value controls by how much faster the game speed is run. This variable is often set to a number between 0 and 1. This value is often changed when a (final) boss dies or when a photo is taken. Its default value is 1.",
             "Type": "float"
         },
+        "3": {
+            "Name": "goheiExists",
+            "Description": "A flag that determines if a gohei exists on-screen or not. Flag is set to true by active gohei. Flag is set to false if gohei goes off-screen or is despawning.",
+            "Type": "boolean"
+        },
         "17": {
             "Name": "distortion",
             "Parameters": [

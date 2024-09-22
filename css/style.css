@@ -188,7 +188,7 @@ h6 {
     #content ol:not(:is(.toc, .toc ol)) {
       margin-bottom: 1rem; }
   #content li {
-    font-size: 0.9em; }
+    font-size: 0.9rem; }
 
 p {
   font-size: var(--fs-500);
