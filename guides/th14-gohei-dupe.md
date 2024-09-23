@@ -25,7 +25,7 @@ Now that gohei is used to its fullest potential, but our damage certainly isn't.
 
 [img=me/gohei2.png, figtitle=Seija being beaten up by 2 goheis at once, alt=A screenshot of ReimuA fighting Seija] [br]
 
-There exists a [a=/#/bugs/th14/gohei-dupe]glitch[/a] that allows for multiple goheis to be created. The glitch can create up to 4 goheis at once, and all of the goheis act the same way. The name of the glitch is also known as [hl2]Gohei duplication[/hl2] or [hl2]Gohei dupe[/hl2] or [hl2]dupe[/hl2] in short.
+[a=/#/bugs/th14/gohei-dupe]There exists a glitch[/a] that allows for multiple goheis to be created. The name of the glitch is also known as [hl2]Gohei duplication[/hl2] or [hl2]Gohei dupe[/hl2] or [hl2]dupe[/hl2] in short.
 
 ## Video
 [hr_minor]
@@ -36,8 +36,8 @@ Below shows a video showing varying methods on how to deal damage as ReimuA:
 
 The video above demonstrates the different ways ReimuA can maximise her damage. The times mentioned below is the same time I got in this video but two seconds are subtracted from it. This was done because Seija starts off with invincibility frames for one second, and her death animation lasts for one second.
 
-| Method nr | Description                                | Time   |
-| --------- | ------------------------------------------ | ------ |
+| Method nr | Description                            | Time   |
+| --------- | -------------------------------------- | ------ |
 | Method 1  | Focus only + no amulets                | 20.41s |
 | Method 2  | Re-centering + no amulets              | 16.16s |
 | Method 3  | No centering + amulets                 | 15.46s |
@@ -87,7 +87,7 @@ Instead, you want to be at least 160 units away from enemies so the gohei doesn'
 
 There's only two relevant buttons for the dupe: [key=Z] and [key=Shift].
 
-You want to hold the [key=Z] key, but the [key=Shift] key is the key you want to tap. The general rule is that the faster you can tap [key=Shift] it is, but to do the gohei dupe [hl2]you do not have to tap as quickly as possible ![/hl2] The dupe is possible with minimal inputs, which I will show later.
+You want to hold the [key=Z] key, and tap with the [key=Shift] key. The general rule is that the faster you can tap [key=Shift] it is, but to do the gohei dupe [hl2]you do not have to tap as quickly as possible ![/hl2] The dupe is possible with minimal inputs, which I will show later.
 
 I average about 11 clicks per second on my [key=Shift] key, though [hl2]it is possible with just 5 clicks per second[/hl2]. If you want to check out what your clicks per second is, you can check it out on [a=https://cps-check.com/keyboard-cps]this website[/a].
 
@@ -99,7 +99,7 @@ I recommend practicing the dupe glitch on Shinmyoumaru's second non-spell becaus
 [img=guides/th14-gohei-dupe/safespot.png, figtitle=A safespot on Shinmyoumaru's second non-spell, alt=Reimu and Shinmyoumaru]
 [br]
 
-My personal preference is to both tap Z and Shift at once, but [hl2]you only need to tap Shift[/hl2]. You can just hold Z all the time.
+My personal preference is to both tap Z and Shift at once, but [hl2]you can also only tap Shift[/hl2]. Preferably, you want to hold Z all the time.
 The easiest technique I found to get a double gohei requires the least amount of inputs. Here's how to do it:
 1. Get into the right position
 2. Hover your fingers over the Shift and the Z keys
@@ -108,14 +108,20 @@ The easiest technique I found to get a double gohei requires the least amount of
 5. Unhold Shift
 6. Hold Shift again
 
-You need to do steps 3-6 within a short time, like 0.2s. With this setup you are only able to [hl2]yield 2 goheis at most[/hl2], which is what the goal of this is. If you want to generate more than 2 goheis you preferably want to repeat steps 5-6 multiple times in a really short time, [hl2]roughly 0.05s or less[/hl2] between taps.
+You need to do steps 3-6 within a short time, like 0.2s. With this setup you are only able to [hl2]yield 2 goheis at most[/hl2], which is what the goal of this is. If you want to generate more than 2 goheis you preferably want to do steps 5-6 multiple times in a much shorter time: [hl2]roughly 0.05s or less[/hl2] between taps.
+
+Here is a video showcasing the double gohei:
+
+[video=https://www.youtube.com/embed/qhwndHruaxU, hratio=2, other=width:720px; aspect-ratio:16/9]
+
+Note that I only used a bomb at the start to skip the first phase of the attack. Also, [hl2]I did not get a double gohei every time[/hl2], instead I got it about 40% of the time. 
 
 It may be hard to know if you got one or two goheis, so here are some ways you can tell how many you have:
 1. You [hl2]hear a lot more noise[/hl2]. Hit a boss with a single gohei and you hear a few damage ticks every second, but if you have two goheis or more you will hear more damage ticks.
-2. If you have some experience on a boss you can tell the [hl2]significant increase in damage[/hl2] that you are dealing
-3. Visually, you will notice that [hl2]the gohei looks denser[/hl2]
-4. Right as you are doing the dupe, you will notice the individual goheis spawning, but this might be hard to tell
-5. The goheis may split up, which reveals that there are multiple goheis
+2. If you have some experience on a boss you can tell the [hl2]significant increase in damage[/hl2] that you are dealing.
+3. Visually, you will notice that [hl2]the gohei looks denser[/hl2].
+4. Right as you are doing the dupe, you will notice the individual goheis spawning, but this might be hard to tell.
+5. The goheis may split up, which reveals that there are multiple goheis.
 
 [hr_major]
 
