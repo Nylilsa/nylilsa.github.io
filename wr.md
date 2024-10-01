@@ -3,7 +3,7 @@
 [hr_major]  
 
 
-A comprehensive Touhou world records tracker, updated every so often. This page includes an interactive graph and a table of your selected game. For best viewing experience I recommend viewing this on [hl2]desktop[/hl2]. 
+A comprehensive Touhou world records tracker, updated every so often. This page includes an interactive graph and a table of your selected game. For best viewing experience I recommend viewing this on [hl2]desktop[/hl2]. A few columns are [hl2]hidden[/hl2] in the table due to the small width of mobile.
 
 [hl2]This is not a scoreboard[/hl2], but this page has [hl2]replay support[/hl2] for the WR entries ! If you are looking for more replays that are not WR entries, you could take a look at one of the following websites:
 1. [a=https://maribelhearn.com/wr]Touhou World Records[/a] - by Maribel Hearn
@@ -185,7 +185,7 @@ If there are any inaccuracies on this page, or if you have a missing replay, the
 ## Player search
 [hr_major]
 
-Choose a player name from the menu below to show their WRs. For the best experience please view this on either landscape mode, or view this on your desktop.
+Choose a player name from the menu below to show their WRs. You can [hl2]filter the name[/hl2] by typing in the input field. The number next to it shows [hl2]the number of name matches[/hl2]. For the best experience please view this on either landscape mode, or view this on your desktop. A few columns are [hl2]hidden[/hl2] in the table due to the small width of mobile.
 <div class="input-wrapper">
   <div class="number-wrapper">
     <div style="display: table;">
