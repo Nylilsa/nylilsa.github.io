@@ -8,6 +8,7 @@ const globalConfigs = {
     overallWRCharacter: null,
     defaultGame: "th13",
     isPc98: false,
+    pc98Games: ["th01", "th02", "th03", "th04", "th05"],
 }
 
 class Points {
@@ -497,7 +498,7 @@ function loadCanvas(difficulty = "Lunatic", func) {
         generateWRButtons();
         generateWRTable(fetchedData);
         callChartJS(fetchedData, time, func);
-        // createDropdown(wrData);
+        createDropdown(allPlayerData);
     })
     return;
 }
@@ -509,23 +510,31 @@ function addNamesToData(data, playerData) {
         characters.forEach((character) => {
             const entries = data[difficulty][character];
             entries.forEach(entry => {
-                let en;
-                if (playerData[entry.id]?.name_en === undefined) {
-                    en = "NO NAME";
-                    console.error(`The id ${entry.id} does not exist`)
-                } else {
-                    en = playerData[entry.id]?.name_en;
-                }
-                const jp = playerData[entry.id]?.name_jp;
-                if (jp === undefined || jp === "") {
-                    entry.name = en;
-                } else {
-                    entry.name = `${jp} (${en})`;
-                }
+                entry.name = createName(playerData[entry.id], true);
             })
 
         })
     })
+}
+
+function createName(obj, enableFormatting) {
+    let en;
+    const jp = obj?.name_jp;
+    if (obj?.name_en === undefined) {
+        en = "NO NAME";
+        console.error(`The id ${entry.id} does not exist`);
+    } else {
+        en = obj?.name_en;
+    }
+    if (enableFormatting && (jp === undefined || jp === "")) {
+        return en;
+    } else if (!enableFormatting && (jp === undefined || jp === "")) {
+        return en.toLowerCase();
+    } else if (enableFormatting) {
+        return `${jp} (${en})`;
+    } else {
+        return `${jp}${en}`.toLowerCase(); // no spaces or () for name matching in search
+    }
 }
 
 function mergeEntries(verified, unverified) {
@@ -589,120 +598,156 @@ function removeInvalidEntries(data) {
     return data;
 }
 
-function createDropdown(dataWR) {
+function createDropdown(allPlayerData) {
+    const filterInput = document.getElementById('filterInput');
     const dropdown = document.getElementById('nameDropdown');
     const scoresTable = document.getElementById('scoresTable');
     const scoreInfo = document.getElementById('scoreInfo');
-    let names = [];
-    Object.entries(dataWR).forEach(b => {
-        const shots = b[1];
-        Object.entries(shots).forEach(c => {
-            const entries = c[1];
-            entries.forEach(d => {
-                const name = d[1];
-                names.push(name);
-                // console.log(name)
-            });
-        });
+    const nameCount = document.getElementById('nameCount');
+    const sortedEntries = Object.entries(allPlayerData).sort((a, b) => {
+        return a[1].name_en.localeCompare(b[1].name_en);
     });
-    const uniqueArray = [...new Set(names)].sort()
-
-    uniqueArray.forEach(name => {
+    const sortedDataArray = sortedEntries.map(entry => ({ [entry[0]]: entry[1] }));
+    for (const obj of sortedDataArray) {
+        const id = Object.keys(obj)[0];
+        const value = obj[id];
         const option = document.createElement('option');
+        const name = createName(value, true);
         option.value = name;
         option.textContent = name;
+        option.dataset.searchName = createName(value, false);
+        option.dataset.id = id;
         dropdown.appendChild(option);
-    });
-
-    if (localStorage.selectedWRName) {
-        const a = document.querySelector(`[value="${localStorage.selectedWRName}"]`);
-        a.selected = "selected";
-        makeTable(localStorage.selectedWRName);
     }
-
+    if (!isNaN(Number(localStorage.selectedWRId))) {
+        const a = document.querySelector(`[data-id="${localStorage.selectedWRId}"]`);
+        a.selected = "selected";
+        makeTable(localStorage.selectedWRId);
+    }
     dropdown.addEventListener('change', (event) => {
-        const selectedName = event.target.value;
-        localStorage.selectedWRName = selectedName;
-        makeTable(selectedName);
+        const selectedId = event.target.selectedOptions[0].dataset.id;
+        localStorage.selectedWRId = selectedId;
+        makeTable(selectedId);
     });
-    function makeTable(selectedName) {
-        const selectedEntries = [];
+    filterInput.addEventListener('input', () => {
+        let matches = 0;
+        const filterValue = filterInput.value.toLowerCase();
+        const options = dropdown.options;
+        for (let i = 1; i < options.length; i++) {
+            if (options[i].dataset.searchName.includes(filterValue)) {
+                options[i]?.classList?.remove('hidden'); // Show matching option
+                matches++;
+            } else {
+                options[i]?.classList?.add('hidden'); // Hide non-matching option
+            }
+        }
+        nameCount.innerText = matches;
+    });
+
+    nameCount.innerText = Object.entries(allPlayerData).length - 1; // minus 1 bc first entry doesnt count
+
+    async function makeTable(id) {
+        id = Number(id);
         scoresTable.innerHTML = ''; // Clear previous results
-        if (selectedName) {
-            Object.entries(dataWR).forEach(b => {
-                const shots = b[1];
-                Object.entries(shots).forEach(c => {
-                    const entries = c[1];
-                    entries.forEach(d => {
-                        if (d[1] === selectedName) { // if name matches
-                            if (d[3]) {
-                                d[3]["Shottype"] = c[0];
-                                d[3]["Difficulty"] = b[0];
-                            } else {
-                                d[3] = {
-                                    "Shottype": c[0],
-                                    "Difficulty": b[0]
-                                }
+        const playerInfo = (await fetchData("json/players.json"))[id];
+        const fullName = createName(playerInfo, true);
+        const selectedEntries = [];
+        const categories = [
+            { type: 'verified', data: playerInfo.verified },
+            { type: 'unverified', data: playerInfo.unverified }
+        ];
+        for (const { type, data } of categories) {
+            if (!data) continue; // Skip if there is no verified or unverified data
+            for (const [gameId, difficulties] of Object.entries(data)) {
+                const gameInfo = await fetchData(`json/wr/${type}/${gameId}.json`);
+                for (const [difficulty, shottypes] of Object.entries(difficulties)) {
+                    shottypes.forEach((shottype) => {
+                        // console.log(gameId + difficulty + shottype);
+                        const category = gameInfo[difficulty][shottype];
+                        category.forEach((node) => {
+                            if (node.id == id) {
+                                node.game = gameId;
+                                node.difficulty = difficulty;
+                                node.shot = shottype;
+                                node.verified = (type === 'verified');
+                                selectedEntries.push(node);
                             }
-                            selectedEntries.push(d)
-                        }
+                        });
                     });
-                });
-            });
-            selectedEntries.sort((entry1, entry2) => {
-                const date1 = new Date(entry1.date);
-                const date2 = new Date(entry2.date);
-                return date2 - date1;
-            });
-            const table = document.createElement("table");
-            const tblBody = document.createElement("tbody");
-            const headers = ["#", "Difficulty", "Shottype/Route", "Score", "Player", "Date"];
-            for (let j = 0; j < selectedEntries.length; j++) { // rows
-                let row = document.createElement("tr");
-                const [score, name, date] = selectedEntries[j];
-                const shot = selectedEntries[j][3]["Shottype"];
-                const diff = selectedEntries[j][3]["Difficulty"];
-                const isUnverified = selectedEntries[j][3]?.["isUnverified"] ?? false;
-                const dateFormatted = dateFormat(date);
-                const scoreWithCommas = score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                styleUnverified(isUnverified, row);
-                if (j == 0) { // header column
-                    for (let k = 0; k < headers.length; k++) {
-                        const cell = document.createElement("th");
-                        const cellText = document.createTextNode(`${headers[k]}`);
-                        cell.appendChild(cellText);
-                        row.appendChild(cell);
-                        if (k == (headers.length - 1)) {
-                            tblBody.appendChild(row);
-                            row = document.createElement("tr");
-                        }
-                    }
                 }
-                for (let k = 0; k < headers.length; k++) { // entry columns
-                    let cellText;
-                    const cell = document.createElement("td");
-                    switch (k) {
-                        case 0: { cellText = document.createTextNode(j + 1); break; }
-                        case 1: { cellText = document.createTextNode(`${diff}`); break; }
-                        case 2: { cellText = document.createTextNode(shot); break; }
-                        case 3: { cellText = document.createTextNode(`${scoreWithCommas}`); break; }
-                        case 4: { cellText = document.createTextNode(`${name}`); break; }
-                        case 5: { cellText = document.createTextNode(`${dateFormatted}`); break; }
-                        default: { console.error(`Oops, something went wrong.`) }
-                    }
+            }
+        }
+        // Sorts by descending date 
+        selectedEntries.sort((entry1, entry2) => {
+            const date1 = new Date(entry1.date);
+            const date2 = new Date(entry2.date);
+            return date2 - date1;
+        });
+
+        const table = document.createElement("table");
+        const tblBody = document.createElement("tbody");
+        const headers = ["#", "Game", "Difficulty", "Shot/Route", "Score", "Player", "Date"];
+        for (let j = 0; j < selectedEntries.length; j++) { // rows
+            let row = document.createElement("tr");
+            const entry = selectedEntries[j];
+            let pathToSite;
+            if (entry.verified) {
+                if (globalConfigs.pc98Games.includes(entry.game) && entry.sources) { // is pc98 and has source
+                    pathToSite = entry.sources[0]
+                } else if (!globalConfigs.pc98Games.includes(entry.game)) {
+                    const rpyName = `${entry.game}_${entry.difficulty}_${entry.shot}_${entry.score}.rpy`.toLowerCase();
+                    pathToSite = `https://github.com/Nylilsa/wr-replays/raw/main/${entry.game}/${entry.difficulty}/${entry.shot}/${rpyName}`;
+                }
+            }
+            const dateFormatted = dateFormat(entry.date);
+            const scoreWithCommas = entry.score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            styleUnverified(entry.verified, row);
+            if (j == 0) { // header column
+                for (let k = 0; k < headers.length; k++) {
+                    const cell = document.createElement("th");
+                    const cellText = document.createTextNode(`${headers[k]}`);
                     cell.appendChild(cellText);
                     row.appendChild(cell);
+                    if (k == (headers.length - 1)) {
+                        tblBody.appendChild(row);
+                        row = document.createElement("tr");
+                    }
                 }
-                tblBody.appendChild(row);
-                table.appendChild(tblBody);
-                table.classList.add("wr-player-table");
-                table.style.marginInline = "auto";
-                scoresTable.appendChild(table);
             }
-            scoreInfo.style.display = 'block';
-        } else {
-            scoreInfo.style.display = 'none';
+            for (let k = 0; k < headers.length; k++) { // entry columns
+                let cellText;
+                const cell = document.createElement("td");
+                switch (k) {
+                    case 0: { cellText = document.createTextNode(j + 1); break; }
+                    case 1: { cellText = document.createTextNode(`${names1[entry.game]["abbreviation"]}`); break; }
+                    case 2: { cellText = document.createTextNode(`${entry.difficulty}`); break; }
+                    case 3: { cellText = document.createTextNode(entry.shot); break; }
+                    case 4: {
+                        if (entry.verified && pathToSite) {
+                            cellText = document.createElement(`a`);
+                            cellText.target = '_blank';
+                            cellText.innerText = scoreWithCommas;
+                            cellText.classList.add("url");
+                            cellText.href = pathToSite;
+                        } else {
+                            cellText = document.createTextNode(`${scoreWithCommas}`);
+                        }
+                        break;
+                    }
+                    case 5: { cellText = document.createTextNode(`${fullName}`); break; }
+                    case 6: { cellText = document.createTextNode(`${dateFormatted}`); break; }
+                    default: { console.error(`Oops, something went wrong.`) }
+                }
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+            tblBody.appendChild(row);
+            table.appendChild(tblBody);
+            table.classList.add("wr-player-table");
+            table.style.marginInline = "auto";
+            scoresTable.appendChild(table);
         }
+        scoreInfo.style.display = 'block';
     }
 }
 

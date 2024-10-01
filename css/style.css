@@ -171,6 +171,9 @@ h6 {
     .left-border-color a:hover > .star {
       margin-left: calc(var(--margin-left) + 8px); }
 
+.hidden {
+  display: none; }
+
 #content {
   transition: padding var(--time-animation) ease-in-out;
   background-color: var(--clr-background-main);

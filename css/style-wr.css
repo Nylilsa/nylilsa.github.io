@@ -1,12 +1,9 @@
 :root {
     --mask-zigzag:
-        conic-gradient(
-            from -135deg at right,
+        conic-gradient(from -135deg at right,
             #0000,
             #000 1deg 89deg,
-            #0000 90deg
-            )
-        right/100% 20px repeat-y;
+            #0000 90deg) right/100% 20px repeat-y;
     --chart-height: 420px;
 }
 
@@ -61,7 +58,8 @@
     grid-auto-flow: column;
 }
 
-.wr-shottype-buttons {
+.wr-shottype-buttons,
+.wr-player-button {
     font-family: var(--ff-primary);
     font-size: var(--fs-400);
     color: var(--clr-default);
@@ -72,20 +70,20 @@
     margin: 0 auto;
 }
 
-.all-wr-tables > tbody > tr > *,
-.wr-player-table > tbody > tr > * {
+.all-wr-tables>tbody>tr>*,
+.wr-player-table>tbody>tr>* {
     text-align: center;
     padding-inline: 8px;
 }
 
-.all-wr-tables > tbody > tr > th,
-.wr-player-table > tbody > tr > th {
+.all-wr-tables>tbody>tr>th,
+.wr-player-table>tbody>tr>th {
     border-bottom: var(--clr-default) 1px solid;
     padding-bottom: 8px;
 }
 
-.all-wr-tables > tbody > tr:nth-child(2) > *,
-.wr-player-table > tbody > tr:nth-child(2) > * {
+.all-wr-tables>tbody>tr:nth-child(2)>*,
+.wr-player-table>tbody>tr:nth-child(2)>* {
     padding-top: 8px;
 }
 
@@ -144,6 +142,7 @@
 
 .card-zigzag-left {
     -webkit-mask: var(--mask-zigzag);
+    mask: var(--mask-zigzag);
     width: 25%;
     position: absolute;
     top: 0;
@@ -152,6 +151,7 @@
 
 .card-halftone-zigzag {
     -webkit-mask: var(--mask-zigzag);
+    mask: var(--mask-zigzag);
     position: absolute;
     top: 0;
     height: 100%;
@@ -178,6 +178,7 @@
     background-repeat: round;
     background-position: 0 0, var(--bgPosition) var(--bgPosition);
     -webkit-mask-image: var(--mask);
+    mask-image: var(--mask);
 }
 
 .card-halftone-right {
@@ -197,59 +198,92 @@
     mix-blend-mode: multiply;
 }
 
-#nameDropdown {
+#nameDropdown,
+#filterInput {
     display: block;
-    margin-inline: auto;
-    background-color: var(--clr-default);
+    background-color: var(--clr-background-element);
     color: var(--clr-text-normal);
     padding: 4px;
+    border: 1px var(--clr-default) solid;
+    flex-grow: 1;
+}
+
+.input-wrapper {
+    display: grid;
+    width: calc(clamp(200px, 30vw, 600px));
+    margin-inline: auto;
+    justify-content: center;
+}
+
+.number-wrapper {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+output {
+    border: 1px var(--clr-default) solid;
+    padding-inline: 0.5rem;
+    display: table-cell;
+    vertical-align: middle;
+    min-width: 4rem;
+    text-align: center;
 }
 
 @media screen and (max-width: 700px) {
-    .all-wr-tables > * > tr > *:nth-child(3),
-    .wr-player-table > * > tr > *:nth-child(6) {
+
+    .all-wr-tables>*>tr>*:nth-child(3),
+    .wr-player-table>*>tr>*:nth-child(7) {
         display: none;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .all-wr-tables > * > tr > *:nth-child(2),
-    .wr-player-table > * > tr > *:nth-child(7) {
+
+    .all-wr-tables>*>tr>*:nth-child(2),
+    .wr-player-table>*>tr>*:nth-child(8) {
         display: none;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .all-wr-tables > * > tr > *:nth-child(7) {
+
+    .all-wr-tables>*>tr>*:nth-child(7),
+    .wr-player-table>*>tr>*:nth-child(6) {
         display: none;
     }
+
     .grid-6-ab {
         grid-template-columns: repeat(3, 1fr) !important;
         grid-template-rows: repeat(2, 1fr) !important;
         grid-auto-flow: column !important;
     }
+
     .grid-6-abc {
         grid-template-columns: repeat(3, 1fr) !important;
         grid-template-rows: repeat(2, 1fr) !important
     }
+
     .grid-th08 {
         grid-template-columns: auto !important;
     }
+
     .grid-th09 {
         grid-template-columns: repeat(2, 1fr) !important;
     }
+
     .grid-th16 {
         grid-template-rows: repeat(8, 1fr) !important;
         grid-template-columns: repeat(2, 1fr) !important;
         grid-auto-flow: column !important;
     }
+
     .toggle-buttons {
         grid-auto-flow: row;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .all-wr-tables > * > tr > *:nth-child(1) {
+    .all-wr-tables>*>tr>*:nth-child(1) {
         display: none;
     }
 }

@@ -180,20 +180,27 @@ If there are any inaccuracies on this page, or if you have a missing replay, the
 <div id="wr-tables"></div>
 </section>
 
-<!-- [br]
+[br]
 
 ## Player search
 [hr_major]
 
 Choose a player name from the menu below to show their WRs. For the best experience please view this on either landscape mode, or view this on your desktop.
-
-<select id="nameDropdown">
-  <option value="" id="dropdown">Select a name</option>
-</select>
-
+<div class="input-wrapper">
+  <div class="number-wrapper">
+      <div style="display: table;">
+    <output id="nameCount" name="result" for="nameDropdown">9999</output>
+      </div>
+    <input type="text" id="filterInput" placeholder="Type to filter options..." list="nameDropdown" />
+  </div>
+  <select id="nameDropdown">
+    <option value="" id="dropdown" disabled>Select a name</option>
+  </select>
+</div>
 <div id="scoreInfo">
   <div id="scoresTable"></div>
-</div> -->
+</div>
+
 
 [br]
 

@@ -207,6 +207,10 @@ h6 {
     }
 }
 
+.hidden {
+    display: none;
+}
+
 
 #content {
     transition: padding var(--time-animation) ease-in-out;
