@@ -648,7 +648,6 @@ function createDropdown(allPlayerData) {
 
     async function makeTable(id) {
         id = Number(id);
-        scoresTable.innerHTML = ''; // Clear previous results
         const playerInfo = (await fetchData("json/players.json"))[id];
         const fullName = createName(playerInfo, true);
         const selectedEntries = [];
@@ -746,7 +745,7 @@ function createDropdown(allPlayerData) {
             table.appendChild(tblBody);
             table.classList.add("wr-player-table");
             table.style.marginInline = "auto";
-            scoresTable.appendChild(table);
+            scoresTable.replaceChildren(table);
         }
         scoreInfo.style.display = 'block';
     }
