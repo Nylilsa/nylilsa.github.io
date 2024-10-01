@@ -249,7 +249,8 @@ output {
 
     .all-wr-tables>*>tr>*:nth-child(7),
     .wr-player-table>*>tr>*:nth-child(6),
-    .wr-player-table>*>tr>*:nth-child(1) {
+    .wr-player-table>*>tr>*:nth-child(1),
+    .all-wr-tables>*>tr>*:nth-child(1) {
         display: none;
     }
 
