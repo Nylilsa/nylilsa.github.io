@@ -248,7 +248,8 @@ output {
 @media screen and (max-width: 500px) {
 
     .all-wr-tables>*>tr>*:nth-child(7),
-    .wr-player-table>*>tr>*:nth-child(6) {
+    .wr-player-table>*>tr>*:nth-child(6),
+    .wr-player-table>*>tr>*:nth-child(1) {
         display: none;
     }
 
