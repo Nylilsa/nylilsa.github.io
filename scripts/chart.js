@@ -683,6 +683,7 @@ function createDropdown(allPlayerData) {
             const date2 = new Date(entry2.date);
             return date2 - date1;
         });
+        document.getElementById('wrCount').innerText = selectedEntries.length;
 
         const table = document.createElement("table");
         const tblBody = document.createElement("tbody");
