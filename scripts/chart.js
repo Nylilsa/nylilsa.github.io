@@ -457,11 +457,14 @@ export function initCanvas(gameID) {
     loadCanvas(undefined, func);
     styleGameSelectorButtons();
     styleToggleSwitch();
-    fetchData('json/gameinfo.json')
-        .then(data => {
-            const allDifficulties = data['Difficulty'][globalConfigs.game];
-            styleGameDifficultyButtons(allDifficulties);
-        });
+    Promise.all([
+        fetchData('json/gameinfo.json'),
+        fetchData(`json/players.json`)
+    ]).then(([data, allPlayerData]) => {
+        const allDifficulties = data['Difficulty'][globalConfigs.game];
+        styleGameDifficultyButtons(allDifficulties);
+        createDropdown(allPlayerData);
+    });
 }
 
 function loadCanvas(difficulty = "Lunatic", func) {
@@ -498,7 +501,6 @@ function loadCanvas(difficulty = "Lunatic", func) {
         generateWRButtons();
         generateWRTable(fetchedData);
         callChartJS(fetchedData, time, func);
-        createDropdown(allPlayerData);
     })
     return;
 }
@@ -522,7 +524,7 @@ function createName(obj, enableFormatting) {
     const jp = obj?.name_jp;
     if (obj?.name_en === undefined) {
         en = "NO NAME";
-        console.error(`The id ${entry.id} does not exist`);
+        console.error(`The id ${obj?.id} does not exist`);
     } else {
         en = obj?.name_en;
     }
