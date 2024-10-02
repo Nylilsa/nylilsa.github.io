@@ -10,11 +10,20 @@ const ALL_GAMES = ["th01", "th02", "th03", "th04", "th05",
 const allPlayers = fetchJson(PATH_PLAYERS_JSON);
 const allCategories = getVerifiedAndUnverifiedGames();
 
-generateMappings();
+// generateMappings();
+getNoEntryNames();
 
-fs.writeFileSync(PATH_PLAYERS_JSON, JSON.stringify(allPlayers));
-console.log(`created file at ${PATH_PLAYERS_JSON}`);
 
+function getNoEntryNames() {
+    let counter = 0;
+    for (const [id, obj] of Object.entries(allPlayers)) {
+        if (!(obj.verified || obj.unverified)) {
+            console.log(`id ${id} player ${obj.name_en} does not have any records.`);
+            counter++;
+        }
+    }
+    console.log(`${counter} players do not have a record.`)
+}
 
 const exampleFormat = {
     5: {
@@ -71,6 +80,8 @@ function generateMappings() {
             }
         }
     }
+    fs.writeFileSync(PATH_PLAYERS_JSON, JSON.stringify(allPlayers));
+    console.log(`created file at ${PATH_PLAYERS_JSON}`);
 }
 
 function getVerifiedAndUnverifiedGames() {
