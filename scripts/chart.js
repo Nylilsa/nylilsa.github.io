@@ -622,7 +622,11 @@ function createDropdown(allPlayerData) {
         dropdown.appendChild(option);
     }
     if (!isNaN(Number(localStorage.selectedWRId))) {
-        const a = document.querySelector(`[data-id="${localStorage.selectedWRId}"]`);
+        let a = document.querySelector(`[data-id="${localStorage.selectedWRId}"]`);
+        if (!a) { // if tag does not exists for whatever reason, default to 0
+            localStorage.selectedWRId = 0;
+            a = document.querySelector(`[data-id="${localStorage.selectedWRId}"]`);
+        }
         a.selected = "selected";
         makeTable(localStorage.selectedWRId);
     }
