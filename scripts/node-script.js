@@ -11,7 +11,7 @@ const PC98_GAMES = ["th01", "th02", "th03", "th04", "th05"];
 const allPlayers = fetchJson(PATH_PLAYERS_JSON);
 const allCategories = getVerifiedAndUnverifiedGames(ALL_GAMES);
 
-// generateMappings();
+generateMappings();
 getNoEntryNames();
 // splitPc98Games();
 
