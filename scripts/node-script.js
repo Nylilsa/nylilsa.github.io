@@ -11,23 +11,54 @@ const PC98_GAMES = ["th01", "th02", "th03", "th04", "th05"];
 const allPlayers = fetchJson(PATH_PLAYERS_JSON);
 const allCategories = getVerifiedAndUnverifiedGames(ALL_GAMES);
 
-generateMappings();
+// generateMappings();
 getNoEntryNames();
 // splitPc98Games();
 
 function getNoEntryNames() {
     let counter = 0;
+    const playerIds = [];
+
     for (const [id, obj] of Object.entries(allPlayers)) {
-        if (!(obj.verified || obj.unverified)) {
-            console.log(`id ${id} player ${obj.name_en} does not have any records.`);
-            counter++;
+        if (playerIds.indexOf(id) == -1) {
+            playerIds.push(Number(id));
         }
     }
-    console.log(`${counter} players do not have a record.`)
+
+    const coveredIds = [];
+    // For every game
+    for (const [gameId, gameObj] of Object.entries(allCategories)) {
+        const vArrays = ["unverified", "verified"];
+        // console.log(gameId);
+        // For every status
+        for (let i = 0; i < vArrays.length; i++) {
+            const vValue = vArrays[i];
+            const difficulties = gameObj[vValue];
+            // For every difficulty
+            for (const [difficulty, shottypes] of Object.entries(difficulties)) {
+                // console.log(difficulty)
+                // For every shottype
+                for (const [shottype, entries] of Object.entries(shottypes)) {
+                    // console.log(shottype)
+                    // For every entry
+                    for (const [entry, data] of Object.entries(entries)) {
+                        // For every player
+                        if (coveredIds.indexOf(data.id) === -1) {
+                            coveredIds.push(data.id);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    const difference = playerIds.filter(x => !coveredIds.includes(x));
+    console.log(difference)
+    console.log(`${difference.length} players do not have a record.`)
 }
 
 function generateMappings() {
     // For every game
+    const coveredIds = [];
     for (const [gameId, gameObj] of Object.entries(allCategories)) {
         const vArrays = ["unverified", "verified"];
         console.log(gameId);
@@ -44,7 +75,7 @@ function generateMappings() {
                     // For every entry
                     loopEntries: for (const [entry, data] of Object.entries(entries)) {
                         // For every player
-                        for (const [playerId, playerObj] of Object.entries(allPlayers)) {
+                        for (let [playerId, playerObj] of Object.entries(allPlayers)) {
                             // If id of entry matches player id
                             if (data.id == playerId) {
                                 const categories = playerObj[`${vValue}`] ||= {};
