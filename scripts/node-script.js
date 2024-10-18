@@ -1,5 +1,5 @@
 // run this with node.js - this is not meant to be on the website itself.
-// always run this after modifying anything related to wrs
+// ALWAYS run this after modifying anything related to wrs
 
 const fs = require('fs');
 const PATH_PLAYERS_JSON = `json/players.json`;
@@ -7,12 +7,13 @@ const ALL_GAMES = ["th01", "th02", "th03", "th04", "th05",
     "th06", "th07", "th08", "th10", "th11",
     "th12", "th128", "th13", "th14", "th15",
     "th16", "th17", "th18"];
+const PC98_GAMES = ["th01", "th02", "th03", "th04", "th05"];
 const allPlayers = fetchJson(PATH_PLAYERS_JSON);
-const allCategories = getVerifiedAndUnverifiedGames();
+const allCategories = getVerifiedAndUnverifiedGames(ALL_GAMES);
 
-// generateMappings();
+generateMappings();
 getNoEntryNames();
-
+// splitPc98Games();
 
 function getNoEntryNames() {
     let counter = 0;
@@ -23,23 +24,6 @@ function getNoEntryNames() {
         }
     }
     console.log(`${counter} players do not have a record.`)
-}
-
-const exampleFormat = {
-    5: {
-        "name_en": "REX",
-        "name_jp": "レックス",
-        "verified": {
-            "th14": {
-                "hard": ["SakuyaA"],
-            },
-        },
-        "unverified": {
-            "th14": {
-                "hard": ["SakuyaA"],
-            },
-        },
-    },
 }
 
 function generateMappings() {
@@ -53,10 +37,10 @@ function generateMappings() {
             const difficulties = gameObj[vValue];
             // For every difficulty
             for (const [difficulty, shottypes] of Object.entries(difficulties)) {
-                console.log(difficulty)
+                // console.log(difficulty)
                 // For every shottype
                 for (const [shottype, entries] of Object.entries(shottypes)) {
-                    console.log(shottype)
+                    // console.log(shottype)
                     // For every entry
                     loopEntries: for (const [entry, data] of Object.entries(entries)) {
                         // For every player
@@ -80,13 +64,12 @@ function generateMappings() {
             }
         }
     }
-    fs.writeFileSync(PATH_PLAYERS_JSON, JSON.stringify(allPlayers));
-    console.log(`created file at ${PATH_PLAYERS_JSON}`);
+    createFile(allPlayers, PATH_PLAYERS_JSON)
 }
 
-function getVerifiedAndUnverifiedGames() {
+function getVerifiedAndUnverifiedGames(list) {
     const results = {};
-    for (const GAME of ALL_GAMES) {
+    for (const GAME of list) {
         try {
             const verifiedData = fetchJson(`json/wr/verified/${GAME}.json`);
             const unverifiedData = fetchJson(`json/wr/unverified/${GAME}.json`);
@@ -108,4 +91,45 @@ function fetchJson(url) {
         }
     });
     return JSON.parse(temp);
+}
+
+function splitPc98Games() {
+    // For every game
+    for (const [gameId, gameObj] of Object.entries(allCategories)) {
+        const verified = {};
+        const unverified = {};
+        const vArrays = ["unverified", "verified"];
+        console.log(gameId);
+        // For every status
+        for (let i = 0; i < vArrays.length; i++) {
+            const vValue = vArrays[i];
+            const difficulties = gameObj[vValue];
+            // For every difficulty
+            for (const [difficulty, shottypes] of Object.entries(difficulties)) {
+                verified[difficulty] = verified[difficulty] ?? {}
+                unverified[difficulty] = unverified[difficulty] ?? {}
+                // For every shottype
+                for (const [shottype, entries] of Object.entries(shottypes)) {
+                    verified[difficulty][shottype] = verified[difficulty][shottype] ?? []
+                    unverified[difficulty][shottype] = unverified[difficulty][shottype] ?? []
+                    // For every entry
+                    for (const [entry, data] of Object.entries(entries)) {
+                        // For every player
+                        if (data.sources.length == 0) { // has no source
+                            unverified[difficulty][shottype].push(data)
+                        } else { // has source
+                            verified[difficulty][shottype].push(data)
+                        }
+                    }
+                }
+            }
+        }
+        createFile(verified, `json/${gameId}verified.json`)
+        createFile(unverified, `json/${gameId}unverified.json`)
+    }
+}
+
+function createFile(data, path) {
+    fs.writeFileSync(path, JSON.stringify(data));
+    console.log(`created file at ${path}`);
 }
