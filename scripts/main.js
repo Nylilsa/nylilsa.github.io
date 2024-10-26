@@ -189,7 +189,13 @@ async function replayFunction(key) {
 function dateFormat(date) {
 	const intl = "en-US";
 	const options = {calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric'};
-	const dateType = new Date(date);
+	let dateType;
+    if (date.includes('T')) {
+        dateType = new Date(date);
+    } else {
+        const [year, month, day] = date.split('-').map(Number);
+        dateType = new Date(year, month - 1, day);
+    }
     const cond = typeof dateType == "object" && dateType == "Invalid Date";
     return cond ? date : new Intl.DateTimeFormat(intl, options).format(dateType);
 }
