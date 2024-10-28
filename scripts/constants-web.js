@@ -11,7 +11,7 @@ const contributorsWRs = {
 	"Li": {"name": "Crispy", "help": "MoF Lunatic", "url": "https://twitter.com/Crispyz_th"},
 	"FW": {"name": "Dagoth2hu", "help": "PoFV all categories", "url": "https://www.youtube.com/channel/UCWHrmFVTt_YoyiHNBKs6_xw"},
 	"Di": {"name": "Diamenciory", "help": "EoSD Lunatic", "url": "https://www.youtube.com/@diamenciory1439"},
-	"RB": {"name": "icterine", "help": "PCB Lunatic", "url": "https://www.twitch.tv/icterine_"},
+	"RB": {"name": "icterine", "help": "PCB categories", "url": "https://www.twitch.tv/icterine_"},
 	"KC": {"name": "KirbyComment", "help": "PC-98 games all categories, HSiFS all categories", "url": "https://www.youtube.com/channel/UCVZ07KKLFIJp4bNGgjNLsIw"},
 	"Le": {"name": "Levea", "help": "IN Lunatic", "url": "https://twitter.com/Levea18/"},
 	"MH": {"name": "Maribel Hearn", "help": "Royalflare Archive and the WR page", "url": "https://maribelhearn.com/"},
