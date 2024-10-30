@@ -1905,7 +1905,7 @@
     "869": { "name_en": "RLbClear", "verified": { "th08": { "Lunatic": ["Border Team"] } } },
     "870": { "name_en": "YUTO", "verified": { "th08": { "Lunatic": ["Border Team"] } } },
     "871": { "name_en": "绿绿可柚", "verified": { "th08": { "Lunatic": ["Border Team", "Yuyuko"] } } },
-    "873": { "name_en": "rori-", "name_jp": "ロリー", "verified": { "th07": { "Lunatic": ["MarisaA", "MarisaB"] }, "th08": { "Lunatic": ["Scarlet Team"] } } },
+    "873": { "name_en": "rori-", "name_jp": "ロリー", "verified": { "th07": { "Lunatic": ["MarisaA", "MarisaB", "SakuyaA"] }, "th08": { "Lunatic": ["Scarlet Team"] } } },
     "875": { "name_en": "Clio", "unverified": { "th08": { "Lunatic": ["Ghost Team"] } }, "verified": { "th08": { "Lunatic": ["Ghost Team"] } } },
     "876": { "name_en": "Levea", "verified": { "th08": { "Lunatic": ["Ghost Team"], "Extra": ["Ghost Team"] } } },
     "877": { "name_en": "282L22b", "verified": { "th08": { "Lunatic": ["Sakuya"] } } },
@@ -1995,7 +1995,7 @@
             "th08": { "Lunatic": ["Scarlet Team", "Ghost Team"] }
         }
     },
-    "935": { "name_en": "PTS", "verified": { "th07": { "Lunatic": ["MarisaA"] } } },
+    "935": { "name_en": "PTS", "verified": { "th07": { "Lunatic": ["MarisaA", "MarisaB"] } } },
     "936": {
         "name_en": "Ryo",
         "verified": { "th05": { "Normal": ["Mima"] }, "th07": { "Lunatic": ["MarisaB"] } },
