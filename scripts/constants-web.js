@@ -2,7 +2,7 @@ const contributors = {
 	"S7daW4HHTY": {"name": "32th System", "help": "Provided various aids", "url": "https://youtube.com/32thc"},
 	"1AThrt4mzz": {"name": "Helio Knight", "help": "HSiFS page 3 research", "url": "https://www.youtube.com/channel/UCNbaT2iVuYKN5q94b9UlTEA"},
 	"0lDi5bpXmy": {"name": "kana0603", "help": "Provided various EoSD glitches & replays", "url": "https://twitter.com/kana_th6"},
-	"qfrV6dZExm": {"name": "Khangaroo", "help": "Massively helped with the Gohei Dupe glitch", "url": "https://github.com/khang06"},
+	"qfrV6dZExm": {"name": "Khangaroo", "help": "Massively helped with the Gohei Dupe glitch and malfunctioning shottypes glitch", "url": "https://github.com/khang06"},
 	"VSlamYrAwJ": {"name": "zero318", "help": "Massively helped with the Merlin glitch", "url": "https://github.com/zero318"},
 };
 
