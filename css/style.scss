@@ -423,6 +423,7 @@ tr {
     right: 50%;
     translate: 50%;
     visibility: hidden;
+    text-align: left;
     border: 1px solid var(--clr-box);
     z-index: var(--z-tooltip);
     *:not(hr) {
