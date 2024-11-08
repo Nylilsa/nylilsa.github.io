@@ -270,6 +270,11 @@
             "title": "Slowdown Item Duplication",
             "url-name": ["slowdown-dupe"],
             "finished": true
+        },
+        "6": {
+            "title": "Sanae Frogs Not Working",
+            "url-name": ["sanae-frogs"],
+            "finished": true
         }
     },
     "th16": {
