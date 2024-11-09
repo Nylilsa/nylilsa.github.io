@@ -273,7 +273,7 @@
         },
         "6": {
             "title": "Sanae Frogs Not Working",
-            "url-name": ["sanae-frogs"],
+            "url-name": ["broken-frogs", "sanae-frogs"],
             "finished": true
         }
     },
