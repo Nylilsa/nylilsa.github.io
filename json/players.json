@@ -2063,7 +2063,7 @@
     "980": {
         "name_en": "CHEM31",
         "unverified": { "th06": { "Extra": ["ReimuA", "ReimuB", "MarisaA"] }, "th07": { "Extra": ["SakuyaB"] } },
-        "verified": { "th06": { "Extra": ["ReimuB", "MarisaA", "MarisaB"] } }
+        "verified": { "th06": { "Extra": ["ReimuB", "MarisaA", "MarisaB", "ReimuA"] } }
     },
     "981": { "name_en": "ひむる", "unverified": { "th06": { "Hard": ["ReimuA"] }, "th07": { "Phantasm": ["ReimuA"] } } },
     "982": { "name_en": "hossy", "unverified": { "th06": { "Hard": ["ReimuB"] }, "th07": { "Phantasm": ["MarisaA", "MarisaB"] } } },
