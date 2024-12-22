@@ -663,12 +663,13 @@ function createDropdown(allPlayerData) {
         ];
         for (const { type, data } of categories) {
             if (!data) continue; // Skip if there is no verified or unverified data
-            for (const [gameId, difficulties] of Object.entries(data)) {
+            // Collect promises for fetching game data concurrently
+            const gameFetchPromises = Object.entries(data).map(async ([gameId, difficulties]) => {
                 const gameInfo = await fetchData(`json/wr/${type}/${gameId}.json`);
                 for (const [difficulty, shottypes] of Object.entries(difficulties)) {
                     shottypes.forEach((shottype) => {
                         // console.log(gameId + difficulty + shottype);
-                        const category = gameInfo[difficulty][shottype];
+                        const category = gameInfo[difficulty][shottype];        
                         category.forEach((node) => {
                             if (node.id == id) {
                                 node.game = gameId;
@@ -680,7 +681,9 @@ function createDropdown(allPlayerData) {
                         });
                     });
                 }
-            }
+            });
+            // Wait for all fetches and their subsequent processing to complete
+            await Promise.all(gameFetchPromises);
         }
         // Sorts by descending date 
         selectedEntries.sort((entry1, entry2) => {
