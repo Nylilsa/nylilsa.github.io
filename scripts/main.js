@@ -1,7 +1,6 @@
 "use strict";
 
 let isEclListenedAdded = false;
-let loadingPromise = null; // Promise to track the loading state.
 let eclJson = null;
 let figureId = 0;
 let eclJsonId = 0;
