@@ -183,7 +183,7 @@ function callChartJS(fetchedData, time, func) {
                         },
                         label: function (context) {
                             const player = context['raw']['player'];
-                            return "By: " + player;
+                            return "Player: " + player;
                         },
                         afterLabel: function (context) {
                             const date = context['label'].split(",", 2).join(",");
