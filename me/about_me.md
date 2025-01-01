@@ -5,7 +5,7 @@
 
 Hello there, and thank you for checking out this little corner of the internet of mine !
 
-The name is Nylilsa. I'm your average sleep-deprived college student with an inverted sleep schedule. (´｡• ᵕ •｡`)
+The name is Nylilsa (formerly known as [a=/#/me/plus]Plus[/a], click to read more). I'm your average sleep-deprived college student with an inverted sleep schedule. (´｡• ᵕ •｡`)
 
 I like making stuff, which explains why this website exists. I quite like random stuff that aren't really related to each other, such as photography, music, literature, linguistics and programming.
 
@@ -24,12 +24,4 @@ Also, I may not be that good of a player so don't expect too much. I only play b
 + Twitch: [a=https://www.twitch.tv/Nylilsa]https://www.twitch.tv/Nylilsa[/a]
 + GitHub: [a=https://github.com/Nylilsa/]https://github.com/Nylilsa/[/a]
 + Speedrun.com: [a=https://www.speedrun.com/user/Nylilsa]https://www.speedrun.com/user/Nylilsa[/a]
-
-
-
-
-
-
-
-
 
