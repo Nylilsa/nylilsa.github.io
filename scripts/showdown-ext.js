@@ -310,9 +310,20 @@ let ext = function() {
 
 	let cross = {
 		type: "lang",
-		regex: /\:NO\:/g,
+		regex: /\:NO\:/g,   
 		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
 	}
 
-	return [hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, match, scenes, check, cross];
+    let gt = {
+        type: 'lang',
+        regex: /\&gt\;/g,
+        replace: '>',
+    }
+
+    let lt = {
+        type: 'lang',
+        regex: /\&lt\;/g,
+        replace: '<',
+    }
+	return [hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, match, scenes, check, cross, gt, lt];
 }
