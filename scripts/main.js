@@ -1,7 +1,6 @@
 "use strict";
 
 let isEclListenedAdded = false;
-let loadingPromise = null; // Promise to track the loading state.
 let eclJson = null;
 let figureId = 0;
 let eclJsonId = 0;
@@ -182,8 +181,9 @@ async function videoFunction(key) {
 async function replayFunction(key) {
     const webdata = await fetchData("json/webdata.json");
 	const content = webdata["Replays"][key];
+    const path = `bugs/${content.game}/${content.url}`;
 	const datum = dateFormat(content.date);
-	return citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, content.url, content.note);
+	return citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, path, content.note);
 }
 
 function dateFormat(date) {
