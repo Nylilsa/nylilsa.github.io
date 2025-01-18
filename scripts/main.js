@@ -461,7 +461,10 @@ function initAutoHideMenu() { // hides menu when scrolling
 function initHashChange() {
     setTimeout(() => {
         window.addEventListener('hashchange', (e) => {
-            toggleSidebar(true);
+            const mediaQueryWidth = 500; // value must match value in css file
+            if (window.innerWidth < mediaQueryWidth) { 
+                toggleSidebar(true);
+            }
             initChartStuff(() => {
                 loadMarkdown(initRemoveHash(false));
             })
