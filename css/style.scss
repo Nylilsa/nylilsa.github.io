@@ -354,15 +354,25 @@ code {
 table {
     border-collapse: collapse;
     font-size: var(--fs-500);
-    opacity: 0.9;
+    opacity: 0.9;    
+    // outline: 2px solid var(--clr-box);
+    outline: 2px solid var(--clr-background-table-contrast);
+    > * > tr:nth-child(2n+1) > td {
+        background-color: var(--clr-background-element);
+        // background-color: var(--clr-background-table-contrast);
+    }   
 }
 
 td {
     padding-inline: 4px;
+    border: 2px solid var(--clr-background-main);
+    // border: 2px solid var(--clr-background-element);
 }
 th {
     padding: 8px;
     text-align: center;
+    border: 2px solid var(--clr-background-main);
+    background-color: var(--clr-background-element);
 }
 tr {
     text-align: center;

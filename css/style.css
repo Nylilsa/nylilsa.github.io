@@ -290,14 +290,20 @@ code {
 table {
   border-collapse: collapse;
   font-size: var(--fs-500);
-  opacity: 0.9; }
+  opacity: 0.9;
+  outline: 2px solid var(--clr-background-table-contrast); }
+  table > * > tr:nth-child(2n+1) > td {
+    background-color: var(--clr-background-element); }
 
 td {
-  padding-inline: 4px; }
+  padding-inline: 4px;
+  border: 2px solid var(--clr-background-main); }
 
 th {
   padding: 8px;
-  text-align: center; }
+  text-align: center;
+  border: 2px solid var(--clr-background-main);
+  background-color: var(--clr-background-element); }
 
 tr {
   text-align: center; }

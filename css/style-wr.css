@@ -53,20 +53,23 @@
 
 #wr-table-buttons {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 2px;
     white-space: nowrap;
     grid-auto-flow: column;
+    border-collapse: collapse;
+    outline: 2px solid var(--clr-background-table-contrast);
+    border: 2px solid var(--clr-background-main);
 }
 
-.wr-shottype-buttons,
-.wr-player-button {
+.wr-shottype-buttons {
     font-family: var(--ff-primary);
     font-size: var(--fs-400);
     color: var(--clr-default);
+    background-color: var(--clr-background-element);
+    padding-block: 0.25rem;
 }
 
 .all-wr-tables {
-    border-top: solid transparent 8px;
     margin: 0 auto;
 }
 

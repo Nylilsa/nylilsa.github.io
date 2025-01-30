@@ -30,6 +30,7 @@
     --clr-background-sub-element: var(--clr-dark-3);
     --clr-background-sub-sub-element: var(--clr-dark-4);
 
+    --clr-background-table-contrast: var(--clr-dark-saturated-5);
     --clr-background-hljs: var(--clr-dark-4);
 }
 
