@@ -85,11 +85,6 @@
     padding-bottom: 8px;
 }
 
-.all-wr-tables>tbody>tr:nth-child(2)>*,
-.wr-player-table>tbody>tr:nth-child(2)>* {
-    padding-top: 8px;
-}
-
 .legend-item {
     font-size: var(--fs-300);
     color: var(--clr-grey);
