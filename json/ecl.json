@@ -164,7 +164,27 @@
             "Name": "DIFF",
             "Description": "Difficulty (E=0, N=1, H=2, L=3, EX=4, O=5).",
             "Type": "int"
-        }
+        },
+        "-9926": {
+            "Name": "GI0",
+            "Description": "Global integer value. Value is initialised to 0 on stage load but not on stage reset.",
+            "Type": "int"
+        },
+        "-9925": {
+            "Name": "GI1",
+            "Description": "Global integer value. Value is initialised to 0 on stage load but not on stage reset.",
+            "Type": "int"
+        },
+        "-9924": {
+            "Name": "GI2",
+            "Description": "Global integer value. Value is initialised to 0 on stage load but not on stage reset.",
+            "Type": "int"
+        },
+        "-9923": {
+            "Name": "GI3",
+            "Description": "Global integer value. Value is initialised to 0 on stage load but not on stage reset.",
+            "Type": "int"
+        },
     },
     "Custom": {
         "1": {
