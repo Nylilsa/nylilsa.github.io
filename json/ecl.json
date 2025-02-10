@@ -184,7 +184,7 @@
             "Name": "GI3",
             "Description": "Global integer value. Value is initialised to 0 on stage load but not on stage reset.",
             "Type": "int"
-        },
+        }
     },
     "Custom": {
         "1": {
