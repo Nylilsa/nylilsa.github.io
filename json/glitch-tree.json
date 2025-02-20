@@ -179,6 +179,11 @@
             "title": "Slowdown Item Duplication",
             "url-name": ["slowdown-dupe"],
             "finished": true
+        },
+        "3": {
+            "title": "Yoshika Revival Bug",
+            "url-name": ["yoshika-revival"],
+            "finished": true
         }
     },
     "th14": {
