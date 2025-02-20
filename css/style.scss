@@ -422,6 +422,7 @@ tr {
 }
 
 .tooltip {
+    font-size: var(--fs-400);
     width: calc(max(200px, 40ch));
     font-family: var(--ff-sans);
     color: var(--clr-text-dim);
