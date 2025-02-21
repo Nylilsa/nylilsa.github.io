@@ -423,4 +423,6 @@ sub {
   #header {
     padding-left: 0px !important; }
   #content {
-    padding-inline: 2vmax !important; } }
+    padding-inline: 2vmax !important; }
+  table {
+    margin-inline: auto; } }
