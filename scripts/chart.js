@@ -907,6 +907,7 @@ function setButtonLogic(id) {
         const selectedTable = document.getElementById(`${id}table`);
         selectedTable.style.display = "";
         this.style.color = "#ddd";
+        this.style.backgroundColor = "var(--clr-background-element)"
     }
 }
 
@@ -923,6 +924,7 @@ function generateWRButtons() {
         button.innerText = globalConfigs.gameCharacters[i];
         if (globalConfigs.gameCharacters[i] == globalConfigs.overallWRCharacter) {
             button.style.color = "#ddd";
+            button.style.backgroundColor = "var(--clr-background-element)";
         }
         if (globalConfigs.game == "th03") {
             section.style.gridTemplateColumns = "repeat(3, 1fr)";

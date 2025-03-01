@@ -65,7 +65,7 @@
     font-family: var(--ff-primary);
     font-size: var(--fs-400);
     color: var(--clr-default);
-    background-color: var(--clr-background-element);
+    /* background-color: var(--clr-background-element); */
     padding-block: 0.25rem;
 }
 
