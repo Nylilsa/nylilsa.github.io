@@ -9,6 +9,7 @@ const globalConfigs = {
     defaultGame: "th13",
     isPc98: false,
     pc98Games: ["th01", "th02", "th03", "th04", "th05"],
+    baseJsonPath: "https://raw.githubusercontent.com/Nylilsa/wr-replays/refs/heads/main/json/nylilsa-site"
 }
 
 
@@ -484,8 +485,8 @@ export function initCanvas(gameID) {
     styleGameSelectorButtons();
     styleToggleSwitch();
     Promise.all([
-        fetchData('json/gameinfo.json'),
-        fetchData(`json/players.json`)
+        fetchData(`${globalConfigs.baseJsonPath}/gameinfo.json`),
+        fetchData(`${globalConfigs.baseJsonPath}/players.json`)
     ]).then(([data, allPlayerData]) => {
         const allDifficulties = data['Difficulty'][globalConfigs.game];
         styleGameDifficultyButtons(allDifficulties);
@@ -500,10 +501,10 @@ function loadCanvas(difficulty = "Lunatic", func) {
     const now = new Date().getTime();
     let fetchedData = [];
     Promise.all([
-        fetchData('json/gameinfo.json'),
-        fetchData(`json/wr/unverified/${globalConfigs.game}.json`),
-        fetchData(`json/wr/verified/${globalConfigs.game}.json`),
-        fetchData(`json/players.json`)
+        fetchData(`${globalConfigs.baseJsonPath}/gameinfo.json`),
+        fetchData(`${globalConfigs.baseJsonPath}/unverified/${globalConfigs.game}.json`),
+        fetchData(`${globalConfigs.baseJsonPath}/verified/${globalConfigs.game}.json`),
+        fetchData(`${globalConfigs.baseJsonPath}/players.json`)
     ]).then(([data, unverified, verified, allPlayerData]) => {
         globalConfigs.englishName = data['Names'][globalConfigs.game]['en'];
         const releaseDate = new Date(data['LatestReleaseDate'][globalConfigs.game]).getTime();
@@ -680,7 +681,7 @@ function createDropdown(allPlayerData) {
 
     async function makeTable(id) {
         id = Number(id);
-        const playerInfo = (await fetchData("json/players.json"))[id];
+        const playerInfo = (await fetchData(`${globalConfigs.baseJsonPath}/players.json`))[id];
         const fullName = createName(playerInfo, true);
         const selectedEntries = [];
         const categories = [
@@ -691,7 +692,7 @@ function createDropdown(allPlayerData) {
             if (!data) continue; // Skip if there is no verified or unverified data
             // Collect promises for fetching game data concurrently
             const gameFetchPromises = Object.entries(data).map(async ([gameId, difficulties]) => {
-                const gameInfo = await fetchData(`json/wr/${type}/${gameId}.json`);
+                const gameInfo = await fetchData(`${globalConfigs.baseJsonPath}/${type}/${gameId}.json`);
                 for (const [difficulty, shottypes] of Object.entries(difficulties)) {
                     shottypes.forEach((shottype) => {
                         // console.log(gameId + difficulty + shottype);
