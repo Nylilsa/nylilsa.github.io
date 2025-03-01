@@ -94,7 +94,7 @@ I average about 11 clicks per second on my [key=Shift] key, though [hl2]it is po
 ## Basic setup
 [hr_minor]
 
-I recommend practicing the dupe glitch on Shinmyoumaru's second non-spell because there is a safespot that allows for easy practice, she does not more and she has a lot of HP. You can warp to this non-spell using [a=https://github.com/touhouworldcup/thprac]the practice tool thprac[/a].
+I recommend practicing the dupe glitch on Shinmyoumaru's second non-spell because there is a safespot that allows for easy practice, she does not move and she has a lot of HP. You can warp to this non-spell using [a=https://github.com/touhouworldcup/thprac]the practice tool thprac[/a].
 
 [img=guides/th14-gohei-dupe/safespot.png, figtitle=A safespot on Shinmyoumaru's second non-spell, alt=Reimu and Shinmyoumaru]
 [br]
