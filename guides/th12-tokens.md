@@ -28,6 +28,8 @@ For obvious reasons, I do not include UFO tokens that are spawned by UFOs themse
 + [style=blink-blue-token, icon=true, highlightedText=] Blinking Blue token (middle fairy before mid-boss)
 
 ### Mid-boss
+[hr_minor]
+
 + [style=static-red-token, icon=true, highlightedText=] Static Red token
 + [style=blink-blue-token, icon=true, highlightedText=] Blinking Blue token
 
@@ -53,6 +55,8 @@ For obvious reasons, I do not include UFO tokens that are spawned by UFOs themse
 + [style=blink-blue-token, icon=true, highlightedText=] Blinking Blue token (middle big fairy)
 
 ### Mid-boss
+[hr_minor]
+
 + [style=static-blue-token, icon=true, highlightedText=] Static Blue token
 + [style=blink-blue-token, icon=true, highlightedText=] Blinking Blue token
 
@@ -77,6 +81,8 @@ For obvious reasons, I do not include UFO tokens that are spawned by UFOs themse
 + [style=static-green-token, icon=true, highlightedText=] Static Green token (middle big fairy)
 + [style=blink-green-token, icon=true, highlightedText=] Blinking Green token (right big fairy)
 + [style=blink-blue-token, icon=true, highlightedText=] Blinking Blue token (left big fairy)
+
+[hr_minor]
 
 ### Second Half #1
 + [style=blink-red-token, icon=true, highlightedText=] Blinking Red token (left big fairy)
@@ -110,6 +116,8 @@ For obvious reasons, I do not include UFO tokens that are spawned by UFOs themse
 ### First Half #4
 + [style=blink-green-token, icon=true, highlightedText=] Blinking Green token (middle yin-yang)
 + [style=blink-blue-token, icon=true, highlightedText=] Blinking Blue token (left yin-yang)
+
+[hr_minor]
 
 ### Second Half #1
 + [style=static-blue-token, icon=true, highlightedText=] Static Blue token (left yin-yang)
@@ -153,6 +161,8 @@ For obvious reasons, I do not include UFO tokens that are spawned by UFOs themse
 + [style=blink-blue-token, icon=true, highlightedText=] Blinking Blue token (same middle big fairy)
 
 ### Mid-boss
+[hr_minor]
+
 + [style=blink-red-token, icon=true, highlightedText=] Blinking Red token
 + [style=blink-blue-token, icon=true, highlightedText=] Blinking Blue token
 
