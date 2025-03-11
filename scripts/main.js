@@ -93,38 +93,54 @@ function setWindowTitleDirect(str) {
 	document.title = str;
 }
 
-function toggleSidebar(bool) { //changes class of sidebar upon button press
+function toggleSidebar(direction, forceClose) { //changes class of sidebar upon button press
     const time = getComputedStyle(document.documentElement).getPropertyValue('--time-animation').match(/\d+/g).map(Number)[0];
     setTimeout(() => {
         checkElementResize();
     }, time)
-	const sidebar = document.getElementById('sidebar');
+	const sidebarLeft = document.getElementById('sidebar-left');
+	const sidebarRight = document.getElementById('sidebar-right');
 	const content = document.getElementById('content');
 	const header = document.getElementById('header');
 	const chart = document.getElementById('wr-chart-wrapper');
 	const wrButtons = document.getElementById('wr-game-buttons');
-	if (bool || sidebar.className == "sidebar-class-width") {
-        sidebar.style.transform = '';
-        content.style.paddingLeft = '';
-		header.style.paddingLeft = '';
+    const fade = document.getElementById("fade");
+    
+    const isLeft = direction === "left";
+    const sidebar = isLeft ? sidebarLeft : sidebarRight;
+    const paddingSide = isLeft ? 'Left' : 'Right';
+    
+    sidebar.classList.toggle('sidebar-set-open');
+    const isClosing = forceClose || !sidebar.classList.contains('sidebar-set-open');
+    
+    if (isClosing) {
+        fade.classList.remove("sidebar-toggle");
         if (chart) {
             chart.style.maxWidth = '';
             wrButtons.style.maxWidth = '';
         }
-		sidebar.className = '';
-		return;
-	}
-    sidebar.style.transform = 'translateX(0)';
-    content.style.paddingLeft = 'calc(var(--sidebar-width) + 3vmax)';
-    header.style.paddingLeft = 'calc(var(--sidebar-width) + 3vmax)';
-    if (chart) {
-        chart.style.maxWidth = 'calc(max(1030px, calc(88vw - var(--sidebar-width) + 3vmax))';
-        wrButtons.style.maxWidth = 'calc(max(1030px, calc(88vw - var(--sidebar-width) + 3vmax))';
+        content.style[`padding${paddingSide}`] = '';
+        header.style[`padding${paddingSide}`] = '';
+        sidebar.style.transform = '';
+        return;
     }
-	sidebar.className = 'sidebar-class-width';
+
+    // Opening logic
+    sidebar.style.transform = isLeft
+        ? 'translateX(0)'
+        : 'translateX(calc(100vw - var(--sidebar-width)))';
+    
+    fade.classList.add("sidebar-toggle");
+    content.style[`padding${paddingSide}`] = 'calc(var(--sidebar-width) + 3vmax)';
+    // header.style[`padding${paddingSide}`] = 'calc(var(--sidebar-width))';
+    
+    if (chart) {
+        const maxWidthVal = 'calc(max(1030px, calc(88vw - var(--sidebar-width) + 3vmax))';
+        chart.style.maxWidth = maxWidthVal;
+        wrButtons.style.maxWidth = maxWidthVal;
+    }
 
 }
-
 
 function jumpTo(id, duration) {
     const tagsCheck = /tags/g.test(window.location.hash);
@@ -364,6 +380,30 @@ function initSidebarContent() {
     const colDecrease = -16;
     initSidebarGlitches(colDecrease);
     initSidebarThemes(colDecrease);
+    initSidebarListeners();
+}
+
+function initSidebarListeners() {
+    document.addEventListener("click", function (event) {
+        const mediaQueryWidth = 500; // value must match CSS
+        if (window.innerWidth > mediaQueryWidth) return;
+    
+        const header = document.getElementById("header");
+        if (header.contains(event.target)) return;
+    
+        const sidebars = [
+            { id: "sidebar-left", direction: "left" },
+            { id: "sidebar-right", direction: "right" }
+        ];
+    
+        sidebars.forEach(({ id, direction }) => {
+            const sidebar = document.getElementById(id);
+            if (!sidebar.classList.contains("sidebar-set-open")) return;
+            if (!sidebar.contains(event.target)) {
+                toggleSidebar(direction, true);
+            }
+        });
+    });
 }
 
 function initSidebarThemes(colDecrease) {
@@ -463,7 +503,7 @@ function initHashChange() {
         window.addEventListener('hashchange', (e) => {
             const mediaQueryWidth = 500; // value must match value in css file
             if (window.innerWidth < mediaQueryWidth) { 
-                toggleSidebar(true);
+                toggleSidebar('left', true);
             }
             initChartStuff(() => {
                 loadMarkdown(initRemoveHash(false));
@@ -503,7 +543,7 @@ function initCustomColor() {
 function initKeys() {
     document.addEventListener('keydown', evt => {
         if (evt.key === 'Escape') {
-            toggleSidebar(true);
+            toggleSidebar('left', true);
         }
     });
 }
@@ -565,8 +605,8 @@ function init() {
         initCustomColor();
         initSidebarContent();
         initHashChange();
-        initKeys();
-        initAutoHideMenu();
+        // initKeys();
+        // initAutoHideMenu();
     }
     initChartStuff(() => {
         commonInit();

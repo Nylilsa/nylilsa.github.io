@@ -1,3 +1,4 @@
+// npx node-sass css/style.scss css/style.css
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 @import url(defaults.css);
 
@@ -27,9 +28,11 @@
     --fs-1200: 2.1rem;
     --fs-1300: 2.4rem;
 
-    --z-header: 1;
-    --z-sidebar: 2;
-    --z-tooltip: 3;
+    --z-unset: -1;
+    --z-fade: 2;
+    --z-sidebar: 3;
+    --z-header: 5;
+    --z-tooltip: 6;
 
     --sidebar-width: 250px;
     --header-height: 4vh + 8px;
@@ -43,37 +46,47 @@ body {
     text-align: left;
 }
 
-h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
     margin-bottom: 8px;
+
 }
 
 h1 {
-    font-size: var(--fs-1300);
+    font-size: var(--fs-1100);
+
 }
 
 h2 {
-    font-size: var(--fs-1200);
+    font-size: var(--fs-700);
+    border-left-width: 1.5em;
+    border-color: var(--clr-hr-major);
+    border-style: solid;
+    border-width: 1px 1px 1px 0.4em;
+    padding-left: 0.4em;
+    padding-right: 0.2em;
+    padding-block: 0.1em;
+    background-color: var(--clr-background-element);
 }
 
 h3 {
-    font-size: var(--fs-1100);
+    font-size: var(--fs-700);
+    border-left-width: 0.8em;
 }
 
 h4 {
-    font-size: var(--fs-1000);
+    font-size: var(--fs-700);
 }
 
 h5 {
-    font-size: var(--fs-900);
+    font-size: var(--fs-600);
 }
 
 h6 {
-    font-size: var(--fs-800);
+    font-size: var(--fs-600);
 }
 
 #header {
@@ -90,6 +103,22 @@ h6 {
     z-index: var(--z-header);
 }
 
+.header-button {
+    display: grid;
+    align-items: center;
+    & > button {
+        display: flex;
+        height: 80%;
+        padding-inline: 16px;
+        border: 1px solid var(--clr-box);
+        align-items: center;
+    }
+}
+
+.header-text {
+    font-size: var(--fs-300);
+}
+
 .icon {
     width: 24px;
     max-height: 24px;
@@ -101,17 +130,26 @@ h6 {
     filter: invert(1);
 }
 
-#sidebar {
+.sidebar {
     background-color: var(--clr-background-element);
     color: var(--clr-text-normal);
-    width: var(--sidebar-width);
-    transform: translateX(calc(var(--sidebar-width) * -1));
+    width: calc(var(--sidebar-width));
     transition: transform var(--time-animation) ease-in-out;
     position: fixed;
     overflow-y: scroll;
     top: 0;
     bottom: 0;
     z-index: var(--z-sidebar);
+}
+
+#sidebar-left {
+    transform: translateX(calc(var(--sidebar-width) * -1));
+    border-right: 1px solid var(--clr-box);
+}
+#sidebar-right {
+    transform: translateX(calc(100vw + var(--sidebar-width)));
+    border-left: 2px solid var(--clr-box);
+
 }
 
 .sidebar-header {
@@ -121,6 +159,7 @@ h6 {
     }
     font-size: var(--fs-1100);
     padding: 20px;
+    border-bottom: 1px solid var(--clr-box);
 }
 
 .navigation {
@@ -211,12 +250,22 @@ h6 {
     display: none;
 }
 
+#fade {
+    inset: 0;
+    position: fixed;
+    opacity: 0;
+    background-color: var(--clr-almost-black);
+    z-index: var(--z-unset);
+    transition-property: opacity, z-index; // why does z-index work
+    transition-timing-function: ease-in-out;
+    transition-duration: var(--time-animation);
+}
 
 #content {
     transition: padding var(--time-animation) ease-in-out;
     background-color: var(--clr-background-main);
     color: var(--clr-text-dim);
-    padding-block: 6vh;
+    padding-block: 8vh;
     padding-inline: 6vmax;
     font-family: var(--ff-sans);
     max-width: calc(720px + 40vw);
@@ -267,18 +316,20 @@ figcaption {
 }
 
 hr {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-block: 0.5em;
     border: 0;
     border-top: 1px solid rgba(0,0,0,.1);
 }
 
 .hr_major {
     border-color: var(--clr-hr-major);
+    // border-color: #0000;
+    margin-block: 1em;
 }
 
 .hr_minor {
     border-color: var(--clr-hr-minor);
+    // border-color: #0000;
 }
 
 .toc {
@@ -408,7 +459,7 @@ tr {
 .box {
     font-family: var(--ff-primary);
     padding-block: 8px;
-    padding-inline-start: 12px;
+    padding-inline: 12px;
     border-radius: 0px;
     border-color: var(--clr-box);
     border-width: 1px;
@@ -497,6 +548,14 @@ sub {
     padding: 10px;
 }
 
+.theme {
+    display: flex;
+    padding: 0;
+    text-align: left;
+    margin-right: auto;
+    font-size: var(--fs-300);
+}
+
 .star {
     position: absolute;
     width: 12px;
@@ -514,9 +573,9 @@ sub {
 }
 
 @media screen and (max-width: 500px) {
-    :root {
-        --sidebar-width: 100% !important;
-    }
+    // :root {
+    //     --sidebar-width: 100% !important;
+    // }
     #header {
         padding-left: 0px !important;
     }
@@ -525,5 +584,12 @@ sub {
     }
     table {
         margin-inline: auto;
+    }
+    .header-text {
+        display: none;
+    }
+    #fade.sidebar-toggle {
+        opacity: 0.6;
+        z-index: var(--z-fade);
     }
 }
