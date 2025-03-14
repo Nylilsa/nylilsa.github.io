@@ -484,20 +484,6 @@ function initScrollBar() {
     document.body.appendChild(style);
 }
 
-function initAutoHideMenu() { // hides menu when scrolling
-    const menu = document.getElementById('header');
-    let previousScrollTop = document.scrollingElement.scrollTop;
-    const height = getComputedStyle(document.documentElement).getPropertyValue('--header-height');
-    document.addEventListener('scroll', function () {
-        if (document.scrollingElement.scrollTop < previousScrollTop) { // if scroll upwards
-            menu.style.transform = 'translateY(0px)';
-        } else {
-            menu.style.transform = `translateY(calc(-1 * calc(${height})))`;
-        }
-        previousScrollTop = document.scrollingElement.scrollTop;
-    }, { passive: true });
-}
-
 function initHashChange() {
     setTimeout(() => {
         window.addEventListener('hashchange', (e) => {
@@ -538,14 +524,6 @@ function initRememberScroll() {
 
 function initCustomColor() {
 	initScrollBar();
-}
-
-function initKeys() {
-    document.addEventListener('keydown', evt => {
-        if (evt.key === 'Escape') {
-            toggleSidebar('left', true);
-        }
-    });
 }
 
 function initChartStuff(callback) {
@@ -605,8 +583,6 @@ function init() {
         initCustomColor();
         initSidebarContent();
         initHashChange();
-        // initKeys();
-        // initAutoHideMenu();
     }
     initChartStuff(() => {
         commonInit();
