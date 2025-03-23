@@ -61,10 +61,30 @@
             ],
             "Description": "Clears flag(s) according to $1. Refer to the flag table <a class=\"url\" target=\"_blank\" href=\"https://priw8.github.io/#s=MERLIN/doc/globals/enemy-etc\">here</a>  for exact values."
         },
+        "514": {
+            "Name": "setInterrupt",
+            "Parameters": [
+                {"slot": "int"},
+                {"hp": "int"},
+                {"time": "int"},
+                {"subroutine": "string"}
+            ],
+            "Description": "Sets an interrupt on slot $1. Once caller's HP reaches $2 or $3 frames have passed since this instruction was called, the caller will terminate all subroutines it's currently running and execute subroutine $4."
+        },
         "525": {
             "Name": "enmKillAll",
             "Parameters": [],
             "Description": "Kills all other enemies (unless they have a flag that prevents that set)."
+        },
+        "539": {
+            "Name": "spell3",
+            "Parameters": [
+                {"id": "int"},
+                {"timeRate": "int"},
+                {"unused": "int"},
+                {"name": "string"}
+            ],
+            "Description": "Declares a spellcard with id $1 and name $3. The ID passed to the spell-creating function is id + difficulty - 2 (with easy=0, normal=1, ..., overdrive=5). $2 determines how much time the spell circle takes to shrink (in frames), as well as how fast the spell bonus decreases."
         },
         "546": {
             "Name": "bombShield",
