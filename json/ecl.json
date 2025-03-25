@@ -66,7 +66,7 @@
             "Parameters": [
                 {"slot": "int"},
                 {"hp": "int"},
-                {"time": "int"},
+                {"duration": "int"},
                 {"subroutine": "string"}
             ],
             "Description": "Sets an interrupt on slot $1. Once caller's HP reaches $2 or $3 frames have passed since this instruction was called, the caller will terminate all subroutines it's currently running and execute subroutine $4."

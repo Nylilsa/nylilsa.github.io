@@ -90,7 +90,7 @@
         "0": {
             "title": "Negative Spell Bonus",
             "url-name": ["negative-spell-bonus"],
-            "finished": false
+            "finished": true
         },
         "1": {
             "title": "ReimuA 2 Power Damage",
