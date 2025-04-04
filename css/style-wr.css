@@ -43,7 +43,7 @@
     grid-gap: 16px;
     overflow: auto;
     white-space: nowrap;
-    isolation: isolate;
+    /* isolation: isolate; */
     overscroll-behavior: contain;
 }
 
