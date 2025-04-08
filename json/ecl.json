@@ -107,6 +107,17 @@
                 {"etId": "int"}
             ],
             "Description": "Shoots bullet(s) using properties from bullet manager $1."
+        },
+        "611": {
+            "Name": "etEx",
+            "Parameters": [
+                {"etId": "int"},
+                {"async": "int"},
+                {"type": "int"},
+                {"a": "float"},
+                {"b": "float"}
+            ],
+            "Description": "Adds bullet transformation to bullet manager $1, Transformation of flag $3 determines the specific behaviour of the bullet. <a class=\"url\" target=\"_blank\"href=\"https://priw8.github.io/#s=MERLIN/doc/functions/transformations\">Documentation can be found here</a>."
         }
     },
     "Globals": {
@@ -232,6 +243,11 @@
             "Description": "Integer value between -1 and 120 inclusive (by default -1). If non-negative, shooters using timer2 shoot their bullets and timer increments by 1 per tick until 120 is reached. Once 120, timer reset to -1 or 0 depending on Z key state.",
             "Type": "int"
         },
+        "6": {
+            "Name": "isDelayedSpawn",
+            "Description": "While this flag is set, the bullet will be invisible and not have a hitbox. This flag is cleared once the delay timer ends.",
+            "Type": "boolean"
+        },
         "17": {
             "Name": "distortion",
             "Parameters": [
@@ -250,6 +266,15 @@
                 {"item": "int"}
             ],
             "Description": "Creates an enemy using subroutine $1 at coordinates ($2, $3) (relative to position of the stage background camera), health of created enemy is $4, score bonus is $5 and item drop is $6."
+        },
+        "BulletEffectType-67108864": {
+            "Name": "etExDelay",
+            "Parameters": [
+                {"et": "string"},
+                {"isAsync": "string"},
+                {"time": "string"}
+            ],
+            "Description": "Hide the bullet for $3 frames. During this time, it will not move, will be invisible and won't have a hitbox. If used as a first transformation, can be used to delay when the bullet actually appears."
         }
     }
 }
