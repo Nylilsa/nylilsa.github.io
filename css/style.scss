@@ -234,16 +234,7 @@ h6 {
 
 .left-border-color.dropdown-toggle,
 .left-border-color a {
-    border: solid 4px;
-    border-right-width: 0px;
-    border-top-width: 0px;
-    border-bottom-width: 0px;
-    &:hover {
-        border-left-width: 12px;
-        &> .star {
-            margin-left: calc(var(--margin-left) + 8px);
-        }
-    }
+    border-top: solid 1px var(--clr-box);
 }
 
 .hidden {

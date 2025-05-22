@@ -5,6 +5,7 @@ let eclJson = null;
 let figureId = 0;
 let eclJsonId = 0;
 let citeId = 0;
+const MEDIA_QUERY_WIDTH = 500; // value must match one in css file
 const MD = new showdown.Converter({
 	extensions: [ext],
 	noHeaderId: false,
@@ -381,12 +382,32 @@ function initSidebarContent() {
     initSidebarGlitches(colDecrease);
     initSidebarThemes(colDecrease);
     initSidebarListeners();
+    initSidebarVisibility();
+}
+
+function initSidebarVisibility() {
+    const sidebarLeft = document.getElementById("sidebar-left");
+    if (window.innerWidth >= MEDIA_QUERY_WIDTH) {
+        // disbable animation
+        sidebarLeft.style.transition = "transform 0.01ms ease-in-out";
+        // toggle sidebar without animation
+        toggleSidebar('left');
+        // re-enable animation, must be in setTimeout
+        setTimeout(() => {
+            sidebarLeft.style.transition = "";
+        }, 0) 
+    }
+    const savedScroll = localStorage.getItem('sidebarScroll');
+    if (savedScroll !== null) {
+        setTimeout(() => {
+            sidebarLeft.scrollTop = savedScroll;
+        }, 20)
+    }
 }
 
 function initSidebarListeners() {
     document.addEventListener("click", function (event) {
-        const mediaQueryWidth = 500; // value must match CSS
-        if (window.innerWidth > mediaQueryWidth) return;
+        if (window.innerWidth > MEDIA_QUERY_WIDTH) return;
     
         const header = document.getElementById("header");
         if (header.contains(event.target)) return;
@@ -404,6 +425,15 @@ function initSidebarListeners() {
             }
         });
     });
+    let scrollTimeout;
+    document.getElementById('sidebar-left').addEventListener("scroll", () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            const leftSidebar = document.getElementById('sidebar-left');
+            console.log(leftSidebar.scrollTop);
+            localStorage.setItem('sidebarScroll', leftSidebar.scrollTop);
+        }, 250);
+    })
 }
 
 function initSidebarThemes(colDecrease) {
@@ -429,8 +459,6 @@ async function initSidebarGlitches(colDecrease) {
         for (let i = 0; i < identifiers.length; i++) { // does it games.length times
             const thnr = identifiers[i].id.slice(5); // bugs-th10 ---> th10
             const child = header[i+1];
-            child.style.borderTopWidth = '1px';
-            child.style.borderColor = colorHex(thnr);
             const content = document.getElementById('bugs-'+thnr+'');
             content.style.setProperty('--clr-game', `${colorHex(thnr)}`);
             child.childNodes[1].data = `${names1[thnr]["jp"]}～${names1[thnr]["en"]}`;
@@ -438,18 +466,10 @@ async function initSidebarGlitches(colDecrease) {
                 const li = document.createElement("li");
                 const div = document.createElement("div");
                 const a = document.createElement("a");
-                const finished = data[thnr][j]["finished"];
                 a.href = `#/bugs/${thnr}/${data[thnr][j]["url-name"][0]}`;
-                a.style.borderColor = colorRGB(colDecrease, 1, thnr);
                 a.innerText = data[thnr][j]['title'];
-                div.classList.add("left-border-color");
                 div.style.position = "relative";
                 div.appendChild(a);
-                if (false && finished) {
-                    const marker = document.createElement("div");
-                    marker.classList.add("star");
-                    a.appendChild(marker);
-                }
                 li.appendChild(div);
                 content.appendChild(li)
             }
@@ -487,8 +507,7 @@ function initScrollBar() {
 function initHashChange() {
     setTimeout(() => {
         window.addEventListener('hashchange', (e) => {
-            const mediaQueryWidth = 500; // value must match value in css file
-            if (window.innerWidth < mediaQueryWidth) { 
+            if (window.innerWidth < MEDIA_QUERY_WIDTH) { 
                 toggleSidebar('left', true);
             }
             initChartStuff(() => {

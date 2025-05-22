@@ -191,16 +191,9 @@ h6 {
 
 .left-border-color.dropdown-toggle,
 .left-border-color a {
-  border: solid 4px;
+  border-top: solid 1px var(--clr-box);
   border-right-width: 0px;
-  border-top-width: 0px;
   border-bottom-width: 0px; }
-  .left-border-color.dropdown-toggle:hover,
-  .left-border-color a:hover {
-    border-left-width: 12px; }
-    .left-border-color.dropdown-toggle:hover > .star,
-    .left-border-color a:hover > .star {
-      margin-left: calc(var(--margin-left) + 8px); }
 
 .hidden {
   display: none; }
