@@ -19,6 +19,11 @@
             "title": "ReimuA No Sound",
             "url-name": ["reimua-no-sound"],
             "finished": true
+        },
+        "4": {
+            "title": "Nightbird on Easy Difficulty",
+            "url-name": ["rumia-spell-1"],
+            "finished": true
         }
     },
     "th07": {
