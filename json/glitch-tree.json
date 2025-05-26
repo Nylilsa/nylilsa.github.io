@@ -14,6 +14,11 @@
             "title": "Bomb Pause Desync",
             "url-name": ["bomb-desync"],
             "finished": true
+        },
+        "3": {
+            "title": "ReimuA No Sound",
+            "url-name": ["reimua-no-sound"],
+            "finished": true
         }
     },
     "th07": {
