@@ -191,9 +191,7 @@ h6 {
 
 .left-border-color.dropdown-toggle,
 .left-border-color a {
-  border-top: solid 1px var(--clr-box);
-  border-right-width: 0px;
-  border-bottom-width: 0px; }
+  border-top: solid 1px var(--clr-box); }
 
 .hidden {
   display: none; }
@@ -235,7 +233,8 @@ p {
 .figure-outer-wrapper {
   text-align: center;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin-bottom: calc(max(1em, 1rem)); }
 
 .figure-inner-wrapper {
   border: 1px solid var(--clr-box);
@@ -300,6 +299,9 @@ ol {
 pre {
   font-size: var(--fs-200);
   margin-bottom: 20px; }
+
+.markdown-table {
+  margin-bottom: calc(max(1em, 1rem)); }
 
 .code {
   border: 1px solid var(--clr-box);

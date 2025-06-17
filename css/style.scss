@@ -286,6 +286,7 @@ p {
     text-align: center;
     display: flex;
     justify-content: center;
+    margin-bottom: calc(max(1em, 1rem));
 }
 
 .figure-inner-wrapper {
@@ -367,6 +368,10 @@ ol {
 pre {
     font-size: var(--fs-200);
     margin-bottom: 20px;
+}
+
+.markdown-table {
+    margin-bottom: calc(max(1em, 1rem));
 }
 
 .code {
