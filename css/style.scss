@@ -589,3 +589,10 @@ sub {
         z-index: var(--z-fade);
     }
 }
+
+@-moz-document url-prefix() {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--clr-box) var(--clr-background-element); /* thumb and track colors */
+    }
+}
