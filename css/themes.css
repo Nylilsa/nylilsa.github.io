@@ -21,6 +21,8 @@
     --clr-hr-minor: var(--clr-dark-grey);
     --clr-hr-major: var(--clr-default);
     --clr-box: var(--clr-default);
+    --clr-scrollbar-normal: var(--clr-default);
+    --clr-scrollbar-hover: var(--clr-light-saturated-7);
     --clr-border-main: var(--clr-dark-grey);
     
     --clr-background-highlighted: var(--clr-dark-saturated-shift-2);

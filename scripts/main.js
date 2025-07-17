@@ -371,7 +371,6 @@ function hrCustom(input) {
 
 function setTheme(theme) {
     document.querySelector("html").setAttribute("data-theme", theme);
-    initCustomColor();
     localStorage.selectedTheme = theme;
 }
 
@@ -483,25 +482,9 @@ function initMarkdown(error) { //puts html in id 'test'
 	const md = document.getElementById("mdcontent");
     if (!error) {
 	    md.innerHTML = MD.makeHtml(md.innerHTML);
-        initCustomColor();
         return;
     }
     md.innerHTML = MD.makeHtml("<h1><span style='color:red'>ERROR:</span> File at \""+window.location.href+"\" not found.</h1><br><h3>Try reloading using <span class='highlight-txt'>Ctrl + F5</span>, or <span class='highlight-txt'>clearing browser cache</span> of this site.<br>If the problem persists, contact me on Discord: Nylilsa#9310.</h3><br><br><br><h2><a class='url' href='#/home'>Go to Home page</a></h2>");
-	initCustomColor();
-}
-
-function initScrollBar() {
-    const style = document.createElement("style");
-	style.className = "scrollbars";
-    let css = "::-webkit-scrollbar {width: 4px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
-	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB(32, 1);+ "";
-	css += "; }";
-    style.appendChild(document.createTextNode(css));
-	if (document.getElementsByClassName('scrollbars').length >= 1) {
-		document.getElementsByClassName('scrollbars')[0].innerHTML = css;
-		return;
-	}
-    document.body.appendChild(style);
 }
 
 function initHashChange() {
@@ -516,6 +499,7 @@ function initHashChange() {
         }, false)
     }, 500); // delay is needed or else hashchange and init are executed at once
 }
+
 function initRemoveHash(input) { //removes #/
 	let c = window.location.hash.replace("#/","") + ".md";
 	let hash = '';
@@ -539,10 +523,6 @@ function initRememberScroll() {
 	} else {
 		history.scrollRestoration = 'auto';
 	}
-}
-
-function initCustomColor() {
-	initScrollBar();
 }
 
 function initChartStuff(callback) {
@@ -599,7 +579,6 @@ function init() {
         loadMarkdown(initRemoveHash(false));
         initRememberScroll();
         initDropdownToggle();
-        initCustomColor();
         initSidebarContent();
         initHashChange();
     }
