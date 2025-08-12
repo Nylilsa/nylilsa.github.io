@@ -197,7 +197,26 @@ This is personally my most commonly used method if I want to get a double gohei.
 ### Advanced techniques
 [hr_minor]
 
-gohei reset timer: time between duping attempts
+Now we have covered how to obtain a duped gohei as well as how to deal the most DPS with it with amulet shifttapping. What else is there to learn you might ask ? This section covers some other techniques that will boost your rates.
+
+#### Gohei retry time
+[hr_minor]
+
+The gohei retry time is the amount of time taken between two trials, usually varying from 0.5s to 1.5s. This is the timeframe where the player confirms whether they got a duped gohei or not. Having a lower gohei retry timer is usually better, because if you fail to duplicate a gohei, you can quickly try for another dupe attempt.
+
+[img=guides/th14-gohei-dupe/button_state_chart_retry_time_n2.png, figtitle=A graph representation of a player's gohei duping attempts. It starts off with a gohei dupe attempt, followed by the retry time of 52 frames. Then, the player intentionally despawns the gohei by not holding Z/Shift for 12 frames. This prepares for the next gohei dupe attempt., alt=A chart with the y-axis showing the button state and the x-axis showing time]
+
+One might ask how many more trials you can perform depending on your gohei retry time. Below I have depicted two charts, both done on Benben's first non-spell with two varying gohei retry times.
+
+[img=guides/th14-gohei-dupe/button_state_chart_retry_time_n6.png, figtitle=A graph representation of a player's 6 gohei duping attempts on Benben's first non-spell with an average retry time of 59.2 frames, alt=A chart with the y-axis showing the button state and the x-axis showing time]
+
+[img=guides/th14-gohei-dupe/button_state_chart_retry_time_n9.png, figtitle=A graph representation of a player's 9 gohei duping attempts on Benben's first non-spell with an average retry time of 31.4 frames., alt=A chart with the y-axis showing the button state and the x-axis showing time]
+
+explain difference between the two
+
+It may sound easy to improve at this: just reduce the gohei retry time to as low as possible, right ? The solution may sound very simple (just wait for a little less), but by doing it too quickly you may obtain a duped gohei but you despawn it because your brain hasn't registered you performed the dupe successfully.
+
+gohei retry time: time between duping attempts
 feeling the difference between 1/2/3 goheis
 centered gohei
 4 tap method
@@ -209,6 +228,17 @@ It may be hard to know if you got one or two goheis, so here are some ways you c
 4. Right as you are doing the dupe, you will notice the individual goheis spawning, but this might be hard to tell.
 5. The goheis may split up, which reveals that there are multiple goheis.
 
+### Personal summary of methods
+
+note to self: acknowledge flaws (i.e. not following the methodology) that resulted in very varying results.
+redo experiment with clear predefined methodology (that I lacked)
+
+| Method               | 1 goheis | 2 goheis | 3 goheis | total trials count |
+| -------------------- | -------- | -------- | -------- | ------------------ |
+| Shift-Z-Shift method | 184      | 16       | 0        | 200                |
+| Double tap method    | 185      | 15       | 0        | 200                |
+| Triple tap method    | 129      | 62       | 9        | 200                |
+| Quadruple tap method | 124      | 67       | 9        | 200                |
 
 [hr_major]
 
