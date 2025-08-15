@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 from matplotlib.patches import Rectangle
 
 def generate_button_state(num_frames, hold_ranges):
@@ -125,7 +126,9 @@ def shared_settings_footer():
     Params.ax.set_xlim(0, Params.max_x_length-1)
     Params.ax.fill_between(frames, button_state, color=Params.clr_fill, alpha=0.3)
     plt.tight_layout()
-    plt.savefig(Params.file_name, facecolor=Params.fig.get_facecolor())
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    save_path = os.path.join(script_dir, Params.file_name)
+    plt.savefig(save_path, facecolor=Params.fig.get_facecolor())
     plt.close()
     print("Chart saved as", Params.file_name)
 
@@ -239,6 +242,25 @@ def create_chart_retry_time_n9():
 
     shared_settings_footer()
     
+
+def create_chart_youre_taking_too_short():
+    shared_settings_header()
+    Params.max_x_length = 91
+    Params.clr_line = 'mediumorchid'
+    Params.clr_fill = 'plum'
+    Params.clr_annotation = 'white'
+    Params.state_list = [(4, 5), (7, 9), (10, 50), (61, 63), (65, 67), (69, Params.max_x_length)]
+    Params.file_name = "button_state_chart_youre_taking_too_short.png"
+    Params.ax.set_ylabel('Button State\n(Shift + Z) ', color='white')
+    draw_striped_pattern(50, 50+12, 'orange')
+    # draw_horizontal_bracket(Params.ax, 4, 10, y_offset=0.05, height=0.05, lw=1, text="Gohei duping \\#1\n(triple tap method)", position='top', color='white')
+    # draw_horizontal_bracket(Params.ax, 12, 63, y_offset=0.05, height=0.05, lw=1, text="Gohei retry time", position='top', color='white')
+    # draw_horizontal_bracket(Params.ax, 64, 70, y_offset=0.05, height=0.05, lw=1, text="Gohei duping \\#2", position='top', color='white')
+    draw_annotation(Params.ax, 61, "Goheis do not despawn", y_offset=-0.1, text_offset=(1.5, 0.20), position='top', text_color='white', arrow_color='white')
+    draw_horizontal_bracket(Params.ax, 50, 50+12, y_offset=0.05, height=0.05, lw=1, text="Despawn timer\n(12 frames)", position='top', color='orange')
+
+    shared_settings_footer()
+
 plt.style.use('dark_background')
 plt.rcParams.update({
     'text.usetex': True,
@@ -251,5 +273,6 @@ plt.rcParams.update({
 # create_chart_few_amulets()
 # create_chart_many_amulets()
 # create_chart_retry_time_n2()
-create_chart_retry_time_n6()
+# create_chart_retry_time_n6()
 # create_chart_retry_time_n9()
+create_chart_youre_taking_too_short()
