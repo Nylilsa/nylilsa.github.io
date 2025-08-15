@@ -66,7 +66,7 @@ Now that gohei is used to its fullest potential, but our damage certainly isn't.
 
 ...well, not quite.
 
-[img=me/gohei2.png, figtitle=Seija being beaten up by 2 goheis at once, alt=A screenshot of ReimuA fighting Seija]
+[img=me/gohei2.png, figtitle=Seija being beaten up by [hl2]2 goheis at once[/hl2], alt=A screenshot of ReimuA fighting Seija]
 
 [a=/#/bugs/th14/gohei-dupe]There exists a glitch[/a] that allows for multiple goheis to be created. The name of the glitch is also known as [hl2]Gohei duplication[/hl2] or [hl2]Gohei dupe[/hl2] or [hl2]dupe[/hl2] in short.
 
@@ -77,7 +77,7 @@ Below shows a video showing varying methods on how to deal damage as ReimuA:
 
 [video=https://www.youtube.com/embed/Swh3whaeXcQ, hratio=2, other=width:720px; aspect-ratio:16/9]
 
-The video above demonstrates the different ways ReimuA can maximise her damage. The times mentioned below is the same time I got in this video but two seconds are subtracted from it. This was done because Seija starts off with invincibility frames for one second, and her death animation lasts for one second.
+The video above demonstrates the different ways ReimuA can maximise her damage. The times mentioned below are the same times I got in this video, but two seconds are subtracted from it. This was done because Seija starts off with invincibility frames for one second, and her death animation also lasts one second.
 
 | Method nr | Description                            | Time   |
 | --------- | -------------------------------------- | ------ |
@@ -99,7 +99,7 @@ While method 7 and method 9 are extremely powerful, [hl2]their additional power 
 ## Gohei duplication glitch
 [hr_minor]
 
-This is tricky glitch to execute as there are a bunch of factors involved, and [hl2]for simplicity's sake[/hl2] I numbed them down to the following factors:
+This is tricky glitch to execute as there are a bunch of factors involved, and [hl2]for simplicity's sake[/hl2] I dumbed them down to the following factors:
 
 1. The player's y-coordinate
 2. The distance between the gohei and a target
@@ -146,31 +146,21 @@ I recommend practicing the dupe glitch on Shinmyoumaru's second non-spell becaus
 
 [img=guides/th14-gohei-dupe/safespot.png, figtitle=A safespot on Shinmyoumaru's second non-spell, alt=Reimu and Shinmyoumaru]
 
-Additionally, you may want to use a scan rate tool that detects how short your button presses can be. I recommend checking out [a=https://web.archive.org/web/20231109095404/https://blog.seethis.link/scan-rate-estimator/]this tool[/a] to check out your shortest key press duration. It is preferred if your shortest key press were [hl2]16ms or shorter[/hl2].
+Additionally, you may want to use a scan rate tool that detects how short your button presses can be. [a=https://web.archive.org/web/20231109095404/https://blog.seethis.link/scan-rate-estimator/]I recommend checking out this tool[/a] to check out your shortest key press duration. It is preferred if your shortest key press were [hl2]16ms or shorter[/hl2]: anything above means that you may drop your inputs.
 
 #### Duping method: Shift-Z-Shift method
 [hr_minor]
 
-My personal preference is to both tap Z and Shift at once, but [hl2]you can also choose to only tap Shift[/hl2]. Preferably, you want to hold Z all the time.
+My personal preference is to both tap [key=Z] and [key=Shift] at once, but [hl2]you can also choose to only tap [key=Shift][/hl2]. Preferably, you want to hold [key=Z] all the time.
 The easiest technique I found to get a double gohei is something I call the [hl2]Shift-Z-Shift method[/hl2]. Here's how to do it:
 1. Get into the correct position
-2. Hover your fingers over the Shift and the Z keys
-3. Hold Shift
-4. Hold Z
-5. Unhold Shift
-6. Hold Shift again
+2. Hover your fingers over the [key=Shift] and the [key=Z] keys
+3. Hold [key=Shift]
+4. Hold [key=Z]
+5. Unhold [key=Shift]
+6. Hold [key=Shift] again
 
-You need to do steps 3-6 within a short time, like 0.2s. With this technique you are only able to [hl2]yield 2 goheis at most[/hl2], which is what the goal of this section is.
-
-#### Duping method: Double tap method
-[hr_minor]
-
-Alternatively, the following technique also works (which I will call the [hl2]Double tap method[/hl2]), but from my experience it is less consistent than the aforementioned technique:
-1. Get into the correct position
-2. Hover your fingers over the Shift and the Z keys
-3. Hold Z and Shift at the same time
-4. Release Z and Shift at the same time
-5. Hold Z and Shift at the same time, again.
+You need to do steps 3-6 within a short time, like [hl2]0.2s[/hl2]. With this technique you are only able to [hl2]yield 2 goheis at most[/hl2], which is what the goal of this section is.
 
 Here is a video showcasing the double gohei using the [hl2]Shift-Z-Shift[/hl2] method:
 
@@ -178,66 +168,76 @@ Here is a video showcasing the double gohei using the [hl2]Shift-Z-Shift[/hl2] m
 
 Note that I only used a bomb at the start to skip the first phase of the attack. Also, [hl2]I did not get a double gohei every time[/hl2], instead I got it about 40% of the time. 
 
-Congratulations! You have learnt the basics on how to obtain a double gohei. If you want to learn more on how to get the most out of the double gohei, please read the next section.
+#### Duping method: Double tap method
+[hr_minor]
+
+Alternatively, the following technique also works (which I will call the [hl2]Double tap method[/hl2]), but from my experience it is less consistent than the aforementioned technique:
+1. Get into the correct position
+2. Hover your fingers over the [key=Shift] and the [key=Z] keys
+3. Hold [key=Z] and [key=Shift] at the same time
+4. Release [key=Z] and [key=Shift] at the same time
+5. Hold [key=Z] and [key=Shift] at the same time, again.
+
+Congratulations ! You have learnt the basics on how to obtain a double gohei. If you want to learn more on how to get the most out of the double gohei, please read the next section.
 
 ### Intermediate techniques
 [hr_minor]
 
-Solely getting the double gohei won't be very beneficial if you cannot make the most out of it. This section is going to tell you how you can make the most out of our double gohei, as well as a new technique allowing for more consistent double goheis.
+Solely getting the double gohei won't be very beneficial if you cannot make the most out of it. This section is going to tell you how you can make the most out of our double gohei, as well as a [hl2]new duping technique[/hl2] allowing for more consistent double goheis.
 
 #### Gohei maintenance
 [hr_minor]
 
-A common mistake I see is that people tend to glue their finger to the Shift key, avoiding losing the double gohei. This has its own problems, mainly limiting player movement and lowering your potential DPS. Another mistake is that, if the player has to make a sudden dash, they would release Shift for too long, losing the double gohei.
+A common mistake I see is that people tend to glue their finger to the [key=Shift] key, avoiding losing the double gohei. This has its own problems, mainly [hl2]limiting player movement[/hl2] and [hl2]lowering your potential DPS[/hl2]. Another mistake is that, if the player has to make a sudden dash, [hl2]they would release [key=Shift] for too long, losing the double gohei[/hl2].
 
-[img=guides/th14-gohei-dupe/button_state_chart_dash.png, figtitle=A graph representation of a player doing a dash (on frame 15) in which the player is unfocussed for too long, resulting in the gohei(s) despawning, alt=A chart with the y-axis showing the button state and the x-axis showing time]
+[img=guides/th14-gohei-dupe/button_state_chart_dash.png, figtitle=A graph representation of a player doing a dash (on frame 15) in which the player is unfocussed for too long, resulting in the gohei(s) [hl2]despawning[/hl2], alt=A chart with the y-axis showing the button state and the x-axis showing time]
 
-The goal of this section is to prevent your gohei from accidentally despawning. If you want to get better at this I recommend you to practice patterns that involve a lot of movement while trying to maintain your gohei(s), such as Kagerou's mid-spell-card or Kagerou's third spell-card. Try to get a rhythm for how long you can unfocus for before the gohei(s) despawn.
+The goal of this section is to prevent your gohei from accidentally despawning. If you want to get better at this I recommend you to [hl2]practice patterns that involve a lot of movement[/hl2] while trying to maintain your gohei(s), such as Kagerou's mid-spell-card or Kagerou's third spell-card. Try to get a rhythm for how long you can unfocus for before the gohei(s) despawn.
 
 #### Amulet shift tapping
 [hr_minor]
 
-While being unfocussed may put you at risk for despawning your gohei, being unfocussed also generates a lot of homing amulets that deal additional damage. It is therefore in our best interest to unfocus for as long as possible while making sure the gohei does not despawn.
+While being unfocussed may put you at risk for despawning your gohei, [hl2]being unfocussed also generates a lot of homing amulets that deal additional damage[/hl2]. It is therefore in our best interest to unfocus for as long as possible while making sure the gohei does not despawn.
 
-I recommend to shift tap at a sustainable frequency of 4-5Hz: any less and you greatly risk the chance of losing your goheis, while doing it any higher may increase fatigue in your fingers as well as less DPS due to Shift being held more than needed. 
+I recommend [hl2]shift tapping at a sustainable frequency of 4-5Hz[/hl2]: any less and you greatly risk the chance of losing your goheis, while doing it any higher may increase fatigue in your fingers as well as less DPS due to [key=Shift] being held more than needed. 
 
-Tapping at the correct frequency is only the first part. If a player is not used to shift tapping, they might shift tap at a sustainable frequency but the interval might be too short, meaning few amulets are generated.
+Tapping at the correct frequency is only the first part. If a player is not used to shift tapping, they might shift tap at a sustainable frequency [hl2]but with a too short of an interval leading to fewer amulets being generated[/hl2].
 
 [img=guides/th14-gohei-dupe/button_state_chart_few_amulets.png, figtitle=A graph representation of a player shift tapping at 5hz with an average interval of 3.2 frames, meaning very few amulets were generated, alt=A chart with the y-axis showing the button state and the x-axis showing time] 
 
-In contrast, a more experienced player may shift tap at a similar frequency but at a much longer interval, resulting in more amulets being generated.
+In contrast, a more experienced player may shift tap at a similar frequency but at a [hl2]much longer interval, resulting in more amulets being generated[/hl2].
 
 [img=guides/th14-gohei-dupe/button_state_chart_many_amulets.png, figtitle=A graph representation of a player shift tapping at 5hz with an average interval of 8.6 frames, meaning many amulets were generated, alt=A chart with the y-axis showing the button state and the x-axis showing time]
 
-This method can be improved by simply increasing the time during the interval. e way to tell if you are doing it correctly is by looking at the amount of amulets generated between every Shift tap. If the amount of amulets looks very similar to being fully unfocussed, you are on the right track !
+This method can be improved by simply increasing the time during the interval. A way to tell if you are doing it correctly is by looking at the amount of amulets generated between every shift tap. If the amount of amulets looks very similar to being fully unfocussed, you are on the right track !
 
 #### Duping method: Triple tap method
 [hr_minor]
 
-The following gohei dupe technique is something I commonly use, which I will call the [hl2]Triple tap method[/hl2]:
+The following gohei dupe technique is something [hl2]I commonly use[/hl2], which I will call the [hl2]Triple tap method[/hl2]:
 1. Get into the correct position
-2. Hover your fingers over the Shift and the Z keys
-3. Hold Z and Shift at the same time
-4. Release Z and Shift at the same time
-5. Hold Z and Shift at the same time, again.
-6. Release Z and Shift at the same time, again
-7. Hold Z and Shift at the same time, once again.
+2. Hover your fingers over the [key=Shift] and the [key=Z] keys
+3. Hold [key=Z] and [key=Shift] at the same time
+4. Release [key=Z] and [key=Shift] at the same time
+5. Hold [key=Z] and [key=Shift] at the same time, again.
+6. Release [key=Z] and [key=Shift] at the same time, again
+7. Hold [key=Z] and [key=Shift] at the same time, once again.
 
-Steps 3-7 need to be done within a short time, like 0.25s. With this technique you are only able to [hl2]yield 3 goheis at most[/hl2].
+Steps 3-7 need to be done within a short time, like [hl2]0.25s[/hl2]. With this technique you are only able to [hl2]yield 3 goheis at most[/hl2].
 
-This is personally my most commonly used method if I want to get a double gohei. This is much more consistent than the previous methods, because in this case you are rolling for a double gohei twice, and a triple gohei once. This triple tap method is a little bit more intensive, but with practice it will get easier.
+This is personally my most commonly used method if I want to get a double gohei. This is [hl2]much more consistent than the previous methods[/hl2], because in this case you are rolling for a double gohei twice, and a triple gohei once. This triple tap method is [hl2]more intensive[/hl2] on your hand, but with consistent practice it will get more doable.
 
 ### Advanced techniques
 [hr_minor]
 
-Now we have covered how to obtain a duped gohei as well as how to deal the most DPS with it with amulet shifttapping. What else is there to learn you might ask ? This section covers some other techniques that will boost your rates.
+Now we have covered how to obtain a duped gohei as well as how to deal the most DPS with it with amulet shifttapping. What else is there to learn you might ask ? This section covers some other techniques that will boost your rates and DPS.
 
 #### Gohei retry time
 [hr_minor]
 
-The gohei retry time is the amount of time taken between two trials, usually varying from 0.5s to 1.5s. This is the timeframe where the player confirms whether they got a duped gohei or not. Having a lower gohei retry timer is usually better, because if you fail to duplicate a gohei, you can quickly try for another dupe attempt.
+[hl2]The gohei retry time is the amount of time taken between two trials[/hl2], usually varying from 0.5s to 1.5s. [hl2]This is the timeframe where the player confirms whether they got a duped gohei or not[/hl2]. Having a lower gohei retry timer is usually better, because if you fail to duplicate a gohei, you can quickly try for another dupe attempt.
 
-[img=guides/th14-gohei-dupe/button_state_chart_retry_time_n2.png, figtitle=A graph representation of a player's gohei duping attempts. It starts off with a gohei dupe attempt, followed by the retry time of 52 frames. Then, the player intentionally despawns the gohei by not holding Z/Shift for 12 frames. This prepares for the next gohei dupe attempt., alt=A chart with the y-axis showing the button state and the x-axis showing time]
+[img=guides/th14-gohei-dupe/button_state_chart_retry_time_n2.png, figtitle=A graph representation of a player's gohei duping attempts. It starts off with a gohei dupe attempt, followed by the retry time of 52 frames. Then, the player intentionally despawns the gohei by not holding [key=Z]/[key=Shift] for 12 frames. This prepares for the next gohei dupe attempt., alt=A chart with the y-axis showing the button state and the x-axis showing time]
 
 One might ask how many more trials you can perform depending on your gohei retry time. Below I have depicted two charts, both done on Benben's first non-spell with two varying gohei retry times.
 
@@ -246,19 +246,19 @@ One might ask how many more trials you can perform depending on your gohei retry
 [img=guides/th14-gohei-dupe/button_state_chart_retry_time_n9.png, figtitle=A graph representation of a player's 9 gohei duping attempts on Benben's first non-spell with an average retry time of 31.4 frames., alt=A chart with the y-axis showing the button state and the x-axis showing time]
 
 The former image has a longer average retry time than the second image. This is due to two reasons:
-1. The player wants to carefully inspect whether the gohei dupe was successful or not. This takes some time to process as it may not be instantly very clear if you succeeded at the double gohei or not.
-    - If the player doesn't take enough time, they might misinterpret the number of goheis on-screen (e.g. thinking you got only 2 goheis instead of your actual 3 goheis) and despawn the goheis, only to realise that they wrongfully despawned the triple gohei.
-2. The player wants to ensure that all the goheis have despawned, so they wait out a time much longer than the despawn timer.
+1. [hl2]The player wants to carefully inspect whether the gohei dupe was successful or not[/hl2]. This takes some time to process as it may not be instantly very clear if you succeeded at the double gohei or not.
+    - If the player doesn't take enough time, they might misinterpret the number of goheis on-screen (e.g. thinking you got only 1 gohei instead of your actual 2 goheis) and despawn the goheis, only to realise that they wrongfully despawned the double gohei.
+2. [hl2]The player wants to ensure that all the goheis have despawned[/hl2], so they wait out a time much longer than the despawn timer.
     - Going too quickly may have the drawback where you haven't fully waited out the gohei despawn timer. When missing the gohei despawn timer, your goheis still stay on-screen, meaning you wasted one trial.
 
-[img=guides/th14-gohei-dupe/button_state_chart_youre_taking_too_short.png, figtitle=A graph representation of a player's failed second gohei duping attempt due to unfocussing for too little time., alt=A chart with the y-axis showing the button state and the x-axis showing time]
+[img=guides/th14-gohei-dupe/button_state_chart_youre_taking_too_short.png, figtitle=A graph representation of a player's [hl2]failed second gohei duping attempt[/hl2] due to [hl2]unfocussing for too little time[/hl2] at the despawn timer., alt=A chart with the y-axis showing the button state and the x-axis showing time]
 
-To get better at both aspects, there's not much of a trick other than getting a feeling for it: once you have done it enough times you will develop a natural feeling that will do it for you.
+To get better at both aspects, [hl2]there's not much of a trick other than getting a feeling for it[/hl2]: once you have done it enough times you will develop a natural feeling that will do it for you.
 
 #### Counting goheis
 [hr_minor]
 
-It may be hard to know if you got one, two or three goheis, so here are some ways you can tell how many you have:
+It may be hard to know if you got 1, 2 or 3 goheis, so here are some ways you can tell how many you have:
 1. You [hl2]hear a lot more noise[/hl2]. Hit a boss with a single gohei and you hear a few damage ticks every second, but if you have two goheis or more you will hear more damage ticks.
 2. If you have some experience on a boss you can tell the [hl2]significant increase in damage[/hl2] that you are dealing.
 3. Visually, you will notice that [hl2]the gohei looks denser[/hl2].
@@ -270,38 +270,34 @@ The more you have done it, the easier it will become to tell the difference betw
 #### Centered goheis
 [hr_minor]
 
-At the start of this guide I showed you that the gohei is the strongest if it is centered onto a target. Using this knowledge, we can combine gohei centering along with gohei duping for extra damage at the start of an attack.
+At the start of this guide I showed you that the gohei is the strongest if it is centered onto a target. Using this knowledge, we can [hl2]combine gohei centering with gohei duping[/hl2] for extra damage at the start of an attack.
 
-It is quite simple to achieve this: perform your desired gohei duping method outside of the gohei-target distance, then immediately move closer to the enemy. Below is an example illustration of where to perform the dupe before moving into the enemy.
+It is quite simple to achieve this: [hl2]perform your desired gohei duping method outside of the gohei-target distance, then immediately move closer to the enemy[/hl2]. Below is an example illustration of where to perform the dupe before moving into the enemy.
 
 [img=guides/th14-gohei-dupe/distance.png, figtitle=The 160 unit radius gohei-target distance check happens on the gohei spawning location, which is right in Reimu., alt=A game screenshot showing a colored circle around Reimu]
 
-The reason why this works is because newly spawned goheis spawn from Reimu's center. By performing the dupe you are spawning new goheis from Reimu's location. By moving Reimu closer to the boss, the newly spawned goheis will be within the gohei-target distance, centering into the enemy. For more information, [a=/#/bugs/th14/gohei-dupe]please read this page[/a].
+The reason why this works is because newly spawned goheis spawn from Reimu's center. By performing the dupe you are spawning new goheis from Reimu's location. [hl2]By moving Reimu closer to the boss, the newly spawned goheis will be within the gohei-target distance[/hl2], centering into the enemy. For more information, [a=/#/bugs/th14/gohei-dupe]please read this page[/a].
 
 #### Duping method: Quadruple tap method
 [hr_minor]
 
 The following gohei dupe technique is something I commonly use, which I will call the [hl2]Quadruple tap method[/hl2]:
 1. Get into the correct position
-2. Hover your fingers over the Shift and the Z keys
-3. Hold Z and Shift at the same time
-4. Release Z and Shift at the same time
-5. Hold Z and Shift at the same time, again.
-6. Release Z and Shift at the same time, again
-7. Hold Z and Shift at the same time, once again.
-8. Release Z and Shift at the same time, once again.
-9. Hold Z and Shift at the same time, once more.
+2. Hover your fingers over the [key=Shift] and the [key=Z] keys
+3. Hold [key=Z] and [key=Shift] at the same time
+4. Release [key=Z] and [key=Shift] at the same time
+5. Hold [key=Z] and [key=Shift] at the same time, again.
+6. Release [key=Z] and [key=Shift] at the same time, again
+7. Hold [key=Z] and [key=Shift] at the same time, once again.
+8. Release [key=Z] and [key=Shift] at the same time, once again.
+9. Hold [key=Z] and [key=Shift] at the same time, once more.
 
-Steps 3-9 need to be done within a short time, like 0.33s. With this technique you are only able to [hl2]yield 4 goheis at most[/hl2], but don't ever expect to get it.
+Steps 3-9 need to be done within a short time, like [hl2]0.33s[/hl2]. With this technique you are only able to [hl2]yield 4 goheis at most[/hl2], but don't ever expect to actually get 4 goheis.
 
-This is personally my most commonly used method if I want to get a triple gohei. Though, this quadruple tap method is extremely tiring and I rarely deliberately use this. Since this method involves a lot of steps, it means that the average gohei retry time is longer, which may put you at an additional disadvantage. 
-
-
+This is personally [hl2]my most commonly used method for triple gohei[/hl2]. Though, this quadruple tap method is [hl2]extremely tiring[/hl2] and I [hl2]rarely deliberately use this method[/hl2]. Since this method involves a lot of steps, it means that [hl2]the average gohei retry time is longer[/hl2], which may put you at an additional disadvantage. 
 
 ## Personal summary of methods
 [hr_minor]
-
-note to self: acknowledge flaws (i.e. not following the methodology) that resulted in very varying results.
 
 This section goes over all four aforementioned gohei duping methods, explaining how I conducted this experiment and what the results are.
 
@@ -329,10 +325,9 @@ I chose the sample size of n=200 because it was large enough to determine the do
 
 In terms of fatigue, the Shift-Z-Shift and the Double tap method did not tire me out. The triple tap method tired me out around 100 attempts in. The quadruple tap method tired me out every 50 attempts, meaning I had to take a total of 3 breaks for the quadruple tap method. Breaks are important of course and I wouldn't want to ignore them, but taking a break may have influenced my "flow" meaning my results would vary between breaks.
 
-In terms of double gohei consistency, it is about what I expected: a figure between 33-40% consistency rate. This result aligned with my previous sets I did. I was actually quite surprised by how well the double tap method did despite not using it that much. In contrast, I was quite disappointed with the double gohei rate on the quadruple tap method... 
+In terms of double gohei consistency, it is about what I expected: a success rate between 33-40%. This result aligned with my previous sets I did. I was actually quite surprised by how well the double tap method did despite not using it that much. In contrast, I was quite disappointed with the double gohei rate on the quadruple tap method... 
 
 I expected the quadruple tap method to be much more consistent for triple gohei than the triple tap method. I noticed that for the quadruple tap method, at the end of a 50-trial set my performance would be much worse, oftentimes failing to perform the quadruple tap method due to fatigue, having to redo them. I guess I could have taken even more breaks, but by doing so it would take me a few hours to do a total of 200 trials. A more robust method would be to increase the sample size, but this would take a very long time to complete, and even with breaks my hand would not like it.
-
 
 [hr_major]
 
