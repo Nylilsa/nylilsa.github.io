@@ -151,7 +151,7 @@ Additionally, you may want to use a scan rate tool that detects how short your b
 #### Duping method: Shift-Z-Shift method
 [hr_minor]
 
-My personal preference is to both tap [key=Z] and [key=Shift] at once, but [hl2]you can also choose to only tap [key=Shift][/hl2]. Preferably, you want to hold [key=Z] all the time.
+My personal preference is to both tap [key=Z] and [key=Shift] at once, If it is easier for you, [hl2]you can also choose to only tap [key=Shift][/hl2] while holding [key=Z] all the time.
 The easiest technique I found to get a double gohei is something I call the [hl2]Shift-Z-Shift method[/hl2]. Here's how to do it:
 1. Get into the correct position
 2. Hover your fingers over the [key=Shift] and the [key=Z] keys
@@ -171,6 +171,7 @@ Note that I only used a bomb at the start to skip the first phase of the attack.
 #### Duping method: Double tap method
 [hr_minor]
 
+My personal preference is to both tap [key=Z] and [key=Shift] at once, If it is easier for you, [hl2]you can also choose to only tap [key=Shift][/hl2] while holding [key=Z] all the time.
 Alternatively, the following technique also works (which I will call the [hl2]Double tap method[/hl2]), but from my experience it is less consistent than the aforementioned technique:
 1. Get into the correct position
 2. Hover your fingers over the [key=Shift] and the [key=Z] keys
@@ -213,6 +214,8 @@ This method can be improved by simply increasing the time during the interval. A
 
 #### Duping method: Triple tap method
 [hr_minor]
+
+My personal preference is to both tap [key=Z] and [key=Shift] at once, If it is easier for you, [hl2]you can also choose to only tap [key=Shift][/hl2] while holding [key=Z] all the time.
 
 The following gohei dupe technique is something [hl2]I commonly use[/hl2], which I will call the [hl2]Triple tap method[/hl2]:
 1. Get into the correct position
@@ -280,6 +283,8 @@ The reason why this works is because newly spawned goheis spawn from Reimu's cen
 
 #### Duping method: Quadruple tap method
 [hr_minor]
+
+My personal preference is to both tap [key=Z] and [key=Shift] at once, If it is easier for you, [hl2]you can also choose to only tap [key=Shift][/hl2] while holding [key=Z] all the time.
 
 The following gohei dupe technique is something I commonly use, which I will call the [hl2]Quadruple tap method[/hl2]:
 1. Get into the correct position
