@@ -18,7 +18,8 @@ const latestVersion = {
 	th17: "1.00b",
 	th18: "1.00a",
 	th185: "1.00a",
-	th19: "1.00a"
+	th19: "1.00a",
+	th20: "1.00a",
 };
 
 const gameColors = {
@@ -46,7 +47,8 @@ const gameColors = {
 	th17: '#190E0E',
 	th18: '#1DD294',
 	th185: '#F58225',
-	th19: '#4CD810' //color chosen randomly by me
+	th19: '#4CD810',
+	th20: '#000000', // temporary clr
 };
 
 class Match {
