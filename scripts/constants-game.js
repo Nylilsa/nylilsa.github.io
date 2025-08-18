@@ -48,7 +48,7 @@ const gameColors = {
 	th18: '#1DD294',
 	th185: '#F58225',
 	th19: '#4CD810',
-	th20: '#000000', // temporary clr
+	th20: '#123456', // temporary clr
 };
 
 class Match {
@@ -116,5 +116,6 @@ const names1 = {
     "th17": {"abbreviation": "WBaWC", "jp": "鬼形獣", "en": "Wily Beast and Weakest Creature"},
     "th18": {"abbreviation": "UM", "jp": "虹龍洞", "en": "Unconnected Marketeers"},
     "th185": {"abbreviation": "100BM", "jp": "バレットフィリア達の闇市場", "en": "100th Black Market"},
-    "th19": {"abbreviation": "UDoALG", "jp": "獣王園", "en": "Unfinished Dream of All Living Ghost"}
+    "th19": {"abbreviation": "UDoALG", "jp": "獣王園", "en": "Unfinished Dream of All Living Ghost"},
+    "th20": {"abbreviation": "FW", "jp": "錦上京", "en": "Fossilized Wonders"},
 }
