@@ -484,6 +484,11 @@
             "title": "Point Item Value Overflow Glitch",
             "url-name": ["piv-overflow"],
             "finished": false
+        },
+        "1": {
+            "title": "Player Player Hitbox Bug",
+            "url-name": ["point-hitbox"],
+            "finished": false
         }
     }
 }
