@@ -489,6 +489,11 @@
             "title": "Player Player Hitbox Bug",
             "url-name": ["point-hitbox"],
             "finished": false
+        },
+        "2": {
+            "title": "Nina's Survival Hurtbox",
+            "url-name": ["nina-survival"],
+            "finished": true
         }
     }
 }
