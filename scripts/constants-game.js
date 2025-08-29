@@ -18,7 +18,7 @@ const latestVersion = {
 	th17: "1.00b",
 	th18: "1.00a",
 	th185: "1.00a",
-	th19: "1.00a",
+	th19: "1.10c",
 	th20: "1.00a",
 };
 
