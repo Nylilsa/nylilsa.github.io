@@ -20,7 +20,6 @@ This website's primary purpose was to be a [hl2]repository for all documented gl
 
 Sometimes I or other people will write [hl2]guides[/hl2]. Those guides are posted on this website. If you wish for a Touhou-related guide of yours to be posted on this website, please [jumpto=#/home#contact]contact me[/jumpto] and we can talk about it.
 
-
 ## Contributors
 [hr_minor] 
 
@@ -32,3 +31,8 @@ If you would like to contribute (whether it is anything about a glitch or about 
 [hr_minor]
 
 The best way to contact me would be through my Discord [discord] !
+
+## Support
+[hr_minor]
+
+I've spent well over hundreds of hours on maintaining my site, especially [a=https://nylilsa.github.io/#/wr]the Touhou World Records[/a], as well as even more time on glitch hunting in Touhou. If you would like to support me you could do so [a=https://ko-fi.com/nylilsa]by donating at my ko-fi page[/a] ! By donating, you will be supporting a passionate solo member of the Touhou Project series and their website. Thank you for everyone who has made this possible !

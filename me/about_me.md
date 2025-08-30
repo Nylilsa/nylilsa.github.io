@@ -20,6 +20,7 @@ Also, I may not be that good of a player so don't expect too much. I only play b
 [hr_minor]
 
 + Website: [a=https://nylilsa.github.io/]https://nylilsa.github.io/[/a] (you are on this website right now !)
++ Ko-fi.com: [a=https://ko-fi.com/nylilsa]https://ko-fi.com/nylilsa[/a]
 + YouTube: [a=https://www.youtube.com/channel/UCqKACPKvHg6Ub-kb8rlkrhQ]https://www.youtube.com/channel/UCqKACPKvHg6Ub-kb8rlkrhQ[/a]
 + Twitch: [a=https://www.twitch.tv/Nylilsa]https://www.twitch.tv/Nylilsa[/a]
 + GitHub: [a=https://github.com/Nylilsa/]https://github.com/Nylilsa/[/a]
