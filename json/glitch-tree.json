@@ -494,6 +494,11 @@
             "title": "Nina's Survival Hurtbox",
             "url-name": ["nina-survival"],
             "finished": true
+        },
+        "3": {
+            "title": "Yellow-2 Shot Desync",
+            "url-name": ["yellow-2-desync"],
+            "finished": true
         }
     }
 }

@@ -224,7 +224,7 @@ function citeAPA(date, author, title, url) {
 function citeReplay(game, date, author, name, difficulty, shot, version, url, note) {
 	if (latestVersion[game] != version) {version = '<span class="highlight-txt" style="color:#f2c200">'+version+'</span>'}
 	if (note) {note = "(Note: "+note+")"}
-	return 'Replay \`'+name+'\` by "'+author+'". '+difficulty+', '+shot+', '+version+'. 「'+date+'」. <a class="url" href="'+url+'" target="_blank">Download link</a> '+note;
+	return 'Replay <code>'+name+'</code> by "'+author+'". '+difficulty+', '+shot+', '+version+'. 「'+date+'」. <a class="url" href="'+url+'" target="_blank">Download link</a> '+note;
 }
 
 function showNavbarChildren() { //toggles all elements in navbar of Bugs if clicked on
