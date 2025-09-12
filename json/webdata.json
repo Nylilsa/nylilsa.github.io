@@ -142,6 +142,7 @@
         
         "y4dOw7rsW0": {"game": "th17", "date": "2022-09-04", "author": "Nylilsa", "name": "PSG0539", "difficulty": "Extra", "shot": "YoumuOtter", "version": "1.00b", "note": "", "url": "th17_udy4dO.rpy"},
         
-        "pYw9Lwc0Mi": {"game": "th20", "date": "2025-09-06", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Normal", "shot": "MarisaY2", "version": "1.00a", "note": "Stage 2 desyncs only if replay starts from Stage 2 (no result screen skip). Stage 3 always desyncs (has result screen skip)", "url": "th20_udpYw9.rpy"}
+        "pYw9Lwc0Mi": {"game": "th20", "date": "2025-09-06", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Normal", "shot": "MarisaY2", "version": "1.00a", "note": "Stage 2 desyncs only if replay starts from Stage 2 (no result screen skip). Stage 3 always desyncs (has result screen skip)", "url": "th20_udpYw9.rpy"},
+        "I1Vp4uQyhH": {"game": "th20", "date": "2025-09-13", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Normal", "shot": "ReimuR2", "version": "1.00a", "note": "Stage 2 always desyncs regardless of how it is initialized.", "url": "th20_udI1Vp.rpy"}
     }
 }

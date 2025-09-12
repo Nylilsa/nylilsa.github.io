@@ -499,6 +499,11 @@
             "title": "Yellow-2 Shot Desync",
             "url-name": ["yellow-2-desync"],
             "finished": true
+        },
+        "4": {
+            "title": "Reimu Red-2 Shot Desync",
+            "url-name": ["reimu-r2-desync"],
+            "finished": true
         }
     }
 }
