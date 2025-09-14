@@ -504,6 +504,11 @@
             "title": "Reimu Red-2 Shot Desync",
             "url-name": ["reimu-r2-desync"],
             "finished": true
+        },
+        "5": {
+            "title": "Stone Timer Desync",
+            "url-name": ["stone-timer-desync"],
+            "finished": true
         }
     }
 }
