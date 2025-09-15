@@ -1,33 +1,36 @@
 {
     "tags": {
-        "0": {"rating": "10", "label": "crash", "formatted_label": "Crash", "description": "Bug/Glitch is a crash or can occasionally crash"},
-        "1": {"rating": "10", "label": "desync", "formatted_label": "Desync", "description": "Bug/Glitch is caused by desync"},
-        "2": {"rating": "10", "label": "typo", "formatted_label": "Typo", "description": "Bug/Glitch is caused due to typo"},
-        "3": {"rating": "10", "label": "uninitialized", "formatted_label": "Uninitialized", "description": "Bug/Glitch involves uninitialized variable"},
-        "4": {"rating": "10", "label": "audio", "formatted_label": "Audio", "description": "Bug/Glitch involves the game's audio"},
-        "5": {"rating": "10", "label": "graphics", "formatted_label": "Graphics", "description": "Bug/Glitch involves a wrong sprite/graphic"},
-        "6": {"rating": "10", "label": "frame-perfect", "formatted_label": "Frame-perfect", "description": "Bug/Glitch is caused by game performing an action whose margin of error is a few frames"},
-        "7": {"rating": "10", "label": "hardware-setting", "formatted_label": "Hardware/Settings", "description": "Bug/Glitch involves is specific to user's hardware or game settings"},
-        "8": {"rating": "8", "label": "ecl", "formatted_label": "Enemy control", "description": "Bug/Glitch involves an enemy's attributes"},
-        "9": {"rating": "9", "label": "menu", "formatted_label": "Menu", "description": "Bug/Glitch involves messing with any menu(s)"},
-        "10": {"rating": "8", "label": "replay", "formatted_label": "Replay", "description": "Bug/Glitch involves use of replay"},
-        "11": {"rating": "8", "label": "shottype", "formatted_label": "Shottype", "description": "Bug/Glitch involves specific (attributes of a) shottype(s)"},
-        "12": {"rating": "8", "label": "bombs", "formatted_label": "Bombs", "description": "Bug/Glitch involves the use of bomb(s)"},
-        "13": {"rating": "7", "label": "overflow", "formatted_label": "Overflow", "description": "Bug/Glitch involves overflow/carry of variable"},
-        "14": {"rating": "7", "label": "stage-transition", "formatted_label": "Stage transition", "description": "Bug/Glitch involves a stage transition"},
-        "15": {"rating": "6", "label": "game-speed", "formatted_label": "Game speed", "description": "Bug/Glitch involves the GAME_SPEED variable"},
-        "__15": {"rating": "5", "label": "continues", "formatted_label": "Continues", "description": "Bug/Glitch involves using continues"},
-        "__16": {"rating": "4", "label": "race-condition", "formatted_label": "Race condition", "description": "Bug/Glitch happens when two or more events take place at the same time"},
+        "0": {"rating": "10", "label": "crash", "formatted_label": "Crash", "description": "Bug/Glitch is a crash or can occasionally crash"}, 
+        "1": { "rating": "10", "label": "desync", "formatted_label": "Desync", "description": "Bug/Glitch is caused by desync", "tree-mapping": { "th06": [1, 2], "th07": [1], "th08": [0] } }, 
+        "2": {"rating": "10", "label": "typo", "formatted_label": "Typo", "description": "Bug/Glitch is caused due to typo"}, 
+        "3": {"rating": "10", "label": "uninitialized", "formatted_label": "Uninitialized", "description": "Bug/Glitch involves uninitialized variable"}, 
+        "4": { "rating": "10", "label": "audio", "formatted_label": "Audio", "description": "Bug/Glitch involves the game's audio", "tree-mapping": { "th06": [3] } }, 
+        "5": {"rating": "10", "label": "graphics", "formatted_label": "Graphics", "description": "Bug/Glitch involves a wrong sprite/graphic"}, 
+        "6": {
+            "rating": "10", 
+            "label": "frame-perfect", 
+            "formatted_label": "Frame-perfect", 
+            "description": "Bug/Glitch is caused by game performing an action whose margin of error is a few frames", 
+            "tree-mapping": { "th06": [0] }
+        }, 
+        "7": {"rating": "10", "label": "hardware-setting", "formatted_label": "Hardware/Settings", "description": "Bug/Glitch involves is specific to user's hardware or game settings"}, 
+        "8": { "rating": "8", "label": "ecl", "formatted_label": "Enemy control", "description": "Bug/Glitch involves an enemy's attributes", "tree-mapping": { "th06": [4] } }, 
+        "9": {
+            "rating": "9", 
+            "label": "menu", 
+            "formatted_label": "Menu", 
+            "description": "Bug/Glitch involves messing with any menu(s)", 
+            "tree-mapping": { "th06": [1, 2], "th07": [1], "th08": [0] }
+        }, 
+        "10": {"rating": "8", "label": "replay", "formatted_label": "Replay", "description": "Bug/Glitch involves use of replay"}, 
+        "11": { "rating": "8", "label": "shottype", "formatted_label": "Shottype", "description": "Bug/Glitch involves specific (attributes of a) shottype(s)", "tree-mapping": { "th06": [3] } }, 
+        "12": {"rating": "8", "label": "bombs", "formatted_label": "Bombs", "description": "Bug/Glitch involves the use of bomb(s)"}, 
+        "13": {"rating": "7", "label": "overflow", "formatted_label": "Overflow", "description": "Bug/Glitch involves overflow/carry of variable"}, 
+        "14": {"rating": "7", "label": "stage-transition", "formatted_label": "Stage transition", "description": "Bug/Glitch involves a stage transition"}, 
+        "15": {"rating": "6", "label": "game-speed", "formatted_label": "Game speed", "description": "Bug/Glitch involves the GAME_SPEED variable"}, 
+        "__15": {"rating": "5", "label": "continues", "formatted_label": "Continues", "description": "Bug/Glitch involves using continues"}, 
+        "__16": {"rating": "4", "label": "race-condition", "formatted_label": "Race condition", "description": "Bug/Glitch happens when two or more events take place at the same time"}, 
         "test": {"rating": "scale of 1-10 on how likely I want to use this tag. if __ it means unused", "label": "test", "formatted_label": "Test", "description": "test"}
-    },
-    "related": {
-        "auto generated everything below with script": { "th00": [0]                                        },
-        "pause_on_dialog"                            : {              "th06": [1], "th07": [1], "th08": [0] },
-        "2038_problem"                               : { "th00": [0]                                        },
-        "menu_stacking"                              : { "th00": [0]                                        },
-        "youmu_charge"                               : { "th00": [0]                                        },
-        "death_during_slowdown"                      : { "th00": [0]                                        },
-        "spritesheet_glitch"                         : { "th00": [0]                                        },
-        "see sheet tta2 for more that i can add"     : { "th00": [0]                                        }
-    }
+    }, 
+    "related": { "pause_on_dialog": { "th06": [1, 2], "th07": [1], "th08": [0] } }
 }
