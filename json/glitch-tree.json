@@ -3,27 +3,44 @@
         "0": {
             "title": "Boss Attack Skip",
             "url-name": ["boss-attack-skip"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [6]
+            }
         },
         "1": {
             "title": "Dialogue Pause Desync",
             "url-name": ["dialogue-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [1, 9],
+                "related": "pause_on_dialog"
+            }
         },
         "2": {
             "title": "Bomb Pause Desync",
             "url-name": ["bomb-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [1, 9],
+                "related": "pause_on_dialog"
+            }
         },
         "3": {
             "title": "ReimuA No Sound",
             "url-name": ["reimua-no-sound"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [4, 11]
+            }
         },
         "4": {
             "title": "Nightbird on Easy Difficulty",
             "url-name": ["rumia-spell-1"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [8]
+            }
         }
     },
     "th07": {
@@ -35,14 +52,22 @@
         "1": {
             "title": "Dialogue Pause Desync",
             "url-name": ["dialogue-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [1, 9],
+                "related": "pause_on_dialog"
+            }
         }
     },
     "th08": {
         "0": {
             "title": "Dialogue Pause Desync",
             "url-name": ["dialogue-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [1, 9],
+                "related": "pause_on_dialog"
+            }
         },
         "1": {
             "title": "Unintended Last Spell Trigger",
