@@ -47,7 +47,10 @@
         "0": {
             "title": "Merlin, Lyrica & Lunasa Glitch",
             "url-name": ["prismriver-glitch", "merlin-glitch"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [13]
+            }
         },
         "1": {
             "title": "Dialogue Pause Desync",
@@ -72,468 +75,726 @@
         "1": {
             "title": "Unintended Last Spell Trigger",
             "url-name": ["last-spell-requirement"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [17]
+            }
         },
         "2": {
             "title": "Hourai Jewel Bounce",
             "url-name": ["hourai-jewel-bounce"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [8]
+            }
         }
     },
     "th09": {
         "0": {
             "title": "Stage Skip",
             "url-name": ["stage-skip"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [6, 9]
+            }
         }
     },
     "th95": {
         "0": {
             "title": "N/A",
             "url-name": ["not-available"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [18]
+            }
         }
     },
     "th10": {
         "0": {
             "title": "MarisaB 3 Power Damage",
             "url-name": ["marisab-3-power"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [2, 11]
+            }
         },
         "1": {
             "title": "Corrupt replays",
             "url-name": ["broken-replays"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [10]
+            }
         },
         "2": {
             "title": "Stage 4 Desync",
             "url-name": ["stage-4-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [1]
+            }
         },
         "3": {
             "title": "Bullet hitboxes glitch",
             "url-name": ["wrong-bullet-hitboxes"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [8]
+            }
         },
         "4": {
             "title": "Stage transition Desync",
             "url-name": ["stage-transition-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [1, 12, 14]
+            }
         }
     },
     "th11": {
         "0": {
             "title": "Negative Spell Bonus",
             "url-name": ["negative-spell-bonus"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [8, 13]
+            }
         },
         "1": {
             "title": "ReimuA 2 Power Damage",
             "url-name": ["reimua-2-power"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [2, 11]
+            }
         },
         "2": {
             "title": "Mid-boss skips",
             "url-name": ["mid-boss-skips"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [8, 12]
+            }
         },
         "3": {
             "title": "ReimuC Desync",
             "url-name": ["reimuc-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [1, 11]
+            }
         },
         "4": {
             "title": "Score Desync",
             "url-name": ["wrong-piv"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [10]
+            }
         },
         "5": {
             "title": "ReimuA Desync",
             "url-name": ["reimua-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [1, 3, 11]
+            }
         },
         "6": {
             "title": "Stage 6 Desync",
             "url-name": ["stage-6-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [1]
+            }
         },
         "7": {
             "title": "Stage transition Desync",
             "url-name": ["stage-transition-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [1, 11, 12, 14]
+            }
         }
     },
     "th12": {
         "0": {
             "title": "ReimuA Bomb Desync",
             "url-name": ["reimua-desync"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [1, 11, 12]
+            }
         },
         "1": {
             "title": "Score Display Overflow",
             "url-name": ["score-overflow"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [13]
+            }
         },
         "2": {
             "title": "MarisaA's Laser Damage",
             "url-name": ["marisaa-laser"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [11]
+            }
         },
         "3": {
             "title": "Slowdown Item Duplication",
             "url-name": ["slowdown-dupe"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [15]
+            }
         }
     },
     "th125": {
         "0": {
             "title": "12-6 Instant death glitch",
             "url-name": ["12-6-death"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [3, 8]
+            }
         }
     },
     "th128": {
         "0": {
             "title": "N/A",
             "url-name": ["not-available"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [18]
+            }
         }
     },
     "th13": {
         "0": {
             "title": "Incorrect boss position during spell practice",
             "url-name": ["spell-practice-inconsistencies"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [8]
+            }
         },
         "1": {
             "title": "Misalignment of timer",
             "url-name": ["weird-timer"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [5, 12]
+            }
         },
         "2": {
             "title": "Slowdown Item Duplication",
             "url-name": ["slowdown-dupe"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [15]
+            }
         },
         "3": {
             "title": "Yoshika Revival Bug",
             "url-name": ["yoshika-revival"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [8]
+            }
         }
     },
     "th14": {
         "0": {
             "title": "Score Underflow",
             "url-name": ["underflow"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [13]
+            }
         },
         "1": {
             "title": "Bulletless Kagerou",
             "url-name": ["bullet-cap"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "2": {
             "title": "Marisa's Lasers",
             "url-name": ["marisa-laser"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "3": {
             "title": "Barrier Bug",
             "url-name": ["sakuyaa-bomb"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "4": {
             "title": "Gohei Duplication",
             "url-name": ["gohei-dupe", "gohei-duplication", "duping", "gohei-duping"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "5": {
             "title": "Benben Spell 2 Crash",
             "url-name": ["benben-crash"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "6": {
             "title": "Screen-flipping Effect Undo",
             "url-name": ["seija-screenflip"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "7": {
             "title": "Slowdown Item Duplication",
             "url-name": ["slowdown-dupe"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "8": {
             "title": "Timeouts on Tsukumo Sisters on Extra",
             "url-name": ["tsukumo-extra"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         }
     },
     "th143": {
         "0": {
             "title": "Score Underflow",
             "url-name": ["underflow"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "1": {
             "title": "Reimu Timeout Glitch",
             "url-name": ["reimu-timeout"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         }
     },
     "th15": {
         "0": {
             "title": "Sagume Skip",
             "url-name": ["sagume-skip"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "1": {
             "title": "Red Background",
             "url-name": ["red-background", "reimu-background"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "2": {
             "title": "Doremy's First Non-spell Typo",
             "url-name": ["doremy-n1", "doremy-typo"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "3": {
             "title": "Hecatia opener 50% shootdown",
             "url-name": ["hecatia-shootdown", "hecatia-opener"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "4": {
             "title": "Reisen Desync",
             "url-name": ["reisen-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "5": {
             "title": "Slowdown Item Duplication",
             "url-name": ["slowdown-dupe"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "6": {
             "title": "Sanae Frogs Not Working",
             "url-name": ["broken-frogs", "sanae-frogs"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         }
     },
     "th16": {
         "0": {
             "title": "(Sub-)shottypes Not Functioning",
             "url-name": ["bugged-shottypes"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "1": {
             "title": "Stage 5 Incorrect Spell-card name",
             "url-name": ["wrong-spell-name"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "2": {
             "title": "Stage 3 & Stage 5 crashes",
             "url-name": ["anm-crash"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "3": {
             "title": "Mai & Satono Solo Spells Issues",
             "url-name": ["mai-satono-spells"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "4": {
             "title": "Okina's Survival Hurtbox",
             "url-name": ["okina-survival"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "5": {
             "title": "Okina's Final Bomb/Release Damage",
             "url-name": ["okina-final-damage"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "6": {
             "title": "Slowdown Item Duplication",
             "url-name": ["slowdown-dupe"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         }
     },
     "th165": {
         "0": {
             "title": "N/A",
             "url-name": ["not-available"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         }
     },
     "th17": {
         "0": {
             "title": "YoumuEagle's Damage Cap",
             "url-name": ["youmueagle-damage", "youmueagle-damage-cap"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "1": {
             "title": "Instant Hyper Deactivation",
             "url-name": ["instant-token"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "2": {
             "title": "Death by Intentional Hyper Break",
             "url-name": ["hyperdying"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "3": {
             "title": "Token duplication",
             "url-name": ["token-duplication", "token-duping", "token-dupe"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "4": {
             "title": "Token Desync - Stage Transition Edition",
             "url-name": ["stage-transition-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "5": {
             "title": "Desync - Roaring Mode Edition",
             "url-name": ["hyper-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "6": {
             "title": "Desync - Random Token Edition",
             "url-name": ["otter-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "7": {
             "title": "Saki's Survival Hurtbox",
             "url-name": ["saki-survival"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "8": {
             "title": "Saki's Final Bomb Damage",
             "url-name": ["saki-final-damage"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "9": {
             "title": "Slowdown Item Duplication",
             "url-name": ["slowdown-dupe"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         }
     },
     "th18": {
         "0": {
             "title": "Slowdown Item Duplication",
             "url-name": ["slowdown-dupe"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "1": {
             "title": "Chimata Final Timeout Crash",
             "url-name": ["chimata-crash"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "2": {
             "title": "D press Desync",
             "url-name": ["d-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "3": {
             "title": "Takane Card Cost",
             "url-name": ["takane-card"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "4": {
             "title": "Practice mode 0 bombs",
             "url-name": ["no-bombs"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "5": {
             "title": "Centipede + Wolf cards combination",
             "url-name": ["centipede-wolf", "wolf-centipede"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "6": {
             "title": "Lily White Crash",
             "url-name": ["lily-white-crash"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "7": {
             "title": "Dragon Eater Timeout",
             "url-name": ["dragon-eater-timeout"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "8": {
             "title": "Momoyo's Final Bomb Damage",
             "url-name": ["momoyo-final-damage"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         }
     },
     "th185": {
         "0": {
             "title": "N/A",
             "url-name": ["not-available"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         }
     },
     "th19": {
         "0": {
             "title": "Story mode Draw glitch",
             "url-name": ["draw-glitch"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "1": {
             "title": "Unobtainable achievement",
             "url-name": ["unobtainable-achievement"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "2": {
             "title": "Rin level 2 damage",
             "url-name": ["rin-lvl-2"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "3": {
             "title": "Quit during result screen",
             "url-name": ["timed-exit"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "4": {
             "title": "Hisami's laser crash",
             "url-name": ["hisami-crash"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "5": {
             "title": "Rin Boss Skip",
             "url-name": ["rin-boss-skip"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "6": {
             "title": "Rin Charge Attack 2 Crash",
             "url-name": ["rin-c2-crash"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         }
     },
     "th20": {
         "0": {
             "title": "Point Item Value Overflow Glitch",
             "url-name": ["piv-overflow"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "1": {
             "title": "Player Player Hitbox Bug",
             "url-name": ["point-hitbox"],
-            "finished": false
+            "finished": false,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "2": {
             "title": "Nina's Survival Hurtbox",
             "url-name": ["nina-survival"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "3": {
             "title": "Yellow-2 Shot Desync",
             "url-name": ["yellow-2-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "4": {
             "title": "Reimu Red-2 Shot Desync",
             "url-name": ["reimu-r2-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         },
         "5": {
             "title": "Stone Timer Desync",
             "url-name": ["stone-timer-desync"],
-            "finished": true
+            "finished": true,
+            "categories": {
+                "tags": [-1]
+            }
         }
     }
 }
