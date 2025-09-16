@@ -724,7 +724,7 @@
             "url-name": ["rin-lvl-2"],
             "finished": false,
             "categories": {
-                "tags": [99]
+                "tags": [11]
             }
         },
         "3": {
@@ -732,7 +732,7 @@
             "url-name": ["timed-exit"],
             "finished": false,
             "categories": {
-                "tags": [99]
+                "tags": [17]
             }
         },
         "4": {
@@ -740,7 +740,7 @@
             "url-name": ["hisami-crash"],
             "finished": true,
             "categories": {
-                "tags": [99]
+                "tags": [0]
             }
         },
         "5": {
@@ -748,7 +748,7 @@
             "url-name": ["rin-boss-skip"],
             "finished": true,
             "categories": {
-                "tags": [99]
+                "tags": [11]
             }
         },
         "6": {
@@ -756,7 +756,7 @@
             "url-name": ["rin-c2-crash"],
             "finished": false,
             "categories": {
-                "tags": [99]
+                "tags": [0, 11]
             }
         }
     },

@@ -7,7 +7,8 @@
             "tree-mapping": {
                 "th14": [5   ], 
                 "th16": [2   ], 
-                "th18": [1, 6]  
+                "th18": [1, 6], 
+                "th19": [4, 6]  
             }
         }, 
         "1": {
@@ -135,6 +136,7 @@
                 "th15": [4, 6      ], 
                 "th16": [0         ], 
                 "th17": [0, 6      ], 
+                "th19": [2, 5, 6   ], 
                 "th20": [1, 3, 4, 5]  
             }
         }, 
@@ -208,20 +210,14 @@
             "tree-mapping": {
                 "th08": [1      ], 
                 "th17": [3      ], 
-                "th18": [3, 5, 6]  
+                "th18": [3, 5, 6], 
+                "th19": [3      ]  
             }
         }, 
         "99": {
-            "label": "n/a", 
-            "formatted_label": "n/a", 
-            "description": "Bug/Glitch happens when two or more events take place at the same time", 
-            "tree-mapping": {
-                "th95" : [0               ], 
-                "th128": [0               ], 
-                "th165": [0               ], 
-                "th185": [0               ], 
-                "th19" : [1, 2, 3, 4, 5, 6]  
-            }
+            "label": "UNUSED", 
+            "formatted_label": "UNUSED", 
+            "description": "Use this as base value for pages"
         }
     }, 
     "related": {

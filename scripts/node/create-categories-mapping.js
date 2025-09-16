@@ -41,6 +41,10 @@ function addToCategories(game, pageIndex, tagList) {
         if (tagObject === undefined) {
             throw new Error(`Game ${game} page ${pageIndex} index ${tagIndex} is an invalid index.`);
         }
+        if (tagIndex === 99) {
+            console.warn(`\x1b[33mGame ${game} page ${pageIndex} index ${tagIndex} has the Unused index.\x1b[0m`);
+            return;
+        }
         tagObject["tree-mapping"] = tagObject["tree-mapping"] ?? {};
         tagObject["tree-mapping"][game] = tagObject["tree-mapping"][game] ?? [];
         tagObject["tree-mapping"][game].push(pageIndex);
