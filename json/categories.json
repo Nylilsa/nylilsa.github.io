@@ -1,24 +1,254 @@
 {
     "tags": {
-        "0": {"label": "crash", "formatted_label": "Crash", "description": "Bug/Glitch is a crash or can occasionally crash"},
-        "1": { "label": "desync", "formatted_label": "Desync", "description": "Bug/Glitch is caused by desync", "tree-mapping": { "th06": [1, 2], "th07": [1], "th08": [0] } },
-        "2": {"label": "typo", "formatted_label": "Typo", "description": "Bug/Glitch is caused due to typo"},
-        "3": {"label": "uninitialized", "formatted_label": "Uninitialized", "description": "Bug/Glitch involves uninitialized variable"},
-        "4": { "label": "audio", "formatted_label": "Audio", "description": "Bug/Glitch involves the game's audio", "tree-mapping": { "th06": [3] } },
-        "5": {"label": "graphics", "formatted_label": "Graphics", "description": "Bug/Glitch involves a wrong sprite/graphic"},
-        "6": {"label": "frame-perfect", "formatted_label": "Frame-perfect", "description": "Bug/Glitch is caused by game performing an action whose margin of error is a few frames"},
-        "7": {"label": "hardware-setting", "formatted_label": "Hardware/Settings", "description": "Bug/Glitch involves is specific to user's hardware or game settings"},
-        "8": { "label": "ecl", "formatted_label": "Enemy control", "description": "Bug/Glitch involves an enemy's attributes", "tree-mapping": { "th06": [4] } },
-        "9": { "label": "menu", "formatted_label": "Menu", "description": "Bug/Glitch involves messing with any menu(s)", "tree-mapping": { "th06": [1, 2], "th07": [1], "th08": [0] } },
-        "10": {"label": "replay", "formatted_label": "Replay", "description": "Bug/Glitch involves use of replay"},
-        "11": { "label": "shottype", "formatted_label": "Shottype", "description": "Bug/Glitch involves specific (attributes of a) shottype(s)", "tree-mapping": { "th06": [3] } },
-        "12": {"label": "bombs", "formatted_label": "Bombs", "description": "Bug/Glitch involves the use of bomb(s)"},
-        "13": {"label": "overflow", "formatted_label": "Overflow", "description": "Bug/Glitch involves overflow/carry of variable"},
-        "14": {"label": "stage-transition", "formatted_label": "Stage transition", "description": "Bug/Glitch involves a stage transition"},
-        "15": {"label": "game-speed", "formatted_label": "Game speed", "description": "Bug/Glitch involves the GAME_SPEED variable"},
-        "16": {"label": "continues", "formatted_label": "Continues", "description": "Bug/Glitch involves using continues"},
-        "17": {"label": "race-condition", "formatted_label": "Race condition", "description": "Bug/Glitch happens when two or more events take place at the same time"},
-        "18": {"label": "n/a", "formatted_label": "Race condition", "description": "Bug/Glitch happens when two or more events take place at the same time"}
-    },
-    "related": { "pause_on_dialog": { "th06": [1, 2], "th07": [1], "th08": [0] } }
+        "0": {
+            "label": "crash", 
+            "formatted_label": "Crash", 
+            "description": "Bug/Glitch is a crash or can occasionally crash", 
+            "tree-mapping": {
+                "th14": [5   ], 
+                "th16": [2   ], 
+                "th18": [1, 6]  
+            }
+        }, 
+        "1": {
+            "label": "desync", 
+            "formatted_label": "Desync", 
+            "description": "Bug/Glitch is caused by desync", 
+            "tree-mapping": {
+                "th06": [1, 2      ], 
+                "th07": [1         ], 
+                "th08": [0         ], 
+                "th10": [2, 4      ], 
+                "th11": [3, 5, 6, 7], 
+                "th12": [0         ], 
+                "th14": [2         ], 
+                "th15": [4         ], 
+                "th17": [4, 5, 6   ], 
+                "th18": [2         ], 
+                "th20": [3, 4, 5   ]  
+            }
+        }, 
+        "2": {
+            "label": "typo", 
+            "formatted_label": "Typo", 
+            "description": "Bug/Glitch is caused due to typo", 
+            "tree-mapping": {
+                "th10": [0], 
+                "th11": [1], 
+                "th17": [0]  
+            }
+        }, 
+        "3": {
+            "label": "uninitialized", 
+            "formatted_label": "Uninitialized", 
+            "description": "Bug/Glitch involves uninitialized variable", 
+            "tree-mapping": {
+                "th11" : [5], 
+                "th125": [0], 
+                "th14" : [2]  
+            }
+        }, 
+        "4": {
+            "label": "audio", 
+            "formatted_label": "Audio", 
+            "description": "Bug/Glitch involves the game's audio", 
+            "tree-mapping": { "th06": [3] }
+        }, 
+        "5": {
+            "label": "graphics", 
+            "formatted_label": "Graphics", 
+            "description": "Bug/Glitch involves a wrong sprite/graphic", 
+            "tree-mapping": {
+                "th13": [1], 
+                "th15": [1]  
+            }
+        }, 
+        "6": {
+            "label": "frame-perfect", 
+            "formatted_label": "Frame-perfect", 
+            "description": "Bug/Glitch is caused by game performing an action whose margin of error is a few frames", 
+            "tree-mapping": {
+                "th06": [0   ], 
+                "th09": [0   ], 
+                "th14": [3, 4], 
+                "th17": [1, 2], 
+                "th19": [0   ]  
+            }
+        }, 
+        "7": {
+            "label": "hardware-setting", 
+            "formatted_label": "Hardware/Settings", 
+            "description": "Bug/Glitch involves is specific to user's hardware or game settings", 
+            "tree-mapping": { "th14": [6] }
+        }, 
+        "8": {
+            "label": "ecl", 
+            "formatted_label": "Enemy control", 
+            "description": "Bug/Glitch involves an enemy's attributes", 
+            "tree-mapping": {
+                "th06" : [0, 4      ], 
+                "th08" : [2         ], 
+                "th10" : [3         ], 
+                "th11" : [0, 2      ], 
+                "th125": [0         ], 
+                "th13" : [0, 3      ], 
+                "th14" : [1, 8      ], 
+                "th143": [1         ], 
+                "th15" : [0, 2, 3   ], 
+                "th16" : [1, 3, 4, 5], 
+                "th17" : [7, 8      ], 
+                "th18" : [1, 7, 8   ], 
+                "th20" : [2         ]  
+            }
+        }, 
+        "9": {
+            "label": "menu", 
+            "formatted_label": "Menu", 
+            "description": "Bug/Glitch involves messing with any menu(s)", 
+            "tree-mapping": {
+                "th06": [1, 2], 
+                "th07": [1   ], 
+                "th08": [0   ], 
+                "th09": [0   ], 
+                "th17": [5   ]  
+            }
+        }, 
+        "10": {
+            "label": "replay", 
+            "formatted_label": "Replay", 
+            "description": "Bug/Glitch involves use of replay", 
+            "tree-mapping": {
+                "th10": [1], 
+                "th11": [4]  
+            }
+        }, 
+        "11": {
+            "label": "shottype", 
+            "formatted_label": "Shottype", 
+            "description": "Bug/Glitch involves specific (attributes of a) shottype(s)", 
+            "tree-mapping": {
+                "th06": [3         ], 
+                "th10": [0         ], 
+                "th11": [1, 3, 5, 7], 
+                "th12": [0, 2      ], 
+                "th14": [2, 3, 4   ], 
+                "th15": [4, 6      ], 
+                "th16": [0         ], 
+                "th17": [0, 6      ], 
+                "th20": [1, 3, 4, 5]  
+            }
+        }, 
+        "12": {
+            "label": "bombs", 
+            "formatted_label": "Bombs", 
+            "description": "Bug/Glitch involves the use of bomb(s)", 
+            "tree-mapping": {
+                "th06": [2   ], 
+                "th10": [4   ], 
+                "th11": [2, 7], 
+                "th12": [0   ], 
+                "th13": [1   ], 
+                "th14": [3   ], 
+                "th15": [0, 1], 
+                "th16": [4, 5], 
+                "th17": [7, 8], 
+                "th18": [4, 8], 
+                "th20": [2   ]  
+            }
+        }, 
+        "13": {
+            "label": "overflow", 
+            "formatted_label": "Overflow", 
+            "description": "Bug/Glitch involves overflow/carry of variable", 
+            "tree-mapping": {
+                "th07" : [0], 
+                "th11" : [0], 
+                "th12" : [1], 
+                "th14" : [0], 
+                "th143": [0], 
+                "th20" : [0]  
+            }
+        }, 
+        "14": {
+            "label": "stage-transition", 
+            "formatted_label": "Stage transition", 
+            "description": "Bug/Glitch involves a stage transition", 
+            "tree-mapping": {
+                "th10": [2, 4      ], 
+                "th11": [3, 4, 6, 7], 
+                "th15": [4         ], 
+                "th17": [4, 6      ], 
+                "th18": [2         ], 
+                "th20": [3, 4, 5   ]  
+            }
+        }, 
+        "15": {
+            "label": "game-speed", 
+            "formatted_label": "Game speed", 
+            "description": "Bug/Glitch involves the GAME_SPEED variable", 
+            "tree-mapping": {
+                "th12": [3], 
+                "th13": [2], 
+                "th14": [7], 
+                "th15": [5], 
+                "th16": [6], 
+                "th17": [9], 
+                "th18": [0]  
+            }
+        }, 
+        "16": {
+            "label": "continues", 
+            "formatted_label": "Continues", 
+            "description": "Bug/Glitch involves using continues"
+        }, 
+        "17": {
+            "label": "race-condition", 
+            "formatted_label": "Race condition", 
+            "description": "Bug/Glitch happens when two or more events take place at the same time", 
+            "tree-mapping": {
+                "th08": [1      ], 
+                "th17": [3      ], 
+                "th18": [3, 5, 6]  
+            }
+        }, 
+        "99": {
+            "label": "n/a", 
+            "formatted_label": "n/a", 
+            "description": "Bug/Glitch happens when two or more events take place at the same time", 
+            "tree-mapping": {
+                "th95" : [0               ], 
+                "th128": [0               ], 
+                "th165": [0               ], 
+                "th185": [0               ], 
+                "th19" : [1, 2, 3, 4, 5, 6]  
+            }
+        }
+    }, 
+    "related": {
+        "pause_on_dialog": {
+            "th06": [1, 2], 
+            "th07": [1   ], 
+            "th08": [0   ]  
+        }, 
+        "slowdown_item_dupe": {
+            "th12": [3], 
+            "th13": [2], 
+            "th14": [7], 
+            "th15": [5], 
+            "th16": [6], 
+            "th17": [9], 
+            "th18": [0]  
+        }, 
+        "ex_survival_hurtbox": {
+            "th16": [4], 
+            "th17": [7], 
+            "th20": [2]  
+        }, 
+        "ex_final_bomb_dmg": {
+            "th16": [5], 
+            "th17": [8], 
+            "th18": [8]  
+        }, 
+        "practice_mode_no_bombs": { "th18": [5] }
+    }
 }

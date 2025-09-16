@@ -57,8 +57,8 @@ function addToRelated(game, pageIndex, relatedId) {
 function saveJsonFiles() {
     const options = new FracturedJsonOptions();
     options.MaxInlineComplexity = 5;
-    options.MaxTotalLineLength = 200;
-    options.MinCompactArrayRowItems = 1;
+    options.MaxTotalLineLength = 50;
+    options.MinCompactArrayRowItems = 0;
     options.AlwaysExpandDepth = 0;
 
     const formatter = new Formatter();
