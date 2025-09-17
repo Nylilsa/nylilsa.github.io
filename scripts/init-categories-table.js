@@ -61,7 +61,7 @@ function buildRowSameGame(game, gameBugs, selectedIndex) {
     td.style.paddingBottom = "1em";
     td.colSpan = 2;
     th.style.width = "11.36%";
-    th.textContent = `All ${game} pages:`;
+    th.textContent = `All ${game} - ${names1[game]["abbreviation"]} pages:`;
 
     Object.keys(gameBugs).forEach((index) => {
 
