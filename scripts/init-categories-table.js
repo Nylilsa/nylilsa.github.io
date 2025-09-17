@@ -19,7 +19,7 @@ function buildTable(game, index, TREE, CATEGORIES) {
     const table = document.createElement('table');
     // head
     const thead = document.createElement('thead');
-    thead.appendChild(buildTitle(currentPage));
+    thead.appendChild(buildTitle(game, currentPage));
     table.appendChild(thead);
 
     // Body rows
@@ -28,24 +28,28 @@ function buildTable(game, index, TREE, CATEGORIES) {
     tbody.appendChild(thSameGame);
 
     tagList.forEach(tag => {
-        const thSameCategory = buildRowCategory(game, index, TREE, CATEGORIES["tags"][tag]);
-        tbody.appendChild(thSameCategory);
+        const thSameCategoryRows = buildRowCategory(game, index, TREE, CATEGORIES["tags"][tag]);
+        thSameCategoryRows.forEach((row) => {
+            tbody.appendChild(row);
+        })
     });
-    
+
     if (currentPage.categories.related) {
-        const thRelated = buildRowRelated(game, index, TREE, CATEGORIES["related"], currentPage.categories.related);
-        tbody.appendChild(thRelated);
+        const thRelatedRows = buildRowRelated(game, index, TREE, CATEGORIES["related"], currentPage.categories.related);
+        thRelatedRows.forEach((row) => {
+            tbody.appendChild(row);
+        })
     }
 
     table.appendChild(tbody);
     tableId.appendChild(table);
 }
 
-function buildTitle(currentPage) {
+function buildTitle(game, currentPage) {
     const tr = document.createElement('tr');
     const th = document.createElement('th');
-    th.textContent = currentPage.title;
-    th.colSpan = 2;
+    th.textContent = `${names1[game]["en"]}: ${currentPage.title}`;
+    th.colSpan = 3;
     tr.appendChild(th);
     return tr;
 }
@@ -55,6 +59,7 @@ function buildRowSameGame(game, gameBugs, selectedIndex) {
     const th = document.createElement('th');
     const td = document.createElement('td');
     td.style.paddingBottom = "1em";
+    td.colSpan = 2;
     th.style.width = "11.36%";
     th.textContent = `All ${game} pages:`;
 
@@ -84,19 +89,26 @@ function buildRowSameGame(game, gameBugs, selectedIndex) {
 }
 
 function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
-    const tr = document.createElement('tr');
+    const elements = [];
+    const thFirst = document.createElement('tr');
     const th = document.createElement('th');
-    const td = document.createElement('td');
-    td.style.paddingBottom = "1em";
 
-    th.innerHTML = `All <span class="highlight-txt">${categories["formatted_label"]}</span> pages:`;
+    th.innerHTML = `All <span class="highlight-txt">${categories["formatted_label"]}</span>-related pages:`;
+    th.rowSpan = Object.keys(categories["tree-mapping"]).length + 1;
+    thFirst.appendChild(th);
+    elements.push(thFirst);
 
     Object.keys(categories["tree-mapping"]).forEach(game => {
+        const tr = document.createElement('tr');
+        const gameCell = document.createElement('td');
+        const td = document.createElement('td');
         categories["tree-mapping"][game].forEach((index) => {
-            const obj = TREE[game][index]
+            // td.style.paddingBottom = "1em";
+            const obj = TREE[game][index];
+            gameCell.textContent = game;
             if (selectedGame === game && index === Number(selectedIndex)) { // if match equals current page
                 const span = document.createElement("span");
-                span.textContent = `${game} - ${obj["title"]}`;
+                span.textContent = `${obj["title"]}`;
                 td.appendChild(span);
             } else {
                 const a = document.createElement('a');
@@ -104,35 +116,43 @@ function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
                 a.classList.add("url");
                 // a.target = "_blank"
                 a.href = url;
-                a.textContent = `${game} - ${obj["title"]}`;
+                a.textContent = `${obj["title"]}`;
                 td.appendChild(a);
             }
-            const notLast = !(Object.keys(categories["tree-mapping"]).indexOf(game) == Object.keys(categories["tree-mapping"]).length - 1 && categories["tree-mapping"][game].indexOf(index) === categories["tree-mapping"][game].length - 1);
+            const notLast = !(categories["tree-mapping"][game].indexOf(index) === categories["tree-mapping"][game].length - 1);
             if (notLast) {
                 td.appendChild(document.createTextNode(" · "));
             }
+            tr.appendChild(gameCell);
+            tr.appendChild(td);
         })
+        elements.push(tr);
     });
 
-    tr.appendChild(th);
-    tr.appendChild(td);
-    return tr;
+
+    return elements;
 }
 
 function buildRowRelated(selectedGame, selectedIndex, TREE, categories, id) {
-    const tr = document.createElement('tr');
+    const elements = [];
+    const thFirst = document.createElement('tr');
     const th = document.createElement('th');
-    const td = document.createElement('td');
-    td.style.paddingBottom = "1em";
-
-    th.textContent = `Same-cause bugs:`;
+    th.innerHTML = `Bugs with similar cause:`;
+    th.rowSpan = Object.keys(categories[id]).length + 1;
+    thFirst.appendChild(th);
+    elements.push(thFirst);
 
     Object.keys(categories[id]).forEach(game => {
+        const tr = document.createElement('tr');
+        const gameCell = document.createElement('td');
+        const td = document.createElement('td');
         categories[id][game].forEach((index) => {
-            const obj = TREE[game][index]
+            // td.style.paddingBottom = "1em";
+            const obj = TREE[game][index];
+            gameCell.textContent = game;
             if (selectedGame === game && index === Number(selectedIndex)) { // if match equals current page
                 const span = document.createElement("span");
-                span.textContent = `${game}: ${obj["title"]}`;
+                span.textContent = `${obj["title"]}`;
                 td.appendChild(span);
             } else {
                 const a = document.createElement('a');
@@ -140,17 +160,19 @@ function buildRowRelated(selectedGame, selectedIndex, TREE, categories, id) {
                 a.classList.add("url");
                 // a.target = "_blank"
                 a.href = url;
-                a.textContent = `${game}: ${obj["title"]}`;
+                a.textContent = `${obj["title"]}`;
                 td.appendChild(a);
             }
-            const notLast = !(Object.keys(categories[id]).indexOf(game) == Object.keys(categories[id]).length - 1 && categories[id][game].indexOf(index) === categories[id][game].length - 1);
+            const notLast = !(categories[id][game].indexOf(index) === categories[id][game].length - 1);
             if (notLast) {
                 td.appendChild(document.createTextNode(" · "));
             }
+            tr.appendChild(gameCell);
+            tr.appendChild(td);
         })
+        elements.push(tr);
     });
 
-    tr.appendChild(th);
-    tr.appendChild(td);
-    return tr;
+
+    return elements;
 }
