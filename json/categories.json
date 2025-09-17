@@ -84,7 +84,7 @@
         }, 
         "8": {
             "label": "ecl", 
-            "formatted_label": "Enemy control", 
+            "formatted_label": "Stage/Enemy", 
             "description": "Bug/Glitch involves an enemy's attributes", 
             "tree-mapping": {
                 "th06" : [0, 4      ], 
@@ -200,7 +200,7 @@
         }, 
         "16": {
             "label": "continues", 
-            "formatted_label": "Continues", 
+            "formatted_label": "Continue", 
             "description": "Bug/Glitch involves using continues"
         }, 
         "17": {
