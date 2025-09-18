@@ -84,7 +84,7 @@
         }, 
         "8": {
             "label": "ecl", 
-            "formatted_label": "Ecl",
+            "formatted_label": "Ecl", 
             "href": "https://priw8.github.io/#b=ecl-tutorial/&p=1", 
             "description": "Bug/Glitch involves an enemy's attributes", 
             "tree-mapping": {

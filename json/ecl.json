@@ -234,13 +234,13 @@
             "Type": "boolean"
         },
         "4": {
-            "Name": "timer1",
-            "Description": "Integer value between -1 and 15 inclusive (by default -1). If non-negative, shooters using timer1 shoot their bullets and timer increments by 1 per tick until 15 is reached. Once 15, timer reset to -1 or 0 depending on Z key state.",
+            "Name": "short_timer",
+            "Description": "Integer value between -1 and 15 inclusive (by default -1). If non-negative, shooters using short_timer shoot their bullets and timer increments by 1 per tick until 15 is reached. Once 15, timer reset to -1 or 0 depending on Z key state.",
             "Type": "int"
         },
         "5": {
-            "Name": "timer2",
-            "Description": "Integer value between -1 and 120 inclusive (by default -1). If non-negative, shooters using timer2 shoot their bullets and timer increments by 1 per tick until 120 is reached. Once 120, timer reset to -1 or 0 depending on Z key state.",
+            "Name": "long_timer",
+            "Description": "Integer value between -1 and 120 inclusive (by default -1). If non-negative, shooters using long_timer shoot their bullets and timer increments by 1 per tick until 120 is reached. Once 120, timer reset to -1 or 0 depending on Z key state.",
             "Type": "int"
         },
         "6": {
