@@ -61,7 +61,7 @@ function buildRowSameGame(game, gameBugs, selectedIndex) {
     td.style.paddingBottom = "1em";
     td.colSpan = 2;
     th.style.width = "11.36%";
-    th.textContent = `All ${game} - ${names1[game]["abbreviation"]} pages:`;
+    th.textContent = `All ${names1[game]["en"]} pages:`;
 
     Object.keys(gameBugs).forEach((index) => {
 
@@ -92,8 +92,11 @@ function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
     const elements = [];
     const thFirst = document.createElement('tr');
     const th = document.createElement('th');
-
-    th.innerHTML = `All <span class="highlight-txt">${categories["formatted_label"]}</span>-related pages:`;
+    if (categories["href"]) {
+        th.innerHTML = `All <a class="url" target="_blank" href="${categories["href"]}">${categories["formatted_label"]}-related</a> pages:`;
+    } else {
+        th.innerHTML = `All <span class="highlight-txt">${categories["formatted_label"]}-related</span> pages:`;
+    }
     th.rowSpan = Object.keys(categories["tree-mapping"]).length + 1;
     thFirst.appendChild(th);
     elements.push(thFirst);
