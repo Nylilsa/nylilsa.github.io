@@ -283,6 +283,25 @@ let ext = function() {
 		}
 	}
 
+	let buildCategoriesTable = {
+		type: "lang",
+		regex: /\[buildCategoriesTable\]/g,
+		replace: function() {
+            //something complicated with lots of operations
+            setTimeout(() => { 
+                Promise.all([
+                    import('./init-categories-table.js'),
+                ]).then(([categoriesTable]) => {
+                    Object.entries(categoriesTable).forEach(([name, exported]) => window[name] = exported);
+                    initCategoriesTable();
+                }).catch((error) => {
+                    console.error(error);
+                });
+            }, 1);
+            return "<div id='bugsCategoriesTable'></div>";
+		}
+	}
+
 	let match = {
 		type: "lang",
 		regex: /\[style=([^]*?), icon=(true|false), highlightedText=([^]*?)\]/g,
@@ -325,5 +344,5 @@ let ext = function() {
         regex: /\&lt\;/g,
         replace: '<',
     }
-	return [hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, match, scenes, check, cross, gt, lt];
+	return [hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt];
 }
