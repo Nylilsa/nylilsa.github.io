@@ -666,7 +666,7 @@
             }
         },
         "4": {
-            "title": "Practice mode 0 bombs",
+            "title": "No Bombs in Practice Mode",
             "url-name": ["no-bombs"],
             "finished": false,
             "categories": {
