@@ -144,8 +144,7 @@ function toggleSidebar(direction, forceClose) { //changes class of sidebar upon 
 }
 
 function jumpTo(id, duration) {
-    const tagsCheck = /tags/g.test(window.location.hash);
-	if (id === '' || tagsCheck) { 
+	if (id === '') { 
 		return;
 	}
 	setTimeout(() => {

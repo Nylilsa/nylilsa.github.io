@@ -256,14 +256,6 @@ let ext = function() {
 		}
 	}
 
-	let tags = {
-		type: "lang",
-		regex: /\[tags\]/g,
-		replace: function() {
-			return tagsTable();
-		}
-	}
-
 	let ins = {
 		type: "lang",
 		regex: /\[ins=(.*?), n=(.*?)\]/g,
@@ -344,5 +336,5 @@ let ext = function() {
         regex: /\&lt\;/g,
         replace: '<',
     }
-	return [hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, tags, ins, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt];
+	return [hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, ins, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt];
 }
