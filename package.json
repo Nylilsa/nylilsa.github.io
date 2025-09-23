@@ -1,5 +1,8 @@
 {
-  "dependencies": {
-    "fracturedjsonjs": "^4.1.1"
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.10.1",
+    "chokidar-cli": "^3.0.0",
+    "fracturedjsonjs": "^4.1.1",
+    "node-sass": "^9.0.0"
   }
 }

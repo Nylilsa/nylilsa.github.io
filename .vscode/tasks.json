@@ -2,11 +2,22 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "watch-test-json",
+            "label": "create-categories-mapping.js",
             "type": "shell",
             "command": "npx chokidar 'json/glitch-tree.json' -c 'node scripts/node/create-categories-mapping.js'",
             "isBackground": true,
-            "runOptions": {"runOn": "folderOpen"}
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        {
+            "label": "auto-generate-style-css",
+            "type": "shell",
+            "command": "npx chokidar 'css/style.scss' -c 'npx node-sass css/style.scss css/style.css'",
+            "isBackground": true,
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
         }
     ]
 }
