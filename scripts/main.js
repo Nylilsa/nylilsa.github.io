@@ -465,11 +465,16 @@ async function initSidebarGlitches(colDecrease) {
                 const div = document.createElement("div");
                 const a = document.createElement("a");
                 a.href = `#/bugs/${thnr}/${data[thnr][j]["url-name"][0]}`;
-                a.innerText = data[thnr][j]['title'];
                 div.style.position = "relative";
+                if (!data[thnr][j]["finished"]) { // if page is unfinished
+                    a.innerText = `(WIP) ${data[thnr][j]['title']}`;
+                    console.log(data[thnr][j]['title'])
+                } else {
+                    a.innerText = data[thnr][j]['title'];
+                }
                 div.appendChild(a);
                 li.appendChild(div);
-                content.appendChild(li)
+                content.appendChild(li);
             }
         }
     } catch (error) {
