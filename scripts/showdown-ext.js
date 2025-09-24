@@ -27,10 +27,10 @@ let ext = function() {
 		replace: function(all, img, figtitle, alt) {
             figureId++;
             if (figtitle == "TOBEADDED") { // remove once all is done
-                return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" src="${img}"></figure></div></div>`;
+                return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" src="pages/${img}"></figure></div></div>`;
 
             }
-			return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" title="${figtitle}" src="${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div></div>`;
+			return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" title="${figtitle}" src="pages/${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div></div>`;
         }
 	}
 	let imgcss = {
@@ -38,7 +38,7 @@ let ext = function() {
 		regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?), other=(.*?)\]/g,
 		replace: function(all, img, figtitle, alt, other) {
             figureId++;
-			return `<div style="text-align: center;" id="figure-${figureId}"><figure class="fit-wrapper"><img style="${other}" class="fit-image" title="${figtitle}" src="${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div>`;
+			return `<div style="text-align: center;" id="figure-${figureId}"><figure class="fit-wrapper"><img style="${other}" class="fit-image" title="${figtitle}" src="pages/${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div>`;
         }
 	}
 	let img_small = {

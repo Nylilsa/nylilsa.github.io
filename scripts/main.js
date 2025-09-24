@@ -35,7 +35,7 @@ async function checkBugPath(path) {
 
 async function loadMarkdown(path) { //loads page
     const anchor = initRemoveHash(true);
-    const correctPath = await checkBugPath(path);
+    const correctPath = `pages/${await checkBugPath(path)}`;
 	window.location.href = window.location.origin + '/#/' + path.replace(".md","") + anchor //changes url
 	const xhttp = new XMLHttpRequest(); //from this point on, calls for file and loads file
 	xhttp.onreadystatechange = function() {
@@ -197,7 +197,7 @@ async function videoFunction(key) {
 async function replayFunction(key) {
     const webdata = await fetchData("json/webdata.json");
 	const content = webdata["Replays"][key];
-    const path = `bugs/${content.game}/${content.url}`;
+    const path = `pages/bugs/${content.game}/${content.url}`;
 	const datum = dateFormat(content.date);
 	return citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, path, content.note);
 }
@@ -468,7 +468,7 @@ async function initSidebarGlitches(colDecrease) {
                 div.style.position = "relative";
                 if (!data[thnr][j]["finished"]) { // if page is unfinished
                     a.innerText = `(WIP) ${data[thnr][j]['title']}`;
-                    console.log(data[thnr][j]['title'])
+                    // console.log(data[thnr][j]['title'])
                 } else {
                     a.innerText = data[thnr][j]['title'];
                 }
