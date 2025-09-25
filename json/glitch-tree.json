@@ -831,7 +831,15 @@
             "url-name": ["marisa-r1-desync"],
             "finished": false,
             "categories": {
-                "tags": [1, 3, 11, 14]
+                "tags": [1, 3, 11]
+            }
+        },
+        "7": {
+            "title": "Nina Resolution Desync",
+            "url-name": ["resolution-desync"],
+            "finished": false,
+            "categories": {
+                "tags": [1, 7]
             }
         }
     }
