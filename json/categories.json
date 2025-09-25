@@ -38,9 +38,11 @@
             "formatted_label": "Typo", 
             "description": "Bug/Glitch is caused due to typo", 
             "tree-mapping": {
-                "th10": [0], 
-                "th11": [1], 
-                "th17": [0]  
+                "th10": [ 0    ], 
+                "th11": [ 1    ], 
+                "th17": [ 0    ], 
+                "th19": [ 1    ], 
+                "th20": [19, 21]  
             }
         }, 
         "3": {
