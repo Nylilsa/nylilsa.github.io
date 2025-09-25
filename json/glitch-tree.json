@@ -359,7 +359,7 @@
         "4": {
             "title": "Gohei Duplication",
             "url-name": ["gohei-dupe", "gohei-duplication", "duping", "gohei-duping"],
-            "finished": false,
+            "finished": true,
             "categories": {
                 "tags": [6, 11]
             }
