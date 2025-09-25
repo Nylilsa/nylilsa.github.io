@@ -899,6 +899,14 @@
                 "tags": [10],
                 "related": "no_slowdown"
             }
+        },
+        "15": {
+            "title": "Yellow-1 Shot Persisting Damage",
+            "url-name": ["yellow-1-persist"],
+            "finished": false,
+            "categories": {
+                "tags": [1, 6, 11, 14]
+            }
         }
     }
 }
