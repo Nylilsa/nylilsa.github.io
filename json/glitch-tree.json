@@ -932,6 +932,14 @@
                 "tags": [5, 6, 9, 17],
                 "related": "persisting_overlay"
             }
+        },
+        "19": {
+            "title": "Replays Menu Wrong Stage Number",
+            "url-name": ["replay-menu-wrong-stage-nr"],
+            "finished": false,
+            "categories": {
+                "tags": [9]
+            }
         }
     }
 }
