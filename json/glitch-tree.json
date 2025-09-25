@@ -865,6 +865,14 @@
             "categories": {
                 "tags": [5]
             }
+        },
+        "11": {
+            "title": "Restarting replay desync",
+            "url-name": ["esc-r-desync"],
+            "finished": false,
+            "categories": {
+                "tags": [1, 10]
+            }
         }
     }
 }

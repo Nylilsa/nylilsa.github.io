@@ -16,18 +16,18 @@
             "formatted_label": "Desync", 
             "description": "Bug/Glitch is caused by desync", 
             "tree-mapping": {
-                "th06": [1, 2               ], 
-                "th07": [1                  ], 
-                "th08": [0                  ], 
-                "th10": [2, 4               ], 
-                "th11": [3, 4, 5, 6, 7      ], 
-                "th12": [0, 4               ], 
-                "th13": [4                  ], 
-                "th14": [2                  ], 
-                "th15": [4                  ], 
-                "th17": [4, 5, 6            ], 
-                "th18": [2                  ], 
-                "th20": [3, 4, 5, 6, 7, 8, 9]  
+                "th06": [1, 2], 
+                "th07": [1], 
+                "th08": [0], 
+                "th10": [2, 4], 
+                "th11": [3, 4, 5, 6, 7], 
+                "th12": [0, 4], 
+                "th13": [4], 
+                "th14": [2], 
+                "th15": [4], 
+                "th17": [4, 5, 6], 
+                "th18": [2], 
+                "th20": [3, 4, 5, 6, 7, 8, 9, 11]
             }
         }, 
         "2": {
@@ -127,8 +127,9 @@
             "formatted_label": "Replay", 
             "description": "Bug/Glitch involves use of replay", 
             "tree-mapping": {
-                "th10": [1], 
-                "th11": [4]  
+                "th10": [ 1], 
+                "th11": [ 4], 
+                "th20": [11]  
             }
         }, 
         "11": {
