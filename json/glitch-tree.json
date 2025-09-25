@@ -915,6 +915,14 @@
             "categories": {
                 "tags": [9]
             }
+        },
+        "17": {
+            "title": "Uninitialized ANM variable",
+            "url-name": ["uninitialized-anm"],
+            "finished": false,
+            "categories": {
+                "tags": [1, 3, 5]
+            }
         }
     }
 }
