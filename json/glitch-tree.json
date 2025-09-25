@@ -839,7 +839,15 @@
             "url-name": ["resolution-desync"],
             "finished": false,
             "categories": {
-                "tags": [1, 7]
+                "tags": [1, 5, 7]
+            }
+        },
+        "8": {
+            "title": "Player Option Position Desync",
+            "url-name": ["option-position-desync"],
+            "finished": false,
+            "categories": {
+                "tags": [1, 7, 9, 14]
             }
         }
     }

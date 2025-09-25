@@ -16,18 +16,18 @@
             "formatted_label": "Desync", 
             "description": "Bug/Glitch is caused by desync", 
             "tree-mapping": {
-                "th06": [1, 2         ], 
-                "th07": [1            ], 
-                "th08": [0            ], 
-                "th10": [2, 4         ], 
-                "th11": [3, 4, 5, 6, 7], 
-                "th12": [0, 4         ], 
-                "th13": [4            ], 
-                "th14": [2            ], 
-                "th15": [4            ], 
-                "th17": [4, 5, 6      ], 
-                "th18": [2            ], 
-                "th20": [3, 4, 5, 6, 7]  
+                "th06": [1, 2            ], 
+                "th07": [1               ], 
+                "th08": [0               ], 
+                "th10": [2, 4            ], 
+                "th11": [3, 4, 5, 6, 7   ], 
+                "th12": [0, 4            ], 
+                "th13": [4               ], 
+                "th14": [2               ], 
+                "th15": [4               ], 
+                "th17": [4, 5, 6         ], 
+                "th18": [2               ], 
+                "th20": [3, 4, 5, 6, 7, 8]  
             }
         }, 
         "2": {
@@ -63,7 +63,8 @@
             "description": "Bug/Glitch involves a wrong sprite/graphic", 
             "tree-mapping": {
                 "th13": [1], 
-                "th15": [1]  
+                "th15": [1], 
+                "th20": [7]  
             }
         }, 
         "6": {
@@ -83,8 +84,8 @@
             "formatted_label": "Hardware/Settings", 
             "description": "Bug/Glitch involves is specific to user's hardware or game settings", 
             "tree-mapping": {
-                "th14": [6], 
-                "th20": [7]  
+                "th14": [6   ], 
+                "th20": [7, 8]  
             }
         }, 
         "8": {
@@ -117,7 +118,8 @@
                 "th07": [1   ], 
                 "th08": [0   ], 
                 "th09": [0   ], 
-                "th17": [5   ]  
+                "th17": [5   ], 
+                "th20": [8   ]  
             }
         }, 
         "10": {
@@ -189,7 +191,7 @@
                 "th15": [4         ], 
                 "th17": [4, 6      ], 
                 "th18": [2         ], 
-                "th20": [3, 4, 5   ]  
+                "th20": [3, 4, 5, 8]  
             }
         }, 
         "15": {
