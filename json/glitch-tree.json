@@ -670,7 +670,8 @@
             "url-name": ["no-bombs"],
             "finished": false,
             "categories": {
-                "tags": [12]
+                "tags": [12],
+                "related": "practice_mode_no_bombs"
             }
         },
         "5": {
@@ -678,8 +679,7 @@
             "url-name": ["centipede-wolf", "wolf-centipede"],
             "finished": true,
             "categories": {
-                "tags": [17],
-                "related": "practice_mode_no_bombs"
+                "tags": [17]
             }
         },
         "6": {
@@ -880,6 +880,15 @@
             "finished": false,
             "categories": {
                 "tags": [9, 17]
+            }
+        },
+        "13": {
+            "title": "No Bombs in Practice Mode",
+            "url-name": ["no-bombs"],
+            "finished": true,
+            "categories": {
+                "tags": [9, 17],
+                "related": "practice_mode_no_bombs"
             }
         }
     }
