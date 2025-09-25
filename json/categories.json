@@ -114,12 +114,12 @@
             "formatted_label": "Menu", 
             "description": "Bug/Glitch involves messing with any menu(s)", 
             "tree-mapping": {
-                "th06": [1,  2        ], 
-                "th07": [1            ], 
-                "th08": [0            ], 
-                "th09": [0            ], 
-                "th17": [5            ], 
-                "th20": [8, 11, 12, 13]  
+                "th06": [1,  2    ], 
+                "th07": [1        ], 
+                "th08": [0        ], 
+                "th09": [0        ], 
+                "th17": [5        ], 
+                "th20": [8, 11, 12]  
             }
         }, 
         "10": {
@@ -154,17 +154,17 @@
             "formatted_label": "Bombs", 
             "description": "Bug/Glitch involves the use of bomb(s)", 
             "tree-mapping": {
-                "th06": [2   ], 
-                "th10": [4   ], 
-                "th11": [2, 7], 
-                "th12": [0   ], 
-                "th13": [1   ], 
-                "th14": [3   ], 
-                "th15": [0, 1], 
-                "th16": [4, 5], 
-                "th17": [7, 8], 
-                "th18": [4, 8], 
-                "th20": [2, 9]  
+                "th06": [2       ], 
+                "th10": [4       ], 
+                "th11": [2, 7    ], 
+                "th12": [0       ], 
+                "th13": [1       ], 
+                "th14": [3       ], 
+                "th15": [0, 1    ], 
+                "th16": [4, 5    ], 
+                "th17": [7, 8    ], 
+                "th18": [4, 8    ], 
+                "th20": [2, 9, 13]  
             }
         }, 
         "13": {
@@ -219,11 +219,11 @@
             "formatted_label": "Simultaneous events", 
             "description": "Bug/Glitch happens when two or more events take place at the same time", 
             "tree-mapping": {
-                "th08": [1        ], 
-                "th17": [3        ], 
-                "th18": [3,  5,  6], 
-                "th19": [3        ], 
-                "th20": [9, 12, 13]  
+                "th08": [1       ], 
+                "th17": [3       ], 
+                "th18": [3,  5, 6], 
+                "th19": [3       ], 
+                "th20": [9, 12   ]  
             }
         }, 
         "99": {

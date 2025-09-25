@@ -887,7 +887,7 @@
             "url-name": ["no-bombs"],
             "finished": true,
             "categories": {
-                "tags": [9, 17],
+                "tags": [12],
                 "related": "practice_mode_no_bombs"
             }
         }
