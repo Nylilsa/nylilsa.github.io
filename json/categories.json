@@ -65,9 +65,9 @@
             "formatted_label": "Graphics", 
             "description": "Bug/Glitch involves a wrong sprite/graphic", 
             "tree-mapping": {
-                "th13": [1            ], 
-                "th15": [1            ], 
-                "th20": [7, 10, 17, 18]  
+                "th13": [1                ], 
+                "th15": [1                ], 
+                "th20": [7, 10, 17, 18, 20]  
             }
         }, 
         "6": {
@@ -75,12 +75,12 @@
             "formatted_label": "Frame-perfect", 
             "description": "Bug/Glitch is caused by game performing an action whose margin of error is a few frames", 
             "tree-mapping": {
-                "th06": [ 0    ], 
-                "th09": [ 0    ], 
-                "th14": [ 3,  4], 
-                "th17": [ 1,  2], 
-                "th19": [ 0    ], 
-                "th20": [15, 18]  
+                "th06": [ 0        ], 
+                "th09": [ 0        ], 
+                "th14": [ 3,  4    ], 
+                "th17": [ 1,  2    ], 
+                "th19": [ 0        ], 
+                "th20": [15, 18, 20]  
             }
         }, 
         "7": {
@@ -118,12 +118,14 @@
             "formatted_label": "Menu", 
             "description": "Bug/Glitch involves messing with any menu(s)", 
             "tree-mapping": {
-                "th06": [1,  2                ], 
-                "th07": [1                    ], 
-                "th08": [0                    ], 
-                "th09": [0                    ], 
-                "th17": [5                    ], 
-                "th20": [8, 11, 12, 16, 18, 19]  
+                "th06": [1, 2], 
+                "th07": [1], 
+                "th08": [0], 
+                "th09": [0], 
+                "th17": [5], 
+                "th20": [
+                     8, 11, 12, 16, 18, 19, 20
+                ]
             }
         }, 
         "10": {
@@ -223,11 +225,11 @@
             "formatted_label": "Simultaneous events", 
             "description": "Bug/Glitch happens when two or more events take place at the same time", 
             "tree-mapping": {
-                "th08": [1        ], 
-                "th17": [3        ], 
-                "th18": [3,  5,  6], 
-                "th19": [3        ], 
-                "th20": [9, 12, 18]  
+                "th08": [1            ], 
+                "th17": [3            ], 
+                "th18": [3,  5,  6    ], 
+                "th19": [3            ], 
+                "th20": [9, 12, 18, 20]  
             }
         }, 
         "99": {
