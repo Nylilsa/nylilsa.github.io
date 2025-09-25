@@ -849,6 +849,14 @@
             "categories": {
                 "tags": [1, 7, 9, 14]
             }
+        },
+        "9": {
+            "title": "Persisting Bombs",
+            "url-name": ["persisting-bombs"],
+            "finished": false,
+            "categories": {
+                "tags": [1, 12, 14, 17]
+            }
         }
     }
 }
