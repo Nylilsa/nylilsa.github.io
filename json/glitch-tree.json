@@ -825,6 +825,14 @@
             "categories": {
                 "tags": [1, 11, 14]
             }
+        },
+        "6": {
+            "title": "Marisa Red-1 Shot Desync",
+            "url-name": ["marisa-r1-desync"],
+            "finished": false,
+            "categories": {
+                "tags": [1, 3, 11, 14]
+            }
         }
     }
 }
