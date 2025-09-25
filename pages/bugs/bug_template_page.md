@@ -30,6 +30,7 @@ Describe how this happens. Do this by explaining step-by-step instructions on ho
 
 Describe why this happens. Do this by providing (pseudo-)code that is relevant for the reader. Feel free to add multiple headings if the bug is too complicated to explain.
 
+[hr_major]
 ## [links]
 [hr_minor]
 ### [rpy]
