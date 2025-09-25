@@ -62,9 +62,9 @@
             "formatted_label": "Graphics", 
             "description": "Bug/Glitch involves a wrong sprite/graphic", 
             "tree-mapping": {
-                "th13": [1], 
-                "th15": [1], 
-                "th20": [7]  
+                "th13": [1    ], 
+                "th15": [1    ], 
+                "th20": [7, 10]  
             }
         }, 
         "6": {

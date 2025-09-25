@@ -857,6 +857,14 @@
             "categories": {
                 "tags": [1, 12, 14, 17]
             }
+        },
+        "10": {
+            "title": "Wrong bullet off-set",
+            "url-name": ["bullet-offset"],
+            "finished": false,
+            "categories": {
+                "tags": [5]
+            }
         }
     }
 }
