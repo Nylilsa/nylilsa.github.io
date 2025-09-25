@@ -118,12 +118,12 @@
             "formatted_label": "Menu", 
             "description": "Bug/Glitch involves messing with any menu(s)", 
             "tree-mapping": {
-                "th06": [1,  2    ], 
-                "th07": [1        ], 
-                "th08": [0        ], 
-                "th09": [0        ], 
-                "th17": [5        ], 
-                "th20": [8, 11, 12]  
+                "th06": [1,  2        ], 
+                "th07": [1            ], 
+                "th08": [0            ], 
+                "th09": [0            ], 
+                "th17": [5            ], 
+                "th20": [8, 11, 12, 16]  
             }
         }, 
         "10": {

@@ -907,6 +907,14 @@
             "categories": {
                 "tags": [1, 6, 11, 14]
             }
+        },
+        "16": {
+            "title": "Equipping Un-equippable Stones",
+            "url-name": ["stone-save-storage"],
+            "finished": false,
+            "categories": {
+                "tags": [9]
+            }
         }
     }
 }
