@@ -127,9 +127,9 @@
             "formatted_label": "Replay", 
             "description": "Bug/Glitch involves use of replay", 
             "tree-mapping": {
-                "th10": [ 1], 
-                "th11": [ 4], 
-                "th20": [11]  
+                "th10": [ 1    ], 
+                "th11": [ 4    ], 
+                "th20": [11, 14]  
             }
         }, 
         "11": {
@@ -260,6 +260,7 @@
         "practice_mode_no_bombs": {
             "th18": [ 4], 
             "th20": [13]  
-        }
+        }, 
+        "no_slowdown": { "th20": [14] }
     }
 }

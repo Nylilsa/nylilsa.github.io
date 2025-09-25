@@ -148,6 +148,7 @@
         "FgFvtztKFL": {"game": "th18", "date": "2025-09-19", "author": "Nylilsa", "name": "NyS4", "difficulty": "Lunatic", "shot": "Reimu", "version": "1.00a", "note": "This replay has no bomb display", "url": "th18_udFgFv.rpy"},
         
         "pYw9Lwc0Mi": {"game": "th20", "date": "2025-09-06", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Normal", "shot": "MarisaY2", "version": "1.00a", "note": "Stage 2 desyncs only if replay starts from Stage 2 (no result screen skip). Stage 3 always desyncs (has result screen skip)", "url": "th20_udpYw9.rpy"},
-        "I1Vp4uQyhH": {"game": "th20", "date": "2025-09-13", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Normal", "shot": "ReimuR2", "version": "1.00a", "note": "Stage 2 always desyncs regardless of how it is initialized.", "url": "th20_udI1Vp.rpy"}
+        "I1Vp4uQyhH": {"game": "th20", "date": "2025-09-13", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Normal", "shot": "ReimuR2", "version": "1.00a", "note": "Stage 2 always desyncs regardless of how it is initialized.", "url": "th20_udI1Vp.rpy"},
+        "4z8zzy4dQ2": {"game": "th20", "date": "2025-09-25", "author": "Nylilsa", "name": "Ny", "difficulty": "Lunatic", "shot": "ReimuR1", "version": "1.00a", "note": "Slowdown shows as -nan(ind)", "url": "th20_ud4z8z.rpy"}
     }
 }

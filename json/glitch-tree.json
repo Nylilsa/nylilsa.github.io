@@ -890,6 +890,15 @@
                 "tags": [12],
                 "related": "practice_mode_no_bombs"
             }
+        },
+        "14": {
+            "title": "-nan(ind) Slowdown",
+            "url-name": ["no-slowdown"],
+            "finished": false,
+            "categories": {
+                "tags": [10],
+                "related": "no_slowdown"
+            }
         }
     }
 }
