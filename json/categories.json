@@ -60,7 +60,10 @@
             "label": "audio", 
             "formatted_label": "Audio", 
             "description": "Bug/Glitch involves the game's audio", 
-            "tree-mapping": { "th06": [3] }
+            "tree-mapping": {
+                "th06": [ 3], 
+                "th20": [22]  
+            }
         }, 
         "5": {
             "label": "graphics", 
@@ -135,9 +138,9 @@
             "formatted_label": "Replay", 
             "description": "Bug/Glitch involves use of replay", 
             "tree-mapping": {
-                "th10": [ 1    ], 
-                "th11": [ 4    ], 
-                "th20": [11, 14]  
+                "th10": [ 1        ], 
+                "th11": [ 4        ], 
+                "th20": [11, 14, 22]  
             }
         }, 
         "11": {
