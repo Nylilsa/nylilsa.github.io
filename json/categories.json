@@ -80,12 +80,12 @@
             "formatted_label": "Frame-perfect", 
             "description": "Bug/Glitch is caused by game performing an action whose margin of error is a few frames", 
             "tree-mapping": {
-                "th06": [ 0        ], 
-                "th09": [ 0        ], 
-                "th14": [ 3,  4    ], 
-                "th17": [ 1,  2    ], 
-                "th19": [ 0        ], 
-                "th20": [15, 18, 20]  
+                "th06": [ 0            ], 
+                "th09": [ 0            ], 
+                "th14": [ 3,  4        ], 
+                "th17": [ 1,  2        ], 
+                "th19": [ 0            ], 
+                "th20": [15, 18, 20, 23]  
             }
         }, 
         "7": {
