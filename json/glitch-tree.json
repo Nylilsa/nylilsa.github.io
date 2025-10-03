@@ -958,8 +958,8 @@
             }
         },
         "22": {
-            "title": "Fast-Forwaring Music Not Working",
-            "url-name": ["fast-forward-music"],
+            "title": "Replay BGM Error",
+            "url-name": ["replay-bgm-error"],
             "finished": false,
             "categories": {
                 "tags": [4, 10]
