@@ -337,7 +337,8 @@
             "url-name": ["bullet-cap"],
             "finished": true,
             "categories": {
-                "tags": [8]
+                "tags": [8],
+                "related": "BulletEffectType-67108864"
             }
         },
         "2": {
@@ -710,11 +711,12 @@
     },
     "th185": {
         "0": {
-            "title": "N/A",
-            "url-name": ["not-available"],
-            "finished": false,
+            "title": "Tsukasa No Bullets",
+            "url-name": ["bullet-cap"],
+            "finished": true,
             "categories": {
-                "tags": [99]
+                "tags": [8],
+                "related": "BulletEffectType-67108864"
             }
         }
     },
