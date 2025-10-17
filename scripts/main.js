@@ -377,7 +377,7 @@ function setTheme(theme) {
 
 function initSidebarContent() {
     const colDecrease = -16;
-    initSidebarGlitches(colDecrease);
+    initSidebarGlitches();
     initSidebarThemes(colDecrease);
     initSidebarListeners();
     initSidebarVisibility();
@@ -449,7 +449,7 @@ function initSidebarThemes(colDecrease) {
     }
 }
 
-async function initSidebarGlitches(colDecrease) {
+async function initSidebarGlitches() {
     try {
         const data = await fetchData("json/glitch-tree.json");
         const identifiers = document.querySelectorAll("#page-bugs li ul");
@@ -461,16 +461,17 @@ async function initSidebarGlitches(colDecrease) {
             content.style.setProperty('--clr-game', `${colorHex(thnr)}`);
             child.childNodes[1].data = `${names1[thnr]["jp"]}～${names1[thnr]["en"]}`;
             for (let j = 0; j < Object.keys(data[thnr]).length; j++) {
+                const pageId = Object.keys(data[thnr])[j];
                 const li = document.createElement("li");
                 const div = document.createElement("div");
                 const a = document.createElement("a");
-                a.href = `#/bugs/${thnr}/${data[thnr][j]["url-name"][0]}`;
+                a.href = `#/bugs/${thnr}/${data[thnr][pageId]["url-name"][0]}`;
                 div.style.position = "relative";
-                if (!data[thnr][j]["finished"]) { // if page is unfinished
-                    a.innerText = `(WIP) ${data[thnr][j]['title']}`;
-                    // console.log(data[thnr][j]['title'])
+                if (!data[thnr][pageId]["finished"]) { // if page is unfinished
+                    a.innerText = `(WIP) ${data[thnr][pageId]['title']}`;
+                    // console.log(data[thnr][pageId]['title'])
                 } else {
-                    a.innerText = data[thnr][j]['title'];
+                    a.innerText = data[thnr][pageId]['title'];
                 }
                 div.appendChild(a);
                 li.appendChild(div);
