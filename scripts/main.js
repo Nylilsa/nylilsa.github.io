@@ -296,6 +296,7 @@ async function replaceEclIns(type, n, id) {
     const name = obj["Name"];
     const div = document.createElement('div');
     const el = document.querySelector(`#ecl-cite-${id}`);
+    console.log(el)
     el.dataset.tooltip = "true";
     div.innerHTML = getStringFromIns(obj, n);
     div.classList.add("tooltip");

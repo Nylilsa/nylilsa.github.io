@@ -248,6 +248,16 @@
             "Description": "While this flag is set, the bullet will be invisible and not have a hitbox. This flag is cleared once the delay timer ends.",
             "Type": "boolean"
         },
+        "7": {
+            "Name": "has_been_inbounds",
+            "Description": "This flag is set when the enemy has been within bounds. The default value is false.",
+            "Type": "boolean"
+        },
+        "8": {
+            "Name": "is_in_bounds",
+            "Description": "This flag is set when the enemy is currently within bounds. This flag is false if it is out of bounds.",
+            "Type": "boolean"
+        },
         "17": {
             "Name": "distortion",
             "Parameters": [

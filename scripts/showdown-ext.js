@@ -262,7 +262,7 @@ let ext = function() {
 		replace: function(match, content, n) {
             let id = eclJsonId++;
             replaceEclIns(content, n, id);
-            return `<code id="ecl-cite-${id}" class="mono dotted"></code>`;
+            return `<code id='ecl-cite-${id}' class='mono dotted'></code>`;
 		}
 	}
 
@@ -336,5 +336,5 @@ let ext = function() {
         regex: /\&lt\;/g,
         replace: '<',
     }
-	return [hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, ins, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt];
+	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt]; // prioritize elements that will be nested within
 }
