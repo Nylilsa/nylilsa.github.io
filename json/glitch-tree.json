@@ -41,6 +41,14 @@
             "categories": {
                 "tags": [8]
             }
+        },
+        "5": {
+            "title": "Bomb Despawning Enemies",
+            "url-name": ["bomb-despawning-enemies"],
+            "finished": true,
+            "categories": {
+                "tags": [1, 12]
+            }
         }
     },
     "th07": {

@@ -16,7 +16,7 @@
             "formatted_label": "Desync", 
             "description": "Bug/Glitch is caused by desync", 
             "tree-mapping": {
-                "th06": [1, 2], 
+                "th06": [1, 2, 5], 
                 "th07": [1], 
                 "th08": [0], 
                 "th10": [2, 4], 
@@ -166,7 +166,7 @@
             "formatted_label": "Bombs", 
             "description": "Bug/Glitch involves the use of bomb(s)", 
             "tree-mapping": {
-                "th06": [2       ], 
+                "th06": [2, 5    ], 
                 "th10": [4       ], 
                 "th11": [2, 7    ], 
                 "th12": [0       ], 
