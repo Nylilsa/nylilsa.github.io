@@ -3,16 +3,13 @@
 
 [hr_major]  
 
-Hello there, and thank you for checking out this little corner of the internet of mine !
+Hi there, my name is Nylilsa (formerly known as [a=/#/me/plus]Plus[/a]) and thank you for checking out this little corner of the internet of mine !
 
-The name is Nylilsa (formerly known as [a=/#/me/plus]Plus[/a], click to read more). I'm your average sleep-deprived college student with an inverted sleep schedule. (´｡• ᵕ •｡`)
-
-I like making stuff, which explains why this website exists. I quite like random stuff that aren't really related to each other, such as photography, music, literature, linguistics and programming.
+I like making stuff, which explains why this website exists. I quite like random stuff that aren't really related to each other, usually in the creative sector such as photography, music, literature, arts, linguistics, etc. just to name a few.
 
 On top of this, I like playing games the unconventional way and exploring its limits. More specifically, I enjoy glitch hunting as it is just super interesting to see how badly you can break games. On top of this, I love the thought of TASing Touhou one day as TASes are very satisfying to watch (major thanks to [a=https://www.youtube.com/user/YouveBeenPlushed/]Plush[/a] and [a=https://www.youtube.com/user/pannenkeok2012]pannenkoek2012[/a]). I've lurked around in several communities before (few decent, most atrocious) but I do mostly feel welcome here !
 
-All Touhou games are quite fun, but in particular I enjoy the ones that have the most interesting mechanics in them (thanks to a special someone, you know who you are). Especially games that can be speedrun that does not only use bombs on bosses are the ones that are the most fun to play for me.
-There's a few games that I do love to score as well, which is usually in games where the runs are done quickly.
+All Touhou games are quite fun, but in particular I enjoy the ones that have the most interesting mechanics in them (thanks to a special someone, you know who you are). Especially games that can be speedrun that does not only use bombs on bosses are the ones that are the most fun to play for me. There's a few games that I do love to score as well, which is usually in games where the runs are done quickly.
 
 Also, I may not be that good of a player so don't expect too much. I only play because I enjoy the things I do !
 

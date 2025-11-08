@@ -109,7 +109,7 @@ let ext = function() {
 	let discord = {
 		type: "lang",
 		regex: /\[discord\]/g,
-		replace: "``Nylilsa#9310``"
+		replace: "``nylilsa`` (note: temporarily unavailable)"
 	}
 
 	let specs = {
