@@ -231,6 +231,14 @@
             "categories": {
                 "tags": []
             }
+        },
+        "9": {
+            "title": "Extra Leaderboard Crash",
+            "url-name": ["extra-leaderboard"],
+            "finished": false,
+            "categories": {
+                "tags": [0, 9, 16]
+            }
         }
     },
     "th12": {

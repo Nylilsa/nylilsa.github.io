@@ -5,6 +5,7 @@
             "formatted_label": "Crash", 
             "description": "Bug/Glitch is a crash or can occasionally crash", 
             "tree-mapping": {
+                "th11": [9   ], 
                 "th14": [5   ], 
                 "th16": [2   ], 
                 "th18": [1, 6], 
@@ -128,6 +129,7 @@
                 "th07": [1], 
                 "th08": [0], 
                 "th09": [0], 
+                "th11": [9], 
                 "th17": [5], 
                 "th20": [
                      8, 11, 12, 16, 18, 19, 20, 21
@@ -224,7 +226,8 @@
         "16": {
             "label": "continues", 
             "formatted_label": "Continue", 
-            "description": "Bug/Glitch involves using continues"
+            "description": "Bug/Glitch involves using continues", 
+            "tree-mapping": { "th11": [9] }
         }, 
         "17": {
             "label": "race-condition", 
