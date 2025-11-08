@@ -1,6 +1,6 @@
 "use strict";
 
-let isEclListenedAdded = false;
+let isEclListenerAdded = false;
 let eclJson = null;
 let figureId = 0;
 let eclJsonId = 0;
@@ -276,8 +276,8 @@ function checkElementResize(self) {
 }
 
 async function replaceEclIns(type, n, id) {
-    if (!isEclListenedAdded) {
-        isEclListenedAdded = true;
+    if (!isEclListenerAdded) {
+        isEclListenerAdded = true;
         document.body.addEventListener("mouseover", (event) => {
             const visible = document.querySelectorAll(".visible");
             let [tip, targ] = getTip(event.target, "tooltip");
@@ -296,7 +296,6 @@ async function replaceEclIns(type, n, id) {
     const name = obj["Name"];
     const div = document.createElement('div');
     const el = document.querySelector(`#ecl-cite-${id}`);
-    console.log(el)
     el.dataset.tooltip = "true";
     div.innerHTML = getStringFromIns(obj, n);
     div.classList.add("tooltip");
@@ -429,7 +428,6 @@ function initSidebarListeners() {
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
             const leftSidebar = document.getElementById('sidebar-left');
-            console.log(leftSidebar.scrollTop);
             localStorage.setItem('sidebarScroll', leftSidebar.scrollTop);
         }, 250);
     })
@@ -470,7 +468,6 @@ async function initSidebarGlitches() {
                 div.style.position = "relative";
                 if (!data[thnr][pageId]["finished"]) { // if page is unfinished
                     a.innerText = `(WIP) ${data[thnr][pageId]['title']}`;
-                    // console.log(data[thnr][pageId]['title'])
                 } else {
                     a.innerText = data[thnr][pageId]['title'];
                 }
