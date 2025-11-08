@@ -239,6 +239,14 @@
             "categories": {
                 "tags": [0, 9, 16]
             }
+        },
+        "10": {
+            "title": "999.99s Spell Timer",
+            "url-name": ["999s-spell-timer"],
+            "finished": false,
+            "categories": {
+                "tags": [2, 5]
+            }
         }
     },
     "th12": {

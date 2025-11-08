@@ -40,7 +40,7 @@
             "description": "Bug/Glitch is caused due to typo", 
             "tree-mapping": {
                 "th10": [ 0    ], 
-                "th11": [ 1    ], 
+                "th11": [ 1, 10], 
                 "th17": [ 0    ], 
                 "th19": [ 1    ], 
                 "th20": [19, 21]  
@@ -71,9 +71,10 @@
             "formatted_label": "Graphics", 
             "description": "Bug/Glitch involves a wrong sprite/graphic", 
             "tree-mapping": {
-                "th13": [1                ], 
-                "th15": [1                ], 
-                "th20": [7, 10, 17, 18, 20]  
+                "th11": [10                ], 
+                "th13": [ 1                ], 
+                "th15": [ 1                ], 
+                "th20": [ 7, 10, 17, 18, 20]  
             }
         }, 
         "6": {
