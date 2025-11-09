@@ -51,10 +51,11 @@
             "formatted_label": "Uninitialized", 
             "description": "Bug/Glitch involves uninitialized variable", 
             "tree-mapping": {
-                "th11" : [5    ], 
-                "th125": [0    ], 
-                "th14" : [2    ], 
-                "th20" : [6, 17]  
+                "th11" : [ 5    ], 
+                "th125": [ 0    ], 
+                "th14" : [ 2    ], 
+                "th18" : [10    ], 
+                "th20" : [ 6, 17]  
             }
         }, 
         "4": {
@@ -105,20 +106,20 @@
             "href": "https://priw8.github.io/#b=ecl-tutorial/&p=1", 
             "description": "Bug/Glitch involves an enemy's attributes", 
             "tree-mapping": {
-                "th06" : [0, 4      ], 
-                "th08" : [2         ], 
-                "th10" : [3         ], 
-                "th11" : [0, 2      ], 
-                "th125": [0         ], 
-                "th13" : [0, 3      ], 
-                "th14" : [1, 8      ], 
-                "th143": [1         ], 
-                "th15" : [0, 2, 3   ], 
-                "th16" : [1, 3, 4, 5], 
-                "th17" : [7, 8      ], 
-                "th18" : [1, 7, 8   ], 
-                "th185": [0         ], 
-                "th20" : [2         ]  
+                "th06" : [0, 4       ], 
+                "th08" : [2          ], 
+                "th10" : [3          ], 
+                "th11" : [0, 2       ], 
+                "th125": [0          ], 
+                "th13" : [0, 3       ], 
+                "th14" : [1, 8       ], 
+                "th143": [1          ], 
+                "th15" : [0, 2, 3    ], 
+                "th16" : [1, 3, 4,  5], 
+                "th17" : [7, 8       ], 
+                "th18" : [1, 7, 8, 10], 
+                "th185": [0          ], 
+                "th20" : [2          ]  
             }
         }, 
         "9": {

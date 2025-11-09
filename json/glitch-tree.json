@@ -757,6 +757,14 @@
                 "tags": [11],
                 "related": "long_timer_desync"
             }
+        },
+        "10": {
+            "title": "Shield Method of the Youkai Laser Misalignment",
+            "url-name": ["momoyo-spell-6"],
+            "finished": true,
+            "categories": {
+                "tags": [3, 8]
+            }
         }
     },
     "th185": {
