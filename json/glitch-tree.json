@@ -761,9 +761,26 @@
         "10": {
             "title": "Shield Method of the Youkai Laser Misalignment",
             "url-name": ["momoyo-spell-6"],
-            "finished": true,
+            "finished": false,
             "categories": {
                 "tags": [3, 8]
+            }
+        },
+        "11": {
+            "title": "Shop Manipulation",
+            "url-name": ["shop-manipulation"],
+            "finished": false,
+            "categories": {
+                "tags": [9]
+            }
+        },
+        "12": {
+            "title": "Incorrect Playtime",
+            "url-name": ["incorrect-playtime"],
+            "finished": false,
+            "categories": {
+                "tags": [],
+                "related": "incorrect_playtime"
             }
         }
     },
