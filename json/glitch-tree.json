@@ -247,6 +247,14 @@
             "categories": {
                 "tags": [2, 5]
             }
+        },
+        "11": {
+            "title": "Stage Transition Death Crash",
+            "url-name": ["stage-transition-crash"],
+            "finished": false,
+            "categories": {
+                "tags": [0, 14, 17]
+            }
         }
     },
     "th12": {

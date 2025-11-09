@@ -5,11 +5,11 @@
             "formatted_label": "Crash", 
             "description": "Bug/Glitch is a crash or can occasionally crash", 
             "tree-mapping": {
-                "th11": [9   ], 
-                "th14": [5   ], 
-                "th16": [2   ], 
-                "th18": [1, 6], 
-                "th19": [4, 6]  
+                "th11": [9, 11], 
+                "th14": [5    ], 
+                "th16": [2    ], 
+                "th18": [1,  6], 
+                "th19": [4,  6]  
             }
         }, 
         "1": {
@@ -200,14 +200,14 @@
             "formatted_label": "Stage transition", 
             "description": "Bug/Glitch involves a stage transition", 
             "tree-mapping": {
-                "th10": [2, 4             ], 
-                "th11": [3, 4, 6, 7       ], 
-                "th12": [4                ], 
-                "th13": [4                ], 
-                "th15": [4                ], 
-                "th17": [4, 6             ], 
-                "th18": [2                ], 
-                "th20": [3, 4, 5, 8, 9, 15]  
+                "th10": [2, 4              ], 
+                "th11": [3, 4, 6, 7, 11    ], 
+                "th12": [4                 ], 
+                "th13": [4                 ], 
+                "th15": [4                 ], 
+                "th17": [4, 6              ], 
+                "th18": [2                 ], 
+                "th20": [3, 4, 5, 8,  9, 15]  
             }
         }, 
         "15": {
@@ -235,11 +235,12 @@
             "formatted_label": "Simultaneous events", 
             "description": "Bug/Glitch happens when two or more events take place at the same time", 
             "tree-mapping": {
-                "th08": [1            ], 
-                "th17": [3            ], 
-                "th18": [3,  5,  6    ], 
-                "th19": [3            ], 
-                "th20": [9, 12, 18, 20]  
+                "th08": [ 1            ], 
+                "th11": [11            ], 
+                "th17": [ 3            ], 
+                "th18": [ 3,  5,  6    ], 
+                "th19": [ 3            ], 
+                "th20": [ 9, 12, 18, 20]  
             }
         }, 
         "99": {
