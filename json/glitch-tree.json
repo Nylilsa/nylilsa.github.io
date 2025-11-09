@@ -522,7 +522,8 @@
             "url-name": ["bugged-shottypes"],
             "finished": true,
             "categories": {
-                "tags": [11]
+                "tags": [11],
+                "related": "long_timer_desync"
             }
         },
         "1": {
@@ -746,6 +747,15 @@
             "categories": {
                 "tags": [8, 12],
                 "related": "ex_final_bomb_dmg"
+            }
+        },
+        "9": {
+            "title": "(Sub-)shottypes Not Functioning",
+            "url-name": ["bugged-shottypes"],
+            "finished": true,
+            "categories": {
+                "tags": [11],
+                "related": "long_timer_desync"
             }
         }
     },
