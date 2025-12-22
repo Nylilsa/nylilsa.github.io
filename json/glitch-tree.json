@@ -247,6 +247,14 @@
             "categories": {
                 "tags": [2, 5]
             }
+        },
+        "11": {
+            "title": "Stage Transition Death Crash",
+            "url-name": ["stage-transition-crash"],
+            "finished": false,
+            "categories": {
+                "tags": [0, 14, 17]
+            }
         }
     },
     "th12": {
@@ -514,7 +522,8 @@
             "url-name": ["bugged-shottypes"],
             "finished": true,
             "categories": {
-                "tags": [11]
+                "tags": [11],
+                "related": "long_timer_desync"
             }
         },
         "1": {
@@ -738,6 +747,40 @@
             "categories": {
                 "tags": [8, 12],
                 "related": "ex_final_bomb_dmg"
+            }
+        },
+        "9": {
+            "title": "(Sub-)shottypes Not Functioning",
+            "url-name": ["bugged-shottypes"],
+            "finished": true,
+            "categories": {
+                "tags": [11],
+                "related": "long_timer_desync"
+            }
+        },
+        "10": {
+            "title": "Shield Method of the Youkai Laser Misalignment",
+            "url-name": ["momoyo-spell-6"],
+            "finished": false,
+            "categories": {
+                "tags": [3, 8]
+            }
+        },
+        "11": {
+            "title": "Shop Manipulation",
+            "url-name": ["shop-manipulation"],
+            "finished": false,
+            "categories": {
+                "tags": [9]
+            }
+        },
+        "12": {
+            "title": "Incorrect Playtime",
+            "url-name": ["incorrect-playtime"],
+            "finished": false,
+            "categories": {
+                "tags": [],
+                "related": "incorrect_playtime"
             }
         }
     },
