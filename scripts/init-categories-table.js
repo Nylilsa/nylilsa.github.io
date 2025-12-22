@@ -17,50 +17,32 @@ function buildTable(game, index, TREE, CATEGORIES) {
 
     const tableId = document.getElementById("bugsCategoriesTable");
     const table = document.createElement('table');
-    // head
-    const thead = document.createElement('thead');
-    thead.appendChild(buildTitle(game, currentPage));
-    table.appendChild(thead);
 
     // Body rows
-    const tbody = document.createElement("tbody");
     const thSameGame = buildRowSameGame(game, TREE[game], index)
-    tbody.appendChild(thSameGame);
+    table.appendChild(thSameGame);
 
     tagList.forEach(tag => {
         const thSameCategoryRows = buildRowCategory(game, index, TREE, CATEGORIES["tags"][tag]);
-        thSameCategoryRows.forEach((row) => {
-            tbody.appendChild(row);
-        })
+        table.appendChild(thSameCategoryRows)
     });
 
     if (currentPage.categories.related) {
         const thRelatedRows = buildRowRelated(game, index, TREE, CATEGORIES["related"], currentPage.categories.related);
-        thRelatedRows.forEach((row) => {
-            tbody.appendChild(row);
-        })
+        table.appendChild(thRelatedRows)
     }
 
-    table.appendChild(tbody);
     tableId.appendChild(table);
 }
 
-function buildTitle(game, currentPage) {
-    const tr = document.createElement('tr');
-    const th = document.createElement('th');
-    th.textContent = `${names1[game]["en"]}: ${currentPage.title}`;
-    th.colSpan = 3;
-    tr.appendChild(th);
-    return tr;
-}
-
 function buildRowSameGame(game, gameBugs, selectedIndex) {
+    const tbody = document.createElement('tbody');
     const tr = document.createElement('tr');
     const th = document.createElement('th');
     const td = document.createElement('td');
     td.style.paddingBottom = "1em";
     td.colSpan = 2;
-    th.style.width = "11.36%";
+    th.colSpan = 2;
     th.textContent = `All ${names1[game]["en"]} pages:`;
 
     Object.keys(gameBugs).forEach((index) => {
@@ -85,11 +67,13 @@ function buildRowSameGame(game, gameBugs, selectedIndex) {
     })
     tr.appendChild(th);
     tr.appendChild(td);
-    return tr;
+    tbody.appendChild(th);
+    tbody.appendChild(tr);
+    return tbody;
 }
 
 function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
-    const elements = [];
+    const tbody = document.createElement('tbody');
     const thFirst = document.createElement('tr');
     const th = document.createElement('th');
     if (categories["href"]) {
@@ -97,9 +81,10 @@ function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
     } else {
         th.innerHTML = `All <span class="highlight-txt">${categories["formatted_label"]}-related</span> pages:`;
     }
-    th.rowSpan = Object.keys(categories["tree-mapping"]).length + 1;
+    th.colSpan = 2;
+    thFirst.colSpan = 2;
     thFirst.appendChild(th);
-    elements.push(thFirst);
+    tbody.appendChild(thFirst);
 
     Object.keys(categories["tree-mapping"]).forEach(game => {
         const tr = document.createElement('tr');
@@ -129,21 +114,19 @@ function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
             tr.appendChild(gameCell);
             tr.appendChild(td);
         })
-        elements.push(tr);
+        tbody.appendChild(tr);
     });
-
-
-    return elements;
+    return tbody;
 }
 
 function buildRowRelated(selectedGame, selectedIndex, TREE, categories, id) {
-    const elements = [];
+    const tbody = document.createElement('tbody');
     const thFirst = document.createElement('tr');
     const th = document.createElement('th');
     th.innerHTML = `Bugs with similar cause:`;
-    th.rowSpan = Object.keys(categories[id]).length + 1;
+    th.colSpan = 2;
     thFirst.appendChild(th);
-    elements.push(thFirst);
+    tbody.appendChild(thFirst);
 
     Object.keys(categories[id]).forEach(game => {
         const tr = document.createElement('tr');
@@ -173,9 +156,7 @@ function buildRowRelated(selectedGame, selectedIndex, TREE, categories, id) {
             tr.appendChild(gameCell);
             tr.appendChild(td);
         })
-        elements.push(tr);
+        tbody.appendChild(tr);
     });
-
-
-    return elements;
+    return tbody;
 }
