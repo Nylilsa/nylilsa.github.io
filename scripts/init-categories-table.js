@@ -74,14 +74,8 @@ function buildRowSameGame(game, gameBugs, selectedIndex) {
 
 function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
     const tbody = document.createElement('tbody');
-    const tbody2 = document.createElement('tbody');
     const th = document.createElement('th');
-    const tr = document.createElement('tr');
-    const td = document.createElement('td');
-    const table = document.createElement('table');
-    td.style.paddingInline = "0px";
-    td.style.borderWidth = "0px";
-    table.style.width = "100%";
+    const rows = [];
     let text;
     if (categories["href"]) {
         text = `All <a class="url" target="_blank" href="${categories["href"]}">${categories["formatted_label"]}-related</a> pages:`;
@@ -91,7 +85,6 @@ function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
     const thChild = buildToggleableHeader({ targetQuery: `.${categories["class_name"]}`, titleName: text, showDefault: false })
     th.colSpan = 2;
     th.appendChild(thChild);
-    tr.classList.add(categories["class_name"]);
     tbody.appendChild(th);
 
     Object.keys(categories["tree-mapping"]).forEach(game => {
@@ -122,13 +115,11 @@ function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
             tr.appendChild(gameCell);
             tr.appendChild(td);
         })
-        tbody2.appendChild(tr)
+        rows.push(tr);
     });
-    // div.appendChild(table);
-    table.appendChild(tbody2);
-    td.appendChild(table);
-    tr.appendChild(td)
-    tbody.appendChild(tr);
+    const table = buildSubTable(rows);
+    const wrapperTr = buildSubTableWrapper(table, { colspan: 2, tdStyle: 'padding-inline:0px; border-width:0px;', trClass: categories["class_name"] });
+    tbody.appendChild(wrapperTr);
     return tbody;
 }
 
@@ -136,10 +127,14 @@ function buildRowRelated(selectedGame, selectedIndex, TREE, categories, id) {
     const tbody = document.createElement('tbody');
     const thFirst = document.createElement('tr');
     const th = document.createElement('th');
-    th.innerHTML = `Bugs with similar cause:`;
+    const rows = [];
+    const text = `Bugs with similar cause:`;
     th.colSpan = 2;
-    thFirst.appendChild(th);
-    tbody.appendChild(thFirst);
+    const thChild = buildToggleableHeader({ targetQuery: `.${id}`, titleName: text, showDefault: false })
+    th.appendChild(thChild);
+    tbody.appendChild(th);
+    // thFirst.appendChild(th);
+    // tbody.appendChild(thFirst);
 
     Object.keys(categories[id]).forEach(game => {
         const tr = document.createElement('tr');
@@ -169,8 +164,12 @@ function buildRowRelated(selectedGame, selectedIndex, TREE, categories, id) {
             tr.appendChild(gameCell);
             tr.appendChild(td);
         })
-        tbody.appendChild(tr);
+        // tbody.appendChild(tr);
+        rows.push(tr);
     });
+    const table = buildSubTable(rows);
+    const wrapperTr = buildSubTableWrapper(table, { colspan: 2, tdStyle: 'padding-inline:0px; border-width:0px;', trClass: id });
+    tbody.appendChild(wrapperTr);
     return tbody;
 }
 
@@ -233,4 +232,32 @@ function buildToggleableHeader({
     parent.appendChild(span);
     parent.appendChild(button);
     return parent;
+}
+
+// this function creates a table with structure: tr > td > "table > tbody > n * tr for nested tables" (only part between the "")
+function buildSubTable(rows = [], { tableClass = '', tbodyClass = '' } = {}) {
+    const table = document.createElement('table');
+    const tbody = document.createElement('tbody');
+    if (tableClass) table.className = tableClass;
+    if (tbodyClass) tbody.className = tbodyClass;
+    table.style.width = '100%';
+    rows.forEach(row => tbody.appendChild(row));
+    table.appendChild(tbody);
+    return table;
+}
+
+// this function creates a table with structure: "tr > td" > table > tbody > n * tr for nested tables (only part between the "")
+function buildSubTableWrapper(table, opts = {}) {
+    const { colspan = 1, tdClass, tdStyle, trClass, trStyle } = opts;
+    const wrapperTr = document.createElement('tr');
+    const wrapperTd = document.createElement('td');
+    wrapperTd.colSpan = colspan;
+    if (trClass) wrapperTr.className = trClass;
+    if (tdClass) wrapperTd.className = tdClass;
+    if (trStyle) wrapperTr.style.cssText = trStyle;
+    if (tdStyle) wrapperTd.style.cssText = tdStyle;
+
+    wrapperTd.appendChild(table);
+    wrapperTr.appendChild(wrapperTd);
+    return wrapperTr;
 }
