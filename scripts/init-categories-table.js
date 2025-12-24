@@ -17,6 +17,7 @@ function buildTable(game, index, TREE, CATEGORIES) {
 
     const tableId = document.getElementById("bugsCategoriesTable");
     const table = document.createElement('table');
+    table.style.width = "100%";
 
     // Body rows
     const thSameGame = buildRowSameGame(game, TREE[game], index)
@@ -40,7 +41,8 @@ function buildRowSameGame(game, gameBugs, selectedIndex) {
     const tr = document.createElement('tr');
     const th = document.createElement('th');
     const td = document.createElement('td');
-    const thChild = buildToggleableHeader({ targetQuery: "td", titleName: `All ${names1[game]["en"]} pages:` })
+    const thChild = buildToggleableHeader({ targetQuery: ".categories-same-game", titleName: `All ${names1[game]["en"]} pages:` })
+    td.classList.add("categories-same-game")
     td.style.paddingBottom = "1em";
     td.colSpan = 2;
     th.colSpan = 2;
