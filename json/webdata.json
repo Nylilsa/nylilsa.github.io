@@ -113,6 +113,7 @@
         "7P22Jzm9LV": {"game": "th06", "date": "2025-06-01", "author": "kana0603", "name": "reimuB", "difficulty": "Lunatic", "shot": "ReimuB", "version": "1.02h", "note": "Despawned Stage 6 ring fairies with a bomb", "url": "th6_ud7P22.rpy"},
         "GZ12OloxGT": {"game": "th06", "date": "2025-06-01", "author": "kana0603", "name": "marisaA", "difficulty": "Lunatic", "shot": "MarisaA", "version": "1.02h", "note": "Despawned Stage 6 ring fairies with a bomb", "url": "th6_udGZ12.rpy"},
         "dPL45Vne0f": {"game": "th06", "date": "2025-11-08", "author": "kana0603", "name": "marisaB", "difficulty": "Lunatic", "shot": "MarisaB", "version": "1.02h", "note": "Despawned Stage 6 ring fairies with a bomb", "url": "th6_uddPL4.rpy"},
+        "6aLI1vMJ2e": {"game": "th06", "date": "2026-01-26", "author": "kana0603", "name": "Laser", "difficulty": "Extra", "shot": "ReimuB", "version": "1.02h", "note": "Flandre's 8th spell laser death", "url": "th6_ud6aLI.rpy"},
     
         "6QslRdYpws": {"game": "th07", "date": "2020-09-13", "author": "ゆっきー", "name": "AAAAAAAA", "difficulty": "Easy", "shot": "SakuyaA", "version": "1.00b", "note": "Merlin final spell-card glitch - chance is 1/1720",  "url": "th7_ud6Qsl.rpy"},
         "PLv0zArCHT": {"game": "th07", "date": "2020-07-20", "author": "Plus", "name": "+", "difficulty": "Normal", "shot": "SakuyaB", "version": "1.00b", "note": "Merlin post-boss glitch - chance is 1/49", "url": "th7_udPLv0.rpy"},
