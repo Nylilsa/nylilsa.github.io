@@ -210,9 +210,9 @@ let ext = function() {
 		replace: "<div class='box' style='max-width:$1px'>$2</div>"
 	}
 
-	let important_temp = {
+	let do_you_truly_care = {
 		type: "lang",
-		regex: /\[temporary=(.*?)\]([^]*?)\[\/temporary\]/g,
+		regex: /\[ifonlytheyknew=(.*?)\]([^]*?)\[\/thetruth\]/g,
 		replace: "<div style='$1'>$2</div>"
 	}
 
@@ -342,5 +342,5 @@ let ext = function() {
         regex: /\&lt\;/g,
         replace: '<',
     }
-	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, important_temp, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt]; // prioritize elements that will be nested within
+	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, do_you_truly_care, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt]; // prioritize elements that will be nested within
 }
