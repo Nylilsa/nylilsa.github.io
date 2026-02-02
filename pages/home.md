@@ -1,3 +1,18 @@
+[temporary=font-size: 1.25em;border-left-width: 1.5em;border-color: var(--clr-hr-major);border-style: solid;border-width: 1px 1px 1px 0.4em;padding-left: 0.4em;padding-right: 0.2em;padding-block: 0.1em;background-color: var(--clr-background-element);]
+Hi everyone, <br><br>
+
+Some people are wondering about my whereabouts, but do not worry about it, it was a temporary hiatus (a [hl2]hibernation[/hl2] if you can call it like that). I've been dealing with some [hl2]personal issues and difficulties[/hl2] that have mostly been resolved now. Regardless, I would like to announce some exciting news ! <br><br>
+
+This site initially started of small, but over the course of a few years it has grown steadily. I have been working a roadmap that will bring this site to the next level: <br> 
+
+1. [hl2]Updated WR History[/hl2] - Mostly on backend to make it more robust, but also partly QoL features on the front-end. <br>
+2. More pages - Currently, there are very few pages describing bugs; the idea is to vastly increase this number. <br>
+3. Get a [hl2]custom domain[/hl2] - Instead of hosting on GitHub it would be hosted on a custom domain ! <br><br>
+
+(i don't know what to add here yet, i will think about it)
+
+[/temporary]
+
 [title=Nylilsa's GitHub page]
 # Nylilsa's GitHub page
 
