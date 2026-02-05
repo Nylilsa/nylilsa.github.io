@@ -53,7 +53,7 @@
         "6": {
             "title": "Laser Midpoint Bug",
             "url-name": ["laser-midpoint"],
-            "finished": false,
+            "finished": true,
             "categories": {
                 "tags": [8]
             }
