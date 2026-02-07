@@ -13,7 +13,7 @@
         {
             "label": "auto-generate-style-css",
             "type": "shell",
-            "command": "npx chokidar 'css/style.scss' -c 'npx node-sass css/style.scss css/style.css'",
+            "command": "npx chokidar 'css/style.scss' -c 'npx sass css/style.scss css/style.css --no-source-map",
             "isBackground": true,
             "runOptions": {
                 "runOn": "folderOpen"

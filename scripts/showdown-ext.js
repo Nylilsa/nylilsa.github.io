@@ -212,7 +212,7 @@ let ext = function() {
 
 	let do_you_truly_care = {
 		type: "lang",
-		regex: /\[ifonlytheyknew=(.*?)\]([^]*?)\[\/thetruth\]/g,
+		regex: /\[ifonlytheyknew=(.*?)\]([^]*?)\[\/4QXCPuwBz2E\]/g,
 		replace: "<div style='$1'>$2</div>"
 	}
 

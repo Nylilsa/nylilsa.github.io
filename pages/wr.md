@@ -2,6 +2,15 @@
 # WR History Progression
 [hr_major]  
 
+[ifonlytheyknew=font-size: 1.25em;border-left-width: 1.5em;border-color: var(--clr-hr-major);border-style: solid;border-width: 1px 1px 1px 0.4em;padding-left: 0.4em;padding-right: 0.2em;padding-block: 0.1em;background-color: var(--clr-background-element);margin-bottom:1em;]
+Hi everyone, <br><br>
+
+This WR History page has not been updated since September 2025, and I am well-aware of it. I have been in the process of making big changes to the backend of this. Please bear in mind this is mainly done by one individual who also has their own things going on. <br><br>
+
+For inquiries regarding this webpage, please contact me (see home page). I really appreciate all the support and positive comments I've received, thank you everyone for who has supported my site and I <3
+
+[/4QXCPuwBz2E]
+
 
 A comprehensive Touhou world records tracker, updated every so often. This page includes an interactive graph and a table of your selected game. For best viewing experience I recommend viewing this on [hl2]desktop[/hl2]. A few columns are [hl2]hidden[/hl2] in the table due to the small width of mobile.
 
