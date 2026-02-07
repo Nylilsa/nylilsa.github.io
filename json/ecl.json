@@ -34,6 +34,13 @@
             ],
             "Description": "In $3 frames using <a class=\"url\" target=\"_blank\"href=\"https://exphp.github.io/thpages/#/anm/interpolation\">mode</a> $4, variable $2 changes from $5 to $6. $1 is used to set the slot to be used by this ins, every enemy has 8 slots."
         },
+        "115": {
+            "Name": "timer_callback_threshold",
+            "Parameters": [
+                {"time": "int"}
+            ],
+            "Description": "Calls the callback function timer_callback_sub after $1 frames have passed."
+        },
         "300": {
             "Name": "enmCreate",
             "Parameters": [
@@ -264,6 +271,11 @@
                 {"a": "int"}
             ],
             "Description": "Triggers distortion effects on the edge of the screen. The meaning of the argument is not entirely clear. SA uses a value of 1 to create distortion at the bottom of the screen, while UFO uses this same value to create distortion at the top."
+        },
+        "10022": {
+            "Name": "SELF_TIME",
+            "Description": "Integer value that increases by 1 every in-game tick. This value is used by bosses and by functions such as timer_callback_threshold.",
+            "Type": "integer"
         },
         "270": {
             "Name": "enmCreate270",

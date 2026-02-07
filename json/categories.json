@@ -116,7 +116,7 @@
             "href": "https://priw8.github.io/#b=ecl-tutorial/&p=1", 
             "description": "Bug/Glitch involves an enemy's attributes", 
             "tree-mapping": {
-                "th06" : [0, 4, 6    ], 
+                "th06" : [0, 4, 6,  7], 
                 "th08" : [2          ], 
                 "th10" : [3          ], 
                 "th11" : [0, 2       ], 
