@@ -90,7 +90,7 @@
             "class_name": "categories-frame-perfect", 
             "description": "Bug/Glitch is caused by game performing an action whose margin of error is a few frames", 
             "tree-mapping": {
-                "th06": [ 0            ], 
+                "th06": [ 0,  8        ], 
                 "th08": [ 3            ], 
                 "th09": [ 0            ], 
                 "th14": [ 3,  4        ], 
@@ -167,7 +167,7 @@
             "class_name": "categories-shottype", 
             "description": "Bug/Glitch involves specific (attributes of a) shottype(s)", 
             "tree-mapping": {
-                "th06": [3                ], 
+                "th06": [3, 8             ], 
                 "th10": [0                ], 
                 "th11": [1, 3, 5, 7       ], 
                 "th12": [0, 2             ], 
