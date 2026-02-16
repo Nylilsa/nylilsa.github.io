@@ -117,6 +117,7 @@
             "description": "Bug/Glitch involves an enemy's attributes", 
             "tree-mapping": {
                 "th06" : [0, 4, 6,  7], 
+                "th07" : [2          ], 
                 "th08" : [2          ], 
                 "th10" : [3          ], 
                 "th11" : [0, 2       ], 
@@ -277,6 +278,10 @@
             "th06": [1, 2], 
             "th07": [1   ], 
             "th08": [0   ]  
+        }, 
+        "laser_midpoint": {
+            "th06": [6], 
+            "th07": [2]  
         }, 
         "slowdown_item_dupe": {
             "th12": [3], 
