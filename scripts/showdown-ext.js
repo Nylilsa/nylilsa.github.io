@@ -109,7 +109,7 @@ let ext = function() {
 	let discord = {
 		type: "lang",
 		regex: /\[discord\]/g,
-		replace: "``nylilsa`` ``(note: temporarily unreachable until at least 2026/02/18)``"
+		replace: "``nylilsa``"
 	}
 
 	let specs = {
@@ -210,9 +210,9 @@ let ext = function() {
 		replace: "<div class='box' style='max-width:$1px'>$2</div>"
 	}
 
-	let do_you_truly_care = {
+	let you_thief = {
 		type: "lang",
-		regex: /\[ifonlytheyknew=(.*?)\]([^]*?)\[\/4QXCPuwBz2E\]/g,
+		regex: /\[thereweresigns=(.*?)\]([^]*?)\[\/butyouignoredthem\]/g,
 		replace: "<div style='$1'>$2</div>"
 	}
 
@@ -342,5 +342,5 @@ let ext = function() {
         regex: /\&lt\;/g,
         replace: '<',
     }
-	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, do_you_truly_care, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt]; // prioritize elements that will be nested within
+	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt]; // prioritize elements that will be nested within
 }
