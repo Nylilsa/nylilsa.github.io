@@ -63,7 +63,6 @@ function contributorsFunction(check) {
             "RB": { "name": "icterine", "help": "PCB categories", "url": "https://www.twitch.tv/icterine_" },
             "KC": { "name": "KirbyComment", "help": "PC-98 games all categories, HSiFS all categories", "url": "https://www.youtube.com/channel/UCVZ07KKLFIJp4bNGgjNLsIw" },
             "Le": { "name": "Levea", "help": "IN Lunatic", "url": "https://twitter.com/Levea18/" },
-            "MH": { "name": "Maribel Hearn", "help": "Royalflare Archive and the WR page", "url": "https://maribelhearn.com/" },
             "mo": { "name": "morth", "help": "TD Extra", "url": "https://www.youtube.com/channel/UCpURmfyYBzoLJJLa3DDvY8g" },
             "LE": { "name": "pingval", "help": "EoSD, PCB, IN and PoFV", "url": "https://twitter.com/pingval" },
             "pe": { "name": "Rivers", "help": "IN Lunatic", "url": "https://www.twitch.tv/rivers_th08" },

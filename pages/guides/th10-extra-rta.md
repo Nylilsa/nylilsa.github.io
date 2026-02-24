@@ -195,7 +195,7 @@ It's quite hard to do this strategy, especially when combined with the doppler-e
 [hr_major]
 
 [a=https://livesplit.org/downloads/]livesplit[/a] - Used for keeping track of your time.
-[a=https://maribelhearn.com/tools#vpatch]vpatch[/a] - Used for setting your own custom screen resolution when playing on non-full-screen mode.
+[a=https://en.touhouwiki.net/wiki/Game_Tools_and_Modifications#Vsync_Patches]vpatch[/a] - Used for setting your own custom screen resolution when playing on non-full-screen mode.
 [a=hhttps://github.com/ack7139/thprac/releases]thprac[/a] - Great Practice tool that allows you to warp to certain stage sections and to set your power. 
 
 

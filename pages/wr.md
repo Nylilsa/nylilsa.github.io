@@ -15,12 +15,11 @@ For inquiries regarding this webpage, please contact me (see home page). I reall
 A comprehensive Touhou world records tracker, updated every so often. This page includes an interactive graph and a table of your selected game. For best viewing experience I recommend viewing this on [hl2]desktop[/hl2]. A few columns are [hl2]hidden[/hl2] in the table due to the small width of mobile.
 
 [hl2]This is not a scoreboard[/hl2], but this page has [hl2]replay support[/hl2] for the WR entries ! If you are looking for more replays that are not WR entries, you could take a look at one of the following websites:
-1. [a=https://maribelhearn.com/wr]Touhou World Records[/a] - by Maribel Hearn
-2. [a=https://maribelhearn.com/royalflare]Royalflare Archive[/a] - by Maribel Hearn
-3. [a=https://wikiwiki.jp/thscorekg/]東方スコア記録wiki Wiki*[/a] - by Ｋ・Ｇ
-4. [a=http://replay.lunarcast.net/]LunarCast Replay Database[/a] - by Tom
-5. [a=https://thscore.pndsng.com/index.php]裏スコボみたいなメモ書き[/a] - by pndsng
-6. [a=https://www.puresign.tokyo/index.html]けーろだ　-K- Uploader[/a] - by Yumiya
+1. [a=https://www.silentselene.net/]Silent Selene[/a] - by nrook, raviddog, 32th System, and morth
+2. [a=https://wikiwiki.jp/thscorekg/]東方スコア記録wiki Wiki*[/a] - by Ｋ・Ｇ
+3. [a=http://replay.lunarcast.net/]LunarCast Replay Database[/a] - by Tom
+4. [a=https://thscore.pndsng.com/index.php]裏スコボみたいなメモ書き[/a] - by pndsng
+5. [a=https://www.puresign.tokyo/index.html]けーろだ　-K- Uploader[/a] - by Yumiya
 
 If there are any inaccuracies on this page, or if you have a missing replay, then please contact me on Discord [discord] about it !
 
@@ -225,27 +224,6 @@ Major thanks to all these wonderful people for having contributed to the data to
 
 [contributors=1]
 
-## Sources
-[hr_major]
-
-+ [a=https://maribelhearn.com/]https://maribelhearn.com/[/a]
-+ [a=https://en.touhouwiki.net/]https://en.touhouwiki.net/wiki/Touhou_Wiki[/a]
-+ [a=https://zh.touhouwiki.net/]https://zh.touhouwiki.net/[/a]
-+ [a=https://www.shrinemaiden.org/forum/index.php]https://www.shrinemaiden.org/forum/index.php[/a]
-+ [a=https://web.archive.org/web/20070912110712/http://score.touhou-storm.com/]http://score.touhou-storm.com[/a]
-+ [a=https://wikiwiki.jp/reirako/%E6%B0%B8%E5%A4%9C%E6%8A%84%E5%B1%A5%E6%AD%B4]https://wikiwiki.jp/reirako/%E6%B0%B8%E5%A4%9C%E6%8A%84%E5%B1%A5%E6%AD%B4[/a]
-+ [a=https://wikiwiki.jp/let/]https://wikiwiki.jp/let/[/a]
-+ [a=https://eientei.boards.net/]https://eientei.boards.net/[/a]
-+ [a=https://www.youtube.com/]https://www.youtube.com/[/a]
-+ [a=https://www.nicovideo.jp/]https://www.nicovideo.jp/[/a]
-+ [a=https://twitter.com/]https://twitter.com/[/a]
-+ [a=https://www.restartsyndrome.com/]https://www.restartsyndrome.com/[/a]
-+ [a=http://web.archive.org/web/20010816002449/http://www.ht-net21.ne.jp/~perry/score.html]http://www.ht-net21.ne.jp/~perry/score.html[/a]
-+ [a=https://web.archive.org/web/20040112145107/http://score.ah1qw.info/]http://score.ah1qw.info/[/a]
-+ [a=http://happymilk.net/]http://happymilk.net/[/a]
-
-
-Of course, various (private) Discord messages were used for this as well. Thank you to everyone who has helped make this project possible !
 
 If there are any inaccuracies on this page, please contact me on Discord [discord] about it !
 
