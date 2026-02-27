@@ -343,5 +343,11 @@ let ext = function() {
         regex: /\&lt\;/g,
         replace: '<',
     }
-	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt]; // prioritize elements that will be nested within
+
+    let amp = {
+        type: 'lang',
+        regex: /\&amp\;/g,
+        replace: '&',
+    }
+	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt, amp]; // prioritize elements that will be nested within
 }
