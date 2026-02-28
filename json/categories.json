@@ -7,6 +7,7 @@
             "description": "Bug/Glitch is a crash or can occasionally crash", 
             "tree-mapping": {
                 "th07": [3    ], 
+                "th08": [4    ], 
                 "th11": [9, 11], 
                 "th14": [5    ], 
                 "th16": [2    ], 
@@ -208,6 +209,7 @@
             "description": "Bug/Glitch involves overflow/carry of variable", 
             "tree-mapping": {
                 "th07" : [0, 3], 
+                "th08" : [4   ], 
                 "th11" : [0   ], 
                 "th12" : [1   ], 
                 "th14" : [0   ], 
@@ -283,6 +285,10 @@
         "laser_midpoint": {
             "th06": [6], 
             "th07": [2]  
+        }, 
+        "year_2038_problem": {
+            "th07": [3], 
+            "th08": [4]  
         }, 
         "slowdown_item_dupe": {
             "th12": [3], 

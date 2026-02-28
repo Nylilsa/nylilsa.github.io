@@ -108,7 +108,8 @@
             "url-name": ["2038-problem"],
             "finished": true,
             "categories": {
-                "tags": [0, 13]
+                "tags": [0, 13],
+                "related": "year_2038_problem"
             }
         }
     },
@@ -144,6 +145,15 @@
             "finished": false,
             "categories": {
                 "tags": [6]
+            }
+        },
+        "4": {
+            "title": "The 2038 problem",
+            "url-name": ["2038-problem"],
+            "finished": true,
+            "categories": {
+                "tags": [0, 13],
+                "related": "year_2038_problem"
             }
         }
     },
