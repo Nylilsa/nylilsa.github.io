@@ -141,7 +141,7 @@
         "3": {
             "title": "Stage 4 Boss Items Bug",
             "url-name": ["s4-items"],
-            "finished": true,
+            "finished": false,
             "categories": {
                 "tags": [6]
             }
