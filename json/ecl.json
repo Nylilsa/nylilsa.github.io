@@ -91,7 +91,7 @@
                 {"unused": "int"},
                 {"name": "string"}
             ],
-            "Description": "Declares a spellcard with id $1 and name $3. The ID passed to the spell-creating function is id + difficulty - 2 (with easy=0, normal=1, ..., overdrive=5). $2 determines how much time the spell circle takes to shrink (in frames), as well as how fast the spell bonus decreases."
+            "Description": "Declares a spell-card with id $1 and name $3. The ID passed to the spell-creating function is id + difficulty - 2 (with easy=0, normal=1, ..., overdrive=5). $2 determines how much time the spell circle takes to shrink (in frames), as well as how fast the spell bonus decreases."
         },
         "546": {
             "Name": "bombShield",
@@ -242,12 +242,12 @@
         },
         "4": {
             "Name": "short_timer",
-            "Description": "Integer value between -1 and 15 inclusive (by default -1). If non-negative, shooters using short_timer shoot their bullets and timer increments by 1 per tick until 15 is reached. Once 15, timer reset to -1 or 0 depending on Z key state.",
+            "Description": "Integer value between -1 and 15 inclusive (by default -1). If non-negative, shooters using short_timer shoot their bullets and timer increments by 1 per frame until 15 is reached. Once 15, timer reset to -1 or 0 depending on Z key state.",
             "Type": "int"
         },
         "5": {
             "Name": "long_timer",
-            "Description": "Integer value between -1 and 120 inclusive (by default -1). If non-negative, shooters using long_timer shoot their bullets and timer increments by 1 per tick until 120 is reached. Once 120, timer reset to -1 or 0 depending on Z key state.",
+            "Description": "Integer value between -1 and 120 inclusive (by default -1). If non-negative, shooters using long_timer shoot their bullets and timer increments by 1 per frame until 120 is reached. Once 120, timer reset to -1 or 0 depending on Z key state.",
             "Type": "int"
         },
         "6": {
@@ -274,7 +274,7 @@
         },
         "10022": {
             "Name": "SELF_TIME",
-            "Description": "Integer value that increases by 1 every in-game tick. This value is used by bosses and by functions such as timer_callback_threshold.",
+            "Description": "Integer value that increases by 1 every in-game frame. This value is used by bosses and by functions such as timer_callback_threshold.",
             "Type": "integer"
         },
         "270": {
