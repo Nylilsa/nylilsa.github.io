@@ -13,6 +13,8 @@
 	    
         "vQ89JNPKIo": {"game": "th07", "date": "n.d.", "author": "Wikipedia", "title": "Year 2038 problem", "url": "https://en.wikipedia.org/wiki/Year_2038_problem"},
         "8MpPnwPlyX": {"game": "th07", "date": "n.d.", "author": "Microsoft", "title": "time, _time32, _time64", "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/time-time32-time64?view=msvc-170"},
+        "KwpO22DkfM": {"game": "th07", "date": "n.d.", "author": "Microsoft", "title": "localtime, _localtime32, _localtime64", "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/localtime-localtime32-localtime64?view=msvc-170"},
+        "dp1FOdddRn": {"game": "th07", "date": "n.d.", "author": "Microsoft", "title": "strftime, wcsftime, _strftime_l, _wcsftime_l", "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strftime-wcsftime-strftime-l-wcsftime-l?view=msvc-170"},
         
         "6cYBeHxcvN": {"game": "th09", "date": "2022-05-02", "author": "Maribel Hearn", "title": "Touhou 9 - Phantasmagoria of Flower View - Stage Skip Glitch", "url": "https://www.youtube.com/watch?v=q5J8_tn8Ibs"},
 	    
