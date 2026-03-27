@@ -851,6 +851,38 @@
                 "tags": [],
                 "related": "incorrect_playtime"
             }
+        },
+        "13": {
+            "title": "Koishi Card Desync",
+            "url-name": ["koishi-desync"],
+            "finished": false,
+            "categories": {
+                "tags": [1, 9]
+            }
+        },
+        "14": {
+            "title": "Equipment Cards Desync",
+            "url-name": ["equipment-desync"],
+            "finished": false,
+            "categories": {
+                "tags": [1, 14]
+            }
+        },
+        "15": {
+            "title": "Byakuren Card Desync",
+            "url-name": ["byakuren-desync"],
+            "finished": false,
+            "categories": {
+                "tags": [1]
+            }
+        },
+        "16": {
+            "title": "Momoyo Card Desync",
+            "url-name": ["momoyo-desync"],
+            "finished": false,
+            "categories": {
+                "tags": [1, 14]
+            }
         }
     },
     "th185": {
