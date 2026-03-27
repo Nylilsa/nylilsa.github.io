@@ -883,6 +883,14 @@
             "categories": {
                 "tags": [1, 14]
             }
+        },
+        "17": {
+            "title": "Eirin/Eiki Card Purchase Crash",
+            "url-name": ["purchase-crash"],
+            "finished": false,
+            "categories": {
+                "tags": [0, 3, 14, 17]
+            }
         }
     },
     "th185": {
