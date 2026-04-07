@@ -203,6 +203,11 @@
             "Description": "Difficulty (E=0, N=1, H=2, L=3, EX=4, O=5).",
             "Type": "int"
         },
+        "-9954": {
+            "Name": "ENEMY_HP",
+            "Description": "Enemy's current HP.",
+            "Type": "int"
+        },
         "-9926": {
             "Name": "GI0",
             "Description": "Global integer value. Value is initialised to 0 on stage load but not on stage reset.",
