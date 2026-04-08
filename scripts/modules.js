@@ -52,6 +52,7 @@ function contributorsFunction(check) {
             "0lDi5bpXmy": { "name": "kana0603", "help": "Provided various EoSD glitches & replays", "url": "https://twitter.com/kana_th6" },
             "qfrV6dZExm": { "name": "Khangaroo", "help": "Massively helped with the Gohei Dupe glitch and malfunctioning shottypes glitch", "url": "https://github.com/khang06" },
             "VSlamYrAwJ": { "name": "zero318", "help": "Massively helped with the Merlin glitch", "url": "https://github.com/zero318" },
+            "Kb7rrv3ve5": { "name": "dannan18", "help": "Helped with the th14 Item Collection Bonus Persisting bug", "url": null },
         };
     }
     if (check == 1) {
@@ -68,15 +69,17 @@ function contributorsFunction(check) {
             "pe": { "name": "Rivers", "help": "IN Lunatic", "url": "https://www.twitch.tv/rivers_th08" },
         };
     }
-    let i = 0;
-    let html = '';
-    for (let lambda in object) {
-        const value = Object.values(object)[i];
-        html += '+ <a class="url" href="' + value.url + '" target="_blank">' + value.name + '</a> - ' + value.help;
-        html += '\n';
-        i++;
+    let lines = [];
+
+    for (const value of Object.values(object)) {
+        const link = value.url
+            ? `<a class="url" href="${value.url}" target="_blank">${value.name}</a>`
+            : value.name;
+
+        lines.push(`+ ${link} - ${value.help}`);
     }
-    return html;
+
+    return lines.join('\n');
 }
 
 function gameScenes(game, flag, array) {
