@@ -514,6 +514,14 @@
             "categories": {
                 "tags": [8]
             }
+        },
+        "10": {
+            "title": "Item Collection Bonus Persisting",
+            "url-name": ["item-bonus-persist"],
+            "finished": true,
+            "categories": {
+                "tags": [6]
+            }
         }
     },
     "th143": {
