@@ -113,6 +113,12 @@ let ext = function() {
 		replace: "``nylilsa``"
 	}
 
+	let no_content = {
+		type: "lang",
+		regex: /\[no_content\]/g,
+		replace: "<span style='font-style: italic; color:'>This section has no content yet. Would you like to add to this section? [jumpto=#/home#contact]Contact me[/jumpto] if you are interested!</span>"
+	}
+
 	let specs = {
 		type: "lang",
 		regex: /\[specs\]/g,
@@ -349,5 +355,5 @@ let ext = function() {
         regex: /\&amp\;/g,
         replace: '&',
     }
-	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt, amp]; // prioritize elements that will be nested within
+	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, no_content, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt, amp]; // prioritize elements that will be nested within
 }
