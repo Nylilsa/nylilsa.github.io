@@ -7,7 +7,7 @@ Hi everyone, <br><br>
 
 This WR History page has not been updated since September 2025, and I am well-aware of it. I have been in the process of making big changes to the backend of this. Please bear in mind this is mainly done by one individual who also has their own things going on. <br><br>
 
-For inquiries regarding this webpage, please contact me (see home page). I really appreciate all the support and positive comments I've received, thank you everyone for who has supported my site and I <3
+For inquiries regarding this webpage, please [jumpto=#/me/contact]contact me[/jumpto]. I really appreciate all the support and positive comments I've received, thank you everyone for who has supported my site and I <3
 
 [/butyouignoredthem]
 
@@ -21,7 +21,7 @@ A comprehensive Touhou world records tracker, updated every so often. This page 
 4. [a=https://thscore.pndsng.com/index.php]裏スコボみたいなメモ書き[/a] - by pndsng
 5. [a=https://www.puresign.tokyo/index.html]けーろだ　-K- Uploader[/a] - by Yumiya
 
-If there are any inaccuracies on this page, or if you have a missing replay, then please contact me on Discord [discord] about it !
+If there are any inaccuracies on this page, or if you have a missing replay, then please [jumpto=#/me/contact]contact me[/jumpto] about it !
 
 ## Game
 [hr_major]
@@ -223,9 +223,3 @@ Choose a player name from the menu below to show their WRs. You can [hl2]filter 
 Major thanks to all these wonderful people for having contributed to the data to this project !
 
 [contributors=1]
-
-
-If there are any inaccuracies on this page, please contact me on Discord [discord] about it !
-
-
-

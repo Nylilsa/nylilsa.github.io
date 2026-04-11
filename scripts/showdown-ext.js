@@ -116,7 +116,7 @@ let ext = function() {
 	let no_content = {
 		type: "lang",
 		regex: /\[no_content\]/g,
-		replace: "<span style='font-style: italic; color:'>This section has no content yet. Would you like to add to this section? [jumpto=#/home#contact]Contact me[/jumpto] if you are interested!</span>"
+		replace: "<span style='font-style: italic; color:'>This section has no content yet. Would you like to add to this section? [jumpto=#/me/contact]Contact me[/jumpto] if you are interested!</span>"
 	}
 
 	let specs = {

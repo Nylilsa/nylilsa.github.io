@@ -10,6 +10,6 @@ Additionally, there are a few guides written on various topics that may not nece
 ## Contributors
 
 For the full list of contributors, please check out the home page. :D
-If you would like to contribute (whether it is anything about a glitch or about a guide you would like to post here), you may do so by contacting me on my Discord: Nylilsa#9310 !
+If you would like to contribute (whether it is anything about a glitch or about a guide you would like to post here), you may do so by contacting me on my Discord: nylilsa !
 
 Alternatively, you are free to create any issues or any pull requests.

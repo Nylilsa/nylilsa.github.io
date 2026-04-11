@@ -487,7 +487,7 @@ function initMarkdown(error) { //puts html in id 'test'
 	    md.innerHTML = MD.makeHtml(md.innerHTML);
         return;
     }
-    md.innerHTML = MD.makeHtml("<h1><span style='color:red'>ERROR:</span> File at \""+window.location.href+"\" not found.</h1><br><h3>Try reloading using <span class='highlight-txt'>Ctrl + F5</span>, or <span class='highlight-txt'>clearing browser cache</span> of this site.<br>If the problem persists, contact me on Discord: Nylilsa#9310.</h3><br><br><br><h2><a class='url' href='#/home'>Go to Home page</a></h2>");
+    md.innerHTML = MD.makeHtml("<h1><span style='color:red'>ERROR:</span> File at \""+window.location.href+"\" not found.</h1><br><h3>Try reloading using <span class='highlight-txt'>Ctrl + F5</span>, or <span class='highlight-txt'>clearing browser cache</span> of this site.<br>If the problem persists, contact me on Discord: nylilsa</h3><br><br><br><h2><a class='url' href='#/home'>Go to Home page</a></h2>");
 }
 
 function initHashChange() {
