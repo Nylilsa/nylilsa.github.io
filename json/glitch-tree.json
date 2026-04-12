@@ -165,6 +165,15 @@
             "categories": {
                 "tags": [6, 9]
             }
+        },
+        "1": {
+            "title": "The 2038 problem",
+            "url-name": ["2038-problem"],
+            "finished": true,
+            "categories": {
+                "tags": [0, 13],
+                "related": "year_2038_problem"
+            }
         }
     },
     "th95": {
