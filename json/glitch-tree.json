@@ -894,16 +894,16 @@
             }
         },
         "15": {
-            "title": "Byakuren Card Desync",
-            "url-name": ["byakuren-desync"],
+            "title": "Momoyo Card Desync",
+            "url-name": ["momoyo-desync"],
             "finished": false,
             "categories": {
                 "tags": [1]
             }
         },
         "16": {
-            "title": "Momoyo Card Desync",
-            "url-name": ["momoyo-desync"],
+            "title": "Byakuren Card Desync",
+            "url-name": ["byakuren-desync"],
             "finished": false,
             "categories": {
                 "tags": [1, 14]
