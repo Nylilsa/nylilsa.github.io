@@ -916,6 +916,14 @@
             "categories": {
                 "tags": [0, 3, 14, 17]
             }
+        },
+        "18": {
+            "title": "Eirin Card Deactivation",
+            "url-name": ["eirin-death"],
+            "finished": false,
+            "categories": {
+                "tags": [6, 17]
+            }
         }
     },
     "th185": {
