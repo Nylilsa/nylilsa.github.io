@@ -26,7 +26,7 @@
             "tree-mapping": {
                 "th06": [1, 2, 5], 
                 "th07": [1], 
-                "th08": [0], 
+                "th08": [0, 5], 
                 "th10": [2, 4], 
                 "th11": [3, 4, 5, 6, 7], 
                 "th12": [0, 4], 
@@ -111,6 +111,7 @@
             "class_name": "categories-hardware-setting", 
             "description": "Bug/Glitch involves is specific to user's hardware or game settings", 
             "tree-mapping": {
+                "th08": [5   ], 
                 "th14": [6   ], 
                 "th20": [7, 8]  
             }

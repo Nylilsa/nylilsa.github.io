@@ -155,6 +155,14 @@
                 "tags": [0, 13],
                 "related": "year_2038_problem"
             }
+        },
+        "5": {
+            "title": "CPU-dependent Desync",
+            "url-name": ["rsqrtss-desync"],
+            "finished": true,
+            "categories": {
+                "tags": [1, 7]
+            }
         }
     },
     "th09": {

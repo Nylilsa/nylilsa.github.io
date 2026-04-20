@@ -16,6 +16,9 @@
         "KwpO22DkfM": {"game": "th07", "date": "n.d.", "author": "Microsoft", "title": "localtime, _localtime32, _localtime64", "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/localtime-localtime32-localtime64?view=msvc-170"},
         "dp1FOdddRn": {"game": "th07", "date": "n.d.", "author": "Microsoft", "title": "strftime, wcsftime, _strftime_l, _wcsftime_l", "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strftime-wcsftime-strftime-l-wcsftime-l?view=msvc-170"},
         
+        "fD9r9m1eYJ": {"game": "th08", "date": "2021-09-09", "author": "Robert O'Callahan", "title": "rr Trace Portability: Diverging Behavior of RSQRTSS in AMD vs Intel", "url": "https://robert.ocallahan.org/2021/09/rr-trace-portability-diverging-behavior.html"},
+        "fj2z8KPlTw": {"game": "th08", "date": "n.d.", "author": "Intel", "title": "Intel® 64 and IA-32 Architectures Software Developer’s Manual", "url": "https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html"},
+        
         "6cYBeHxcvN": {"game": "th09", "date": "2022-05-02", "author": "Maribel Hearn", "title": "Touhou 9 - Phantasmagoria of Flower View - Stage Skip Glitch", "url": "https://www.youtube.com/watch?v=q5J8_tn8Ibs"},
 	    
         "lED2ol41Co": {"game": "th10", "date": "2013-09-14", "author": "a26866152", "title": "【TAS】東方風神録Lunatic バグマリ in 13:39.25", "url": "https://www.youtube.com/watch?v=efqy8GBUNL0"},
