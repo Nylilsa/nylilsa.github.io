@@ -178,11 +178,12 @@
     },
     "th95": {
         "0": {
-            "title": "N/A",
-            "url-name": ["not-available"],
-            "finished": false,
+            "title": "The 2038 problem",
+            "url-name": ["2038-problem"],
+            "finished": true,
             "categories": {
-                "tags": [99]
+                "tags": [0, 13],
+                "related": "year_2038_problem"
             }
         }
     },
