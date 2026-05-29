@@ -74,6 +74,14 @@
             "categories": {
                 "tags": [6, 11]
             }
+        },
+        "9": {
+            "title": "Bullet Displacement Bug",
+            "url-name": ["bullet-displacement"],
+            "finished": true,
+            "categories": {
+                "tags": [6, 8]
+            }
         }
     },
     "th07": {
