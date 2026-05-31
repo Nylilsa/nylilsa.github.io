@@ -82,6 +82,14 @@
             "categories": {
                 "tags": [6, 8]
             }
+        },
+        "10": {
+            "title": "Max power at 127 power",
+            "url-name": ["max-power-desync"],
+            "finished": true,
+            "categories": {
+                "tags": [11]
+            }
         }
     },
     "th07": {
