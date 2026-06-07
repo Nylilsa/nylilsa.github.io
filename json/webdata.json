@@ -133,6 +133,9 @@
         "rrVAN5I0Ey": {"game": "th06", "date": "2026-03-17", "author": "Mechanical Lizard", "name": "Liz", "difficulty": "Extra", "shot": "MarisaB", "version": "1.02h", "note": "Replay fix of Flandre's 7th non-spell desync", "url": "th6_udrrVA.rpy"},
         "XTpSjE7GD8": {"game": "th06", "date": "2026-04-11", "author": "kana0603", "name": "kana0603", "difficulty": "Extra", "shot": "MarisaB", "version": "1.02h", "note": "Bug happens twice on Flandre's 7th non-spell", "url": "th6_udXTpS.rpy"},
         "wSCK4rdUL2": {"game": "th06", "date": "2026-04-05", "author": "kana0603", "name": "A", "difficulty": "Extra", "shot": "MarisaB", "version": "1.02h", "note": "Bug happens twice on Flandre's 7th non-spell", "url": "th6_udwSCK.rpy"},
+        "w48b6lSMaU": {"game": "th06", "date": "2026-06-01", "author": "kana0603", "name": "ex-bug", "difficulty": "Extra", "shot": "MarisaB", "version": "1.02h", "note": "", "url": "th6_udw48b.rpy"},
+        "1IeG0QPgHY": {"game": "th06", "date": "2026-06-01", "author": "kana0603", "name": "s6-bug-L", "difficulty": "Lunatic", "shot": "ReimuB", "version": "1.02h", "note": "", "url": "th6_ud1IeG.rpy"},
+        "uerYL45KYC": {"game": "th06", "date": "2026-06-01", "author": "kana0603", "name": "s6-bug-N", "difficulty": "Normal", "shot": "ReimuB", "version": "1.02h", "note": "", "url": "th6_uduerY.rpy"},
     
         "6QslRdYpws": {"game": "th07", "date": "2020-09-13", "author": "ゆっきー", "name": "AAAAAAAA", "difficulty": "Easy", "shot": "SakuyaA", "version": "1.00b", "note": "Merlin final spell-card glitch - chance is 1/1720",  "url": "th7_ud6Qsl.rpy"},
         "PLv0zArCHT": {"game": "th07", "date": "2020-07-20", "author": "Plus", "name": "+", "difficulty": "Normal", "shot": "SakuyaB", "version": "1.00b", "note": "Merlin post-boss glitch - chance is 1/49", "url": "th7_udPLv0.rpy"},

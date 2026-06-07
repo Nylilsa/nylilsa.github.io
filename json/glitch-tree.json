@@ -90,6 +90,14 @@
             "categories": {
                 "tags": [11]
             }
+        },
+        "11": {
+            "title": "Persisting Bat State",
+            "url-name": ["persisting-bat"],
+            "finished": true,
+            "categories": {
+                "tags": [8]
+            }
         }
     },
     "th07": {
