@@ -639,7 +639,8 @@
             "url-name": ["broken-frogs", "sanae-frogs"],
             "finished": true,
             "categories": {
-                "tags": [11]
+                "tags": [11],
+                "related": "long_timer_desync"
             }
         }
     },
