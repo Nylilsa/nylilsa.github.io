@@ -248,13 +248,14 @@
             "class_name": "categories-game-speed", 
             "description": "Bug/Glitch involves the GAME_SPEED variable", 
             "tree-mapping": {
-                "th12": [3], 
-                "th13": [2], 
-                "th14": [7], 
-                "th15": [5], 
-                "th16": [6], 
-                "th17": [9], 
-                "th18": [0]  
+                "th11": [12], 
+                "th12": [ 3], 
+                "th13": [ 2], 
+                "th14": [ 7], 
+                "th15": [ 5], 
+                "th16": [ 6], 
+                "th17": [ 9], 
+                "th18": [ 0]  
             }
         }, 
         "16": {
@@ -303,13 +304,14 @@
             "th10": [5]  
         }, 
         "slowdown_item_dupe": {
-            "th12": [3], 
-            "th13": [2], 
-            "th14": [7], 
-            "th15": [5], 
-            "th16": [6], 
-            "th17": [9], 
-            "th18": [0]  
+            "th11": [12], 
+            "th12": [ 3], 
+            "th13": [ 2], 
+            "th14": [ 7], 
+            "th15": [ 5], 
+            "th16": [ 6], 
+            "th17": [ 9], 
+            "th18": [ 0]  
         }, 
         "BulletEffectType-67108864": {
             "th14" : [1], 

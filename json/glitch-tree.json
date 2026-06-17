@@ -366,6 +366,15 @@
             "categories": {
                 "tags": [0, 14, 17]
             }
+        },
+        "12": {
+            "title": "Slowdown Item Duplication",
+            "url-name": ["slowdown-dupe"],
+            "finished": true,
+            "categories": {
+                "tags": [15],
+                "related": "slowdown_item_dupe"
+            }
         }
     },
     "th12": {
