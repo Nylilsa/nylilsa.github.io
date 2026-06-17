@@ -248,6 +248,7 @@
             "class_name": "categories-game-speed", 
             "description": "Bug/Glitch involves the GAME_SPEED variable", 
             "tree-mapping": {
+                "th10": [ 6], 
                 "th11": [12], 
                 "th12": [ 3], 
                 "th13": [ 2], 
@@ -304,6 +305,7 @@
             "th10": [5]  
         }, 
         "slowdown_item_dupe": {
+            "th10": [ 6], 
             "th11": [12], 
             "th12": [ 3], 
             "th13": [ 2], 
