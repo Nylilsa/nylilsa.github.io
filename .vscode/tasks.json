@@ -11,6 +11,15 @@
             }
         },
         {
+            "label": "create-sitemap.js",
+            "type": "shell",
+            "command": "npx chokidar 'pages/' -c 'node scripts/node/create-sitemap.js'",
+            "isBackground": true,
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        {
             "label": "auto-generate-style-css",
             "type": "shell",
             "command": "npx chokidar 'css/style.scss' -c 'npx sass css/style.scss css/style.css --no-source-map'",

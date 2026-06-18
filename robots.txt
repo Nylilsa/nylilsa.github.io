@@ -1,1 +1,4 @@
-Sitemap: https://nylilsa.github.io/sitemap.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://nylilsa.github.io/sitemap.xml
