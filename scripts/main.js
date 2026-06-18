@@ -523,7 +523,7 @@ function initRemoveHash(input, useRedirect = false) { //removes #/
 		hash = "#" + hash;
 		c = c.split('#')[0] + ".md";
 	}
-    const redirectPath = localStorage.getItem("redirectPath");
+    let redirectPath = localStorage.getItem("redirectPath");
     if (useRedirect && redirectPath) {
         redirectPath = redirectPath.replace("/","");
         localStorage.removeItem("redirectPath");
