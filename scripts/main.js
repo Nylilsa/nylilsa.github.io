@@ -525,6 +525,7 @@ function initRemoveHash(input, useRedirect = false) { //removes #/
 	}
     const redirectPath = localStorage.getItem("redirectPath");
     if (useRedirect && redirectPath) {
+        redirectPath = redirectPath.replace("/","");
         localStorage.removeItem("redirectPath");
         return redirectPath + ".md";
     }
