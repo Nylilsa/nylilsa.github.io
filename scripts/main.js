@@ -481,13 +481,22 @@ async function initSidebarGlitches() {
     }
 }
 
-function initMarkdown(error) { //puts html in id 'test'
+function initMarkdown(isError) { //puts html in id 'test'
 	const md = document.getElementById("mdcontent");
-    if (!error) {
+    const existingNoIndex = document.querySelector('meta[name="robots"]');
+    if (existingNoIndex) {
+        existingNoIndex.remove();
+    }
+    if (!isError) {
 	    md.innerHTML = MD.makeHtml(md.innerHTML);
         return;
     }
     md.innerHTML = MD.makeHtml("<h1><span style='color:red'>ERROR:</span> File at \""+window.location.href+"\" not found.</h1><br><h3>Try reloading using <span class='highlight-txt'>Ctrl + F5</span>, or <span class='highlight-txt'>clearing browser cache</span> of this site.<br>If the problem persists, contact me on Discord: nylilsa</h3><br><br><br><h2><a class='url' href='#/home'>Go to Home page</a></h2>");
+    // should tell googlebot and ai scrapers to drop this invalid url
+    const metaTag = document.createElement('meta');
+    metaTag.name = "robots";
+    metaTag.content = "noindex, nofollow";
+    document.head.appendChild(metaTag);
 }
 
 function initHashChange() {
@@ -503,17 +512,22 @@ function initHashChange() {
     }, 500); // delay is needed or else hashchange and init are executed at once
 }
 
-function initRemoveHash(input) { //removes #/
+function initRemoveHash(input, useRedirect = false) { //removes #/
 	let c = window.location.hash.replace("#/","") + ".md";
 	let hash = '';
 	if (c === '.md') {
-		c = 'home.md';
+        c = 'home.md';
 	}
 	if (c.includes("#")) {
-		hash = c.substring(c.indexOf("#") + 1).replace(".md",""); // gets whatever is after hash
+        hash = c.substring(c.indexOf("#") + 1).replace(".md",""); // gets whatever is after hash
 		hash = "#" + hash;
 		c = c.split('#')[0] + ".md";
 	}
+    const redirectPath = localStorage.getItem("redirectPath");
+    if (useRedirect && redirectPath) {
+        localStorage.removeItem("redirectPath");
+        return redirectPath + ".md";
+    }
 	if (input) {
 		return hash;
 	}
@@ -579,7 +593,7 @@ function initDropdownToggle() {
 
 function init() {
     function commonInit() {
-        loadMarkdown(initRemoveHash(false));
+        loadMarkdown(initRemoveHash(false, true));
         initRememberScroll();
         initDropdownToggle();
         initSidebarContent();
