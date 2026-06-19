@@ -27,10 +27,6 @@ let ext = function() {
 		replace: function(all, img, figtitle, alt) {
             figureId++;
             const path = img.startsWith("http") ? img : `pages/${img}`;
-            if (figtitle == "TOBEADDED") { // remove once all is done
-                return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" src="${path}"></figure></div></div>`;
-
-            }
 			return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" title="${figtitle}" src="${path}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div></div>`;
         }
 	}
