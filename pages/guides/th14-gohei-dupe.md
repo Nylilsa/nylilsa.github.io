@@ -321,8 +321,6 @@ This was conducted using [a=https://github.com/touhouworldcup/thprac]the stage w
 | [jumpto=#/guides/th14-gohei-dupe#dupingmethodtripletapmethod]Triple tap method[/jumpto]      | 126      | 70       | 4        | 200                |
 | [jumpto=#/guides/th14-gohei-dupe#dupingmethodquadrupleapmethod]Quadruple tap method[/jumpto] | 141      | 54       | 5        | 200                |
 
-
-[br]
 ### Elaboration
 [hr_minor]
 

@@ -358,10 +358,6 @@ pre {
   margin-bottom: 20px;
 }
 
-.markdown-table {
-  margin-bottom: max(1em, 1rem);
-}
-
 .code {
   border: 1px solid var(--clr-box);
   color: var(--clr-text-dim);
@@ -394,6 +390,14 @@ table {
 }
 table > * > tr:nth-child(2n+1) > td {
   background-color: var(--clr-background-element);
+}
+
+table:not([class]):not([id]) {
+  margin-bottom: max(1em, 1rem);
+}
+
+.max-width {
+  width: 100%;
 }
 
 td {

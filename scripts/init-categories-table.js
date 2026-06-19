@@ -17,7 +17,7 @@ function buildTable(game, index, TREE, CATEGORIES) {
 
     const tableId = document.getElementById("bugsCategoriesTable");
     const table = document.createElement('table');
-    table.style.width = "100%";
+    table.classList.add("max-width");
 
     // Body rows
     const thSameGame = buildRowSameGame(game, TREE[game], index)
@@ -242,7 +242,7 @@ function buildSubTable(rows = [], { tableClass = '', tbodyClass = '' } = {}) {
     const tbody = document.createElement('tbody');
     if (tableClass) table.className = tableClass;
     if (tbodyClass) tbody.className = tbodyClass;
-    table.style.width = '100%';
+    table.classList.add("max-width");
     rows.forEach(row => tbody.appendChild(row));
     table.appendChild(tbody);
     return table;

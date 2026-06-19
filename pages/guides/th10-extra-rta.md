@@ -39,12 +39,12 @@ The bomb on the 2nd mid-spell must be done when the timer is reaching the 65 sec
 
 In summary,
 
-| Segment | Actions |
-|:---:|:---:|
-| mid-non-spell-1 | Bomb |
-| mid-spell-1 | Capture spell |
-| mid-spell-2 | Bomb |
-| mid-spell-3 | Bomb |
+|     Segment     |    Actions    |
+| :-------------: | :-----------: |
+| mid-non-spell-1 |     Bomb      |
+|   mid-spell-1   | Capture spell |
+|   mid-spell-2   |     Bomb      |
+|   mid-spell-3   |     Bomb      |
 
 [hr_minor]
 
@@ -52,14 +52,14 @@ In summary,
 
 In summary,
 
-| Segment | Actions |
-|:---:|:---:|
-| right before Kanako spawns| Bomb |
-| dialogue | Do nothing |
-| mid-non-spell 1 | Attack normally |
-| mid-spell 1 | Capture spell |
-| mid-spell 2 | Bomb |
-| mid-spell 3 | Bomb |
+|          Segment           |     Actions     |
+| :------------------------: | :-------------: |
+| right before Kanako spawns |      Bomb       |
+|          dialogue          |   Do nothing    |
+|      mid-non-spell 1       | Attack normally |
+|        mid-spell 1         |  Capture spell  |
+|        mid-spell 2         |      Bomb       |
+|        mid-spell 3         |      Bomb       |
 
 
 ### Suwako
@@ -83,26 +83,26 @@ On spell 9, once the spell ends, Suwako drops 3.00 power. If you don't want that
 
 In summary,
 
-| Segment | Actions |
-|:---:|:---:|
-| non-spell 1 | Bomb |
-| spell 1 | Attack normally |
-| non-spell 2 | Bomb |
-| spell 2 | Attack normally |
-| non-spell 3 | Bomb |
-| spell 3 | Attack normally or die |
-| non-spell 4 | Attack normally |
-| spell 4 | Attack normally |
-| non-spell 5 | Bomb |
-| spell 5 | Attack normally |
+|   Segment   |                    Actions                     |
+| :---------: | :--------------------------------------------: |
+| non-spell 1 |                      Bomb                      |
+|   spell 1   |                Attack normally                 |
+| non-spell 2 |                      Bomb                      |
+|   spell 2   |                Attack normally                 |
+| non-spell 3 |                      Bomb                      |
+|   spell 3   |             Attack normally or die             |
+| non-spell 4 |                Attack normally                 |
+|   spell 4   |                Attack normally                 |
+| non-spell 5 |                      Bomb                      |
+|   spell 5   |                Attack normally                 |
 | non-spell 6 | Attack normally, exit with at least 3.50 power |
-| spell 6 | Attack normally |
-| non-spell 7 | Bomb |
-| spell 7 | Attack normally |
-| non-spell 8 | Bomb |
-| spell 8 | Endure |
-| spell 9 | Endure, exit with 0 power |
-| spell 10 | Attack normally |
+|   spell 6   |                Attack normally                 |
+| non-spell 7 |                      Bomb                      |
+|   spell 7   |                Attack normally                 |
+| non-spell 8 |                      Bomb                      |
+|   spell 8   |                     Endure                     |
+|   spell 9   |           Endure, exit with 0 power            |
+|  spell 10   |                Attack normally                 |
 
 [hr_minor]
 
@@ -122,30 +122,28 @@ In the image, you can see that Marisa is slightly above the bullets Suwako spawn
 
 Everything else is from the intermediate route.
 
-| Segment | Actions |
-|:---:|:---:|
-| right before Suwako spawns| Bomb |
-| dialogue | Press ctrl|
-| non-spell 1 | Bomb |
-| spell 1 | Attack normally |
-| non-spell 2 | Bomb |
-| spell 2 | Attack normally |
-| non-spell 3 | Bomb |
-| spell 3 | Attack normally |
-| non-spell 4 | Attack normally |
-| spell 4 | Attack normally |
-| non-spell 5 | Bomb |
-| spell 5 | Attack normally |
-| non-spell 6 | Attack normally, exit with at least 3.50 power |
-| spell 6 | Attack normally |
-| non-spell 7 | Bomb |
-| spell 7 | Attack normally |
-| non-spell 8 | Bomb |
-| spell 8 | Endure,  |
-| spell 9 | Endure, exit with 0 power |
-| spell 10 | Attack normally |
-
-[br]
+|          Segment           |                    Actions                     |
+| :------------------------: | :--------------------------------------------: |
+| right before Suwako spawns |                      Bomb                      |
+|          dialogue          |                   Press ctrl                   |
+|        non-spell 1         |                      Bomb                      |
+|          spell 1           |                Attack normally                 |
+|        non-spell 2         |                      Bomb                      |
+|          spell 2           |                Attack normally                 |
+|        non-spell 3         |                      Bomb                      |
+|          spell 3           |                Attack normally                 |
+|        non-spell 4         |                Attack normally                 |
+|          spell 4           |                Attack normally                 |
+|        non-spell 5         |                      Bomb                      |
+|          spell 5           |                Attack normally                 |
+|        non-spell 6         | Attack normally, exit with at least 3.50 power |
+|          spell 6           |                Attack normally                 |
+|        non-spell 7         |                      Bomb                      |
+|          spell 7           |                Attack normally                 |
+|        non-spell 8         |                      Bomb                      |
+|          spell 8           |                    Endure,                     |
+|          spell 9           |           Endure, exit with 0 power            |
+|          spell 10          |                Attack normally                 |
 
 ## Advanced time saving techniques
 [hr_minor]
