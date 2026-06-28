@@ -400,6 +400,19 @@ table:not([class]):not([id]) {
   width: 100%;
 }
 
+.collapsible-text {
+  color: var(--clr-text-url-visited);
+  text-decoration: underline;
+}
+.collapsible-text::before {
+  content: "[";
+  color: var(--clr-text-normal);
+}
+.collapsible-text::after {
+  content: "]";
+  color: var(--clr-text-normal);
+}
+
 td {
   padding-inline: 4px;
   border: 2px solid var(--clr-background-main);

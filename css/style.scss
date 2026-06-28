@@ -414,6 +414,18 @@ table:not([class]):not([id]) {
     width: 100%;
 }
 
+.collapsible-text {
+    color: var(--clr-text-url-visited);
+    text-decoration: underline;
+    &::before {
+        content: '[';
+        color: var(--clr-text-normal);
+    }
+    &::after {
+        content: ']';
+        color: var(--clr-text-normal);
+    }
+}
 
 td {
     padding-inline: 4px;

@@ -234,7 +234,7 @@ function showNavbarChildren() { //toggles all elements in navbar of Bugs if clic
         const flag = selector.classList.contains("show-function");
         if (flag) {
             selector.classList.remove("show-function");
-            selector.textContent = "Hide all";
+            selector.textContent = "Collapse all";
             for(let i = 0; i < elements.length; i++) {
                 if (elements[i].nextElementSibling.classList.contains("collapse")) {
                     elements[i].click();
@@ -242,7 +242,7 @@ function showNavbarChildren() { //toggles all elements in navbar of Bugs if clic
             }
         } else {
             selector.classList.add("show-function");
-            selector.textContent = "Show all";
+            selector.textContent = "Expand all";
             for(let i = 0; i < elements.length; i++) {
                 if (!elements[i].nextElementSibling.classList.contains("collapse")) {
                     elements[i].click();

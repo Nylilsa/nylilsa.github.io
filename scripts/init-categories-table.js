@@ -227,9 +227,9 @@ function buildToggleableHeader({
         showDefault = !showDefault;
         updateUI();
     }
-    button.style.width = "3rem"
-    span.style.paddingLeft = "3rem"
-    span.style.width = "100%"
+    button.classList.add("collapsible-text");
+    // span.style.paddingLeft = "3rem";
+    span.style.width = "100%";
     span.innerHTML = titleName;
     parent.appendChild(span);
     parent.appendChild(button);

@@ -1,301 +1,331 @@
-let ext = function() {
-	let hr_major = {
-		type: "lang",
-		regex: /\[hr_major\]/g,
-		replace: "<hr class='hr_major'>"
-	}
-	let hr_minor = {
-		type: "lang",
-		regex: /\[hr_minor\]/g,
-		replace: "<hr class='hr_minor'>"
-	}
-	let hr_custom = {
-		type: "lang",
-		regex: /\[hr_custom=(.*?)\]/g,
-		replace: function(match, content) {
-			return hrCustom(content);
-		}
-	}
-	let br = {
-		type: "lang",
-		regex: /\[br\]/g,
-		replace: "<br>"
-	}
-	let img = {
-		type: "lang",
-		regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?)\]/g,
-		replace: function(all, img, figtitle, alt) {
+let ext = function () {
+    let heading = {
+        type: "lang",
+        regex: /\[(h[1-6])(?:\s*,\s*(.*?))?\]([^]*?)\[\/\1\]/g,
+        replace: function (all, tag, attrs, content) {
+
+            attrs = attrs || "";
+
+            let id = "";
+            let className = "";
+            let collapse = null;
+
+            if (attrs.length > 0) {
+                let parts = attrs.split(",");
+
+                for (let i = 0; i < parts.length; i++) {
+                    let part = parts[i].trim();
+                    if (!part) continue;
+
+                    let eq = part.indexOf("=");
+
+                    if (eq === -1) {
+                        if (part === "collapse") collapse = "open";
+                    } else {
+                        let key = part.slice(0, eq).trim();
+                        let val = part.slice(eq + 1).trim();
+
+                        if (key === "id") id = val;
+                        else if (key === "class") className = val;
+                        else if (key === "collapse") collapse = val;
+                    }
+                }
+            }
+
+            let classes = [];
+
+            if (className) classes.push(className);
+            if (collapse !== null) classes.push("collapsible");
+
+            return `<${tag}`
+                + (id ? ` id="${id}"` : "")
+                + (classes.length ? ` class="${classes.join(" ")}"` : "")
+                + (collapse ? ` data-collapse="${collapse}"` : "")
+                + `>${content}</${tag}>`;
+        }
+    };
+
+    let hr_major = {
+        type: "lang",
+        regex: /\[hr_major\]/g,
+        replace: "<hr class='hr_major'>"
+    }
+    let hr_minor = {
+        type: "lang",
+        regex: /\[hr_minor\]/g,
+        replace: "<hr class='hr_minor'>"
+    }
+    let hr_custom = {
+        type: "lang",
+        regex: /\[hr_custom=(.*?)\]/g,
+        replace: function (match, content) {
+            return hrCustom(content);
+        }
+    }
+    let br = {
+        type: "lang",
+        regex: /\[br\]/g,
+        replace: "<br>"
+    }
+    let img = {
+        type: "lang",
+        regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?)\]/g,
+        replace: function (all, img, figtitle, alt) {
             figureId++;
             const path = img.startsWith("http") ? img : `pages/${img}`;
-			return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" title="${figtitle}" src="${path}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div></div>`;
+            return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" title="${figtitle}" src="${path}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div></div>`;
         }
-	}
-	let imgcss = {
-		type: "lang",
-		regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?), other=(.*?)\]/g,
-		replace: function(all, img, figtitle, alt, other) {
+    }
+
+    let imgcss = {
+        type: "lang",
+        regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?), other=(.*?)\]/g,
+        replace: function (all, img, figtitle, alt, other) {
             figureId++;
-			return `<div style="text-align: center;" id="figure-${figureId}"><figure class="fit-wrapper"><img style="${other}" class="fit-image" title="${figtitle}" src="pages/${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div>`;
+            return `<div style="text-align: center;" id="figure-${figureId}"><figure class="fit-wrapper"><img style="${other}" class="fit-image" title="${figtitle}" src="pages/${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div>`;
         }
-	}
-	let img_small = {
-		type: "lang",
-		regex: /\[img=(.*?)\]/g,
-		replace: '<img title="$1" style="cursor:pointer; margin: 5px;" onclick="window.open(\'$1\')" src="$1">'		
-	}
+    }
 
-	let code = {
-		type: "lang",
-		regex: /\[code\]([^]+?)\[\/code\]/g,
-		replace: "<pre><code class='code language-c mono'>$1</code></pre>"
-	}
+    let code = {
+        type: "lang",
+        regex: /\[code\]([^]+?)\[\/code\]/g,
+        replace: "<pre><code class='code language-c mono'>$1</code></pre>"
+    }
 
-	let title = {
-		type: "lang",
-		regex: /\[title=(.*?)\]/gim,
-		replace: function(match, content) {
+    let title = {
+        type: "lang",
+        regex: /\[title=(.*?)\]/gim,
+        replace: function (match, content) {
             figureId = 0;
-			setWindowTitleDirect(content);
-			setTimeout(() => {
-				hljs.highlightAll();
-				const elements = document.getElementsByClassName('highlight-child');
-				for (let i = 0; i < elements.length; i++) {
-					elements[i].parentElement.classList.add('highlight-bg');
-				}
-			}, 1);
-			return "";
-		}
-	}
+            setWindowTitleDirect(content);
+            setTimeout(() => {
+                hljs.highlightAll();
+                const elements = document.getElementsByClassName('highlight-child');
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].parentElement.classList.add('highlight-bg');
+                }
+            }, 1);
+            return "";
+        }
+    }
 
-	let c = {
-		type: "lang",
-		regex: /\[c=(.*?)\]([^]*?)\[\/c\]/g,
-		replace: "<div class='$1'>$2</div>"
-	}
+    let video = {
+        type: "lang",
+        regex: /\[video=(.*?), hratio=(.*?), other=(.*?)\]/g,
+        replace: '<div class="fit-wrapper"><iframe class="fit-image" style="padding-bottom: $2%; $3" src="$1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media" allowfullscreen></iframe></div>'
+    }
 
-	let tip = {
-		type: "lang",
-		regex: /\[tip=(.*?)\]([^]*?)\[\/tip\]/g,
-		replace: `<span data-tip='$1'>$2</span>`
-	}
+    let yes = {
+        type: "lang",
+        regex: /\[yes\]([^]*?)\[\/yes\]/g,
+        replace: "<span><img src='/assets/green-check-mark.svg' class='icon-text'>$1</span>"
+    }
 
-	let video = {
-		type: "lang",
-		regex: /\[video=(.*?), hratio=(.*?), other=(.*?)\]/g,
-		replace: '<div class="fit-wrapper"><iframe class="fit-image" style="padding-bottom: $2%; $3" src="$1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media" allowfullscreen></iframe></div>'
-	}
+    let unknown = {
+        type: "lang",
+        regex: /\[unknown\]([^]*?)\[\/unknown\]/g,
+        replace: "<span class='unknown'><img src='/assets/question-mark.svg' class='icon-text'>$1</span>"
+    }
 
-	let yes = {
-		type: "lang",
-		regex: /\[yes\]([^]*?)\[\/yes\]/g,
-		replace: "<span><img src='/assets/green-check-mark.svg' class='icon-text'>$1</span>"
-	}
+    let no = {
+        type: "lang",
+        regex: /\[no\]([^]*?)\[\/no\]/g,
+        replace: "<span><img src='/assets/red-cross.svg' class='icon-text'>~~$1~~</span>"
+    }
 
-	let unknown = {
-		type: "lang",
-		regex: /\[unknown\]([^]*?)\[\/unknown\]/g,
-		replace: "<span class='unknown'><img src='/assets/question-mark.svg' class='icon-text'>$1</span>"
-	}
+    let discord = {
+        type: "lang",
+        regex: /\[discord\]/g,
+        replace: "``nylilsa``"
+    }
 
-	let no = {
-		type: "lang",
-		regex: /\[no\]([^]*?)\[\/no\]/g,
-		replace: "<span><img src='/assets/red-cross.svg' class='icon-text'>~~$1~~</span>"
-	}
+    let no_content = {
+        type: "lang",
+        regex: /\[no_content\]/g,
+        replace: "<span style='font-style: italic; color:'>This section has no content yet. Would you like to add to this section? [jumpto=#/me/contact]Contact me[/jumpto] if you are interested!</span>"
+    }
 
-	let discord = {
-		type: "lang",
-		regex: /\[discord\]/g,
-		replace: "``nylilsa``"
-	}
+    let work_in_progress = {
+        type: "lang",
+        regex: /\[wip\]/g,
+        replace: "<span style='font-style: italic; color:'>This placeholder text has been placed here because this section is a Work In Progress. If you believe you could help out, please [jumpto=#/me/contact]contact me[/jumpto] !</span>"
+    }
 
-	let no_content = {
-		type: "lang",
-		regex: /\[no_content\]/g,
-		replace: "<span style='font-style: italic; color:'>This section has no content yet. Would you like to add to this section? [jumpto=#/me/contact]Contact me[/jumpto] if you are interested!</span>"
-	}
+    let specs = {
+        type: "lang",
+        regex: /\[specs\]/g,
+        replace: "Specifications"
+    }
 
-	let work_in_progress = {
-		type: "lang",
-		regex: /\[wip\]/g,
-		replace: "<span style='font-style: italic; color:'>This placeholder text has been placed here because this section is a Work In Progress. If you believe you could help out, please [jumpto=#/me/contact]contact me[/jumpto] !</span>"
-	}
+    let what = {
+        type: "lang",
+        regex: /\[what\]/g,
+        replace: "What happens"
+    }
 
-	let specs = {
-		type: "lang",
-		regex: /\[specs\]/g,
-		replace: "Specifications"
-	}
+    let how = {
+        type: "lang",
+        regex: /\[how\]/g,
+        replace: "How it happens"
+    }
 
-	let what = {
-		type: "lang",
-		regex: /\[what\]/g,
-		replace: "What happens"
-	}
+    let why = {
+        type: "lang",
+        regex: /\[why\]/g,
+        replace: "Why it happens"
+    }
 
-	let how = {
-		type: "lang",
-		regex: /\[how\]/g,
-		replace: "How it happens"
-	}
+    let why_idk = {
+        type: "lang",
+        regex: /\[why_idk\]/g,
+        replace: "Theory"
+    }
 
-	let why = {
-		type: "lang",
-		regex: /\[why\]/g,
-		replace: "Why it happens"
-	}
+    let links = {
+        type: "lang",
+        regex: /\[links\]/g,
+        replace: "Links"
+    }
 
-	let why_idk = {
-		type: "lang",
-		regex: /\[why_idk\]/g,
-		replace: "Theory"
-	}
+    let patches = {
+        type: "lang",
+        regex: /\[patches\]/g,
+        replace: "Patches"
+    }
 
-	let links = {
-		type: "lang",
-		regex: /\[links\]/g,
-		replace: "Links"
-	}
+    let rpy = {
+        type: "lang",
+        regex: /\[rpy\]/g,
+        replace: "Replays"
+    }
 
-	let patches = {
-		type: "lang",
-		regex: /\[patches\]/g,
-		replace: "Patches"
-	}
+    let vid = {
+        type: "lang",
+        regex: /\[vid\]/g,
+        replace: "Videos"
+    }
 
-	let rpy = {
-		type: "lang",
-		regex: /\[rpy\]/g,
-		replace: "Replays"
-	}
+    let misc = {
+        type: "lang",
+        regex: /\[misc\]/g,
+        replace: "Other"
+    }
 
-	let vid = {
-		type: "lang",
-		regex: /\[vid\]/g,
-		replace: "Videos"
-	}
+    let a = {
+        type: "lang",
+        regex: /\[a=(.*?)\]([^]*?)\[\/a\]/g,
+        replace: "<a class='url' href='$1' target='_blank'>$2</a>"
+    }
 
-	let misc = {
-		type: "lang",
-		regex: /\[misc\]/g,
-		replace: "Other"
-	}
+    let jumpto = {
+        type: "lang",
+        regex: /\[jumpto=(.*?)\]([^]*?)\[\/jumpto\]/g,
+        replace: function (full, anchor, text) {
+            let key = anchor.substring(1);
+            key = key.match(/[^#]*$/)[0]; // no idea how I managed to make this work
+            return "<a class='url-toc' href=" + anchor + " onclick='jumpTo(\"" + key + "\", 1)'>" + text + "</a>";
+        }
+    }
 
-	let a = {
-		type: "lang",
-		regex: /\[a=(.*?)\]([^]*?)\[\/a\]/g,
-		replace: "<a class='url' href='$1' target='_blank'>$2</a>"
-	}
+    let sub = {
+        type: "lang",
+        regex: /\[sub\]([^]*?)\[\/sub\]/g,
+        replace: "<sub>$1</sub>"
+    }
 
-	let jumpto = {
-		type: "lang",
-		regex: /\[jumpto=(.*?)\]([^]*?)\[\/jumpto\]/g,
-		replace: function(full, anchor, text) {
-			let key = anchor.substring(1);
-			key = key.match(/[^#]*$/)[0]; // no idea how I managed to make this work
-			return "<a class='url-toc' href="+anchor+" onclick='jumpTo(\""+key+"\", 1)'>"+text+"</a>";
-		}
-	}
+    let table = {
+        type: "lang",
+        regex: /\[table=(.*?)\]/gim,
+        // delay must exist for at least 1ms
+        replace: function (match, content) {
+            setTimeout(() => { generateTable(content) }, 1);
+            return "<div id='table-shottype'></div>";
+        }
+    }
 
-	let sub = {
-		type: "lang",
-		regex: /\[sub\]([^]*?)\[\/sub\]/g,
-		replace: "<sub>$1</sub>"
-	}
-	
-	let table = {
-		type: "lang",
-		regex: /\[table=(.*?)\]/gim,
-		// delay must exist for at least 1ms
-		replace: function(match, content) {
-			setTimeout(() => {  generateTable(content)}, 1);
-			return "<div id='table-shottype'></div>";
-		}
-	}
+    let box = {
+        type: "lang",
+        regex: /\[box=(.*?)\]([^]*?)\[\/box\]/g,
+        replace: "<div class='box' style='max-width:$1px'>$2</div>"
+    }
 
-	let box = {
-		type: "lang",
-		regex: /\[box=(.*?)\]([^]*?)\[\/box\]/g,
-		replace: "<div class='box' style='max-width:$1px'>$2</div>"
-	}
+    let you_thief = {
+        type: "lang",
+        regex: /\[thereweresigns=(.*?)\]([^]*?)\[\/butyouignoredthem\]/g,
+        replace: "<div style='$1'>$2</div>"
+    }
 
-	let you_thief = {
-		type: "lang",
-		regex: /\[thereweresigns=(.*?)\]([^]*?)\[\/butyouignoredthem\]/g,
-		replace: "<div style='$1'>$2</div>"
-	}
+    let hl1 = {
+        type: "lang",
+        regex: /\[hl1\]([^]*?)\[\/hl1\]/g,
+        replace: "<div class='highlight-child'>$1</div>"
+    }
 
-	let hl1 = {
-		type: "lang",
-		regex: /\[hl1\]([^]*?)\[\/hl1\]/g,
-		replace: "<div class='highlight-child'>$1</div>"
-	}
+    let hl2 = {
+        type: "lang",
+        regex: /\[hl2\]([^]*?)\[\/hl2\]/g,
+        replace: "<span class='highlight-txt'>$1</span>"
+    }
 
-	let hl2 = {
-		type: "lang",
-		regex: /\[hl2\]([^]*?)\[\/hl2\]/g,
-		replace: "<span class='highlight-txt'>$1</span>"
-	}
+    let key = {
+        type: "lang",
+        regex: /\[key=([^]*?)\]/g,
+        replace: "<kbd class='key mono'>$1</kbd>"
+    }
 
-	let key = {
-		type: "lang",
-		regex: /\[key=([^]*?)\]/g,
-		replace: "<kbd class='key mono'>$1</kbd>"
-	}
-
-	let cite = {
+    let cite = {
         type: "lang",
         regex: /\[cite=([^]*?)\]/g,
-        replace:  function(match, content) {
+        replace: function (match, content) {
             let id = citeId++;
             fillCite(id, content, videoFunction);
             return `<span id="cite-${id}"></span>`;
         }
     }
 
-	let replay = {
-		type: "lang",
-		regex: /\[replay=([^]*?)\]/g,
-		replace: function(match, content) {
+    let replay = {
+        type: "lang",
+        regex: /\[replay=([^]*?)\]/g,
+        replace: function (match, content) {
             let id = citeId++;
             fillCite(id, content, replayFunction);
             return `<span id="cite-${id}"></span>`;
-		}
-	}
+        }
+    }
 
-	let contributors = {
-		type: "lang",
-		regex: /\[contributors=([^]*?)\]/g,
-		replace: function(match, content) {
-			return contributorsFunction(content);
-		}
-	}
+    let contributors = {
+        type: "lang",
+        regex: /\[contributors=([^]*?)\]/g,
+        replace: function (match, content) {
+            return contributorsFunction(content);
+        }
+    }
 
-	let ins = {
-		type: "lang",
-		regex: /\[ins=(.*?), n=(.*?)\]/g,
-		replace: function(match, content, n) {
+    let ins = {
+        type: "lang",
+        regex: /\[ins=(.*?), n=(.*?)\]/g,
+        replace: function (match, content, n) {
             let id = eclJsonId++;
             replaceEclIns(content, n, id);
             return `<code id='ecl-cite-${id}' class='mono dotted'></code>`;
-		}
-	}
+        }
+    }
 
-	let canvas = {
-		type: "lang",
-		regex: /\[canvas\]/g,
-		replace: function() {
-            setTimeout(() => {initCanvas(initRemoveHash(true))}, 1);
+    let canvas = {
+        type: "lang",
+        regex: /\[canvas\]/g,
+        replace: function () {
+            setTimeout(() => { initCanvas(initRemoveHash(true)) }, 1);
             return "";
-		}
-	}
+        }
+    }
 
-	let buildCategoriesTable = {
-		type: "lang",
-		regex: /\[buildCategoriesTable\]/g,
-		replace: function() {
+    let buildCategoriesTable = {
+        type: "lang",
+        regex: /\[buildCategoriesTable\]/g,
+        replace: function () {
             //something complicated with lots of operations
-            setTimeout(() => { 
+            setTimeout(() => {
                 Promise.all([
                     import('./init-categories-table.js'),
                 ]).then(([categoriesTable]) => {
@@ -306,39 +336,39 @@ let ext = function() {
                 });
             }, 1);
             return "<div id='bugsCategoriesTable'></div>";
-		}
-	}
+        }
+    }
 
-	let match = {
-		type: "lang",
-		regex: /\[style=([^]*?), icon=(true|false), highlightedText=([^]*?)\]/g,
-		replace: function(match, style, icon, highlightedText) {
+    let match = {
+        type: "lang",
+        regex: /\[style=([^]*?), icon=(true|false), highlightedText=([^]*?)\]/g,
+        replace: function (match, style, icon, highlightedText) {
             icon = (icon === 'true');
-			return matchText(style, icon, highlightedText);
-		}
-	}
+            return matchText(style, icon, highlightedText);
+        }
+    }
 
-	let scenes = {
-		type: "lang",
-		regex: /\[scenes=([^]*?), (true|false), (\[[0-9].*\])\]/g,
-		replace: function(notrelevant, game, flag, array) {
-			array = array.slice(1, -1).split(",").map(Number);
-			setTimeout(() => {  gameScenes(game, flag, array)}, 1);
-			return "<div id='table-scenes'></div>";
-		}
-	}
+    let scenes = {
+        type: "lang",
+        regex: /\[scenes=([^]*?), (true|false), (\[[0-9].*\])\]/g,
+        replace: function (notrelevant, game, flag, array) {
+            array = array.slice(1, -1).split(",").map(Number);
+            setTimeout(() => { gameScenes(game, flag, array) }, 1);
+            return "<div id='table-scenes'></div>";
+        }
+    }
 
-	let check = {
-		type: "lang",
-		regex: /\:YES\:/g,
-		replace: "<img src='/assets/green-check-mark.svg' class='icon-text'>"
-	}
+    let check = {
+        type: "lang",
+        regex: /\:YES\:/g,
+        replace: "<img src='/assets/green-check-mark.svg' class='icon-text'>"
+    }
 
-	let cross = {
-		type: "lang",
-		regex: /\:NO\:/g,   
-		replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
-	}
+    let cross = {
+        type: "lang",
+        regex: /\:NO\:/g,
+        replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
+    }
 
     let gt = {
         type: 'lang',
@@ -357,5 +387,6 @@ let ext = function() {
         regex: /\&amp\;/g,
         replace: '&',
     }
-	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt, amp]; // prioritize elements that will be nested within
+
+    return [heading, ins, hr_major, hr_minor, hr_custom, br, img, imgcss, code, title, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt, amp]; // prioritize elements that will be nested within
 }
