@@ -1,48 +1,5 @@
 "use strict";
 
-function generateTable(input) { // generates tables of shottypes of HSifS and WBaWC
-    const yes = '<img src="/assets/green-check-mark.svg" class="icon-text">';
-    const no = '<img src="/assets/red-cross.svg" class="icon-text">';
-    // table-shottype is ID of div in showdown-ext.js
-    const content = document.getElementById('table-shottype');
-    if (input.length == 20) { //hsifs
-        let str = '<table><thead><tr><th class="left">Subshot</th><th>Reimu</th><th>Cirno</th><th>Aya</th><th>Marisa</th></tr></thead><tbody><tr><td class="left"><span style="color:' + matchStyle['spring'].color + '">Spring</span></td>';
-        for (let i = 0; i < input.length; i++) {
-            switch (i) {
-                case 4: { str += '</tr><tr><td class="left"><span style="color:' + matchStyle['summer'].color + '">Summer</span></td>'; break; }
-                case 8: { str += '</tr><tr><td class="left"><span style="color:' + matchStyle['autumn'].color + '">Autumn</span></td>'; break; }
-                case 12: { str += '</tr><tr><td class="left"><span style="color:' + matchStyle['winter'].color + '">Winter</span></td>'; break; }
-                case 16: { str += '</tr><tr><td class="left">Extra</td>'; break; }
-            }
-            if (input[i] == 1) {
-                str += '<td>' + yes + '</td>';
-            } else {
-                str += '<td>' + no + '</td>';
-            }
-        }
-        str += '</tr></tbody></table>';
-        content.innerHTML += str;
-        return;
-    }
-    if (input.length == 9) { //wbawc
-        let str = '<table><thead><tr><th class="left">Spirit</th><th>Reimu</th><th>Marisa</th><th>Youmu</th></tr></thead><tbody><tr><td class="left"><span style="color:' + matchStyle['wolf'].color + '">Wolf</span></td>';
-        for (let i = 0; i < input.length; i++) {
-            switch (i) {
-                case 3: { str += '</tr><tr><td class="left"><span style="color:' + matchStyle['otter'].color + '">Otter</span></td>'; break; }
-                case 6: { str += '</tr><tr><td class="left"><span style="color:' + matchStyle['eagle'].color + '">Eagle</span></td>'; break; }
-            }
-            if (input[i] == 1) {
-                str += '<td>' + yes + '</td>';
-            } else {
-                str += '<td>' + no + '</td>';
-            }
-        }
-        str += '</tr></tbody></table>';
-        content.innerHTML += str;
-        return;
-    }
-}
-
 function contributorsFunction(check) {
     let object;
     if (check == 0) {

@@ -203,16 +203,6 @@ let ext = function() {
 		replace: "<sub>$1</sub>"
 	}
 	
-	let table = {
-		type: "lang",
-		regex: /\[table=(.*?)\]/gim,
-		// delay must exist for at least 1ms
-		replace: function(match, content) {
-			setTimeout(() => {  generateTable(content)}, 1);
-			return "<div id='table-shottype'></div>";
-		}
-	}
-
 	let box = {
 		type: "lang",
 		regex: /\[box=(.*?)\]([^]*?)\[\/box\]/g,
@@ -357,5 +347,5 @@ let ext = function() {
         regex: /\&amp\;/g,
         replace: '&',
     }
-	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, table, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt, amp]; // prioritize elements that will be nested within
+	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, scenes, check, cross, gt, lt, amp]; // prioritize elements that will be nested within
 }
