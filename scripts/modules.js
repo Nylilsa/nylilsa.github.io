@@ -38,37 +38,3 @@ function contributorsFunction(check) {
 
     return lines.join('\n');
 }
-
-function gameScenes(game, flag, array) {
-    const content = document.getElementById('table-scenes'); // table-scenes is ID of div in showdown-ext.js
-    let yes;
-    let no;
-    if (flag === 'true') {
-        yes = '<img src="/assets/green-check-mark.svg" class="icon-text">';
-        no = '<img src="/assets/red-cross.svg" class="icon-text">';
-    } else {
-        no = '<img src="/assets/green-check-mark.svg" class="icon-text">';
-        yes = '<img src="/assets/red-cross.svg" class="icon-text">';
-    }
-
-    if (game === '143') {
-        let str = '<table><thead><tr><th class="left">Scenes</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead><tbody><tr><td class="left">Day 1</td>';
-        const days = [1, 7, 13, 20, 27, 35, 43, 51, 58, 66]; // digit k represents first day of indexOf k.
-        const maximum = 75;
-        let k = 1;
-        for (let i = 1; i <= maximum; i++) {
-            if (i === days[k]) {
-                str += '</tr><tr><td class="left">Day ' + (k + 1) + '</td>';
-                k += 1;
-            }
-            if (array.includes(i)) {
-                str += '<td>' + yes + '</td>';
-            } else {
-                str += '<td>' + no + '</td>';
-            }
-        }
-        str += "</thead></table>"
-        content.innerHTML += str;
-        return;
-    }
-}
