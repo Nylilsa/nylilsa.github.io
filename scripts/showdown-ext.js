@@ -256,8 +256,9 @@ let ext = function() {
 	let contributors = {
 		type: "lang",
 		regex: /\[contributors=([^]*?)\]/g,
-		replace: function(match, content) {
-			return contributorsFunction(content);
+		replace: function(match, id) {
+			contributorsFunction(id);
+            return `<ul id='contributors-${id}'></ul>`;
 		}
 	}
 

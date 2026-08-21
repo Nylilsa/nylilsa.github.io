@@ -1,7 +1,6 @@
 "use strict";
 
 let isEclListenerAdded = false;
-let eclJson = null;
 let figureId = 0;
 let eclJsonId = 0;
 let citeId = 0;
@@ -224,6 +223,29 @@ function citeReplay(game, date, author, name, difficulty, shot, version, url, no
 	if (latestVersion[game] != version) {version = '<span class="highlight-txt" style="color:#f2c200">'+version+'</span>'}
 	if (note) {note = "(Note: "+note+")"}
 	return 'Replay <code>'+name+'</code> by "'+author+'". '+difficulty+', '+shot+', '+version+'. 「'+date+'」. <a class="url" href="'+url+'" target="_blank">Download link</a> '+note;
+}
+
+async function contributorsFunction(check) {
+    const contributors = await fetchData("json/contributors.json");
+    const parent = document.getElementById(`contributors-${check}`);
+
+    for (const value of Object.values(contributors[check] ?? {})) {
+        const li = document.createElement("li");
+
+        if (value.url) {
+            const a = document.createElement("a");
+            a.className = "url";
+            a.href = value.url;
+            a.target = "_blank";
+            a.textContent = value.name;
+            li.append(a);
+        } else {
+            li.textContent = value.name;
+        }
+
+        li.append(` - ${value.help}`);
+        parent.append(li);
+    }
 }
 
 function showNavbarChildren() { //toggles all elements in navbar of Bugs if clicked on
