@@ -2,6 +2,6 @@
   "devDependencies": {
     "chokidar-cli": "^3.0.0",
     "fracturedjsonjs": "^4.1.1",
-    "sass": "^1.97.3"
+    "sass": "^1.103.1"
   }
 }
