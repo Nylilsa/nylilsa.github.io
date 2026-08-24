@@ -340,3 +340,5 @@ let ext = function() {
     }
 	return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp]; // prioritize elements that will be nested within
 }
+
+module.exports = ext;
