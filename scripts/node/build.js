@@ -11,11 +11,15 @@ const pagesDir = path.join(rootDir, "pages");
 const distDir = path.join(rootDir, "dist");
 const mainHtmlPath = path.join(rootDir, "index.html");
 
+let pageTitle = 'temp';
+
 let citeId = 0;
 let eclJsonId = 0;
 let figureId = 0;
 
 const GLITCH_TREE = JSON.parse(fs.readFileSync("json/glitch-tree.json"));
+const CONTRIBUTORS = JSON.parse(fs.readFileSync("json/contributors.json"));
+const WEBDATA = JSON.parse(fs.readFileSync("json/webdata.json"));
 
 
 let ext = function () {
@@ -46,8 +50,8 @@ let ext = function () {
         regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?)\]/g,
         replace: function (all, img, figtitle, alt) {
             figureId++;
-            const path = img.startsWith("http") ? img : `pages/${img}`;
-            return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" title="${figtitle}" src="/${path}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div></div>`;
+            const path = img.startsWith("http") ? img : `/pages/${img}`;
+            return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" title="${figtitle}" src="${path}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div></div>`;
         }
     }
     let imgcss = {
@@ -74,16 +78,8 @@ let ext = function () {
         type: "lang",
         regex: /\[title=(.*?)\]/gim,
         replace: function (match, content) {
-            // figureId = 0;
-            // setWindowTitleDirect(content); TODO
-            // setTimeout(() => {
-            // hljs.highlightAll();
-            // const elements = document.getElementsByClassName('highlight-child');
-            // for (let i = 0; i < elements.length; i++) {
-            // elements[i].parentElement.classList.add('highlight-bg');
-            // }
-            // }, 1);
-            // return "";
+            pageTitle = content;
+            return '';
         }
     }
 
@@ -258,7 +254,7 @@ let ext = function () {
         regex: /\[cite=([^]*?)\]/g,
         replace: function (match, content) {
             let id = citeId++;
-            return fillCite(id, content, videoFunction);
+            return fillCite(id, content, videoFunction, WEBDATA);
             return `<span id="cite-${id}"></span>`;
         }
     }
@@ -268,8 +264,8 @@ let ext = function () {
         regex: /\[replay=([^]*?)\]/g,
         replace: function (match, content) {
             let id = citeId++;
-            return fillCite(id, content, replayFunction);
-            return `<span id="cite-${id}"></span>`;
+            const c = fillCite(id, content, replayFunction, WEBDATA);
+            return c;
         }
     }
 
@@ -305,18 +301,6 @@ let ext = function () {
         type: "lang",
         regex: /\[buildCategoriesTable\]/g,
         replace: function () {
-            return "<div id='bugsCategoriesTable'></div>";
-            //something complicated with lots of operations
-            setTimeout(() => {
-                Promise.all([
-                    import('../init-categories-table.js'),
-                ]).then(([categoriesTable]) => {
-                    Object.entries(categoriesTable).forEach(([name, exported]) => window[name] = exported);
-                    initCategoriesTable();
-                }).catch((error) => {
-                    console.error(error);
-                });
-            }, 1);
             return "<div id='bugsCategoriesTable'></div>";
         }
     }
@@ -424,7 +408,6 @@ function changeBaseIndexHtml() {
     const dom = new JSDOM(html);
     const document = dom.window.document;
 
-    document.title = "New Title";
     initSidebarThemes(document);
     initSidebarGlitches(document);
     fs.writeFileSync(`${mainHtmlPath}test.html`, dom.serialize());
@@ -487,16 +470,17 @@ t()
 
 async function generateHtmlFiles() {
     const markdownFiles = findMarkdownFiles(pagesDir);
-    const shift = 20; // allows smaller sized testing
-    const max = 2;
+    const shift = 2; // allows smaller sized testing
+    const max = 7;
     for (let i = shift + 0; i < shift + max; i++) {
+        let htmlFile = structuredClone(template);
         // for (const markdownPath of markdownFiles) {
         const markdownPath = markdownFiles[i];
         const markdown = fs.readFileSync(markdownPath, "utf8");
 
         const markdownHtml = converter.makeHtml(markdown);
 
-        template = template.replace(
+        htmlFile = htmlFile.replace(
             "<!-- MD_CONTENT -->",
             markdownHtml
         );
@@ -506,15 +490,22 @@ async function generateHtmlFiles() {
         const thnr = parts[parts.length - 2];
         const pageId = path.basename(markdownPath, ".md");
 
+        const dom = new JSDOM(htmlFile);
+        const document = dom.window.document;
+
+        document.title = pageTitle;
+        const elements = document.getElementsByClassName('highlight-child');
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].parentElement.classList.add('highlight-bg');
+        }
+
 
         // Your JSON data for this page
         const pageData = GLITCH_TREE?.[thnr]?.[pageId];
         if (pageData) {
-            const dom = new JSDOM(template);
-            const document = dom.window.document;
             const urlNames = pageData["url-name"];
             await initCategoriesTable(document, thnr, pageId, names1);
-            template = dom.serialize();
+            htmlFile = dom.serialize();
             // fs.writeFileSync(`test.html`, dom.serialize());
 
             const canonicalName = urlNames[0];
@@ -528,7 +519,7 @@ async function generateHtmlFiles() {
             );
 
             fs.mkdirSync(path.dirname(canonicalPath), { recursive: true });
-            fs.writeFileSync(canonicalPath, template);
+            fs.writeFileSync(canonicalPath, htmlFile);
 
             console.log(`Built: ${canonicalName}`);
 
@@ -574,7 +565,7 @@ async function generateHtmlFiles() {
 
             fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
-            fs.writeFileSync(outputPath, template);
+            fs.writeFileSync(outputPath, htmlFile);
 
             console.log(`Built: ${relativeHtmlPath}`);
         }

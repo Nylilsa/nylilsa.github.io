@@ -122,14 +122,12 @@ export const names1 = {
     "th20": { "game_number": "20", "abbreviation": "FW", "jp": "錦上京", "en": "Fossilized Wonders" },
 }
 
-export async function fillCite(id, key, citingFunction) {
-    console.log(citingFunction)
-    const cite = await citingFunction(key);
+export function fillCite(id, key, citingFunction, webdata) {
+    const cite = citingFunction(key, webdata);
     return `<span id="cite-${id}">${cite}</span>`;
 }
 
-export async function videoFunction(key) {
-    const webdata = await fetchData("./json/webdata.json");
+export function videoFunction(key, webdata) {
     const content = webdata["Citations"][key];
     let datum;
     const intl = "en-US";
@@ -143,8 +141,7 @@ export async function videoFunction(key) {
     return citeAPA(datum, content.author, content.title, content.url);
 }
 
-export async function replayFunction(key) {
-    const webdata = await fetchData("./json/webdata.json");
+export function replayFunction(key, webdata) {
     const content = webdata["Replays"][key];
     const path = `pages/bugs/${content.game}/${content.url}`;
     const datum = dateFormat(content.date);
@@ -214,7 +211,6 @@ export async function replaceEclIns(type, n, id) {
     // })
 
     const data = await fetchData("./json/ecl.json");
-    console.log(data)
     const map = ["Instructions", "Globals", "Custom"];
     const ins = map[type];
     const obj = data[ins][n];

@@ -64,7 +64,7 @@ function buildRowSameGame(game, gameBugs, selectedIndex) {
             td.appendChild(span);
         } else {
             const a = document.createElement('a');
-            const url = `/#/bugs/${game}/${gameBugs[index]["url-name"][0]}`
+            const url = `/bugs/${game}/${gameBugs[index]["url-name"][0]}`
             a.classList.add("url");
             // a.target = "_blank"
             a.href = url;
@@ -112,7 +112,7 @@ function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
                 td.appendChild(span);
             } else {
                 const a = document.createElement('a');
-                const url = `/#/bugs/${game}/${obj["url-name"][0]}`
+                const url = `/bugs/${game}/${obj["url-name"][0]}`
                 a.classList.add("url");
                 // a.target = "_blank"
                 a.href = url;
@@ -161,7 +161,7 @@ function buildRowRelated(selectedGame, selectedIndex, TREE, categories, id) {
                 td.appendChild(span);
             } else {
                 const a = document.createElement('a');
-                const url = `${window.location.origin}/#/bugs/${game}/${obj["url-name"][0]}`
+                const url = `/bugs/${game}/${obj["url-name"][0]}`
                 a.classList.add("url");
                 // a.target = "_blank"
                 a.href = url;
