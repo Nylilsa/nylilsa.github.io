@@ -6,6 +6,8 @@ let eclJsonId = 0;
 let citeId = 0;
 const MEDIA_QUERY_WIDTH = 500; // value must match one in css file
 
+hljs.highlightAll();
+
 async function checkBugPath(path) {
     const check = path.slice(0, 5);
     if (check !== "bugs/") {return path}
@@ -607,13 +609,31 @@ function initDropdownToggle() {
     }
 }
 
+function initListeners() {
+    document.addEventListener("click", (e) => {
+        const button = e.target.closest(".toggle-button");
+        if (!button) return;
+
+        const target = document.querySelector(button.dataset.target);
+        if (!target) return;
+
+        target.classList.toggle("hidden");
+
+        const showDefault = !target.classList.contains("hidden");
+
+        button.textContent = showDefault ? button.dataset.hide : button.dataset.show;
+        button.setAttribute("aria-expanded", String(showDefault));
+    });
+}
+
 function init() {
     function commonInit() {
-        loadMarkdown(initRemoveHash(false, true));
+        // loadMarkdown(initRemoveHash(false, true));
         initRememberScroll();
         initDropdownToggle();
         initSidebarContent();
         initHashChange();
+        initListeners();
     }
     initChartStuff(() => {
         commonInit();

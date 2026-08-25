@@ -1,8 +1,14 @@
 "use strict";
 
-export async function initCategoriesTable() {
-    const path = initRemoveHash(false);
-    const [, game, index] = (await checkBugPath(path)).split(/[/.]/);
+import fs from 'fs';
+
+let document;
+let names1;
+export async function initCategoriesTable(doc, game, index, n) {
+    document = doc;
+    names1 = n;
+    // const path = initRemoveHash(false);
+    // const [, game, index] = (await checkBugPath(path)).split(/[/.]/);
     Promise.all([
         fetchData(`json/glitch-tree.json`),
         fetchData(`json/categories.json`)
@@ -11,10 +17,13 @@ export async function initCategoriesTable() {
     });
 }
 
+function fetchData(path) {
+    return JSON.parse(fs.readFileSync(path, "utf8"));
+}
+
 function buildTable(game, index, TREE, CATEGORIES) {
     const currentPage = TREE[game][index];
     const tagList = currentPage.categories.tags;
-
     const tableId = document.getElementById("bugsCategoriesTable");
     const table = document.createElement('table');
     table.classList.add("max-width");
@@ -55,7 +64,7 @@ function buildRowSameGame(game, gameBugs, selectedIndex) {
             td.appendChild(span);
         } else {
             const a = document.createElement('a');
-            const url = `${window.location.origin}/#/bugs/${game}/${gameBugs[index]["url-name"][0]}`
+            const url = `/#/bugs/${game}/${gameBugs[index]["url-name"][0]}`
             a.classList.add("url");
             // a.target = "_blank"
             a.href = url;
@@ -103,7 +112,7 @@ function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
                 td.appendChild(span);
             } else {
                 const a = document.createElement('a');
-                const url = `${window.location.origin}/#/bugs/${game}/${obj["url-name"][0]}`
+                const url = `/#/bugs/${game}/${obj["url-name"][0]}`
                 a.classList.add("url");
                 // a.target = "_blank"
                 a.href = url;
@@ -205,7 +214,7 @@ function buildToggleableHeader({
         }
         if (applyInitialStateIfPresent()) return;
         // observe the document for insertion of the target
-        const observer = new MutationObserver((mutations, obs) => {
+        const observer = new document.defaultView.MutationObserver((mutations, obs) => {
             if (applyInitialStateIfPresent()) {
                 obs.disconnect();
             }
@@ -220,13 +229,10 @@ function buildToggleableHeader({
             try { observer.disconnect(); } catch (e) { console.error(e); }
         }, 5000);
     })();
-
-    button.onclick = () => {
-        const target = document.querySelector(targetQuery);
-        target.classList.toggle("hidden");
-        showDefault = !showDefault;
-        updateUI();
-    }
+    button.classList.add("toggle-button");
+    button.dataset.target = targetQuery;
+    button.dataset.show = labels.show;
+    button.dataset.hide = labels.hide;
     button.style.width = "3rem"
     span.style.paddingLeft = "3rem"
     span.style.width = "100%"

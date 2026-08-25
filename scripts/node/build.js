@@ -4,6 +4,7 @@ const path = require("path");
 const showdown = require("showdown");
 // const ext = require("../showdown-ext");
 const { fillCite, videoFunction, matchText, colorRGB, contributorsFunction, replayFunction, replaceEclIns, hrCustom, colorHex } = require("./build-helper");
+const { initCategoriesTable } = require("../init-categories-table.js");
 
 const rootDir = path.join(__dirname, "../..");
 const pagesDir = path.join(rootDir, "pages");
@@ -304,7 +305,7 @@ let ext = function () {
         type: "lang",
         regex: /\[buildCategoriesTable\]/g,
         replace: function () {
-            return -1;
+            return "<div id='bugsCategoriesTable'></div>";
             //something complicated with lots of operations
             setTimeout(() => {
                 Promise.all([
@@ -476,9 +477,15 @@ async function initSidebarGlitches(document) {
     }
 }
 
-template = changeBaseIndexHtml()
+function t() {
 
-function generateHtmlFiles() {
+    template = changeBaseIndexHtml()
+}
+
+t()
+
+
+async function generateHtmlFiles() {
     const markdownFiles = findMarkdownFiles(pagesDir);
     const shift = 20; // allows smaller sized testing
     const max = 2;
@@ -489,7 +496,7 @@ function generateHtmlFiles() {
 
         const markdownHtml = converter.makeHtml(markdown);
 
-        const output = template.replace(
+        template = template.replace(
             "<!-- MD_CONTENT -->",
             markdownHtml
         );
@@ -503,7 +510,12 @@ function generateHtmlFiles() {
         // Your JSON data for this page
         const pageData = GLITCH_TREE?.[thnr]?.[pageId];
         if (pageData) {
+            const dom = new JSDOM(template);
+            const document = dom.window.document;
             const urlNames = pageData["url-name"];
+            await initCategoriesTable(document, thnr, pageId, names1);
+            template = dom.serialize();
+            // fs.writeFileSync(`test.html`, dom.serialize());
 
             const canonicalName = urlNames[0];
 
@@ -516,7 +528,7 @@ function generateHtmlFiles() {
             );
 
             fs.mkdirSync(path.dirname(canonicalPath), { recursive: true });
-            fs.writeFileSync(canonicalPath, output);
+            fs.writeFileSync(canonicalPath, template);
 
             console.log(`Built: ${canonicalName}`);
 
@@ -562,7 +574,7 @@ function generateHtmlFiles() {
 
             fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
-            fs.writeFileSync(outputPath, output);
+            fs.writeFileSync(outputPath, template);
 
             console.log(`Built: ${relativeHtmlPath}`);
         }
@@ -574,6 +586,10 @@ function generateHtmlFiles() {
 
 
 generateHtmlFiles();
+
+
+
+
 
 fs.cpSync("assets", "dist/assets", { recursive: true });
 fs.cpSync("pages", "dist/pages", { recursive: true });
