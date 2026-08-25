@@ -2,6 +2,7 @@
     "devDependencies": {
         "chokidar-cli": "^3.0.0",
         "fracturedjsonjs": "^4.1.1",
+        "jsdom": "^30.0.1",
         "sass": "^1.103.1",
         "showdown": "^2.1.0"
     },

@@ -5,19 +5,11 @@ let figureId = 0;
 let eclJsonId = 0;
 let citeId = 0;
 const MEDIA_QUERY_WIDTH = 500; // value must match one in css file
-const MD = new showdown.Converter({
-	extensions: [ext],
-	noHeaderId: false,
-	openLinksInNewWindow: true,
-	simpleLineBreaks: true,
-	strikethrough: true,
-	tables: true
-});
 
 async function checkBugPath(path) {
     const check = path.slice(0, 5);
     if (check !== "bugs/") {return path}
-    const data = await fetchData("json/glitch-tree.json");
+    const data = await fetchData("/json/glitch-tree.json");
     const game = path.split("/")[1];
     const longName = path.split("/")[2].replace(".md", "");
     for (const key in data[game]) {
@@ -179,7 +171,7 @@ const fetchData = (() => {
 })();
 
 async function videoFunction(key) {
-    const webdata = await fetchData("json/webdata.json");
+    const webdata = await fetchData("/json/webdata.json");
 	const content = webdata["Citations"][key];
 	let datum;
 	const intl = "en-US";
@@ -194,7 +186,7 @@ async function videoFunction(key) {
 }
 
 async function replayFunction(key) {
-    const webdata = await fetchData("json/webdata.json");
+    const webdata = await fetchData("/json/webdata.json");
 	const content = webdata["Replays"][key];
     const path = `pages/bugs/${content.game}/${content.url}`;
 	const datum = dateFormat(content.date);
@@ -226,7 +218,7 @@ function citeReplay(game, date, author, name, difficulty, shot, version, url, no
 }
 
 async function contributorsFunction(check) {
-    const contributors = await fetchData("json/contributors.json");
+    const contributors = await fetchData("/json/contributors.json");
     const parent = document.getElementById(`contributors-${check}`);
 
     for (const value of Object.values(contributors[check] ?? {})) {
@@ -311,7 +303,7 @@ async function replaceEclIns(type, n, id) {
             }
         })
     }
-    const data = await fetchData("json/ecl.json");
+    const data = await fetchData("/json/ecl.json");
     const map = ["Instructions", "Globals", "Custom"];
     const ins = map[type];
     const obj = data[ins][n];
@@ -399,8 +391,8 @@ function setTheme(theme) {
 
 function initSidebarContent() {
     const colDecrease = -16;
-    initSidebarGlitches();
-    initSidebarThemes(colDecrease);
+    // initSidebarGlitches();
+    // initSidebarThemes(colDecrease);
     initSidebarListeners();
     initSidebarVisibility();
 }
@@ -472,7 +464,7 @@ function initSidebarThemes(colDecrease) {
 
 async function initSidebarGlitches() {
     try {
-        const data = await fetchData("json/glitch-tree.json");
+        const data = await fetchData("/json/glitch-tree.json");
         const identifiers = document.querySelectorAll("#page-bugs li ul");
         const header = document.querySelectorAll("#page-bugs li button");
         for (let i = 0; i < identifiers.length; i++) { // does it games.length times
@@ -535,6 +527,7 @@ function initHashChange() {
 }
 
 function initRemoveHash(input, useRedirect = false) { //removes #/
+    return -1;
 	let c = window.location.hash.replace("#/","") + ".md";
 	let hash = '';
 	if (c === '.md') {
