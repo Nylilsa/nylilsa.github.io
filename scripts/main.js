@@ -624,6 +624,7 @@ function initListeners() {
         button.textContent = showDefault ? button.dataset.hide : button.dataset.show;
         button.setAttribute("aria-expanded", String(showDefault));
     });
+    
 }
 
 function init() {

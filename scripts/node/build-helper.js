@@ -122,30 +122,35 @@ export const names1 = {
     "th20": { "game_number": "20", "abbreviation": "FW", "jp": "錦上京", "en": "Fossilized Wonders" },
 }
 
-export function fillCite(id, key, citingFunction, webdata) {
-    const cite = citingFunction(key, webdata);
-    return `<span id="cite-${id}">${cite}</span>`;
-}
-
 export function videoFunction(key, webdata) {
-    const content = webdata["Citations"][key];
-    let datum;
-    const intl = "en-US";
-    const options = { calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric' };
-    const rawDatum = new Date(content.date);
-    if (typeof rawDatum == "object" && rawDatum == "Invalid Date") {
-        datum = content.date;
-    } else {
-        datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
-    }
-    return citeAPA(datum, content.author, content.title, content.url);
+    const content = webdata.Citations[key];
+
+    const datum = dateFormat(content.date);
+
+    return citeAPA(
+        datum,
+        content.author,
+        content.title,
+        content.url
+    );
 }
 
 export function replayFunction(key, webdata) {
-    const content = webdata["Replays"][key];
+    const content = webdata.Replays[key];
+
     const path = `pages/bugs/${content.game}/${content.url}`;
-    const datum = dateFormat(content.date);
-    return citeReplay(content.game, datum, content.author, content.name, content.difficulty, content.shot, content.version, path, content.note);
+
+    return citeReplay(
+        content.game,
+        dateFormat(content.date),
+        content.author,
+        content.name,
+        content.difficulty,
+        content.shot,
+        content.version,
+        path,
+        content.note
+    );
 }
 
 export function dateFormat(date) {
@@ -169,7 +174,7 @@ export function citeAPA(date, author, title, url) {
 export function citeReplay(game, date, author, name, difficulty, shot, version, url, note) {
     if (latestVersion[game] != version) { version = '<span class="highlight-txt" style="color:#f2c200">' + version + '</span>' }
     if (note) { note = "(Note: " + note + ")" }
-    return 'Replay <code>' + name + '</code> by "' + author + '". ' + difficulty + ', ' + shot + ', ' + version + '. 「' + date + '」. <a class="url" href="' + url + '" target="_blank">Download link</a> ' + note;
+    return 'Replay <code>' + name + '</code> by "' + author + '". ' + difficulty + ', ' + shot + ', ' + version + '. 「' + date + '」. <a class="url" href="/' + url + '" target="_blank">Download link</a> ' + note;
 }
 
 // const fetchData = (() => {
@@ -198,7 +203,7 @@ function fetchData(path) {
 
 
 
-export async function replaceEclIns(type, n, id) {
+export function replaceEclIns(type, n, id, data) {
     // document.body.addEventListener("mouseover", (event) => {
     //     const visible = document.querySelectorAll(".visible");
     //     let [tip, targ] = getTip(event.target, "tooltip");
@@ -210,7 +215,7 @@ export async function replaceEclIns(type, n, id) {
     //     }
     // })
 
-    const data = await fetchData("./json/ecl.json");
+    // const data = await fetchData("./json/ecl.json");
     const map = ["Instructions", "Globals", "Custom"];
     const ins = map[type];
     const obj = data[ins][n];
@@ -233,6 +238,9 @@ export async function replaceEclIns(type, n, id) {
     div2.style.visibility = `hidden`;
     el.appendChild(div2);
     checkElementResize(div);
+    return `<code id='ecl-cite-${id}' class='mono dotted'></code>`;
+
+
 }
 
 export function hrCustom(input) {
@@ -277,7 +285,7 @@ export function colorRGB(add, opacity, game) {
 
 export function colorHex(input) {
     // const def = getComputedStyle(document.documentElement).getPropertyValue('--clr-default');
-	return gameColors[input] || def || "#47748b";
+    return gameColors[input] || def || "#47748b";
 }
 
 export async function contributorsFunction(check) {

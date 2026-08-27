@@ -201,34 +201,36 @@ function buildToggleableHeader({
     }
     parent.style.display = "grid";
     parent.style.gridTemplateColumns = "1fr auto";
+
     updateUI();
 
-    // MutationObserver  apply hidden state once target appears
-    (function Observer() {
-        function applyInitialStateIfPresent() {
-            const el = document.querySelector(targetQuery);
-            if (!el) return false;
-            // apply the initial state: add/remove .hidden according to showDefault
-            el.classList.toggle('hidden', !showDefault);
-            return true;
-        }
-        if (applyInitialStateIfPresent()) return;
-        // observe the document for insertion of the target
-        const observer = new document.defaultView.MutationObserver((mutations, obs) => {
-            if (applyInitialStateIfPresent()) {
-                obs.disconnect();
-            }
-        });
-        const ancestorNode = document.querySelector(ancestorSelector) || document.body || document.documentElement;
-        observer.observe(ancestorNode, {
-            childList: true,
-            subtree: true
-        });
-        // stop after time if target never appears
-        setTimeout(() => {
-            try { observer.disconnect(); } catch (e) { console.error(e); }
-        }, 5000);
-    })();
+    //  NOTE: does not work elements are shown by default TODO
+    // // MutationObserver  apply hidden state once target appears
+    // (function Observer() {
+    //     function applyInitialStateIfPresent() {
+    //         const el = document.querySelector(targetQuery);
+    //         if (!el) return false;
+    //         // apply the initial state: add/remove .hidden according to showDefault
+    //         el.classList.toggle('hidden', !showDefault);
+    //         return true;
+    //     }
+    //     if (applyInitialStateIfPresent()) return;
+    //     // observe the document for insertion of the target
+    //     const observer = new document.defaultView.MutationObserver((mutations, obs) => {
+    //         if (applyInitialStateIfPresent()) {
+    //             obs.disconnect();
+    //         }
+    //     });
+    //     const ancestorNode = document.querySelector(ancestorSelector) || document.body || document.documentElement;
+    //     observer.observe(ancestorNode, {
+    //         childList: true,
+    //         subtree: true
+    //     });
+    //     // stop after time if target never appears
+    //     setTimeout(() => {
+    //         try { observer.disconnect(); } catch (e) { console.error(e); }
+    //     }, 5000);
+    // })();
     button.classList.add("toggle-button");
     button.dataset.target = targetQuery;
     button.dataset.show = labels.show;

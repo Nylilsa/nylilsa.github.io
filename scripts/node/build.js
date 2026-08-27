@@ -11,12 +11,15 @@ const pagesDir = path.join(rootDir, "pages");
 const distDir = path.join(rootDir, "dist");
 const mainHtmlPath = path.join(rootDir, "index.html");
 
-let pageTitle = 'temp';
+const interface = {
+    pageTitle: "",
+}
 
 let citeId = 0;
 let eclJsonId = 0;
 let figureId = 0;
 
+const ECL = JSON.parse(fs.readFileSync("json/ecl.json"));
 const GLITCH_TREE = JSON.parse(fs.readFileSync("json/glitch-tree.json"));
 const CONTRIBUTORS = JSON.parse(fs.readFileSync("json/contributors.json"));
 const WEBDATA = JSON.parse(fs.readFileSync("json/webdata.json"));
@@ -78,7 +81,7 @@ let ext = function () {
         type: "lang",
         regex: /\[title=(.*?)\]/gim,
         replace: function (match, content) {
-            pageTitle = content;
+            interface.pageTitle = content;
             return '';
         }
     }
@@ -253,21 +256,17 @@ let ext = function () {
         type: "lang",
         regex: /\[cite=([^]*?)\]/g,
         replace: function (match, content) {
-            let id = citeId++;
-            return fillCite(id, content, videoFunction, WEBDATA);
-            return `<span id="cite-${id}"></span>`;
+            return videoFunction(content, WEBDATA);
         }
-    }
+    };
 
     let replay = {
         type: "lang",
         regex: /\[replay=([^]*?)\]/g,
         replace: function (match, content) {
-            let id = citeId++;
-            const c = fillCite(id, content, replayFunction, WEBDATA);
-            return c;
+            return replayFunction(content, WEBDATA);
         }
-    }
+    };
 
     let contributors = {
         type: "lang",
@@ -283,8 +282,8 @@ let ext = function () {
         regex: /\[ins=(.*?), n=(.*?)\]/g,
         replace: function (match, content, n) {
             let id = eclJsonId++;
-            replaceEclIns(content, n, id);
-            return `<code id='ecl-cite-${id}' class='mono dotted'></code>`;
+            return "temp"
+            return replaceEclIns(content, n, id, ECL);
         }
     }
 
@@ -471,7 +470,7 @@ t()
 async function generateHtmlFiles() {
     const markdownFiles = findMarkdownFiles(pagesDir);
     const shift = 2; // allows smaller sized testing
-    const max = 7;
+    const max = 8;
     for (let i = shift + 0; i < shift + max; i++) {
         let htmlFile = structuredClone(template);
         // for (const markdownPath of markdownFiles) {
@@ -493,7 +492,7 @@ async function generateHtmlFiles() {
         const dom = new JSDOM(htmlFile);
         const document = dom.window.document;
 
-        document.title = pageTitle;
+        document.title = interface.pageTitle;
         const elements = document.getElementsByClassName('highlight-child');
         for (let i = 0; i < elements.length; i++) {
             elements[i].parentElement.classList.add('highlight-bg');

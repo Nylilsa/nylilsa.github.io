@@ -1,0 +1,31 @@
+Build script:
+
+In essence
+
+Markdown files + Main HTML base -> HTML files
+
+But MD files contain custom extensions
+
+Idea:
+
+1. Load HTML base in memory
+2. Load MD file in memory
+3. MD file -> MD2HTML
+4. HTML base + MD2HTML
+
+Idea 1 step 3 has following problems (The showdown.js contains application logic)
+
+title : 
+cite : Done
+replay : Done
+contributors : 
+ins : 
+canvas : 
+buildCategoriesTable : 
+jumpto : 
+img : 
+imgcss : 
+hr_custom : 
+match : 
+
+
