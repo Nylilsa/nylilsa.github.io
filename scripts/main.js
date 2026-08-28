@@ -89,9 +89,6 @@ function setWindowTitleDirect(str) {
 
 function toggleSidebar(direction, forceClose) { //changes class of sidebar upon button press
     const time = getComputedStyle(document.documentElement).getPropertyValue('--time-animation').match(/\d+/g).map(Number)[0];
-    setTimeout(() => {
-        checkElementResize();
-    }, time)
     const sidebarLeft = document.getElementById('sidebar-left');
     const sidebarRight = document.getElementById('sidebar-right');
     const content = document.getElementById('content');
@@ -136,17 +133,17 @@ function toggleSidebar(direction, forceClose) { //changes class of sidebar upon 
 
 }
 
-function jumpTo(id, duration) {
-    if (id === '') {
-        return;
-    }
-    setTimeout(() => {
-        const top = document.getElementById(id.replace("#", ""));
-        if (top) {
-            window.scrollTo(0, top.offsetTop);
-        }
-    }, duration);
-}
+// function jumpTo(id, duration) {
+//     if (id === '') {
+//         return;
+//     }
+//     setTimeout(() => {
+//         const top = document.getElementById(id.replace("#", ""));
+//         if (top) {
+//             window.scrollTo(0, top.offsetTop);
+//         }
+//     }, duration);
+// }
 
 async function fillCite(id, key, citingFunction) {
     const cite = await citingFunction(key);
@@ -268,31 +265,6 @@ function showNavbarChildren() { //toggles all elements in navbar of Bugs if clic
     }
 }
 
-function checkElementResize(self) {
-    const tooltips = self ? [self] : document.querySelectorAll(".tooltip");
-    tooltips.forEach((tooltip) => {
-        const element = tooltip.nextElementSibling;
-        const elementPosition = element.getBoundingClientRect();
-        const mdPosition = document.getElementById("mdcontent").getBoundingClientRect();
-        const parentPosition = element.parentElement.getBoundingClientRect();
-        if (elementPosition.right > mdPosition.right) {
-            tooltip.style.left = ``;
-            tooltip.style.right = `${parentPosition.right - mdPosition.right}px`;
-            tooltip.style.translate = `0`;
-        } else if (elementPosition.left < mdPosition.left) {
-            tooltip.style.left = `-${parentPosition.left - mdPosition.left}px`;
-            tooltip.style.right = ``;
-            tooltip.style.translate = `0`;
-        } else {
-            tooltip.style.left = ``;
-            tooltip.style.right = ``;
-            tooltip.style.translate = ``;
-        }
-    })
-}
-
-
-
 function getTip(elem, key) {
     do {
         if (typeof elem.dataset[key] != "undefined")
@@ -301,39 +273,6 @@ function getTip(elem, key) {
     return ["", null];
 }
 
-
-function getStringFromIns(obj, n) {
-    const div = document.createElement("div");
-    const hr = document.createElement("hr");
-    const p1 = document.createElement("p");
-    const p2 = document.createElement("p");
-    const span = document.createElement("span");
-    let description = obj["Description"]
-    const name = obj["Name"];
-    const para = obj["Parameters"];
-    let titleText = `${n} - ${name}`;
-    if (para) {
-        let parameterStrings = para.map(paramObj => {
-            const paramName = Object.keys(paramObj)[0];
-            const paramType = paramObj[paramName];
-            return `${paramType} <code class="mono">${paramName}</code>`;
-        });
-        parameterStrings = parameterStrings.join(", ");
-        titleText += `(${parameterStrings})`;
-        for (let i = 0; i < para.length; i++) {
-            const value = Object.keys(para[i])[0];
-            description = description.replaceAll(`$${i + 1}`, `<code class="mono">${value}</code>`);
-        }
-    }
-    span.classList.add("mono");
-    span.innerHTML = titleText;
-    p1.innerHTML = span.outerHTML;
-    p2.innerHTML = description;
-    div.appendChild(p1);
-    div.appendChild(hr);
-    div.appendChild(p2);
-    return div.outerHTML;
-}
 
 function matchText(style, iconBool, highlightedText) {
     const icon = `<img src='${matchStyle[style].icon}' width='20' height='20'>`;
@@ -355,9 +294,6 @@ function setTheme(theme) {
 ///////////////////// INIT /////////////////////
 
 function initSidebarContent() {
-    const colDecrease = -16;
-    // initSidebarGlitches();
-    // initSidebarThemes(colDecrease);
     initSidebarListeners();
     initSidebarVisibility();
 }
@@ -410,54 +346,6 @@ function initSidebarListeners() {
             localStorage.setItem('sidebarScroll', leftSidebar.scrollTop);
         }, 250);
     })
-}
-
-function initSidebarThemes(colDecrease) {
-    const themes = document.getElementsByClassName("circle-wrapper");
-    for (let i = 0; i < themes.length; i++) {
-        const parent = themes[i].parentElement;
-        const game = parent.dataset.theme;
-        let color = colorRGB(colDecrease, 1, game);
-        if (game == "th17") {
-            color = colorRGB(8, 1, game);
-        }
-        parent.style.setProperty('--clr-theme', color);
-        const next = themes[i].nextElementSibling;
-        next.innerText = `${names1[game]["jp"]}～${names1[game]["en"]}`;
-    }
-}
-
-async function initSidebarGlitches() {
-    try {
-        const data = await fetchData("/json/glitch-tree.json");
-        const identifiers = document.querySelectorAll("#page-bugs li ul");
-        const header = document.querySelectorAll("#page-bugs li button");
-        for (let i = 0; i < identifiers.length; i++) { // does it games.length times
-            const thnr = identifiers[i].id.slice(5); // bugs-th10 ---> th10
-            const child = header[i + 1];
-            const content = document.getElementById('bugs-' + thnr + '');
-            content.style.setProperty('--clr-game', `${colorHex(thnr)}`);
-            child.childNodes[1].data = `${names1[thnr]["jp"]}～${names1[thnr]["en"]}`;
-            for (let j = 0; j < Object.keys(data[thnr]).length; j++) {
-                const pageId = Object.keys(data[thnr])[j];
-                const li = document.createElement("li");
-                const div = document.createElement("div");
-                const a = document.createElement("a");
-                a.href = `#/bugs/${thnr}/${data[thnr][pageId]["url-name"][0]}`;
-                div.style.position = "relative";
-                if (!data[thnr][pageId]["finished"]) { // if page is unfinished
-                    a.innerText = `(WIP) ${data[thnr][pageId]['title']}`;
-                } else {
-                    a.innerText = data[thnr][pageId]['title'];
-                }
-                div.appendChild(a);
-                li.appendChild(div);
-                content.appendChild(li);
-            }
-        }
-    } catch (error) {
-        console.error('Error fetching or parsing names.json:', error);
-    }
 }
 
 function initMarkdown(isError) { //puts html in id 'test'
@@ -627,6 +515,42 @@ function initListeners() {
         tooltipElement.style.left = `${left}px`;
         tooltipElement.style.top = `${top}px`;
     });
+    document.addEventListener("click", event => {
+        // todo: fix issue of going to invalid page (e.g. gfw: n/a page)
+        const link = event.target.closest("a");
+
+        if (!link || link.target === "_blank") return;
+        if (link.origin !== location.origin) return;
+
+        event.preventDefault();
+
+        navigate(link.href);
+    });
+    window.addEventListener("popstate", () => {
+        navigate(location.href, false);
+    });
+}
+
+async function navigate(url, push = true) {
+    const response = await fetch(url);
+    const html = await response.text();
+
+    const doc = new DOMParser().parseFromString(html, "text/html");
+
+    document
+        .querySelector("#mdcontent")
+        .replaceWith(doc.querySelector("#mdcontent"));
+
+    if (push) {
+        history.pushState({}, "", url);
+    }
+
+    newPage(doc);
+}
+
+function newPage(doc) {
+    hljs.highlightAll();
+    document.title = doc.title;
 }
 
 function init() {

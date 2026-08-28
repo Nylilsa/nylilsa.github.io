@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const showdown = require("showdown");
 // const ext = require("../showdown-ext");
-const { fillCite, videoFunction, matchText, colorRGB, contributorsFunction, replayFunction, hrCustom, colorHex } = require("./build-helper");
+const { fillCite, videoFunction, matchText, colorRGB, replayFunction, hrCustom, colorHex } = require("./build-helper");
 const { initCategoriesTable } = require("../init-categories-table.js");
 
 const rootDir = path.join(__dirname, "../..");
@@ -87,12 +87,6 @@ let ext = function () {
         }
     }
 
-    let c = {
-        type: "lang",
-        regex: /\[c=(.*?)\]([^]*?)\[\/c\]/g,
-        replace: "<div class='$1'>$2</div>"
-    }
-
     let tip = {
         type: "lang",
         regex: /\[tip=(.*?)\]([^]*?)\[\/tip\]/g,
@@ -132,13 +126,13 @@ let ext = function () {
     let no_content = {
         type: "lang",
         regex: /\[no_content\]/g,
-        replace: "<span style='font-style: italic; color:'>This section has no content yet. Would you like to add to this section? [jumpto=#/me/contact]Contact me[/jumpto] if you are interested!</span>"
+        replace: "<span style='font-style: italic; color:'>This section has no content yet. Would you like to add to this section? [jumpto=/me/contact]Contact me[/jumpto] if you are interested!</span>"
     }
 
     let work_in_progress = {
         type: "lang",
         regex: /\[wip\]/g,
-        replace: "<span style='font-style: italic; color:'>This placeholder text has been placed here because this section is a Work In Progress. If you believe you could help out, please [jumpto=#/me/contact]contact me[/jumpto] !</span>"
+        replace: "<span style='font-style: italic; color:'>This placeholder text has been placed here because this section is a Work In Progress. If you believe you could help out, please [jumpto=/me/contact]contact me[/jumpto] !</span>"
     }
 
     let specs = {
@@ -210,12 +204,10 @@ let ext = function () {
     let jumpto = {
         type: "lang",
         regex: /\[jumpto=(.*?)\]([^]*?)\[\/jumpto\]/g,
-        replace: function (full, anchor, text) {
-            let key = anchor.substring(1);
-            key = key.match(/[^#]*$/)[0]; // no idea how I managed to make this work
-            return "<a class='url-toc' href=" + anchor + " onclick='jumpTo(\"" + key + "\", 1)'>" + text + "</a>";
+        replace: function (full, content, text) {
+            return `<a class="url-toc" href="${content}">${text}</a>`;
         }
-    }
+    };
 
     let sub = {
         type: "lang",
@@ -273,8 +265,7 @@ let ext = function () {
         type: "lang",
         regex: /\[contributors=([^]*?)\]/g,
         replace: function (match, id) {
-            contributorsFunction(id);
-            return `<ul id='contributors-${id}'></ul>`;
+            return contributorsFunction(id);
         }
     }
 
@@ -343,7 +334,7 @@ let ext = function () {
         regex: /\&amp\;/g,
         replace: '&',
     }
-    return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, c, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp]; // prioritize elements that will be nested within
+    return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp]; // prioritize elements that will be nested within
 }
 
 const names1 = {
@@ -465,18 +456,6 @@ function updateTemplate() {
 }
 
 function replaceEclIns(type, n) {
-    // document.body.addEventListener("mouseover", (event) => {
-    //     const visible = document.querySelectorAll(".visible");
-    //     let [tip, targ] = getTip(event.target, "tooltip");
-    //     const valid = targ?.firstElementChild?.classList.contains("tooltip");
-    //     visible.forEach(el => { el.classList.remove("visible") })
-    //     if (tip && valid) {
-    //         targ.firstElementChild.classList.add("visible");
-    //         checkElementResize(targ.firstElementChild);
-    //     }
-    // })
-
-    // const data = await fetchData("./json/ecl.json");
     const id = `${type}-${n}`;
     const map = ["Instructions", "Globals", "Custom"];
     const ins = map[type];
@@ -513,10 +492,25 @@ function getStringFromIns(obj, n) {
     let html = "<div><p><span class='mono'>";
     html += titleText
     html += "</span>"
-    // html +=
     html += "</p><hr><p>";
     html += description;
     html += "</p></div>";
+    return html;
+}
+
+function contributorsFunction(check) {
+    let html = `<ul id='contributors-${check}'>`;
+
+    for (const value of Object.values(CONTRIBUTORS[check] ?? {})) {
+        if (value.url) {
+            html += `<li><a class="url" href="${value.url}" target="_blank">${value.name}</a> - ${value.help}</li>`;
+        } else {
+            html += `<li>${value.name} - ${value.help}</li>`;
+        }
+    }
+
+    html += `</ul>`;
+
     return html;
 }
 
@@ -524,10 +518,10 @@ async function generateHtmlFiles() {
     const markdownFiles = findMarkdownFiles(pagesDir);
     const shift = 2; // allows smaller sized testing
     const max = 8; // testing, remove when done
-    for (let i = shift + 0; i < shift + max; i++) {
+    // for (let i = shift + 0; i < shift + max; i++) {
+    for (const markdownPath of markdownFiles) { // uncomment for full version
+        // const markdownPath = markdownFiles[i];
         let htmlFile = structuredClone(template); // this is base HTML skeleton file
-        // for (const markdownPath of markdownFiles) { // uncomment for full version
-        const markdownPath = markdownFiles[i];
         const markdown = fs.readFileSync(markdownPath, "utf8");
 
         const markdownHtml = converter.makeHtml(markdown);
@@ -548,7 +542,6 @@ async function generateHtmlFiles() {
         document.title = interface.pageTitle;
         const tooltipParent = document.getElementById("tooltip-container");
         interface.tooltips.forEach((html, key) => {
-            // console.log(a)
             tooltipParent.innerHTML += html;
         })
         const elements = document.getElementsByClassName('highlight-child');

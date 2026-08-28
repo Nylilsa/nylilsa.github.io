@@ -201,15 +201,13 @@ function fetchData(path) {
     return JSON.parse(fs.readFileSync(path, "utf8"));
 }
 
-
-
 export function hrCustom(input) {
     const borderColor = gameColors[input] ? colorRGB(16, 1, input) : input;
     return "<hr style='border-color:" + borderColor + "'>";
 }
 
 export function matchText(style, iconBool, highlightedText) {
-    const icon = `<img src='${matchStyle[style].icon}' width='20' height='20'>`;
+    const icon = `<img src='/${matchStyle[style].icon}' width='20' height='20'>`;
     const content = "<span style='color:" + matchStyle[style].color + "'>" + highlightedText + "</span>";
     if (iconBool) { return icon + content }
     return content;
@@ -246,27 +244,4 @@ export function colorRGB(add, opacity, game) {
 export function colorHex(input) {
     // const def = getComputedStyle(document.documentElement).getPropertyValue('--clr-default');
     return gameColors[input] || def || "#47748b";
-}
-
-export async function contributorsFunction(check) {
-    const contributors = await fetchData("./json/contributors.json");
-    const parent = document.getElementById(`contributors-${check}`);
-
-    for (const value of Object.values(contributors[check] ?? {})) {
-        const li = document.createElement("li");
-
-        if (value.url) {
-            const a = document.createElement("a");
-            a.className = "url";
-            a.href = value.url;
-            a.target = "_blank";
-            a.textContent = value.name;
-            li.append(a);
-        } else {
-            li.textContent = value.name;
-        }
-
-        li.append(` - ${value.help}`);
-        parent.append(li);
-    }
 }

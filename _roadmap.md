@@ -16,17 +16,17 @@ Idea:
 
 Idea 1 step 3 has following problems (The showdown.js contains application logic)
 
-title : 
+title : Done
 cite : Done
 replay : Done
-contributors : 
-ins : 
+contributors : Done
+ins : Done
 canvas : 
-buildCategoriesTable : 
-jumpto : 
-img : 
-imgcss : 
-hr_custom : 
-match : 
+buildCategoriesTable : Done (initial showcase toggle needs to be fixed, currently they are all shown by default)
+jumpto : Done (However, need to fix current instances of jumpTo)
+img : Done
+imgcss : Done
+hr_custom : Done (implementation is janky but seems to work)
+match : Done
 
 
