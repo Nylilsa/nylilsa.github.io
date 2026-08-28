@@ -522,6 +522,10 @@ function initListeners() {
         if (!link || link.target === "_blank") return;
         if (link.origin !== location.origin) return;
 
+        if (link.pathname === location.pathname && link.hash) {
+            return;
+        }
+
         event.preventDefault();
 
         navigate(link.href);
@@ -546,6 +550,11 @@ async function navigate(url, push = true) {
     }
 
     newPage(doc);
+
+    // todo: make scroll smooth? make it so header doesnt overlap with text, do it by adding offset
+    if (new URL(url).hash) {
+        document.querySelector(new URL(url).hash)?.scrollIntoView();
+    }
 }
 
 function newPage(doc) {

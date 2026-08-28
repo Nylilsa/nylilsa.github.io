@@ -10,22 +10,22 @@ Hello there, I hope you are having a wonderful day today ! On website I want to 
 
 ### World Record Progression
 
-There is a page titled [jumpto=#/wr]World Record Progression[/jumpto]. The page is a [hl2]comprehensive Touhou world records tracker[/hl2], updated every so often. The page includes an interactive graph and a table of your selected game along with [hl2]replay support[/hl2] for most WR entries ! Please feel free to check it out as this is the cumulation of about a year's worth of hard work from replay gathering, replay processing, file management, score gathering, etc. !
+There is a page titled [jumpto=/wr]World Record Progression[/jumpto]. The page is a [hl2]comprehensive Touhou world records tracker[/hl2], updated every so often. The page includes an interactive graph and a table of your selected game along with [hl2]replay support[/hl2] for most WR entries ! Please feel free to check it out as this is the cumulation of about a year's worth of hard work from replay gathering, replay processing, file management, score gathering, etc. !
 
 ### Bugs/Glitch
 
-This website's primary purpose is to be a [hl2]repository for all documented glitches[/hl2] I have been able to find and properly document of Touhou Project. This part is still Work In Progress: if you want to know more about a game's glitches it is best to [jumpto=#/me/contact]contact me personally[/jumpto].
+This website's primary purpose is to be a [hl2]repository for all documented glitches[/hl2] I have been able to find and properly document of Touhou Project. This part is still Work In Progress: if you want to know more about a game's glitches it is best to [jumpto=/me/contact]contact me personally[/jumpto].
 
 ### Guides
 
-Sometimes I or other people will write [hl2]guides[/hl2]. Those guides are posted on this website. If you wish for a Touhou-related guide of yours to be posted on this website, please [jumpto=#/me/contact]contact me[/jumpto] and we can talk about it !
+Sometimes I or other people will write [hl2]guides[/hl2]. Those guides are posted on this website. If you wish for a Touhou-related guide of yours to be posted on this website, please [jumpto=/me/contact]contact me[/jumpto] and we can talk about it !
 
 ## Contributors
 [hr_minor] 
 
 [contributors=0]
 
-If you would like to contribute (whether it is anything about a glitch or about a guide you would like to post here or to notify me about a missing WR entry), you may do so by [jumpto=#/me/contact]contacting me[/jumpto].
+If you would like to contribute (whether it is anything about a glitch or about a guide you would like to post here or to notify me about a missing WR entry), you may do so by [jumpto=/me/contact]contacting me[/jumpto].
 
 ## Support
 [hr_minor]

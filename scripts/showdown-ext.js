@@ -112,13 +112,13 @@ let ext = function() {
 	let no_content = {
 		type: "lang",
 		regex: /\[no_content\]/g,
-		replace: "<span style='font-style: italic; color:'>This section has no content yet. Would you like to add to this section? [jumpto=#/me/contact]Contact me[/jumpto] if you are interested!</span>"
+		replace: "<span style='font-style: italic; color:'>This section has no content yet. Would you like to add to this section? [jumpto=/me/contact]Contact me[/jumpto] if you are interested!</span>"
 	}
 
 	let work_in_progress = {
 		type: "lang",
 		regex: /\[wip\]/g,
-		replace: "<span style='font-style: italic; color:'>This placeholder text has been placed here because this section is a Work In Progress. If you believe you could help out, please [jumpto=#/me/contact]contact me[/jumpto] !</span>"
+		replace: "<span style='font-style: italic; color:'>This placeholder text has been placed here because this section is a Work In Progress. If you believe you could help out, please [jumpto=/me/contact]contact me[/jumpto] !</span>"
 	}
 
 	let specs = {

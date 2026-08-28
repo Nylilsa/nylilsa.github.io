@@ -516,8 +516,8 @@ function contributorsFunction(check) {
 
 async function generateHtmlFiles() {
     const markdownFiles = findMarkdownFiles(pagesDir);
-    const shift = 2; // allows smaller sized testing
-    const max = 8; // testing, remove when done
+    const shift = 155; // allows smaller sized testing
+    const max = 40; // testing, remove when done
     // for (let i = shift + 0; i < shift + max; i++) {
     for (const markdownPath of markdownFiles) { // uncomment for full version
         // const markdownPath = markdownFiles[i];
