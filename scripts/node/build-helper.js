@@ -203,46 +203,6 @@ function fetchData(path) {
 
 
 
-export function replaceEclIns(type, n, id, data) {
-    // document.body.addEventListener("mouseover", (event) => {
-    //     const visible = document.querySelectorAll(".visible");
-    //     let [tip, targ] = getTip(event.target, "tooltip");
-    //     const valid = targ?.firstElementChild?.classList.contains("tooltip");
-    //     visible.forEach(el => { el.classList.remove("visible") })
-    //     if (tip && valid) {
-    //         targ.firstElementChild.classList.add("visible");
-    //         checkElementResize(targ.firstElementChild);
-    //     }
-    // })
-
-    // const data = await fetchData("./json/ecl.json");
-    const map = ["Instructions", "Globals", "Custom"];
-    const ins = map[type];
-    const obj = data[ins][n];
-    const name = obj["Name"];
-    const div = document.createElement('div');
-    const el = document.querySelector(`#ecl-cite-${id}`);
-    el.dataset.tooltip = "true";
-    div.innerHTML = getStringFromIns(obj, n);
-    div.classList.add("tooltip");
-    el.innerHTML = name;
-    el.style.position = "relative";
-    el.appendChild(div);
-
-    //div2 is invisible and acts as a tooltip that doesn't move around
-    const div2 = document.createElement("div");
-    div2.style.width = `${div.getBoundingClientRect().width}px`;
-    div2.style.position = `absolute`;
-    div2.style.right = `50%`;
-    div2.style.translate = `50%`;
-    div2.style.visibility = `hidden`;
-    el.appendChild(div2);
-    checkElementResize(div);
-    return `<code id='ecl-cite-${id}' class='mono dotted'></code>`;
-
-
-}
-
 export function hrCustom(input) {
     const borderColor = gameColors[input] ? colorRGB(16, 1, input) : input;
     return "<hr style='border-color:" + borderColor + "'>";

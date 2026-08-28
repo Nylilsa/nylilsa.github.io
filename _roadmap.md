@@ -8,10 +8,11 @@ But MD files contain custom extensions
 
 Idea:
 
-1. Load HTML base in memory
-2. Load MD file in memory
-3. MD file -> MD2HTML
-4. HTML base + MD2HTML
+1. Load HTML skeleton in memory
+2. Update HTML skeleton's sidebars with data in json files
+3. Load MD file in memory
+4. MD file -> MD2HTML
+5. HTML base + MD2HTML
 
 Idea 1 step 3 has following problems (The showdown.js contains application logic)
 

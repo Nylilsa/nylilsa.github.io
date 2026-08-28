@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const showdown = require("showdown");
 // const ext = require("../showdown-ext");
-const { fillCite, videoFunction, matchText, colorRGB, contributorsFunction, replayFunction, replaceEclIns, hrCustom, colorHex } = require("./build-helper");
+const { fillCite, videoFunction, matchText, colorRGB, contributorsFunction, replayFunction, hrCustom, colorHex } = require("./build-helper");
 const { initCategoriesTable } = require("../init-categories-table.js");
 
 const rootDir = path.join(__dirname, "../..");
@@ -13,6 +13,7 @@ const mainHtmlPath = path.join(rootDir, "index.html");
 
 const interface = {
     pageTitle: "",
+    tooltips: new Map(),
 }
 
 let citeId = 0;
@@ -281,9 +282,9 @@ let ext = function () {
         type: "lang",
         regex: /\[ins=(.*?), n=(.*?)\]/g,
         replace: function (match, content, n) {
-            let id = eclJsonId++;
-            return "temp"
-            return replaceEclIns(content, n, id, ECL);
+            // let id = eclJsonId++;
+            // return "temp"
+            return replaceEclIns(content, n);
         }
     }
 
@@ -409,7 +410,7 @@ function changeBaseIndexHtml() {
 
     initSidebarThemes(document);
     initSidebarGlitches(document);
-    fs.writeFileSync(`${mainHtmlPath}test.html`, dom.serialize());
+    fs.writeFileSync(`${mainHtmlPath}test.html`, dom.serialize()); //debug
     return dom.serialize();
 }
 
@@ -459,21 +460,73 @@ async function initSidebarGlitches(document) {
     }
 }
 
-function t() {
-
+function updateTemplate() {
     template = changeBaseIndexHtml()
 }
 
-t()
+function replaceEclIns(type, n) {
+    // document.body.addEventListener("mouseover", (event) => {
+    //     const visible = document.querySelectorAll(".visible");
+    //     let [tip, targ] = getTip(event.target, "tooltip");
+    //     const valid = targ?.firstElementChild?.classList.contains("tooltip");
+    //     visible.forEach(el => { el.classList.remove("visible") })
+    //     if (tip && valid) {
+    //         targ.firstElementChild.classList.add("visible");
+    //         checkElementResize(targ.firstElementChild);
+    //     }
+    // })
 
+    // const data = await fetchData("./json/ecl.json");
+    const id = `${type}-${n}`;
+    const map = ["Instructions", "Globals", "Custom"];
+    const ins = map[type];
+    const obj = ECL[ins][n];
+    const name = obj["Name"];
+    if (interface.tooltips.has(id)) {
+        return `<code data-tooltip-id='${id}' class='mono dotted' style='position: relative;'>${name}</code>`;
+    }
+    let html = `<div class='tooltip' id=${id}>`;
+    html += getStringFromIns(obj, n);
+    html += "</div>";
+    interface.tooltips.set(id, html);
+    return `<code data-tooltip-id='${id}' class='mono dotted' style='position: relative;'>${name}</code>`;
+}
+
+function getStringFromIns(obj, n) {
+    let description = obj["Description"];
+    const name = obj["Name"];
+    const para = obj["Parameters"];
+    let titleText = `${n} - ${name}`;
+    if (para) {
+        let parameterStrings = para.map(paramObj => {
+            const paramName = Object.keys(paramObj)[0];
+            const paramType = paramObj[paramName];
+            return `${paramType} <code class="mono">${paramName}</code>`;
+        });
+        parameterStrings = parameterStrings.join(", ");
+        titleText += `(${parameterStrings})`;
+        for (let i = 0; i < para.length; i++) {
+            const value = Object.keys(para[i])[0];
+            description = description.replaceAll(`$${i + 1}`, `<code class="mono">${value}</code>`);
+        }
+    }
+    let html = "<div><p><span class='mono'>";
+    html += titleText
+    html += "</span>"
+    // html +=
+    html += "</p><hr><p>";
+    html += description;
+    html += "</p></div>";
+    return html;
+}
 
 async function generateHtmlFiles() {
     const markdownFiles = findMarkdownFiles(pagesDir);
     const shift = 2; // allows smaller sized testing
-    const max = 8;
+    const max = 8; // testing, remove when done
     for (let i = shift + 0; i < shift + max; i++) {
-        let htmlFile = structuredClone(template);
-        // for (const markdownPath of markdownFiles) {
+        let htmlFile = structuredClone(template); // this is base HTML skeleton file
+        // for (const markdownPath of markdownFiles) { // uncomment for full version
         const markdownPath = markdownFiles[i];
         const markdown = fs.readFileSync(markdownPath, "utf8");
 
@@ -493,6 +546,11 @@ async function generateHtmlFiles() {
         const document = dom.window.document;
 
         document.title = interface.pageTitle;
+        const tooltipParent = document.getElementById("tooltip-container");
+        interface.tooltips.forEach((html, key) => {
+            // console.log(a)
+            tooltipParent.innerHTML += html;
+        })
         const elements = document.getElementsByClassName('highlight-child');
         for (let i = 0; i < elements.length; i++) {
             elements[i].parentElement.classList.add('highlight-bg');
@@ -574,7 +632,7 @@ async function generateHtmlFiles() {
 
 }
 
-
+updateTemplate();
 generateHtmlFiles();
 
 
