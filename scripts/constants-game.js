@@ -1,27 +1,3 @@
-const latestVersion = {
-	th06: "1.02h",
-	th07: "1.00b",
-	th08: "1.00d",
-	th09: "1.50a",
-    th95: "1.50a",
-	th10: "1.00a",
-	th11: "1.00a",
-	th12: "1.00b",
-    th125: "1.00a",
-	th128: "1.00a",
-	th13: "1.00c",
-	th14: "1.00b",
-    th143: "1.00a",
-	th15: "1.00b",
-	th16: "1.00a",
-    th165: "1.00a",
-	th17: "1.00b",
-	th18: "1.00a",
-	th185: "1.00a",
-	th19: "1.10c",
-	th20: "1.00a",
-};
-
 const gameColors = {
 	th01: '#B6423C',
 	th02: '#7D3884',
@@ -49,46 +25,6 @@ const gameColors = {
 	th185: '#F58225',
 	th19: '#4CD810',
 	th20: '#123456', // temporary clr
-};
-
-class Match {
-    constructor(icon, color) {
-      this.icon = icon;
-      this.color = color;
-    }
-}
-
-const matchStyle = {
-	"spring": new Match('assets/th-sprites/spring.png', '#FF9FC9'),
-	"summer": new Match('assets/th-sprites/summer.png', '#50D030'),
-	"autumn": new Match('assets/th-sprites/autumn.png', '#FF8800'),
-	"winter": new Match('assets/th-sprites/winter.png', '#465CF0'),
-
-	"wolf": new Match('assets/th-sprites/wolf.png', '#FF4F51'),
-	"otter": new Match('assets/th-sprites/otter.png', '#8DFB78'),
-	"eagle": new Match('assets/th-sprites/eagle.png', '#7E59D9'),
-	"spec1": new Match('assets/th-sprites/special1.png', '#E1D359'),
-	"spec2": new Match('assets/th-sprites/special2.png', '#E1D359'),
-	"spec3": new Match('assets/th-sprites/special3.png', '#E1D359'),
-	"spec4": new Match('assets/th-sprites/special4.png', '#E1D359'),
-	"spec5": new Match('assets/th-sprites/special5.png', '#E1D359'),
-	"spec6": new Match('assets/th-sprites/special6.png', '#E1D359'),
-	"point-token": new Match('assets/th-sprites/point-token.png', '#6873D8'),
-	"life-token": new Match('assets/th-sprites/life-token.png', '#F26BD3'),
-
-	"static-red-token": new Match('assets/th-sprites/static-red-token.png', '#FF0000'),
-	"static-blue-token": new Match('assets/th-sprites/static-blue-token.png', '#00FF00'),
-	"static-green-token": new Match('assets/th-sprites/static-green-token.png', '#0000FF'),
-	"blink-red-token": new Match('assets/th-sprites/blink-red-token.png', '#FF0000'),
-	"blink-blue-token": new Match('assets/th-sprites/blink-blue-token.png', '#00FF00'),
-	"blink-green-token": new Match('assets/th-sprites/blink-green-token.png', '#0000FF'),
-	
-    "point": new Match('assets/th-sprites/point-item.png', '#6873D8'),
-    "power": new Match('assets/th-sprites/power-item.png', '#FF5555'),
-    "bomb": new Match('assets/th-sprites/bomb-item.png', '#50D030'),
-    "life": new Match('assets/th-sprites/life-item.png', '#F26BD3'),
-
-    "test": new Match(1, 2)
 };
 
 const names1 = {

@@ -282,18 +282,13 @@ let ext = function () {
     let canvas = {
         type: "lang",
         regex: /\[canvas\]/g,
-        replace: function () {
-            setTimeout(() => { initCanvas(initRemoveHash(true)) }, 1);
-            return "";
-        }
+        replace: "<div id='canvas-container'></div>"
     }
 
     let buildCategoriesTable = {
         type: "lang",
         regex: /\[buildCategoriesTable\]/g,
-        replace: function () {
-            return "<div id='bugsCategoriesTable'></div>";
-        }
+        replace: "<div id='bugsCategoriesTable'></div>"
     }
 
     let match = {
@@ -334,7 +329,8 @@ let ext = function () {
         regex: /\&amp\;/g,
         replace: '&',
     }
-    return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp]; // prioritize elements that will be nested within
+    // order matters: prioritize elements that will be nested within
+    return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp];
 }
 
 const names1 = {
@@ -515,11 +511,12 @@ function contributorsFunction(check) {
 }
 
 async function generateHtmlFiles() {
-    const markdownFiles = findMarkdownFiles(pagesDir);
-    const shift = 155; // allows smaller sized testing
-    const max = 40; // testing, remove when done
+    let markdownFiles = findMarkdownFiles(pagesDir);
+    // const shift = 0; // allows smaller sized testing
+    // const max = 2; // testing, remove when done
+    // markdownfiles = markdownFiles.reverse()
     // for (let i = shift + 0; i < shift + max; i++) {
-    for (const markdownPath of markdownFiles) { // uncomment for full version
+        for (const markdownPath of markdownFiles) { // uncomment for full version
         // const markdownPath = markdownFiles[i];
         let htmlFile = structuredClone(template); // this is base HTML skeleton file
         const markdown = fs.readFileSync(markdownPath, "utf8");
