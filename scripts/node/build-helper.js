@@ -125,8 +125,15 @@ export const names1 = {
 export function videoFunction(key, webdata) {
     const content = webdata.Citations[key];
 
-    const datum = dateFormat(content.date);
-
+    let datum;
+    const intl = "en-US";
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const rawDatum = new Date(content.date);
+    if (typeof rawDatum == "object" && rawDatum == "Invalid Date") {
+        datum = content.date;
+    } else {
+        datum = new Intl.DateTimeFormat(intl, options).format(rawDatum);
+    }
     return citeAPA(
         datum,
         content.author,
@@ -155,7 +162,7 @@ export function replayFunction(key, webdata) {
 
 export function dateFormat(date) {
     const intl = "en-US";
-    const options = { calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric' };
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
     let dateType;
     if (date.includes('T')) {
         dateType = new Date(date);

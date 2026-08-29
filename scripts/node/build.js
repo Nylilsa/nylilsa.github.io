@@ -369,7 +369,8 @@ const converter = new showdown.Converter({
     openLinksInNewWindow: true,
     simpleLineBreaks: true,
     strikethrough: true,
-    tables: true
+    tables: true,
+    underline: true,
 });
 
 let template = fs.readFileSync(mainHtmlPath, "utf8");
@@ -513,12 +514,12 @@ function contributorsFunction(check) {
 
 async function generateHtmlFiles() {
     let markdownFiles = findMarkdownFiles(pagesDir);
-    // markdownfiles = markdownFiles.reverse()
-    const shift = 2; // allows smaller sized testing
-    const max = 2; // testing, remove when done
-    for (let i = shift + 0; i < shift + max; i++) {
-        // for (const markdownPath of markdownFiles) { // uncomment for full version
-        const markdownPath = markdownFiles[i];
+    markdownfiles = markdownFiles.reverse()
+    // const shift = 0; // allows smaller sized testing
+    // const max = 2; // testing, remove when done
+    // for (let i = shift + 0; i < shift + max; i++) {
+    for (const markdownPath of markdownFiles) { // uncomment for full version
+        // const markdownPath = markdownFiles[i];
         let htmlFile = structuredClone(template); // this is base HTML skeleton file
         const markdown = fs.readFileSync(markdownPath, "utf8");
 
@@ -538,6 +539,7 @@ async function generateHtmlFiles() {
         const document = dom.window.document;
 
         document.title = interface.pageTitle;
+        figureId = 0;
         const tooltipParent = document.getElementById("tooltip-container");
         interface.tooltips.forEach((html, key) => {
             tooltipParent.innerHTML += html;
@@ -613,23 +615,12 @@ async function generateHtmlFiles() {
             const outputPath = path.join(distDir, relativeHtmlPath);
 
             fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-
             fs.writeFileSync(outputPath, htmlFile);
 
             console.log(`Built: ${relativeHtmlPath}`);
         }
-
-
     }
-
 }
-
-updateTemplate();
-generateHtmlFiles();
-
-
-
-
 
 fs.cpSync("assets", "dist/assets", { recursive: true });
 fs.cpSync("pages", "dist/pages", { recursive: true });
@@ -637,3 +628,6 @@ fs.cpSync("css", "dist/css", { recursive: true });
 fs.cpSync("json", "dist/json", { recursive: true });
 fs.cpSync("lib", "dist/lib", { recursive: true });
 fs.cpSync("scripts", "dist/scripts", { recursive: true });
+
+updateTemplate();
+generateHtmlFiles();

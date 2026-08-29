@@ -10,7 +10,7 @@ Hello there, I hope you are having a wonderful day today ! On website I want to 
 
 ### World Record Progression
 
-There is a page titled [jumpto=/wr]World Record Progression[/jumpto]. The page is a [hl2]comprehensive Touhou world records tracker[/hl2], updated every so often. The page includes an interactive graph and a table of your selected game along with [hl2]replay support[/hl2] for most WR entries ! Please feel free to check it out as this is the cumulation of about a year's worth of hard work from replay gathering, replay processing, file management, score gathering, etc. !
+There is a page titled [jumpto=/wr]World Record Progression[/jumpto]. The page is a [hl2]comprehensive Touhou world records tracker[/hl2], updated every so often. The page includes an interactive graph and a table of your selected game along with [hl2]replay support[/hl2] for most WR entries ! Please feel free to check it out as this is the culmination of about a year's worth of hard work from replay gathering, replay processing, file management, score gathering, etc. !
 
 ### Bugs/Glitch
 

@@ -42,3 +42,10 @@ Todo2 : make baseUrl redirect to home page
 
 Todo3 : check for SEO things for HTML for better indexing/previews etc.
 
+Todo4: fix figure ID stacking DONE
+Todo5: fix wr page initial load not working DONE
+Todo6: DateFormat DONE
+Todo7: Create dist/index.html NOT DONE
+Todo8: add valid GFW page NOT DONE
+Todo9: 12-5 page see bottom link DONE 
+Todo10: Some img= still using relative path instead of absolute DONE

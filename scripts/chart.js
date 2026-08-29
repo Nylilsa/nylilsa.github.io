@@ -6,7 +6,7 @@ const globalConfigs = {
     selectedDifficulty: null,
     englishName: null,
     overallWRCharacter: null,
-    defaultGame: "th10",
+    defaultGame: "th13",
     isPc98: false,
     pc98Games: ["th01", "th02", "th03", "th04", "th05"],
     allGames: ['th01', 'th02', 'th03', 'th04', 'th05', 'th06', 'th07', 'th08', 'th09', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'],
@@ -459,7 +459,7 @@ function roundedTicks(value) {
 function getGame() {
     let gameId = window.location.hash.slice(1);
     if (!globalConfigs.allGames.includes(gameId)) {
-        if (localStorage.selectedGame !== "undefined") {
+        if (localStorage.selectedGame && localStorage.selectedGame !== "undefined") {
             gameId = localStorage.selectedGame;
         } else {
             gameId = globalConfigs.defaultGame;
@@ -1126,16 +1126,33 @@ function colorRGB(add, opacity, game) {
     return "rgba(" + rDec + ", " + gDec + ", " + bDec + ", " + opacity + ")";
 }
 
+// function dateFormat(date) {
+//     const intl = "en-US";
+//     const options = { calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric' };
+//     let dateType;
+//     if (date.includes('T')) {
+//         dateType = new Date(date);
+//     } else {
+//         const [year, month, day] = date.split('-').map(Number);
+//         dateType = new Date(year, month - 1, day);
+//     }
+//     const cond = typeof dateType == "object" && dateType == "Invalid Date";
+//     return cond ? date : new Intl.DateTimeFormat(intl, options).format(dateType);
+// }
+
 function dateFormat(date) {
-    const intl = "en-US";
-    const options = { calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric' };
     let dateType;
+
     if (date.includes('T')) {
         dateType = new Date(date);
     } else {
         const [year, month, day] = date.split('-').map(Number);
         dateType = new Date(year, month - 1, day);
     }
-    const cond = typeof dateType == "object" && dateType == "Invalid Date";
-    return cond ? date : new Intl.DateTimeFormat(intl, options).format(dateType);
+
+    if (isNaN(dateType.getTime())) {
+        return date;
+    }
+
+    return dateType.toISOString().split('T')[0];
 }
