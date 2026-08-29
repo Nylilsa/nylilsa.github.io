@@ -4,17 +4,12 @@ import fs from 'fs';
 
 let document;
 let names1;
-export async function initCategoriesTable(doc, game, index, n) {
+export async function initCategoriesTable(doc, game, index, n, TREE, CATEGORIES) {
     document = doc;
     names1 = n;
     // const path = initRemoveHash(false);
     // const [, game, index] = (await checkBugPath(path)).split(/[/.]/);
-    Promise.all([
-        fetchData(`json/glitch-tree.json`),
-        fetchData(`json/categories.json`)
-    ]).then(([TREE, CATEGORIES]) => {
-        buildTable(game, index, TREE, CATEGORIES);
-    });
+    buildTable(game, index, TREE, CATEGORIES);
 }
 
 function fetchData(path) {
@@ -41,7 +36,6 @@ function buildTable(game, index, TREE, CATEGORIES) {
         const thRelatedRows = buildRowRelated(game, index, TREE, CATEGORIES["related"], currentPage.categories.related);
         table.appendChild(thRelatedRows)
     }
-
     tableId.appendChild(table);
 }
 
@@ -129,7 +123,7 @@ function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
         rows.push(tr);
     });
     const table = buildSubTable(rows);
-    const wrapperTr = buildSubTableWrapper(table, { colspan: 2, tdStyle: 'padding-inline:0px; border-width:0px;', trClass: categories["class_name"] });
+    const wrapperTr = buildSubTableWrapper(table, { colspan: 2, tdStyle: 'padding-inline:0px; border-width:0px;', trClass: categories["class_name"], showDefault: false });
     tbody.appendChild(wrapperTr);
     return tbody;
 }
@@ -179,7 +173,7 @@ function buildRowRelated(selectedGame, selectedIndex, TREE, categories, id) {
         rows.push(tr);
     });
     const table = buildSubTable(rows);
-    const wrapperTr = buildSubTableWrapper(table, { colspan: 2, tdStyle: 'padding-inline:0px; border-width:0px;', trClass: id });
+    const wrapperTr = buildSubTableWrapper(table, { colspan: 2, tdStyle: 'padding-inline:0px; border-width:0px;', trClass: id, showDefault: false });
     tbody.appendChild(wrapperTr);
     return tbody;
 }
@@ -204,33 +198,6 @@ function buildToggleableHeader({
 
     updateUI();
 
-    //  NOTE: does not work elements are shown by default TODO
-    // // MutationObserver  apply hidden state once target appears
-    // (function Observer() {
-    //     function applyInitialStateIfPresent() {
-    //         const el = document.querySelector(targetQuery);
-    //         if (!el) return false;
-    //         // apply the initial state: add/remove .hidden according to showDefault
-    //         el.classList.toggle('hidden', !showDefault);
-    //         return true;
-    //     }
-    //     if (applyInitialStateIfPresent()) return;
-    //     // observe the document for insertion of the target
-    //     const observer = new document.defaultView.MutationObserver((mutations, obs) => {
-    //         if (applyInitialStateIfPresent()) {
-    //             obs.disconnect();
-    //         }
-    //     });
-    //     const ancestorNode = document.querySelector(ancestorSelector) || document.body || document.documentElement;
-    //     observer.observe(ancestorNode, {
-    //         childList: true,
-    //         subtree: true
-    //     });
-    //     // stop after time if target never appears
-    //     setTimeout(() => {
-    //         try { observer.disconnect(); } catch (e) { console.error(e); }
-    //     }, 5000);
-    // })();
     button.classList.add("toggle-button");
     button.dataset.target = targetQuery;
     button.dataset.show = labels.show;
@@ -258,7 +225,7 @@ function buildSubTable(rows = [], { tableClass = '', tbodyClass = '' } = {}) {
 
 // this function creates a table with structure: "tr > td" > table > tbody > n * tr for nested tables (only part between the "")
 function buildSubTableWrapper(table, opts = {}) {
-    const { colspan = 1, tdClass, tdStyle, trClass, trStyle } = opts;
+    const { colspan = 1, tdClass, tdStyle, trClass, trStyle, showDefault = true} = opts;
     const wrapperTr = document.createElement('tr');
     const wrapperTd = document.createElement('td');
     wrapperTd.colSpan = colspan;
@@ -266,6 +233,7 @@ function buildSubTableWrapper(table, opts = {}) {
     if (tdClass) wrapperTd.className = tdClass;
     if (trStyle) wrapperTr.style.cssText = trStyle;
     if (tdStyle) wrapperTd.style.cssText = tdStyle;
+    if (!showDefault) wrapperTr.classList.add("hidden")
 
     wrapperTd.appendChild(table);
     wrapperTr.appendChild(wrapperTd);

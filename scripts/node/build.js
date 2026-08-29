@@ -24,6 +24,7 @@ const ECL = JSON.parse(fs.readFileSync("json/ecl.json"));
 const GLITCH_TREE = JSON.parse(fs.readFileSync("json/glitch-tree.json"));
 const CONTRIBUTORS = JSON.parse(fs.readFileSync("json/contributors.json"));
 const WEBDATA = JSON.parse(fs.readFileSync("json/webdata.json"));
+const CATEGORIES = JSON.parse(fs.readFileSync("json/categories.json"));
 
 
 let ext = function () {
@@ -397,7 +398,7 @@ function changeBaseIndexHtml() {
 
     initSidebarThemes(document);
     initSidebarGlitches(document);
-    fs.writeFileSync(`${mainHtmlPath}test.html`, dom.serialize()); //debug
+    // fs.writeFileSync(`${mainHtmlPath}test.html`, dom.serialize()); //debug
     return dom.serialize();
 }
 
@@ -512,12 +513,12 @@ function contributorsFunction(check) {
 
 async function generateHtmlFiles() {
     let markdownFiles = findMarkdownFiles(pagesDir);
-    // const shift = 0; // allows smaller sized testing
-    // const max = 2; // testing, remove when done
     // markdownfiles = markdownFiles.reverse()
-    // for (let i = shift + 0; i < shift + max; i++) {
-        for (const markdownPath of markdownFiles) { // uncomment for full version
-        // const markdownPath = markdownFiles[i];
+    const shift = 2; // allows smaller sized testing
+    const max = 2; // testing, remove when done
+    for (let i = shift + 0; i < shift + max; i++) {
+        // for (const markdownPath of markdownFiles) { // uncomment for full version
+        const markdownPath = markdownFiles[i];
         let htmlFile = structuredClone(template); // this is base HTML skeleton file
         const markdown = fs.readFileSync(markdownPath, "utf8");
 
@@ -551,10 +552,9 @@ async function generateHtmlFiles() {
         const pageData = GLITCH_TREE?.[thnr]?.[pageId];
         if (pageData) {
             const urlNames = pageData["url-name"];
-            await initCategoriesTable(document, thnr, pageId, names1);
+            initCategoriesTable(document, thnr, pageId, names1, GLITCH_TREE, CATEGORIES);
             htmlFile = dom.serialize();
-            // fs.writeFileSync(`test.html`, dom.serialize());
-
+            // fs.writeFileSync(`${thnr}-${pageId}.html`, dom.serialize());
             const canonicalName = urlNames[0];
 
             // Generate the actual page at the canonical URL
@@ -573,8 +573,10 @@ async function generateHtmlFiles() {
             // Generate redirects for every alias, EXCLUDING the old numeric ID
             // because if I ever rename page 
             // e.g. nylilsa.github.io/bugs/spell-skip 
-            // to nylilsa.github.io/bugs/new-name 
+            // to nylilsa.github.io/bugs/new-name
             // I want the former to still work
+            // Note: it does NOT cover legacy hash links e.g nylilsa.github.io/#/bugs/spell-skip 
+            // That is done in front end
             const aliases = [...urlNames.slice(1)];
 
             for (const alias of aliases) {
@@ -586,18 +588,18 @@ async function generateHtmlFiles() {
                 );
 
                 const redirect = `<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="refresh" content="0; url=../${canonicalName}/">
-    <link rel="canonical" href="../${canonicalName}/">
-    <script>
-        window.location.replace("../${canonicalName}/");
-    </script>
-</head>
-<body>
-    Redirecting to <a href="../${canonicalName}/">${canonicalName}</a>...
-</body>
-</html>`;
+                                <html>
+                                <head>
+                                    <meta http-equiv="refresh" content="0; url=../${canonicalName}/">
+                                    <link rel="canonical" href="../${canonicalName}/">
+                                    <script>
+                                        window.location.replace("../${canonicalName}/");
+                                    </script>
+                                </head>
+                                <body>
+                                    Redirecting to <a href="../${canonicalName}/">${canonicalName}</a>...
+                                </body>
+                                </html>`;
 
                 fs.mkdirSync(path.dirname(redirectPath), { recursive: true });
                 fs.writeFileSync(redirectPath, redirect);

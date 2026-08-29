@@ -21,12 +21,24 @@ cite : Done
 replay : Done
 contributors : Done
 ins : Done
-canvas : 
-buildCategoriesTable : Done (initial showcase toggle needs to be fixed, currently they are all shown by default)
+canvas : Done
+buildCategoriesTable : Not done (initial showcase toggle needs to be fixed, currently they are all shown by default)
 jumpto : Done (However, need to fix current instances of jumpTo)
 img : Done
 imgcss : Done
 hr_custom : Done (implementation is janky but seems to work)
 match : Done
 
+ok now new problem:
+Example: Someone shares old link: https://nylilsa.github.io/#/bugs/th06/dialogue-desync
+Current iteration does not resolve to correct page.
+Todo1 :
+1. Write front end code that extracts hash (#/bugs/th06/dialogue-desync)
+2. Check if first two are page (if equals to "#/") (note : anchors do not have "/" as 2nd char)
+3. Also check if second part (baseUrl + "bugs/th06/dialogue-desync") resolves to a page
+4. If true for both, redirect to page
+
+Todo2 : make baseUrl redirect to home page
+
+Todo3 : check for SEO things for HTML for better indexing/previews etc.
 
