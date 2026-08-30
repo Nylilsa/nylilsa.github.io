@@ -579,7 +579,7 @@ async function generateHtmlFiles() {
             // I want the former to still work
             // Note: it does NOT cover legacy hash links e.g nylilsa.github.io/#/bugs/spell-skip 
             // That is done in front end
-            const aliases = [...urlNames.slice(1)];
+            const aliases = [pageId, ...urlNames.slice(1)];
             for (const alias of aliases) {
                 const redirectPath = path.join(
                     distDir,
