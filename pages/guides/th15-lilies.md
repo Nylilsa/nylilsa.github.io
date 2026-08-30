@@ -2,7 +2,7 @@
 # How to dodge Lilies - Lunatic
 [hr_major]
 
-Author: [a=https://nylilsa.github.io/]Nylilsa (me :o)[/a]
+Author: [jumpto=/home]Nylilsa (me :o)[/jumpto]
 
 Pure Sign "Lilies of Murderous Intent" or "Lilies" in short is Junko's 2nd spell-card in the game Legacy of Lunatic Kingdom. Lilies is a pattern that involves misdirection of bullets and it involves one or two hard waves of a bunch of lasers. In this guide I will share you the method I use to misdirect the bullets and what I do on the hard waves. This guide will contain a lot of examples that showcase different cases that could save your run if you are prepared for it!
 

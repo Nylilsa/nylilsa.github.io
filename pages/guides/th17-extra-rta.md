@@ -110,7 +110,7 @@ with [match=Wolf] hyper:
 | [match=Otter] | 11.78s | 12.65s | [hl1]10.01s[/hl1] |
 | [match=Eagle] | 11.78s | 12.65s | 12.70s |
 
-Youmu[match=Wolf] and Youmu[match=Otter] are the strongest shottypes with their [match=Wolf] hyper. The reason why Youmu[match=Eagle] doesn't do as well is because [a=/#/bugs/th17/0]of a bug[/a]
+Youmu[match=Wolf] and Youmu[match=Otter] are the strongest shottypes with their [match=Wolf] hyper. The reason why Youmu[match=Eagle] doesn't do as well is because [a=/bugs/th17/0]of a bug[/a]
 
 with [match=Eagle] hyper: 
 

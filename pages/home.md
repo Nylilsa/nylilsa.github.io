@@ -30,4 +30,4 @@ If you would like to contribute (whether it is anything about a glitch or about 
 ## Support
 [hr_minor]
 
-I've spent well over a thousand hours on maintaining my site, especially [a=https://nylilsa.github.io/#/wr]the Touhou World Records[/a], as well as even more time on glitch hunting in Touhou. If you would like to support me you could do so [a=https://ko-fi.com/nylilsa]by donating at my ko-fi page[/a] ! By donating, you will be supporting a passionate solo member of the Touhou Project series and their website. Thank you for everyone who has made this possible !
+I've spent well over a thousand hours on maintaining my site, especially [jumpto=/wr]the Touhou World Records[/jumpto], as well as even more time on glitch hunting in Touhou. If you would like to support me you could do so [a=https://ko-fi.com/nylilsa]by donating at my ko-fi page[/a] ! By donating, you will be supporting a passionate solo member of the Touhou Project series and their website. Thank you for everyone who has made this possible !

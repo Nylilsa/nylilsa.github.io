@@ -68,7 +68,7 @@ Now that gohei is used to its fullest potential, but our damage certainly isn't.
 
 [img=guides/th14-gohei-dupe/gohei2.png, figtitle=Seija being beaten up by [hl2]2 goheis at once[/hl2], alt=A screenshot of ReimuA fighting Seija]
 
-[a=/#/bugs/th14/gohei-dupe]There exists a glitch[/a] that allows for multiple goheis to be created. The name of the glitch is also known as [hl2]Gohei duplication[/hl2] or [hl2]Gohei dupe[/hl2] or [hl2]dupe[/hl2] in short.
+[a=/bugs/th14/gohei-dupe]There exists a glitch[/a] that allows for multiple goheis to be created. The name of the glitch is also known as [hl2]Gohei duplication[/hl2] or [hl2]Gohei dupe[/hl2] or [hl2]dupe[/hl2] in short.
 
 ## Video
 [hr_minor]
@@ -279,7 +279,7 @@ It is quite simple to achieve this: [hl2]perform your desired gohei duping metho
 
 [img=guides/th14-gohei-dupe/distance.png, figtitle=The 160 unit radius gohei-target distance check happens on the gohei spawning location, which is right in Reimu., alt=A game screenshot showing a colored circle around Reimu]
 
-The reason why this works is because newly spawned goheis spawn from Reimu's center. By performing the dupe you are spawning new goheis from Reimu's location. [hl2]By moving Reimu closer to the boss, the newly spawned goheis will be within the gohei-target distance[/hl2], centering into the enemy. For more information, [a=/#/bugs/th14/gohei-dupe]please read this page[/a].
+The reason why this works is because newly spawned goheis spawn from Reimu's center. By performing the dupe you are spawning new goheis from Reimu's location. [hl2]By moving Reimu closer to the boss, the newly spawned goheis will be within the gohei-target distance[/hl2], centering into the enemy. For more information, [a=/bugs/th14/gohei-dupe]please read this page[/a].
 
 #### Duping method: Quadruple tap method
 [hr_minor]
