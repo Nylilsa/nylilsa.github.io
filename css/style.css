@@ -478,6 +478,7 @@ tr {
 
 .tooltip {
   font-size: var(--fs-400);
+  height: fit-content;
   width: max(200px, 40ch);
   font-family: var(--ff-sans);
   color: var(--clr-text-dim);
@@ -486,8 +487,6 @@ tr {
   padding: 1em;
   position: absolute;
   bottom: 100%;
-  right: 50%;
-  translate: 50%;
   visibility: hidden;
   text-align: left;
   border: 1px solid var(--clr-box);

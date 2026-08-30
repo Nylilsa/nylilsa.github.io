@@ -11,7 +11,7 @@ By the end of the guide I hope you have learnt enough to get a sub 6m40s run !
 ## Overview
 [hr_major]
 
-MarisaB is the best shottype in MoF for speedrunning. This has to do with [a=/#/bugs/th10/0]a glitch[/a] in which she deals about 8 times more damage than intentionally when her power is in the interval 3.00-3.95. Therefore, this guide focuses on **speedrunning as MarisaB**.
+MarisaB is the best shottype in MoF for speedrunning. This has to do with [a=/bugs/th10/0]a glitch[/a] in which she deals about 8 times more damage than intentionally when her power is in the interval 3.00-3.95. Therefore, this guide focuses on **speedrunning as MarisaB**.
 
 Also, ``3.00-3.95 power MarisaB`` will occasionally be referred to as ``3 power MarisaB`` for simplicity. 
 

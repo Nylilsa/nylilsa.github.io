@@ -1,3 +1,4 @@
+[no_index]
 [title=Debug page]
 # Debug page
 [hr_major]

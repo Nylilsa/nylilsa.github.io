@@ -17,49 +17,49 @@ Quick paragraph list with no particular order, mostly just information dump, thi
 
 <ol class='toc'>
 Table of contents
-    <li>[jumpto=#/guides/th17-maingame-score#scoregain]Score gain[/jumpto]</li>
-    <li>[jumpto=#/guides/th17-maingame-score#increasingPIV]Increasing PIV[/jumpto]</li>
-    <li>[jumpto=#/guides/th17-maingame-score#characterdifferences]Characters differences[/jumpto]</li>
-    <li>[jumpto=#/guides/th17-maingame-score#suicidesforotters]Suicides for otters[/jumpto]</li>
-    <li>[jumpto=#/guides/th17-maingame-score#hypermanagement]Hyper management[/jumpto]</li>
-    <li>[jumpto=#/guides/th17-maingame-score#bossinvincibilitybug]Boss invincibility bug[/jumpto]</li>
-    <li>[jumpto=#/guides/th17-maingame-score#duplication]Duplication[/jumpto]</li>
-    <li>[jumpto=#/guides/th17-maingame-score#linearcreature]Linear Creature[/jumpto]</li>
-    <li>[jumpto=#/guides/th17-maingame-score#dealingwithtokenRNG]Dealing with token RNG[/jumpto]</li>
-    <li>[jumpto=#/guides/th17-maingame-score#basicgameplaybreakdown]Basic gameplay breakdown[/jumpto]</li>
-    <li>[jumpto=#/guides/th17-maingame-score#bossespracticesetups]Bosses practice setups[/jumpto]
+    <li>[jumpto=#scoregain]Score gain[/jumpto]</li>
+    <li>[jumpto=#increasingPIV]Increasing PIV[/jumpto]</li>
+    <li>[jumpto=#characterdifferences]Characters differences[/jumpto]</li>
+    <li>[jumpto=#suicidesforotters]Suicides for otters[/jumpto]</li>
+    <li>[jumpto=#hypermanagement]Hyper management[/jumpto]</li>
+    <li>[jumpto=#bossinvincibilitybug]Boss invincibility bug[/jumpto]</li>
+    <li>[jumpto=#duplication]Duplication[/jumpto]</li>
+    <li>[jumpto=#linearcreature]Linear Creature[/jumpto]</li>
+    <li>[jumpto=#dealingwithtokenRNG]Dealing with token RNG[/jumpto]</li>
+    <li>[jumpto=#basicgameplaybreakdown]Basic gameplay breakdown[/jumpto]</li>
+    <li>[jumpto=#bossespracticesetups]Bosses practice setups[/jumpto]
         <ol>
-            <li>[jumpto=#/guides/th17-maingame-score#eika]Eika[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#urumi]Urumi[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#kutaka]Kutaka[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#yachie]Yachie[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#mayumi]Mayumi[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#keiki]Keiki[/jumpto]</li>
+            <li>[jumpto=#eika]Eika[/jumpto]</li>
+            <li>[jumpto=#urumi]Urumi[/jumpto]</li>
+            <li>[jumpto=#kutaka]Kutaka[/jumpto]</li>
+            <li>[jumpto=#yachie]Yachie[/jumpto]</li>
+            <li>[jumpto=#mayumi]Mayumi[/jumpto]</li>
+            <li>[jumpto=#keiki]Keiki[/jumpto]</li>
         </ol>
     
     </li>
-    <li>[jumpto=#/guides/th17-maingame-score#randomdetails]Random details[/jumpto]</li>
-    <li>[jumpto=#/guides/th17-maingame-score#doingruns]Doing runs[/jumpto]
+    <li>[jumpto=#randomdetails]Random details[/jumpto]</li>
+    <li>[jumpto=#doingruns]Doing runs[/jumpto]
         <ol>
-            <li>[jumpto=#/guides/th17-maingame-score#stage1]Stage 1[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#stage2]Stage 2[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#stage3]Stage 3[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#stage4]Stage 4[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#stage5]Stage 5[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#stage6]Stage 6[/jumpto]</li>
+            <li>[jumpto=#stage1]Stage 1[/jumpto]</li>
+            <li>[jumpto=#stage2]Stage 2[/jumpto]</li>
+            <li>[jumpto=#stage3]Stage 3[/jumpto]</li>
+            <li>[jumpto=#stage4]Stage 4[/jumpto]</li>
+            <li>[jumpto=#stage5]Stage 5[/jumpto]</li>
+            <li>[jumpto=#stage6]Stage 6[/jumpto]</li>
         </ol>
     </li>
-    <li>[jumpto=#/guides/th17-maingame-score#8brunbreakdown]8B run breakdown[/jumpto]
+    <li>[jumpto=#8brunbreakdown]8B run breakdown[/jumpto]
         <ol>
-            <li>[jumpto=#/guides/th17-maingame-score#stage1-1]Stage 1[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#stage2-1]Stage 2[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#stage3-1]Stage 3[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#stage4-1]Stage 4[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#stage5-1]Stage 5[/jumpto]</li>
-            <li>[jumpto=#/guides/th17-maingame-score#stage6-1]Stage 6[/jumpto]</li>
+            <li>[jumpto=#stage1-1]Stage 1[/jumpto]</li>
+            <li>[jumpto=#stage2-1]Stage 2[/jumpto]</li>
+            <li>[jumpto=#stage3-1]Stage 3[/jumpto]</li>
+            <li>[jumpto=#stage4-1]Stage 4[/jumpto]</li>
+            <li>[jumpto=#stage5-1]Stage 5[/jumpto]</li>
+            <li>[jumpto=#stage6-1]Stage 6[/jumpto]</li>
         </ol>
     </li>
-    <li>[jumpto=#/guides/th17-maingame-score#randomdetails]Random details[/jumpto]</li>
+    <li>[jumpto=#randomdetails]Random details[/jumpto]</li>
 </ol>
 
 ## Score gain
@@ -123,7 +123,7 @@ Losing a life will spawn 2 static [style=otter, icon=true, highlightedText=otter
 
 The optimal amount of [style=otter, icon=true, highlightedText=otters] for a pattern depends on the pattern itself, the tankier the pattern the more [style=otter, icon=false, highlightedText=otters] you want in order to maximize scoregain. If the pattern doesn't have many bullets then saving some [style=otter, icon=false, highlightedText=otters] for denser patterns later in the stage is better.
 
-[hl2]Just shooting[/hl2] (doesn't have to hit anything) [hl2]actually decreases the length of the hyper, touching enemies with [style=otter, icon=false, highlightedText=otters] spirits ALSO decreases length[/hl2]. This is important because shooting/touching enemies for the entire time, will actually cut the duration in HALF, however on most patterns, it's not bad because PIV from the shot is good and touching bosses is the optimal cancel spot, however, there are some exceptions to this (*AHEM [jumpto=#/guides/th17-maingame-score#linearcreature]LC[/jumpto]*), just make sure you don't touch enemies with [style=otter, icon=false, highlightedText=otters] unless it's NEEDED.
+[hl2]Just shooting[/hl2] (doesn't have to hit anything) [hl2]actually decreases the length of the hyper, touching enemies with [style=otter, icon=false, highlightedText=otters] spirits ALSO decreases length[/hl2]. This is important because shooting/touching enemies for the entire time, will actually cut the duration in HALF, however on most patterns, it's not bad because PIV from the shot is good and touching bosses is the optimal cancel spot, however, there are some exceptions to this (*AHEM [jumpto=#linearcreature]LC[/jumpto]*), just make sure you don't touch enemies with [style=otter, icon=false, highlightedText=otters] unless it's NEEDED.
 
 
 ### Advanced technique: counter spins

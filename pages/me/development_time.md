@@ -1,3 +1,4 @@
+[no_index]
 [title=Dev time]
 # title
 

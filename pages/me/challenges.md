@@ -1,3 +1,4 @@
+[no_index]
 [title=Nylilsa's Challenges]
 # Nylilsa's Challenges
 [hr_major] 

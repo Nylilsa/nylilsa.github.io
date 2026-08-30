@@ -36,19 +36,19 @@ Describe why this happens. Do this by providing (pseudo-)code that is relevant f
 ### [rpy]
 [hr_minor]
 
-Add any links. Use ``[replay=id]`` to add any replays.
+Add any links. Use ``[replay=3HBhLzC6YM]`` to add any replays.
 
 
 ### [vid]
 [hr_minor]
 
-Add any links. Use ``[cite=id]`` to add any video links. Alternatively, you can add twitch clip links by embedding them in here.
+Add any links. Use ``[cite=uDiHhu5kaE]`` to add any video links. Alternatively, you can add twitch clip links by embedding them in here.
 
 
 ### [misc]
 [hr_minor]
 
-Add any other. Use ``[cite=id]`` to add any other links.
+Add any other. Use ``[cite=uDiHhu5kaE]`` to add any other links.
 
 
 At the end of the page, add ``[buildCategoriesTable]``.

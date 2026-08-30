@@ -12,26 +12,26 @@ English is not my first language so please excuse any weird mistakes that you ma
 [hr_minor]
 
 <ol class='toc'>
-    <li>[jumpto=#/guides/touhou-beginner-score#introduction]Introduction[/jumpto]</li>
-    <li>[jumpto=#/guides/touhou-beginner-score#goalsettingandreplaygathering]Goal Setting and Replay Gathering[/jumpto]</li>
-    <li>[jumpto=#/guides/touhou-beginner-score#practiceandrouting]Practice and Routing[/jumpto]</li>
-    <li>[jumpto=#/guides/touhou-beginner-score#lunaticscoringgameplaysummarygamebygame]Lunatic Scoring Gameplay Summary Game by Game[/jumpto]
+    <li>[jumpto=#introduction]Introduction[/jumpto]</li>
+    <li>[jumpto=#goalsettingandreplaygathering]Goal Setting and Replay Gathering[/jumpto]</li>
+    <li>[jumpto=#practiceandrouting]Practice and Routing[/jumpto]</li>
+    <li>[jumpto=#lunaticscoringgameplaysummarygamebygame]Lunatic Scoring Gameplay Summary Game by Game[/jumpto]
         <ol>
-            <li>[jumpto=#/guides/touhou-beginner-score#theembodimentofscarletdevil]the Embodiment of Scarlet Devil[/jumpto]</li>
-            <li>[jumpto=#/guides/touhou-beginner-score#perfectcherryblossom]Perfect Cherry Blossom[/jumpto]</li>
-            <li>[jumpto=#/guides/touhou-beginner-score#imperishablenight]Imperishable Night[/jumpto]</li>
-            <li>[jumpto=#/guides/touhou-beginner-score#mountainoffaith]Mountain of Faith[/jumpto]</li>
-            <li>[jumpto=#/guides/touhou-beginner-score#subterraneananimism]Subterranean Animism[/jumpto]</li>
-            <li>[jumpto=#/guides/touhou-beginner-score#undefinedfantasticobject]Undefined Fantastic Object[/jumpto]</li>
-            <li>[jumpto=#/guides/touhou-beginner-score#tendesires]Ten Desires[/jumpto]</li>
-            <li>[jumpto=#/guides/touhou-beginner-score#doubledealingcharacter]Double Dealing Character[/jumpto]</li>
-            <li>[jumpto=#/guides/touhou-beginner-score#legacyoflunatickingdom]Legacy of Lunatic Kingdom[/jumpto]</li>
-            <li>[jumpto=#/guides/touhou-beginner-score#hiddenstarinfourseasons]Hidden Star in Four Seasons[/jumpto]</li>
-            <li>[jumpto=#/guides/touhou-beginner-score#wilybeastandweakestcreature]Wily Beast and Weakest Creature[/jumpto]</li>
-            <li>[jumpto=#/guides/touhou-beginner-score#unconnectedmarketeers]Unconnected Marketeers[/jumpto]</li>
+            <li>[jumpto=#theembodimentofscarletdevil]the Embodiment of Scarlet Devil[/jumpto]</li>
+            <li>[jumpto=#perfectcherryblossom]Perfect Cherry Blossom[/jumpto]</li>
+            <li>[jumpto=#imperishablenight]Imperishable Night[/jumpto]</li>
+            <li>[jumpto=#mountainoffaith]Mountain of Faith[/jumpto]</li>
+            <li>[jumpto=#subterraneananimism]Subterranean Animism[/jumpto]</li>
+            <li>[jumpto=#undefinedfantasticobject]Undefined Fantastic Object[/jumpto]</li>
+            <li>[jumpto=#tendesires]Ten Desires[/jumpto]</li>
+            <li>[jumpto=#doubledealingcharacter]Double Dealing Character[/jumpto]</li>
+            <li>[jumpto=#legacyoflunatickingdom]Legacy of Lunatic Kingdom[/jumpto]</li>
+            <li>[jumpto=#hiddenstarinfourseasons]Hidden Star in Four Seasons[/jumpto]</li>
+            <li>[jumpto=#wilybeastandweakestcreature]Wily Beast and Weakest Creature[/jumpto]</li>
+            <li>[jumpto=#unconnectedmarketeers]Unconnected Marketeers[/jumpto]</li>
         </ol>
     </li>
-    <li>[jumpto=#/guides/touhou-beginner-score#usefullinks]Useful Links[/jumpto]</li>
+    <li>[jumpto=#usefullinks]Useful Links[/jumpto]</li>
 </ol>
 
 ## Introduction

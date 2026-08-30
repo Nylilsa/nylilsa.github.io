@@ -14,22 +14,22 @@ This guide is separated into two parts: the gameplay mechanics part and the rout
 
 <ol class='toc'>
 	Table of contents: gameplay mechanics
-	<li>[jumpto=#/guides/th15-maingame-score#chapterbonuses]Chapter bonuses[/jumpto]</li>
-	<li>[jumpto=#/guides/th15-maingame-score#scoregain]Score gain[/jumpto]</li>
-	<li>[jumpto=#/guides/th15-maingame-score#increasingpiv]Increasing PIV[/jumpto]</li>
-	<li>[jumpto=#/guides/th15-maingame-score#grazingandslowgrazing]Grazing and Slowgrazing[/jumpto]</li>
-	<li>[jumpto=#/guides/th15-maingame-score#characterdifferences]Character differences[/jumpto]
+	<li>[jumpto=#chapterbonuses]Chapter bonuses[/jumpto]</li>
+	<li>[jumpto=#scoregain]Score gain[/jumpto]</li>
+	<li>[jumpto=#increasingpiv]Increasing PIV[/jumpto]</li>
+	<li>[jumpto=#grazingandslowgrazing]Grazing and Slowgrazing[/jumpto]</li>
+	<li>[jumpto=#characterdifferences]Character differences[/jumpto]
 		<ol>
-            <li>[jumpto=#/guides/th15-maingame-score#reisen]Reisen[/jumpto]</li>
-            <li>[jumpto=#/guides/th15-maingame-score#sanae]Sanae[/jumpto]</li>
-            <li>[jumpto=#/guides/th15-maingame-score#marisa]Marisa[/jumpto]</li>
-            <li>[jumpto=#/guides/th15-maingame-score#reimu]Reimu[/jumpto]</li>
+            <li>[jumpto=#reisen]Reisen[/jumpto]</li>
+            <li>[jumpto=#sanae]Sanae[/jumpto]</li>
+            <li>[jumpto=#marisa]Marisa[/jumpto]</li>
+            <li>[jumpto=#reimu]Reimu[/jumpto]</li>
         </ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#bossinvincibilitybug]Boss invincibility bug[/jumpto]</li>
-	<li>[jumpto=#/guides/th15-maingame-score#basicgameplaybreakdown]Basic gameplay breakdown[/jumpto]</li>
-	<li>[jumpto=#/guides/th15-maingame-score#dango]Dango[/jumpto]</li>
-	<li>[jumpto=#/guides/th15-maingame-score#randominfo]Random info[/jumpto]</li>
+	<li>[jumpto=#bossinvincibilitybug]Boss invincibility bug[/jumpto]</li>
+	<li>[jumpto=#basicgameplaybreakdown]Basic gameplay breakdown[/jumpto]</li>
+	<li>[jumpto=#dango]Dango[/jumpto]</li>
+	<li>[jumpto=#randominfo]Random info[/jumpto]</li>
 </ol>
 
 + Stage 1
@@ -42,88 +42,88 @@ This guide is separated into two parts: the gameplay mechanics part and the rout
 
 <ol class='toc'>
 	Table of contents: doing runs
-	<li>[jumpto=#/guides/th15-maingame-score#recommendedstartingscores]Recommended starting scores[/jumpto]</li>
-	<li>[jumpto=#/guides/th15-maingame-score#stage1]Stage 1[/jumpto]
+	<li>[jumpto=#recommendedstartingscores]Recommended starting scores[/jumpto]</li>
+	<li>[jumpto=#stage1]Stage 1[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s1c3]First mid-non[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s1c3]Second mid-non[/jumpto]</li>
+			<li>[jumpto=#s1c3]First mid-non[/jumpto]</li>
+			<li>[jumpto=#s1c3]Second mid-non[/jumpto]</li>
 		</ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#seiran]Seiran[/jumpto]
+	<li>[jumpto=#seiran]Seiran[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s1n2]2nd non-spell[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s1s2]Lunatic Gun[/jumpto]</li>
+			<li>[jumpto=#s1n2]2nd non-spell[/jumpto]</li>
+			<li>[jumpto=#s1s2]Lunatic Gun[/jumpto]</li>
 		</ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#stage2]Stage 2[/jumpto]
+	<li>[jumpto=#stage2]Stage 2[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s2c4]Ringo mid-non[/jumpto]</li>
+			<li>[jumpto=#s2c4]Ringo mid-non[/jumpto]</li>
 		</ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#ringo]Ringo[/jumpto]
+	<li>[jumpto=#ringo]Ringo[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s2n2]Second non-spell[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s2s2]Dango Influence[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s2s3]Lunatic September[/jumpto]</li>
+			<li>[jumpto=#s2n2]Second non-spell[/jumpto]</li>
+			<li>[jumpto=#s2s2]Dango Influence[/jumpto]</li>
+			<li>[jumpto=#s2s3]Lunatic September[/jumpto]</li>
 		</ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#stage3]Stage 3[/jumpto]
+	<li>[jumpto=#stage3]Stage 3[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s3c1]Chapter 1[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s3c4]Doremy mid-boss[/jumpto]</li>
+			<li>[jumpto=#s3c1]Chapter 1[/jumpto]</li>
+			<li>[jumpto=#s3c4]Doremy mid-boss[/jumpto]</li>
 		</ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#doremy]Doremy[/jumpto]
+	<li>[jumpto=#doremy]Doremy[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s3s1]Eternally Anxious Dream[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s3s2]Ochre Labyrinth Confusion[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s3s3]Losing Oneself in a Dream (aka. Dream Catcher)[/jumpto]</li>
+			<li>[jumpto=#s3s1]Eternally Anxious Dream[/jumpto]</li>
+			<li>[jumpto=#s3s2]Ochre Labyrinth Confusion[/jumpto]</li>
+			<li>[jumpto=#s3s3]Losing Oneself in a Dream (aka. Dream Catcher)[/jumpto]</li>
 		</ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#stage4]Stage 4[/jumpto]
+	<li>[jumpto=#stage4]Stage 4[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s4c1]Chapter 1[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s4c2]Chapter 2[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s4c4]Sagume mid-boss[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s4c5]Chapter 5[/jumpto]</li>
+			<li>[jumpto=#s4c1]Chapter 1[/jumpto]</li>
+			<li>[jumpto=#s4c2]Chapter 2[/jumpto]</li>
+			<li>[jumpto=#s4c4]Sagume mid-boss[/jumpto]</li>
+			<li>[jumpto=#s4c5]Chapter 5[/jumpto]</li>
 		</ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#sagume]Sagume[/jumpto]
+	<li>[jumpto=#sagume]Sagume[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s4s1]Disorderly Flock’s Duplex Curse[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s4s3]Shinning Shotgun Coronation of the Gods[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s4s4]One-Winged Angel White Heron[/jumpto]</li>
+			<li>[jumpto=#s4s1]Disorderly Flock’s Duplex Curse[/jumpto]</li>
+			<li>[jumpto=#s4s3]Shinning Shotgun Coronation of the Gods[/jumpto]</li>
+			<li>[jumpto=#s4s4]One-Winged Angel White Heron[/jumpto]</li>
 		</ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#stage5]Stage 5[/jumpto]
+	<li>[jumpto=#stage5]Stage 5[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s5c1]Chapter 1[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s5c2]Chapter 2[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s5c3]Chapter 3[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s5c4]Chapter 4[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s5c5]Chapter 5: Laser Streaming[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s5c6]Chapter 6: Ring Fairies[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s5c7]Chapter 7: Laser Hell[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s5c8]Chapter 8: Fairy Highway[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s5c9]Chapter 9: Star Field[/jumpto]</li>
+			<li>[jumpto=#s5c1]Chapter 1[/jumpto]</li>
+			<li>[jumpto=#s5c2]Chapter 2[/jumpto]</li>
+			<li>[jumpto=#s5c3]Chapter 3[/jumpto]</li>
+			<li>[jumpto=#s5c4]Chapter 4[/jumpto]</li>
+			<li>[jumpto=#s5c5]Chapter 5: Laser Streaming[/jumpto]</li>
+			<li>[jumpto=#s5c6]Chapter 6: Ring Fairies[/jumpto]</li>
+			<li>[jumpto=#s5c7]Chapter 7: Laser Hell[/jumpto]</li>
+			<li>[jumpto=#s5c8]Chapter 8: Fairy Highway[/jumpto]</li>
+			<li>[jumpto=#s5c9]Chapter 9: Star Field[/jumpto]</li>
 		</ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#clownpiece]Clownpiece[/jumpto]
+	<li>[jumpto=#clownpiece]Clownpiece[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s5s3]Infernal Essence of Grazing (aka. Graze Inferno)[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s5s4]Striped Abyss[/jumpto]</li>
+			<li>[jumpto=#s5s3]Infernal Essence of Grazing (aka. Graze Inferno)[/jumpto]</li>
+			<li>[jumpto=#s5s4]Striped Abyss[/jumpto]</li>
 		</ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#stage6]Stage 6[/jumpto]</li>
-	<li>[jumpto=#/guides/th15-maingame-score#junko]Junko[/jumpto]
+	<li>[jumpto=#stage6]Stage 6[/jumpto]</li>
+	<li>[jumpto=#junko]Junko[/jumpto]
 		<ol>
-			<li>[jumpto=#/guides/th15-maingame-score#s6s1]Pure Light of the Palm[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s6n3]Non-spell 3[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s6s3]Trembling, Shivering Star[/jumpto]</li>
-			<li>[jumpto=#/guides/th15-maingame-score#s6s4]Pristine Lunacy[/jumpto]</li>
+			<li>[jumpto=#s6s1]Pure Light of the Palm[/jumpto]</li>
+			<li>[jumpto=#s6n3]Non-spell 3[/jumpto]</li>
+			<li>[jumpto=#s6s3]Trembling, Shivering Star[/jumpto]</li>
+			<li>[jumpto=#s6s4]Pristine Lunacy[/jumpto]</li>
 		</ol>
 	</li>
-	<li>[jumpto=#/guides/th15-maingame-score#finalscore]Final Score[/jumpto]</li>
+	<li>[jumpto=#finalscore]Final Score[/jumpto]</li>
 </ol>
 
 ## Chapter Bonuses
