@@ -649,6 +649,8 @@ fs.cpSync("css", "dist/css", { recursive: true });
 fs.cpSync("json", "dist/json", { recursive: true });
 fs.cpSync("lib", "dist/lib", { recursive: true });
 fs.cpSync("scripts", "dist/scripts", { recursive: true });
+fs.cpSync("robots.txt", "dist/robots.txt");
+fs.cpSync("sitemap.xml", "dist/sitemap.xml");
 
 updateTemplate();
 generateHtmlFiles();
