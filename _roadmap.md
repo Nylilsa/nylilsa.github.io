@@ -38,14 +38,12 @@ Todo1 :
 3. Also check if second part (baseUrl + "bugs/th06/dialogue-desync") resolves to a page
 4. If true for both, redirect to page
 
-Todo2 : make baseUrl redirect to home page
-
-Todo3 : check for SEO things for HTML for better indexing/previews etc.
-
+Todo2 : make baseUrl redirect to home page DONE (see Todo7)
+Todo3 : check for SEO things for HTML for better indexing/previews etc. DONE
 Todo4: fix figure ID stacking DONE
 Todo5: fix wr page initial load not working DONE
 Todo6: DateFormat DONE
-Todo7: Create dist/index.html NOT DONE
-Todo8: add valid GFW page NOT DONE
+Todo7: Create dist/index.html DONE (home.md -> index.md)
+Todo8: add valid GFW page "DONE" (I just removed it so it works now)
 Todo9: 12-5 page see bottom link DONE 
 Todo10: Some img= still using relative path instead of absolute DONE

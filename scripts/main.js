@@ -289,7 +289,16 @@ async function initCanvasPage() {
     }
 }
 
+function initHashRedirect() {
+    if (location.hash === "#/home") {
+        location.replace("/");
+    } else if (location.hash.startsWith("#/")) {
+        location.replace(location.hash.substring(1));
+    }
+}
+
 function init() {
+    initHashRedirect();
     initDropdownToggle();
     initSidebarListeners();
     initSidebarVisibility();
@@ -297,6 +306,5 @@ function init() {
     initCanvasPage();
     hljs.highlightAll();
 }
-
 
 init();

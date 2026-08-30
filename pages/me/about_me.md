@@ -16,7 +16,7 @@ Also, I may not be that good of a player so don't expect too much. I only play b
 ## Media
 [hr_minor]
 
-+ Website: [jumpto=/home]https://nylilsa.github.io/[/jumpto] (you are on this website right now !)
++ Website: [jumpto=/]https://nylilsa.github.io/[/jumpto] (you are on this website right now !)
 + Ko-fi.com: [a=https://ko-fi.com/nylilsa]https://ko-fi.com/nylilsa[/a]
 + YouTube: [a=https://www.youtube.com/channel/UCqKACPKvHg6Ub-kb8rlkrhQ]https://www.youtube.com/channel/UCqKACPKvHg6Ub-kb8rlkrhQ[/a]
 + Twitch: [a=https://www.twitch.tv/Nylilsa]https://www.twitch.tv/Nylilsa[/a]

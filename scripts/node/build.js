@@ -580,7 +580,6 @@ async function generateHtmlFiles() {
             // Note: it does NOT cover legacy hash links e.g nylilsa.github.io/#/bugs/spell-skip 
             // That is done in front end
             const aliases = [...urlNames.slice(1)];
-
             for (const alias of aliases) {
                 const redirectPath = path.join(
                     distDir,
@@ -588,20 +587,25 @@ async function generateHtmlFiles() {
                     alias,
                     "index.html"
                 );
+                const redirectUrl = path.join(
+                    path.dirname(relativePath),
+                    canonicalName,
+                    "/"
+                );
 
-                const redirect = `<!DOCTYPE html>
-                                <html>
-                                <head>
-                                    <meta http-equiv="refresh" content="0; url=../${canonicalName}/">
-                                    <link rel="canonical" href="../${canonicalName}/">
-                                    <script>
-                                        window.location.replace("../${canonicalName}/");
-                                    </script>
-                                </head>
-                                <body>
-                                    Redirecting to <a href="../${canonicalName}/">${canonicalName}</a>...
-                                </body>
-                                </html>`;
+const redirect = `<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url=/${redirectUrl}">
+    <link rel="canonical" href=/"${redirectUrl}">
+    <script>
+        window.location.replace("/${redirectUrl}");
+    </script>
+</head>
+<body>
+    Redirecting...
+</body>
+</html>`;
 
                 fs.mkdirSync(path.dirname(redirectPath), { recursive: true });
                 fs.writeFileSync(redirectPath, redirect);
