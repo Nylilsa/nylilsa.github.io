@@ -1,3 +1,4 @@
+[no_index]
 [title=How to dodge Lilies - Lunatic]
 # How to dodge Lilies - Lunatic
 [hr_major]

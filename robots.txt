@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nylilsa.github.io/sitemap.xml
+Sitemap: https://nylilsa.dev/sitemap.xml

@@ -14,11 +14,10 @@ const mainHtmlPath = path.join(rootDir, "index.html");
 const interface = {
     pageTitle: "",
     tooltips: new Map(),
+    isNoIndex: false,
+    figureId: 0,
 }
 
-let citeId = 0;
-let eclJsonId = 0;
-let figureId = 0;
 
 const ECL = JSON.parse(fs.readFileSync("json/ecl.json"));
 const GLITCH_TREE = JSON.parse(fs.readFileSync("json/glitch-tree.json"));
@@ -28,6 +27,14 @@ const CATEGORIES = JSON.parse(fs.readFileSync("json/categories.json"));
 
 
 let ext = function () {
+    let no_index = {
+        type: "lang",
+        regex: /\[no_index\]/g,
+        replace: function () {
+            interface.isNoIndex = true;
+            return '';
+        }
+    }
     let hr_major = {
         type: "lang",
         regex: /\[hr_major\]/g,
@@ -54,17 +61,17 @@ let ext = function () {
         type: "lang",
         regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?)\]/g,
         replace: function (all, img, figtitle, alt) {
-            figureId++;
+            interface.figureId++;
             const path = img.startsWith("http") ? img : `/pages/${img}`;
-            return `<div class="figure-outer-wrapper" id="figure-${figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" title="${figtitle}" src="${path}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div></div>`;
+            return `<div class="figure-outer-wrapper" id="figure-${interface.figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" title="${figtitle}" src="${path}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${interface.figureId}: </span>${figtitle}</figcaption></figure></div></div>`;
         }
     }
     let imgcss = {
         type: "lang",
         regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?), other=(.*?)\]/g,
         replace: function (all, img, figtitle, alt, other) {
-            figureId++;
-            return `<div style="text-align: center;" id="figure-${figureId}"><figure class="fit-wrapper"><img style="${other}" class="fit-image" title="${figtitle}" src="pages/${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${figureId}: </span>${figtitle}</figcaption></figure></div>`;
+            interface.figureId++;
+            return `<div style="text-align: center;" id="figure-${interface.figureId}"><figure class="fit-wrapper"><img style="${other}" class="fit-image" title="${figtitle}" src="pages/${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${interface.figureId}: </span>${figtitle}</figcaption></figure></div>`;
         }
     }
     let img_small = {
@@ -331,7 +338,7 @@ let ext = function () {
         replace: '&',
     }
     // order matters: prioritize elements that will be nested within
-    return [ins, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp];
+    return [ins, no_index, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp];
 }
 
 const names1 = {
@@ -538,8 +545,16 @@ async function generateHtmlFiles() {
         const dom = new JSDOM(htmlFile);
         const document = dom.window.document;
 
+        if (interface.isNoIndex) {
+            const meta = document.createElement("meta");
+            meta.name = "robots";
+            meta.content = "noindex, nofollow";
+            document.head.appendChild(meta);
+        }
+
         document.title = interface.pageTitle;
-        figureId = 0;
+        interface.figureId = 0;
+        interface.isNoIndex = false;
         const tooltipParent = document.getElementById("tooltip-container");
         interface.tooltips.forEach((html, key) => {
             tooltipParent.innerHTML += html;
@@ -555,8 +570,8 @@ async function generateHtmlFiles() {
         if (pageData) {
             const urlNames = pageData["url-name"];
             initCategoriesTable(document, thnr, pageId, names1, GLITCH_TREE, CATEGORIES);
+            //no more DOM changes, save
             htmlFile = dom.serialize();
-            // fs.writeFileSync(`${thnr}-${pageId}.html`, dom.serialize());
             const canonicalName = urlNames[0];
 
             // Generate the actual page at the canonical URL
@@ -593,7 +608,7 @@ async function generateHtmlFiles() {
                     "/"
                 );
 
-const redirect = `<!DOCTYPE html>
+                const redirect = `<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="refresh" content="0; url=/${redirectUrl}">
@@ -613,6 +628,8 @@ const redirect = `<!DOCTYPE html>
                 console.log(`Redirect: ${alias} → ${canonicalName}`);
             }
         } else {
+            //no more DOM changes, save
+            htmlFile = dom.serialize();
             const relativePath = path.relative(pagesDir, markdownPath);
             const relativeHtmlPath = relativePath.replace(/\.md$/, ".html");
 
