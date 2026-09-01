@@ -83,7 +83,7 @@ function buildRowCategory(selectedGame, selectedIndex, TREE, categories) {
     const rows = [];
     let text;
     if (categories["href"]) {
-        text = `All <a class="url" target="_blank" href="${categories["href"]}">${categories["formatted_label"]}-related</a> pages:`;
+        text = `All <a class="url" target="_blank" rel="noopener noreferrer" href="${categories["href"]}">${categories["formatted_label"]}-related</a> pages:`;
     } else {
         text = `All <span class="highlight-txt">${categories["formatted_label"]}-related</span> pages:`;
     }

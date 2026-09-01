@@ -765,6 +765,7 @@ function createDropdown(allPlayerData) {
                         if (entry.verified && pathToSite) {
                             cellText = document.createElement(`a`);
                             cellText.target = '_blank';
+                            cellText.rel = 'noopener noreferrer';
                             cellText.innerText = scoreWithCommas;
                             cellText.classList.add("url");
                             cellText.href = pathToSite;
@@ -1051,6 +1052,7 @@ function generateWRTable(data, flag = true) {
                         if (!isUnverified && pathToSite) {
                             cellText = document.createElement(`a`);
                             cellText.target = '_blank';
+                            cellText.rel = 'noopener noreferrer';
                             cellText.innerText = scoreWithCommas;
                             cellText.classList.add("url");
                             cellText.href = pathToSite;

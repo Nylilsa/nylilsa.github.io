@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const showdown = require("showdown");
 // const ext = require("../showdown-ext");
-const { fillCite, videoFunction, matchText, colorRGB, replayFunction, hrCustom, colorHex } = require("./build-helper");
+const { videoFunction, matchText, colorRGB, replayFunction, hrCustom, colorHex } = require("./build-helper");
 const { initCategoriesTable } = require("../init-categories-table.js");
 
 const rootDir = path.join(__dirname, "../..");
@@ -206,7 +206,7 @@ let ext = function () {
     let a = {
         type: "lang",
         regex: /\[a=(.*?)\]([^]*?)\[\/a\]/g,
-        replace: "<a class='url' href='$1' target='_blank'>$2</a>"
+        replace: "<a class='url' href='$1' target='_blank' rel='noopener noreferrer'>$2</a>"
     }
 
     let jumpto = {
@@ -508,7 +508,7 @@ function contributorsFunction(check) {
 
     for (const value of Object.values(CONTRIBUTORS[check] ?? {})) {
         if (value.url) {
-            html += `<li><a class="url" href="${value.url}" target="_blank">${value.name}</a> - ${value.help}</li>`;
+            html += `<li><a class="url" href="${value.url}" target="_blank" rel='noopener noreferrer'>${value.name}</a> - ${value.help}</li>`;
         } else {
             html += `<li>${value.name} - ${value.help}</li>`;
         }

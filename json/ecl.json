@@ -32,7 +32,7 @@
                 {"start": "float"},
                 {"final": "float"}
             ],
-            "Description": "In $3 frames using <a class=\"url\" target=\"_blank\"href=\"https://exphp.github.io/thpages/#/anm/interpolation\">mode</a> $4, variable $2 changes from $5 to $6. $1 is used to set the slot to be used by this ins, every enemy has 8 slots."
+            "Description": "In $3 frames using <a class=\"url\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://exphp.github.io/thpages/#/anm/interpolation\">mode</a> $4, variable $2 changes from $5 to $6. $1 is used to set the slot to be used by this ins, every enemy has 8 slots."
         },
         "115": {
             "Name": "timer_callback_threshold",
@@ -66,7 +66,7 @@
             "Parameters": [
                 {"n": "int"}
             ],
-            "Description": "Clears flag(s) according to $1. Refer to the flag table <a class=\"url\" target=\"_blank\" href=\"https://priw8.github.io/#s=MERLIN/doc/globals/enemy-etc\">here</a>  for exact values."
+            "Description": "Clears flag(s) according to $1. Refer to the flag table <a class=\"url\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://priw8.github.io/#s=MERLIN/doc/globals/enemy-etc\">here</a>  for exact values."
         },
         "514": {
             "Name": "setInterrupt",
@@ -124,7 +124,7 @@
                 {"a": "float"},
                 {"b": "float"}
             ],
-            "Description": "Adds bullet transformation to bullet manager $1, Transformation of flag $3 determines the specific behaviour of the bullet. <a class=\"url\" target=\"_blank\"href=\"https://priw8.github.io/#s=MERLIN/doc/functions/transformations\">Documentation can be found here</a>."
+            "Description": "Adds bullet transformation to bullet manager $1, Transformation of flag $3 determines the specific behaviour of the bullet. <a class=\"url\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://priw8.github.io/#s=MERLIN/doc/functions/transformations\">Documentation can be found here</a>."
         }
     },
     "Globals": {

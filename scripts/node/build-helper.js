@@ -175,13 +175,13 @@ export function dateFormat(date) {
 }
 
 export function citeAPA(date, author, title, url) {
-    return author + '. 「' + date + '」. "' + title + '" <a class="url" href="' + url + '" target="_blank">' + url + '</a>';
+    return author + '. 「' + date + '」. "' + title + '" <a class="url" href="' + url + '" target="_blank" rel="noopener noreferrer">' + url + '</a>';
 }
 
 export function citeReplay(game, date, author, name, difficulty, shot, version, url, note) {
     if (latestVersion[game] != version) { version = '<span class="highlight-txt" style="color:#f2c200">' + version + '</span>' }
     if (note) { note = "(Note: " + note + ")" }
-    return 'Replay <code>' + name + '</code> by "' + author + '". ' + difficulty + ', ' + shot + ', ' + version + '. 「' + date + '」. <a class="url" href="/' + url + '" target="_blank">Download link</a> ' + note;
+    return 'Replay <code>' + name + '</code> by "' + author + '". ' + difficulty + ', ' + shot + ', ' + version + '. 「' + date + '」. <a class="url" href="/' + url + '" target="_blank" rel="noopener noreferrer">Download link</a> ' + note;
 }
 
 // const fetchData = (() => {
