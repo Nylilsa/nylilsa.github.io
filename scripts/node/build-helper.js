@@ -108,7 +108,7 @@ export const names1 = {
     "th11": { "game_number": "11", "abbreviation": "SA", "jp": "地霊殿", "en": "Subterranean Animism" },
     "th12": { "game_number": "12", "abbreviation": "UFO", "jp": "星蓮船", "en": "Undefined Fantastic Object" },
     "th125": { "game_number": "12.5", "abbreviation": "DS", "jp": "ダブルスポイラー", "en": "Double Spoiler" },
-    "th128": { "game_number": "12.8", "abbreviation": "FW", "jp": "妖精大戦争", "en": "Fairy Wars" },
+    "th128": { "game_number": "12.8", "abbreviation": "GFW", "jp": "妖精大戦争", "en": "Great Fairy Wars" },
     "th13": { "game_number": "13", "abbreviation": "TD", "jp": "神霊廟", "en": "Ten Desires" },
     "th14": { "game_number": "14", "abbreviation": "DDC", "jp": "輝針城", "en": "Double Dealing Character" },
     "th143": { "game_number": "14.3", "abbreviation": "ISC", "jp": "弾幕アマノジャク", "en": "Impossible Spell Card" },
@@ -182,30 +182,6 @@ export function citeReplay(game, date, author, name, difficulty, shot, version, 
     if (latestVersion[game] != version) { version = '<span class="highlight-txt" style="color:#f2c200">' + version + '</span>' }
     if (note) { note = "(Note: " + note + ")" }
     return 'Replay <code>' + name + '</code> by "' + author + '". ' + difficulty + ', ' + shot + ', ' + version + '. 「' + date + '」. <a class="url" href="/' + url + '" target="_blank" rel="noopener noreferrer">Download link</a> ' + note;
-}
-
-// const fetchData = (() => {
-//     const cache = new Map();
-//     const fetchPromises = new Map();
-//     return async (path) => {
-//         if (!cache.has(path)) {
-//             if (!fetchPromises.has(path)) {
-//                 fetchPromises.set(path, Promise.resolve()
-//                     .then(() => fs.promises.readFile(path, "utf8"))
-//                     .then(data => JSON.parse(data))
-//                     .then(data => {
-//                         cache.set(path, data);
-//                         return data;
-//                     }));
-
-//             }
-//             return fetchPromises.get(path);
-//         }
-//         return cache.get(path);
-//     };
-// })();
-function fetchData(path) {
-    return JSON.parse(fs.readFileSync(path, "utf8"));
 }
 
 export function hrCustom(input) {

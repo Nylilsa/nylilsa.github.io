@@ -57,7 +57,7 @@ const names1 = {
     "th11": {"game_number": "11", "abbreviation": "SA", "jp": "地霊殿", "en": "Subterranean Animism"},
     "th12": {"game_number": "12", "abbreviation": "UFO", "jp": "星蓮船", "en": "Undefined Fantastic Object"},
     "th125": {"game_number": "12.5", "abbreviation": "DS", "jp": "ダブルスポイラー", "en": "Double Spoiler"},
-    "th128": {"game_number": "12.8", "abbreviation": "FW", "jp": "妖精大戦争", "en": "Fairy Wars"},
+    "th128": {"game_number": "12.8", "abbreviation": "GFW", "jp": "妖精大戦争", "en": "Great Fairy Wars"},
     "th13": {"game_number": "13", "abbreviation": "TD", "jp": "神霊廟", "en": "Ten Desires"},
     "th14": {"game_number": "14", "abbreviation": "DDC", "jp": "輝針城", "en": "Double Dealing Character"},
     "th143": {"game_number": "14.3", "abbreviation": "ISC", "jp": "弾幕アマノジャク", "en": "Impossible Spell Card"},
