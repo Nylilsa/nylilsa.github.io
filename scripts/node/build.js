@@ -1,0 +1,628 @@
+const { JSDOM } = require("jsdom");
+const fs = require("fs");
+const path = require("path");
+const showdown = require("showdown");
+// const ext = require("../showdown-ext");
+const { names1, videoFunction, matchText, colorRGB, replayFunction, hrCustom, colorHex } = require("./build-helper");
+const { initCategoriesTable } = require("../init-categories-table.js");
+
+const rootDir = path.join(__dirname, "../..");
+const pagesDir = path.join(rootDir, "pages");
+const distDir = path.join(rootDir, "dist");
+const mainHtmlPath = path.join(rootDir, "index.html");
+
+const interface = {
+    pageTitle: "",
+    tooltips: new Map(),
+    isNoIndex: false,
+    figureId: 0,
+}
+
+const ECL = JSON.parse(fs.readFileSync("json/ecl.json"));
+const GLITCH_TREE = JSON.parse(fs.readFileSync("json/glitch-tree.json"));
+const CONTRIBUTORS = JSON.parse(fs.readFileSync("json/contributors.json"));
+const WEBDATA = JSON.parse(fs.readFileSync("json/webdata.json"));
+const CATEGORIES = JSON.parse(fs.readFileSync("json/categories.json"));
+
+
+let ext = function () {
+    let no_index = {
+        type: "lang",
+        regex: /\[no_index\]/g,
+        replace: function () {
+            interface.isNoIndex = true;
+            return '';
+        }
+    }
+    let hr_major = {
+        type: "lang",
+        regex: /\[hr_major\]/g,
+        replace: "<hr class='hr_major'>"
+    }
+    let hr_minor = {
+        type: "lang",
+        regex: /\[hr_minor\]/g,
+        replace: "<hr class='hr_minor'>"
+    }
+    let hr_custom = {
+        type: "lang",
+        regex: /\[hr_custom=(.*?)\]/g,
+        replace: function (match, content) {
+            return hrCustom(content);
+        }
+    }
+    let br = {
+        type: "lang",
+        regex: /\[br\]/g,
+        replace: "<br>"
+    }
+    let img = {
+        type: "lang",
+        regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?)\]/g,
+        replace: function (all, img, figtitle, alt) {
+            interface.figureId++;
+            const path = img.startsWith("http") ? img : `/pages/${img}`;
+            return `<div class="figure-outer-wrapper" id="figure-${interface.figureId}"><div class="figure-inner-wrapper"><figure class="fit-wrapper"><img class="fit-image" title="${figtitle}" src="${path}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${interface.figureId}: </span>${figtitle}</figcaption></figure></div></div>`;
+        }
+    }
+    let imgcss = {
+        type: "lang",
+        regex: /\[img=(.*?), figtitle=(.*?), alt=(.*?), other=(.*?)\]/g,
+        replace: function (all, img, figtitle, alt, other) {
+            interface.figureId++;
+            return `<div style="text-align: center;" id="figure-${interface.figureId}"><figure class="fit-wrapper"><img style="${other}" class="fit-image" title="${figtitle}" src="pages/${img}" alt="${alt}"><figcaption><span style="font-style: normal;">Figure ${interface.figureId}: </span>${figtitle}</figcaption></figure></div>`;
+        }
+    }
+    let img_small = {
+        type: "lang",
+        regex: /\[img=(.*?)\]/g,
+        replace: '<img title="$1" style="cursor:pointer; margin: 5px;" onclick="window.open(\'$1\')" src="$1">'
+    }
+
+    let code = {
+        type: "lang",
+        regex: /\[code\]([^]+?)\[\/code\]/g,
+        replace: "<pre><code class='code language-c mono'>$1</code></pre>"
+    }
+
+    let title = {
+        type: "lang",
+        regex: /\[title=(.*?)\]/gim,
+        replace: function (match, content) {
+            interface.pageTitle = content;
+            return '';
+        }
+    }
+
+    let tip = {
+        type: "lang",
+        regex: /\[tip=(.*?)\]([^]*?)\[\/tip\]/g,
+        replace: `<span data-tip='$1'>$2</span>`
+    }
+
+    let video = {
+        type: "lang",
+        regex: /\[video=(.*?), hratio=(.*?), other=(.*?)\]/g,
+        replace: '<div class="fit-wrapper"><iframe class="fit-image" style="padding-bottom: $2%; $3" src="$1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media" allowfullscreen></iframe></div>'
+    }
+
+    let yes = {
+        type: "lang",
+        regex: /\[yes\]([^]*?)\[\/yes\]/g,
+        replace: "<span><img src='/assets/green-check-mark.svg' class='icon-text'>$1</span>"
+    }
+
+    let unknown = {
+        type: "lang",
+        regex: /\[unknown\]([^]*?)\[\/unknown\]/g,
+        replace: "<span class='unknown'><img src='/assets/question-mark.svg' class='icon-text'>$1</span>"
+    }
+
+    let no = {
+        type: "lang",
+        regex: /\[no\]([^]*?)\[\/no\]/g,
+        replace: "<span><img src='/assets/red-cross.svg' class='icon-text'>~~$1~~</span>"
+    }
+
+    let discord = {
+        type: "lang",
+        regex: /\[discord\]/g,
+        replace: "``nylilsa``"
+    }
+
+    let no_content = {
+        type: "lang",
+        regex: /\[no_content\]/g,
+        replace: "<span style='font-style: italic; color:'>This section has no content yet. Would you like to add to this section? [jumpto=/me/contact]Contact me[/jumpto] if you are interested!</span>"
+    }
+
+    let work_in_progress = {
+        type: "lang",
+        regex: /\[wip\]/g,
+        replace: "<span style='font-style: italic; color:'>This placeholder text has been placed here because this section is a Work In Progress. If you believe you could help out, please [jumpto=/me/contact]contact me[/jumpto] !</span>"
+    }
+
+    let specs = {
+        type: "lang",
+        regex: /\[specs\]/g,
+        replace: "Specifications"
+    }
+
+    let what = {
+        type: "lang",
+        regex: /\[what\]/g,
+        replace: "What happens"
+    }
+
+    let how = {
+        type: "lang",
+        regex: /\[how\]/g,
+        replace: "How it happens"
+    }
+
+    let why = {
+        type: "lang",
+        regex: /\[why\]/g,
+        replace: "Why it happens"
+    }
+
+    let why_idk = {
+        type: "lang",
+        regex: /\[why_idk\]/g,
+        replace: "Theory"
+    }
+
+    let links = {
+        type: "lang",
+        regex: /\[links\]/g,
+        replace: "Links"
+    }
+
+    let patches = {
+        type: "lang",
+        regex: /\[patches\]/g,
+        replace: "Patches"
+    }
+
+    let rpy = {
+        type: "lang",
+        regex: /\[rpy\]/g,
+        replace: "Replays"
+    }
+
+    let vid = {
+        type: "lang",
+        regex: /\[vid\]/g,
+        replace: "Videos"
+    }
+
+    let misc = {
+        type: "lang",
+        regex: /\[misc\]/g,
+        replace: "Other"
+    }
+
+    let a = {
+        type: "lang",
+        regex: /\[a=(.*?)\]([^]*?)\[\/a\]/g,
+        replace: "<a class='url' href='$1' target='_blank' rel='noopener noreferrer'>$2</a>"
+    }
+
+    let jumpto = {
+        type: "lang",
+        regex: /\[jumpto=(.*?)\]([^]*?)\[\/jumpto\]/g,
+        replace: function (full, content, text) {
+            return `<a class="url-toc" href="${content}">${text}</a>`;
+        }
+    };
+
+    let sub = {
+        type: "lang",
+        regex: /\[sub\]([^]*?)\[\/sub\]/g,
+        replace: "<sub>$1</sub>"
+    }
+
+    let box = {
+        type: "lang",
+        regex: /\[box=(.*?)\]([^]*?)\[\/box\]/g,
+        replace: "<div class='box' style='max-width:$1px'>$2</div>"
+    }
+
+    let you_thief = {
+        type: "lang",
+        regex: /\[thereweresigns=(.*?)\]([^]*?)\[\/butyouignoredthem\]/g,
+        replace: "<div style='$1'>$2</div>"
+    }
+
+    let hl1 = {
+        type: "lang",
+        regex: /\[hl1\]([^]*?)\[\/hl1\]/g,
+        replace: "<div class='highlight-child'>$1</div>"
+    }
+
+    let hl2 = {
+        type: "lang",
+        regex: /\[hl2\]([^]*?)\[\/hl2\]/g,
+        replace: "<span class='highlight-txt'>$1</span>"
+    }
+
+    let key = {
+        type: "lang",
+        regex: /\[key=([^]*?)\]/g,
+        replace: "<kbd class='key mono'>$1</kbd>"
+    }
+
+    let cite = {
+        type: "lang",
+        regex: /\[cite=([^]*?)\]/g,
+        replace: function (match, content) {
+            return videoFunction(content, WEBDATA);
+        }
+    };
+
+    let replay = {
+        type: "lang",
+        regex: /\[replay=([^]*?)\]/g,
+        replace: function (match, content) {
+            return replayFunction(content, WEBDATA);
+        }
+    };
+
+    let contributors = {
+        type: "lang",
+        regex: /\[contributors=([^]*?)\]/g,
+        replace: function (match, id) {
+            return contributorsFunction(id);
+        }
+    }
+
+    let ins = {
+        type: "lang",
+        regex: /\[ins=(.*?), n=(.*?)\]/g,
+        replace: function (match, content, n) {
+            // let id = eclJsonId++;
+            // return "temp"
+            return replaceEclIns(content, n);
+        }
+    }
+
+    let canvas = {
+        type: "lang",
+        regex: /\[canvas\]/g,
+        replace: "<div id='canvas-container'></div>"
+    }
+
+    let buildCategoriesTable = {
+        type: "lang",
+        regex: /\[buildCategoriesTable\]/g,
+        replace: "<div id='bugsCategoriesTable'></div>"
+    }
+
+    let match = {
+        type: "lang",
+        regex: /\[style=([^]*?), icon=(true|false), highlightedText=([^]*?)\]/g,
+        replace: function (match, style, icon, highlightedText) {
+            icon = (icon === 'true');
+            return matchText(style, icon, highlightedText);
+        }
+    }
+
+    let check = {
+        type: "lang",
+        regex: /\:YES\:/g,
+        replace: "<img src='/assets/green-check-mark.svg' class='icon-text'>"
+    }
+
+    let cross = {
+        type: "lang",
+        regex: /\:NO\:/g,
+        replace: "<img src='/assets/red-cross.svg' class='icon-text'>"
+    }
+
+    let gt = {
+        type: 'lang',
+        regex: /\&gt\;/g,
+        replace: '>',
+    }
+
+    let lt = {
+        type: 'lang',
+        regex: /\&lt\;/g,
+        replace: '<',
+    }
+
+    let amp = {
+        type: 'lang',
+        regex: /\&amp\;/g,
+        replace: '&',
+    }
+    // order matters: prioritize elements that will be nested within
+    return [ins, no_index, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp];
+}
+
+const converter = new showdown.Converter({
+    extensions: [ext],
+    noHeaderId: false,
+    openLinksInNewWindow: true,
+    simpleLineBreaks: true,
+    strikethrough: true,
+    tables: true,
+    underline: true,
+});
+
+let template = fs.readFileSync(mainHtmlPath, "utf8");
+
+function findMarkdownFiles(dir) {
+    const files = [];
+
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        const fullPath = path.join(dir, entry.name);
+
+        if (entry.isDirectory()) {
+            files.push(...findMarkdownFiles(fullPath));
+        } else if (entry.isFile() && entry.name.endsWith(".md")) {
+            files.push(fullPath);
+        }
+    }
+
+    return files;
+}
+
+
+function changeBaseIndexHtml() {
+    const html = fs.readFileSync(mainHtmlPath, "utf8");
+    const dom = new JSDOM(html);
+    const document = dom.window.document;
+
+    initSidebarThemes(document);
+    initSidebarGlitches(document);
+    // fs.writeFileSync(`${mainHtmlPath}test.html`, dom.serialize()); //debug
+    return dom.serialize();
+}
+
+function initSidebarThemes(document) {
+    const themes = document.getElementsByClassName("circle-wrapper");
+    for (let i = 0; i < themes.length; i++) {
+        const parent = themes[i].parentElement;
+        const game = parent.dataset.theme;
+        let color = colorRGB(16, 1, game);
+        if (game == "th17") {
+            color = colorRGB(8, 1, game);
+        }
+        parent.style.setProperty('--clr-theme', color);
+        const next = themes[i].nextElementSibling;
+        next.textContent = `${names1[game]["jp"]}～${names1[game]["en"]}`;
+    }
+}
+async function initSidebarGlitches(document) {
+    try {
+        const identifiers = document.querySelectorAll("#page-bugs li ul");
+        const header = document.querySelectorAll("#page-bugs li button");
+        for (let i = 0; i < identifiers.length; i++) { // does it games.length times
+            const thnr = identifiers[i].id.slice(5); // bugs-th10 ---> th10
+            const child = header[i + 1];
+            const content = document.getElementById('bugs-' + thnr + '');
+            content.style.setProperty('--clr-game', `${colorHex(thnr)}`);
+            child.childNodes[1].data = `${names1[thnr]["jp"]}～${names1[thnr]["en"]}`;
+            for (let j = 0; j < Object.keys(GLITCH_TREE[thnr]).length; j++) {
+                const pageId = Object.keys(GLITCH_TREE[thnr])[j];
+                const li = document.createElement("li");
+                const div = document.createElement("div");
+                const a = document.createElement("a");
+                a.href = `/bugs/${thnr}/${GLITCH_TREE[thnr][pageId]["url-name"][0]}`;
+                div.style.position = "relative";
+                if (!GLITCH_TREE[thnr][pageId]["finished"]) { // if page is unfinished
+                    a.textContent = `(WIP) ${GLITCH_TREE[thnr][pageId]['title']}`;
+                } else {
+                    a.textContent = GLITCH_TREE[thnr][pageId]['title'];
+                }
+                div.appendChild(a);
+                li.appendChild(div);
+                content.appendChild(li);
+            }
+        }
+    } catch (error) {
+        console.error('Error fetching or parsing names.json:', error);
+    }
+}
+
+function updateTemplate() {
+    template = changeBaseIndexHtml()
+}
+
+function replaceEclIns(type, n) {
+    const id = `${type}-${n}`;
+    const map = ["Instructions", "Globals", "Custom"];
+    const ins = map[type];
+    const obj = ECL[ins][n];
+    const name = obj["Name"];
+    if (interface.tooltips.has(id)) {
+        return `<code data-tooltip-id='${id}' class='mono dotted' style='position: relative;'>${name}</code>`;
+    }
+    let html = `<div class='tooltip' id=${id}>`;
+    html += getStringFromIns(obj, n);
+    html += "</div>";
+    interface.tooltips.set(id, html);
+    return `<code data-tooltip-id='${id}' class='mono dotted' style='position: relative;'>${name}</code>`;
+}
+
+function getStringFromIns(obj, n) {
+    let description = obj["Description"];
+    const name = obj["Name"];
+    const para = obj["Parameters"];
+    let titleText = `${n} - ${name}`;
+    if (para) {
+        let parameterStrings = para.map(paramObj => {
+            const paramName = Object.keys(paramObj)[0];
+            const paramType = paramObj[paramName];
+            return `${paramType} <code class="mono">${paramName}</code>`;
+        });
+        parameterStrings = parameterStrings.join(", ");
+        titleText += `(${parameterStrings})`;
+        for (let i = 0; i < para.length; i++) {
+            const value = Object.keys(para[i])[0];
+            description = description.replaceAll(`$${i + 1}`, `<code class="mono">${value}</code>`);
+        }
+    }
+    let html = "<div><p><span class='mono'>";
+    html += titleText
+    html += "</span>"
+    html += "</p><hr><p>";
+    html += description;
+    html += "</p></div>";
+    return html;
+}
+
+function contributorsFunction(check) {
+    let html = `<ul id='contributors-${check}'>`;
+
+    for (const value of Object.values(CONTRIBUTORS[check] ?? {})) {
+        if (value.url) {
+            html += `<li><a class="url" href="${value.url}" target="_blank" rel='noopener noreferrer'>${value.name}</a> - ${value.help}</li>`;
+        } else {
+            html += `<li>${value.name} - ${value.help}</li>`;
+        }
+    }
+
+    html += `</ul>`;
+
+    return html;
+}
+
+async function generateHtmlFiles() {
+    let markdownFiles = findMarkdownFiles(pagesDir);
+    markdownfiles = markdownFiles.reverse()
+    // const shift = 0; // allows smaller sized testing
+    // const max = 2; // testing, remove when done
+    // for (let i = shift + 0; i < shift + max; i++) {
+    for (const markdownPath of markdownFiles) { // uncomment for full version
+        // const markdownPath = markdownFiles[i];
+        let htmlFile = structuredClone(template); // this is base HTML skeleton file
+        const markdown = fs.readFileSync(markdownPath, "utf8");
+
+        const markdownHtml = converter.makeHtml(markdown);
+
+        htmlFile = htmlFile.replace(
+            "<!-- MD_CONTENT -->",
+            markdownHtml
+        );
+
+        const relativePath = path.relative(pagesDir, markdownPath);
+        const parts = relativePath.split(path.sep);
+        const thnr = parts[parts.length - 2];
+        const pageId = path.basename(markdownPath, ".md");
+
+        const dom = new JSDOM(htmlFile);
+        const document = dom.window.document;
+
+        if (interface.isNoIndex) {
+            const meta = document.createElement("meta");
+            meta.name = "robots";
+            meta.content = "noindex, nofollow";
+            document.head.appendChild(meta);
+        }
+
+        document.title = interface.pageTitle;
+        interface.figureId = 0;
+        interface.isNoIndex = false;
+        const tooltipParent = document.getElementById("tooltip-container");
+        interface.tooltips.forEach((html, key) => {
+            tooltipParent.innerHTML += html;
+        })
+        const elements = document.getElementsByClassName('highlight-child');
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].parentElement.classList.add('highlight-bg');
+        }
+
+
+        // Your JSON data for this page
+        const pageData = GLITCH_TREE?.[thnr]?.[pageId];
+        if (pageData) {
+            const gameName = `Touhou ${names1[thnr]["game_number"]}: ${names1[thnr]["en"]}`;
+            document.title = `${interface.pageTitle} — ${gameName}`;
+            const urlNames = pageData["url-name"];
+            initCategoriesTable(document, thnr, pageId, names1, GLITCH_TREE, CATEGORIES);
+            //no more DOM changes, save
+            htmlFile = dom.serialize();
+            const canonicalName = urlNames[0];
+
+            // Generate the actual page at the canonical URL
+            const canonicalPath = path.join(
+                distDir,
+                path.dirname(relativePath),
+                canonicalName,
+                "index.html"
+            );
+
+            fs.mkdirSync(path.dirname(canonicalPath), { recursive: true });
+            fs.writeFileSync(canonicalPath, htmlFile);
+
+            console.log(`Built: ${canonicalName}`);
+
+            // Generate redirects for every alias, EXCLUDING the old numeric ID
+            // because if I ever rename page 
+            // e.g. nylilsa.github.io/bugs/spell-skip 
+            // to nylilsa.github.io/bugs/new-name
+            // I want the former to still work
+            // Note: it does NOT cover legacy hash links e.g nylilsa.github.io/#/bugs/spell-skip 
+            // That is done in front end
+            const aliases = [pageId, ...urlNames.slice(1)];
+            for (const alias of aliases) {
+                const redirectPath = path.join(
+                    distDir,
+                    path.dirname(relativePath),
+                    alias,
+                    "index.html"
+                );
+                const redirectUrl = path.join(
+                    path.dirname(relativePath),
+                    canonicalName,
+                    "/"
+                );
+
+                const redirect = `<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url=/${redirectUrl}">
+    <link rel="canonical" href=/"${redirectUrl}">
+    <script>
+        window.location.replace("/${redirectUrl}");
+    </script>
+</head>
+<body>
+    Redirecting...
+</body>
+</html>`;
+
+                fs.mkdirSync(path.dirname(redirectPath), { recursive: true });
+                fs.writeFileSync(redirectPath, redirect);
+
+                console.log(`Redirect: ${alias} → ${canonicalName}`);
+            }
+        } else {
+            //no more DOM changes, save
+            htmlFile = dom.serialize();
+            const relativePath = path.relative(pagesDir, markdownPath);
+            const relativeHtmlPath = relativePath.replace(/\.md$/, ".html");
+
+            const outputPath = path.join(distDir, relativeHtmlPath);
+
+            fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+            fs.writeFileSync(outputPath, htmlFile);
+
+            console.log(`Built: ${relativeHtmlPath}`);
+        }
+    }
+}
+
+fs.cpSync("assets", "dist/assets", { recursive: true });
+fs.cpSync("pages", "dist/pages", { recursive: true });
+fs.cpSync("css", "dist/css", { recursive: true });
+fs.cpSync("json", "dist/json", { recursive: true });
+fs.cpSync("lib", "dist/lib", { recursive: true });
+fs.cpSync("scripts", "dist/scripts", { recursive: true });
+fs.cpSync("robots.txt", "dist/robots.txt");
+fs.cpSync("sitemap.xml", "dist/sitemap.xml");
+
+updateTemplate();
+generateHtmlFiles();

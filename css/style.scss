@@ -89,6 +89,23 @@ h6 {
     font-size: var(--fs-600);
 }
 
+a[target="_blank"]:not(.target-blank-no-icon)::after {
+    content: "";
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+    background-color: var(--clr-text-url);
+    --svg: url("../assets/external-link.svg");    
+    -webkit-mask: var(--svg) no-repeat center / contain;
+    mask: var(--svg) no-repeat center / contain;
+    vertical-align: text-top;
+    opacity: 0.67;
+}
+
+a[target="_blank"]:hover::after {
+    opacity: 1.0;
+}
+
 #header {
     min-height: calc(var(--header-height));
     display: table;
@@ -487,6 +504,7 @@ tr {
 
 .tooltip {
     font-size: var(--fs-400);
+    height: fit-content;
     width: calc(max(200px, 40ch));
     font-family: var(--ff-sans);
     color: var(--clr-text-dim);
@@ -495,8 +513,6 @@ tr {
     padding: 1em;
     position: absolute;
     bottom: 100%;
-    right: 50%;
-    translate: 50%;
     visibility: hidden;
     text-align: left;
     border: 1px solid var(--clr-box);

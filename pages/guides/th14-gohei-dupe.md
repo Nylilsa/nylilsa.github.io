@@ -5,44 +5,44 @@
 Author: Nylilsa
 
 <ol class='toc'>
-    <li>[jumpto=#/guides/th14-gohei-dupe#introduction]Introduction[/jumpto]</li>
-    <li>[jumpto=#/guides/th14-gohei-dupe#goheiduplicationglitch]Gohei duplication glitch[/jumpto]
+    <li>[jumpto=#introduction]Introduction[/jumpto]</li>
+    <li>[jumpto=#goheiduplicationglitch]Gohei duplication glitch[/jumpto]
         <ol>
-            <li>[jumpto=#/guides/th14-gohei-dupe#playersycoordinate]Player's y-coordinate[/jumpto]</li>
-            <li>[jumpto=#/guides/th14-gohei-dupe#goheitargetdistance]Gohei-target distance[/jumpto]</li>
-            <li>[jumpto=#/guides/th14-gohei-dupe#buttontapping]Button tapping[/jumpto]</li>
+            <li>[jumpto=#playersycoordinate]Player's y-coordinate[/jumpto]</li>
+            <li>[jumpto=#goheitargetdistance]Gohei-target distance[/jumpto]</li>
+            <li>[jumpto=#buttontapping]Button tapping[/jumpto]</li>
         </ol>
     </li>
-    <li>[jumpto=#/guides/th14-gohei-dupe#differenttechniques]Different techniques[/jumpto]
+    <li>[jumpto=#differenttechniques]Different techniques[/jumpto]
         <ol>
-            <li>[jumpto=#/guides/th14-gohei-dupe#basictechniques]Basic techniques[/jumpto]
+            <li>[jumpto=#basictechniques]Basic techniques[/jumpto]
                 <ol>
-                    <li>[jumpto=#/guides/th14-gohei-dupe#dupingmethodshiftzshiftmethod]Duping method: Shift-Z-Shift method[/jumpto]</li>
-                    <li>[jumpto=#/guides/th14-gohei-dupe#dupingmethoddoubletapmethod]Duping method: Double tap method[/jumpto]</li>
+                    <li>[jumpto=#dupingmethodshiftzshiftmethod]Duping method: Shift-Z-Shift method[/jumpto]</li>
+                    <li>[jumpto=#dupingmethoddoubletapmethod]Duping method: Double tap method[/jumpto]</li>
                 </ol>
             </li>
-            <li>[jumpto=#/guides/th14-gohei-dupe#intermediatetechniques]Intermediate techniques[/jumpto]
+            <li>[jumpto=#intermediatetechniques]Intermediate techniques[/jumpto]
                 <ol>
-                    <li>[jumpto=#/guides/th14-gohei-dupe#goheimaintenance]Gohei maintenance[/jumpto]</li>
-                    <li>[jumpto=#/guides/th14-gohei-dupe#amuletshifttapping]Amulet shift tapping[/jumpto]</li>
-                    <li>[jumpto=#/guides/th14-gohei-dupe#dupingmethodtripletapmethod]Duping method: Triple tap method[/jumpto]</li>
+                    <li>[jumpto=#goheimaintenance]Gohei maintenance[/jumpto]</li>
+                    <li>[jumpto=#amuletshifttapping]Amulet shift tapping[/jumpto]</li>
+                    <li>[jumpto=#dupingmethodtripletapmethod]Duping method: Triple tap method[/jumpto]</li>
                 </ol>
             </li>
-            <li>[jumpto=#/guides/th14-gohei-dupe#advancedtechniques]Advanced techniques[/jumpto]
+            <li>[jumpto=#advancedtechniques]Advanced techniques[/jumpto]
                 <ol>
-                    <li>[jumpto=#/guides/th14-gohei-dupe#goheiretrytime]Gohei retry time[/jumpto]</li>
-                    <li>[jumpto=#/guides/th14-gohei-dupe#countinggoheis]Counting goheis[/jumpto]</li>
-                    <li>[jumpto=#/guides/th14-gohei-dupe#centeredgoheis]Centered goheis[/jumpto]</li>
-                    <li>[jumpto=#/guides/th14-gohei-dupe#dupingmethodquadrupletapmethod]Duping method: Quadruple tap method[/jumpto]</li>
+                    <li>[jumpto=#goheiretrytime]Gohei retry time[/jumpto]</li>
+                    <li>[jumpto=#countinggoheis]Counting goheis[/jumpto]</li>
+                    <li>[jumpto=#centeredgoheis]Centered goheis[/jumpto]</li>
+                    <li>[jumpto=#dupingmethodquadrupletapmethod]Duping method: Quadruple tap method[/jumpto]</li>
                 </ol>
             </li>
         </ol>
     </li>
-    <li>[jumpto=#/guides/th14-gohei-dupe#intropersonalsummaryofmethodsduction]Personal summary of methods[/jumpto]
+    <li>[jumpto=#intropersonalsummaryofmethodsduction]Personal summary of methods[/jumpto]
         <ol>
-            <li>[jumpto=#/guides/th14-gohei-dupe#methodology]Methodology[/jumpto]</li>
-            <li>[jumpto=#/guides/th14-gohei-dupe#results]Results[/jumpto]</li>
-            <li>[jumpto=#/guides/th14-gohei-dupe#elaboration]Elaboration[/jumpto]</li>
+            <li>[jumpto=#methodology]Methodology[/jumpto]</li>
+            <li>[jumpto=#results]Results[/jumpto]</li>
+            <li>[jumpto=#elaboration]Elaboration[/jumpto]</li>
         </ol>
     </li>
 </ol>
@@ -68,7 +68,7 @@ Now that gohei is used to its fullest potential, but our damage certainly isn't.
 
 [img=guides/th14-gohei-dupe/gohei2.png, figtitle=Seija being beaten up by [hl2]2 goheis at once[/hl2], alt=A screenshot of ReimuA fighting Seija]
 
-[a=/#/bugs/th14/gohei-dupe]There exists a glitch[/a] that allows for multiple goheis to be created. The name of the glitch is also known as [hl2]Gohei duplication[/hl2] or [hl2]Gohei dupe[/hl2] or [hl2]dupe[/hl2] in short.
+[a=/bugs/th14/gohei-dupe]There exists a glitch[/a] that allows for multiple goheis to be created. The name of the glitch is also known as [hl2]Gohei duplication[/hl2] or [hl2]Gohei dupe[/hl2] or [hl2]dupe[/hl2] in short.
 
 ## Video
 [hr_minor]
@@ -105,7 +105,7 @@ This is tricky glitch to execute as there are a bunch of factors involved, and [
 2. The distance between the gohei and a target
 3. Your button tapping ability
 
-Note that [hl2]this is a very very numbed down version of the gohei dupe[/hl2]. The actual cause of it [jumpto=#/bugs/th14/gohei-dupe#howithappens]can be found here[/jumpto].
+Note that [hl2]this is a very very numbed down version of the gohei dupe[/hl2]. The actual cause of it [jumpto=/bugs/th14/gohei-dupe#howithappens]can be found here[/jumpto].
 
 ### Player's y-coordinate
 [hr_minor]
@@ -279,7 +279,7 @@ It is quite simple to achieve this: [hl2]perform your desired gohei duping metho
 
 [img=guides/th14-gohei-dupe/distance.png, figtitle=The 160 unit radius gohei-target distance check happens on the gohei spawning location, which is right in Reimu., alt=A game screenshot showing a colored circle around Reimu]
 
-The reason why this works is because newly spawned goheis spawn from Reimu's center. By performing the dupe you are spawning new goheis from Reimu's location. [hl2]By moving Reimu closer to the boss, the newly spawned goheis will be within the gohei-target distance[/hl2], centering into the enemy. For more information, [a=/#/bugs/th14/gohei-dupe]please read this page[/a].
+The reason why this works is because newly spawned goheis spawn from Reimu's center. By performing the dupe you are spawning new goheis from Reimu's location. [hl2]By moving Reimu closer to the boss, the newly spawned goheis will be within the gohei-target distance[/hl2], centering into the enemy. For more information, [a=/bugs/th14/gohei-dupe]please read this page[/a].
 
 #### Duping method: Quadruple tap method
 [hr_minor]
@@ -316,10 +316,10 @@ This was conducted using [a=https://github.com/touhouworldcup/thprac]the stage w
 
 | Method                                                                                       | 1 goheis | 2 goheis | 3 goheis | Total trials count |
 | -------------------------------------------------------------------------------------------- | -------- | -------- | -------- | ------------------ |
-| [jumpto=#/guides/th14-gohei-dupe#dupingmethodshiftzshiftmethod]Shift-Z-Shift method[/jumpto] | 132      | 68       | 0        | 200                |
-| [jumpto=#/guides/th14-gohei-dupe#dupingmethoddoubleapmethod]Double tap method[/jumpto]       | 125      | 75       | 0        | 200                |
-| [jumpto=#/guides/th14-gohei-dupe#dupingmethodtripletapmethod]Triple tap method[/jumpto]      | 126      | 70       | 4        | 200                |
-| [jumpto=#/guides/th14-gohei-dupe#dupingmethodquadrupleapmethod]Quadruple tap method[/jumpto] | 141      | 54       | 5        | 200                |
+| [jumpto=#dupingmethodshiftzshiftmethod]Shift-Z-Shift method[/jumpto] | 132      | 68       | 0        | 200                |
+| [jumpto=#dupingmethoddoubleapmethod]Double tap method[/jumpto]       | 125      | 75       | 0        | 200                |
+| [jumpto=#dupingmethodtripletapmethod]Triple tap method[/jumpto]      | 126      | 70       | 4        | 200                |
+| [jumpto=#dupingmethodquadrupleapmethod]Quadruple tap method[/jumpto] | 141      | 54       | 5        | 200                |
 
 ### Elaboration
 [hr_minor]

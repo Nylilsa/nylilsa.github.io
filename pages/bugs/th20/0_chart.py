@@ -56,7 +56,7 @@ plt.gca().xaxis.set_major_formatter(StrMethodFormatter("{x:,.1f}"))
 plt.gca().yaxis.set_major_formatter(StrMethodFormatter("{x:,.0f}"))
 
 plt.gcf().text(
-    0.5, 0.5, "By Nylilsa: nylilsa.github.io",
+    0.5, 0.5, "By Nylilsa: nylilsa.dev",
     fontsize=20, color="gray", alpha=0.20,
     ha="center", va="bottom", rotation=0
 )

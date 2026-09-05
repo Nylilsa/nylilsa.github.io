@@ -9,32 +9,90 @@ const globalConfigs = {
     defaultGame: "th13",
     isPc98: false,
     pc98Games: ["th01", "th02", "th03", "th04", "th05"],
+    allGames: ['th01', 'th02', 'th03', 'th04', 'th05', 'th06', 'th07', 'th08', 'th09', 'th10', 'th11', 'th12', 'th128', 'th13', 'th14', 'th15', 'th16', 'th17', 'th18'],
     baseJsonPath: "https://raw.githubusercontent.com/Nylilsa/wr-replays/refs/heads/main/json/nylilsa-site"
 }
 
+const gameColors = {
+	th01: '#B6423C',
+	th02: '#7D3884',
+	th03: '#FFD700',
+	th04: '#90EE90',
+	th05: '#AE11D5',
+	th06: '#FF0000',
+	th07: '#FF8ED2',
+	th08: '#333399',
+	th09: '#058060',
+	th95: '#009973',
+	th10: '#96B300',
+	th11: '#591400',
+	th12: '#4169E1',
+	th125: '#7D3884',
+	th128: '#00C8C8',
+	th13: '#4A808C',
+	th14: '#AA7777',
+	th143: '#B6423C',
+	th15: '#6A47BE',
+	th16: '#176E0E',
+	th165: '#AE11D5',
+	th17: '#190E0E',
+	th18: '#1DD294',
+	th185: '#F58225',
+	th19: '#4CD810',
+	th20: '#123456', // temporary clr
+};
+
+const names1 = {
+    "th01": {"game_number": "1", "abbreviation": "HRtP", "jp": "靈異伝", "en": "Highly Responsive to Prayers"},
+    "th02": {"game_number": "2", "abbreviation": "SoEW", "jp": "封魔録", "en": "The Story of Eastern Wonderland"},
+    "th03": {"game_number": "3", "abbreviation": "PoDD", "jp": "夢時空", "en": "Phantasmagoria of Dim. Dream"},
+    "th04": {"game_number": "4", "abbreviation": "LLS", "jp": "幻想郷", "en": "Lotus Land Story"},
+    "th05": {"game_number": "5", "abbreviation": "MS", "jp": "怪綺談", "en": "Mystic Square"},
+    "th06": {"game_number": "6", "abbreviation": "EoSD", "jp": "紅魔郷", "en": "The Embodiment of Scarlet Devil"},
+    "th07": {"game_number": "7", "abbreviation": "PCB", "jp": "妖々夢", "en": "Perfect Cherry Blossom"},
+    "th08": {"game_number": "8", "abbreviation": "IN", "jp": "永夜抄", "en": "Imperishable Night"},
+    "th09": {"game_number": "9", "abbreviation": "PoFV", "jp": "花映塚", "en": "Phantasmagoria of Flower View"},
+    "th95": {"game_number": "9.5", "abbreviation": "StB", "jp": "文花帖", "en": "Shoot the Bullet"},
+    "th10": {"game_number": "10", "abbreviation": "MoF", "jp": "風神録", "en": "Mountain of Faith"},
+    "th11": {"game_number": "11", "abbreviation": "SA", "jp": "地霊殿", "en": "Subterranean Animism"},
+    "th12": {"game_number": "12", "abbreviation": "UFO", "jp": "星蓮船", "en": "Undefined Fantastic Object"},
+    "th125": {"game_number": "12.5", "abbreviation": "DS", "jp": "ダブルスポイラー", "en": "Double Spoiler"},
+    "th128": {"game_number": "12.8", "abbreviation": "GFW", "jp": "妖精大戦争", "en": "Great Fairy Wars"},
+    "th13": {"game_number": "13", "abbreviation": "TD", "jp": "神霊廟", "en": "Ten Desires"},
+    "th14": {"game_number": "14", "abbreviation": "DDC", "jp": "輝針城", "en": "Double Dealing Character"},
+    "th143": {"game_number": "14.3", "abbreviation": "ISC", "jp": "弾幕アマノジャク", "en": "Impossible Spell Card"},
+    "th15": {"game_number": "15", "abbreviation": "LoLK", "jp": "紺珠伝", "en": "Legacy of Lunatic Kingdom"},
+    "th16": {"game_number": "16", "abbreviation": "HSiFS", "jp": "天空璋", "en": "Hidden Star in Four Seasons"},
+    "th165": {"game_number": "16.5", "abbreviation": "VD", "jp": "秘封ナイトメアダイアリー", "en": "Violet Detector"},
+    "th17": {"game_number": "17", "abbreviation": "WBaWC", "jp": "鬼形獣", "en": "Wily Beast and Weakest Creature"},
+    "th18": {"game_number": "18", "abbreviation": "UM", "jp": "虹龍洞", "en": "Unconnected Marketeers"},
+    "th185": {"game_number": "18.5", "abbreviation": "100BM", "jp": "バレットフィリア達の闇市場", "en": "100th Black Market"},
+    "th19": {"game_number": "19", "abbreviation": "UDoALG", "jp": "獣王園", "en": "Unfinished Dream of All Living Ghost"},
+    "th20": {"game_number": "20", "abbreviation": "FW", "jp": "錦上京", "en": "Fossilized Wonders"},
+}
 
 const colorsForChart = {
-    th01: {"colors": ['#36a2eb', '#ff6384']},
-    th02: {"colors": ['#36a2eb', '#ff6384', '#ff9f40']},
-    th03: {"colors": ['#36a2eb', '#ff6384', '#4bc0c0', '#ff9f40', '#9966ff', '#ffcd56', '#c9cbcf', '#287233', '#6C3B2A']},
-    th04: {"colors": ['#dc241f', 'd0#dc241f', '#afae17', 'd0#afae17']},
-    th05: {"colors": ['#dc241f', '#afae17', '#36a2eb', '#ff6384']},
-    th06: {"colors": ['#dc241f', 'd0#dc241f', '#afae17', 'd0#afae17']},
-	th07: {"colors": ['#dc241f', 'd0#dc241f', '#afae17', 'd0#afae17', '#BEBEBE', 'd0#BEBEBE']},
-	th08: {"colors": ['#ff0081', '#a4e810', '#bd6c5e', '#ff9f40', 'd0#dc241f', 'd1#A020F0', 'd0#FFFF00', 'd1#32CD32', 'd0#888888', 'd1#e34234',  'd0#BBBBBB', 'd1#FF00FF']},
-	th09: {"colors": ['#36a2eb', '#ff6384', '#4bc0c0', '#ff9f40', '#9966ff', '#ffcd56', '#c9cbcf', '#287233', '#6C3B2A', '#ff0000', '#32CD32', '#777777', '#AE11D5', '#1DD294']},
-	th10: {"colors": ['#dc241f', 'd0#dc241f', 'd1#dc241f', '#afae17', 'd0#afae17', 'd1#afae17']},
-	th11: {"colors": ['#dc241f', 'd0#dc241f', 'd1#dc241f', '#afae17', 'd0#afae17', 'd1#afae17']},
-	th12: {"colors": ['#dc241f', 'd0#dc241f', '#afae17', 'd0#afae17', '#29b917', 'd0#29b917']},
-	th128: {"colors": ['#00C8C8']},
-	th128other: {"colors": ['#36a2eb', '#ff6384', '#4bc0c0', '#ff9f40', '#9966ff', '#ffcd56']},
-	th13: {"colors": ['#dc241f', '#afae17', '#29b917', '#BBBBBB']},
-	th14: {"colors": ['#dc241f', 'd0#dc241f', '#afae17', 'd0#afae17', '#888888', 'd0#888888']},
-	th15: {"colors": ['#dc241f', '#afae17', '#29b917', '#6A47BE']},
-	th16: {"colors": ['#dc241f', '#00C8C8', '#ff9f40', '#afae17']},
-	th16other: {"colors": ['#FF9FC9', '#50D030', '#FF8800', '#465CF0', 'd0#FF9FC9', 'd0#50D030', 'd0#FF8800', 'd0#465CF0', 'd1#FF9FC9', 'd1#50D030', 'd1#FF8800', 'd1#465CF0', 'd2#FF9FC9', 'd2#50D030', 'd2#FF8800', 'd2#465CF0']},
-	th17: {"colors": ['#FF4F51', '#8DFB78', '#7E59D9', 'd0#FF4F51', 'd0#8DFB78', 'd0#7E59D9', 'd1#FF4F51', 'd1#8DFB78', 'd1#7E59D9']},
-	th18: {"colors": ['#dc241f', '#afae17', '#888888', '#29b917']},
+    th01: { "colors": ['#36a2eb', '#ff6384'] },
+    th02: { "colors": ['#36a2eb', '#ff6384', '#ff9f40'] },
+    th03: { "colors": ['#36a2eb', '#ff6384', '#4bc0c0', '#ff9f40', '#9966ff', '#ffcd56', '#c9cbcf', '#287233', '#6C3B2A'] },
+    th04: { "colors": ['#dc241f', 'd0#dc241f', '#afae17', 'd0#afae17'] },
+    th05: { "colors": ['#dc241f', '#afae17', '#36a2eb', '#ff6384'] },
+    th06: { "colors": ['#dc241f', 'd0#dc241f', '#afae17', 'd0#afae17'] },
+    th07: { "colors": ['#dc241f', 'd0#dc241f', '#afae17', 'd0#afae17', '#BEBEBE', 'd0#BEBEBE'] },
+    th08: { "colors": ['#ff0081', '#a4e810', '#bd6c5e', '#ff9f40', 'd0#dc241f', 'd1#A020F0', 'd0#FFFF00', 'd1#32CD32', 'd0#888888', 'd1#e34234', 'd0#BBBBBB', 'd1#FF00FF'] },
+    th09: { "colors": ['#36a2eb', '#ff6384', '#4bc0c0', '#ff9f40', '#9966ff', '#ffcd56', '#c9cbcf', '#287233', '#6C3B2A', '#ff0000', '#32CD32', '#777777', '#AE11D5', '#1DD294'] },
+    th10: { "colors": ['#dc241f', 'd0#dc241f', 'd1#dc241f', '#afae17', 'd0#afae17', 'd1#afae17'] },
+    th11: { "colors": ['#dc241f', 'd0#dc241f', 'd1#dc241f', '#afae17', 'd0#afae17', 'd1#afae17'] },
+    th12: { "colors": ['#dc241f', 'd0#dc241f', '#afae17', 'd0#afae17', '#29b917', 'd0#29b917'] },
+    th128: { "colors": ['#00C8C8'] },
+    th128other: { "colors": ['#36a2eb', '#ff6384', '#4bc0c0', '#ff9f40', '#9966ff', '#ffcd56'] },
+    th13: { "colors": ['#dc241f', '#afae17', '#29b917', '#BBBBBB'] },
+    th14: { "colors": ['#dc241f', 'd0#dc241f', '#afae17', 'd0#afae17', '#888888', 'd0#888888'] },
+    th15: { "colors": ['#dc241f', '#afae17', '#29b917', '#6A47BE'] },
+    th16: { "colors": ['#dc241f', '#00C8C8', '#ff9f40', '#afae17'] },
+    th16other: { "colors": ['#FF9FC9', '#50D030', '#FF8800', '#465CF0', 'd0#FF9FC9', 'd0#50D030', 'd0#FF8800', 'd0#465CF0', 'd1#FF9FC9', 'd1#50D030', 'd1#FF8800', 'd1#465CF0', 'd2#FF9FC9', 'd2#50D030', 'd2#FF8800', 'd2#465CF0'] },
+    th17: { "colors": ['#FF4F51', '#8DFB78', '#7E59D9', 'd0#FF4F51', 'd0#8DFB78', 'd0#7E59D9', 'd1#FF4F51', 'd1#8DFB78', 'd1#7E59D9'] },
+    th18: { "colors": ['#dc241f', '#afae17', '#888888', '#29b917'] },
 }
 
 
@@ -455,26 +513,28 @@ function roundedTicks(value) {
     return (value / largeNumbers[selector]["number"]).toFixed(decimals) + largeNumbers[selector]["suffix"];
 }
 
-function getGame(gameID) {
-    let game = gameID.slice(1);
-    if (localStorage.selectedGame && game === '') {
-        game = localStorage.selectedGame;
+function getGame() {
+    let gameId = window.location.hash.slice(1);
+    if (!globalConfigs.allGames.includes(gameId)) {
+        if (localStorage.selectedGame && localStorage.selectedGame !== "undefined") {
+            gameId = localStorage.selectedGame;
+        } else {
+            gameId = globalConfigs.defaultGame;
+        }
     }
-    if (game === '') {
-        game = globalConfigs.defaultGame;
-    }
-    globalConfigs.isPc98 = ["th01", "th02", "th03", "th04", "th05"].includes(game);
-    return game;
+    globalConfigs.isPc98 = globalConfigs.pc98Games.includes(gameId);
+    return gameId;
 }
 
 function setGame() {
-    const game = initRemoveHash(true).slice(1) || globalConfigs.game;
+    const game = globalConfigs.game;
     globalConfigs.game = game;
 }
 
-export function initCanvas(gameID) {
+export function initCanvas() {
     const func = runOnce();
-    const game = getGame(gameID);
+    const game = getGame();
+    setGame();
     if (localStorage.hideUnverified === undefined) {
         localStorage.hideUnverified = false;
     }
@@ -696,7 +756,7 @@ function createDropdown(allPlayerData) {
                 for (const [difficulty, shottypes] of Object.entries(difficulties)) {
                     shottypes.forEach((shottype) => {
                         // console.log(gameId + difficulty + shottype);
-                        const category = gameInfo[difficulty][shottype];        
+                        const category = gameInfo[difficulty][shottype];
                         category.forEach((node) => {
                             if (node.id == id) {
                                 node.game = gameId;
@@ -762,6 +822,7 @@ function createDropdown(allPlayerData) {
                         if (entry.verified && pathToSite) {
                             cellText = document.createElement(`a`);
                             cellText.target = '_blank';
+                            cellText.rel = 'noopener noreferrer';
                             cellText.innerText = scoreWithCommas;
                             cellText.classList.add("url");
                             cellText.href = pathToSite;
@@ -876,7 +937,7 @@ function styleGameSelectorButtons() {
         button.children[4].style.backgroundColor = gameColors[btndata];
         button.addEventListener("click", selectGame);
         function selectGame() {
-            window.location.hash = `#/wr#${this.dataset.game}`;
+            window.location.hash = `#${this.dataset.game}`;
         }
     }
     const selector = document.getElementById("wr-game-buttons");
@@ -1048,6 +1109,7 @@ function generateWRTable(data, flag = true) {
                         if (!isUnverified && pathToSite) {
                             cellText = document.createElement(`a`);
                             cellText.target = '_blank';
+                            cellText.rel = 'noopener noreferrer';
                             cellText.innerText = scoreWithCommas;
                             cellText.classList.add("url");
                             cellText.href = pathToSite;
@@ -1069,4 +1131,87 @@ function generateWRTable(data, flag = true) {
             section.appendChild(table);
         }
     }
+}
+
+const fetchData = (() => {
+    const cache = new Map();
+    const fetchPromises = new Map();
+    return async (path) => {
+        if (!cache.has(path)) {
+            if (!fetchPromises.has(path)) {
+                fetchPromises.set(path, fetch(path)
+                    .then(response => response.json())
+                    .then(data => {
+                        cache.set(path, data);
+                        return data;
+                    }));
+            }
+            return fetchPromises.get(path);
+        }
+        return cache.get(path);
+    };
+})();
+
+function colorHex(input) {
+    const def = getComputedStyle(document.documentElement).getPropertyValue('--clr-default');
+    return gameColors[input] || def || "#47748b";
+}
+
+function colorRGB(add, opacity, game) {
+    let clrHex = colorHex(game);
+
+    if (typeof game === 'undefined') {
+        clrHex = colorHex();
+    }
+
+    clrHex = clrHex.replaceAll(" ", "");
+
+    let rHex = "0x" + clrHex.substring(1, 3); // 0xAB
+    let gHex = "0x" + clrHex.substring(3, 5); // 0xCD
+    let bHex = "0x" + clrHex.substring(5, 7); // 0xEF
+
+    let rDec = parseInt(rHex) + add;
+    let gDec = parseInt(gHex) + add;
+    let bDec = parseInt(bHex) + add;
+
+    if (rDec > 255) { rDec = 255; }
+    if (gDec > 255) { gDec = 255; }
+    if (bDec > 255) { bDec = 255; }
+
+    if (rDec < 0) { rDec = 0; }
+    if (gDec < 0) { gDec = 0; }
+    if (bDec < 0) { bDec = 0; }
+
+    return "rgba(" + rDec + ", " + gDec + ", " + bDec + ", " + opacity + ")";
+}
+
+// function dateFormat(date) {
+//     const intl = "en-US";
+//     const options = { calendar: 'iso8601', year: 'numeric', month: 'long', day: 'numeric' };
+//     let dateType;
+//     if (date.includes('T')) {
+//         dateType = new Date(date);
+//     } else {
+//         const [year, month, day] = date.split('-').map(Number);
+//         dateType = new Date(year, month - 1, day);
+//     }
+//     const cond = typeof dateType == "object" && dateType == "Invalid Date";
+//     return cond ? date : new Intl.DateTimeFormat(intl, options).format(dateType);
+// }
+
+function dateFormat(date) {
+    let dateType;
+
+    if (date.includes('T')) {
+        dateType = new Date(date);
+    } else {
+        const [year, month, day] = date.split('-').map(Number);
+        dateType = new Date(year, month - 1, day);
+    }
+
+    if (isNaN(dateType.getTime())) {
+        return date;
+    }
+
+    return dateType.toISOString().split('T')[0];
 }

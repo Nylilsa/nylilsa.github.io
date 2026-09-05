@@ -3,7 +3,7 @@
 
 [hr_major]  
 
-Hi there, my name is Nylilsa (formerly known as [a=/#/me/plus]Plus[/a]) and thank you for checking out this little corner of the internet of mine !
+Hi there, my name is Nylilsa (formerly known as [a=/me/plus]Plus[/a]) and thank you for checking out this little corner of the internet of mine !
 
 I like making stuff, which explains why this website exists. I quite like random stuff that aren't really related to each other, usually in the creative sector such as photography, music, literature, arts, linguistics, etc. just to name a few.
 
@@ -16,7 +16,7 @@ Also, I may not be that good of a player so don't expect too much. I only play b
 ## Media
 [hr_minor]
 
-+ Website: [a=https://nylilsa.github.io/]https://nylilsa.github.io/[/a] (you are on this website right now !)
++ Website: [jumpto=/]https://nylilsa.dev/[/jumpto] (you are on this website right now !)
 + Ko-fi.com: [a=https://ko-fi.com/nylilsa]https://ko-fi.com/nylilsa[/a]
 + YouTube: [a=https://www.youtube.com/channel/UCqKACPKvHg6Ub-kb8rlkrhQ]https://www.youtube.com/channel/UCqKACPKvHg6Ub-kb8rlkrhQ[/a]
 + Twitch: [a=https://www.twitch.tv/Nylilsa]https://www.twitch.tv/Nylilsa[/a]

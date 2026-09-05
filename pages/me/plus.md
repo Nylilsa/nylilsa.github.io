@@ -1,3 +1,4 @@
+[no_index]
 [hr_major]
 
 Hi there, if you don't recognise the name Plus [hl2]I recommend you to close this page[/hl2]. If you do recognise the name then this page might interest you.
