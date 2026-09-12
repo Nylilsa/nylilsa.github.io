@@ -3,7 +3,7 @@
 
 [hr_major]  
 
-Hi there, my name is Nylilsa (formerly known as [a=/me/plus]Plus[/a]) and thank you for checking out this little corner of the internet of mine !
+Hi there, my name is Nylilsa (formerly known as Plus) and thank you for checking out this little corner of the internet of mine !
 
 I like making stuff, which explains why this website exists. I quite like random stuff that aren't really related to each other, usually in the creative sector such as photography, music, literature, arts, linguistics, etc. just to name a few.
 
