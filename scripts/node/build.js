@@ -336,8 +336,14 @@ let ext = function () {
         regex: /\&amp\;/g,
         replace: '&',
     }
+    let collapsed = {
+        type: "lang",
+        regex: /\[collapsed\]/g,
+        replace: "<div class='markdown-collapsed'></div>"
+    }
+
     // order matters: prioritize elements that will be nested within
-    return [ins, no_index, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp];
+    return [ins, no_index, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp, collapsed];
 }
 
 const converter = new showdown.Converter({
@@ -516,13 +522,17 @@ function makeCollapsibleSections(document) {
         content.id = `section-${ariaId}`;
         ariaId++;
 
+        const collapsed = heading.nextElementSibling?.classList.contains("markdown-collapsed");
         const button = document.createElement("button");
         button.className = "dropdown-toggle";
         button.classList.add("collapse-button");
         button.type = "button";
-        button.setAttribute("aria-expanded", "true");
         button.setAttribute("aria-controls", content.id);
-
+        button.setAttribute("aria-expanded", String(!collapsed));
+        // if [collapsed] then hidden by default
+        if (collapsed) {
+            content.hidden = true;
+        }
         const title = document.createElement("span");
         title.textContent = heading.textContent;
 
