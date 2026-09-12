@@ -489,11 +489,113 @@ function contributorsFunction(check) {
     return html;
 }
 
+function makeCollapsibleSections(document) {
+    const headings = [...document.querySelectorAll("h2, h3, h4, h5, h6")];
+    const stack = [];
+    let ariaId = 0;
+    let previousLevel = 999;
+
+    for (const heading of headings) {
+        const level = Number(heading.tagName[1]);
+
+        // not possible: h2 (old) > h4 (new) (missing h3)
+        // is possible: h6 (old) > h2 (new) (new section starts)
+        if (previousLevel + 1 < level) {
+            console.warn(`Warning heading level hierarchy: h${previousLevel} > h${level} in ${document.title}`);
+        }
+        previousLevel = level;
+
+        // remove sections from stack until new heading has higher level
+        // e.g. h2 > h3 > h4 > new h3: remove h4 and h3
+        while (stack.length && stack.at(-1).level >= level) {
+            stack.pop();
+        }
+
+        const content = document.createElement("div");
+        content.className = "collapsible-content";
+        content.id = `section-${ariaId}`;
+        ariaId++;
+
+        const button = document.createElement("button");
+        button.className = "dropdown-toggle";
+        button.classList.add("collapse-button");
+        button.type = "button";
+        button.setAttribute("aria-expanded", "true");
+        button.setAttribute("aria-controls", content.id);
+
+        const title = document.createElement("span");
+        title.textContent = heading.textContent;
+
+        button.append(title);
+
+        heading.textContent = "";
+        heading.classList.add("collapsible-heading");
+        heading.appendChild(button);
+
+        // check whether the heading is immediately followed by an hr
+        const hr = heading.nextElementSibling?.tagName === "HR"
+            ? heading.nextElementSibling
+            : null;
+
+        // save the nodes belonging to this section before moving anything
+        const nodes = [];
+        let node = heading.nextSibling;
+
+        while (node) {
+            const next = node.nextSibling;
+
+            // keep the hr outside the collapsible content
+            if (node === hr) {
+                node = next;
+                continue;
+            }
+
+            if (node.nodeType === 1 && /^H[2-6]$/.test(node.tagName) && Number(node.tagName[1]) <= level) {
+                break;
+            }
+
+            nodes.push(node);
+            node = next;
+        }
+
+        const parent = stack.at(-1);
+
+        if (parent) {
+            parent.content.appendChild(heading);
+
+            // hr belongs directly after the heading
+            if (hr) {
+                parent.content.appendChild(hr);
+            }
+
+            parent.content.appendChild(content);
+        } else {
+            const container = heading.parentNode;
+
+            // The heading is already in the correct position.
+            // Insert content after the hr if there is one.
+            if (hr) {
+                container.insertBefore(content, hr.nextSibling);
+            } else {
+                container.insertBefore(content, heading.nextSibling);
+            }
+        }
+
+        for (const node of nodes) {
+            content.appendChild(node);
+        }
+
+        // add new section to stack so deeper headings can become children
+        // e.g. h2 > h3: stack contains h2, h3
+        stack.push({ level, content });
+    }
+}
+
 async function generateHtmlFiles() {
     let markdownFiles = findMarkdownFiles(pagesDir);
     markdownfiles = markdownFiles.reverse()
-    // const shift = 0; // allows smaller sized testing
-    // const max = 2; // testing, remove when done
+    // const shift = 13; // allows smaller sized testing
+    // const max = 1; // testing, remove when done
     // for (let i = shift + 0; i < shift + max; i++) {
     for (const markdownPath of markdownFiles) { // uncomment for full version
         // const markdownPath = markdownFiles[i];
@@ -533,7 +635,7 @@ async function generateHtmlFiles() {
         for (let i = 0; i < elements.length; i++) {
             elements[i].parentElement.classList.add('highlight-bg');
         }
-
+        makeCollapsibleSections(document);
 
         // Your JSON data for this page
         const pageData = GLITCH_TREE?.[thnr]?.[pageId];
@@ -557,7 +659,7 @@ async function generateHtmlFiles() {
             fs.mkdirSync(path.dirname(canonicalPath), { recursive: true });
             fs.writeFileSync(canonicalPath, htmlFile);
 
-            console.log(`Built: ${canonicalName}`);
+            // console.log(`Built: ${canonicalName}`);
 
             // Generate redirects for every alias, EXCLUDING the old numeric ID
             // because if I ever rename page 
@@ -597,7 +699,7 @@ async function generateHtmlFiles() {
                 fs.mkdirSync(path.dirname(redirectPath), { recursive: true });
                 fs.writeFileSync(redirectPath, redirect);
 
-                console.log(`Redirect: ${alias} → ${canonicalName}`);
+                // console.log(`Redirect: ${alias} > ${canonicalName}`);
             }
         } else {
             //no more DOM changes, save
@@ -610,7 +712,7 @@ async function generateHtmlFiles() {
             fs.mkdirSync(path.dirname(outputPath), { recursive: true });
             fs.writeFileSync(outputPath, htmlFile);
 
-            console.log(`Built: ${relativeHtmlPath}`);
+            // console.log(`Built: ${relativeHtmlPath}`);
         }
     }
 }

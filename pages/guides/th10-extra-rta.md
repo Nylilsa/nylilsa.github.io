@@ -150,7 +150,7 @@ Everything else is from the intermediate route.
 
 **This section is meant for if you are an advanced player.** These tricks described below may help you save about 2-3 seconds off of your current run if you haven't done them yet.
 
-#### Doppler-effect
+### Doppler-effect
 [hr_minor]
 
 The doppler-effect strategy is very simple. You need to be at the bottom of the screen when the attack starts, then move upward when the boss is able to take damage.
@@ -158,7 +158,7 @@ When shooting, the bullets are fired at a constant rate. Also, the bullets do no
 When the boss is able to take damage, you can move upward as that will finish the attack slightly faster by a couple of frames per attack. During the transition (so the time between the non-spell and spell, or spell and non-spell) the boss is usually invincible for about a second or sometimes more. In the period the boss isn't taking any damage, you have to move down as that will allow you to do the doppler strategy again for the subsequent attack.
  
 
-#### Normal-alignment
+### Normal-alignment
 [hr_minor]
 
 The normal-alignment strategy is a lot harder to do more. It involves being exactly in the middle of the screen, at the coordinate ``x = 0``. When you are hitting a boss, some of your lasers may be orange-coloured. If they are coloured, it means that the lasers are dealing damage to the boss. Most of the time only 2 out of 3 lasers hit the boss. But with the normal-alignment strategy it is possible for 3 out of 3 lasers to deal damage. 

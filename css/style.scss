@@ -225,6 +225,9 @@ a[target="_blank"]:hover::after {
         position: absolute;
         top: 50%;
         right: 20px;
+        transform: translateY(-50%) rotate(180deg);
+    }
+    &[aria-expanded="false"]::after {
         transform: translateY(-50%);
     }
 }
@@ -351,6 +354,12 @@ hr {
     margin-inline: 10px;
     margin-block: 20px;
     width: fit-content;
+}
+
+.collapse-button {
+    width: 100%;
+    display: flex;
+    color: inherit;
 }
 
 ol {
