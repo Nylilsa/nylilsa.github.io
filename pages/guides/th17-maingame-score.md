@@ -96,19 +96,19 @@ There are 4 ways you can spawn green items:
 
 Characters ranked based on score gain: Marisa, Youmu, Reimu. To understand the main differences I'll write a list of pros and cons:
 
-#### Marisa 
+### Marisa 
 **Pros**: highest PIV gains for focus and unfocus shot, fast movement speed allows for easier token management and easier dupes, bombs can be misdirected to avoid dealing damage to bosses.
 
 **Cons**: Really slow movement speed during bomb makes collecting tokens hard. No homing or slash = harder stage portions.
 
 [hl2]Note: 1 laser generates more green items compared to 1 Rocket, when it's possible to hit all 4 lasers it's ideal to use them instead[/hl2]
 
-#### Youmu
+### Youmu
 **Pros**: fast movement speed during bomb is really comfy, slash allows for effective and effortless cancels, slash makes stage portions very easy, Really good for Mayumi's fight
 
 **Cons**: lowest PIV gain for focus and unfocus, and she is forced to unfocus for PIV since slash gives very little PIV, bombs deals inconsistent high damage, slow movement is not good for tokens and dupes
 
-#### Reimu
+### Reimu
 **Pros**: there are no big pros to Reimu, which is why she is the worst, average PIV gain for focus and unfocus, homing makes stage portions a bit easier. 
 
 **Cons**: slow movement Speed, high damage bomb that kind of blinds the screen, and in general there is nothing she does really good in, she suffers a lot, not recommended.

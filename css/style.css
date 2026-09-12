@@ -217,6 +217,9 @@ a[target=_blank]:hover::after {
   position: absolute;
   top: 50%;
   right: 20px;
+  transform: translateY(-50%) rotate(180deg);
+}
+.dropdown-toggle[aria-expanded=false]::after {
   transform: translateY(-50%);
 }
 
@@ -342,6 +345,12 @@ hr {
   width: fit-content;
 }
 
+.collapse-button {
+  width: 100%;
+  display: flex;
+  color: inherit;
+}
+
 ol {
   counter-reset: item list-item;
   padding-left: 20px;
@@ -415,6 +424,19 @@ table:not([class]):not([id]) {
 
 .max-width {
   width: 100%;
+}
+
+.collapsible-text {
+  color: var(--clr-text-url-visited);
+  text-decoration: underline;
+}
+.collapsible-text::before {
+  content: "[";
+  color: var(--clr-text-normal);
+}
+.collapsible-text::after {
+  content: "]";
+  color: var(--clr-text-normal);
 }
 
 td {

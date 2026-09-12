@@ -60,16 +60,16 @@ function showNavbarChildren() { //toggles all elements in navbar of Bugs if clic
         const flag = selector.classList.contains("show-function");
         if (flag) {
             selector.classList.remove("show-function");
-            selector.textContent = "Hide all";
-            for (let i = 0; i < elements.length; i++) {
+            selector.textContent = "Collapse all";
+            for(let i = 0; i < elements.length; i++) {
                 if (elements[i].nextElementSibling.classList.contains("collapse")) {
                     elements[i].click();
                 }
             }
         } else {
             selector.classList.add("show-function");
-            selector.textContent = "Show all";
-            for (let i = 0; i < elements.length; i++) {
+            selector.textContent = "Expand all";
+            for(let i = 0; i < elements.length; i++) {
                 if (!elements[i].nextElementSibling.classList.contains("collapse")) {
                     elements[i].click();
                 }
@@ -136,7 +136,7 @@ function initSidebarListeners() {
 }
 
 function initDropdownToggle() {
-    const menus = document.getElementsByClassName("dropdown-toggle");
+    const menus = document.getElementById("sidebar-left").getElementsByClassName("dropdown-toggle");
     const time = getComputedStyle(document.documentElement).getPropertyValue('--time-animation')
     const numTime = time.match(/\d+/g).map(Number)[0];
     for (let i = 0; i < menus.length; i++) {
@@ -152,6 +152,8 @@ function initDropdownToggle() {
                     child.classList.toggle("show");
                 }, numTime);
                 const height = child.scrollHeight;
+                const isExpanded = dropdown.getAttribute("aria-expanded") === "true";
+                dropdown.setAttribute("aria-expanded", String(!isExpanded));
                 if (!child.classList.contains("show")) {
                     child.style.minHeight = `${height}px`;
                 } else {
@@ -236,6 +238,17 @@ function initListeners() {
     });
     window.addEventListener("popstate", () => {
         navigate(location.href, false);
+    });
+    // collapse elements
+    document.addEventListener("click", event => {
+        const button = event.target.closest(".dropdown-toggle");
+        if (!button) return;
+        const content = document.getElementById(button.getAttribute("aria-controls"));
+        if (content.classList.contains("collapsing")) return;
+        const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+        button.setAttribute("aria-expanded", String(!isExpanded));
+        content.hidden = isExpanded;
     });
 }
 
