@@ -6,7 +6,6 @@
 Hello there, I hope you are having a wonderful day today ! On website I want to provide game knowledge and resources to the Touhou community ! This is a solo project of mine, meaning I did all the coding, research, design, more research, doing all the writing, etc., so excuse me if there are any inaccuracies !
 
 ## About this Website
-[collapsed]
 [hr_minor]
 
 ### World Record Progression
@@ -14,7 +13,6 @@ Hello there, I hope you are having a wonderful day today ! On website I want to 
 There is a page titled [jumpto=/wr]World Record Progression[/jumpto]. The page is a [hl2]comprehensive Touhou world records tracker[/hl2], updated every so often. The page includes an interactive graph and a table of your selected game along with [hl2]replay support[/hl2] for most WR entries ! Please feel free to check it out as this is the culmination of about a year's worth of hard work from replay gathering, replay processing, file management, score gathering, etc. !
 
 ### Bugs/Glitch
-[collapsed]
 
 This website's primary purpose is to be a [hl2]repository for all documented glitches[/hl2] I have been able to find and properly document of Touhou Project. This part is still Work In Progress: if you want to know more about a game's glitches it is best to [jumpto=/me/contact]contact me personally[/jumpto].
 

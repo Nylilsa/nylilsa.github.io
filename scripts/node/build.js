@@ -542,10 +542,14 @@ function makeCollapsibleSections(document) {
         heading.classList.add("collapsible-heading");
         heading.appendChild(button);
 
-        // check whether the heading is immediately followed by an hr
-        const hr = heading.nextElementSibling?.tagName === "HR"
-            ? heading.nextElementSibling
-            : null;
+        // check whether the heading is immediately followed by an hr or if element thereafter is hr
+        const next = heading.nextElementSibling;
+        const hr = next?.tagName === "HR"
+            ? next
+            : next?.classList.contains("markdown-collapsed") &&
+                next.nextElementSibling?.tagName === "HR"
+                ? next.nextElementSibling
+                : null;
 
         // save the nodes belonging to this section before moving anything
         const nodes = [];
