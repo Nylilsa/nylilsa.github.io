@@ -740,5 +740,10 @@ fs.cpSync("scripts", "dist/scripts", { recursive: true });
 fs.cpSync("robots.txt", "dist/robots.txt");
 fs.cpSync("sitemap.xml", "dist/sitemap.xml");
 
+console.log("Copied files to dist/")
+console.log("Running generateHtmlFiles...")
+
 updateTemplate();
 generateHtmlFiles();
+
+console.log("Finished building")
