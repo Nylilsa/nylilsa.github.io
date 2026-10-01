@@ -159,6 +159,7 @@
         
         "GV72LaPtrI": {"game": "th13", "date": "2025-02-11", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "Youmu", "version": "1.00c", "note": "Glitch showcase on Spell 2", "url": "th13_udGV72.rpy"},
         "cg0BdbP2mn": {"game": "th13", "date": "2025-09-19", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Easy", "shot": "Youmu", "version": "1.00c", "note": "Stage 2 desyncs only if replay starts from Stage 2", "url": "th13_udcg0B.rpy"},
+        "rTNHw0cTle": {"game": "th13", "date": "2026-10-01", "author": "Nylilsa", "name": "Ny+", "difficulty": "Luantic", "shot": "Marisa", "version": "1.00c", "note": "", "url": "th13_udrTNH.rpy"},
         
         "C8JIJHBmZm": {"game": "th14", "date": "2022-09-13", "author": "Nylilsa", "name": "Ny", "difficulty": "Easy", "shot": "SakuyaA", "version": "1.00b", "note": "Wakasagihime's first spell-card", "url": "th14_udC8JI.rpy"},
         "UOqn0F4Txs": {"game": "th14", "date": "2022-09-14", "author": "Nylilsa", "name": "Ny", "difficulty": "Lunatic", "shot": "ReimuA", "version": "1.00b", "note": "", "url": "th14_udUOqn.rpy"},
@@ -172,6 +173,7 @@
         
         "fZ38TTtyHT": {"game": "th15", "date": "2022-09-13", "author": "Nylilsa", "name": "NySSN3", "difficulty": "Lunatic", "shot": "Sanae", "version": "1.00b", "note": "Non-spell 3 skip", "url": "th15_udfZ38.rpy"},
         "HPKdHaqdwC": {"game": "th15", "date": "2022-08-28", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "Lunatic", "shot": "Reisen", "version": "1.00b", "note": "", "url": "th15_udHPKd.rpy"},
+        "Yt8ae2EpMp": {"game": "th15", "date": "2026-10-01", "author": "Nylilsa", "name": "Ny+", "difficulty": "Lunatic", "shot": "Reimu", "version": "1.00a", "note": "", "url": "th15_udYt8a.rpy"},
         
         "bYk0oqAKP0": {"game": "th16", "date": "2022-09-13", "author": "Nylilsa", "name": "PSG0625", "difficulty": "Extra", "shot": "Reimu", "version": "1.00a", "note": "", "url": "th16_udbYk0.rpy"},
         
