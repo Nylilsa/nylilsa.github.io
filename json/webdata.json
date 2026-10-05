@@ -65,6 +65,7 @@
 	    "p7ycucoqzD": {"game": "th14", "date": "n.d.", "author": "Wikipedia", "title": "Stack (abstract data type)", "url": "https://en.wikipedia.org/wiki/Stack_(abstract_data_type)"},
 	    "htJpMI6H5q": {"game": "th14", "date": "2024-09-21", "author": "Nylilsa", "title": "5 goheis", "url": "https://www.youtube.com/watch?v=s96Bvwoptqg"},
 	    "DUlvnbnwSK": {"game": "th14", "date": "n.d.", "author": "Khangaroo", "title": "Touhou Patches", "url": "https://github.com/khang06/touhou-patches/tree/master/gohei_debug"},
+	    "2YSipDh95h": {"game": "th14", "date": "2026-09-06", "author": "Krishna", "title": "DDC LNN (ReimuA)", "url": "https://www.youtube.com/watch?v=8W8_hqQ5tWA"},
         
 	    "a2p3Jtvow4": {"game": "th143", "date": "2016-05-21", "author": "thplayer635", "title": "scoring with sekibanki 2 [secret ISC scoring strat]", "url": "https://www.youtube.com/watch?v=-BScbpVxKLg"},
 	    "8ediV3QmZ3": {"game": "th143", "date": "2024-07-12", "author": "srn_ity", "title": "Touhou 14.3 (ISC): New* bug leads to new* counterstops", "url": "https://www.youtube.com/watch?v=TYB3bWmA7Pk"},
@@ -168,6 +169,7 @@
         "jZzN5CoGl5": {"game": "th14", "date": "2024-07-07", "author": "Nylilsa", "name": "Nya811", "difficulty": "Extra", "shot": "ReimuA", "version": "1.00b", "note": "", "url": "th14_udjZzN.rpy"},
         "qgakMpSXf7": {"game": "th14", "date": "2026-10-01", "author": "Nylilsa", "name": "Ny+", "difficulty": "Hard", "shot": "SakuyaA", "version": "1.00b", "note": "Brief showcase at start of Stage 3", "url": "th14_udqgak.rpy"},
         "TcGgYjFuyp": {"game": "th14", "date": "2026-10-01", "author": "Nylilsa", "name": "Ny+", "difficulty": "Lunatic", "shot": "ReimuA", "version": "1.00b", "note": "", "url": "th14_udTcGg.rpy"},
+        "pcbDTbnkB8": {"game": "th14", "date": "2026-09-05", "author": "Krishna", "name": "KrishLNN", "difficulty": "Lunatic", "shot": "ReimuA", "version": "1.00b", "note": "", "url": "th14_udpcbD.rpy"},
         
         "06bYhNkRnt": {"game": "th143", "date": "2022-09-18", "author": "Nylilsa", "name": "Nylilsa", "difficulty": "1-5", "shot": "Seija", "version": "1.00a", "note": "", "url": "th143_ud06bY.rpy"},
         
