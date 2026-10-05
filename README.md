@@ -28,7 +28,7 @@ Building pages:
 
 ```
 npm i
-npm run dev
+npm run build
 ```
 
 Running server:
