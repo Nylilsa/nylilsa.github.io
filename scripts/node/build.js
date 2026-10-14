@@ -252,6 +252,12 @@ let ext = function () {
         replace: "<kbd class='key mono'>$1</kbd>"
     }
 
+    let strike = {
+        type: "lang",
+        regex: /\[strike\]([^]*?)\[\/strike\]/g,
+        replace: "<span style='text-decoration: line-through;'>$1</span>"
+    }
+
     let cite = {
         type: "lang",
         regex: /\[cite=([^]*?)\]/g,
@@ -343,7 +349,7 @@ let ext = function () {
     }
 
     // order matters: prioritize elements that will be nested within
-    return [ins, no_index, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp, collapsed];
+    return [ins, no_index, hr_major, hr_minor, hr_custom, br, img, imgcss, img_small, code, title, tip, video, yes, unknown, no, discord, no_content, work_in_progress, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, jumpto, sub, box, you_thief, hl1, hl2, key, strike, cite, replay, contributors, canvas, buildCategoriesTable, match, check, cross, gt, lt, amp, collapsed];
 }
 
 const converter = new showdown.Converter({
