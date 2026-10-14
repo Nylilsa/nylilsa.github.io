@@ -7,7 +7,7 @@ Hi everyone, <br><br>
 
 [strike]This WR History page has not been updated since September 2025, and I am well-aware of it. I have been in the process of making big changes to the backend of this. Please bear in mind this is mainly done by one individual who also has their own things going on.[/strike] <br><br>
 
-UPDATE (2026-10-24) The backend changes have been finished. A lot of categories have been updated, but some are still missing (I know PC98, PoFV and FW need lots of work). There are likely some major mistakes in the WR history because of this new system. For such cases, please contact me personally regarding any mistakes. Thank you very much for your patience. <br><br>
+UPDATE (2026-10-14) The backend changes have been finished. A lot of categories have been updated, but some are still missing (I know PC98, PoFV and FW need lots of work). There are likely some major mistakes in the WR history because of this new system. For such cases, please contact me personally regarding any mistakes. Thank you very much for your patience. <br><br>
 
 For inquiries regarding this webpage, please [jumpto=/me/contact]contact me[/jumpto]. I really appreciate all the support and positive comments I've received, thank you everyone for who has supported my site and I <3
 
